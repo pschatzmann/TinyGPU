@@ -126,32 +126,16 @@ Include Files</h1>
 <li><code><a class="el" href="BMPParser_8h_source.html">BMPParser.h</a></code></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md4"></a>
-Examples</h1>
-<p>Concrete usage is documented through the example sketches in <code>examples/</code>:</p>
+Documentaion</h1>
 <ul>
-<li><code>examples/basic-example/basic-example.ino</code><ul>
-<li>minimal 2D drawing and text output</li>
-</ul>
-</li>
-<li><code>examples/sprite-demo/sprite-demo.ino</code><ul>
-<li>managed sprite placement, movement, scaling, and rotation</li>
-</ul>
-</li>
-<li><code>examples/bmp-parser-demo/bmp-parser-demo.ino</code><ul>
-<li>incremental BMP decoding into an RGB565 surface</li>
-</ul>
-</li>
-<li><code>examples/wireframe-demo/wireframe-demo.ino</code><ul>
-<li>rotating 3D cube rendered into a <code>Surface</code></li>
-</ul>
-</li>
+<li>[examples](examples)</li>
+<li><a href="https://pschatzmann.github.io/TinyGPU/annotated.html">Class Documentation</a></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md5"></a>
 Sending Pixels to a Real Display</h1>
 <p>TinyGPU keeps all drawing in memory. After rendering, you can send the raw RGB565 data to your display driver.</p>
 <p>Useful accessors are:</p>
 <ul>
-<li><code>getBuffer()</code> for <code>RGB565*</code> pixel access</li>
 <li><code>data()</code> for byte-wise access</li>
 <li><code>size()</code> for total byte size</li>
 </ul>
