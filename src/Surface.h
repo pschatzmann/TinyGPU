@@ -60,6 +60,7 @@ class Surface : public SurfaceBase<RGB_T> {
   /// @param y Y coordinate
   /// @param color Pixel color value
   void setPixel(size_t x, size_t y, RGB_T color) override {
+    if (buffer.empty()) return;
     buffer[(y * width_) + x] = color;
   }
 
@@ -68,6 +69,7 @@ class Surface : public SurfaceBase<RGB_T> {
   /// @param y Y coordinate
   /// @return Pixel color value
   RGB_T getPixel(size_t x, size_t y) const override {
+    if (buffer.empty()) return RGB_T();
     return buffer[(y * width_) + x];
   }
 

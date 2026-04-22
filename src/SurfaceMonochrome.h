@@ -38,6 +38,7 @@ class SurfaceMonochrome : public SurfaceBase<bool> {
   /// @param y Y coordinate
   /// @param color Pixel value (true=on, false=off)
   void setPixel(size_t x, size_t y, bool color) override {
+    if (buffer.empty()) return;
     size_t idx = y * width_ + x;
     size_t byte = idx / 8;
     size_t bit = idx % 8;
@@ -52,6 +53,8 @@ class SurfaceMonochrome : public SurfaceBase<bool> {
   /// @param y Y coordinate
   /// @return Pixel value (true=on, false=off)
   bool getPixel(size_t x, size_t y) const override {
+    if (buffer.empty()) return false;
+
     size_t idx = y * width_ + x;
     size_t byte = idx / 8;
     size_t bit = idx % 8;

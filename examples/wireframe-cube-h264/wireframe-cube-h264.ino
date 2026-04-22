@@ -40,7 +40,7 @@ void setup() {
   encoderConfig.height = HEIGHT;
   encoderConfig.fps = 30;
   encoderConfig.ssid = "YourWiFiSSID";  // Set your WiFi SSID
-  encoderConfig.pass = "YourWiFiPassword";  // Set your WiFi password
+  encoderConfig.password = "YourWiFiPassword";  // Set your WiFi password
   encoder.begin(encoderConfig);
 
 
