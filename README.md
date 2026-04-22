@@ -44,26 +44,17 @@ The library covers three main areas:
 
 It also includes incremental BMP decoding so image assets can be converted into display-ready RGB565 surfaces without requiring a desktop preprocessing step.
 
-## Include Files
-
-Most drawing functionality is available through the main umbrella header:
-
-- `TinyGPU.h`
-
-BMP decoding is provided separately through:
-
-- `BMPParser.h`
 
 ## Documentaion
 
+- [Class Documentation](hthttps://pschatzmann.github.io/TinyGPU/namespacetinygpu.html)
+- [Examples](examples)
 
 
 ## Sending Pixels to a Real Display
 
 TinyGPU keeps all drawing in memory. After rendering, you can send the raw
 RGB565 data to your display driver.
-- [Class Documentation](https://pschatzmann.github.io/TinyGPU/namespacetinygpu.html)
-- [examples](examples)
 
 Useful accessors are:
 
