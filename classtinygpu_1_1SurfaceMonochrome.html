@@ -122,9 +122,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a053e6ab47a2f56071d32ac670b4ef434"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceMonochrome.html#a053e6ab47a2f56071d32ac670b4ef434">getPixel</a> (size_t x, size_t y) const override</td></tr>
 <tr class="memdesc:a053e6ab47a2f56071d32ac670b4ef434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of the pixel at (x, y).  <br /></td></tr>
 <tr class="separator:a053e6ab47a2f56071d32ac670b4ef434"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff452e914d89bc64be1dc2f28479b3b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceMonochrome.html#aff452e914d89bc64be1dc2f28479b3b9">resizeBuffer</a> (size_t w, size_t h) override</td></tr>
-<tr class="memdesc:aff452e914d89bc64be1dc2f28479b3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the internal bit-packed buffer to the specified width and height.  <br /></td></tr>
-<tr class="separator:aff452e914d89bc64be1dc2f28479b3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add37b2038551a1a82c2ea27e526cfb27"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceMonochrome.html#add37b2038551a1a82c2ea27e526cfb27">resizeBuffer</a> (size_t w, size_t h) override</td></tr>
+<tr class="memdesc:add37b2038551a1a82c2ea27e526cfb27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the internal bit-packed buffer to the specified width and height.  <br /></td></tr>
+<tr class="separator:add37b2038551a1a82c2ea27e526cfb27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a954524202998581e636b371957f628c5"><td class="memItemLeft" align="right" valign="top">const uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceMonochrome.html#a954524202998581e636b371957f628c5">data</a> () const override</td></tr>
 <tr class="memdesc:a954524202998581e636b371957f628c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the raw bit-packed data as bytes.  <br /></td></tr>
 <tr class="separator:a954524202998581e636b371957f628c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +138,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8b83de4674c556464fc266c373fbd259 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceBase.html#a8b83de4674c556464fc266c373fbd259">SurfaceBase</a> (size_t width, size_t height, <a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt; bool &gt; &amp;font)</td></tr>
 <tr class="memdesc:a8b83de4674c556464fc266c373fbd259 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with width, height, and font.  <br /></td></tr>
 <tr class="separator:a8b83de4674c556464fc266c373fbd259 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a601fb7cf1fc15db50c71a826f084f934 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceBase.html#a601fb7cf1fc15db50c71a826f084f934">begin</a> ()</td></tr>
+<tr class="memdesc:a601fb7cf1fc15db50c71a826f084f934 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the surface by resizing it to the current dimensions.  <br /></td></tr>
+<tr class="separator:a601fb7cf1fc15db50c71a826f084f934 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf81d3fdaf258088d7692fa70cece087 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceBase.html#aaf81d3fdaf258088d7692fa70cece087">end</a> ()</td></tr>
+<tr class="memdesc:aaf81d3fdaf258088d7692fa70cece087 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the surface and releases any allocated resources.  <br /></td></tr>
+<tr class="separator:aaf81d3fdaf258088d7692fa70cece087 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5699d68640e4be85a501e2994b8d67e inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceBase.html#ac5699d68640e4be85a501e2994b8d67e">~SurfaceBase</a> () override=default</td></tr>
 <tr class="memdesc:ac5699d68640e4be85a501e2994b8d67e inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
 <tr class="separator:ac5699d68640e4be85a501e2994b8d67e inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,17 +162,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6955103a68035d24264d0c61f221267b inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt; bool &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceBase.html#a6955103a68035d24264d0c61f221267b">font</a> () const</td></tr>
 <tr class="memdesc:a6955103a68035d24264d0c61f221267b inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current font (const).  <br /></td></tr>
 <tr class="separator:a6955103a68035d24264d0c61f221267b inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a675135693881c58e8cb023aff5e42567 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceBase.html#a675135693881c58e8cb023aff5e42567">resize</a> (size_t newWidth, size_t newHeight) override</td></tr>
-<tr class="memdesc:a675135693881c58e8cb023aff5e42567 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize the surface to new dimensions.  <br /></td></tr>
-<tr class="separator:a675135693881c58e8cb023aff5e42567 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4dd840f392c130f784aebf87bd2cbb7 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceBase.html#ad4dd840f392c130f784aebf87bd2cbb7">resize</a> (size_t newWidth, size_t newHeight) override</td></tr>
+<tr class="memdesc:ad4dd840f392c130f784aebf87bd2cbb7 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize the surface to new dimensions.  <br /></td></tr>
+<tr class="separator:ad4dd840f392c130f784aebf87bd2cbb7 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac39656d862f5a4a39182559bbf7c740b inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceBase.html#ac39656d862f5a4a39182559bbf7c740b">width</a> () const override</td></tr>
 <tr class="memdesc:ac39656d862f5a4a39182559bbf7c740b inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the width of the surface.  <br /></td></tr>
 <tr class="separator:ac39656d862f5a4a39182559bbf7c740b inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a715f3df3dc638de8b40076ada0b54a89 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceBase.html#a715f3df3dc638de8b40076ada0b54a89">height</a> () const override</td></tr>
 <tr class="memdesc:a715f3df3dc638de8b40076ada0b54a89 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the height of the surface.  <br /></td></tr>
 <tr class="separator:a715f3df3dc638de8b40076ada0b54a89 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1b99a90ec7a087abc529417a449f967 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceBase.html#ad1b99a90ec7a087abc529417a449f967">resizeBuffer</a> (size_t, size_t)=0</td></tr>
-<tr class="separator:ad1b99a90ec7a087abc529417a449f967 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab020130b86edc23e83b0e93ab8accc98 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceBase.html#ab020130b86edc23e83b0e93ab8accc98">resizeBuffer</a> (size_t, size_t)=0</td></tr>
+<tr class="separator:ab020130b86edc23e83b0e93ab8accc98 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94d78a19e43a1a73ba71485dea88e7e2 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceBase.html#a94d78a19e43a1a73ba71485dea88e7e2">clear</a> (bool color=bool()) override</td></tr>
 <tr class="memdesc:a94d78a19e43a1a73ba71485dea88e7e2 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the framebuffer with a single color.  <br /></td></tr>
 <tr class="separator:a94d78a19e43a1a73ba71485dea88e7e2 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,7 +204,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aee9ff3962d56a0e0a9974defd3c2f038 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the framebuffer region at (x, y) into the sprite.  <br /></td></tr>
 <tr class="separator:aee9ff3962d56a0e0a9974defd3c2f038 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b4e82b33a10dd3d61266d512f583481 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceBase.html#a9b4e82b33a10dd3d61266d512f583481">drawText</a> (int16_t x, int16_t y, const char *text, bool foreground, bool background=bool(), bool opaque=false, uint8_t scale=1, uint8_t spacing=1, uint8_t lineSpacing=1) override</td></tr>
-<tr class="memdesc:a9b4e82b33a10dd3d61266d512f583481 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw text at (x, y) with foreground/background color and formatting options.  <br /></td></tr>
 <tr class="separator:a9b4e82b33a10dd3d61266d512f583481 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a942775295806f1dafab741b0b7f79466 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a>&lt; bool &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceBase.html#a942775295806f1dafab741b0b7f79466">linePrinter</a> ()</td></tr>
 <tr class="memdesc:a942775295806f1dafab741b0b7f79466 inherit pub_methods_classtinygpu_1_1SurfaceBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the line printer for this surface.  <br /></td></tr>
@@ -216,9 +221,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a09eda0603dcc9eb48e0fd1451fa00530 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a09eda0603dcc9eb48e0fd1451fa00530">~ISurface</a> ()=default</td></tr>
 <tr class="memdesc:a09eda0603dcc9eb48e0fd1451fa00530 inherit pub_methods_classtinygpu_1_1ISurface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the framebuffer interface.  <br /></td></tr>
 <tr class="separator:a09eda0603dcc9eb48e0fd1451fa00530 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4d6d94bc4eebc18c3027a2de7332920 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#ab4d6d94bc4eebc18c3027a2de7332920">resize</a> (size_t newWidth, size_t newHeight)=0</td></tr>
-<tr class="memdesc:ab4d6d94bc4eebc18c3027a2de7332920 inherit pub_methods_classtinygpu_1_1ISurface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the framebuffer surface.  <br /></td></tr>
-<tr class="separator:ab4d6d94bc4eebc18c3027a2de7332920 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c66bbeaf74b3778d72c42b2b1a72ef4 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a6c66bbeaf74b3778d72c42b2b1a72ef4">resize</a> (size_t newWidth, size_t newHeight)=0</td></tr>
+<tr class="memdesc:a6c66bbeaf74b3778d72c42b2b1a72ef4 inherit pub_methods_classtinygpu_1_1ISurface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the framebuffer surface.  <br /></td></tr>
+<tr class="separator:a6c66bbeaf74b3778d72c42b2b1a72ef4 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c1d0c2acf401c1dc9280f8b2713f540 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a8c1d0c2acf401c1dc9280f8b2713f540">setPixel</a> (size_t x, size_t y, RGB_T color)=0</td></tr>
 <tr class="memdesc:a8c1d0c2acf401c1dc9280f8b2713f540 inherit pub_methods_classtinygpu_1_1ISurface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pixel at the given position.  <br /></td></tr>
 <tr class="separator:a8c1d0c2acf401c1dc9280f8b2713f540 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -451,8 +456,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aff452e914d89bc64be1dc2f28479b3b9" name="aff452e914d89bc64be1dc2f28479b3b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff452e914d89bc64be1dc2f28479b3b9">&#9670;&#160;</a></span>resizeBuffer()</h2>
+<a id="add37b2038551a1a82c2ea27e526cfb27" name="add37b2038551a1a82c2ea27e526cfb27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add37b2038551a1a82c2ea27e526cfb27">&#9670;&#160;</a></span>resizeBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -461,7 +466,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void resizeBuffer </td>
+          <td class="memname">bool resizeBuffer </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>w</em>, </td>
@@ -494,7 +499,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classtinygpu_1_1SurfaceBase.html#ad1b99a90ec7a087abc529417a449f967">SurfaceBase&lt; bool &gt;</a>.</p>
+<p>Implements <a class="el" href="classtinygpu_1_1SurfaceBase.html#ab020130b86edc23e83b0e93ab8accc98">SurfaceBase&lt; bool &gt;</a>.</p>
 
 </div>
 </div>

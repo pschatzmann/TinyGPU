@@ -137,6 +137,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a15afce9d177ce4cf641a7ec584b70f58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#a15afce9d177ce4cf641a7ec584b70f58">setViewport</a> (size_t <a class="el" href="classtinygpu_1_1WireFrame3D.html#a080012ae5fbe9a5428ca4fe146236974">viewportWidth</a>, size_t <a class="el" href="classtinygpu_1_1WireFrame3D.html#aa12efabdbd8d93f5c544ca31110a5d26">viewportHeight</a>)</td></tr>
 <tr class="memdesc:a15afce9d177ce4cf641a7ec584b70f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the viewport size used for projection and depth buffering.  <br /></td></tr>
 <tr class="separator:a15afce9d177ce4cf641a7ec584b70f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a601fb7cf1fc15db50c71a826f084f934"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#a601fb7cf1fc15db50c71a826f084f934">begin</a> ()</td></tr>
+<tr class="separator:a601fb7cf1fc15db50c71a826f084f934"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a080012ae5fbe9a5428ca4fe146236974"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#a080012ae5fbe9a5428ca4fe146236974">viewportWidth</a> () const</td></tr>
 <tr class="memdesc:a080012ae5fbe9a5428ca4fe146236974"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current viewport width.  <br /></td></tr>
 <tr class="separator:a080012ae5fbe9a5428ca4fe146236974"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,8 +224,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:ad1d8fbf814de4212e1618d6f0e15d398"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac69966a75600137f3ebfaf4170927426"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#ac69966a75600137f3ebfaf4170927426">currentAspectRatio</a> () const</td></tr>
 <tr class="separator:ac69966a75600137f3ebfaf4170927426"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a471609c3c3dd9b63d5c05a11c36b1127"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#a471609c3c3dd9b63d5c05a11c36b1127">resizeDepthBuffer</a> ()</td></tr>
-<tr class="separator:a471609c3c3dd9b63d5c05a11c36b1127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca612f0e170550b281e3380b495e46c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#aca612f0e170550b281e3380b495e46c6">resizeDepthBuffer</a> ()</td></tr>
+<tr class="separator:aca612f0e170550b281e3380b495e46c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9b138c641006564d81cb9df9b6ea0ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#af9b138c641006564d81cb9df9b6ea0ca">clipPointToCameraRange</a> (const <a class="el" href="structtinygpu_1_1WireFrame3D_1_1Vec3.html">Vec3</a> &amp;point) const</td></tr>
 <tr class="separator:af9b138c641006564d81cb9df9b6ea0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ead3bd1e3ab65acd628c7f5d222db08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#a0ead3bd1e3ab65acd628c7f5d222db08">clipLineToCameraRange</a> (<a class="el" href="structtinygpu_1_1WireFrame3D_1_1Vec3.html">Vec3</a> &amp;start, <a class="el" href="structtinygpu_1_1WireFrame3D_1_1Vec3.html">Vec3</a> &amp;end) const</td></tr>
@@ -412,6 +414,31 @@ class tinygpu::WireFrame3D&lt; RGB_T &gt;</div><p>Lightweight 3D wireframe rende
 </div><div class="memdoc">
 
 <p>Creates RGB-style axis lines centered at the origin. </p>
+
+</div>
+</div>
+<a id="a601fb7cf1fc15db50c71a826f084f934" name="a601fb7cf1fc15db50c71a826f084f934"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a601fb7cf1fc15db50c71a826f084f934">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1223,8 +1250,8 @@ class tinygpu::WireFrame3D&lt; RGB_T &gt;</div><p>Lightweight 3D wireframe rende
 
 </div>
 </div>
-<a id="a471609c3c3dd9b63d5c05a11c36b1127" name="a471609c3c3dd9b63d5c05a11c36b1127"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a471609c3c3dd9b63d5c05a11c36b1127">&#9670;&#160;</a></span>resizeDepthBuffer()</h2>
+<a id="aca612f0e170550b281e3380b495e46c6" name="aca612f0e170550b281e3380b495e46c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca612f0e170550b281e3380b495e46c6">&#9670;&#160;</a></span>resizeDepthBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1233,7 +1260,7 @@ class tinygpu::WireFrame3D&lt; RGB_T &gt;</div><p>Lightweight 3D wireframe rende
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void resizeDepthBuffer </td>
+          <td class="memname">bool resizeDepthBuffer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>

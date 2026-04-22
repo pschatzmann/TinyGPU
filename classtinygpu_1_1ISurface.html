@@ -103,9 +103,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a09eda0603dcc9eb48e0fd1451fa00530"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a09eda0603dcc9eb48e0fd1451fa00530">~ISurface</a> ()=default</td></tr>
 <tr class="memdesc:a09eda0603dcc9eb48e0fd1451fa00530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the framebuffer interface.  <br /></td></tr>
 <tr class="separator:a09eda0603dcc9eb48e0fd1451fa00530"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4d6d94bc4eebc18c3027a2de7332920"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#ab4d6d94bc4eebc18c3027a2de7332920">resize</a> (size_t newWidth, size_t newHeight)=0</td></tr>
-<tr class="memdesc:ab4d6d94bc4eebc18c3027a2de7332920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the framebuffer surface.  <br /></td></tr>
-<tr class="separator:ab4d6d94bc4eebc18c3027a2de7332920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c66bbeaf74b3778d72c42b2b1a72ef4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a6c66bbeaf74b3778d72c42b2b1a72ef4">resize</a> (size_t newWidth, size_t newHeight)=0</td></tr>
+<tr class="memdesc:a6c66bbeaf74b3778d72c42b2b1a72ef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the framebuffer surface.  <br /></td></tr>
+<tr class="separator:a6c66bbeaf74b3778d72c42b2b1a72ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c1d0c2acf401c1dc9280f8b2713f540"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a8c1d0c2acf401c1dc9280f8b2713f540">setPixel</a> (size_t x, size_t y, RGB_T color)=0</td></tr>
 <tr class="memdesc:a8c1d0c2acf401c1dc9280f8b2713f540"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pixel at the given position.  <br /></td></tr>
 <tr class="separator:a8c1d0c2acf401c1dc9280f8b2713f540"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -862,8 +862,8 @@ class tinygpu::ISurface&lt; RGB_T &gt;</div><p>Abstract framebuffer and drawing 
 
 </div>
 </div>
-<a id="ab4d6d94bc4eebc18c3027a2de7332920" name="ab4d6d94bc4eebc18c3027a2de7332920"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4d6d94bc4eebc18c3027a2de7332920">&#9670;&#160;</a></span>resize()</h2>
+<a id="a6c66bbeaf74b3778d72c42b2b1a72ef4" name="a6c66bbeaf74b3778d72c42b2b1a72ef4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c66bbeaf74b3778d72c42b2b1a72ef4">&#9670;&#160;</a></span>resize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -872,7 +872,7 @@ class tinygpu::ISurface&lt; RGB_T &gt;</div><p>Abstract framebuffer and drawing 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void resize </td>
+          <td class="memname">virtual bool resize </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>newWidth</em>, </td>
@@ -898,7 +898,7 @@ class tinygpu::ISurface&lt; RGB_T &gt;</div><p>Abstract framebuffer and drawing 
 
 <p>Resizes the framebuffer surface. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1CartesianView.html#a675135693881c58e8cb023aff5e42567">CartesianView&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#a675135693881c58e8cb023aff5e42567">SurfaceBase&lt; PixelT &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#a675135693881c58e8cb023aff5e42567">SurfaceBase&lt; RGB565 &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#a675135693881c58e8cb023aff5e42567">SurfaceBase&lt; bool &gt;</a>, and <a class="el" href="classtinygpu_1_1FrameBuffer.html#ac8089beb8b089730f53503b3e487c37a">FrameBuffer&lt; RGB_T, SurfaceT &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1CartesianView.html#a675135693881c58e8cb023aff5e42567">CartesianView&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#ad4dd840f392c130f784aebf87bd2cbb7">SurfaceBase&lt; PixelT &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#ad4dd840f392c130f784aebf87bd2cbb7">SurfaceBase&lt; RGB565 &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#ad4dd840f392c130f784aebf87bd2cbb7">SurfaceBase&lt; bool &gt;</a>, and <a class="el" href="classtinygpu_1_1FrameBuffer.html#a8204b37fba7fee4b8f309e17f724aa2c">FrameBuffer&lt; RGB_T, SurfaceT &gt;</a>.</p>
 
 </div>
 </div>
