@@ -53,8 +53,8 @@ BMP decoding is provided separately through:
 
 ## Documentaion
 
+- [Class Documentation](hthttps://pschatzmann.github.io/TinyGPU/namespacetinygpu.html)
 - [examples](examples)
-- [Class Documentation](https://pschatzmann.github.io/TinyGPU/annotated.html)
 
 
 ## Sending Pixels to a Real Display
