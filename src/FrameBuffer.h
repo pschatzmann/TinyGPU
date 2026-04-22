@@ -136,7 +136,7 @@ class FrameBuffer : public ISurface<RGB_T> {
     return surface_.getPixel(x, y);
   }
   /// Resizes the framebuffer surface.
-  void resize(size_t w, size_t h) override { surface_.resize(w, h); }
+  bool resize(size_t w, size_t h) override { return surface_.resize(w, h); }
   /// Returns the framebuffer width in pixels.
   size_t width() const override { return surface_.width(); }
   /// Returns the framebuffer height in pixels.

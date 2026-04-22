@@ -7,7 +7,7 @@ applications.
 
 ## Features
 
-- RGB565 color 
+- RGB565, RGB666, RGB888 and Monochrome color 
 - In-memory bitmap surfaces
 - Basic drawing primitives
   - pixels

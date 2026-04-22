@@ -200,7 +200,6 @@ class WireFrame3D {
   /// Creates a wireframe renderer with the specified viewport size.
   WireFrame3D(size_t viewportWidth, size_t viewportHeight)
       : viewportWidth_(viewportWidth), viewportHeight_(viewportHeight) {
-    resizeDepthBuffer();
     updateViewMatrix();
     updateProjectionMatrix();
   }
@@ -209,8 +208,12 @@ class WireFrame3D {
   void setViewport(size_t viewportWidth, size_t viewportHeight) {
     viewportWidth_ = viewportWidth;
     viewportHeight_ = viewportHeight;
-    resizeDepthBuffer();
     updateProjectionMatrix();
+  }
+
+  bool begin() {
+    resizeDepthBuffer();
+    return true;
   }
 
   /// Returns the current viewport width.
@@ -599,9 +602,11 @@ class WireFrame3D {
            static_cast<float>(viewportHeight_);
   }
 
-  void resizeDepthBuffer() {
-    depthBuffer_.resize(viewportWidth_ * viewportHeight_);
+  bool resizeDepthBuffer() {
+    size_t bytes = viewportWidth_ * viewportHeight_;
+    depthBuffer_.resize(bytes);
     clearDepthBuffer();
+    return depthBuffer_.size() == bytes;
   }
 
   static Mat4 createPerspectiveMatrix(float fovYDegrees, float aspect,

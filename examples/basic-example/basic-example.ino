@@ -19,7 +19,7 @@ void sendFrameToDisplay(const Surface<RGB565>& gpu) { (void)gpu; }
 
 void setup() {
   Serial.begin(115200);
-
+  gpu.begin();
   gpu.clear(RGB565(0, 0, 0));
   gpu.drawRect(0, 0, 128, 64, RGB565(255, 255, 255));
   gpu.drawText(4, 4, "Hello TinyGPU", RGB565(255, 255, 0));

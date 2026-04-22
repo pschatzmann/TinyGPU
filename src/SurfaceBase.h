@@ -14,9 +14,10 @@ namespace tinygpu {
 /**
  * @brief Base class for 2D surfaces with drawing and text rendering support.
  *
- * SurfaceBase provides common logic for managing surface dimensions, font handling,
- * and basic geometry operations. It is intended to be subclassed by concrete surface
- * implementations that provide pixel storage and access (e.g., Surface, SurfaceMonochrome).
+ * SurfaceBase provides common logic for managing surface dimensions, font
+ * handling, and basic geometry operations. It is intended to be subclassed by
+ * concrete surface implementations that provide pixel storage and access (e.g.,
+ * Surface, SurfaceMonochrome).
  *
  * @tparam PixelT The pixel color type (e.g., RGB565, bool, etc.)
  */
@@ -29,7 +30,18 @@ class SurfaceBase : public ISurface<PixelT> {
   /// Construct with width, height, and font.
   SurfaceBase(size_t width, size_t height, IFont<PixelT>& font) : font_(&font) {
     setFont(font);
-    resize(width, height);
+    width_ = width;
+    height_ = height;
+  }
+
+  /// Initializes the surface by resizing it to the current dimensions.
+  bool begin() {
+    return resize(width_, height_);
+  }
+
+  /// Clears the surface and releases any allocated resources.
+  void end() {
+     resizeBuffer(0, 0);
   }
 
   /// Virtual destructor.
@@ -54,10 +66,10 @@ class SurfaceBase : public ISurface<PixelT> {
   const IFont<PixelT>& font() const { return *font_; }
 
   /// Resize the surface to new dimensions.
-  void resize(size_t newWidth, size_t newHeight) override {
+  bool resize(size_t newWidth, size_t newHeight) override {
     width_ = newWidth;
     height_ = newHeight;
-    resizeBuffer(newWidth, newHeight);
+    return resizeBuffer(newWidth, newHeight);
   }
 
   /// Get the width of the surface.
@@ -67,7 +79,7 @@ class SurfaceBase : public ISurface<PixelT> {
   size_t height() const override { return height_; }
 
   // Pixel access (to be implemented by derived classes)
-  virtual void resizeBuffer(size_t, size_t) = 0;
+  virtual bool resizeBuffer(size_t, size_t) = 0;
 
   // Drawing/geometry logic (now generic, uses setPixel/getPixel)
   void clear(PixelT color = PixelT()) override {
@@ -86,7 +98,10 @@ class SurfaceBase : public ISurface<PixelT> {
       for (size_t x = 0; x < width_; ++x) {
         int srcX = (int)x + dx;
         int srcY = (int)y + dy;
-        PixelT color = (srcX >= 0 && srcX < (int)width_ && srcY >= 0 && srcY < (int)height_) ? getPixel(srcX, srcY) : PixelT();
+        PixelT color = (srcX >= 0 && srcX < (int)width_ && srcY >= 0 &&
+                        srcY < (int)height_)
+                           ? getPixel(srcX, srcY)
+                           : PixelT();
         newBuffer[y * width_ + x] = color;
       }
     }
@@ -216,7 +231,8 @@ class SurfaceBase : public ISurface<PixelT> {
     }
   }
 
-  /// Draw text at (x, y) with foreground/background color and formatting options.
+  /// Draw text at (x, y) with foreground/background color and formatting
+  /// options.
   void drawText(int16_t x, int16_t y, const char* text, PixelT foreground,
                 PixelT background = PixelT(), bool opaque = false,
                 uint8_t scale = 1, uint8_t spacing = 1,
@@ -255,6 +271,5 @@ class SurfaceBase : public ISurface<PixelT> {
   IFont<PixelT>* font_ = nullptr;
   LinePrinter<PixelT> linePrinter_;
 };
-
 
 }  // namespace tinygpu

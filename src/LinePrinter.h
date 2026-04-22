@@ -23,6 +23,9 @@ class LinePrinter {
     currentY_ = topBorder_;
   }
 
+  void setColor(RGB_T color) { foregroundColor_ = color; }
+  void setBackgroundColor(RGB_T color) { backgroundColor_ = color; }
+
   /// Sets the Font implementation.
   void setFont(IFont<RGB_T>& font) { font_ = &font; }
   /// Sets the TinyGPU target.

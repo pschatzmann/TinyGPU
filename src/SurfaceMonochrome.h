@@ -61,8 +61,10 @@ class SurfaceMonochrome : public SurfaceBase<bool> {
   /// @brief Resizes the internal bit-packed buffer to the specified width and height.
   /// @param w New width
   /// @param h New height
-  void resizeBuffer(size_t w, size_t h) override {
-    buffer.resize((w * h + 7) / 8);
+  bool resizeBuffer(size_t w, size_t h) override {
+    size_t bytes = (w * h + 7) / 8;
+    buffer.resize(bytes);
+    return buffer.size() == bytes || (bytes == 0 && buffer.empty());
   }
 
   /// @brief Returns a pointer to the raw bit-packed data as bytes.

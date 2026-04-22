@@ -31,6 +31,9 @@ const uint8_t kBmpData[] = {
 void sendFrameToDisplay(const Surface<RGB565>& gpu) { (void)gpu; }
 
 void setup() {
+  Serial.begin(115200); 
+  
+  framebuffer.begin();
   framebuffer.clear(RGB565(0, 0, 0));
   framebuffer.drawRect(0, 0, framebuffer.width(), framebuffer.height(),
                        RGB565(0, 80, 160));

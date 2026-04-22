@@ -75,7 +75,10 @@ class Surface : public SurfaceBase<RGB_T> {
   /// height.
   /// @param w New width
   /// @param h New height
-  void resizeBuffer(size_t w, size_t h) override { buffer.resize(w * h); }
+  bool resizeBuffer(size_t w, size_t h) override {
+    buffer.resize(w * h);
+    return buffer.size() == (w * h) || (w * h == 0 && buffer.empty());
+  }
 
   /// @brief Returns a pointer to the raw data as bytes.
   /// @return Pointer to the buffer as uint8_t

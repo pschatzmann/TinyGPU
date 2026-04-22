@@ -36,6 +36,9 @@ void buildSprite() {
 }
 
 void setup() {
+  Serial.begin(115200);
+
+  framebuffer.begin();
   framebuffer.clear(RGB565(0, 0, 0));
   framebuffer.drawRect(0, 0, framebuffer.width(), framebuffer.height(),
                        RGB565(0, 80, 160));

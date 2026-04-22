@@ -136,6 +136,23 @@ using IFontRGB888 = IFont<RGB888>;
  */
 using IFontBGR565 = IFont<BGR565>;
 
+/**
+ *  @typedef WireFrame3D_RGB565
+ *  @brief WireFrame3D with RGB565 pixel format.
+ */
+using WireFrame3D_RGB565 = WireFrame3D<RGB565>;
+/**
+ *  @typedef WireFrame3D_RGB666
+ *  @brief WireFrame3D with RGB666 pixel format.
+ */
+using WireFrame3D_RGB666 = WireFrame3D<RGB666>;
+/** 
+ *  @typedef WireFrame3D_RGB888
+ *  @brief WireFrame3D with RGB888 pixel format.
+ */
+using WireFrame3D_RGB888 = WireFrame3D<RGB888>;
+
+
 }  // namespace tinygpu
 
 #ifdef ARDUINO

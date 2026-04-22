@@ -29,7 +29,7 @@ class ISurface {
   virtual ~ISurface() = default;
 
   /// Resizes the framebuffer surface.
-  virtual void resize(size_t newWidth, size_t newHeight) = 0;
+  virtual bool resize(size_t newWidth, size_t newHeight) = 0;
   /// Sets a pixel at the given position.
   virtual void setPixel(size_t x, size_t y, RGB_T color) = 0;
   /// Returns the pixel at the given position.
