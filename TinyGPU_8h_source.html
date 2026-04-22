@@ -76,7 +76,7 @@ $(function() {
   <div class="headertitle"><div class="title">TinyGPU.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
+<a href="TinyGPU_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="AVIWriter_8h.html">&quot;AVIWriter.h&quot;</a></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="BMPExporter_8h.html">&quot;BMPExporter.h&quot;</a></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="BMPParser_8h.html">&quot;BMPParser.h&quot;</a></div>
@@ -87,132 +87,132 @@ $(function() {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="SurfaceMonochrome_8h.html">&quot;SurfaceMonochrome.h&quot;</a></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="WireFrame3D_8h.html">&quot;WireFrame3D.h&quot;</a></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace</span> tinygpu {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="namespacetinygpu.html">tinygpu</a> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   16</span><span class="comment"> *  @typedef SurfaceRGB565</span></div>
 <div class="line"><span class="lineno">   17</span><span class="comment"> *  @brief Surface with RGB565 pixel format.</span></div>
 <div class="line"><span class="lineno">   18</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using</span> SurfaceRGB565 = <a class="code hl_class" href="classtinygpu_1_1Surface.html">Surface</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB565.html">RGB565</a>&gt;;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a8ea39cc37eb3046afe513efdc085374c">   19</a></span><span class="keyword">using</span> SurfaceRGB565 = <a class="code hl_class" href="classtinygpu_1_1Surface.html">Surface</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB565.html">RGB565</a>&gt;;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   21</span><span class="comment"> *  @typedef SurfaceRGB666</span></div>
 <div class="line"><span class="lineno">   22</span><span class="comment"> *  @brief Surface with RGB666 pixel format.</span></div>
 <div class="line"><span class="lineno">   23</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">using</span> SurfaceRGB666 = <a class="code hl_class" href="classtinygpu_1_1Surface.html">Surface</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB666.html">RGB666</a>&gt;;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a28a1495c10eeb420d0fc8e4475d1dc3f">   24</a></span><span class="keyword">using</span> SurfaceRGB666 = <a class="code hl_class" href="classtinygpu_1_1Surface.html">Surface</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB666.html">RGB666</a>&gt;;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   26</span><span class="comment"> *  @typedef SurfaceRGB888</span></div>
 <div class="line"><span class="lineno">   27</span><span class="comment"> *  @brief Surface with RGB888 pixel format.</span></div>
 <div class="line"><span class="lineno">   28</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">using</span> SurfaceRGB888 = <a class="code hl_class" href="classtinygpu_1_1Surface.html">Surface</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB888.html">RGB888</a>&gt;;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a1a96835a106885da878c2c59b2c8719b">   29</a></span><span class="keyword">using</span> SurfaceRGB888 = <a class="code hl_class" href="classtinygpu_1_1Surface.html">Surface</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB888.html">RGB888</a>&gt;;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   31</span><span class="comment"> *  @typedef SurfaceBGR565</span></div>
 <div class="line"><span class="lineno">   32</span><span class="comment"> *  @brief Surface with BGR565 pixel format.</span></div>
 <div class="line"><span class="lineno">   33</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">using</span> SurfaceBGR565 = <a class="code hl_class" href="classtinygpu_1_1Surface.html">Surface</a>&lt;<a class="code hl_class" href="classtinygpu_1_1BGR565.html">BGR565</a>&gt;;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#ad21fd3528e597f17221f5d6ccde41c15">   34</a></span><span class="keyword">using</span> SurfaceBGR565 = <a class="code hl_class" href="classtinygpu_1_1Surface.html">Surface</a>&lt;<a class="code hl_class" href="classtinygpu_1_1BGR565.html">BGR565</a>&gt;;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   37</span><span class="comment"> *  @typedef FrameBufferRGB565</span></div>
 <div class="line"><span class="lineno">   38</span><span class="comment"> *  @brief FrameBuffer with RGB565 pixel format.</span></div>
 <div class="line"><span class="lineno">   39</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">using</span> FrameBufferRGB565 = FrameBuffer&lt;RGB565&gt;;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a1b5117e185b221239fa8cdd8cb258c6d">   40</a></span><span class="keyword">using</span> <a class="code hl_namespace" href="namespacetinygpu.html">FrameBufferRGB565</a> = <a class="code hl_namespace" href="namespacetinygpu.html">FrameBuffer</a>&lt;<a class="code hl_namespace" href="namespacetinygpu.html">RGB565</a>&gt;;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   42</span><span class="comment"> *  @typedef FrameBufferRGB565</span></div>
 <div class="line"><span class="lineno">   43</span><span class="comment"> *  @brief FrameBuffer with RGB565 pixel format.</span></div>
 <div class="line"><span class="lineno">   44</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">using</span> FrameBufferRGB565 = FrameBuffer&lt;RGB565&gt;;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">using</span> <a class="code hl_namespace" href="namespacetinygpu.html">FrameBufferRGB565</a> = <a class="code hl_namespace" href="namespacetinygpu.html">FrameBuffer</a>&lt;<a class="code hl_namespace" href="namespacetinygpu.html">RGB565</a>&gt;;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   47</span><span class="comment"> *  @typedef FrameBufferRGB666</span></div>
 <div class="line"><span class="lineno">   48</span><span class="comment"> *  @brief FrameBuffer with RGB666 pixel format.</span></div>
 <div class="line"><span class="lineno">   49</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">using</span> FrameBufferRGB666 = FrameBuffer&lt;RGB666&gt;;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#ad0b85571fb5193c6fad3b768c3b7be7f">   50</a></span><span class="keyword">using</span> <a class="code hl_namespace" href="namespacetinygpu.html">FrameBufferRGB666</a> = <a class="code hl_namespace" href="namespacetinygpu.html">FrameBuffer</a>&lt;<a class="code hl_namespace" href="namespacetinygpu.html">RGB666</a>&gt;;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   52</span><span class="comment"> *  @typedef FrameBufferRGB888</span></div>
 <div class="line"><span class="lineno">   53</span><span class="comment"> *  @brief FrameBuffer with RGB888 pixel format.</span></div>
 <div class="line"><span class="lineno">   54</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">using</span> FrameBufferRGB888 = FrameBuffer&lt;RGB888&gt;;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#aa9c63b58163207d3995179ae9026a01e">   55</a></span><span class="keyword">using</span> <a class="code hl_namespace" href="namespacetinygpu.html">FrameBufferRGB888</a> = <a class="code hl_namespace" href="namespacetinygpu.html">FrameBuffer</a>&lt;<a class="code hl_namespace" href="namespacetinygpu.html">RGB888</a>&gt;;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   57</span><span class="comment"> *  @typedef FrameBufferBGR565</span></div>
 <div class="line"><span class="lineno">   58</span><span class="comment"> *  @brief FrameBuffer with BGR565 pixel format.</span></div>
 <div class="line"><span class="lineno">   59</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">using</span> FrameBufferBGR565 = FrameBuffer&lt;BGR565&gt;;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#ab995f293f2db79dcf025f1e2e49249b5">   60</a></span><span class="keyword">using</span> <a class="code hl_namespace" href="namespacetinygpu.html">FrameBufferBGR565</a> = <a class="code hl_namespace" href="namespacetinygpu.html">FrameBuffer</a>&lt;<a class="code hl_namespace" href="namespacetinygpu.html">BGR565</a>&gt;;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   62</span><span class="comment"> *  @typedef SpriteRGB565</span></div>
 <div class="line"><span class="lineno">   63</span><span class="comment"> *  @brief Sprite with RGB565 pixel format.</span></div>
 <div class="line"><span class="lineno">   64</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">using</span> SpriteRGB565 = Sprite&lt;RGB565&gt;;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#af784c9ee239f661a45e26962e9f378bf">   65</a></span><span class="keyword">using</span> <a class="code hl_namespace" href="namespacetinygpu.html">SpriteRGB565</a> = <a class="code hl_namespace" href="namespacetinygpu.html">Sprite</a>&lt;<a class="code hl_namespace" href="namespacetinygpu.html">RGB565</a>&gt;;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   67</span><span class="comment"> *  @typedef SpriteRGB666</span></div>
 <div class="line"><span class="lineno">   68</span><span class="comment"> *  @brief Sprite with RGB666 pixel format.</span></div>
 <div class="line"><span class="lineno">   69</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">using</span> SpriteRGB666 = Sprite&lt;RGB666&gt;;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a09f7fe02e0be0cb008b07e6bded36c23">   70</a></span><span class="keyword">using</span> <a class="code hl_namespace" href="namespacetinygpu.html">SpriteRGB666</a> = <a class="code hl_namespace" href="namespacetinygpu.html">Sprite</a>&lt;<a class="code hl_namespace" href="namespacetinygpu.html">RGB666</a>&gt;;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   72</span><span class="comment"> *  @typedef SpriteRGB888</span></div>
 <div class="line"><span class="lineno">   73</span><span class="comment"> *  @brief Sprite with RGB888 pixel format.</span></div>
 <div class="line"><span class="lineno">   74</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">using</span> SpriteRGB888 = Sprite&lt;RGB888&gt;;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a0955c9dc755069342e3771a97a0db703">   75</a></span><span class="keyword">using</span> <a class="code hl_namespace" href="namespacetinygpu.html">SpriteRGB888</a> = <a class="code hl_namespace" href="namespacetinygpu.html">Sprite</a>&lt;<a class="code hl_namespace" href="namespacetinygpu.html">RGB888</a>&gt;;</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   77</span><span class="comment"> *  @typedef SpriteBGR565</span></div>
 <div class="line"><span class="lineno">   78</span><span class="comment"> *  @brief Sprite with BGR565 pixel format.</span></div>
 <div class="line"><span class="lineno">   79</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">using</span> SpriteBGR565 = Sprite&lt;BGR565&gt;;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a8c8dc5327fc32c5baa442b0889168729">   80</a></span><span class="keyword">using</span> <a class="code hl_namespace" href="namespacetinygpu.html">SpriteBGR565</a> = <a class="code hl_namespace" href="namespacetinygpu.html">Sprite</a>&lt;<a class="code hl_namespace" href="namespacetinygpu.html">BGR565</a>&gt;;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   82</span><span class="comment"> *  @typedef LinePrinterRGB565</span></div>
 <div class="line"><span class="lineno">   83</span><span class="comment"> *  @brief LinePrinter with RGB565 pixel format.</span></div>
 <div class="line"><span class="lineno">   84</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">using</span> LinePrinterRGB565 = <a class="code hl_class" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB565.html">RGB565</a>&gt;;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#ac59c162090ce4205d40f44c99951513a">   85</a></span><span class="keyword">using</span> LinePrinterRGB565 = <a class="code hl_class" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB565.html">RGB565</a>&gt;;</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   87</span><span class="comment"> *  @typedef LinePrinterRGB666</span></div>
 <div class="line"><span class="lineno">   88</span><span class="comment"> *  @brief LinePrinter with RGB666 pixel format.</span></div>
 <div class="line"><span class="lineno">   89</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">using</span> LinePrinterRGB666 = <a class="code hl_class" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB666.html">RGB666</a>&gt;;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a2e03ba46f60fbab042c0f811f7baa97f">   90</a></span><span class="keyword">using</span> LinePrinterRGB666 = <a class="code hl_class" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB666.html">RGB666</a>&gt;;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">/** @typedef LinePrinterRGB888</span></div>
 <div class="line"><span class="lineno">   92</span><span class="comment"> *  @brief LinePrinter with RGB888 pixel format.</span></div>
 <div class="line"><span class="lineno">   93</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keyword">using</span> LinePrinterRGB888 = <a class="code hl_class" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB888.html">RGB888</a>&gt;;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a14a336ed4f16f548a81d9c1f8ba584e7">   94</a></span><span class="keyword">using</span> LinePrinterRGB888 = <a class="code hl_class" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB888.html">RGB888</a>&gt;;</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">   96</span><span class="comment"> *  @typedef LinePrinterBGR565</span></div>
 <div class="line"><span class="lineno">   97</span><span class="comment"> *  @brief LinePrinter with BGR565 pixel format.</span></div>
 <div class="line"><span class="lineno">   98</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">using</span> LinePrinterBGR565 = <a class="code hl_class" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a>&lt;<a class="code hl_class" href="classtinygpu_1_1BGR565.html">BGR565</a>&gt;;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a5672e190121704b650a721000952dd32">   99</a></span><span class="keyword">using</span> LinePrinterBGR565 = <a class="code hl_class" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a>&lt;<a class="code hl_class" href="classtinygpu_1_1BGR565.html">BGR565</a>&gt;;</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">  101</span><span class="comment"> *  @typedef BitmapFontRGB565</span></div>
 <div class="line"><span class="lineno">  102</span><span class="comment"> *  @brief BitmapFont with RGB565 pixel format.</span></div>
 <div class="line"><span class="lineno">  103</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">using</span> BitmapFontRGB565 = <a class="code hl_class" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB565.html">RGB565</a>&gt;;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a448c38c6511579fe4ba4be1ef97b0cde">  104</a></span><span class="keyword">using</span> BitmapFontRGB565 = <a class="code hl_class" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB565.html">RGB565</a>&gt;;</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">  106</span><span class="comment"> *  @typedef BitmapFontRGB666</span></div>
 <div class="line"><span class="lineno">  107</span><span class="comment"> *  @brief BitmapFont with RGB666 pixel format.</span></div>
 <div class="line"><span class="lineno">  108</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keyword">using</span> BitmapFontRGB666 = <a class="code hl_class" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB666.html">RGB666</a>&gt;;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#af1c62809c166f76514a568553eb2b13a">  109</a></span><span class="keyword">using</span> BitmapFontRGB666 = <a class="code hl_class" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB666.html">RGB666</a>&gt;;</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">  111</span><span class="comment"> *  @typedef BitmapFontRGB888</span></div>
 <div class="line"><span class="lineno">  112</span><span class="comment"> *  @brief BitmapFont with RGB888 pixel format.</span></div>
 <div class="line"><span class="lineno">  113</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keyword">using</span> BitmapFontRGB888 = <a class="code hl_class" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB888.html">RGB888</a>&gt;;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#aea79613e855e3fbf1ad6d156b2fbb261">  114</a></span><span class="keyword">using</span> BitmapFontRGB888 = <a class="code hl_class" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB888.html">RGB888</a>&gt;;</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">/** @typedef BitmapFontBGR565</span></div>
 <div class="line"><span class="lineno">  116</span><span class="comment"> *  @brief BitmapFont with BGR565 pixel format.</span></div>
 <div class="line"><span class="lineno">  117</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keyword">using</span> BitmapFontBGR565 = <a class="code hl_class" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1BGR565.html">BGR565</a>&gt;;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#af1027896f12b032c3815b8cea2a2f4e4">  118</a></span><span class="keyword">using</span> BitmapFontBGR565 = <a class="code hl_class" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1BGR565.html">BGR565</a>&gt;;</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">  120</span><span class="comment"> *  @typedef IFontRGB565</span></div>
 <div class="line"><span class="lineno">  121</span><span class="comment"> *  @brief IFont with RGB565 pixel format.</span></div>
 <div class="line"><span class="lineno">  122</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keyword">using</span> IFontRGB565 = <a class="code hl_class" href="classtinygpu_1_1IFont.html">IFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB565.html">RGB565</a>&gt;;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#ae955cbb52b3194484a7c438602a2104d">  123</a></span><span class="keyword">using</span> IFontRGB565 = <a class="code hl_class" href="classtinygpu_1_1IFont.html">IFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB565.html">RGB565</a>&gt;;</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">  125</span><span class="comment"> *  @typedef IFontRGB666</span></div>
 <div class="line"><span class="lineno">  126</span><span class="comment"> *  @brief IFont with RGB666 pixel format.</span></div>
 <div class="line"><span class="lineno">  127</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keyword">using</span> IFontRGB666 = <a class="code hl_class" href="classtinygpu_1_1IFont.html">IFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB666.html">RGB666</a>&gt;;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a94fc54025b2137574adc5c7d5eb8cdb0">  128</a></span><span class="keyword">using</span> IFontRGB666 = <a class="code hl_class" href="classtinygpu_1_1IFont.html">IFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB666.html">RGB666</a>&gt;;</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">/** </span></div>
 <div class="line"><span class="lineno">  130</span><span class="comment"> *  @typedef IFontRGB888</span></div>
 <div class="line"><span class="lineno">  131</span><span class="comment"> *  @brief IFont with RGB888 pixel format.</span></div>
 <div class="line"><span class="lineno">  132</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keyword">using</span> IFontRGB888 = <a class="code hl_class" href="classtinygpu_1_1IFont.html">IFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB888.html">RGB888</a>&gt;;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a0e9a6af74007cb9c991badb76f7aa829">  133</a></span><span class="keyword">using</span> IFontRGB888 = <a class="code hl_class" href="classtinygpu_1_1IFont.html">IFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1RGB888.html">RGB888</a>&gt;;</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">/** @typedef IFontBGR565</span></div>
 <div class="line"><span class="lineno">  135</span><span class="comment"> *  @brief IFont with BGR565 pixel format.</span></div>
 <div class="line"><span class="lineno">  136</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="keyword">using</span> IFontBGR565 = <a class="code hl_class" href="classtinygpu_1_1IFont.html">IFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1BGR565.html">BGR565</a>&gt;;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a0339fc7e4bcea3027acc0bc9b9b2359a">  137</a></span><span class="keyword">using</span> IFontBGR565 = <a class="code hl_class" href="classtinygpu_1_1IFont.html">IFont</a>&lt;<a class="code hl_class" href="classtinygpu_1_1BGR565.html">BGR565</a>&gt;;</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>}  <span class="comment">// namespace tinygpu</span></div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
@@ -227,6 +227,7 @@ $(function() {
 <div class="ttc" id="aclasstinygpu_1_1RGB666_html"><div class="ttname"><a href="classtinygpu_1_1RGB666.html">tinygpu::RGB666</a></div><div class="ttdoc">RGB color stored in 18-bit RGB666 format.</div><div class="ttdef"><b>Definition:</b> RGB666.h:13</div></div>
 <div class="ttc" id="aclasstinygpu_1_1RGB888_html"><div class="ttname"><a href="classtinygpu_1_1RGB888.html">tinygpu::RGB888</a></div><div class="ttdoc">RGB color stored in 24-bit RGB888 format.</div><div class="ttdef"><b>Definition:</b> RGB888.h:13</div></div>
 <div class="ttc" id="aclasstinygpu_1_1Surface_html"><div class="ttname"><a href="classtinygpu_1_1Surface.html">tinygpu::Surface</a></div><div class="ttdoc">In-memory bitmap surface with basic 2D drawing and text rendering.</div><div class="ttdef"><b>Definition:</b> Surface.h:39</div></div>
+<div class="ttc" id="anamespacetinygpu_html"><div class="ttname"><a href="namespacetinygpu.html">tinygpu</a></div><div class="ttdef"><b>Definition:</b> AVIWriter.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

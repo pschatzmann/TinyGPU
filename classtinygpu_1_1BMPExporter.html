@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>tinygpu</b></li><li class="navelem"><a class="el" href="classtinygpu_1_1BMPExporter.html">BMPExporter</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacetinygpu.html">tinygpu</a></li><li class="navelem"><a class="el" href="classtinygpu_1_1BMPExporter.html">BMPExporter</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -98,46 +98,346 @@ Collaboration diagram for BMPExporter&lt; RGB_T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a833ff1f13ef0f1637f1be5ffd9acf217"><td class="memItemLeft" align="right" valign="top"><a id="a833ff1f13ef0f1637f1be5ffd9acf217" name="a833ff1f13ef0f1637f1be5ffd9acf217"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>BMPExporter</b> (const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface)</td></tr>
+<tr class="memitem:a833ff1f13ef0f1637f1be5ffd9acf217"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1BMPExporter.html#a833ff1f13ef0f1637f1be5ffd9acf217">BMPExporter</a> (const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface)</td></tr>
 <tr class="separator:a833ff1f13ef0f1637f1be5ffd9acf217"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45f907282d47037a1043fd2e6dbfe3e8"><td class="memItemLeft" align="right" valign="top"><a id="a45f907282d47037a1043fd2e6dbfe3e8" name="a45f907282d47037a1043fd2e6dbfe3e8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>save</b> (Print &amp;out) const</td></tr>
-<tr class="memdesc:a45f907282d47037a1043fd2e6dbfe3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the target surface as BMP data to the provided Print output. <br /></td></tr>
+<tr class="memitem:a45f907282d47037a1043fd2e6dbfe3e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1BMPExporter.html#a45f907282d47037a1043fd2e6dbfe3e8">save</a> (Print &amp;out) const</td></tr>
+<tr class="memdesc:a45f907282d47037a1043fd2e6dbfe3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the target surface as BMP data to the provided Print output.  <br /></td></tr>
 <tr class="separator:a45f907282d47037a1043fd2e6dbfe3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:af9413465d367c92bac988c158d01748c"><td class="memItemLeft" align="right" valign="top"><a id="af9413465d367c92bac988c158d01748c" name="af9413465d367c92bac988c158d01748c"></a>
-static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>bmpRowStride</b> (size_t width)</td></tr>
+<tr class="memitem:af9413465d367c92bac988c158d01748c"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1BMPExporter.html#af9413465d367c92bac988c158d01748c">bmpRowStride</a> (size_t width)</td></tr>
 <tr class="separator:af9413465d367c92bac988c158d01748c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c5673f4ad9c48fdd9bdb431a5d448d0"><td class="memItemLeft" align="right" valign="top"><a id="a5c5673f4ad9c48fdd9bdb431a5d448d0" name="a5c5673f4ad9c48fdd9bdb431a5d448d0"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>writeFileHeader</b> (Print &amp;out, uint32_t fileSize, uint32_t pixelOffset)</td></tr>
+<tr class="memitem:a5c5673f4ad9c48fdd9bdb431a5d448d0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1BMPExporter.html#a5c5673f4ad9c48fdd9bdb431a5d448d0">writeFileHeader</a> (Print &amp;out, uint32_t fileSize, uint32_t pixelOffset)</td></tr>
 <tr class="separator:a5c5673f4ad9c48fdd9bdb431a5d448d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92f5d1841a70330d483639a823d0532e"><td class="memItemLeft" align="right" valign="top"><a id="a92f5d1841a70330d483639a823d0532e" name="a92f5d1841a70330d483639a823d0532e"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>writeInfoHeader</b> (Print &amp;out, size_t width, size_t height, uint32_t imageSize)</td></tr>
+<tr class="memitem:a92f5d1841a70330d483639a823d0532e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1BMPExporter.html#a92f5d1841a70330d483639a823d0532e">writeInfoHeader</a> (Print &amp;out, size_t width, size_t height, uint32_t imageSize)</td></tr>
 <tr class="separator:a92f5d1841a70330d483639a823d0532e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14e60fdd0a43356cf0591b3f52120475"><td class="memItemLeft" align="right" valign="top"><a id="a14e60fdd0a43356cf0591b3f52120475" name="a14e60fdd0a43356cf0591b3f52120475"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>writeU16</b> (Print &amp;out, uint16_t value)</td></tr>
+<tr class="memitem:a14e60fdd0a43356cf0591b3f52120475"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1BMPExporter.html#a14e60fdd0a43356cf0591b3f52120475">writeU16</a> (Print &amp;out, uint16_t value)</td></tr>
 <tr class="separator:a14e60fdd0a43356cf0591b3f52120475"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add80b898b76babad44121913dac26292"><td class="memItemLeft" align="right" valign="top"><a id="add80b898b76babad44121913dac26292" name="add80b898b76babad44121913dac26292"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>writeU32</b> (Print &amp;out, uint32_t value)</td></tr>
+<tr class="memitem:add80b898b76babad44121913dac26292"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1BMPExporter.html#add80b898b76babad44121913dac26292">writeU32</a> (Print &amp;out, uint32_t value)</td></tr>
 <tr class="separator:add80b898b76babad44121913dac26292"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30fc041db33e5643824f84f809be2dd2"><td class="memItemLeft" align="right" valign="top"><a id="a30fc041db33e5643824f84f809be2dd2" name="a30fc041db33e5643824f84f809be2dd2"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>writeBytes</b> (Print &amp;out, const uint8_t *data, size_t length)</td></tr>
+<tr class="memitem:a30fc041db33e5643824f84f809be2dd2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1BMPExporter.html#a30fc041db33e5643824f84f809be2dd2">writeBytes</a> (Print &amp;out, const uint8_t *data, size_t length)</td></tr>
 <tr class="separator:a30fc041db33e5643824f84f809be2dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a46c240d263aaea5c850d38b8a085c160"><td class="memItemLeft" align="right" valign="top"><a id="a46c240d263aaea5c850d38b8a085c160" name="a46c240d263aaea5c850d38b8a085c160"></a>
-const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>surface_</b></td></tr>
+<tr class="memitem:a46c240d263aaea5c850d38b8a085c160"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1BMPExporter.html#a46c240d263aaea5c850d38b8a085c160">surface_</a></td></tr>
 <tr class="separator:a46c240d263aaea5c850d38b8a085c160"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename RGB_T = RGB565&gt;<br />
 class tinygpu::BMPExporter&lt; RGB_T &gt;</div><p>Writes TinyGPU surfaces as uncompressed 24-bit BMP data. </p>
 <p>The exporter serializes any ISurface-compatible surface to a standard BMP stream using bottom-up BGR pixel rows padded to 4-byte boundaries. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a833ff1f13ef0f1637f1be5ffd9acf217" name="a833ff1f13ef0f1637f1be5ffd9acf217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a833ff1f13ef0f1637f1be5ffd9acf217">&#9670;&#160;</a></span>BMPExporter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtinygpu_1_1BMPExporter.html">BMPExporter</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>surface</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="af9413465d367c92bac988c158d01748c" name="af9413465d367c92bac988c158d01748c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9413465d367c92bac988c158d01748c">&#9670;&#160;</a></span>bmpRowStride()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t bmpRowStride </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>width</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a45f907282d47037a1043fd2e6dbfe3e8" name="a45f907282d47037a1043fd2e6dbfe3e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f907282d47037a1043fd2e6dbfe3e8">&#9670;&#160;</a></span>save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool save </td>
+          <td>(</td>
+          <td class="paramtype">Print &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes the target surface as BMP data to the provided Print output. </p>
+
+</div>
+</div>
+<a id="a30fc041db33e5643824f84f809be2dd2" name="a30fc041db33e5643824f84f809be2dd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30fc041db33e5643824f84f809be2dd2">&#9670;&#160;</a></span>writeBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool writeBytes </td>
+          <td>(</td>
+          <td class="paramtype">Print &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5c5673f4ad9c48fdd9bdb431a5d448d0" name="a5c5673f4ad9c48fdd9bdb431a5d448d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c5673f4ad9c48fdd9bdb431a5d448d0">&#9670;&#160;</a></span>writeFileHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool writeFileHeader </td>
+          <td>(</td>
+          <td class="paramtype">Print &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>fileSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>pixelOffset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a92f5d1841a70330d483639a823d0532e" name="a92f5d1841a70330d483639a823d0532e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92f5d1841a70330d483639a823d0532e">&#9670;&#160;</a></span>writeInfoHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool writeInfoHeader </td>
+          <td>(</td>
+          <td class="paramtype">Print &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>imageSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a14e60fdd0a43356cf0591b3f52120475" name="a14e60fdd0a43356cf0591b3f52120475"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14e60fdd0a43356cf0591b3f52120475">&#9670;&#160;</a></span>writeU16()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool writeU16 </td>
+          <td>(</td>
+          <td class="paramtype">Print &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="add80b898b76babad44121913dac26292" name="add80b898b76babad44121913dac26292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add80b898b76babad44121913dac26292">&#9670;&#160;</a></span>writeU32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool writeU32 </td>
+          <td>(</td>
+          <td class="paramtype">Print &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a46c240d263aaea5c850d38b8a085c160" name="a46c240d263aaea5c850d38b8a085c160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46c240d263aaea5c850d38b8a085c160">&#9670;&#160;</a></span>surface_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt;RGB_T&gt;&amp; surface_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="BMPExporter_8h_source.html">BMPExporter.h</a></li>
 </ul>
 </div><!-- contents -->

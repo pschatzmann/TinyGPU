@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>tinygpu</b></li><li class="navelem"><a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacetinygpu.html">tinygpu</a></li><li class="navelem"><a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -100,9 +100,8 @@ Inheritance diagram for ISurface&lt; RGB_T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a09eda0603dcc9eb48e0fd1451fa00530"><td class="memItemLeft" align="right" valign="top"><a id="a09eda0603dcc9eb48e0fd1451fa00530" name="a09eda0603dcc9eb48e0fd1451fa00530"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ISurface</b> ()=default</td></tr>
-<tr class="memdesc:a09eda0603dcc9eb48e0fd1451fa00530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the framebuffer interface. <br /></td></tr>
+<tr class="memitem:a09eda0603dcc9eb48e0fd1451fa00530"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a09eda0603dcc9eb48e0fd1451fa00530">~ISurface</a> ()=default</td></tr>
+<tr class="memdesc:a09eda0603dcc9eb48e0fd1451fa00530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the framebuffer interface.  <br /></td></tr>
 <tr class="separator:a09eda0603dcc9eb48e0fd1451fa00530"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4d6d94bc4eebc18c3027a2de7332920"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#ab4d6d94bc4eebc18c3027a2de7332920">resize</a> (size_t newWidth, size_t newHeight)=0</td></tr>
 <tr class="memdesc:ab4d6d94bc4eebc18c3027a2de7332920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the framebuffer surface.  <br /></td></tr>
@@ -167,7 +166,35 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ISurface</b> ()=d
 class tinygpu::ISurface&lt; RGB_T &gt;</div><p>Abstract framebuffer and drawing interface for TinyGPU surfaces. </p>
 <p>Implementations expose pixel access, primitive drawing, sprite operations, and text rendering through a common API.</p>
 <dl class="section note"><dt>Note</dt><dd>The coordinate x=0 and y=0 corresponds to the top-left corner of the surface. The x coordinate increases to the right and the y coordinate increases downwards. </dd></dl>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a09eda0603dcc9eb48e0fd1451fa00530" name="a09eda0603dcc9eb48e0fd1451fa00530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09eda0603dcc9eb48e0fd1451fa00530">&#9670;&#160;</a></span>~ISurface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ~<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys the framebuffer interface. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="aae5fe924c434315fe9370c45ff6226f4" name="aae5fe924c434315fe9370c45ff6226f4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae5fe924c434315fe9370c45ff6226f4">&#9670;&#160;</a></span>clear()</h2>
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['glyph_0',['Glyph',['../classtinygpu_1_1BitmapFont.html#acd5f71af2de47f97c0febb11fbe71bfb',1,'tinygpu::BitmapFont']]]
+  ['codepoint_0',['CodePoint',['../classtinygpu_1_1BitmapFont.html#a81b9b94fabfc6f8be9c365e66d09429d',1,'tinygpu::BitmapFont']]]
 ];

@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>tinygpu</b></li><li class="navelem"><a class="el" href="classtinygpu_1_1IFont.html">IFont</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacetinygpu.html">tinygpu</a></li><li class="navelem"><a class="el" href="classtinygpu_1_1IFont.html">IFont</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -96,9 +96,8 @@ Inheritance diagram for IFont&lt; RGB_T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a93d88c31a0bcf3dff2df63920e4910f1"><td class="memItemLeft" align="right" valign="top"><a id="a93d88c31a0bcf3dff2df63920e4910f1" name="a93d88c31a0bcf3dff2df63920e4910f1"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~IFont</b> ()=default</td></tr>
-<tr class="memdesc:a93d88c31a0bcf3dff2df63920e4910f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the font interface. <br /></td></tr>
+<tr class="memitem:a93d88c31a0bcf3dff2df63920e4910f1"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1IFont.html#a93d88c31a0bcf3dff2df63920e4910f1">~IFont</a> ()=default</td></tr>
+<tr class="memdesc:a93d88c31a0bcf3dff2df63920e4910f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the font interface.  <br /></td></tr>
 <tr class="separator:a93d88c31a0bcf3dff2df63920e4910f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c70f037758b0bafc005f1660836d2fa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1IFont.html#a1c70f037758b0bafc005f1660836d2fa">drawText</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;target, int16_t x, int16_t y, const char *text, RGB_T foreground, RGB_T background, bool opaque=false, uint8_t scale=1, uint8_t spacing=1, uint8_t lineSpacing=1) const =0</td></tr>
 <tr class="memdesc:a1c70f037758b0bafc005f1660836d2fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a text string onto a framebuffer target.  <br /></td></tr>
@@ -123,7 +122,35 @@ class tinygpu::IFont&lt; RGB_T &gt;</div><p>Font rendering interface for TinyGPU
   </dd>
 </dl>
 <p>Implementations render text onto an <a class="el" href="classtinygpu_1_1ISurface.html" title="Abstract framebuffer and drawing interface for TinyGPU surfaces.">ISurface</a> target using their own glyph storage, layout, and scaling behavior. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a93d88c31a0bcf3dff2df63920e4910f1" name="a93d88c31a0bcf3dff2df63920e4910f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93d88c31a0bcf3dff2df63920e4910f1">&#9670;&#160;</a></span>~IFont()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ~<a class="el" href="classtinygpu_1_1IFont.html">IFont</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys the font interface. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1c70f037758b0bafc005f1660836d2fa" name="a1c70f037758b0bafc005f1660836d2fa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c70f037758b0bafc005f1660836d2fa">&#9670;&#160;</a></span>drawText()</h2>
 

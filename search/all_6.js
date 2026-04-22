@@ -8,5 +8,6 @@ var searchData=
   ['getvalue_5',['getValue',['../classtinygpu_1_1BGR565.html#a24e624c4c453021679a8fea5199ff5de',1,'tinygpu::BGR565::getValue()'],['../classtinygpu_1_1RGB565.html#a24e624c4c453021679a8fea5199ff5de',1,'tinygpu::RGB565::getValue()'],['../classtinygpu_1_1RGB666.html#a8b6c05cc70eb01f97314c74cfa894a7e',1,'tinygpu::RGB666::getValue()'],['../classtinygpu_1_1RGB888.html#a8b6c05cc70eb01f97314c74cfa894a7e',1,'tinygpu::RGB888::getValue()']]],
   ['glyph_6',['Glyph',['../classtinygpu_1_1BitmapFont.html#acd5f71af2de47f97c0febb11fbe71bfb',1,'tinygpu::BitmapFont']]],
   ['glyph_7',['glyph',['../classtinygpu_1_1BitmapFont.html#ab5a3ef2e076e1f9b3a0b1f60086f858a',1,'tinygpu::BitmapFont::glyph(char character) const'],['../classtinygpu_1_1BitmapFont.html#a141bf5afb3b4a6804983639c79d00602',1,'tinygpu::BitmapFont::glyph(CodePoint codePoint) const']]],
-  ['grid_8',['grid',['../classtinygpu_1_1WireFrame3D.html#a96aef1b714e6df94ab69012d45b0ed9a',1,'tinygpu::WireFrame3D']]]
+  ['greenmask_8',['greenMask',['../structtinygpu_1_1BMPParser_1_1HeaderInfo.html#a9ae679ca2b49d5aff64ac75daaa6bf31',1,'tinygpu::BMPParser::HeaderInfo']]],
+  ['grid_9',['grid',['../classtinygpu_1_1WireFrame3D.html#a96aef1b714e6df94ab69012d45b0ed9a',1,'tinygpu::WireFrame3D']]]
 ];

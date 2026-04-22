@@ -1,8 +1,16 @@
 var searchData=
 [
-  ['vec3_0',['Vec3',['../structtinygpu_1_1WireFrame3D_1_1Vec3.html',1,'tinygpu::WireFrame3D']]],
-  ['vec4_1',['Vec4',['../structtinygpu_1_1WireFrame3D_1_1Vec4.html',1,'tinygpu::WireFrame3D']]],
-  ['viewmatrix_2',['viewMatrix',['../classtinygpu_1_1WireFrame3D.html#a7afe2519d82c48abd865b4a32e5bef8c',1,'tinygpu::WireFrame3D']]],
-  ['viewportheight_3',['viewportHeight',['../classtinygpu_1_1WireFrame3D.html#aa12efabdbd8d93f5c544ca31110a5d26',1,'tinygpu::WireFrame3D']]],
-  ['viewportwidth_4',['viewportWidth',['../classtinygpu_1_1WireFrame3D.html#a080012ae5fbe9a5428ca4fe146236974',1,'tinygpu::WireFrame3D']]]
+  ['target_0',['target',['../structtinygpu_1_1WireFrame3D_1_1Camera.html#a2e4568e08701210545017dc672b84d03',1,'tinygpu::WireFrame3D::Camera']]],
+  ['target_5f_1',['target_',['../classtinygpu_1_1BMPParser.html#ac65fa784ca9f787c998c1f01a9c98510',1,'tinygpu::BMPParser']]],
+  ['tinygpu_2',['TinyGPU',['../md_README.html',1,'']]],
+  ['tinygpu_3',['tinygpu',['../namespacetinygpu.html',1,'']]],
+  ['tinygpu_2eh_4',['TinyGPU.h',['../TinyGPU_8h.html',1,'']]],
+  ['tinygpu_5fenable_5fesp32s3_5foptimizations_5',['TINYGPU_ENABLE_ESP32S3_OPTIMIZATIONS',['../TinyGPUConfig_8h.html#adb91362a764fa04ac82207bb9de94df1',1,'TinyGPUConfig.h']]],
+  ['tinygpuconfig_2eh_6',['TinyGPUConfig.h',['../TinyGPUConfig_8h.html',1,'']]],
+  ['topdown_5f_7',['topDown_',['../classtinygpu_1_1BMPParser.html#a1b85d888f989e2b489df21ca00bde552',1,'tinygpu::BMPParser']]],
+  ['transformaffine_8',['transformAffine',['../classtinygpu_1_1WireFrame3D.html#a26ed1028b0b633c5707c44c64fc67135',1,'tinygpu::WireFrame3D']]],
+  ['transformedsprite_9',['transformedSprite',['../structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#a234c549621bff6d06f9c0cb2ec697a2c',1,'tinygpu::FrameBuffer::SpriteInfo']]],
+  ['transformpoint_10',['transformPoint',['../classtinygpu_1_1WireFrame3D.html#ae997a0b1b2f4681a08776d948adbe30d',1,'tinygpu::WireFrame3D']]],
+  ['translation_11',['translation',['../classtinygpu_1_1WireFrame3D.html#a5946e7ca404a3dd295a94bb7d600c8e8',1,'tinygpu::WireFrame3D']]],
+  ['trydecode_12',['tryDecode',['../classtinygpu_1_1BMPParser.html#a795a389cad57f7b12df2a9d0f8821afd',1,'tinygpu::BMPParser']]]
 ];
