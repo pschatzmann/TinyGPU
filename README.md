@@ -47,7 +47,7 @@ It also includes incremental BMP decoding so image assets can be converted into 
 
 ## Documentaion
 
-- [Class Documentation](hthttps://pschatzmann.github.io/TinyGPU/namespacetinygpu.html)
+- [Class Documentation](https://pschatzmann.github.io/TinyGPU/namespacetinygpu.html)
 - [Examples](examples)
 
 
