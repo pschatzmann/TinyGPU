@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vec3_0',['Vec3',['../structtinygpu_1_1WireFrame3D_1_1Vec3.html',1,'tinygpu::WireFrame3D']]],
-  ['vec4_1',['Vec4',['../structtinygpu_1_1WireFrame3D_1_1Vec4.html',1,'tinygpu::WireFrame3D']]]
+  ['tinygpulogger_0',['TinyGPULogger',['../classTinyGPULogger.html',1,'']]],
+  ['tinygpuloggerclass_1',['TinyGPULoggerClass',['../classtinygpu_1_1TinyGPULoggerClass.html',1,'tinygpu']]]
 ];

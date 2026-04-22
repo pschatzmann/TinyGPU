@@ -103,6 +103,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a09eda0603dcc9eb48e0fd1451fa00530"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a09eda0603dcc9eb48e0fd1451fa00530">~ISurface</a> ()=default</td></tr>
 <tr class="memdesc:a09eda0603dcc9eb48e0fd1451fa00530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the framebuffer interface.  <br /></td></tr>
 <tr class="separator:a09eda0603dcc9eb48e0fd1451fa00530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8a0d9ca63f8bb3de100e347c3f3bca4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#ae8a0d9ca63f8bb3de100e347c3f3bca4">begin</a> ()=0</td></tr>
+<tr class="memdesc:ae8a0d9ca63f8bb3de100e347c3f3bca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the framebuffer surface.  <br /></td></tr>
+<tr class="separator:ae8a0d9ca63f8bb3de100e347c3f3bca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa540e86022c1f72380d1014d98f38f43"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#aa540e86022c1f72380d1014d98f38f43">end</a> ()=0</td></tr>
+<tr class="memdesc:aa540e86022c1f72380d1014d98f38f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the framebuffer and releases resources.  <br /></td></tr>
+<tr class="separator:aa540e86022c1f72380d1014d98f38f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c66bbeaf74b3778d72c42b2b1a72ef4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a6c66bbeaf74b3778d72c42b2b1a72ef4">resize</a> (size_t newWidth, size_t newHeight)=0</td></tr>
 <tr class="memdesc:a6c66bbeaf74b3778d72c42b2b1a72ef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the framebuffer surface.  <br /></td></tr>
 <tr class="separator:a6c66bbeaf74b3778d72c42b2b1a72ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,6 +201,35 @@ class tinygpu::ISurface&lt; RGB_T &gt;</div><p>Abstract framebuffer and drawing 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae8a0d9ca63f8bb3de100e347c3f3bca4" name="ae8a0d9ca63f8bb3de100e347c3f3bca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8a0d9ca63f8bb3de100e347c3f3bca4">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes the framebuffer surface. </p>
+
+<p>Implemented in <a class="el" href="classtinygpu_1_1SurfaceBase.html#a601fb7cf1fc15db50c71a826f084f934">SurfaceBase&lt; PixelT &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#a601fb7cf1fc15db50c71a826f084f934">SurfaceBase&lt; RGB565 &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#a601fb7cf1fc15db50c71a826f084f934">SurfaceBase&lt; bool &gt;</a>, and <a class="el" href="classtinygpu_1_1FrameBuffer.html#acba365cc28eb702040c382646cfb0a7a">FrameBuffer&lt; RGB_T, SurfaceT &gt;</a>.</p>
+
+</div>
+</div>
 <a id="aae5fe924c434315fe9370c45ff6226f4" name="aae5fe924c434315fe9370c45ff6226f4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae5fe924c434315fe9370c45ff6226f4">&#9670;&#160;</a></span>clear()</h2>
 
@@ -651,6 +686,35 @@ class tinygpu::ISurface&lt; RGB_T &gt;</div><p>Abstract framebuffer and drawing 
 <p>Draws UTF-8 text using the configured font. </p>
 
 <p>Implemented in <a class="el" href="classtinygpu_1_1SurfaceBase.html#a9b4e82b33a10dd3d61266d512f583481">SurfaceBase&lt; PixelT &gt;</a>, and <a class="el" href="classtinygpu_1_1FrameBuffer.html#a2f89640147682072ce295e5231bcf70b">FrameBuffer&lt; RGB_T, SurfaceT &gt;</a>.</p>
+
+</div>
+</div>
+<a id="aa540e86022c1f72380d1014d98f38f43" name="aa540e86022c1f72380d1014d98f38f43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa540e86022c1f72380d1014d98f38f43">&#9670;&#160;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Closes the framebuffer and releases resources. </p>
+
+<p>Implemented in <a class="el" href="classtinygpu_1_1SurfaceBase.html#aaf81d3fdaf258088d7692fa70cece087">SurfaceBase&lt; PixelT &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#aaf81d3fdaf258088d7692fa70cece087">SurfaceBase&lt; RGB565 &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#aaf81d3fdaf258088d7692fa70cece087">SurfaceBase&lt; bool &gt;</a>, and <a class="el" href="classtinygpu_1_1FrameBuffer.html#a64e9fa75beda50a9e8400ee0d4e61984">FrameBuffer&lt; RGB_T, SurfaceT &gt;</a>.</p>
 
 </div>
 </div>

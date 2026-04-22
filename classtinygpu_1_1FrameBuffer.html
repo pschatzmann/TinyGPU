@@ -127,9 +127,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa5a883ec83c3a7ab89a645676396c37a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#aa5a883ec83c3a7ab89a645676396c37a">FrameBuffer</a> (size_t <a class="el" href="classtinygpu_1_1FrameBuffer.html#ac39656d862f5a4a39182559bbf7c740b">width</a>, size_t <a class="el" href="classtinygpu_1_1FrameBuffer.html#a715f3df3dc638de8b40076ada0b54a89">height</a>, <a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt; RGB_T &gt; &amp;<a class="el" href="classtinygpu_1_1FrameBuffer.html#a14cd2480a844d413d546d1847df692c4">font</a>)</td></tr>
 <tr class="memdesc:aa5a883ec83c3a7ab89a645676396c37a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a framebuffer with the specified size and font.  <br /></td></tr>
 <tr class="separator:aa5a883ec83c3a7ab89a645676396c37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba365cc28eb702040c382646cfb0a7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#acba365cc28eb702040c382646cfb0a7a">begin</a> () override</td></tr>
+<tr class="memdesc:acba365cc28eb702040c382646cfb0a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the framebuffer surface.  <br /></td></tr>
+<tr class="separator:acba365cc28eb702040c382646cfb0a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64e9fa75beda50a9e8400ee0d4e61984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a64e9fa75beda50a9e8400ee0d4e61984">end</a> () override</td></tr>
+<tr class="memdesc:a64e9fa75beda50a9e8400ee0d4e61984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the framebuffer and releases resources.  <br /></td></tr>
+<tr class="separator:a64e9fa75beda50a9e8400ee0d4e61984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c6402c0d5bb45f8ec3b1bf2bc86607a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a9c6402c0d5bb45f8ec3b1bf2bc86607a">addSprite</a> (size_t x, size_t y, const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;sprite, RGB_T invisibleColor=RGB_T(0))</td></tr>
 <tr class="memdesc:a9c6402c0d5bb45f8ec3b1bf2bc86607a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a sprite to the framebuffer and draws it at the given position.  <br /></td></tr>
 <tr class="separator:a9c6402c0d5bb45f8ec3b1bf2bc86607a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac854ffcc0c183c542ef7f9cb14f7f683"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#ac854ffcc0c183c542ef7f9cb14f7f683">addSprite</a> (size_t x, size_t y, size_t maxX, size_t maxY, const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;sprite, RGB_T invisibleColor=RGB_T(0))</td></tr>
+<tr class="memdesc:ac854ffcc0c183c542ef7f9cb14f7f683"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a sprite with a preallocated max buffer size for transformations.  <br /></td></tr>
+<tr class="separator:ac854ffcc0c183c542ef7f9cb14f7f683"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8632d9ae2f14bea74acda41f235c605"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#ae8632d9ae2f14bea74acda41f235c605">removeSprite</a> (<a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &amp;spriteInfo)</td></tr>
 <tr class="memdesc:ae8632d9ae2f14bea74acda41f235c605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a sprite and restores the pixels behind it.  <br /></td></tr>
 <tr class="separator:ae8632d9ae2f14bea74acda41f235c605"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -218,6 +227,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a09eda0603dcc9eb48e0fd1451fa00530 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a09eda0603dcc9eb48e0fd1451fa00530">~ISurface</a> ()=default</td></tr>
 <tr class="memdesc:a09eda0603dcc9eb48e0fd1451fa00530 inherit pub_methods_classtinygpu_1_1ISurface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the framebuffer interface.  <br /></td></tr>
 <tr class="separator:a09eda0603dcc9eb48e0fd1451fa00530 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8a0d9ca63f8bb3de100e347c3f3bca4 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#ae8a0d9ca63f8bb3de100e347c3f3bca4">begin</a> ()=0</td></tr>
+<tr class="memdesc:ae8a0d9ca63f8bb3de100e347c3f3bca4 inherit pub_methods_classtinygpu_1_1ISurface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the framebuffer surface.  <br /></td></tr>
+<tr class="separator:ae8a0d9ca63f8bb3de100e347c3f3bca4 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa540e86022c1f72380d1014d98f38f43 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#aa540e86022c1f72380d1014d98f38f43">end</a> ()=0</td></tr>
+<tr class="memdesc:aa540e86022c1f72380d1014d98f38f43 inherit pub_methods_classtinygpu_1_1ISurface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the framebuffer and releases resources.  <br /></td></tr>
+<tr class="separator:aa540e86022c1f72380d1014d98f38f43 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c66bbeaf74b3778d72c42b2b1a72ef4 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a6c66bbeaf74b3778d72c42b2b1a72ef4">resize</a> (size_t newWidth, size_t newHeight)=0</td></tr>
 <tr class="memdesc:a6c66bbeaf74b3778d72c42b2b1a72ef4 inherit pub_methods_classtinygpu_1_1ISurface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the framebuffer surface.  <br /></td></tr>
 <tr class="separator:a6c66bbeaf74b3778d72c42b2b1a72ef4 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -431,7 +446,7 @@ class tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;</div><p>Framebuffer with spr
 </div>
 </div>
 <a id="a9c6402c0d5bb45f8ec3b1bf2bc86607a" name="a9c6402c0d5bb45f8ec3b1bf2bc86607a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c6402c0d5bb45f8ec3b1bf2bc86607a">&#9670;&#160;</a></span>addSprite()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c6402c0d5bb45f8ec3b1bf2bc86607a">&#9670;&#160;</a></span>addSprite() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -480,6 +495,68 @@ class tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;</div><p>Framebuffer with spr
 
 </div>
 </div>
+<a id="ac854ffcc0c183c542ef7f9cb14f7f683" name="ac854ffcc0c183c542ef7f9cb14f7f683"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac854ffcc0c183c542ef7f9cb14f7f683">&#9670;&#160;</a></span>addSprite() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &amp; addSprite </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>maxX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>maxY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>sprite</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RGB_T&#160;</td>
+          <td class="paramname"><em>invisibleColor</em> = <code>RGB_T(0)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a sprite with a preallocated max buffer size for transformations. </p>
+
+</div>
+</div>
 <a id="a7a20b8d61d631426f233f5b3b0db3279" name="a7a20b8d61d631426f233f5b3b0db3279"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a20b8d61d631426f233f5b3b0db3279">&#9670;&#160;</a></span>applyTransformedSprite()</h2>
 
@@ -514,6 +591,35 @@ class tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;</div><p>Framebuffer with spr
 </table>
 </div><div class="memdoc">
 <p>Applies a transformed sprite image to the framebuffer and updates bookkeeping. </p>
+
+</div>
+</div>
+<a id="acba365cc28eb702040c382646cfb0a7a" name="acba365cc28eb702040c382646cfb0a7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba365cc28eb702040c382646cfb0a7a">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes the framebuffer surface. </p>
+
+<p>Implements <a class="el" href="classtinygpu_1_1ISurface.html#ae8a0d9ca63f8bb3de100e347c3f3bca4">ISurface&lt; RGB_T &gt;</a>.</p>
 
 </div>
 </div>
@@ -1325,6 +1431,35 @@ class tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;</div><p>Framebuffer with spr
 <p>Draws UTF-8 text. </p>
 
 <p>Implements <a class="el" href="classtinygpu_1_1ISurface.html#aac66a5e85ea19900d1dd5d59d16ac8bb">ISurface&lt; RGB_T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a64e9fa75beda50a9e8400ee0d4e61984" name="a64e9fa75beda50a9e8400ee0d4e61984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64e9fa75beda50a9e8400ee0d4e61984">&#9670;&#160;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Closes the framebuffer and releases resources. </p>
+
+<p>Implements <a class="el" href="classtinygpu_1_1ISurface.html#aa540e86022c1f72380d1014d98f38f43">ISurface&lt; RGB_T &gt;</a>.</p>
 
 </div>
 </div>

@@ -87,8 +87,9 @@ Collaboration diagram for FrameBuffer&lt; RGB_T, SurfaceT &gt;::SpriteInfo:</div
 <div class="dyncontent">
 <div class="center"><img src="structtinygpu_1_1FrameBuffer_1_1SpriteInfo__coll__graph.png" border="0" usemap="#aFrameBuffer_3_01RGB__T_00_01SurfaceT_01_4_1_1SpriteInfo_coll__map" alt="Collaboration graph"/></div>
 <map name="aFrameBuffer_3_01RGB__T_00_01SurfaceT_01_4_1_1SpriteInfo_coll__map" id="aFrameBuffer_3_01RGB__T_00_01SurfaceT_01_4_1_1SpriteInfo_coll__map">
-<area shape="rect" title=" " alt="" coords="5,93,175,133"/>
-<area shape="rect" href="classtinygpu_1_1ISurface.html" title=" " alt="" coords="16,5,164,31"/>
+<area shape="rect" title=" " alt="" coords="75,93,244,133"/>
+<area shape="rect" href="classtinygpu_1_1ISurface.html" title=" " alt="" coords="5,5,153,31"/>
+<area shape="rect" href="classtinygpu_1_1IFont.html" title=" " alt="" coords="177,5,304,31"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -102,8 +103,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4833c7909689c5c6f2653d81f97b7712"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#a4833c7909689c5c6f2653d81f97b7712">saveOriginalPixels</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;framebuffer)</td></tr>
 <tr class="memdesc:a4833c7909689c5c6f2653d81f97b7712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the background pixels currently covered by the sprite.  <br /></td></tr>
 <tr class="separator:a4833c7909689c5c6f2653d81f97b7712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32956765337d9033b284ae0967aadf7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#a32956765337d9033b284ae0967aadf7c">setMaxSize</a> (size_t maxX, size_t maxY)</td></tr>
+<tr class="memdesc:a32956765337d9033b284ae0967aadf7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum buffer size for transformedSprite and allocate buffer.  <br /></td></tr>
+<tr class="separator:a32956765337d9033b284ae0967aadf7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa39f1a986e042b9e31b0efac2b720d0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#aa39f1a986e042b9e31b0efac2b720d0e">setTransformedSprite</a> (SurfaceT &amp;&amp;newSprite)</td></tr>
-<tr class="memdesc:aa39f1a986e042b9e31b0efac2b720d0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the current transformed sprite image.  <br /></td></tr>
 <tr class="separator:aa39f1a986e042b9e31b0efac2b720d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -112,6 +115,10 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a63696707d410cb7773755276a4060273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17ba7a9a912e4c6297861217711fd87e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#a17ba7a9a912e4c6297861217711fd87e">y</a> = 0</td></tr>
 <tr class="separator:a17ba7a9a912e4c6297861217711fd87e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22780129854e1085d833501dccd5c135"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#a22780129854e1085d833501dccd5c135">maxWidth</a> = 0</td></tr>
+<tr class="separator:a22780129854e1085d833501dccd5c135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af55be4e92066403bd2cee5734bffe059"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#af55be4e92066403bd2cee5734bffe059">maxHeight</a> = 0</td></tr>
+<tr class="separator:af55be4e92066403bd2cee5734bffe059"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8155c7caaa42fe9f29bfe4bb4aaf46b"><td class="memItemLeft" align="right" valign="top">RGB_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#ad8155c7caaa42fe9f29bfe4bb4aaf46b">invisibleColor</a> = RGB_T(0)</td></tr>
 <tr class="separator:ad8155c7caaa42fe9f29bfe4bb4aaf46b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebf9d42dc7c089971eb10c375fb51529"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#aebf9d42dc7c089971eb10c375fb51529">sprite</a> = nullptr</td></tr>
@@ -120,6 +127,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a234c549621bff6d06f9c0cb2ec697a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0d54e874effcb1dd1b1d18ef74cb599"><td class="memItemLeft" align="right" valign="top">SurfaceT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#ad0d54e874effcb1dd1b1d18ef74cb599">originalPixels</a></td></tr>
 <tr class="separator:ad0d54e874effcb1dd1b1d18ef74cb599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d197c8a6931b111075bd8e20207afc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt; RGB_T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#a7d197c8a6931b111075bd8e20207afc8">fontRef</a></td></tr>
+<tr class="separator:a7d197c8a6931b111075bd8e20207afc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename RGB_T = RGB565, typename SurfaceT = Surface&lt;RGB_T&gt;&gt;<br />
@@ -236,6 +245,44 @@ struct tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;::SpriteInfo</div><p>Tracks 
 
 </div>
 </div>
+<a id="a32956765337d9033b284ae0967aadf7c" name="a32956765337d9033b284ae0967aadf7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32956765337d9033b284ae0967aadf7c">&#9670;&#160;</a></span>setMaxSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setMaxSize </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>maxX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>maxY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the maximum buffer size for transformedSprite and allocate buffer. </p>
+
+</div>
+</div>
 <a id="aa39f1a986e042b9e31b0efac2b720d0e" name="aa39f1a986e042b9e31b0efac2b720d0e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa39f1a986e042b9e31b0efac2b720d0e">&#9670;&#160;</a></span>setTransformedSprite()</h2>
 
@@ -259,12 +306,25 @@ struct tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;::SpriteInfo</div><p>Tracks 
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Replaces the current transformed sprite image. </p>
+<p>Replaces the current transformed sprite image, using only the allocated buffer. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a7d197c8a6931b111075bd8e20207afc8" name="a7d197c8a6931b111075bd8e20207afc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d197c8a6931b111075bd8e20207afc8">&#9670;&#160;</a></span>fontRef</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt;RGB_T&gt;&amp; fontRef</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad8155c7caaa42fe9f29bfe4bb4aaf46b" name="ad8155c7caaa42fe9f29bfe4bb4aaf46b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad8155c7caaa42fe9f29bfe4bb4aaf46b">&#9670;&#160;</a></span>invisibleColor</h2>
 
@@ -273,6 +333,34 @@ struct tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;::SpriteInfo</div><p>Tracks 
       <table class="memname">
         <tr>
           <td class="memname">RGB_T invisibleColor = RGB_T(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af55be4e92066403bd2cee5734bffe059" name="af55be4e92066403bd2cee5734bffe059"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af55be4e92066403bd2cee5734bffe059">&#9670;&#160;</a></span>maxHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t maxHeight = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22780129854e1085d833501dccd5c135" name="a22780129854e1085d833501dccd5c135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22780129854e1085d833501dccd5c135">&#9670;&#160;</a></span>maxWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t maxWidth = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -4,8 +4,10 @@ var searchData=
   ['mappedtopofbox_1',['mappedTopOfBox',['../classtinygpu_1_1CartesianView.html#a98ddf22c054582a493f43ecf79fb7ed5',1,'tinygpu::CartesianView']]],
   ['mappedy_2',['mappedY',['../classtinygpu_1_1CartesianView.html#a9b8ffbede712d9744cff0f568b9167da',1,'tinygpu::CartesianView']]],
   ['mat4_3',['Mat4',['../structtinygpu_1_1WireFrame3D_1_1Mat4.html',1,'tinygpu::WireFrame3D']]],
-  ['measuretextheight_4',['measureTextHeight',['../classtinygpu_1_1BitmapFont.html#a76aa7cc5027f0d3d6b201c6d0e855a87',1,'tinygpu::BitmapFont::measureTextHeight()'],['../classtinygpu_1_1IFont.html#a85c21639162b7d29972ffb3d6269e1d0',1,'tinygpu::IFont::measureTextHeight()']]],
-  ['measuretextwidth_5',['measureTextWidth',['../classtinygpu_1_1BitmapFont.html#a9033ba09137e8d9a88eb44a0c2963007',1,'tinygpu::BitmapFont::measureTextWidth()'],['../classtinygpu_1_1IFont.html#aa2a81e1dc5c0c336c69bd07411e1bf31',1,'tinygpu::IFont::measureTextWidth()']]],
-  ['mesh_6',['Mesh',['../structtinygpu_1_1WireFrame3D_1_1Mesh.html',1,'tinygpu::WireFrame3D']]],
-  ['movesprite_7',['moveSprite',['../classtinygpu_1_1FrameBuffer.html#a4adbd8f94608f38d8af8a05a8c644f06',1,'tinygpu::FrameBuffer']]]
+  ['maxheight_4',['maxHeight',['../structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#af55be4e92066403bd2cee5734bffe059',1,'tinygpu::FrameBuffer::SpriteInfo']]],
+  ['maxwidth_5',['maxWidth',['../structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#a22780129854e1085d833501dccd5c135',1,'tinygpu::FrameBuffer::SpriteInfo']]],
+  ['measuretextheight_6',['measureTextHeight',['../classtinygpu_1_1BitmapFont.html#a76aa7cc5027f0d3d6b201c6d0e855a87',1,'tinygpu::BitmapFont::measureTextHeight()'],['../classtinygpu_1_1IFont.html#a85c21639162b7d29972ffb3d6269e1d0',1,'tinygpu::IFont::measureTextHeight()']]],
+  ['measuretextwidth_7',['measureTextWidth',['../classtinygpu_1_1BitmapFont.html#a9033ba09137e8d9a88eb44a0c2963007',1,'tinygpu::BitmapFont::measureTextWidth()'],['../classtinygpu_1_1IFont.html#aa2a81e1dc5c0c336c69bd07411e1bf31',1,'tinygpu::IFont::measureTextWidth()']]],
+  ['mesh_8',['Mesh',['../structtinygpu_1_1WireFrame3D_1_1Mesh.html',1,'tinygpu::WireFrame3D']]],
+  ['movesprite_9',['moveSprite',['../classtinygpu_1_1FrameBuffer.html#a4adbd8f94608f38d8af8a05a8c644f06',1,'tinygpu::FrameBuffer']]]
 ];

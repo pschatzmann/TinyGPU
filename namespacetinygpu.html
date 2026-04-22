@@ -121,6 +121,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper for printing wrapped lines of text onto a TinyGPU target.  <a href="classtinygpu_1_1LinePrinter.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1PSRAMAllocator.html">PSRAMAllocator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">STL-compatible allocator that prefers PSRAM allocation with fallback.  <a href="classtinygpu_1_1PSRAMAllocator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RGB color stored in 16-bit <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> format.  <a href="classtinygpu_1_1RGB565.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,6 +151,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SurfaceMonochrome.html">SurfaceMonochrome</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">In-memory 1-bit (monochrome) bitmap surface with 2D drawing and text rendering.  <a href="classtinygpu_1_1SurfaceMonochrome.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TinyGPULoggerClass.html">TinyGPULoggerClass</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html">WireFrame3D</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lightweight 3D wireframe renderer for TinyGPU drawing targets.  <a href="classtinygpu_1_1WireFrame3D.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,6 +162,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a7a537bb2bb57dae7d04aa2961d02662a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a7a537bb2bb57dae7d04aa2961d02662a">FrameBufferMonochrome</a> = <a class="el" href="classtinygpu_1_1FrameBuffer.html">FrameBuffer</a>&lt; bool, <a class="el" href="classtinygpu_1_1SurfaceMonochrome.html">SurfaceMonochrome</a> &gt;</td></tr>
 <tr class="memdesc:a7a537bb2bb57dae7d04aa2961d02662a"><td class="mdescLeft">&#160;</td><td class="mdescRight">FrameBufferMonochrome is a framebuffer specialized for 1-bit (monochrome) pixel storage.  <br /></td></tr>
 <tr class="separator:a7a537bb2bb57dae7d04aa2961d02662a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a285401e6c529d95e541e499261b4917f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a285401e6c529d95e541e499261b4917f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a285401e6c529d95e541e499261b4917f">PSVec</a> = std::vector&lt; T, <a class="el" href="classtinygpu_1_1PSRAMAllocator.html">PSRAMAllocator</a>&lt; T &gt; &gt;</td></tr>
+<tr class="memdesc:a285401e6c529d95e541e499261b4917f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience type alias for vectors using <a class="el" href="classtinygpu_1_1PSRAMAllocator.html" title="STL-compatible allocator that prefers PSRAM allocation with fallback.">PSRAMAllocator</a>.  <br /></td></tr>
+<tr class="separator:a285401e6c529d95e541e499261b4917f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95e748eeb33500b9306b93593276421c"><td class="memTemplParams" colspan="2">template&lt;typename RGB_T  = RGB565&gt; </td></tr>
 <tr class="memitem:a95e748eeb33500b9306b93593276421c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a95e748eeb33500b9306b93593276421c">Sprite</a> = <a class="el" href="classtinygpu_1_1Surface.html">Surface</a>&lt; RGB_T &gt;</td></tr>
 <tr class="memdesc:a95e748eeb33500b9306b93593276421c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for a sprite surface with the same pixel format as the main surface.  <br /></td></tr>
@@ -527,6 +536,33 @@ Functions</h2></td></tr>
 
 <p><a class="el" href="classtinygpu_1_1LinePrinter.html" title="Helper for printing wrapped lines of text onto a TinyGPU target.">LinePrinter</a> with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format. </p>
 
+</div>
+</div>
+<a id="a285401e6c529d95e541e499261b4917f" name="a285401e6c529d95e541e499261b4917f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a285401e6c529d95e541e499261b4917f">&#9670;&#160;</a></span>PSVec</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacetinygpu.html#a285401e6c529d95e541e499261b4917f">PSVec</a> =  std::vector&lt;T, <a class="el" href="classtinygpu_1_1PSRAMAllocator.html">PSRAMAllocator</a>&lt;T&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convenience type alias for vectors using <a class="el" href="classtinygpu_1_1PSRAMAllocator.html" title="STL-compatible allocator that prefers PSRAM allocation with fallback.">PSRAMAllocator</a>. </p>
+<p>PSVec provides a shorter way to declare vectors that use <a class="el" href="classtinygpu_1_1PSRAMAllocator.html" title="STL-compatible allocator that prefers PSRAM allocation with fallback.">PSRAMAllocator</a>.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The element type of the vector</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Example usage: </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="namespacetinygpu.html#a285401e6c529d95e541e499261b4917f">PSVec&lt;uint8_t&gt;</a> buffer;  <span class="comment">// Instead of std::vector&lt;uint8_t,</span></div>
+<div class="line"><a class="code hl_class" href="classtinygpu_1_1PSRAMAllocator.html">PSRAMAllocator&lt;uint8_t&gt;</a>&gt; buffer.resize(1024);</div>
+<div class="ttc" id="aclasstinygpu_1_1PSRAMAllocator_html"><div class="ttname"><a href="classtinygpu_1_1PSRAMAllocator.html">tinygpu::PSRAMAllocator</a></div><div class="ttdoc">STL-compatible allocator that prefers PSRAM allocation with fallback.</div><div class="ttdef"><b>Definition:</b> PSRAMAllocator.h:60</div></div>
+<div class="ttc" id="anamespacetinygpu_html_a285401e6c529d95e541e499261b4917f"><div class="ttname"><a href="namespacetinygpu.html#a285401e6c529d95e541e499261b4917f">tinygpu::PSVec</a></div><div class="ttdeci">std::vector&lt; T, PSRAMAllocator&lt; T &gt; &gt; PSVec</div><div class="ttdoc">Convenience type alias for vectors using PSRAMAllocator.</div><div class="ttdef"><b>Definition:</b> PSRAMAllocator.h:185</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="a95e748eeb33500b9306b93593276421c" name="a95e748eeb33500b9306b93593276421c"></a>
