@@ -51,18 +51,11 @@ BMP decoding is provided separately through:
 
 - `BMPParser.h`
 
-## Examples
+## Documentaion
 
-Concrete usage is documented through the example sketches in `examples/`:
+- [examples](examples)
+- [Class Documentation](https://pschatzmann.github.io/TinyGPU/annotated.html)
 
-- `examples/basic-example/basic-example.ino`
-  - minimal 2D drawing and text output
-- `examples/sprite-demo/sprite-demo.ino`
-  - managed sprite placement, movement, scaling, and rotation
-- `examples/bmp-parser-demo/bmp-parser-demo.ino`
-  - incremental BMP decoding into an RGB565 surface
-- `examples/wireframe-demo/wireframe-demo.ino`
-  - rotating 3D cube rendered into a `Surface`
 
 ## Sending Pixels to a Real Display
 
@@ -71,7 +64,6 @@ RGB565 data to your display driver.
 
 Useful accessors are:
 
-- `getBuffer()` for `RGB565*` pixel access
 - `data()` for byte-wise access
 - `size()` for total byte size
 
