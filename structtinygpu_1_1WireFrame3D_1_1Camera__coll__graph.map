@@ -1,0 +1,4 @@
+<map id="WireFrame3D&lt; RGB_T &gt;::Camera" name="WireFrame3D&lt; RGB_T &gt;::Camera">
+<area shape="rect" id="node1" title="Stores camera parameters for view transformation." alt="" coords="5,123,175,163"/>
+<area shape="rect" id="node2" href="$structtinygpu_1_1WireFrame3D_1_1Vec3.html" title="Represents a 3D point or vector." alt="" coords="63,5,117,31"/>
+</map>

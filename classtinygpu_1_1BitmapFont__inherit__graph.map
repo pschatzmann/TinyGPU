@@ -1,0 +1,4 @@
+<map id="BitmapFont&lt; RGB_T &gt;" name="BitmapFont&lt; RGB_T &gt;">
+<area shape="rect" id="node1" title="Fixed&#45;size 5x7 bitmap font with ASCII and extended character support." alt="" coords="5,79,176,104"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="27,5,154,31"/>
+</map>

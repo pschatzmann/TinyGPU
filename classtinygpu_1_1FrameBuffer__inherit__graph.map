@@ -1,0 +1,4 @@
+<map id="FrameBuffer&lt; RGB_T, SurfaceT &gt;" name="FrameBuffer&lt; RGB_T, SurfaceT &gt;">
+<area shape="rect" id="node1" title="Framebuffer with sprite placement and background restoration support." alt="" coords="5,79,169,119"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1ISurface.html" title="Abstract framebuffer and drawing interface for TinyGPU surfaces." alt="" coords="13,5,161,31"/>
+</map>

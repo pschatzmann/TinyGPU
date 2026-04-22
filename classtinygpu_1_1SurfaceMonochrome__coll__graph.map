@@ -1,0 +1,7 @@
+<map id="SurfaceMonochrome" name="SurfaceMonochrome">
+<area shape="rect" id="node1" title="In&#45;memory 1&#45;bit (monochrome) bitmap surface with 2D drawing and text rendering." alt="" coords="156,168,312,193"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1SurfaceBase.html" title=" " alt="" coords="153,93,315,119"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1ISurface.html" title="Abstract framebuffer and drawing interface for TinyGPU surfaces." alt="" coords="5,5,153,31"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1IFont.html" title=" " alt="" coords="178,5,290,31"/>
+<area shape="rect" id="node5" href="$classtinygpu_1_1LinePrinter.html" title=" " alt="" coords="315,5,465,31"/>
+</map>

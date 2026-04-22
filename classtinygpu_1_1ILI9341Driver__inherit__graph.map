@@ -1,0 +1,5 @@
+<map id="ILI9341Driver" name="ILI9341Driver">
+<area shape="rect" id="node1" title="Driver for ILI9341 SPI display controller." alt="" coords="16,152,125,177"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1SPIDisplayDriver.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="5,79,136,104"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1DisplayDriver.html" title="Abstract base class for display drivers." alt="" coords="15,5,126,31"/>
+</map>
