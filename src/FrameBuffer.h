@@ -1,11 +1,12 @@
-#pragma once
 
+#pragma once
 #include <algorithm>
 #include <cmath>
 #include <memory>
 #include <vector>
 
 #include "Surface.h"
+#include "TinyGPULogger.h"
 
 namespace tinygpu {
 
@@ -27,10 +28,13 @@ class FrameBuffer : public ISurface<RGB_T> {
   struct SpriteInfo {
     size_t x = 0;
     size_t y = 0;
+    size_t maxWidth = 0;
+    size_t maxHeight = 0;
     RGB_T invisibleColor = RGB_T(0);
     const ISurface<RGB_T>* sprite = nullptr;
     std::unique_ptr<SurfaceT> transformedSprite;
     SurfaceT originalPixels;
+    IFont<RGB_T>& fontRef;
 
     SpriteInfo(size_t startX, size_t startY,
                const ISurface<RGB_T>& sourceSprite, RGB_T transparentColor,
@@ -39,7 +43,8 @@ class FrameBuffer : public ISurface<RGB_T> {
           y(startY),
           invisibleColor(transparentColor),
           sprite(&sourceSprite),
-          originalPixels(sourceSprite.width(), sourceSprite.height(), font) {}
+          originalPixels(sourceSprite.width(), sourceSprite.height(), font),
+          fontRef(font) {}
 
     /// Returns the sprite image currently used for drawing.
     const ISurface<RGB_T>& currentSprite() const {
@@ -54,9 +59,47 @@ class FrameBuffer : public ISurface<RGB_T> {
       framebuffer.copySprite(x, y, originalPixels);
     }
 
-    /// Replaces the current transformed sprite image.
+    /// Set the maximum buffer size for transformedSprite and allocate buffer.
+    void setMaxSize(size_t maxX, size_t maxY) {
+      maxWidth = maxX;
+      maxHeight = maxY;
+      if (!transformedSprite) {
+        transformedSprite =
+            std::make_unique<SurfaceT>(maxWidth, maxHeight, fontRef);
+        transformedSprite->begin();
+      }
+    }
+
+    /// Replaces the current transformed sprite image, using only the allocated
+    /// buffer.
     void setTransformedSprite(SurfaceT&& newSprite) {
-      transformedSprite = std::make_unique<SurfaceT>(std::move(newSprite));
+      if (!transformedSprite) {
+        // If max size not set, use current size as max
+        maxWidth = newSprite.width();
+        maxHeight = newSprite.height();
+        transformedSprite =
+            std::make_unique<SurfaceT>(maxWidth, maxHeight, newSprite.font());
+        transformedSprite->begin();
+      }
+      // Only copy the region that fits
+      size_t copyWidth = std::min(maxWidth, newSprite.width());
+      size_t copyHeight = std::min(maxHeight, newSprite.height());
+      for (size_t y = 0; y < copyHeight; ++y) {
+        for (size_t x = 0; x < copyWidth; ++x) {
+          transformedSprite->setPixel(x, y, newSprite.getPixel(x, y));
+        }
+      }
+      // Optionally clear the rest if newSprite is smaller than max
+      for (size_t y = copyHeight; y < maxHeight; ++y) {
+        for (size_t x = 0; x < maxWidth; ++x) {
+          transformedSprite->setPixel(x, y, RGB_T(0));
+        }
+      }
+      for (size_t y = 0; y < copyHeight; ++y) {
+        for (size_t x = copyWidth; x < maxWidth; ++x) {
+          transformedSprite->setPixel(x, y, RGB_T(0));
+        }
+      }
     }
   };
 
@@ -67,9 +110,14 @@ class FrameBuffer : public ISurface<RGB_T> {
   FrameBuffer(size_t width, size_t height, IFont<RGB_T>& font)
       : surface_(width, height, font) {}
 
+  bool begin() override { return surface_.begin(); }
+  void end() override { surface_.end(); }
+
   /// Adds a sprite to the framebuffer and draws it at the given position.
   SpriteInfo& addSprite(size_t x, size_t y, const ISurface<RGB_T>& sprite,
                         RGB_T invisibleColor = RGB_T(0)) {
+    TinyGPULogger.log(TinyGPULoggerClass::INFO, "Adding sprite at (%zu, %zu)",
+                      x, y);
     auto info = std::make_unique<SpriteInfo>(x, y, sprite, invisibleColor,
                                              activeFont());
 
@@ -80,8 +128,26 @@ class FrameBuffer : public ISurface<RGB_T> {
     return *sprites_.back();
   }
 
+  /// Adds a sprite with a preallocated max buffer size for transformations.
+  SpriteInfo& addSprite(size_t x, size_t y, size_t maxX, size_t maxY, 
+                        const ISurface<RGB_T>& sprite,
+                        RGB_T invisibleColor = RGB_T(0)) {
+    TinyGPULogger.log(TinyGPULoggerClass::INFO,
+                      "Adding sprite at (%zu, %zu) with max size (%zu, %zu)", x,
+                      y, maxX, maxY);
+    auto info = std::make_unique<SpriteInfo>(x, y, sprite, invisibleColor,
+                                             activeFont());
+    info->setMaxSize(maxX, maxY);
+    info->saveOriginalPixels(surface_);
+    surface_.drawSprite(x, y, info->currentSprite(), invisibleColor);
+    sprites_.push_back(std::move(info));
+    return *sprites_.back();
+  }
+
   /// Removes a sprite and restores the pixels behind it.
   void removeSprite(SpriteInfo& spriteInfo) {
+    TinyGPULogger.log(TinyGPULoggerClass::INFO, "Removing sprite at (%zu, %zu)",
+                      spriteInfo.x, spriteInfo.y);
     restoreOriginalPixels(spriteInfo);
     auto it = findSprite(spriteInfo);
     if (it != sprites_.end()) {
@@ -91,6 +157,9 @@ class FrameBuffer : public ISurface<RGB_T> {
 
   /// Moves a sprite to a new position and redraws it.
   void moveSprite(SpriteInfo& spriteInfo, size_t newX, size_t newY) {
+    TinyGPULogger.log(TinyGPULoggerClass::INFO,
+                      "Moving sprite from (%zu, %zu) to (%zu, %zu)",
+                      spriteInfo.x, spriteInfo.y, newX, newY);
     if (spriteInfo.x == newX && spriteInfo.y == newY) {
       return;
     }
@@ -115,6 +184,9 @@ class FrameBuffer : public ISurface<RGB_T> {
 
   /// Scales a sprite image and redraws it at its current position.
   void scaleSprite(SpriteInfo& spriteInfo, float scale) {
+    TinyGPULogger.log(TinyGPULoggerClass::INFO,
+                      "Scaling sprite at (%zu, %zu) by %.2f", spriteInfo.x,
+                      spriteInfo.y, scale);
     applyTransformedSprite(
         spriteInfo,
         scaleSpriteImage(spriteInfo.currentSprite(), scale, activeFont()));
@@ -122,6 +194,9 @@ class FrameBuffer : public ISurface<RGB_T> {
 
   /// Rotates a sprite image and redraws it at its current position.
   void rotateSprite(SpriteInfo& spriteInfo, float angleDegrees) {
+    TinyGPULogger.log(TinyGPULoggerClass::INFO,
+                      "Rotating sprite at (%zu, %zu) by %.2f degrees",
+                      spriteInfo.x, spriteInfo.y, angleDegrees);
     applyTransformedSprite(
         spriteInfo, rotateSpriteImage(spriteInfo.currentSprite(), angleDegrees,
                                       spriteInfo.invisibleColor, activeFont()));
@@ -323,6 +398,7 @@ class FrameBuffer : public ISurface<RGB_T> {
                                           const Rect& overlap) {
     Surface<RGB_T> updatedBackground(newBounds.width, newBounds.height,
                                      activeFont());
+    updatedBackground.begin();
 
     if (isEmpty(overlap)) {
       captureFramebufferRegion(updatedBackground, 0, 0, newBounds.x,
@@ -421,6 +497,7 @@ class FrameBuffer : public ISurface<RGB_T> {
     }
 
     Surface<RGB_T> scaledSprite(scaledWidth, scaledHeight, font);
+    scaledSprite.begin();
     for (size_t currentY = 0; currentY < scaledHeight; ++currentY) {
       const size_t sourceY =
           static_cast<size_t>(static_cast<float>(currentY) / scale);
@@ -463,6 +540,7 @@ class FrameBuffer : public ISurface<RGB_T> {
     }
 
     Surface<RGB_T> rotatedSprite(rotatedWidth, rotatedHeight, font);
+    rotatedSprite.begin();
     rotatedSprite.clear(fillColor);
 
     const float sourceCenterX = (sourceWidth - 1.0) / 2.0;

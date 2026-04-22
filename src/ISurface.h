@@ -28,6 +28,11 @@ class ISurface {
   /// Destroys the framebuffer interface.
   virtual ~ISurface() = default;
 
+  /// Initializes the framebuffer surface.
+  virtual bool begin() = 0;
+  /// Closes the framebuffer and releases resources.
+  virtual void end() = 0;
+
   /// Resizes the framebuffer surface.
   virtual bool resize(size_t newWidth, size_t newHeight) = 0;
   /// Sets a pixel at the given position.

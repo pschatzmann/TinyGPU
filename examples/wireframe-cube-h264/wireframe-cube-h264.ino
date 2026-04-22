@@ -3,34 +3,54 @@
  * @brief TinyGPU WireFrame3D rotating cube demo.
  *
  * This example demonstrates drawing a rotating 3D wireframe cube
- * using the TinyGPU library's WireFrame3D class.
+ * using the TinyGPU library's WireFrame3D class and sends a H264-encoded video
+ * stream over UDP.
  */
 
+#include "H264Encoder.h"  // https://pschatzmann.github.io/ESP32S3-h264/
 #include "TinyGPU.h"
+#include "UDPPrint.h"
+
+// UDP destination for streaming the framebuffer (optional)
+const char* DEST_IP = "192.168.1.44";
+const uint16_t DEST_PORT = 5000;
 
 // Framebuffer size VGA
 constexpr int WIDTH = 600;
 constexpr int HEIGHT = 400;
 
+// Output
+H264Encoder encoder;
+UDPPrint udp;
+
 // Create framebuffer and wireframe objects
 FrameBufferRGB565 framebuffer(WIDTH, HEIGHT, FontRGB565);
 WireFrame3D_RGB565 wireframe(WIDTH, HEIGHT);
-auto cubeMesh = WireFrame3D_RGB565::cube(100.0f);
-float angle = 0.0f;
 
-void sendFrameToDisplay(const ISurface<RGB565>& gpu) {
-  Serial.println("Frame ready to send to display:");
-  // write your display code here, e.g.:
-  // display.drawBitmap(0, 0, gpu.data(), gpu.width(), gpu.height
-}
+// Use the built-in cube mesh helper
+auto cubeMesh = WireFrame3D_RGB565::cube(100.0f);
+
+float angle = 0.0f;
 
 void setup() {
   Serial.begin(115200);
+
+  auto encoderConfig = encoder.defaultConfig();
+  encoderConfig.width = WIDTH;
+  encoderConfig.height = HEIGHT;
+  encoderConfig.fps = 30;
+  encoderConfig.ssid = "YourWiFiSSID";  // Set your WiFi SSID
+  encoderConfig.pass = "YourWiFiPassword";  // Set your WiFi password
+  encoder.begin(encoderConfig);
+
 
   framebuffer.begin();
   framebuffer.clear(RGB565(255, 255, 255));
 
   wireframe.begin();
+
+
+  udp.begin(DEST_IP, DEST_PORT);
 }
 
 void loop() {
@@ -59,7 +79,7 @@ void loop() {
                             RGB565(255, 255, 255));
 
   // output via UDP
-  sendFrameToDisplay(framebuffer);
+  encoder.encodeRGB565(framebuffer.data(), framebuffer.size(), udp);
 
   // rotation for next frame
   angle += 0.03f;

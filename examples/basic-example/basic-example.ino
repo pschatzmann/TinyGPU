@@ -10,12 +10,16 @@
  *
  * Adapt sendFrameToDisplay() to your display hardware.
  */
+
 #include <TinyGPU.h>
 
+Surface<RGB565> gpu(128, 64, FontRGB565);
 
-Surface<RGB565> gpu(128, 64);
-
-void sendFrameToDisplay(const Surface<RGB565>& gpu) { (void)gpu; }
+void sendFrameToDisplay(const Surface<RGB565>& gpu) {
+  Serial.println("Frame ready to send to display:");
+  // write your display code here, e.g.:
+  // display.drawBitmap(0, 0, gpu.data(), gpu.width(), gpu.height
+ }
 
 void setup() {
   Serial.begin(115200);
