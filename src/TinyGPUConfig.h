@@ -1,0 +1,10 @@
+#pragma once
+
+/// Activate ESP32-S3-specific optimizations 
+#ifndef TINYGPU_ENABLE_ESP32S3_OPTIMIZATIONS
+#if defined(CONFIG_IDF_TARGET_ESP32S3) 
+#define TINYGPU_ENABLE_ESP32S3_OPTIMIZATIONS 1
+#else
+#define TINYGPU_ENABLE_ESP32S3_OPTIMIZATIONS 0
+#endif
+#endif
