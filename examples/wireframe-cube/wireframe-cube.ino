@@ -9,13 +9,13 @@
 #include "TinyGPU.h"
 
 // Framebuffer size VGA
-constexpr int WIDTH = 600;
-constexpr int HEIGHT = 400;
+constexpr int WIDTH = 300;
+constexpr int HEIGHT = 200;
 
 // Create framebuffer and wireframe objects
 FrameBufferRGB565 framebuffer(WIDTH, HEIGHT, FontRGB565);
 WireFrame3D_RGB565 wireframe(framebuffer);
-auto cubeMesh = WireFrame3D_RGB565::cube(100.0f);
+auto cubeMesh = WireFrame3D_RGB565::cube(2.0f);
 float angle = 0.0f;
 
 void sendFrameToDisplay(const ISurface<RGB565>& gpu) {
@@ -38,7 +38,7 @@ void loop() {
 
   auto printer = framebuffer.linePrinter();
   printer.setColor(RGB565(0, 0, 255));
-  printer.setScale(10);
+  printer.setScale(1);
   printer.print("Rotating Wireframe Cube Demo");
 
   // Set up camera and projection
@@ -54,9 +54,9 @@ void loop() {
                WireFrame3D_RGB565::rotationY(angle) *
                WireFrame3D_RGB565::rotationX(angle * 0.7f);
 
-  // Render the cube
+  // Render the cube in black
   wireframe.renderWireframe(framebuffer, cubeMesh, model,
-                            RGB565(255, 255, 255));
+                            RGB565(0, 0, 0));
 
   // output via UDP
   sendFrameToDisplay(framebuffer);
