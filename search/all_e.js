@@ -1,7 +1,7 @@
 var searchData=
 [
   ['paddedchunksize_0',['paddedChunkSize',['../classtinygpu_1_1AVIWriter.html#a20065ff36b1b57187d719a34af07117c',1,'tinygpu::AVIWriter']]],
-  ['palette_5f_1',['palette_',['../classtinygpu_1_1BMPParser.html#afe96117750a54a296e8a911f85326fa8',1,'tinygpu::BMPParser']]],
+  ['palette_5f_1',['palette_',['../classtinygpu_1_1BMPParser.html#a633c05b323cfaf8b667030e07d3258ec',1,'tinygpu::BMPParser']]],
   ['parsebitmasks_2',['parseBitMasks',['../classtinygpu_1_1BMPParser.html#a2ca94913ba710f5eeefa20ab2ae1f7d5',1,'tinygpu::BMPParser']]],
   ['parseheader_3',['parseHeader',['../classtinygpu_1_1BMPParser.html#a79f274200be8341a62d1717aa7f7827e',1,'tinygpu::BMPParser']]],
   ['parsepalette_4',['parsePalette',['../classtinygpu_1_1BMPParser.html#ac6053d1bb0d7c47f8ff990145e23956d',1,'tinygpu::BMPParser']]],
@@ -21,7 +21,6 @@ var searchData=
   ['projectionmode_5f_18',['projectionMode_',['../classtinygpu_1_1WireFrame3D.html#a211b5881f68e498f1a8bdf44ad11389d',1,'tinygpu::WireFrame3D']]],
   ['projectpoint_19',['projectPoint',['../classtinygpu_1_1WireFrame3D.html#a30fbccd51c1ac27264fa7d3042bc352c',1,'tinygpu::WireFrame3D']]],
   ['projectviewpoint_20',['projectViewPoint',['../classtinygpu_1_1WireFrame3D.html#a0c755c14323e8a2bb5e8eec5e0118042',1,'tinygpu::WireFrame3D']]],
-  ['psramallocator_21',['PSRAMAllocator',['../classtinygpu_1_1PSRAMAllocator.html#a67d0bd7dd70aaaff6642483c188364f1',1,'tinygpu::PSRAMAllocator::PSRAMAllocator(const PSRAMAllocator&lt; U &gt; &amp;) noexcept'],['../classtinygpu_1_1PSRAMAllocator.html#aecd47b9731a0b3fcc485fc395f62dd27',1,'tinygpu::PSRAMAllocator::PSRAMAllocator() noexcept'],['../classtinygpu_1_1PSRAMAllocator.html',1,'PSRAMAllocator&lt; T &gt;']]],
-  ['psramallocator_2eh_22',['PSRAMAllocator.h',['../PSRAMAllocator_8h.html',1,'']]],
-  ['psvec_23',['PSVec',['../namespacetinygpu.html#a285401e6c529d95e541e499261b4917f',1,'tinygpu']]]
+  ['psramallocator_21',['PSRAMAllocator',['../classtinygpu_1_1PSRAMAllocator.html#aecd47b9731a0b3fcc485fc395f62dd27',1,'tinygpu::PSRAMAllocator::PSRAMAllocator() noexcept'],['../classtinygpu_1_1PSRAMAllocator.html#a67d0bd7dd70aaaff6642483c188364f1',1,'tinygpu::PSRAMAllocator::PSRAMAllocator(const PSRAMAllocator&lt; U &gt; &amp;) noexcept'],['../classtinygpu_1_1PSRAMAllocator.html',1,'PSRAMAllocator&lt; T &gt;']]],
+  ['psramallocator_2eh_22',['PSRAMAllocator.h',['../PSRAMAllocator_8h.html',1,'']]]
 ];

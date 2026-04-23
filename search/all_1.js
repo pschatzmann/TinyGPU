@@ -16,6 +16,6 @@ var searchData=
   ['bmpparser_13',['BMPParser',['../classtinygpu_1_1BMPParser.html#af736828689db6a4a37737ea92c3c38b4',1,'tinygpu::BMPParser::BMPParser()'],['../classtinygpu_1_1BMPParser.html',1,'BMPParser&lt; RGB_T &gt;']]],
   ['bmpparser_2eh_14',['BMPParser.h',['../BMPParser_8h.html',1,'']]],
   ['bmprowstride_15',['bmpRowStride',['../classtinygpu_1_1BMPParser.html#ac3ef9429e3cca5311fcd51003893ded4',1,'tinygpu::BMPParser::bmpRowStride()'],['../classtinygpu_1_1BMPExporter.html#af9413465d367c92bac988c158d01748c',1,'tinygpu::BMPExporter::bmpRowStride()']]],
-  ['buffer_16',['buffer',['../classtinygpu_1_1Surface.html#a2ee407db67e17a0243ae64464ec59b59',1,'tinygpu::Surface::buffer()'],['../classtinygpu_1_1SurfaceMonochrome.html#a1f600133eba9f483ab53b21b9118edf9',1,'tinygpu::SurfaceMonochrome::buffer()']]],
-  ['buffer_5f_17',['buffer_',['../classtinygpu_1_1BMPParser.html#a662d54d5c93ef18967145f998c223a9e',1,'tinygpu::BMPParser']]]
+  ['buffer_16',['buffer',['../classtinygpu_1_1Surface.html#af3b74c48a3532181ab555b901b008ed5',1,'tinygpu::Surface::buffer()'],['../classtinygpu_1_1SurfaceMonochrome.html#afa0dac30433855379ff3ac93383d7ef2',1,'tinygpu::SurfaceMonochrome::buffer()']]],
+  ['buffer_5f_17',['buffer_',['../classtinygpu_1_1BMPParser.html#aa6f315ad499a5e50d53d38f131155c28',1,'tinygpu::BMPParser']]]
 ];

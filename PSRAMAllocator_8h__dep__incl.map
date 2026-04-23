@@ -1,0 +1,12 @@
+<map id="src/TinyGPU/PSRAMAllocator.h" name="src/TinyGPU/PSRAMAllocator.h">
+<area shape="rect" id="node1" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="133,5,353,31"/>
+<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="559,445,673,471"/>
+<area shape="rect" id="node3" href="$TinyGPUConfig_8h.html" title=" " alt="" coords="488,79,643,104"/>
+<area shape="rect" id="node4" href="$BMPParser_8h.html" title=" " alt="" coords="987,372,1173,397"/>
+<area shape="rect" id="node5" href="$FrameBuffer_8h.html" title=" " alt="" coords="399,225,595,251"/>
+<area shape="rect" id="node7" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="357,372,579,397"/>
+<area shape="rect" id="node8" href="$Surface_8h.html" title=" " alt="" coords="543,152,710,177"/>
+<area shape="rect" id="node9" href="$SurfaceMonochrome_8h.html" title=" " alt="" coords="73,225,324,251"/>
+<area shape="rect" id="node10" href="$WireFrame3D_8h.html" title=" " alt="" coords="705,299,911,324"/>
+<area shape="rect" id="node6" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="93,299,376,324"/>
+</map>

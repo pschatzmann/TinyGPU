@@ -1,5 +1,5 @@
-<map id="src/LinePrinter.h" name="src/LinePrinter.h">
-<area shape="rect" id="node1" title=" " alt="" coords="69,5,195,31"/>
+<map id="src/TinyGPU/LinePrinter.h" name="src/TinyGPU/LinePrinter.h">
+<area shape="rect" id="node1" title=" " alt="" coords="39,5,225,31"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,79,64,104"/>
 <area shape="rect" id="node3" href="$IFont_8h.html" title=" " alt="" coords="215,79,281,104"/>
 <area shape="rect" id="node7" href="$ISurface_8h.html" title=" " alt="" coords="89,79,175,104"/>

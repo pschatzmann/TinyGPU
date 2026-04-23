@@ -134,6 +134,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b68c1ec49531c1239d5a600cd5a293a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#a5b68c1ec49531c1239d5a600cd5a293a">WireFrame3D</a> (size_t <a class="el" href="classtinygpu_1_1WireFrame3D.html#a080012ae5fbe9a5428ca4fe146236974">viewportWidth</a>, size_t <a class="el" href="classtinygpu_1_1WireFrame3D.html#aa12efabdbd8d93f5c544ca31110a5d26">viewportHeight</a>)</td></tr>
 <tr class="memdesc:a5b68c1ec49531c1239d5a600cd5a293a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a wireframe renderer with the specified viewport size.  <br /></td></tr>
 <tr class="separator:a5b68c1ec49531c1239d5a600cd5a293a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a598f97417335bb36deb653d92f0d75a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#a598f97417335bb36deb653d92f0d75a7">WireFrame3D</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface)</td></tr>
+<tr class="memdesc:a598f97417335bb36deb653d92f0d75a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a wireframe renderer with the dimensions of the given surface.  <br /></td></tr>
+<tr class="separator:a598f97417335bb36deb653d92f0d75a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15afce9d177ce4cf641a7ec584b70f58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#a15afce9d177ce4cf641a7ec584b70f58">setViewport</a> (size_t <a class="el" href="classtinygpu_1_1WireFrame3D.html#a080012ae5fbe9a5428ca4fe146236974">viewportWidth</a>, size_t <a class="el" href="classtinygpu_1_1WireFrame3D.html#aa12efabdbd8d93f5c544ca31110a5d26">viewportHeight</a>)</td></tr>
 <tr class="memdesc:a15afce9d177ce4cf641a7ec584b70f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the viewport size used for projection and depth buffering.  <br /></td></tr>
 <tr class="separator:a15afce9d177ce4cf641a7ec584b70f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -280,8 +283,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:ae5544035f59506ab35b0b1eaea7a9882"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa46f13e31dbeb04a027f8878106f870a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#aa46f13e31dbeb04a027f8878106f870a">orthographicTop_</a> = 1.0f</td></tr>
 <tr class="separator:aa46f13e31dbeb04a027f8878106f870a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a2986b901e918e4436c3991e4bb7f1c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#a7a2986b901e918e4436c3991e4bb7f1c">depthBuffer_</a></td></tr>
-<tr class="separator:a7a2986b901e918e4436c3991e4bb7f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86f9d4e8814fa3cbb0f4e362bbadc1e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinygpu.html#a81fe4d2f62958ae48f36d6a3beb16bb1">Vector</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#a86f9d4e8814fa3cbb0f4e362bbadc1e5">depthBuffer_</a></td></tr>
+<tr class="separator:a86f9d4e8814fa3cbb0f4e362bbadc1e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename RGB_T = RGB565&gt;<br />
@@ -324,7 +327,7 @@ class tinygpu::WireFrame3D&lt; RGB_T &gt;</div><p>Lightweight 3D wireframe rende
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a464e9398c04c534a22f3fefe08fc737c" name="a464e9398c04c534a22f3fefe08fc737c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a464e9398c04c534a22f3fefe08fc737c">&#9670;&#160;</a></span>WireFrame3D() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a464e9398c04c534a22f3fefe08fc737c">&#9670;&#160;</a></span>WireFrame3D() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -351,7 +354,7 @@ class tinygpu::WireFrame3D&lt; RGB_T &gt;</div><p>Lightweight 3D wireframe rende
 </div>
 </div>
 <a id="a5b68c1ec49531c1239d5a600cd5a293a" name="a5b68c1ec49531c1239d5a600cd5a293a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b68c1ec49531c1239d5a600cd5a293a">&#9670;&#160;</a></span>WireFrame3D() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b68c1ec49531c1239d5a600cd5a293a">&#9670;&#160;</a></span>WireFrame3D() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -385,6 +388,34 @@ class tinygpu::WireFrame3D&lt; RGB_T &gt;</div><p>Lightweight 3D wireframe rende
 </div><div class="memdoc">
 
 <p>Creates a wireframe renderer with the specified viewport size. </p>
+
+</div>
+</div>
+<a id="a598f97417335bb36deb653d92f0d75a7" name="a598f97417335bb36deb653d92f0d75a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a598f97417335bb36deb653d92f0d75a7">&#9670;&#160;</a></span>WireFrame3D() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtinygpu_1_1WireFrame3D.html">WireFrame3D</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>surface</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a wireframe renderer with the dimensions of the given surface. </p>
 
 </div>
 </div>
@@ -1891,8 +1922,8 @@ class tinygpu::WireFrame3D&lt; RGB_T &gt;</div><p>Lightweight 3D wireframe rende
 
 </div>
 </div>
-<a id="a7a2986b901e918e4436c3991e4bb7f1c" name="a7a2986b901e918e4436c3991e4bb7f1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a2986b901e918e4436c3991e4bb7f1c">&#9670;&#160;</a></span>depthBuffer_</h2>
+<a id="a86f9d4e8814fa3cbb0f4e362bbadc1e5" name="a86f9d4e8814fa3cbb0f4e362bbadc1e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86f9d4e8814fa3cbb0f4e362bbadc1e5">&#9670;&#160;</a></span>depthBuffer_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1901,7 +1932,7 @@ class tinygpu::WireFrame3D&lt; RGB_T &gt;</div><p>Lightweight 3D wireframe rende
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;float&gt; depthBuffer_</td>
+          <td class="memname"><a class="el" href="namespacetinygpu.html#a81fe4d2f62958ae48f36d6a3beb16bb1">Vector</a>&lt;float&gt; depthBuffer_</td>
         </tr>
       </table>
   </td>
@@ -2134,7 +2165,7 @@ class tinygpu::WireFrame3D&lt; RGB_T &gt;</div><p>Lightweight 3D wireframe rende
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/<a class="el" href="WireFrame3D_8h_source.html">WireFrame3D.h</a></li>
+<li>src/TinyGPU/<a class="el" href="WireFrame3D_8h_source.html">WireFrame3D.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

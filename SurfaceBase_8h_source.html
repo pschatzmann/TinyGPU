@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyGPU: src/SurfaceBase.h Source File</title>
+<title>TinyGPU: src/TinyGPU/SurfaceBase.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -171,7 +171,7 @@ $(function() {
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="comment">/// Scroll the surface content by (dx, dy) pixels.</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classtinygpu_1_1SurfaceBase.html#aa4cb3d89fcb0f813ba629a666134e45b">   94</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtinygpu_1_1SurfaceBase.html#aa4cb3d89fcb0f813ba629a666134e45b">scroll</a>(<span class="keywordtype">int</span> dx, <span class="keywordtype">int</span> dy) {</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span> (dx == 0 &amp;&amp; dy == 0) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    std::vector&lt;PixelT&gt; newBuffer(width_ * height_);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    Vector&lt;PixelT&gt; newBuffer(width_ * height_);</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">for</span> (size_t y = 0; y &lt; height_; ++y) {</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      <span class="keywordflow">for</span> (size_t x = 0; x &lt; width_; ++x) {</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordtype">int</span> srcX = (<span class="keywordtype">int</span>)x + dx;</div>

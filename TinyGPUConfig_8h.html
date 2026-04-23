@@ -78,17 +78,39 @@ $(function() {
   <div class="headertitle"><div class="title">TinyGPUConfig.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="PSRAMAllocator_8h_source.html">TinyGPU/PSRAMAllocator.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for TinyGPUConfig.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="TinyGPUConfig_8h__incl.png" border="0" usemap="#asrc_2TinyGPUConfig_8h" alt=""/></div>
+<map name="asrc_2TinyGPUConfig_8h" id="asrc_2TinyGPUConfig_8h">
+<area shape="rect" title=" " alt="" coords="97,5,251,31"/>
+<area shape="rect" title=" " alt="" coords="5,152,68,177"/>
+<area shape="rect" href="PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="211,79,409,104"/>
+<area shape="rect" title=" " alt="" coords="92,152,163,177"/>
+<area shape="rect" title=" " alt="" coords="187,152,252,177"/>
+<area shape="rect" title=" " alt="" coords="277,152,343,177"/>
+<area shape="rect" title=" " alt="" coords="368,152,417,177"/>
+<area shape="rect" title=" " alt="" coords="441,152,533,177"/>
+<area shape="rect" title=" " alt="" coords="557,152,679,177"/>
+<area shape="rect" title=" " alt="" coords="703,152,837,177"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="TinyGPUConfig_8h__dep__incl.png" border="0" usemap="#asrc_2TinyGPUConfig_8hdep" alt=""/></div>
 <map name="asrc_2TinyGPUConfig_8hdep" id="asrc_2TinyGPUConfig_8hdep">
-<area shape="rect" title=" " alt="" coords="287,5,442,31"/>
-<area shape="rect" href="Surface_8h.html" title=" " alt="" coords="262,79,369,104"/>
-<area shape="rect" href="WireFrame3D_8h.html" title=" " alt="" coords="353,152,499,177"/>
-<area shape="rect" href="FrameBuffer_8h.html" title=" " alt="" coords="142,152,278,177"/>
-<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="233,299,347,324"/>
-<area shape="rect" href="FrameBufferMonochrome_8h.html" title=" " alt="" coords="5,225,228,251"/>
+<area shape="rect" title=" " alt="" coords="478,5,633,31"/>
+<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="360,372,474,397"/>
+<area shape="rect" href="BMPParser_8h.html" title=" " alt="" coords="44,299,230,324"/>
+<area shape="rect" href="FrameBuffer_8h.html" title=" " alt="" coords="463,152,659,177"/>
+<area shape="rect" href="TinyGPUGlobals_8h.html" title=" " alt="" coords="488,299,711,324"/>
+<area shape="rect" href="Surface_8h.html" title=" " alt="" coords="594,79,760,104"/>
+<area shape="rect" href="SurfaceMonochrome_8h.html" title=" " alt="" coords="188,152,438,177"/>
+<area shape="rect" href="WireFrame3D_8h.html" title=" " alt="" coords="836,225,1043,251"/>
+<area shape="rect" href="FrameBufferMonochrome_8h.html" title=" " alt="" coords="225,225,508,251"/>
 </map>
 </div>
 </div>
@@ -99,6 +121,9 @@ Macros</h2></td></tr>
 <tr class="memitem:adb91362a764fa04ac82207bb9de94df1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TinyGPUConfig_8h.html#adb91362a764fa04ac82207bb9de94df1">TINYGPU_ENABLE_ESP32S3_OPTIMIZATIONS</a>&#160;&#160;&#160;0</td></tr>
 <tr class="memdesc:adb91362a764fa04ac82207bb9de94df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activate ESP32-S3-specific optimizations.  <br /></td></tr>
 <tr class="separator:adb91362a764fa04ac82207bb9de94df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e7bb0fe5416041ee1da11c0eaaf8721"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TinyGPUConfig_8h.html#a0e7bb0fe5416041ee1da11c0eaaf8721">TINYGPU_USE_PSRAM_ALLOCATOR</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a0e7bb0fe5416041ee1da11c0eaaf8721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use PSRAM if available for large buffers to save internal RAM.  <br /></td></tr>
+<tr class="separator:a0e7bb0fe5416041ee1da11c0eaaf8721"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="adb91362a764fa04ac82207bb9de94df1" name="adb91362a764fa04ac82207bb9de94df1"></a>
@@ -114,6 +139,22 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Activate ESP32-S3-specific optimizations. </p>
+
+</div>
+</div>
+<a id="a0e7bb0fe5416041ee1da11c0eaaf8721" name="a0e7bb0fe5416041ee1da11c0eaaf8721"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e7bb0fe5416041ee1da11c0eaaf8721">&#9670;&#160;</a></span>TINYGPU_USE_PSRAM_ALLOCATOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TINYGPU_USE_PSRAM_ALLOCATOR&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use PSRAM if available for large buffers to save internal RAM. </p>
 
 </div>
 </div>

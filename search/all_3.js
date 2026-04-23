@@ -12,7 +12,7 @@ var searchData=
   ['decodemaskedpixel_9',['decodeMaskedPixel',['../classtinygpu_1_1BMPParser.html#ad6b76d1f5e332f0a9a83d5447171e14c',1,'tinygpu::BMPParser']]],
   ['decoderow_10',['decodeRow',['../classtinygpu_1_1BMPParser.html#af0bdd47986dcb3d3a60aac4894ee5aa5',1,'tinygpu::BMPParser']]],
   ['depth_11',['depth',['../structtinygpu_1_1WireFrame3D_1_1ProjectedPoint.html#a845896541a0621f5fbd11f0d115ce463',1,'tinygpu::WireFrame3D::ProjectedPoint']]],
-  ['depthbuffer_5f_12',['depthBuffer_',['../classtinygpu_1_1WireFrame3D.html#a7a2986b901e918e4436c3991e4bb7f1c',1,'tinygpu::WireFrame3D']]],
+  ['depthbuffer_5f_12',['depthBuffer_',['../classtinygpu_1_1WireFrame3D.html#a86f9d4e8814fa3cbb0f4e362bbadc1e5',1,'tinygpu::WireFrame3D']]],
   ['deviceoutput_13',['DeviceOutput',['../classtinygpu_1_1DeviceOutput.html#a6d52202a0da3ce6d7528dd2d8d7dcab4',1,'tinygpu::DeviceOutput::DeviceOutput()'],['../classtinygpu_1_1DeviceOutput.html',1,'DeviceOutput']]],
   ['deviceoutput_2eh_14',['DeviceOutput.h',['../DeviceOutput_8h.html',1,'']]],
   ['dibheadersize_15',['dibHeaderSize',['../structtinygpu_1_1BMPParser_1_1HeaderInfo.html#a8bb3db32d82ae92201d40d1018dda5a1',1,'tinygpu::BMPParser::HeaderInfo']]],

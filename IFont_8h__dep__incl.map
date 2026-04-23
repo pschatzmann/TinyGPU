@@ -1,12 +1,13 @@
-<map id="src/IFont.h" name="src/IFont.h">
-<area shape="rect" id="node1" title=" " alt="" coords="295,5,384,31"/>
-<area shape="rect" id="node2" href="$BitmapFont_8h.html" title=" " alt="" coords="119,152,251,177"/>
-<area shape="rect" id="node3" href="$Surface_8h.html" title=" " alt="" coords="241,225,347,251"/>
-<area shape="rect" id="node7" href="$CartesianView_8h.html" title=" " alt="" coords="5,299,156,324"/>
-<area shape="rect" id="node8" href="$LinePrinter_8h.html" title=" " alt="" coords="327,79,453,104"/>
-<area shape="rect" id="node9" href="$SurfaceBase_8h.html" title=" " alt="" coords="377,152,515,177"/>
-<area shape="rect" id="node10" href="$SurfaceMonochrome_8h.html" title=" " alt="" coords="413,225,604,251"/>
-<area shape="rect" id="node4" href="$FrameBuffer_8h.html" title=" " alt="" coords="231,299,367,324"/>
-<area shape="rect" id="node6" href="$TinyGPU_8h.html" title=" " alt="" coords="188,445,301,471"/>
-<area shape="rect" id="node5" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="281,372,504,397"/>
+<map id="src/TinyGPU/IFont.h" name="src/TinyGPU/IFont.h">
+<area shape="rect" id="node1" title=" " alt="" coords="360,5,509,31"/>
+<area shape="rect" id="node2" href="$BitmapFont_8h.html" title=" " alt="" coords="75,152,267,177"/>
+<area shape="rect" id="node3" href="$Surface_8h.html" title=" " alt="" coords="221,225,387,251"/>
+<area shape="rect" id="node7" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="294,445,517,471"/>
+<area shape="rect" id="node8" href="$CartesianView_8h.html" title=" " alt="" coords="755,225,965,251"/>
+<area shape="rect" id="node9" href="$LinePrinter_8h.html" title=" " alt="" coords="341,79,528,104"/>
+<area shape="rect" id="node10" href="$SurfaceBase_8h.html" title=" " alt="" coords="466,152,665,177"/>
+<area shape="rect" id="node11" href="$SurfaceMonochrome_8h.html" title=" " alt="" coords="576,299,827,324"/>
+<area shape="rect" id="node4" href="$TinyGPU_8h.html" title=" " alt="" coords="433,519,546,544"/>
+<area shape="rect" id="node5" href="$FrameBuffer_8h.html" title=" " alt="" coords="145,299,341,324"/>
+<area shape="rect" id="node6" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="455,372,737,397"/>
 </map>

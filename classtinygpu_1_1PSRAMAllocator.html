@@ -135,19 +135,10 @@ Memory is zero-initialized (calloc behavior) </dd>
 Provides proper alignment for the allocated type</dd></dl>
 <p>Example usage: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="PSRAMAllocator_8h.html">PSRAMAllocator.h</a>&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// Use PSRAMAllocator with std::vector for large buffers</span></div>
+<div class="line"><span class="comment">// Use PSRAMAllocator with Vector for large buffers</span></div>
 <div class="line">std::vector&lt;uint8_t, PSRAMAllocator&lt;uint8_t&gt;&gt; largeBuffer;</div>
 <div class="line">largeBuffer.resize(1024 * 1024);  <span class="comment">// Large buffer preferably in PSRAM</span></div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Or use the convenience alias</span></div>
-<div class="line"><a class="code hl_typedef" href="namespacetinygpu.html#a285401e6c529d95e541e499261b4917f">PSVec&lt;uint8_t&gt;</a> videoFrame;    <span class="comment">// Large video frame data in PSRAM</span></div>
-<div class="line">videoFrame.resize(640 * 480 * 3);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// For small buffers in fast RAM, use RAMAllocator (separate header)</span></div>
-<div class="line"><span class="preprocessor">#include &quot;RAMAllocator.h&quot;</span></div>
-<div class="line">RAMVec&lt;uint16_t&gt; lookupTable; <span class="comment">// Small lookup table in fast RAM</span></div>
 <div class="ttc" id="aPSRAMAllocator_8h_html"><div class="ttname"><a href="PSRAMAllocator_8h.html">PSRAMAllocator.h</a></div><div class="ttdoc">Header-only C++ allocator that prefers PSRAM allocation on ESP32.</div></div>
-<div class="ttc" id="anamespacetinygpu_html_a285401e6c529d95e541e499261b4917f"><div class="ttname"><a href="namespacetinygpu.html#a285401e6c529d95e541e499261b4917f">tinygpu::PSVec</a></div><div class="ttdeci">std::vector&lt; T, PSRAMAllocator&lt; T &gt; &gt; PSVec</div><div class="ttdoc">Convenience type alias for vectors using PSRAMAllocator.</div><div class="ttdef"><b>Definition:</b> PSRAMAllocator.h:185</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="afb9ded5f49336ae503bb9f2035ea902b" name="afb9ded5f49336ae503bb9f2035ea902b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afb9ded5f49336ae503bb9f2035ea902b">&#9670;&#160;</a></span>value_type</h2>
@@ -336,7 +327,7 @@ The size parameter n is ignored as heap_caps_free doesn't need it </dd></dl>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/<a class="el" href="PSRAMAllocator_8h_source.html">PSRAMAllocator.h</a></li>
+<li>src/TinyGPU/<a class="el" href="PSRAMAllocator_8h_source.html">PSRAMAllocator.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

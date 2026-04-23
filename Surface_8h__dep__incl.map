@@ -1,6 +1,7 @@
-<map id="src/Surface.h" name="src/Surface.h">
-<area shape="rect" id="node1" title=" " alt="" coords="209,5,315,31"/>
-<area shape="rect" id="node2" href="$FrameBuffer_8h.html" title=" " alt="" coords="142,79,278,104"/>
-<area shape="rect" id="node4" href="$TinyGPU_8h.html" title=" " alt="" coords="208,225,321,251"/>
-<area shape="rect" id="node3" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="5,152,228,177"/>
+<map id="src/TinyGPU/Surface.h" name="src/TinyGPU/Surface.h">
+<area shape="rect" id="node1" title=" " alt="" coords="100,5,267,31"/>
+<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="5,299,119,324"/>
+<area shape="rect" id="node3" href="$FrameBuffer_8h.html" title=" " alt="" coords="85,79,281,104"/>
+<area shape="rect" id="node5" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="203,225,425,251"/>
+<area shape="rect" id="node4" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="42,152,325,177"/>
 </map>

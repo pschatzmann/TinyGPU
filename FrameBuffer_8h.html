@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyGPU: src/FrameBuffer.h File Reference</title>
+<title>TinyGPU: src/TinyGPU/FrameBuffer.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -82,48 +82,58 @@ $(function() {
 <div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="Surface_8h_source.html">Surface.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TinyGPULogger_8h_source.html">TinyGPULogger.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TinyGPUConfig_8h_source.html">TinyGPUConfig.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Vector_8h_source.html">TinyGPU/Vector.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for FrameBuffer.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="FrameBuffer_8h__incl.png" border="0" usemap="#asrc_2FrameBuffer_8h" alt=""/></div>
-<map name="asrc_2FrameBuffer_8h" id="asrc_2FrameBuffer_8h">
-<area shape="rect" title=" " alt="" coords="598,5,734,31"/>
-<area shape="rect" title=" " alt="" coords="102,225,187,251"/>
-<area shape="rect" title=" " alt="" coords="684,79,746,104"/>
-<area shape="rect" title=" " alt="" coords="771,79,848,104"/>
-<area shape="rect" title=" " alt="" coords="492,225,554,251"/>
-<area shape="rect" href="Surface_8h.html" title=" " alt="" coords="576,79,659,104"/>
-<area shape="rect" href="TinyGPULogger_8h.html" title=" " alt="" coords="1199,79,1332,104"/>
-<area shape="rect" title=" " alt="" coords="516,445,591,471"/>
-<area shape="rect" title=" " alt="" coords="821,445,892,471"/>
-<area shape="rect" title=" " alt="" coords="732,152,802,177"/>
-<area shape="rect" href="BGR565_8h.html" title=" " alt="" coords="702,372,789,397"/>
-<area shape="rect" href="BitmapFont_8h.html" title=" " alt="" coords="630,225,739,251"/>
-<area shape="rect" href="RGB565_8h.html" title=" " alt="" coords="592,372,678,397"/>
-<area shape="rect" href="RGB888_8h.html" title=" " alt="" coords="813,372,900,397"/>
-<area shape="rect" href="IFont_8h.html" title=" " alt="" coords="347,299,414,324"/>
-<area shape="rect" href="ISurface_8h.html" title=" " alt="" coords="438,299,525,324"/>
-<area shape="rect" href="LinePrinter_8h.html" title=" " alt="" coords="262,225,365,251"/>
-<area shape="rect" href="RGB666_8h.html" title=" " alt="" coords="976,372,1062,397"/>
-<area shape="rect" href="SurfaceBase_8h.html" title=" " alt="" coords="339,152,454,177"/>
-<area shape="rect" href="TinyGPUConfig_8h.html" title=" " alt="" coords="827,152,958,177"/>
-<area shape="rect" title=" " alt="" coords="652,299,708,324"/>
-<area shape="rect" title=" " alt="" coords="264,299,323,324"/>
-<area shape="rect" title=" " alt="" coords="1321,152,1392,177"/>
-<area shape="rect" title=" " alt="" coords="1235,152,1296,177"/>
+<div class="center"><img src="FrameBuffer_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2FrameBuffer_8h" alt=""/></div>
+<map name="asrc_2TinyGPU_2FrameBuffer_8h" id="asrc_2TinyGPU_2FrameBuffer_8h">
+<area shape="rect" title=" " alt="" coords="1075,5,1271,31"/>
+<area shape="rect" title=" " alt="" coords="1011,225,1096,251"/>
+<area shape="rect" title=" " alt="" coords="971,79,1034,104"/>
+<area shape="rect" title=" " alt="" coords="1059,79,1136,104"/>
+<area shape="rect" href="Surface_8h.html" title=" " alt="" coords="736,79,819,104"/>
+<area shape="rect" href="TinyGPUConfig_8h.html" title=" " alt="" coords="1421,152,1552,177"/>
+<area shape="rect" href="Vector_8h.html" title=" " alt="" coords="1262,152,1397,177"/>
+<area shape="rect" href="TinyGPULogger_8h.html" title=" " alt="" coords="1545,79,1679,104"/>
+<area shape="rect" title=" " alt="" coords="667,445,741,471"/>
+<area shape="rect" title=" " alt="" coords="314,445,385,471"/>
+<area shape="rect" title=" " alt="" coords="1258,299,1329,324"/>
+<area shape="rect" href="BGR565_8h.html" title=" " alt="" coords="417,372,503,397"/>
+<area shape="rect" href="BitmapFont_8h.html" title=" " alt="" coords="395,225,504,251"/>
+<area shape="rect" href="RGB565_8h.html" title=" " alt="" coords="579,372,666,397"/>
+<area shape="rect" href="RGB888_8h.html" title=" " alt="" coords="306,372,393,397"/>
+<area shape="rect" href="IFont_8h.html" title=" " alt="" coords="629,299,696,324"/>
+<area shape="rect" href="ISurface_8h.html" title=" " alt="" coords="803,299,890,324"/>
+<area shape="rect" href="LinePrinter_8h.html" title=" " alt="" coords="681,225,783,251"/>
+<area shape="rect" href="RGB666_8h.html" title=" " alt="" coords="195,372,282,397"/>
+<area shape="rect" href="SurfaceBase_8h.html" title=" " alt="" coords="767,152,881,177"/>
+<area shape="rect" title=" " alt="" coords="296,299,352,324"/>
+<area shape="rect" title=" " alt="" coords="720,299,779,324"/>
+<area shape="rect" title=" " alt="" coords="1171,299,1234,324"/>
+<area shape="rect" href="PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="1388,225,1585,251"/>
+<area shape="rect" title=" " alt="" coords="1353,299,1418,324"/>
+<area shape="rect" title=" " alt="" coords="1443,299,1509,324"/>
+<area shape="rect" title=" " alt="" coords="1534,299,1583,324"/>
+<area shape="rect" title=" " alt="" coords="1607,299,1699,324"/>
+<area shape="rect" title=" " alt="" coords="1723,299,1845,324"/>
+<area shape="rect" title=" " alt="" coords="1869,299,2003,324"/>
+<area shape="rect" title=" " alt="" coords="1577,152,1647,177"/>
+<area shape="rect" title=" " alt="" coords="1672,152,1733,177"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="FrameBuffer_8h__dep__incl.png" border="0" usemap="#asrc_2FrameBuffer_8hdep" alt=""/></div>
-<map name="asrc_2FrameBuffer_8hdep" id="asrc_2FrameBuffer_8hdep">
-<area shape="rect" title=" " alt="" coords="122,5,258,31"/>
-<area shape="rect" href="FrameBufferMonochrome_8h.html" title=" " alt="" coords="5,79,228,104"/>
-<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="133,152,247,177"/>
+<div class="center"><img src="FrameBuffer_8h__dep__incl.png" border="0" usemap="#asrc_2TinyGPU_2FrameBuffer_8hdep" alt=""/></div>
+<map name="asrc_2TinyGPU_2FrameBuffer_8hdep" id="asrc_2TinyGPU_2FrameBuffer_8hdep">
+<area shape="rect" title=" " alt="" coords="70,5,266,31"/>
+<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="48,225,161,251"/>
+<area shape="rect" href="FrameBufferMonochrome_8h.html" title=" " alt="" coords="27,79,310,104"/>
+<area shape="rect" href="TinyGPUGlobals_8h.html" title=" " alt="" coords="141,152,364,177"/>
 </map>
 </div>
 </div>

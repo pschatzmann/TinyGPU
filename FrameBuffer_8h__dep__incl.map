@@ -1,5 +1,6 @@
-<map id="src/FrameBuffer.h" name="src/FrameBuffer.h">
-<area shape="rect" id="node1" title=" " alt="" coords="122,5,258,31"/>
-<area shape="rect" id="node2" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="5,79,228,104"/>
-<area shape="rect" id="node3" href="$TinyGPU_8h.html" title=" " alt="" coords="133,152,247,177"/>
+<map id="src/TinyGPU/FrameBuffer.h" name="src/TinyGPU/FrameBuffer.h">
+<area shape="rect" id="node1" title=" " alt="" coords="70,5,266,31"/>
+<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="48,225,161,251"/>
+<area shape="rect" id="node3" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="27,79,310,104"/>
+<area shape="rect" id="node4" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="141,152,364,177"/>
 </map>

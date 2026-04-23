@@ -1,8 +1,11 @@
 <map id="src/TinyGPUConfig.h" name="src/TinyGPUConfig.h">
-<area shape="rect" id="node1" title=" " alt="" coords="287,5,442,31"/>
-<area shape="rect" id="node2" href="$Surface_8h.html" title=" " alt="" coords="262,79,369,104"/>
-<area shape="rect" id="node6" href="$WireFrame3D_8h.html" title=" " alt="" coords="353,152,499,177"/>
-<area shape="rect" id="node3" href="$FrameBuffer_8h.html" title=" " alt="" coords="142,152,278,177"/>
-<area shape="rect" id="node5" href="$TinyGPU_8h.html" title=" " alt="" coords="233,299,347,324"/>
-<area shape="rect" id="node4" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="5,225,228,251"/>
+<area shape="rect" id="node1" title=" " alt="" coords="478,5,633,31"/>
+<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="360,372,474,397"/>
+<area shape="rect" id="node3" href="$BMPParser_8h.html" title=" " alt="" coords="44,299,230,324"/>
+<area shape="rect" id="node4" href="$FrameBuffer_8h.html" title=" " alt="" coords="463,152,659,177"/>
+<area shape="rect" id="node6" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="488,299,711,324"/>
+<area shape="rect" id="node7" href="$Surface_8h.html" title=" " alt="" coords="594,79,760,104"/>
+<area shape="rect" id="node8" href="$SurfaceMonochrome_8h.html" title=" " alt="" coords="188,152,438,177"/>
+<area shape="rect" id="node9" href="$WireFrame3D_8h.html" title=" " alt="" coords="836,225,1043,251"/>
+<area shape="rect" id="node5" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="225,225,508,251"/>
 </map>
