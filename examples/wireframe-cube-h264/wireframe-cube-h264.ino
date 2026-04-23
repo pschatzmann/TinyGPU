@@ -1,10 +1,13 @@
 /**
- * @file wireframe-cube.ino
+ * @file wireframe-cube-h264.ino
  * @brief TinyGPU WireFrame3D rotating cube demo.
  *
  * This example demonstrates drawing a rotating 3D wireframe cube
  * using the TinyGPU library's WireFrame3D class and sends a H264-encoded video
  * stream over UDP.
+ *
+ * You watch the result using ffmpeg by calling "ffplay -f h264 udp://@:5000" 
+ * It takes a few seconds for the stream to start, so be patient after running the ESP32S3 code.
  */
 
 #include "H264Encoder.h"  // https://pschatzmann.github.io/ESP32S3-h264/
@@ -80,6 +83,8 @@ void loop() {
 
   // output via UDP
   encoder.encodeRGB565(framebuffer.data(), framebuffer.size(), udp);
+  Serial.print("Sending bytes: ");
+  Serial.println(framebuffer.size());
 
   // rotation for next frame
   angle += 0.03f;
