@@ -93,7 +93,7 @@ class SurfaceBase : public ISurface<PixelT> {
   /// Scroll the surface content by (dx, dy) pixels.
   void scroll(int dx, int dy) {
     if (dx == 0 && dy == 0) return;
-    std::vector<PixelT> newBuffer(width_ * height_);
+    Vector<PixelT> newBuffer(width_ * height_);
     for (size_t y = 0; y < height_; ++y) {
       for (size_t x = 0; x < width_; ++x) {
         int srcX = (int)x + dx;

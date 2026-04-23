@@ -14,7 +14,7 @@ constexpr int HEIGHT = 400;
 
 // Create framebuffer and wireframe objects
 FrameBufferRGB565 framebuffer(WIDTH, HEIGHT, FontRGB565);
-WireFrame3D_RGB565 wireframe(WIDTH, HEIGHT);
+WireFrame3D_RGB565 wireframe(framebuffer);
 auto cubeMesh = WireFrame3D_RGB565::cube(100.0f);
 float angle = 0.0f;
 

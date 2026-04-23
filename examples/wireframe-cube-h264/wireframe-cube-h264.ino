@@ -25,7 +25,7 @@ UDPPrint udp;
 
 // Create framebuffer and wireframe objects
 FrameBufferRGB565 framebuffer(WIDTH, HEIGHT, FontRGB565);
-WireFrame3D_RGB565 wireframe(WIDTH, HEIGHT);
+WireFrame3D_RGB565 wireframe(framebuffer);
 
 // Use the built-in cube mesh helper
 auto cubeMesh = WireFrame3D_RGB565::cube(100.0f);

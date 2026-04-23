@@ -43,17 +43,10 @@ namespace tinygpu {
  * @code
  * #include "PSRAMAllocator.h"
  *
- * // Use PSRAMAllocator with std::vector for large buffers
+ * // Use PSRAMAllocator with Vector for large buffers
  * std::vector<uint8_t, PSRAMAllocator<uint8_t>> largeBuffer;
  * largeBuffer.resize(1024 * 1024);  // Large buffer preferably in PSRAM
  *
- * // Or use the convenience alias
- * PSVec<uint8_t> videoFrame;    // Large video frame data in PSRAM
- * videoFrame.resize(640 * 480 * 3);
- *
- * // For small buffers in fast RAM, use RAMAllocator (separate header)
- * #include "RAMAllocator.h"
- * RAMVec<uint16_t> lookupTable; // Small lookup table in fast RAM
  * @endcode
  */
 template <typename T = uint8_t>
@@ -168,56 +161,5 @@ class PSRAMAllocator {
   };
 };
 
-/**
- * @brief Convenience type alias for vectors using PSRAMAllocator
- *
- * PSVec provides a shorter way to declare vectors that use PSRAMAllocator.
- *
- * @tparam T The element type of the vector
- *
- * Example usage:
- * @code
- * PSVec<uint8_t> buffer;  // Instead of std::vector<uint8_t,
- * PSRAMAllocator<uint8_t>> buffer.resize(1024);
- * @endcode
- */
-template <typename T>
-using PSVec = std::vector<T, PSRAMAllocator<T>>;
+}  // namespace tinygpu
 
-}  // namespace esp_h264
-
-/**
- * @brief Equality operator for PSRAMAllocator instances
- *
- * All PSRAMAllocator instances are considered equal regardless of their
- * template type parameter, as required by STL allocator requirements.
- *
- * @tparam T First allocator's value type
- * @tparam U Second allocator's value type
- * @param lhs First allocator
- * @param rhs Second allocator
- * @return true Always returns true
- */
-template <class T, class U>
-inline bool operator==(const esp_h264::PSRAMAllocator<T>&,
-                       const esp_h264::PSRAMAllocator<U>&) noexcept {
-  return true;
-}
-
-/**
- * @brief Inequality operator for PSRAMAllocator instances
- *
- * All PSRAMAllocator instances are considered equal, so inequality
- * always returns false.
- *
- * @tparam T First allocator's value type
- * @tparam U Second allocator's value type
- * @param lhs First allocator
- * @param rhs Second allocator
- * @return false Always returns false
- */
-template <class T, class U>
-inline bool operator!=(const esp_h264::PSRAMAllocator<T>&,
-                       const esp_h264::PSRAMAllocator<U>&) noexcept {
-  return false;
-}

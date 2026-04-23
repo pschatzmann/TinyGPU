@@ -6,10 +6,10 @@
 #include <algorithm>
 #include <cmath>
 #include <limits>
-#include <vector>
 
 #include "ISurface.h"
 #include "TinyGPUConfig.h"
+#include "TinyGPU/Vector.h"
 
 #if TINYGPU_ENABLE_ESP32S3_OPTIMIZATIONS
 #include "esp_dsp.h"
@@ -178,8 +178,8 @@ class WireFrame3D {
 
   /// Represents a wireframe mesh.
   struct Mesh {
-    std::vector<Vec3> vertices;
-    std::vector<Edge> edges;
+    Vector<Vec3> vertices;
+    Vector<Edge> edges;
   };
 
   /// Stores camera parameters for view transformation.
@@ -200,6 +200,13 @@ class WireFrame3D {
   /// Creates a wireframe renderer with the specified viewport size.
   WireFrame3D(size_t viewportWidth, size_t viewportHeight)
       : viewportWidth_(viewportWidth), viewportHeight_(viewportHeight) {
+    updateViewMatrix();
+    updateProjectionMatrix();
+  }
+
+  /// Creates a wireframe renderer with the dimensions of the given surface.
+  WireFrame3D(ISurface<RGB_T>& surface)
+      : viewportWidth_(surface.width()), viewportHeight_(surface.height()) {
     updateViewMatrix();
     updateProjectionMatrix();
   }
@@ -533,7 +540,7 @@ class WireFrame3D {
   float orthographicRight_ = 1.0f;
   float orthographicBottom_ = -1.0f;
   float orthographicTop_ = 1.0f;
-  std::vector<float> depthBuffer_;
+  Vector<float> depthBuffer_;
 
   static float dot(const Vec3& first, const Vec3& second) {
 #if TINYGPU_ENABLE_ESP32S3_OPTIMIZATIONS

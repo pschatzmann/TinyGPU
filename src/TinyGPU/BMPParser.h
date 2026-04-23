@@ -4,9 +4,10 @@
 #include <stdint.h>
 
 #include <algorithm>
-#include <vector>
 
+#include "TinyGPUConfig.h"
 #include "ISurface.h"
+#include "TinyGPU/Vector.h"
 
 namespace tinygpu {
 
@@ -95,8 +96,8 @@ public:
   };
 
   ISurface<RGB_T>& target_;
-  std::vector<uint8_t> buffer_;
-  std::vector<RGB_T> palette_;
+  Vector<uint8_t> buffer_;
+  Vector<RGB_T> palette_;
   Status status_ = Status::Collecting;
   const char* errorMessage_ = nullptr;
   size_t imageWidth_ = 0;

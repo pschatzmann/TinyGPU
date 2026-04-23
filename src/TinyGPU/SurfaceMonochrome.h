@@ -2,10 +2,10 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#include <vector>
-
 #include "IFont.h"
 #include "SurfaceBase.h"
+#include "TinyGPUConfig.h"
+#include "TinyGPU/Vector.h"
 
 namespace tinygpu {
 
@@ -79,7 +79,7 @@ class SurfaceMonochrome : public SurfaceBase<bool> {
   size_t size() const override { return buffer.size(); }
 
  protected:
-  std::vector<uint8_t> buffer;
+  Vector<uint8_t> buffer;
 };
 
 /// @brief Alias for a monochrome sprite surface.

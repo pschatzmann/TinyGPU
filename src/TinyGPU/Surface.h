@@ -6,7 +6,6 @@
 
 #include <algorithm>
 #include <cstddef>
-#include <vector>
 
 #include "BGR565.h"
 #include "BitmapFont.h"
@@ -18,6 +17,7 @@
 #include "RGB888.h"
 #include "SurfaceBase.h"
 #include "TinyGPUConfig.h"
+#include "TinyGPU/Vector.h"
 
 namespace tinygpu {
 
@@ -93,7 +93,7 @@ class Surface : public SurfaceBase<RGB_T> {
   size_t size() const override { return buffer.size() * RGB_T::size() / 8; }
 
  protected:
-  std::vector<RGB_T> buffer;
+  Vector<RGB_T> buffer;
 };
 
 /// @brief Alias for a sprite surface with the same pixel format as the main surface.

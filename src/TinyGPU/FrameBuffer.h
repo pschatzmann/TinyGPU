@@ -3,10 +3,11 @@
 #include <algorithm>
 #include <cmath>
 #include <memory>
-#include <vector>
 
 #include "Surface.h"
 #include "TinyGPULogger.h"
+#include "TinyGPUConfig.h"
+#include "TinyGPU/Vector.h"
 
 namespace tinygpu {
 
@@ -299,7 +300,7 @@ class FrameBuffer : public ISurface<RGB_T> {
 
   /// Returns the currently active font used by the framebuffer.
   IFont<RGB_T>& activeFont() { return surface_.font(); }
-  std::vector<std::unique_ptr<SpriteInfo>> sprites_;
+  Vector<std::unique_ptr<SpriteInfo>> sprites_;
 
   /// Returns the intersection rectangle of two rectangles.
   static Rect intersect(const Rect& first, const Rect& second) {
@@ -580,7 +581,7 @@ class FrameBuffer : public ISurface<RGB_T> {
   }
 
   /// Finds the iterator to a sprite in the internal sprite list.
-  std::vector<std::unique_ptr<SpriteInfo>>::iterator findSprite(
+  Vector<std::unique_ptr<SpriteInfo>>::iterator findSprite(
       SpriteInfo& spriteInfo) {
     return std::find_if(
         sprites_.begin(), sprites_.end(),
