@@ -5,8 +5,9 @@
 
 TinyGPU is a lightweight Arduino graphics library for RGB565 bitmap surfaces, sprites, and simple 3D wireframe rendering.
 
-RGB565 is a compact 16-bit color format that stores red in 5 bits, green in 6 bits, and blue in 5 bits. It is widely used by small TFT, LCD, OLED, and other embedded display controllers because it needs much less memory and bandwidth than 24-bit RGB while still providing good visual quality for many graphics
-applications.
+RGB565 is a compact 16-bit color format that stores red in 5 bits, green in 6 bits, and blue in 5 bits. It is widely used by small TFT, LCD, OLED, and other embedded display controllers because it needs much less memory and bandwidth than 24-bit RGB while still providing good visual quality for many graphics applications.
+
+Apart form RGB565 we also support RGB666, RGB888 and Monochrome.
 
 ## Features
 
@@ -24,12 +25,14 @@ applications.
   - move
   - scale
   - rotate
-- Incremental BMP image decoding into RGB565 surfaces
 - Basic 3D wireframe rendering
   - transforms
   - camera / view matrix
   - perspective and orthographic projection
   - minimal depth-buffered line rendering
+- BMP file support
+  - saving data
+  - loading data
 - Arduino example sketches
 
 ## Overview
@@ -42,31 +45,19 @@ The library covers three main areas:
 - sprite-oriented composition and transforms for UI and simple animation
 - lightweight 3D wireframe rendering for visualizations and demos
 
-It also includes incremental BMP decoding so image assets can be converted into display-ready RGB565 surfaces without requiring a desktop preprocessing step.
-
 
 ## Documentaion
 
 - [Class Documentation](https://pschatzmann.github.io/TinyGPU/namespacetinygpu.html)
+- [Wiki](https://github.com/pschatzmann/TinyGPU/wiki)
 - [Examples](examples)
 
-## Output
 
-### Sending Pixels to a Real Display
+## Installation
 
-TinyGPU keeps all drawing in memory. After rendering, you can send the raw
-RGB565 data to your display driver.
+For Arduino, you can download the library as zip and call include Library -> zip library. Or you can git clone this project into the Arduino libraries folder e.g. with
 
-Useful accessors are:
-
-- `data()` for byte-wise access
-- `size()` for total byte size
-
-This separation keeps the drawing API independent from any specific display
-controller or transport.
-
-### Rendering as H264
-
-With the help of the [ESP32S3-H264 library](https://github.com/pschatzmann/ESP32S3-h264) you can view the output on the screen: 
-
-![Watch Wireframe](docs/rotating-cube.gif)
+```
+cd  ~/Documents/Arduino/libraries
+git clone https://github.com/pschatzmann/SC16IS752.git
+```
