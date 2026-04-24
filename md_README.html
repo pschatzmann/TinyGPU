@@ -75,6 +75,7 @@ $(function() {
 <div class="textblock"><p><a href="https://www.arduino.cc/reference/en/libraries/"><img src="https://img.shields.io/badge/Arduino-Library-blue.svg" alt="Arduino Library" style="pointer-events: none;" class="inline"/></a> <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache-yellow.svg" alt="License: Apache" style="pointer-events: none;" class="inline"/></a></p>
 <p>TinyGPU is a lightweight Arduino graphics library for RGB565 bitmap surfaces, sprites, and simple 3D wireframe rendering.</p>
 <p>RGB565 is a compact 16-bit color format that stores red in 5 bits, green in 6 bits, and blue in 5 bits. It is widely used by small TFT, LCD, OLED, and other embedded display controllers because it needs much less memory and bandwidth than 24-bit RGB while still providing good visual quality for many graphics applications.</p>
+<p>Apart form RGB565 we also support RGB666, RGB888 and Monochrome.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Features</h1>
 <ul>
@@ -96,12 +97,16 @@ Features</h1>
 <li>rotate</li>
 </ul>
 </li>
-<li>Incremental BMP image decoding into RGB565 surfaces</li>
 <li>Basic 3D wireframe rendering<ul>
 <li>transforms</li>
 <li>camera / view matrix</li>
 <li>perspective and orthographic projection</li>
 <li>minimal depth-buffered line rendering</li>
+</ul>
+</li>
+<li>BMP file support<ul>
+<li>saving data</li>
+<li>loading data</li>
 </ul>
 </li>
 <li>Arduino example sketches</li>
@@ -115,29 +120,19 @@ Overview</h1>
 <li>sprite-oriented composition and transforms for UI and simple animation</li>
 <li>lightweight 3D wireframe rendering for visualizations and demos</li>
 </ul>
-<p>It also includes incremental BMP decoding so image assets can be converted into display-ready RGB565 surfaces without requiring a desktop preprocessing step.</p>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Documentaion</h1>
 <ul>
 <li><a href="https://pschatzmann.github.io/TinyGPU/namespacetinygpu.html">Class Documentation</a></li>
+<li><a href="https://github.com/pschatzmann/TinyGPU/wiki">Wiki</a></li>
 <li>[Examples](examples)</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md4"></a>
-Output</h1>
-<h2><a class="anchor" id="autotoc_md5"></a>
-Sending Pixels to a Real Display</h2>
-<p>TinyGPU keeps all drawing in memory. After rendering, you can send the raw RGB565 data to your display driver.</p>
-<p>Useful accessors are:</p>
-<ul>
-<li><code>data()</code> for byte-wise access</li>
-<li><code>size()</code> for total byte size</li>
-</ul>
-<p>This separation keeps the drawing API independent from any specific display controller or transport.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
-Rendering as H264</h2>
-<p>With the help of the <a href="https://github.com/pschatzmann/ESP32S3-h264">ESP32S3-H264 library</a> you can view the output on the screen:</p>
-<p><img src="docs/rotating-cube.gif" alt="Watch Wireframe" class="inline"/> </p>
-</div></div><!-- contents -->
+Installation</h1>
+<p>For Arduino, you can download the library as zip and call include Library -&gt; zip library. Or you can git clone this project into the Arduino libraries folder e.g. with</p>
+<div class="fragment"><div class="line">cd  ~/Documents/Arduino/libraries</div>
+<div class="line">git clone https://github.com/pschatzmann/SC16IS752.git</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
