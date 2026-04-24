@@ -50,8 +50,9 @@ It also includes incremental BMP decoding so image assets can be converted into 
 - [Class Documentation](https://pschatzmann.github.io/TinyGPU/namespacetinygpu.html)
 - [Examples](examples)
 
+## Output
 
-## Sending Pixels to a Real Display
+### Sending Pixels to a Real Display
 
 TinyGPU keeps all drawing in memory. After rendering, you can send the raw
 RGB565 data to your display driver.
@@ -64,3 +65,8 @@ Useful accessors are:
 This separation keeps the drawing API independent from any specific display
 controller or transport.
 
+### Rendering as H264
+
+With the help of the [ESP32S3-H264 library](https://github.com/pschatzmann/ESP32S3-h264) you can view the output on the screen: 
+
+![Watch Wireframe](docs/rotating-cube.gif)
