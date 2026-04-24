@@ -61,5 +61,5 @@ For Arduino, you can download the library as zip and call include Library -> zip
 
 ```
 cd  ~/Documents/Arduino/libraries
-git clone https://github.com/pschatzmann/SC16IS752.git
+git clone https://github.com/pschatzmann/TinyGPU.git
 ```
