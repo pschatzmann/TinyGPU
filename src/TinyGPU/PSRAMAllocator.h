@@ -12,7 +12,6 @@
 #include <type_traits>
 #include <vector>
 
-#include "RAMAllocator.h"
 #include "esp_heap_caps.h"
 
 namespace tinygpu {
