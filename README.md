@@ -5,6 +5,8 @@
 
 TinyGPU is a lightweight Arduino graphics library for RGB565 bitmap surfaces, sprites, and simple 3D wireframe rendering.
 
+![Watch Wireframe](docs/rotating-cube.gif)
+
 RGB565 is a compact 16-bit color format that stores red in 5 bits, green in 6 bits, and blue in 5 bits. It is widely used by small TFT, LCD, OLED, and other embedded display controllers because it needs much less memory and bandwidth than 24-bit RGB while still providing good visual quality for many graphics applications.
 
 Apart form RGB565 we also support RGB666, RGB888 and Monochrome.
