@@ -123,14 +123,20 @@ Documentaion</h1>
 <li>[Examples](examples)</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md4"></a>
-Sending Pixels to a Real Display</h1>
+Output</h1>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Sending Pixels to a Real Display</h2>
 <p>TinyGPU keeps all drawing in memory. After rendering, you can send the raw RGB565 data to your display driver.</p>
 <p>Useful accessors are:</p>
 <ul>
 <li><code>data()</code> for byte-wise access</li>
 <li><code>size()</code> for total byte size</li>
 </ul>
-<p>This separation keeps the drawing API independent from any specific display controller or transport. </p>
+<p>This separation keeps the drawing API independent from any specific display controller or transport.</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Rendering as H264</h2>
+<p>With the help of the <a href="https://github.com/pschatzmann/ESP32S3-h264">ESP32S3-H264 library</a> you can view the output on the screen:</p>
+<p><img src="docs/rotating-cube.gif" alt="Watch Wireframe" class="inline"/> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
