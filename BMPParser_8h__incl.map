@@ -1,19 +1,18 @@
 <map id="src/TinyGPU/BMPParser.h" name="src/TinyGPU/BMPParser.h">
-<area shape="rect" id="node1" title=" " alt="" coords="661,5,847,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="978,225,1053,251"/>
-<area shape="rect" id="node3" title=" " alt="" coords="883,225,953,251"/>
-<area shape="rect" id="node4" title=" " alt="" coords="671,79,757,104"/>
-<area shape="rect" id="node5" href="$TinyGPUConfig_8h.html" title=" " alt="" coords="334,79,465,104"/>
-<area shape="rect" id="node15" href="$ISurface_8h.html" title=" " alt="" coords="857,79,944,104"/>
-<area shape="rect" id="node17" href="$Vector_8h.html" title=" " alt="" coords="5,152,140,177"/>
-<area shape="rect" id="node6" title=" " alt="" coords="27,225,89,251"/>
-<area shape="rect" id="node7" href="$PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="301,152,498,177"/>
-<area shape="rect" id="node8" title=" " alt="" coords="113,225,184,251"/>
-<area shape="rect" id="node9" title=" " alt="" coords="208,225,273,251"/>
-<area shape="rect" id="node10" title=" " alt="" coords="298,225,365,251"/>
-<area shape="rect" id="node11" title=" " alt="" coords="389,225,439,251"/>
-<area shape="rect" id="node12" title=" " alt="" coords="463,225,555,251"/>
-<area shape="rect" id="node13" title=" " alt="" coords="579,225,700,251"/>
-<area shape="rect" id="node14" title=" " alt="" coords="725,225,858,251"/>
-<area shape="rect" id="node16" href="$RGB565_8h.html" title=" " alt="" coords="883,152,969,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="523,5,708,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="839,225,914,251"/>
+<area shape="rect" id="node3" title=" " alt="" coords="744,225,815,251"/>
+<area shape="rect" id="node4" title=" " alt="" coords="533,79,618,104"/>
+<area shape="rect" id="node5" href="$TinyGPUConfig_8h.html" title=" " alt="" coords="273,79,403,104"/>
+<area shape="rect" id="node14" href="$ISurface_8h.html" title=" " alt="" coords="719,79,805,104"/>
+<area shape="rect" id="node16" href="$Vector_8h.html" title=" " alt="" coords="5,152,140,177"/>
+<area shape="rect" id="node6" title=" " alt="" coords="33,225,96,251"/>
+<area shape="rect" id="node7" href="$PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="239,152,437,177"/>
+<area shape="rect" id="node8" title=" " alt="" coords="120,225,191,251"/>
+<area shape="rect" id="node9" title=" " alt="" coords="215,225,280,251"/>
+<area shape="rect" id="node10" title=" " alt="" coords="305,225,371,251"/>
+<area shape="rect" id="node11" title=" " alt="" coords="396,225,445,251"/>
+<area shape="rect" id="node12" title=" " alt="" coords="469,225,561,251"/>
+<area shape="rect" id="node13" title=" " alt="" coords="586,225,719,251"/>
+<area shape="rect" id="node15" href="$RGB565_8h.html" title=" " alt="" coords="744,152,831,177"/>
 </map>
