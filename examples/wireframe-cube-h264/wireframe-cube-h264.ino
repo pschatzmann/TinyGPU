@@ -8,6 +8,8 @@
  *
  * You watch the result using ffmpeg by calling "ffplay -f h264 udp://@:5000" 
  * It takes a few seconds for the stream to start, so be patient after running the ESP32S3 code.
+ * 
+ * @note the ESP32S3-h264 library only works on a ESP32S3 with PSRAM enabled
  */
 
 #include "H264Encoder.h"  // https://pschatzmann.github.io/ESP32S3-h264/
