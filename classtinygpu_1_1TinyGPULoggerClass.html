@@ -81,6 +81,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Simple header-only logger for TinyGPU with log levels and vararg support.  
+ <a href="classtinygpu_1_1TinyGPULoggerClass.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="TinyGPULogger_8h_source.html">TinyGPULogger.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -94,7 +97,7 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="classtinygpu_1_1TinyGPULoggerClass.html#a221b779e6bb7b8d40677d7642bfefac5ac157bdf0b85a40d2619cbc8bc1ae5fe2">NONE</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a221b779e6bb7b8d40677d7642bfefac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logging levels for <a class="el" href="classTinyGPULogger.html" title="Simple header-only logger for TinyGPU with log levels and vararg support.">TinyGPULogger</a>.  <a href="classtinygpu_1_1TinyGPULoggerClass.html#a221b779e6bb7b8d40677d7642bfefac5">More...</a><br /></td></tr>
+<tr class="memdesc:a221b779e6bb7b8d40677d7642bfefac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logging levels for TinyGPULogger.  <a href="classtinygpu_1_1TinyGPULoggerClass.html#a221b779e6bb7b8d40677d7642bfefac5">More...</a><br /></td></tr>
 <tr class="separator:a221b779e6bb7b8d40677d7642bfefac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -109,7 +112,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a62783368bc9a6a5713893e15ef77ce12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a message with printf-style formatting.  <br /></td></tr>
 <tr class="separator:a62783368bc9a6a5713893e15ef77ce12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Simple header-only logger for TinyGPU with log levels and vararg support. </p>
+<p>This logger provides printf-style logging with selectable log levels. Usage example: TinyGPULogger.setLevel(TinyGPULogger::DEBUG); TinyGPULogger.log(TinyGPULogger::INFO, "Hello %d", 42);</p>
+<p>Log levels:</p><ul>
+<li>DEBUG: Detailed debug information</li>
+<li>INFO: General information</li>
+<li>WARN: Warnings</li>
+<li>ERROR: Errors only</li>
+<li>NONE: Disable all logging </li>
+</ul>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a221b779e6bb7b8d40677d7642bfefac5" name="a221b779e6bb7b8d40677d7642bfefac5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a221b779e6bb7b8d40677d7642bfefac5">&#9670;&#160;</a></span>Level</h2>
 
@@ -122,7 +135,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Logging levels for <a class="el" href="classTinyGPULogger.html" title="Simple header-only logger for TinyGPU with log levels and vararg support.">TinyGPULogger</a>. </p>
+<p>Logging levels for TinyGPULogger. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a221b779e6bb7b8d40677d7642bfefac5a0593585da9181e972974c1274d8f2b4f" name="a221b779e6bb7b8d40677d7642bfefac5a0593585da9181e972974c1274d8f2b4f"></a>DEBUG&#160;</td><td class="fielddoc"><p>Detailed debug information. </p>
 </td></tr>
