@@ -5,7 +5,7 @@
 namespace tinygpu {
 
 /**
- * @class TinyGPULogger
+ * @class TinyGPULoggerClass
  * @brief Simple header-only logger for TinyGPU with log levels and vararg
  * support.
  *
