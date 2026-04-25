@@ -42,11 +42,6 @@ using SurfaceBGR565 = Surface<BGR565>;
  */
 using FrameBufferRGB565 = FrameBuffer<RGB565>;
 /** 
- *  @typedef FrameBufferRGB565
- *  @brief FrameBuffer with RGB565 pixel format.
- */
-using FrameBufferRGB565 = FrameBuffer<RGB565>;
-/** 
  *  @typedef FrameBufferRGB666
  *  @brief FrameBuffer with RGB666 pixel format.
  */
