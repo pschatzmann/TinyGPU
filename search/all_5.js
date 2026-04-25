@@ -14,7 +14,7 @@ var searchData=
   ['framebufferbgr565_11',['FrameBufferBGR565',['../namespacetinygpu.html#ab995f293f2db79dcf025f1e2e49249b5',1,'tinygpu']]],
   ['framebuffermonochrome_12',['FrameBufferMonochrome',['../namespacetinygpu.html#a7a537bb2bb57dae7d04aa2961d02662a',1,'tinygpu']]],
   ['framebuffermonochrome_2eh_13',['FrameBufferMonochrome.h',['../FrameBufferMonochrome_8h.html',1,'']]],
-  ['framebufferrgb565_14',['FrameBufferRGB565',['../namespacetinygpu.html#a1b5117e185b221239fa8cdd8cb258c6d',1,'tinygpu']]],
+  ['framebufferrgb565_14',['FrameBufferRGB565',['../namespacetinygpu.html#a0f572638e7d61fb9186cdd03bf110163',1,'tinygpu']]],
   ['framebufferrgb666_15',['FrameBufferRGB666',['../namespacetinygpu.html#ad0b85571fb5193c6fad3b768c3b7be7f',1,'tinygpu']]],
   ['framebufferrgb888_16',['FrameBufferRGB888',['../namespacetinygpu.html#aa9c63b58163207d3995179ae9026a01e',1,'tinygpu']]],
   ['framecount_5f_17',['frameCount_',['../classtinygpu_1_1AVIWriter.html#aadd923f39a3a39c39abb8ebdcaa9a5e6',1,'tinygpu::AVIWriter']]],
