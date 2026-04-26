@@ -150,5 +150,14 @@ using WireFrame3D_RGB666 = WireFrame3D<RGB666>;
  */
 using WireFrame3D_RGB888 = WireFrame3D<RGB888>;
 
+/// @brief CartesianView with RGB565 pixel format.
+using CartesianViewRGB565 = CartesianView<RGB565>;
+/// @brief CartesianView with RGB666 pixel format.
+using CartesianViewRGB666 = CartesianView<RGB666>;
+/// @brief CartesianView with RGB888 pixel format.
+using CartesianViewRGB888 = CartesianView<RGB888>;
+/// @brief CartesianView with BGR565 pixel format.
+using CartesianViewBGR565 = CartesianView<BGR565>;
+
 
 }  // namespace tinygpu
