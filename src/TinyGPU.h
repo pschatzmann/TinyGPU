@@ -11,8 +11,9 @@
 #include "TinyGPU/WireFrame3D.h"
 #include "TinyGPU/PSRAMAllocator.h"
 #include "TinyGPU/TinyGPUGlobals.h"
+#include <TinyGPU/DeviceOutput.h>
+#include <assert.h>
 
-
-#ifdef ARDUINO
+#if defined(ARDUINO) || defined(TINYGPU_AUTO_NAMESPACE)
 using namespace tinygpu;
 #endif

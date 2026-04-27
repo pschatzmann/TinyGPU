@@ -5,9 +5,9 @@
 #include <memory>
 
 #include "Surface.h"
-#include "TinyGPULogger.h"
-#include "TinyGPUConfig.h"
 #include "TinyGPU/Vector.h"
+#include "TinyGPUConfig.h"
+#include "TinyGPULogger.h"
 
 namespace tinygpu {
 
@@ -130,7 +130,7 @@ class FrameBuffer : public ISurface<RGB_T> {
   }
 
   /// Adds a sprite with a preallocated max buffer size for transformations.
-  SpriteInfo& addSprite(size_t x, size_t y, size_t maxX, size_t maxY, 
+  SpriteInfo& addSprite(size_t x, size_t y, size_t maxX, size_t maxY,
                         const ISurface<RGB_T>& sprite,
                         RGB_T invisibleColor = RGB_T(0)) {
     TinyGPULogger.log(TinyGPULoggerClass::INFO,
@@ -581,8 +581,7 @@ class FrameBuffer : public ISurface<RGB_T> {
   }
 
   /// Finds the iterator to a sprite in the internal sprite list.
-  Vector<std::unique_ptr<SpriteInfo>>::iterator findSprite(
-      SpriteInfo& spriteInfo) {
+  auto findSprite(SpriteInfo& spriteInfo) {
     return std::find_if(
         sprites_.begin(), sprites_.end(),
         [&spriteInfo](const std::unique_ptr<SpriteInfo>& entry) {

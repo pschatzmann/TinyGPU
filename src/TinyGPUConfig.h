@@ -12,9 +12,16 @@
 #endif
 #endif
 
+#ifdef ESP32
+#define HAS_PSRAM 1
+#else
+#define HAS_PSRAM 0
+#endif
+
+
 /// Use PSRAM if available for large buffers to save internal RAM
 #ifndef TINYGPU_USE_PSRAM_ALLOCATOR
-#define TINYGPU_USE_PSRAM_ALLOCATOR 1
+#define TINYGPU_USE_PSRAM_ALLOCATOR HAS_PSRAM
 #endif
 
 

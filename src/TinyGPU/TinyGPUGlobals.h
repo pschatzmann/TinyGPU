@@ -1,10 +1,10 @@
 #pragma once
-#include "BGR565.h"
 #include "BitmapFont.h"
 #include "FrameBuffer.h"
 #include "FrameBufferMonochrome.h"
 #include "IFont.h"
 #include "LinePrinter.h"
+#include "BGR565.h"
 #include "RGB565.h"
 #include "RGB666.h"
 #include "RGB888.h"
@@ -153,7 +153,7 @@ using WireFrame3D_RGB888 = WireFrame3D<RGB888>;
  * @typedef WireFrame3D_BGR565
  * @brief   WireFrame3D_BGR565
  */
-using WireFrame3D_GRB565 = WireFrame3D<GRB565>;
+using WireFrame3D_BGR565 = WireFrame3D<BGR565>;
 
 /// @brief CartesianView with RGB565 pixel format.
 using CartesianViewRGB565 = CartesianView<RGB565>;

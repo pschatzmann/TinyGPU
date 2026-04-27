@@ -4,6 +4,7 @@
  * @file PSRAMAllocator.h
  * @brief Header-only C++ allocator that prefers PSRAM allocation on ESP32
  */
+#ifdef ESP32
 
 #include <cstddef>
 #include <cstdlib>
@@ -11,6 +12,7 @@
 #include <new>
 #include <type_traits>
 #include <vector>
+
 
 #include "esp_heap_caps.h"
 
@@ -162,3 +164,4 @@ class PSRAMAllocator {
 
 }  // namespace tinygpu
 
+#endif
