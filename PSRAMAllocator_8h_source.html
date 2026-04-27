@@ -82,171 +82,167 @@ $(function() {
 <div class="line"><span class="lineno">    4</span><span class="comment"> * @file PSRAMAllocator.h</span></div>
 <div class="line"><span class="lineno">    5</span><span class="comment"> * @brief Header-only C++ allocator that prefers PSRAM allocation on ESP32</span></div>
 <div class="line"><span class="lineno">    6</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstddef</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstdlib</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstring</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="keyword">new</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">type_traits</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">vector</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;esp_heap_caps.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">ifdef</span> <span class="preprocessor">ESP32</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstddef</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstdlib</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstring</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">new</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">type_traits</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">vector</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="namespacetinygpu.html">tinygpu</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="stringliteral">&quot;esp_heap_caps.h&quot;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/**</span></div>
-<div class="line"><span class="lineno">   20</span><span class="comment"> * @class PSRAMAllocator</span></div>
-<div class="line"><span class="lineno">   21</span><span class="comment"> * @brief STL-compatible allocator that prefers PSRAM allocation with fallback</span></div>
-<div class="line"><span class="lineno">   22</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">   23</span><span class="comment"> * PSRAMAllocator is a custom C++ allocator that attempts to allocate memory in</span></div>
-<div class="line"><span class="lineno">   24</span><span class="comment"> * external PSRAM (using heap_caps_aligned_calloc with MALLOC_CAP_SPIRAM) and</span></div>
-<div class="line"><span class="lineno">   25</span><span class="comment"> * falls back to regular heap allocation if PSRAM allocation fails.</span></div>
-<div class="line"><span class="lineno">   26</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">   27</span><span class="comment"> * This allocator is particularly useful for ESP32 platforms with external PSRAM</span></div>
-<div class="line"><span class="lineno">   28</span><span class="comment"> * where large buffers (like video frames) should be stored in PSRAM to preserve</span></div>
-<div class="line"><span class="lineno">   29</span><span class="comment"> * internal SRAM for other uses. For small, frequently-accessed buffers that</span></div>
-<div class="line"><span class="lineno">   30</span><span class="comment"> * need fast access, consider using RAMAllocator instead.</span></div>
-<div class="line"><span class="lineno">   31</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">   32</span><span class="comment"> * @tparam T The type of objects to allocate</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace</span> tinygpu {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   22</span><span class="comment"> * @class PSRAMAllocator</span></div>
+<div class="line"><span class="lineno">   23</span><span class="comment"> * @brief STL-compatible allocator that prefers PSRAM allocation with fallback</span></div>
+<div class="line"><span class="lineno">   24</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">   25</span><span class="comment"> * PSRAMAllocator is a custom C++ allocator that attempts to allocate memory in</span></div>
+<div class="line"><span class="lineno">   26</span><span class="comment"> * external PSRAM (using heap_caps_aligned_calloc with MALLOC_CAP_SPIRAM) and</span></div>
+<div class="line"><span class="lineno">   27</span><span class="comment"> * falls back to regular heap allocation if PSRAM allocation fails.</span></div>
+<div class="line"><span class="lineno">   28</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">   29</span><span class="comment"> * This allocator is particularly useful for ESP32 platforms with external PSRAM</span></div>
+<div class="line"><span class="lineno">   30</span><span class="comment"> * where large buffers (like video frames) should be stored in PSRAM to preserve</span></div>
+<div class="line"><span class="lineno">   31</span><span class="comment"> * internal SRAM for other uses. For small, frequently-accessed buffers that</span></div>
+<div class="line"><span class="lineno">   32</span><span class="comment"> * need fast access, consider using RAMAllocator instead.</span></div>
 <div class="line"><span class="lineno">   33</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">   34</span><span class="comment"> * @note On ESP-IDF platforms, uses heap_caps_aligned_calloc for PSRAM</span></div>
-<div class="line"><span class="lineno">   35</span><span class="comment"> * allocation</span></div>
-<div class="line"><span class="lineno">   36</span><span class="comment"> * @note On Arduino platforms, the heap_caps functions are shimmed to standard</span></div>
-<div class="line"><span class="lineno">   37</span><span class="comment"> * malloc/free</span></div>
-<div class="line"><span class="lineno">   38</span><span class="comment"> * @note Memory is zero-initialized (calloc behavior)</span></div>
-<div class="line"><span class="lineno">   39</span><span class="comment"> * @note Provides proper alignment for the allocated type</span></div>
-<div class="line"><span class="lineno">   40</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">   41</span><span class="comment"> * Example usage:</span></div>
-<div class="line"><span class="lineno">   42</span><span class="comment"> * @code</span></div>
-<div class="line"><span class="lineno">   43</span><span class="comment"> * #include &quot;PSRAMAllocator.h&quot;</span></div>
-<div class="line"><span class="lineno">   44</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">   45</span><span class="comment"> * // Use PSRAMAllocator with Vector for large buffers</span></div>
-<div class="line"><span class="lineno">   46</span><span class="comment"> * std::vector&lt;uint8_t, PSRAMAllocator&lt;uint8_t&gt;&gt; largeBuffer;</span></div>
-<div class="line"><span class="lineno">   47</span><span class="comment"> * largeBuffer.resize(1024 * 1024);  // Large buffer preferably in PSRAM</span></div>
-<div class="line"><span class="lineno">   48</span><span class="comment"> *</span></div>
-<div class="line"><span class="lineno">   49</span><span class="comment"> * @endcode</span></div>
-<div class="line"><span class="lineno">   50</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <a class="code hl_class" href="classtinygpu_1_1PSRAMAllocator.html">uint8_t</a>&gt;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classtinygpu_1_1PSRAMAllocator.html">   52</a></span><span class="keyword">class</span> <a class="code hl_class" href="classtinygpu_1_1PSRAMAllocator.html">PSRAMAllocator</a> {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="comment">/** @brief The type of objects this allocator can allocate */</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classtinygpu_1_1PSRAMAllocator.html#afb9ded5f49336ae503bb9f2035ea902b">   55</a></span>  <span class="keyword">using</span> value_type = T;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">   58</span><span class="comment">   * @brief Default constructor</span></div>
-<div class="line"><span class="lineno">   59</span><span class="comment">   *</span></div>
-<div class="line"><span class="lineno">   60</span><span class="comment">   * Constructs a PSRAMAllocator. No initialization needed.</span></div>
-<div class="line"><span class="lineno">   61</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classtinygpu_1_1PSRAMAllocator.html#aecd47b9731a0b3fcc485fc395f62dd27">   62</a></span>  <a class="code hl_function" href="classtinygpu_1_1PSRAMAllocator.html#aecd47b9731a0b3fcc485fc395f62dd27">PSRAMAllocator</a>() <span class="keyword">noexcept</span> {}</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">   65</span><span class="comment">   * @brief Copy constructor from different allocator type</span></div>
-<div class="line"><span class="lineno">   66</span><span class="comment">   *</span></div>
-<div class="line"><span class="lineno">   67</span><span class="comment">   * Allows construction from PSRAMAllocator of different type U.</span></div>
-<div class="line"><span class="lineno">   68</span><span class="comment">   * Required for STL allocator requirements.</span></div>
-<div class="line"><span class="lineno">   69</span><span class="comment">   *</span></div>
-<div class="line"><span class="lineno">   70</span><span class="comment">   * @tparam U The type parameter of the source allocator</span></div>
-<div class="line"><span class="lineno">   71</span><span class="comment">   * @param other Source allocator (unused)</span></div>
-<div class="line"><span class="lineno">   72</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> U&gt;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classtinygpu_1_1PSRAMAllocator.html#a67d0bd7dd70aaaff6642483c188364f1">   74</a></span>  <a class="code hl_function" href="classtinygpu_1_1PSRAMAllocator.html#a67d0bd7dd70aaaff6642483c188364f1">PSRAMAllocator</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtinygpu_1_1PSRAMAllocator.html">PSRAMAllocator</a>&lt;U&gt;&amp;) <span class="keyword">noexcept</span> {}</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">   77</span><span class="comment">   * @brief Allocate memory for n objects of type T</span></div>
-<div class="line"><span class="lineno">   78</span><span class="comment">   *</span></div>
-<div class="line"><span class="lineno">   79</span><span class="comment">   * Attempts to allocate memory in the following priority order:</span></div>
-<div class="line"><span class="lineno">   80</span><span class="comment">   * 1. PSRAM using heap_caps_aligned_calloc (if available)</span></div>
-<div class="line"><span class="lineno">   81</span><span class="comment">   * 2. Aligned allocation using aligned_alloc (C11)</span></div>
-<div class="line"><span class="lineno">   82</span><span class="comment">   * 3. Standard calloc as fallback</span></div>
-<div class="line"><span class="lineno">   83</span><span class="comment">   *</span></div>
-<div class="line"><span class="lineno">   84</span><span class="comment">   * All allocated memory is zero-initialized.</span></div>
+<div class="line"><span class="lineno">   34</span><span class="comment"> * @tparam T The type of objects to allocate</span></div>
+<div class="line"><span class="lineno">   35</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">   36</span><span class="comment"> * @note On ESP-IDF platforms, uses heap_caps_aligned_calloc for PSRAM</span></div>
+<div class="line"><span class="lineno">   37</span><span class="comment"> * allocation</span></div>
+<div class="line"><span class="lineno">   38</span><span class="comment"> * @note On Arduino platforms, the heap_caps functions are shimmed to standard</span></div>
+<div class="line"><span class="lineno">   39</span><span class="comment"> * malloc/free</span></div>
+<div class="line"><span class="lineno">   40</span><span class="comment"> * @note Memory is zero-initialized (calloc behavior)</span></div>
+<div class="line"><span class="lineno">   41</span><span class="comment"> * @note Provides proper alignment for the allocated type</span></div>
+<div class="line"><span class="lineno">   42</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">   43</span><span class="comment"> * Example usage:</span></div>
+<div class="line"><span class="lineno">   44</span><span class="comment"> * @code</span></div>
+<div class="line"><span class="lineno">   45</span><span class="comment"> * #include &quot;PSRAMAllocator.h&quot;</span></div>
+<div class="line"><span class="lineno">   46</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">   47</span><span class="comment"> * // Use PSRAMAllocator with Vector for large buffers</span></div>
+<div class="line"><span class="lineno">   48</span><span class="comment"> * std::vector&lt;uint8_t, PSRAMAllocator&lt;uint8_t&gt;&gt; largeBuffer;</span></div>
+<div class="line"><span class="lineno">   49</span><span class="comment"> * largeBuffer.resize(1024 * 1024);  // Large buffer preferably in PSRAM</span></div>
+<div class="line"><span class="lineno">   50</span><span class="comment"> *</span></div>
+<div class="line"><span class="lineno">   51</span><span class="comment"> * @endcode</span></div>
+<div class="line"><span class="lineno">   52</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = uint8_t&gt;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">class</span> PSRAMAllocator {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="comment">/** @brief The type of objects this allocator can allocate */</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">using</span> value_type = T;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   60</span><span class="comment">   * @brief Default constructor</span></div>
+<div class="line"><span class="lineno">   61</span><span class="comment">   *</span></div>
+<div class="line"><span class="lineno">   62</span><span class="comment">   * Constructs a PSRAMAllocator. No initialization needed.</span></div>
+<div class="line"><span class="lineno">   63</span><span class="comment">   */</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  PSRAMAllocator() <span class="keyword">noexcept</span> {}</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   67</span><span class="comment">   * @brief Copy constructor from different allocator type</span></div>
+<div class="line"><span class="lineno">   68</span><span class="comment">   *</span></div>
+<div class="line"><span class="lineno">   69</span><span class="comment">   * Allows construction from PSRAMAllocator of different type U.</span></div>
+<div class="line"><span class="lineno">   70</span><span class="comment">   * Required for STL allocator requirements.</span></div>
+<div class="line"><span class="lineno">   71</span><span class="comment">   *</span></div>
+<div class="line"><span class="lineno">   72</span><span class="comment">   * @tparam U The type parameter of the source allocator</span></div>
+<div class="line"><span class="lineno">   73</span><span class="comment">   * @param other Source allocator (unused)</span></div>
+<div class="line"><span class="lineno">   74</span><span class="comment">   */</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> U&gt;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  PSRAMAllocator(<span class="keyword">const</span> PSRAMAllocator&lt;U&gt;&amp;) <span class="keyword">noexcept</span> {}</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   79</span><span class="comment">   * @brief Allocate memory for n objects of type T</span></div>
+<div class="line"><span class="lineno">   80</span><span class="comment">   *</span></div>
+<div class="line"><span class="lineno">   81</span><span class="comment">   * Attempts to allocate memory in the following priority order:</span></div>
+<div class="line"><span class="lineno">   82</span><span class="comment">   * 1. PSRAM using heap_caps_aligned_calloc (if available)</span></div>
+<div class="line"><span class="lineno">   83</span><span class="comment">   * 2. Aligned allocation using aligned_alloc (C11)</span></div>
+<div class="line"><span class="lineno">   84</span><span class="comment">   * 3. Standard calloc as fallback</span></div>
 <div class="line"><span class="lineno">   85</span><span class="comment">   *</span></div>
-<div class="line"><span class="lineno">   86</span><span class="comment">   * @param n Number of objects of type T to allocate</span></div>
-<div class="line"><span class="lineno">   87</span><span class="comment">   * @return Pointer to allocated memory</span></div>
-<div class="line"><span class="lineno">   88</span><span class="comment">   * @throws std::bad_alloc if allocation fails</span></div>
-<div class="line"><span class="lineno">   89</span><span class="comment">   *</span></div>
-<div class="line"><span class="lineno">   90</span><span class="comment">   * @note Memory is aligned to alignof(T)</span></div>
-<div class="line"><span class="lineno">   91</span><span class="comment">   * @note On ESP32 with PSRAM, prefers external PSRAM allocation</span></div>
-<div class="line"><span class="lineno">   92</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classtinygpu_1_1PSRAMAllocator.html#a4cc7f0a97979de2d09de195784b44474">   93</a></span>  T* <a class="code hl_function" href="classtinygpu_1_1PSRAMAllocator.html#a4cc7f0a97979de2d09de195784b44474">allocate</a>(std::size_t n) {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">if</span> (n == 0) <span class="keywordflow">return</span> <span class="keywordtype">nullptr</span>;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="comment">// total bytes</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    std::size_t bytes = n * <span class="keyword">sizeof</span>(T);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// Prefer PSRAM: use heap_caps_aligned_calloc if available. Request</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="comment">// alignment equal to alignof(T).</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">void</span>* p = <span class="keywordtype">nullptr</span>;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">MALLOC_CAP_SPIRAM</span><span class="preprocessor">)</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment">// heap_caps_aligned_calloc(alignment, nmemb, size, caps)</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    p = heap_caps_aligned_calloc(<span class="keyword">alignof</span>(T), n, <span class="keyword">sizeof</span>(T),</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                                 (<span class="keywordtype">unsigned</span>)MALLOC_CAP_SPIRAM);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">if</span> (!p) {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      <span class="comment">// Fallback: try aligned allocation where available</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">__STDC_VERSION__</span><span class="preprocessor">)</span> <span class="preprocessor">&amp;&amp;</span> <span class="preprocessor">(</span><span class="preprocessor">__STDC_VERSION__</span> <span class="preprocessor">&gt;=</span> 201112L<span class="preprocessor">)</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="comment">// aligned_alloc requires size to be multiple of alignment</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      std::size_t align = <span class="keyword">alignof</span>(T);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      std::size_t alloc_size = bytes;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      <span class="keywordflow">if</span> (align &gt; 1) {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        std::size_t rem = alloc_size % align;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordflow">if</span> (rem) alloc_size += (align - rem);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      }</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      p = aligned_alloc(align, alloc_size);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <span class="keywordflow">if</span> (p) {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="comment">// zero initialize</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        std::memset(p, 0, bytes);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      } <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      {</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="comment">// last resort: calloc</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        p = std::calloc(n, <span class="keyword">sizeof</span>(T));</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      }</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">if</span> (!p) <span class="keywordflow">throw</span> std::bad_alloc();</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast</span>&lt;T*&gt;(p);</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  }</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  132</span><span class="comment">   * @brief Deallocate memory previously allocated by this allocator</span></div>
-<div class="line"><span class="lineno">  133</span><span class="comment">   *</span></div>
-<div class="line"><span class="lineno">  134</span><span class="comment">   * Frees memory that was allocated by allocate(). Uses heap_caps_free</span></div>
-<div class="line"><span class="lineno">  135</span><span class="comment">   * which works for both PSRAM and regular heap allocations.</span></div>
-<div class="line"><span class="lineno">  136</span><span class="comment">   *</span></div>
-<div class="line"><span class="lineno">  137</span><span class="comment">   * @param p Pointer to memory to deallocate (can be nullptr)</span></div>
-<div class="line"><span class="lineno">  138</span><span class="comment">   * @param n Number of objects (ignored, but required by allocator interface)</span></div>
-<div class="line"><span class="lineno">  139</span><span class="comment">   *</span></div>
-<div class="line"><span class="lineno">  140</span><span class="comment">   * @note Safe to call with nullptr</span></div>
-<div class="line"><span class="lineno">  141</span><span class="comment">   * @note The size parameter n is ignored as heap_caps_free doesn&#39;t need it</span></div>
-<div class="line"><span class="lineno">  142</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classtinygpu_1_1PSRAMAllocator.html#add772824b463abc65c190e2b503b74a9">  143</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtinygpu_1_1PSRAMAllocator.html#add772824b463abc65c190e2b503b74a9">deallocate</a>(T* p, std::size_t <span class="comment">/*n*/</span>) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordflow">if</span> (!p) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    heap_caps_free(p);</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  }</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  149</span><span class="comment">   * @brief Rebind allocator to different type</span></div>
-<div class="line"><span class="lineno">  150</span><span class="comment">   *</span></div>
-<div class="line"><span class="lineno">  151</span><span class="comment">   * Provides the rebind mechanism required by STL allocators.</span></div>
-<div class="line"><span class="lineno">  152</span><span class="comment">   * Allows containers to allocate different types using the same allocator.</span></div>
-<div class="line"><span class="lineno">  153</span><span class="comment">   *</span></div>
-<div class="line"><span class="lineno">  154</span><span class="comment">   * @tparam U The type to rebind to</span></div>
-<div class="line"><span class="lineno">  155</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> U&gt;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="structtinygpu_1_1PSRAMAllocator_1_1rebind.html">  157</a></span>  <span class="keyword">struct</span> <a class="code hl_struct" href="structtinygpu_1_1PSRAMAllocator_1_1rebind.html">rebind</a> {</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="comment">/** @brief The rebound allocator type */</span></div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="structtinygpu_1_1PSRAMAllocator_1_1rebind.html#aca94c91187cf20b4312c5642ef640501">  159</a></span>    <span class="keyword">typedef</span> <a class="code hl_class" href="classtinygpu_1_1PSRAMAllocator.html">PSRAMAllocator</a>&lt;U&gt; <a class="code hl_typedef" href="structtinygpu_1_1PSRAMAllocator_1_1rebind.html#aca94c91187cf20b4312c5642ef640501">other</a>;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  };</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>};</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>}  <span class="comment">// namespace tinygpu</span></div>
-<div class="ttc" id="aclasstinygpu_1_1PSRAMAllocator_html"><div class="ttname"><a href="classtinygpu_1_1PSRAMAllocator.html">tinygpu::PSRAMAllocator</a></div><div class="ttdoc">STL-compatible allocator that prefers PSRAM allocation with fallback.</div><div class="ttdef"><b>Definition:</b> PSRAMAllocator.h:52</div></div>
-<div class="ttc" id="aclasstinygpu_1_1PSRAMAllocator_html_a4cc7f0a97979de2d09de195784b44474"><div class="ttname"><a href="classtinygpu_1_1PSRAMAllocator.html#a4cc7f0a97979de2d09de195784b44474">tinygpu::PSRAMAllocator::allocate</a></div><div class="ttdeci">T * allocate(std::size_t n)</div><div class="ttdoc">Allocate memory for n objects of type T.</div><div class="ttdef"><b>Definition:</b> PSRAMAllocator.h:93</div></div>
-<div class="ttc" id="aclasstinygpu_1_1PSRAMAllocator_html_a67d0bd7dd70aaaff6642483c188364f1"><div class="ttname"><a href="classtinygpu_1_1PSRAMAllocator.html#a67d0bd7dd70aaaff6642483c188364f1">tinygpu::PSRAMAllocator::PSRAMAllocator</a></div><div class="ttdeci">PSRAMAllocator(const PSRAMAllocator&lt; U &gt; &amp;) noexcept</div><div class="ttdoc">Copy constructor from different allocator type.</div><div class="ttdef"><b>Definition:</b> PSRAMAllocator.h:74</div></div>
-<div class="ttc" id="aclasstinygpu_1_1PSRAMAllocator_html_add772824b463abc65c190e2b503b74a9"><div class="ttname"><a href="classtinygpu_1_1PSRAMAllocator.html#add772824b463abc65c190e2b503b74a9">tinygpu::PSRAMAllocator::deallocate</a></div><div class="ttdeci">void deallocate(T *p, std::size_t) noexcept</div><div class="ttdoc">Deallocate memory previously allocated by this allocator.</div><div class="ttdef"><b>Definition:</b> PSRAMAllocator.h:143</div></div>
-<div class="ttc" id="aclasstinygpu_1_1PSRAMAllocator_html_aecd47b9731a0b3fcc485fc395f62dd27"><div class="ttname"><a href="classtinygpu_1_1PSRAMAllocator.html#aecd47b9731a0b3fcc485fc395f62dd27">tinygpu::PSRAMAllocator::PSRAMAllocator</a></div><div class="ttdeci">PSRAMAllocator() noexcept</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> PSRAMAllocator.h:62</div></div>
-<div class="ttc" id="anamespacetinygpu_html"><div class="ttname"><a href="namespacetinygpu.html">tinygpu</a></div><div class="ttdef"><b>Definition:</b> AVIWriter.h:9</div></div>
-<div class="ttc" id="astructtinygpu_1_1PSRAMAllocator_1_1rebind_html"><div class="ttname"><a href="structtinygpu_1_1PSRAMAllocator_1_1rebind.html">tinygpu::PSRAMAllocator::rebind</a></div><div class="ttdoc">Rebind allocator to different type.</div><div class="ttdef"><b>Definition:</b> PSRAMAllocator.h:157</div></div>
-<div class="ttc" id="astructtinygpu_1_1PSRAMAllocator_1_1rebind_html_aca94c91187cf20b4312c5642ef640501"><div class="ttname"><a href="structtinygpu_1_1PSRAMAllocator_1_1rebind.html#aca94c91187cf20b4312c5642ef640501">tinygpu::PSRAMAllocator::rebind::other</a></div><div class="ttdeci">PSRAMAllocator&lt; U &gt; other</div><div class="ttdoc">The rebound allocator type.</div><div class="ttdef"><b>Definition:</b> PSRAMAllocator.h:159</div></div>
+<div class="line"><span class="lineno">   86</span><span class="comment">   * All allocated memory is zero-initialized.</span></div>
+<div class="line"><span class="lineno">   87</span><span class="comment">   *</span></div>
+<div class="line"><span class="lineno">   88</span><span class="comment">   * @param n Number of objects of type T to allocate</span></div>
+<div class="line"><span class="lineno">   89</span><span class="comment">   * @return Pointer to allocated memory</span></div>
+<div class="line"><span class="lineno">   90</span><span class="comment">   * @throws std::bad_alloc if allocation fails</span></div>
+<div class="line"><span class="lineno">   91</span><span class="comment">   *</span></div>
+<div class="line"><span class="lineno">   92</span><span class="comment">   * @note Memory is aligned to alignof(T)</span></div>
+<div class="line"><span class="lineno">   93</span><span class="comment">   * @note On ESP32 with PSRAM, prefers external PSRAM allocation</span></div>
+<div class="line"><span class="lineno">   94</span><span class="comment">   */</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  T* allocate(std::size_t n) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">if</span> (n == 0) <span class="keywordflow">return</span> <span class="keywordtype">nullptr</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// total bytes</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    std::size_t bytes = n * <span class="keyword">sizeof</span>(T);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="comment">// Prefer PSRAM: use heap_caps_aligned_calloc if available. Request</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="comment">// alignment equal to alignof(T).</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">void</span>* p = <span class="keywordtype">nullptr</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">MALLOC_CAP_SPIRAM</span><span class="preprocessor">)</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// heap_caps_aligned_calloc(alignment, nmemb, size, caps)</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    p = heap_caps_aligned_calloc(<span class="keyword">alignof</span>(T), n, <span class="keyword">sizeof</span>(T),</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                                 (<span class="keywordtype">unsigned</span>)MALLOC_CAP_SPIRAM);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">if</span> (!p) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="comment">// Fallback: try aligned allocation where available</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">__STDC_VERSION__</span><span class="preprocessor">)</span> <span class="preprocessor">&amp;&amp;</span> <span class="preprocessor">(</span><span class="preprocessor">__STDC_VERSION__</span> <span class="preprocessor">&gt;=</span> 201112L<span class="preprocessor">)</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      <span class="comment">// aligned_alloc requires size to be multiple of alignment</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      std::size_t align = <span class="keyword">alignof</span>(T);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      std::size_t alloc_size = bytes;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      <span class="keywordflow">if</span> (align &gt; 1) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        std::size_t rem = alloc_size % align;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">if</span> (rem) alloc_size += (align - rem);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      p = aligned_alloc(align, alloc_size);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      <span class="keywordflow">if</span> (p) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="comment">// zero initialize</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        std::memset(p, 0, bytes);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="comment">// last resort: calloc</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        p = std::calloc(n, <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">if</span> (!p) <span class="keywordflow">throw</span> std::bad_alloc();</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast</span>&lt;T*&gt;(p);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  134</span><span class="comment">   * @brief Deallocate memory previously allocated by this allocator</span></div>
+<div class="line"><span class="lineno">  135</span><span class="comment">   *</span></div>
+<div class="line"><span class="lineno">  136</span><span class="comment">   * Frees memory that was allocated by allocate(). Uses heap_caps_free</span></div>
+<div class="line"><span class="lineno">  137</span><span class="comment">   * which works for both PSRAM and regular heap allocations.</span></div>
+<div class="line"><span class="lineno">  138</span><span class="comment">   *</span></div>
+<div class="line"><span class="lineno">  139</span><span class="comment">   * @param p Pointer to memory to deallocate (can be nullptr)</span></div>
+<div class="line"><span class="lineno">  140</span><span class="comment">   * @param n Number of objects (ignored, but required by allocator interface)</span></div>
+<div class="line"><span class="lineno">  141</span><span class="comment">   *</span></div>
+<div class="line"><span class="lineno">  142</span><span class="comment">   * @note Safe to call with nullptr</span></div>
+<div class="line"><span class="lineno">  143</span><span class="comment">   * @note The size parameter n is ignored as heap_caps_free doesn&#39;t need it</span></div>
+<div class="line"><span class="lineno">  144</span><span class="comment">   */</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <span class="keywordtype">void</span> deallocate(T* p, std::size_t <span class="comment">/*n*/</span>) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordflow">if</span> (!p) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    heap_caps_free(p);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  151</span><span class="comment">   * @brief Rebind allocator to different type</span></div>
+<div class="line"><span class="lineno">  152</span><span class="comment">   *</span></div>
+<div class="line"><span class="lineno">  153</span><span class="comment">   * Provides the rebind mechanism required by STL allocators.</span></div>
+<div class="line"><span class="lineno">  154</span><span class="comment">   * Allows containers to allocate different types using the same allocator.</span></div>
+<div class="line"><span class="lineno">  155</span><span class="comment">   *</span></div>
+<div class="line"><span class="lineno">  156</span><span class="comment">   * @tparam U The type to rebind to</span></div>
+<div class="line"><span class="lineno">  157</span><span class="comment">   */</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> U&gt;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <span class="keyword">struct</span> rebind {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="comment">/** @brief The rebound allocator type */</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keyword">typedef</span> PSRAMAllocator&lt;U&gt; other;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  };</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>};</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>}  <span class="comment">// namespace tinygpu</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

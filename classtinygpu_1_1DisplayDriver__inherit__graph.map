@@ -1,8 +1,9 @@
-<map id="DisplayDriver" name="DisplayDriver">
-<area shape="rect" id="node1" title="Abstract base class for display drivers." alt="" coords="209,5,320,31"/>
-<area shape="rect" id="node2" href="$classtinygpu_1_1SPIDisplayDriver.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="199,79,330,104"/>
-<area shape="rect" id="node3" href="$classtinygpu_1_1HX8357Driver.html" title="Driver for HX8357 SPI display controller." alt="" coords="5,152,119,177"/>
-<area shape="rect" id="node4" href="$classtinygpu_1_1ILI9341Driver.html" title="Driver for ILI9341 SPI display controller." alt="" coords="143,152,253,177"/>
-<area shape="rect" id="node5" href="$classtinygpu_1_1ST7735Driver.html" title="Driver for ST7735 SPI display controller." alt="" coords="277,152,388,177"/>
-<area shape="rect" id="node6" href="$classtinygpu_1_1ST7789Driver.html" title="Driver for ST7789 SPI display controller." alt="" coords="412,152,523,177"/>
+<map id="DisplayDriver&lt; RGB_T &gt;" name="DisplayDriver&lt; RGB_T &gt;">
+<area shape="rect" id="node1" title="Abstract base class for display drivers." alt="" coords="115,5,299,31"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriverSDL.html" title="Display class for rendering a Surface&lt;RGB565&gt; using the SDL2 library. This class can be used to displ..." alt="" coords="5,79,215,104"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="239,79,370,104"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1HX8357Driver.html" title="Driver for HX8357 SPI display controller." alt="" coords="45,152,159,177"/>
+<area shape="rect" id="node5" href="$classtinygpu_1_1ILI9341Driver.html" title="Driver for ILI9341 SPI display controller." alt="" coords="183,152,293,177"/>
+<area shape="rect" id="node6" href="$classtinygpu_1_1ST7735Driver.html" title="Driver for ST7735 SPI display controller." alt="" coords="317,152,428,177"/>
+<area shape="rect" id="node7" href="$classtinygpu_1_1ST7789Driver.html" title="Driver for ST7789 SPI display controller." alt="" coords="452,152,563,177"/>
 </map>

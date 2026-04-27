@@ -90,10 +90,18 @@ $(function() {
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/// Use PSRAM if available for large buffers to save internal RAM</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">TINYGPU_USE_PSRAM_ALLOCATOR</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="TinyGPUConfig_8h.html#a0e7bb0fe5416041ee1da11c0eaaf8721">   17</a></span><span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">TINYGPU_USE_PSRAM_ALLOCATOR</span> 1</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#</span><span class="preprocessor">ifdef</span> <span class="preprocessor">ESP32</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">HAS_PSRAM</span> 1</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#</span><span class="preprocessor">else</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="TinyGPUConfig_8h.html#aea59cebfb79a56260769ed8de24ad8e9">   18</a></span><span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">HAS_PSRAM</span> 0</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/// Use PSRAM if available for large buffers to save internal RAM</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">TINYGPU_USE_PSRAM_ALLOCATOR</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="TinyGPUConfig_8h.html#a0e7bb0fe5416041ee1da11c0eaaf8721">   24</a></span><span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">TINYGPU_USE_PSRAM_ALLOCATOR</span> <a class="code hl_define" href="TinyGPUConfig_8h.html#aea59cebfb79a56260769ed8de24ad8e9">HAS_PSRAM</a></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="ttc" id="aTinyGPUConfig_8h_html_aea59cebfb79a56260769ed8de24ad8e9"><div class="ttname"><a href="TinyGPUConfig_8h.html#aea59cebfb79a56260769ed8de24ad8e9">HAS_PSRAM</a></div><div class="ttdeci">#define HAS_PSRAM</div><div class="ttdef"><b>Definition:</b> TinyGPUConfig.h:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

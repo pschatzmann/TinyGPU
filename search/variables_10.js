@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['spi_5f_0',['spi_',['../classtinygpu_1_1SPIDisplayDriver.html#a09d0927246091ecfae18fabf897900eb',1,'tinygpu::SPIDisplayDriver']]],
+  ['spi_5f_0',['spi_',['../classtinygpu_1_1DisplayDriverSPI.html#a09d0927246091ecfae18fabf897900eb',1,'tinygpu::DisplayDriverSPI']]],
   ['sprite_1',['sprite',['../structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#aebf9d42dc7c089971eb10c375fb51529',1,'tinygpu::FrameBuffer::SpriteInfo']]],
   ['sprites_5f_2',['sprites_',['../classtinygpu_1_1FrameBuffer.html#a543b7e1fcae53f0fb2b627f99996d398',1,'tinygpu::FrameBuffer']]],
   ['start_3',['start',['../structtinygpu_1_1WireFrame3D_1_1Edge.html#a52a8a99bfbb1c17e94e3a9f816d8f5ee',1,'tinygpu::WireFrame3D::Edge']]],

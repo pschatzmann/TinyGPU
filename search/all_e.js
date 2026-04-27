@@ -21,6 +21,5 @@ var searchData=
   ['projectionmode_5f_18',['projectionMode_',['../classtinygpu_1_1WireFrame3D.html#a211b5881f68e498f1a8bdf44ad11389d',1,'tinygpu::WireFrame3D']]],
   ['projectpoint_19',['projectPoint',['../classtinygpu_1_1WireFrame3D.html#a30fbccd51c1ac27264fa7d3042bc352c',1,'tinygpu::WireFrame3D']]],
   ['projectviewpoint_20',['projectViewPoint',['../classtinygpu_1_1WireFrame3D.html#a0c755c14323e8a2bb5e8eec5e0118042',1,'tinygpu::WireFrame3D']]],
-  ['psramallocator_21',['PSRAMAllocator',['../classtinygpu_1_1PSRAMAllocator.html#aecd47b9731a0b3fcc485fc395f62dd27',1,'tinygpu::PSRAMAllocator::PSRAMAllocator() noexcept'],['../classtinygpu_1_1PSRAMAllocator.html#a67d0bd7dd70aaaff6642483c188364f1',1,'tinygpu::PSRAMAllocator::PSRAMAllocator(const PSRAMAllocator&lt; U &gt; &amp;) noexcept'],['../classtinygpu_1_1PSRAMAllocator.html',1,'PSRAMAllocator&lt; T &gt;']]],
-  ['psramallocator_2eh_22',['PSRAMAllocator.h',['../PSRAMAllocator_8h.html',1,'']]]
+  ['psramallocator_2eh_21',['PSRAMAllocator.h',['../PSRAMAllocator_8h.html',1,'']]]
 ];

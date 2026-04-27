@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyGPU: DeviceOutput Class Reference</title>
+<title>TinyGPU: DeviceOutput&lt; RGB_T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,7 +76,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classtinygpu_1_1DeviceOutput-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">DeviceOutput Class Reference</div></div>
+  <div class="headertitle"><div class="title">DeviceOutput&lt; RGB_T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -87,35 +87,21 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6d52202a0da3ce6d7528dd2d8d7dcab4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DeviceOutput.html#a6d52202a0da3ce6d7528dd2d8d7dcab4">DeviceOutput</a> (<a class="el" href="classtinygpu_1_1DisplayDriver.html">DisplayDriver</a> *driver, size_t <a class="el" href="classtinygpu_1_1DeviceOutput.html#a9ce99f5dfa1514cb108665e3810b2c4c">width</a>, size_t <a class="el" href="classtinygpu_1_1DeviceOutput.html#adc662cea5b05cd9852d5a4538586d662">height</a>)</td></tr>
-<tr class="memdesc:a6d52202a0da3ce6d7528dd2d8d7dcab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classtinygpu_1_1DeviceOutput.html" title="Hardware abstraction for writing framebuffers to SPI-based color displays.">DeviceOutput</a> with a display driver.  <br /></td></tr>
-<tr class="separator:a6d52202a0da3ce6d7528dd2d8d7dcab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad87b50cfa6c96dd6a406853a09b4d360"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DeviceOutput.html#ad87b50cfa6c96dd6a406853a09b4d360">DeviceOutput</a> (<a class="el" href="classtinygpu_1_1DisplayDriver.html">DisplayDriver</a>&lt; RGB_T &gt; &amp;driver)</td></tr>
+<tr class="memdesc:ad87b50cfa6c96dd6a406853a09b4d360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classtinygpu_1_1DeviceOutput.html" title="Hardware abstraction for writing framebuffers to SPI-based color displays.">DeviceOutput</a> with a display driver.  <br /></td></tr>
+<tr class="separator:ad87b50cfa6c96dd6a406853a09b4d360"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a601fb7cf1fc15db50c71a826f084f934"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DeviceOutput.html#a601fb7cf1fc15db50c71a826f084f934">begin</a> ()</td></tr>
 <tr class="memdesc:a601fb7cf1fc15db50c71a826f084f934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the display and prepares it for receiving data.  <br /></td></tr>
 <tr class="separator:a601fb7cf1fc15db50c71a826f084f934"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ce99f5dfa1514cb108665e3810b2c4c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DeviceOutput.html#a9ce99f5dfa1514cb108665e3810b2c4c">width</a> () const</td></tr>
-<tr class="memdesc:a9ce99f5dfa1514cb108665e3810b2c4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the display width in pixels.  <br /></td></tr>
-<tr class="separator:a9ce99f5dfa1514cb108665e3810b2c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc662cea5b05cd9852d5a4538586d662"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DeviceOutput.html#adc662cea5b05cd9852d5a4538586d662">height</a> () const</td></tr>
-<tr class="memdesc:adc662cea5b05cd9852d5a4538586d662"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the display height in pixels.  <br /></td></tr>
-<tr class="separator:adc662cea5b05cd9852d5a4538586d662"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fcc458ef61c1a1ed43f9d977ef3b851"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DeviceOutput.html#a6fcc458ef61c1a1ed43f9d977ef3b851">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a> &amp;surface, size_t x=0, size_t y=0)</td></tr>
-<tr class="memdesc:a6fcc458ef61c1a1ed43f9d977ef3b851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a framebuffer to the display (w x h, <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a>, 2 bytes per pixel).  <br /></td></tr>
-<tr class="separator:a6fcc458ef61c1a1ed43f9d977ef3b851"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf81d3fdaf258088d7692fa70cece087"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DeviceOutput.html#aaf81d3fdaf258088d7692fa70cece087">end</a> ()</td></tr>
+<tr class="separator:aaf81d3fdaf258088d7692fa70cece087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa34ad44c3ab8b83067914358732e2c41"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DeviceOutput.html#aa34ad44c3ab8b83067914358732e2c41">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface)</td></tr>
+<tr class="memdesc:aa34ad44c3ab8b83067914358732e2c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a framebuffer to the display (w x h, <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a>, 2 bytes per pixel).  <br /></td></tr>
+<tr class="separator:aa34ad44c3ab8b83067914358732e2c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Hardware abstraction for writing framebuffers to SPI-based color displays. </p>
-<p><a class="el" href="classtinygpu_1_1DeviceOutput.html" title="Hardware abstraction for writing framebuffers to SPI-based color displays.">DeviceOutput</a> provides a unified interface for sending <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> framebuffer data to common embedded display controllers (ST7735, ST7789, ILI9341, HX8357) using the Arduino SPI API.</p>
-<p>Features:</p><ul>
-<li>Handles X/Y offsets for displays that require them (via driver)</li>
-<li>Supports configurable color order (RGB/BGR) via <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a></li>
-<li>Initialization sequence and address window logic delegated to driver</li>
-<li>Optional hardware reset pin (via driver)</li>
-<li>Efficient bulk framebuffer transfer</li>
-</ul>
-<p>Usage: <a class="el" href="classtinygpu_1_1DeviceOutput.html" title="Hardware abstraction for writing framebuffers to SPI-based color displays.">DeviceOutput</a> out(new ILI9341Driver(spi, cs, dc, rst), 240, 320); out.writeData(framebuffer);</p>
-<dl class="section note"><dt>Note</dt><dd>For color order, set RGB565::setColorOrderBGR(true/false) as needed for your display, before creating any data.</dd></dl>
-<p>Hardware abstraction for writing framebuffers to SPI-based color displays.</p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename RGB_T = RGB565&gt;<br />
+class tinygpu::DeviceOutput&lt; RGB_T &gt;</div><p>Hardware abstraction for writing framebuffers to SPI-based color displays. </p>
 <p><a class="el" href="classtinygpu_1_1DeviceOutput.html" title="Hardware abstraction for writing framebuffers to SPI-based color displays.">DeviceOutput</a> provides a unified interface for sending <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> framebuffer data to common embedded display controllers (ST7735, ST7789, ILI9341, HX8357) using the Arduino SPI API.</p>
 <p>Features:</p><ul>
 <li>Handles X/Y offsets for displays that require them (via driver)</li>
@@ -127,8 +113,8 @@ Public Member Functions</h2></td></tr>
 <p>Usage: <a class="el" href="classtinygpu_1_1DeviceOutput.html" title="Hardware abstraction for writing framebuffers to SPI-based color displays.">DeviceOutput</a> out(new ILI9341Driver(spi, cs, dc, rst), 240, 320); out.writeData(framebuffer);</p>
 <dl class="section note"><dt>Note</dt><dd>For color order, set RGB565::setColorOrderBGR(true/false) as needed for your display, before creating any data. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a6d52202a0da3ce6d7528dd2d8d7dcab4" name="a6d52202a0da3ce6d7528dd2d8d7dcab4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d52202a0da3ce6d7528dd2d8d7dcab4">&#9670;&#160;</a></span>DeviceOutput()</h2>
+<a id="ad87b50cfa6c96dd6a406853a09b4d360" name="ad87b50cfa6c96dd6a406853a09b4d360"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad87b50cfa6c96dd6a406853a09b4d360">&#9670;&#160;</a></span>DeviceOutput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -139,25 +125,9 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classtinygpu_1_1DeviceOutput.html">DeviceOutput</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classtinygpu_1_1DisplayDriver.html">DisplayDriver</a> *&#160;</td>
-          <td class="paramname"><em>driver</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="classtinygpu_1_1DisplayDriver.html">DisplayDriver</a>&lt; RGB_T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>driver</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>height</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -207,8 +177,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="adc662cea5b05cd9852d5a4538586d662" name="adc662cea5b05cd9852d5a4538586d662"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc662cea5b05cd9852d5a4538586d662">&#9670;&#160;</a></span>height()</h2>
+<a id="aaf81d3fdaf258088d7692fa70cece087" name="aaf81d3fdaf258088d7692fa70cece087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf81d3fdaf258088d7692fa70cece087">&#9670;&#160;</a></span>end()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -217,10 +187,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t height </td>
+          <td class="memname">void end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -230,12 +200,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the display height in pixels. </p>
-
 </div>
 </div>
-<a id="a9ce99f5dfa1514cb108665e3810b2c4c" name="a9ce99f5dfa1514cb108665e3810b2c4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ce99f5dfa1514cb108665e3810b2c4c">&#9670;&#160;</a></span>width()</h2>
+<a id="aa34ad44c3ab8b83067914358732e2c41" name="aa34ad44c3ab8b83067914358732e2c41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa34ad44c3ab8b83067914358732e2c41">&#9670;&#160;</a></span>writeData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -244,54 +212,11 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t width </td>
+          <td class="memname">bool writeData </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the display width in pixels. </p>
-
-</div>
-</div>
-<a id="a6fcc458ef61c1a1ed43f9d977ef3b851" name="a6fcc458ef61c1a1ed43f9d977ef3b851"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fcc458ef61c1a1ed43f9d977ef3b851">&#9670;&#160;</a></span>writeData()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void writeData </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a> &amp;&#160;</td>
-          <td class="paramname"><em>surface</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>surface</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>x</em> = <code>0</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>y</em> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>

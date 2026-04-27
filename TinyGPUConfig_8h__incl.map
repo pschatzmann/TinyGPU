@@ -1,11 +1,5 @@
 <map id="src/TinyGPUConfig.h" name="src/TinyGPUConfig.h">
-<area shape="rect" id="node1" title=" " alt="" coords="97,5,251,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,152,68,177"/>
-<area shape="rect" id="node3" href="$PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="166,79,363,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="92,152,163,177"/>
-<area shape="rect" id="node5" title=" " alt="" coords="187,152,252,177"/>
-<area shape="rect" id="node6" title=" " alt="" coords="277,152,343,177"/>
-<area shape="rect" id="node7" title=" " alt="" coords="368,152,417,177"/>
-<area shape="rect" id="node8" title=" " alt="" coords="441,152,533,177"/>
-<area shape="rect" id="node9" title=" " alt="" coords="558,152,691,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="37,5,191,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,79,68,104"/>
+<area shape="rect" id="node3" href="$PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="93,79,290,104"/>
 </map>

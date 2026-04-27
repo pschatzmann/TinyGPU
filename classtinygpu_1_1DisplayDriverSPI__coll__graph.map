@@ -1,0 +1,4 @@
+<map id="DisplayDriverSPI" name="DisplayDriverSPI">
+<area shape="rect" id="node1" title="Common base class for SPI&#45;based display drivers." alt="" coords="32,79,163,104"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriver.html" title="Abstract base class for display drivers." alt="" coords="5,5,189,31"/>
+</map>

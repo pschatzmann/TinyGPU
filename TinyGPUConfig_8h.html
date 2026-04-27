@@ -85,15 +85,9 @@ Include dependency graph for TinyGPUConfig.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="TinyGPUConfig_8h__incl.png" border="0" usemap="#asrc_2TinyGPUConfig_8h" alt=""/></div>
 <map name="asrc_2TinyGPUConfig_8h" id="asrc_2TinyGPUConfig_8h">
-<area shape="rect" title=" " alt="" coords="97,5,251,31"/>
-<area shape="rect" title=" " alt="" coords="5,152,68,177"/>
-<area shape="rect" href="PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="166,79,363,104"/>
-<area shape="rect" title=" " alt="" coords="92,152,163,177"/>
-<area shape="rect" title=" " alt="" coords="187,152,252,177"/>
-<area shape="rect" title=" " alt="" coords="277,152,343,177"/>
-<area shape="rect" title=" " alt="" coords="368,152,417,177"/>
-<area shape="rect" title=" " alt="" coords="441,152,533,177"/>
-<area shape="rect" title=" " alt="" coords="558,152,691,177"/>
+<area shape="rect" title=" " alt="" coords="37,5,191,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,68,104"/>
+<area shape="rect" href="PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="93,79,290,104"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -120,11 +114,27 @@ Macros</h2></td></tr>
 <tr class="memitem:adb91362a764fa04ac82207bb9de94df1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TinyGPUConfig_8h.html#adb91362a764fa04ac82207bb9de94df1">TINYGPU_ENABLE_ESP32S3_OPTIMIZATIONS</a>&#160;&#160;&#160;0</td></tr>
 <tr class="memdesc:adb91362a764fa04ac82207bb9de94df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activate ESP32-S3-specific optimizations.  <br /></td></tr>
 <tr class="separator:adb91362a764fa04ac82207bb9de94df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e7bb0fe5416041ee1da11c0eaaf8721"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TinyGPUConfig_8h.html#a0e7bb0fe5416041ee1da11c0eaaf8721">TINYGPU_USE_PSRAM_ALLOCATOR</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:aea59cebfb79a56260769ed8de24ad8e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TinyGPUConfig_8h.html#aea59cebfb79a56260769ed8de24ad8e9">HAS_PSRAM</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:aea59cebfb79a56260769ed8de24ad8e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e7bb0fe5416041ee1da11c0eaaf8721"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TinyGPUConfig_8h.html#a0e7bb0fe5416041ee1da11c0eaaf8721">TINYGPU_USE_PSRAM_ALLOCATOR</a>&#160;&#160;&#160;<a class="el" href="TinyGPUConfig_8h.html#aea59cebfb79a56260769ed8de24ad8e9">HAS_PSRAM</a></td></tr>
 <tr class="memdesc:a0e7bb0fe5416041ee1da11c0eaaf8721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use PSRAM if available for large buffers to save internal RAM.  <br /></td></tr>
 <tr class="separator:a0e7bb0fe5416041ee1da11c0eaaf8721"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aea59cebfb79a56260769ed8de24ad8e9" name="aea59cebfb79a56260769ed8de24ad8e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea59cebfb79a56260769ed8de24ad8e9">&#9670;&#160;</a></span>HAS_PSRAM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HAS_PSRAM&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="adb91362a764fa04ac82207bb9de94df1" name="adb91362a764fa04ac82207bb9de94df1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adb91362a764fa04ac82207bb9de94df1">&#9670;&#160;</a></span>TINYGPU_ENABLE_ESP32S3_OPTIMIZATIONS</h2>
 
@@ -148,7 +158,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define TINYGPU_USE_PSRAM_ALLOCATOR&#160;&#160;&#160;1</td>
+          <td class="memname">#define TINYGPU_USE_PSRAM_ALLOCATOR&#160;&#160;&#160;<a class="el" href="TinyGPUConfig_8h.html#aea59cebfb79a56260769ed8de24ad8e9">HAS_PSRAM</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

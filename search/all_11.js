@@ -2,7 +2,7 @@ var searchData=
 [
   ['target_0',['target',['../structtinygpu_1_1WireFrame3D_1_1Camera.html#a2e4568e08701210545017dc672b84d03',1,'tinygpu::WireFrame3D::Camera']]],
   ['target_5f_1',['target_',['../classtinygpu_1_1BMPParser.html#ac65fa784ca9f787c998c1f01a9c98510',1,'tinygpu::BMPParser']]],
-  ['texture_2',['texture',['../classtinygpu_1_1SDLDisplay.html#a859b8efbf9abe8e82757ee5c75a0c97c',1,'tinygpu::SDLDisplay']]],
+  ['texture_5f_2',['texture_',['../classtinygpu_1_1DisplayDriverSDL.html#a0c0ec71f6b73fa37dbfef169f1fb3ae1',1,'tinygpu::DisplayDriverSDL']]],
   ['tinygpu_3',['TinyGPU',['../md_README.html',1,'']]],
   ['tinygpu_4',['tinygpu',['../namespacetinygpu.html',1,'']]],
   ['tinygpu_2eh_5',['TinyGPU.h',['../TinyGPU_8h.html',1,'']]],
