@@ -19,10 +19,12 @@
 // UDP destination for streaming the framebuffer (optional)
 const char* DEST_IP = "192.168.1.44";
 const uint16_t DEST_PORT = 5000;
+const char* WIFI_SSID = "your_wifi_ssid";
+const char* WIFI_PASS = "your_wifi_password";
 
-// Framebuffer size VGA
-constexpr int WIDTH = 600;
-constexpr int HEIGHT = 400;
+// Framebuffer size QVGA;
+constexpr int WIDTH = 320;
+constexpr int HEIGHT = 240;
 
 // Output
 H264Encoder encoder;
@@ -44,17 +46,14 @@ void setup() {
   encoderConfig.width = WIDTH;
   encoderConfig.height = HEIGHT;
   encoderConfig.fps = 30;
-  encoderConfig.ssid = "YourWiFiSSID";  // Set your WiFi SSID
-  encoderConfig.password = "YourWiFiPassword";  // Set your WiFi password
   encoder.begin(encoderConfig);
-
 
   framebuffer.begin();
   framebuffer.clear(RGB565(255, 255, 255));
 
   wireframe.begin();
 
-
+  udp.initWiFi(WIFI_SSID, WIFI_PASS);
   udp.begin(DEST_IP, DEST_PORT);
 }
 
