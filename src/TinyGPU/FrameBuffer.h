@@ -287,6 +287,15 @@ class FrameBuffer : public ISurface<RGB_T> {
   /// Returns the size of the buffer in bytes.
   size_t size() const override { return surface_.size(); }
 
+  /// Sets the framebuffer pixel data directly, replacing the current content.
+  bool setData(uint8_t *data, size_t dataSize) {
+    memset(const_cast<uint8_t*>(surface_.data()), 0, surface_.size());
+    if (dataSize > surface_.size()) {
+      return false;
+    }
+    std::memcpy(const_cast<uint8_t*>(surface_.data()), data, dataSize);
+  }
+
  protected:
   // Underlying surface for all drawing/storage
   SurfaceT surface_;
