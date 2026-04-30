@@ -223,6 +223,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad7701a09a964eab360a8e51fa7ad2c16"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#ad7701a09a964eab360a8e51fa7ad2c16">size</a> () const override</td></tr>
 <tr class="memdesc:ad7701a09a964eab360a8e51fa7ad2c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the buffer in bytes.  <br /></td></tr>
 <tr class="separator:ad7701a09a964eab360a8e51fa7ad2c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7207813f3d66f29cebe7247a24bb5ee4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a7207813f3d66f29cebe7247a24bb5ee4">setData</a> (uint8_t *<a class="el" href="classtinygpu_1_1FrameBuffer.html#a954524202998581e636b371957f628c5">data</a>, size_t dataSize)</td></tr>
+<tr class="memdesc:a7207813f3d66f29cebe7247a24bb5ee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the framebuffer pixel data directly, replacing the current content.  <br /></td></tr>
+<tr class="separator:a7207813f3d66f29cebe7247a24bb5ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtinygpu_1_1ISurface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinygpu_1_1ISurface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinygpu_1_1ISurface.html">ISurface&lt; RGB_T &gt;</a></td></tr>
 <tr class="memitem:a09eda0603dcc9eb48e0fd1451fa00530 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a09eda0603dcc9eb48e0fd1451fa00530">~ISurface</a> ()=default</td></tr>
 <tr class="memdesc:a09eda0603dcc9eb48e0fd1451fa00530 inherit pub_methods_classtinygpu_1_1ISurface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the framebuffer interface.  <br /></td></tr>
@@ -2219,6 +2222,44 @@ class tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;</div><p>Framebuffer with spr
 <p>Scrolls the framebuffer content by the specified offsets. </p>
 
 <p>Implements <a class="el" href="classtinygpu_1_1ISurface.html#a946283b1a816866fb87eb07051f76964">ISurface&lt; RGB_T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a7207813f3d66f29cebe7247a24bb5ee4" name="a7207813f3d66f29cebe7247a24bb5ee4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7207813f3d66f29cebe7247a24bb5ee4">&#9670;&#160;</a></span>setData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setData </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>dataSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the framebuffer pixel data directly, replacing the current content. </p>
 
 </div>
 </div>
