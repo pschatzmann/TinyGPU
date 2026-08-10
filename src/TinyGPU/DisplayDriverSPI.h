@@ -17,21 +17,26 @@ namespace tinygpu {
 class DisplayDriverSPI : public DisplayDriver<RGB565> {
  public:
   /**
-   * @param frequencyHz SPI clock speed for both commands and pixel data.
+   * @param frequencyHz SPI clock speed for commands and pixel data writes.
    * Defaults to 40 MHz, a commonly-supported safe max for ILI9341/ST77xx
    * panels. Lower it (e.g. 20000000 or 10000000) if you see glitches, which
    * are more likely over long/breadboard wiring.
+   * @param readFrequencyHz SPI clock speed for readData(). GRAM readback is
+   * driven weaker than writes on most of these controllers and needs a
+   * slower clock to be reliable; defaults to 15 MHz.
    */
   DisplayDriverSPI(SPIClass& spi, int8_t cs, int8_t dc, int8_t rst = -1,
                    size_t xOffset = 0, size_t yOffset = 0,
-                   uint32_t frequencyHz = 40000000)
+                   uint32_t frequencyHz = 40000000,
+                   uint32_t readFrequencyHz = 15000000)
       : spi_(spi),
         cs_(cs),
         dc_(dc),
         rst_(rst),
         xOffset_(xOffset),
         yOffset_(yOffset),
-        frequencyHz_(frequencyHz) {}
+        frequencyHz_(frequencyHz),
+        readFrequencyHz_(readFrequencyHz) {}
 
 
   bool writeData(ISurface<RGB565>& surface) override {
@@ -58,18 +63,89 @@ class DisplayDriverSPI : public DisplayDriver<RGB565> {
     return true;
   }
 
+  /**
+   * @brief Reads a rectangular region of pixels back from the display
+   * controller's own GRAM into `surface`, so a "sprite" background can be
+   * captured/restored without keeping a full local framebuffer.
+   *
+   * Uses the RAMRD (0x2E) command shared by most ILI9341/ST77xx-family
+   * controllers: after setting the column/row address window, the panel
+   * clocks out one dummy byte followed by 3 bytes per pixel (R, G, B, each
+   * with the color value in the top bits). This is read at a slower clock
+   * than writes (see readFrequencyHz in the constructor), since GRAM
+   * readback is weaker/less reliable at high speed on most of these parts.
+   *
+   * CS is held low continuously from the column/row address commands
+   * through the RAMRD command and every data byte - most of these
+   * controllers only return real GRAM data (rather than zeros/garbage) if
+   * that whole sequence happens in one unbroken chip-select period.
+   *
+   * @note Requires MISO to be wired to the panel. Some controller clones
+   * differ in their exact read timing/format or don't support reliable
+   * readback at all - verify this works correctly on your specific
+   * hardware before relying on it (e.g. read back a region you just wrote
+   * a known color to, and confirm the color matches).
+   */
+  bool readData(ISurface<RGB565>& surface, size_t x, size_t y) {
+    size_t w = surface.width();
+    size_t h = surface.height();
+    size_t x0 = x + xOffset_;
+    size_t y0 = y + yOffset_;
+
+    spi_.beginTransaction(SPISettings(readFrequencyHz_, MSBFIRST, SPI_MODE0));
+    digitalWrite(cs_, LOW);
+
+    digitalWrite(dc_, LOW);
+    spi_.transfer(0x2A);
+    digitalWrite(dc_, HIGH);
+    spi_.transfer((x0) >> 8);
+    spi_.transfer((x0) & 0xFF);
+    spi_.transfer((x0 + w - 1) >> 8);
+    spi_.transfer((x0 + w - 1) & 0xFF);
+
+    digitalWrite(dc_, LOW);
+    spi_.transfer(0x2B);
+    digitalWrite(dc_, HIGH);
+    spi_.transfer((y0) >> 8);
+    spi_.transfer((y0) & 0xFF);
+    spi_.transfer((y0 + h - 1) >> 8);
+    spi_.transfer((y0 + h - 1) & 0xFF);
+
+    digitalWrite(dc_, LOW);
+    spi_.transfer(0x2E);
+    digitalWrite(dc_, HIGH);
+
+    spi_.transfer(0);  // leading dummy byte before real pixel data
+    size_t pixelCount = w * h;
+    for (size_t i = 0; i < pixelCount; ++i) {
+      uint8_t r = spi_.transfer(0);
+      uint8_t g = spi_.transfer(0);
+      uint8_t b = spi_.transfer(0);
+      surface.setPixel(i % w, i / w, RGB565(r, g, b));
+    }
+
+    digitalWrite(cs_, HIGH);
+    spi_.endTransaction();
+    return true;
+  }
+
  protected:
   SPIClass& spi_;
   int8_t cs_, dc_, rst_;
   size_t xOffset_, yOffset_;
   uint32_t frequencyHz_;
+  uint32_t readFrequencyHz_;
 
-  bool setAddressWindow(size_t x, size_t y, size_t w, size_t h) override {
+  void setColumnRowAddress(size_t x, size_t y, size_t w, size_t h) {
     writeCommand(0x2A);
     writeData16(x + xOffset_, x + xOffset_ + w - 1);
     writeCommand(0x2B);
     writeData16(y + yOffset_, y + yOffset_ + h - 1);
-    writeCommand(0x2C);
+  }
+
+  bool setAddressWindow(size_t x, size_t y, size_t w, size_t h) override {
+    setColumnRowAddress(x, y, w, h);
+    writeCommand(0x2C);  // RAMWR
     return true;
   }
 
