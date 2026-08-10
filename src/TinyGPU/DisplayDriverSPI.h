@@ -14,24 +14,47 @@ namespace tinygpu {
  * Specific display drivers should inherit from this and implement their own
  * init sequence.
  */
-class DisplayDriverSPI : public DisplayDriver {
+class DisplayDriverSPI : public DisplayDriver<RGB565> {
  public:
+  /**
+   * @param frequencyHz SPI clock speed for both commands and pixel data.
+   * Defaults to 40 MHz, a commonly-supported safe max for ILI9341/ST77xx
+   * panels. Lower it (e.g. 20000000 or 10000000) if you see glitches, which
+   * are more likely over long/breadboard wiring.
+   */
   DisplayDriverSPI(SPIClass& spi, int8_t cs, int8_t dc, int8_t rst = -1,
-                   size_t xOffset = 0, size_t yOffset = 0)
+                   size_t xOffset = 0, size_t yOffset = 0,
+                   uint32_t frequencyHz = 40000000)
       : spi_(spi),
         cs_(cs),
         dc_(dc),
         rst_(rst),
         xOffset_(xOffset),
-        yOffset_(yOffset) {}
+        yOffset_(yOffset),
+        frequencyHz_(frequencyHz) {}
 
 
-  bool writeData(ISurface& surface) override {
-    setAddressWindow(0, 0, surface.width(), surface.height());
+  bool writeData(ISurface<RGB565>& surface) override {
+    return writeData(surface, 0, 0);
+  }
+
+  /**
+   * @brief Writes a sub-region ("band") of pixel data starting at display
+   * coordinates (x, y).
+   *
+   * Useful on boards without enough contiguous RAM for a full-screen
+   * framebuffer: render a small band-sized surface and stream it to the
+   * display repeatedly at increasing y offsets instead of allocating one
+   * large buffer.
+   */
+  bool writeData(ISurface<RGB565>& surface, size_t x, size_t y) {
+    setAddressWindow(x, y, surface.width(), surface.height());
+    spi_.beginTransaction(SPISettings(frequencyHz_, MSBFIRST, SPI_MODE0));
     digitalWrite(dc_, HIGH);
     digitalWrite(cs_, LOW);
     spi_.writeBytes(surface.data(), surface.size());
     digitalWrite(cs_, HIGH);
+    spi_.endTransaction();
     return true;
   }
 
@@ -39,6 +62,7 @@ class DisplayDriverSPI : public DisplayDriver {
   SPIClass& spi_;
   int8_t cs_, dc_, rst_;
   size_t xOffset_, yOffset_;
+  uint32_t frequencyHz_;
 
   bool setAddressWindow(size_t x, size_t y, size_t w, size_t h) override {
     writeCommand(0x2A);
@@ -63,13 +87,16 @@ class DisplayDriverSPI : public DisplayDriver {
   }
 
   void writeCommand(uint8_t cmd) {
+    spi_.beginTransaction(SPISettings(frequencyHz_, MSBFIRST, SPI_MODE0));
     digitalWrite(dc_, LOW);
     digitalWrite(cs_, LOW);
     spi_.transfer(cmd);
     digitalWrite(cs_, HIGH);
+    spi_.endTransaction();
   }
 
   void writeData16(uint16_t d1, uint16_t d2) {
+    spi_.beginTransaction(SPISettings(frequencyHz_, MSBFIRST, SPI_MODE0));
     digitalWrite(dc_, HIGH);
     digitalWrite(cs_, LOW);
     spi_.transfer(d1 >> 8);
@@ -77,13 +104,16 @@ class DisplayDriverSPI : public DisplayDriver {
     spi_.transfer(d2 >> 8);
     spi_.transfer(d2 & 0xFF);
     digitalWrite(cs_, HIGH);
+    spi_.endTransaction();
   }
 
   void writeData8(uint8_t data) {
+    spi_.beginTransaction(SPISettings(frequencyHz_, MSBFIRST, SPI_MODE0));
     digitalWrite(dc_, HIGH);
     digitalWrite(cs_, LOW);
     spi_.transfer(data);
     digitalWrite(cs_, HIGH);
+    spi_.endTransaction();
   }
 };
 
@@ -150,6 +180,7 @@ class ILI9341Driver : public DisplayDriverSPI {
     writeCommand(0x11);
     delay(120);
     writeCommand(0x29);
+    return true;
   }
 };
 
@@ -170,6 +201,32 @@ class HX8357Driver : public DisplayDriverSPI {
     delay(120);
     writeCommand(0x3A);
     writeData8(0x55);
+    writeCommand(0x29);
+    return true;
+  }
+};
+
+/**
+ * @brief Driver for ST7796 SPI display controller.
+ *
+ * Commonly found on 3.5" 320x480 (and cropped 240x320) TFT touch boards,
+ * e.g. the "ESP32 LVGL WIFI&Bluetooth" style development boards.
+ * Handles initialization and address window logic for ST7796 displays.
+ */
+class ST7796Driver : public DisplayDriverSPI {
+ public:
+  ST7796Driver(SPIClass& spi, int8_t cs, int8_t dc, int8_t rst = -1)
+      : DisplayDriverSPI(spi, cs, dc, rst, 0, 0) {}
+  bool begin() override {
+    setupPinsAndReset();
+    writeCommand(0x01);
+    delay(150);
+    writeCommand(0x11);
+    delay(120);
+    writeCommand(0x3A);
+    writeData8(0x55);
+    writeCommand(0x36);
+    writeData8(0x48);
     writeCommand(0x29);
     return true;
   }
