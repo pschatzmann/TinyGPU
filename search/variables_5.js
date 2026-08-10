@@ -6,5 +6,6 @@ var searchData=
   ['fontref_3',['fontRef',['../structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#a7d197c8a6931b111075bd8e20207afc8',1,'tinygpu::FrameBuffer::SpriteInfo']]],
   ['fps_5f_4',['fps_',['../classtinygpu_1_1AVIWriter.html#a26549d1892641869259f51d6e0ee54c5',1,'tinygpu::AVIWriter']]],
   ['framecount_5f_5',['frameCount_',['../classtinygpu_1_1AVIWriter.html#aadd923f39a3a39c39abb8ebdcaa9a5e6',1,'tinygpu::AVIWriter']]],
-  ['framesize_5f_6',['frameSize_',['../classtinygpu_1_1AVIWriter.html#a1dade11eb10aba859c7a5f0bcccd4e1a',1,'tinygpu::AVIWriter']]]
+  ['framesize_5f_6',['frameSize_',['../classtinygpu_1_1AVIWriter.html#a1dade11eb10aba859c7a5f0bcccd4e1a',1,'tinygpu::AVIWriter']]],
+  ['frequencyhz_5f_7',['frequencyHz_',['../classtinygpu_1_1DisplayDriverSPI.html#a25af0fdd54be07425d40a8f252851854',1,'tinygpu::DisplayDriverSPI']]]
 ];

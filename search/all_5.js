@@ -19,5 +19,6 @@ var searchData=
   ['framebufferrgb888_16',['FrameBufferRGB888',['../namespacetinygpu.html#aa9c63b58163207d3995179ae9026a01e',1,'tinygpu']]],
   ['framecount_5f_17',['frameCount_',['../classtinygpu_1_1AVIWriter.html#aadd923f39a3a39c39abb8ebdcaa9a5e6',1,'tinygpu::AVIWriter']]],
   ['framerowstride_18',['frameRowStride',['../classtinygpu_1_1AVIWriter.html#a87f3514a7fd91f203243f32a3cebaf30',1,'tinygpu::AVIWriter']]],
-  ['framesize_5f_19',['frameSize_',['../classtinygpu_1_1AVIWriter.html#a1dade11eb10aba859c7a5f0bcccd4e1a',1,'tinygpu::AVIWriter']]]
+  ['framesize_5f_19',['frameSize_',['../classtinygpu_1_1AVIWriter.html#a1dade11eb10aba859c7a5f0bcccd4e1a',1,'tinygpu::AVIWriter']]],
+  ['frequencyhz_5f_20',['frequencyHz_',['../classtinygpu_1_1DisplayDriverSPI.html#a25af0fdd54be07425d40a8f252851854',1,'tinygpu::DisplayDriverSPI']]]
 ];

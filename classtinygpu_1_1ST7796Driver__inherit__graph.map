@@ -1,5 +1,5 @@
-<map id="ST7789Driver" name="ST7789Driver">
-<area shape="rect" id="node1" title="Driver for ST7789 SPI display controller." alt="" coords="47,152,157,177"/>
+<map id="ST7796Driver" name="ST7796Driver">
+<area shape="rect" id="node1" title="Driver for ST7796 SPI display controller." alt="" coords="47,152,157,177"/>
 <area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="37,79,167,104"/>
 <area shape="rect" id="node3" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,5,199,31"/>
 </map>

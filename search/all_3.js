@@ -20,7 +20,7 @@ var searchData=
   ['displaydriver_3c_20rgb565_20_3e_17',['DisplayDriver&lt; RGB565 &gt;',['../classtinygpu_1_1DisplayDriver.html',1,'tinygpu']]],
   ['displaydriversdl_18',['DisplayDriverSDL',['../classtinygpu_1_1DisplayDriverSDL.html#a92ea53f718281d1f037ba9dc56ab4935',1,'tinygpu::DisplayDriverSDL::DisplayDriverSDL(const ISurface&lt; RGB_T &gt; &amp;surface)'],['../classtinygpu_1_1DisplayDriverSDL.html#a1e37f38404d5cf5dea9723e4269f56fc',1,'tinygpu::DisplayDriverSDL::DisplayDriverSDL(size_t width, size_t height)'],['../classtinygpu_1_1DisplayDriverSDL.html',1,'DisplayDriverSDL&lt; RGB_T &gt;']]],
   ['displaydriversdl_2eh_19',['DisplayDriverSDL.h',['../DisplayDriverSDL_8h.html',1,'']]],
-  ['displaydriverspi_20',['DisplayDriverSPI',['../classtinygpu_1_1DisplayDriverSPI.html#abf52e5af148c4560d10cb7f88183fc43',1,'tinygpu::DisplayDriverSPI::DisplayDriverSPI()'],['../classtinygpu_1_1DisplayDriverSPI.html',1,'DisplayDriverSPI']]],
+  ['displaydriverspi_20',['DisplayDriverSPI',['../classtinygpu_1_1DisplayDriverSPI.html#a110b88ebddfd2ce29d5c46bf379156df',1,'tinygpu::DisplayDriverSPI::DisplayDriverSPI()'],['../classtinygpu_1_1DisplayDriverSPI.html',1,'DisplayDriverSPI']]],
   ['displaydriverspi_2eh_21',['DisplayDriverSPI.h',['../DisplayDriverSPI_8h.html',1,'']]],
   ['dot_22',['dot',['../classtinygpu_1_1WireFrame3D.html#a1df8d896b3c3c58a98cb9f1cb74ddf5d',1,'tinygpu::WireFrame3D']]],
   ['drawchar_23',['drawChar',['../classtinygpu_1_1BitmapFont.html#a20e0cc2b9ea38020145ee9f4f4532092',1,'tinygpu::BitmapFont']]],
