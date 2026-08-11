@@ -1,8 +1,24 @@
 var searchData=
 [
-  ['framebufferbgr565_0',['FrameBufferBGR565',['../namespacetinygpu.html#ab995f293f2db79dcf025f1e2e49249b5',1,'tinygpu']]],
-  ['framebuffermonochrome_1',['FrameBufferMonochrome',['../namespacetinygpu.html#a7a537bb2bb57dae7d04aa2961d02662a',1,'tinygpu']]],
-  ['framebufferrgb565_2',['FrameBufferRGB565',['../namespacetinygpu.html#a0f572638e7d61fb9186cdd03bf110163',1,'tinygpu']]],
-  ['framebufferrgb666_3',['FrameBufferRGB666',['../namespacetinygpu.html#ad0b85571fb5193c6fad3b768c3b7be7f',1,'tinygpu']]],
-  ['framebufferrgb888_4',['FrameBufferRGB888',['../namespacetinygpu.html#aa9c63b58163207d3995179ae9026a01e',1,'tinygpu']]]
+  ['font12x12bgr565_0',['Font12x12BGR565',['../namespacetinygpu.html#a505f61b935bca19d37934c4693308859',1,'tinygpu']]],
+  ['font12x12rgb565_1',['Font12x12RGB565',['../namespacetinygpu.html#a0f2a78808e970fa7a6ed3946c06e6e82',1,'tinygpu']]],
+  ['font12x12rgb666_2',['Font12x12RGB666',['../namespacetinygpu.html#ae1c62480c75dcf1866307890449ebfb0',1,'tinygpu']]],
+  ['font12x12rgb888_3',['Font12x12RGB888',['../namespacetinygpu.html#ad6917298cbdd781475bc5ae2e876f79a',1,'tinygpu']]],
+  ['font16x24bgr565_4',['Font16x24BGR565',['../namespacetinygpu.html#aaaa8f37bc8dff70dfe8e733cf183d254',1,'tinygpu']]],
+  ['font16x24rgb565_5',['Font16x24RGB565',['../namespacetinygpu.html#a9a139dff55a9b5b6ac4ac744a6795398',1,'tinygpu']]],
+  ['font16x24rgb666_6',['Font16x24RGB666',['../namespacetinygpu.html#a047b1e939f9c7daf5514f84e00ee0805',1,'tinygpu']]],
+  ['font16x24rgb888_7',['Font16x24RGB888',['../namespacetinygpu.html#a15e74f8a8608f9120c10a89128a6d280',1,'tinygpu']]],
+  ['font8x12bgr565_8',['Font8x12BGR565',['../namespacetinygpu.html#af7f9c30c1123581aec2e5940f18da8cc',1,'tinygpu']]],
+  ['font8x12rgb565_9',['Font8x12RGB565',['../namespacetinygpu.html#aefc70db56c115625492b8a4f01fb5093',1,'tinygpu']]],
+  ['font8x12rgb666_10',['Font8x12RGB666',['../namespacetinygpu.html#aecf1a96e92bc8ec48ffbf7494ac089ac',1,'tinygpu']]],
+  ['font8x12rgb888_11',['Font8x12RGB888',['../namespacetinygpu.html#a3ebad33cf07123f974b646e5aeadc537',1,'tinygpu']]],
+  ['font8x8bgr565_12',['Font8x8BGR565',['../namespacetinygpu.html#a5ec8e96cda70430cbc130187b2d0d05e',1,'tinygpu']]],
+  ['font8x8rgb565_13',['Font8x8RGB565',['../namespacetinygpu.html#a6f3d425bf5e579be03a9c7f4734a0f16',1,'tinygpu']]],
+  ['font8x8rgb666_14',['Font8x8RGB666',['../namespacetinygpu.html#a76def6699045c45368cc9e8f809f920b',1,'tinygpu']]],
+  ['font8x8rgb888_15',['Font8x8RGB888',['../namespacetinygpu.html#a09da82a310371cd45d768ca565a25baa',1,'tinygpu']]],
+  ['framebufferbgr565_16',['FrameBufferBGR565',['../namespacetinygpu.html#ab995f293f2db79dcf025f1e2e49249b5',1,'tinygpu']]],
+  ['framebuffermonochrome_17',['FrameBufferMonochrome',['../namespacetinygpu.html#a7a537bb2bb57dae7d04aa2961d02662a',1,'tinygpu']]],
+  ['framebufferrgb565_18',['FrameBufferRGB565',['../namespacetinygpu.html#a0f572638e7d61fb9186cdd03bf110163',1,'tinygpu']]],
+  ['framebufferrgb666_19',['FrameBufferRGB666',['../namespacetinygpu.html#ad0b85571fb5193c6fad3b768c3b7be7f',1,'tinygpu']]],
+  ['framebufferrgb888_20',['FrameBufferRGB888',['../namespacetinygpu.html#aa9c63b58163207d3995179ae9026a01e',1,'tinygpu']]]
 ];

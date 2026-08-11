@@ -1,13 +1,15 @@
 <map id="src/TinyGPU/IFont.h" name="src/TinyGPU/IFont.h">
-<area shape="rect" id="node1" title=" " alt="" coords="360,5,509,31"/>
-<area shape="rect" id="node2" href="$BitmapFont_8h.html" title=" " alt="" coords="75,152,267,177"/>
-<area shape="rect" id="node3" href="$Surface_8h.html" title=" " alt="" coords="221,225,387,251"/>
-<area shape="rect" id="node7" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="294,445,517,471"/>
-<area shape="rect" id="node8" href="$CartesianView_8h.html" title=" " alt="" coords="755,225,965,251"/>
-<area shape="rect" id="node9" href="$LinePrinter_8h.html" title=" " alt="" coords="341,79,528,104"/>
-<area shape="rect" id="node10" href="$SurfaceBase_8h.html" title=" " alt="" coords="466,152,665,177"/>
-<area shape="rect" id="node11" href="$SurfaceMonochrome_8h.html" title=" " alt="" coords="576,299,827,324"/>
-<area shape="rect" id="node4" href="$TinyGPU_8h.html" title=" " alt="" coords="433,519,546,544"/>
-<area shape="rect" id="node5" href="$FrameBuffer_8h.html" title=" " alt="" coords="145,299,341,324"/>
-<area shape="rect" id="node6" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="455,372,737,397"/>
+<area shape="rect" id="node1" title=" " alt="" coords="431,5,580,31"/>
+<area shape="rect" id="node2" href="$BitmapFont_8h.html" title=" " alt="" coords="357,152,549,177"/>
+<area shape="rect" id="node3" href="$Surface_8h.html" title=" " alt="" coords="554,225,721,251"/>
+<area shape="rect" id="node7" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="350,445,573,471"/>
+<area shape="rect" id="node8" href="$CartesianView_8h.html" title=" " alt="" coords="5,225,216,251"/>
+<area shape="rect" id="node9" href="$FixedBitmapFont_8h.html" title=" " alt="" coords="143,299,369,324"/>
+<area shape="rect" id="node11" href="$LinePrinter_8h.html" title=" " alt="" coords="477,79,664,104"/>
+<area shape="rect" id="node12" href="$SurfaceBase_8h.html" title=" " alt="" coords="738,152,937,177"/>
+<area shape="rect" id="node13" href="$SurfaceMonochrome_8h.html" title=" " alt="" coords="868,299,1119,324"/>
+<area shape="rect" id="node4" href="$TinyGPU_8h.html" title=" " alt="" coords="667,519,781,544"/>
+<area shape="rect" id="node5" href="$FrameBuffer_8h.html" title=" " alt="" coords="647,299,843,324"/>
+<area shape="rect" id="node6" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="697,372,980,397"/>
+<area shape="rect" id="node10" href="$AsciiFonts_8h.html" title=" " alt="" coords="135,372,318,397"/>
 </map>

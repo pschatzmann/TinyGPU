@@ -7,7 +7,7 @@ var searchData=
   ['parsepalette_4',['parsePalette',['../classtinygpu_1_1BMPParser.html#ac6053d1bb0d7c47f8ff990145e23956d',1,'tinygpu::BMPParser']]],
   ['perspective_5',['Perspective',['../classtinygpu_1_1WireFrame3D.html#a635428fef8d6e4afba288610c9c65bd5aa80420eef88d11f77532f1b9cb467fa3',1,'tinygpu::WireFrame3D']]],
   ['perspectivefovydegrees_5f_6',['perspectiveFovYDegrees_',['../classtinygpu_1_1WireFrame3D.html#aaa79c6f920895783d61a876fed44bc29',1,'tinygpu::WireFrame3D']]],
-  ['pixel_7',['pixel',['../classtinygpu_1_1BitmapFont.html#ac964664a2b8eaaae0321f50161b674a5',1,'tinygpu::BitmapFont::pixel(char character, uint8_t x, uint8_t y) const'],['../classtinygpu_1_1BitmapFont.html#a85526faa2ded9444ffdc6c435d937623',1,'tinygpu::BitmapFont::pixel(CodePoint codePoint, uint8_t x, uint8_t y) const']]],
+  ['pixel_7',['pixel',['../classtinygpu_1_1BitmapFont.html#ac964664a2b8eaaae0321f50161b674a5',1,'tinygpu::BitmapFont::pixel(char character, uint8_t x, uint8_t y) const'],['../classtinygpu_1_1BitmapFont.html#a85526faa2ded9444ffdc6c435d937623',1,'tinygpu::BitmapFont::pixel(CodePoint codePoint, uint8_t x, uint8_t y) const'],['../classtinygpu_1_1FixedBitmapFont.html#a85526faa2ded9444ffdc6c435d937623',1,'tinygpu::FixedBitmapFont::pixel()']]],
   ['pixelcount_8',['pixelCount',['../classtinygpu_1_1Surface.html#a3b25c7edd18faf4d58d1f8dedadf19f4',1,'tinygpu::Surface']]],
   ['pixeloffset_9',['pixelOffset',['../structtinygpu_1_1BMPParser_1_1HeaderInfo.html#a41956bcf5aa5ce93d09f1216bfc42e03',1,'tinygpu::BMPParser::HeaderInfo']]],
   ['pixels_10',['pixels',['../classtinygpu_1_1Surface.html#a38f959f3976340e380ea391d5cf6efd3',1,'tinygpu::Surface']]],

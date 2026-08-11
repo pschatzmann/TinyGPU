@@ -89,8 +89,17 @@ Inheritance diagram for IFont&lt; RGB_T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1IFont__inherit__graph.png" border="0" usemap="#aIFont_3_01RGB__T_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aIFont_3_01RGB__T_01_4_inherit__map" id="aIFont_3_01RGB__T_01_4_inherit__map">
-<area shape="rect" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="27,5,154,31"/>
-<area shape="rect" href="classtinygpu_1_1BitmapFont.html" title="Fixed&#45;size 5x7 bitmap font with ASCII and extended character support." alt="" coords="5,79,176,104"/>
+<area shape="rect" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="5,173,132,198"/>
+<area shape="rect" href="classtinygpu_1_1FixedBitmapFont.html" title=" " alt="" coords="185,5,363,45"/>
+<area shape="rect" href="classtinygpu_1_1FixedBitmapFont.html" title=" " alt="" coords="185,69,363,109"/>
+<area shape="rect" href="classtinygpu_1_1FixedBitmapFont.html" title=" " alt="" coords="189,133,359,173"/>
+<area shape="rect" href="classtinygpu_1_1FixedBitmapFont.html" title=" " alt="" coords="193,197,355,237"/>
+<area shape="rect" href="classtinygpu_1_1BitmapFont.html" title="Fixed&#45;size 5x7 bitmap font with ASCII and extended character support." alt="" coords="189,262,359,287"/>
+<area shape="rect" href="classtinygpu_1_1FixedBitmapFont.html" title="Fixed&#45;size bitmap font backed by a caller&#45;supplied glyph table." alt="" coords="180,312,368,352"/>
+<area shape="rect" href="classtinygpu_1_1Font12x12.html" title="12x12 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII12x12_Table." alt="" coords="416,245,579,270"/>
+<area shape="rect" href="classtinygpu_1_1Font16x24.html" title="16x24 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII16x24_Table." alt="" coords="416,294,579,319"/>
+<area shape="rect" href="classtinygpu_1_1Font8x12.html" title="8x12 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII8x12_Table." alt="" coords="420,343,575,369"/>
+<area shape="rect" href="classtinygpu_1_1Font8x8.html" title="8x8 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII8x8_Table." alt="" coords="424,393,571,418"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -235,7 +244,7 @@ class tinygpu::IFont&lt; RGB_T &gt;</div><p>Font rendering interface for TinyGPU
 
 <p>Draws a text string onto a framebuffer target. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1BitmapFont.html#a77c98c2b6e721e7f7e80ceb22ccf0298">BitmapFont&lt; RGB_T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1BitmapFont.html#a77c98c2b6e721e7f7e80ceb22ccf0298">BitmapFont&lt; RGB_T &gt;</a>, and <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a77c98c2b6e721e7f7e80ceb22ccf0298">FixedBitmapFont&lt; Width, Height, RowT, RGB_T &gt;</a>.</p>
 
 </div>
 </div>
@@ -265,7 +274,7 @@ class tinygpu::IFont&lt; RGB_T &gt;</div><p>Font rendering interface for TinyGPU
 
 <p>Returns the scaled glyph height in pixels. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1BitmapFont.html#abe74e5fca7eb5432dc99432ecc1a541e">BitmapFont&lt; RGB_T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1BitmapFont.html#abe74e5fca7eb5432dc99432ecc1a541e">BitmapFont&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a300cc5f61846aa0adb5d4f0ddb726ae2">FixedBitmapFont&lt; Width, Height, RowT, RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a300cc5f61846aa0adb5d4f0ddb726ae2">FixedBitmapFont&lt; 12, 12, uint16_t, RGB565 &gt;</a>, <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a300cc5f61846aa0adb5d4f0ddb726ae2">FixedBitmapFont&lt; 16, 24, uint16_t, RGB565 &gt;</a>, <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a300cc5f61846aa0adb5d4f0ddb726ae2">FixedBitmapFont&lt; 8, 12, uint8_t, RGB565 &gt;</a>, and <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a300cc5f61846aa0adb5d4f0ddb726ae2">FixedBitmapFont&lt; 8, 8, uint8_t, RGB565 &gt;</a>.</p>
 
 </div>
 </div>
@@ -311,7 +320,7 @@ class tinygpu::IFont&lt; RGB_T &gt;</div><p>Font rendering interface for TinyGPU
 
 <p>Returns the total text height in pixels. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1BitmapFont.html#a76aa7cc5027f0d3d6b201c6d0e855a87">BitmapFont&lt; RGB_T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1BitmapFont.html#a76aa7cc5027f0d3d6b201c6d0e855a87">BitmapFont&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a85d662ee844c24f3897d3f26ae24d4a5">FixedBitmapFont&lt; Width, Height, RowT, RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a85d662ee844c24f3897d3f26ae24d4a5">FixedBitmapFont&lt; 12, 12, uint16_t, RGB565 &gt;</a>, <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a85d662ee844c24f3897d3f26ae24d4a5">FixedBitmapFont&lt; 16, 24, uint16_t, RGB565 &gt;</a>, <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a85d662ee844c24f3897d3f26ae24d4a5">FixedBitmapFont&lt; 8, 12, uint8_t, RGB565 &gt;</a>, and <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a85d662ee844c24f3897d3f26ae24d4a5">FixedBitmapFont&lt; 8, 8, uint8_t, RGB565 &gt;</a>.</p>
 
 </div>
 </div>
@@ -357,7 +366,7 @@ class tinygpu::IFont&lt; RGB_T &gt;</div><p>Font rendering interface for TinyGPU
 
 <p>Returns the width of the longest text line in pixels. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1BitmapFont.html#a9033ba09137e8d9a88eb44a0c2963007">BitmapFont&lt; RGB_T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1BitmapFont.html#a9033ba09137e8d9a88eb44a0c2963007">BitmapFont&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a96885a7015bb890c8074046f3057f69f">FixedBitmapFont&lt; Width, Height, RowT, RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a96885a7015bb890c8074046f3057f69f">FixedBitmapFont&lt; 12, 12, uint16_t, RGB565 &gt;</a>, <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a96885a7015bb890c8074046f3057f69f">FixedBitmapFont&lt; 16, 24, uint16_t, RGB565 &gt;</a>, <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a96885a7015bb890c8074046f3057f69f">FixedBitmapFont&lt; 8, 12, uint8_t, RGB565 &gt;</a>, and <a class="el" href="classtinygpu_1_1FixedBitmapFont.html#a96885a7015bb890c8074046f3057f69f">FixedBitmapFont&lt; 8, 8, uint8_t, RGB565 &gt;</a>.</p>
 
 </div>
 </div>
