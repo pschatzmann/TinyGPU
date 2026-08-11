@@ -35,6 +35,16 @@ SpriteRGB888 sprite5(8, 8, FontRGB888);
 SpriteBGR565 sprite6(8, 8, FontBGR565);
 SpriteMonochrome sprite7(8, 8, FontMonochrome);
 
+// STM32-EVAL fonts.c conversions
+Font8x8<RGB565> font8x8;
+Font8x12<RGB565> font8x12;
+Font12x12<RGB565> font12x12;
+Font16x24<RGB565> font16x24;
+Font8x8RGB565 font8x8b;
+Font8x12RGB888 font8x12b;
+Font12x12BGR565 font12x12b;
+Font16x24RGB666 font16x24b;
+FrameBuffer<RGB565> framebuffer8(16, 24, font16x24);
 
 void setup(){}
 void loop(){}

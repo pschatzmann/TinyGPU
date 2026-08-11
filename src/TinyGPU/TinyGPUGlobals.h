@@ -1,5 +1,6 @@
 #pragma once
 #include "BitmapFont.h"
+#include "FixedBitmapFont.h"
 #include "FrameBuffer.h"
 #include "FrameBufferMonochrome.h"
 #include "IFont.h"
@@ -8,6 +9,7 @@
 #include "RGB565.h"
 #include "RGB666.h"
 #include "RGB888.h"
+#include "AsciiFonts.h"
 #include "Surface.h"
 #include "SurfaceMonochrome.h"
 #include "TinyGPUConfig.h"
@@ -133,6 +135,42 @@ using IFontRGB888 = IFont<RGB888>;
  *  @brief IFont with BGR565 pixel format.
  */
 using IFontBGR565 = IFont<BGR565>;
+
+/// @brief Font8x8 (converted from STM32-EVAL fonts.c) with RGB565 pixel format.
+using Font8x8RGB565 = Font8x8<RGB565>;
+/// @brief Font8x8 (converted from STM32-EVAL fonts.c) with RGB666 pixel format.
+using Font8x8RGB666 = Font8x8<RGB666>;
+/// @brief Font8x8 (converted from STM32-EVAL fonts.c) with RGB888 pixel format.
+using Font8x8RGB888 = Font8x8<RGB888>;
+/// @brief Font8x8 (converted from STM32-EVAL fonts.c) with BGR565 pixel format.
+using Font8x8BGR565 = Font8x8<BGR565>;
+
+/// @brief Font8x12 (converted from STM32-EVAL fonts.c) with RGB565 pixel format.
+using Font8x12RGB565 = Font8x12<RGB565>;
+/// @brief Font8x12 (converted from STM32-EVAL fonts.c) with RGB666 pixel format.
+using Font8x12RGB666 = Font8x12<RGB666>;
+/// @brief Font8x12 (converted from STM32-EVAL fonts.c) with RGB888 pixel format.
+using Font8x12RGB888 = Font8x12<RGB888>;
+/// @brief Font8x12 (converted from STM32-EVAL fonts.c) with BGR565 pixel format.
+using Font8x12BGR565 = Font8x12<BGR565>;
+
+/// @brief Font12x12 (converted from STM32-EVAL fonts.c) with RGB565 pixel format.
+using Font12x12RGB565 = Font12x12<RGB565>;
+/// @brief Font12x12 (converted from STM32-EVAL fonts.c) with RGB666 pixel format.
+using Font12x12RGB666 = Font12x12<RGB666>;
+/// @brief Font12x12 (converted from STM32-EVAL fonts.c) with RGB888 pixel format.
+using Font12x12RGB888 = Font12x12<RGB888>;
+/// @brief Font12x12 (converted from STM32-EVAL fonts.c) with BGR565 pixel format.
+using Font12x12BGR565 = Font12x12<BGR565>;
+
+/// @brief Font16x24 (converted from STM32-EVAL fonts.c) with RGB565 pixel format.
+using Font16x24RGB565 = Font16x24<RGB565>;
+/// @brief Font16x24 (converted from STM32-EVAL fonts.c) with RGB666 pixel format.
+using Font16x24RGB666 = Font16x24<RGB666>;
+/// @brief Font16x24 (converted from STM32-EVAL fonts.c) with RGB888 pixel format.
+using Font16x24RGB888 = Font16x24<RGB888>;
+/// @brief Font16x24 (converted from STM32-EVAL fonts.c) with BGR565 pixel format.
+using Font16x24BGR565 = Font16x24<BGR565>;
 
 /**
  *  @typedef WireFrame3D_RGB565
