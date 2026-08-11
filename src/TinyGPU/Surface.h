@@ -88,6 +88,28 @@ class Surface : public SurfaceBase<RGB_T> {
     return reinterpret_cast<const uint8_t*>(buffer.data());
   }
 
+  /// @brief Mutable counterpart of data() - a pointer to the raw pixel
+  /// buffer as bytes, for callers that want to fill it directly (e.g. a
+  /// codec's own RGB565/RGB666/RGB888 conversion output) instead of
+  /// going through setPixel() one pixel at a time. Same bytes data()
+  /// exposes read-only; writing size() bytes through this pointer is
+  /// exactly equivalent to that many setPixel() calls.
+  uint8_t* data() { return reinterpret_cast<uint8_t*>(buffer.data()); }
+
+  /// @brief Mutable pointer to the pixel buffer, typed as RGB_T rather
+  /// than raw bytes - the same buffer data() above exposes, just typed
+  /// for direct pixel-at-a-time indexing without a cast. RGB_T's binary
+  /// layout matches a plain packed integer of the same width for every
+  /// format this library ships (e.g. RGB565 <-> uint16_t), so a caller
+  /// producing raw packed values can reinterpret_cast this pointer to
+  /// that type if it doesn't want to construct RGB_T instances directly.
+  RGB_T* pixels() { return buffer.data(); }
+
+  /// @brief Number of RGB_T entries pixels()/data() has room for
+  /// (width() * height()) - distinct from size(), which is that count
+  /// converted to bytes.
+  size_t pixelCount() const { return buffer.size(); }
+
   /// @brief Returns the size of the buffer in bytes.
   /// @return Buffer size in bytes
   size_t size() const override { return buffer.size() * RGB_T::size() / 8; }

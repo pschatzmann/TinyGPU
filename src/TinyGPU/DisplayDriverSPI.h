@@ -244,8 +244,25 @@ class ST7789Driver : public DisplayDriverSPI {
  */
 class ILI9341Driver : public DisplayDriverSPI {
  public:
-  ILI9341Driver(SPIClass& spi, int8_t cs, int8_t dc, int8_t rst = -1)
-      : DisplayDriverSPI(spi, cs, dc, rst, 0, 0) {}
+  /**
+   * @brief Display orientation, sent via the MADCTL command (0x36) -
+   * same convention as Adafruit_ILI9341::setRotation(). kNone means
+   * "don't send MADCTL at all" - the panel's power-on-reset default
+   * orientation, preserving this driver's original (pre-rotation-support)
+   * behavior exactly for existing code that doesn't request a rotation.
+   */
+  enum class Rotation {
+    kNone = -1,
+    kPortrait = 0,
+    kLandscape = 1,
+    kPortraitFlipped = 2,
+    kLandscapeFlipped = 3,
+  };
+
+  ILI9341Driver(SPIClass& spi, int8_t cs, int8_t dc, int8_t rst = -1,
+                Rotation rotation = Rotation::kNone)
+      : DisplayDriverSPI(spi, cs, dc, rst, 0, 0), rotation_(rotation) {}
+
   bool begin() override {
     setupPinsAndReset();
     writeCommand(0x01);
@@ -253,10 +270,47 @@ class ILI9341Driver : public DisplayDriverSPI {
     writeCommand(0x28);
     writeCommand(0x3A);
     writeData8(0x55);
+    if (rotation_ != Rotation::kNone) {
+      writeCommand(0x36);
+      writeData8(madctlForRotation(rotation_));
+    }
     writeCommand(0x11);
     delay(120);
     writeCommand(0x29);
     return true;
+  }
+
+  /**
+   * @brief Changes the display orientation after begin() - sends MADCTL
+   * (0x36) directly, so it takes effect immediately without a full
+   * re-init. Rotation::kNone is ignored.
+   */
+  void setRotation(Rotation rotation) {
+    if (rotation == Rotation::kNone) return;
+    rotation_ = rotation;
+    writeCommand(0x36);
+    writeData8(madctlForRotation(rotation_));
+  }
+
+  /// The rotation passed to the constructor or setRotation(), or
+  /// Rotation::kNone if neither has been called (MADCTL was never sent).
+  Rotation rotation() const { return rotation_; }
+
+ protected:
+  Rotation rotation_;
+
+  /// Adafruit_ILI9341-compatible MADCTL byte for `rotation`.
+  static uint8_t madctlForRotation(Rotation rotation) {
+    switch (rotation) {
+      case Rotation::kPortrait:
+        return 0x48;  // portrait: MX | BGR
+      case Rotation::kLandscape:
+        return 0x28;  // landscape: MV | BGR
+      case Rotation::kPortraitFlipped:
+        return 0x88;  // portrait, flipped 180: MY | BGR
+      default:
+        return 0xE8;  // landscape, flipped 180: MX | MY | MV | BGR
+    }
   }
 };
 
