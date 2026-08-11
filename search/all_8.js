@@ -11,7 +11,7 @@ var searchData=
   ['ifontrgb565_8',['IFontRGB565',['../namespacetinygpu.html#ae955cbb52b3194484a7c438602a2104d',1,'tinygpu']]],
   ['ifontrgb666_9',['IFontRGB666',['../namespacetinygpu.html#a94fc54025b2137574adc5c7d5eb8cdb0',1,'tinygpu']]],
   ['ifontrgb888_10',['IFontRGB888',['../namespacetinygpu.html#a0e9a6af74007cb9c991badb76f7aa829',1,'tinygpu']]],
-  ['ili9341driver_11',['ILI9341Driver',['../classtinygpu_1_1ILI9341Driver.html#aa1b38fb4a32a247810476cd97287a9b2',1,'tinygpu::ILI9341Driver::ILI9341Driver()'],['../classtinygpu_1_1ILI9341Driver.html',1,'ILI9341Driver']]],
+  ['ili9341driver_11',['ILI9341Driver',['../classtinygpu_1_1ILI9341Driver.html#a1acaa5907cb1eae8610b75a5e2ade2f1',1,'tinygpu::ILI9341Driver::ILI9341Driver()'],['../classtinygpu_1_1ILI9341Driver.html',1,'ILI9341Driver']]],
   ['imageheight_5f_12',['imageHeight_',['../classtinygpu_1_1BMPParser.html#a7d0f805cfb6a750c2968776e52fc39a8',1,'tinygpu::BMPParser']]],
   ['imagesize_13',['imageSize',['../structtinygpu_1_1BMPParser_1_1HeaderInfo.html#ab1ce8bb44bc98a61115233a58117c2ad',1,'tinygpu::BMPParser::HeaderInfo']]],
   ['imagewidth_5f_14',['imageWidth_',['../classtinygpu_1_1BMPParser.html#a85216657dbf6a1a84ee2c3f4646b57b5',1,'tinygpu::BMPParser']]],

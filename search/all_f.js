@@ -23,13 +23,16 @@ var searchData=
   ['rgb565_2eh_20',['RGB565.h',['../RGB565_8h.html',1,'']]],
   ['rgb666_21',['RGB666',['../classtinygpu_1_1RGB666.html#adcc4564c6fc476c761adc7bab6e15fb0',1,'tinygpu::RGB666::RGB666()=default'],['../classtinygpu_1_1RGB666.html#a22445f950ef9692656f4c2d02f2ed2c6',1,'tinygpu::RGB666::RGB666(uint8_t r, uint8_t g, uint8_t b)'],['../classtinygpu_1_1RGB666.html',1,'RGB666']]],
   ['rgb666_2eh_22',['RGB666.h',['../RGB666_8h.html',1,'']]],
-  ['rgb888_23',['RGB888',['../classtinygpu_1_1RGB888.html#a991171b97d572f82fb432fbc39670955',1,'tinygpu::RGB888::RGB888(uint8_t r, uint8_t g, uint8_t b)'],['../classtinygpu_1_1RGB888.html#a2a794ed7b8d6ddab9947bdbfb10a11b7',1,'tinygpu::RGB888::RGB888(uint8_t v)'],['../classtinygpu_1_1RGB888.html#af2a03f495d9d27b764bf9f89c23b0d91',1,'tinygpu::RGB888::RGB888()=default'],['../classtinygpu_1_1RGB888.html',1,'RGB888']]],
+  ['rgb888_23',['RGB888',['../classtinygpu_1_1RGB888.html#af2a03f495d9d27b764bf9f89c23b0d91',1,'tinygpu::RGB888::RGB888()=default'],['../classtinygpu_1_1RGB888.html#a991171b97d572f82fb432fbc39670955',1,'tinygpu::RGB888::RGB888(uint8_t r, uint8_t g, uint8_t b)'],['../classtinygpu_1_1RGB888.html#a2a794ed7b8d6ddab9947bdbfb10a11b7',1,'tinygpu::RGB888::RGB888(uint8_t v)'],['../classtinygpu_1_1RGB888.html',1,'RGB888']]],
   ['rgb888_2eh_24',['RGB888.h',['../RGB888_8h.html',1,'']]],
   ['rotatesprite_25',['rotateSprite',['../classtinygpu_1_1FrameBuffer.html#ad283d8a8837c5fc43957804c5a68b8f0',1,'tinygpu::FrameBuffer']]],
   ['rotatespriteimage_26',['rotateSpriteImage',['../classtinygpu_1_1FrameBuffer.html#af79e7282ecc9e8863ba9ba7b8eece940',1,'tinygpu::FrameBuffer']]],
-  ['rotationx_27',['rotationX',['../classtinygpu_1_1WireFrame3D.html#a4ab0c14bf16440bb3f75712f1310b74c',1,'tinygpu::WireFrame3D']]],
-  ['rotationy_28',['rotationY',['../classtinygpu_1_1WireFrame3D.html#a73e94d13875824199662399d85c38879',1,'tinygpu::WireFrame3D']]],
-  ['rotationz_29',['rotationZ',['../classtinygpu_1_1WireFrame3D.html#af693e080aa643dee2a1ec999fb65ed2e',1,'tinygpu::WireFrame3D']]],
-  ['rowstride_5f_30',['rowStride_',['../classtinygpu_1_1AVIWriter.html#a20c17a2fd925430b425d87b10f41d04e',1,'tinygpu::AVIWriter']]],
-  ['rst_5f_31',['rst_',['../classtinygpu_1_1DisplayDriverSPI.html#a96b0d01a6e254cb76b0ae7a3a88d9bdd',1,'tinygpu::DisplayDriverSPI']]]
+  ['rotation_27',['Rotation',['../classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9',1,'tinygpu::ILI9341Driver']]],
+  ['rotation_28',['rotation',['../classtinygpu_1_1ILI9341Driver.html#ac4154d62016ae303eb96f5050034fa69',1,'tinygpu::ILI9341Driver']]],
+  ['rotation_5f_29',['rotation_',['../classtinygpu_1_1ILI9341Driver.html#af85d39999294bd90181efc5ba42f488d',1,'tinygpu::ILI9341Driver']]],
+  ['rotationx_30',['rotationX',['../classtinygpu_1_1WireFrame3D.html#a4ab0c14bf16440bb3f75712f1310b74c',1,'tinygpu::WireFrame3D']]],
+  ['rotationy_31',['rotationY',['../classtinygpu_1_1WireFrame3D.html#a73e94d13875824199662399d85c38879',1,'tinygpu::WireFrame3D']]],
+  ['rotationz_32',['rotationZ',['../classtinygpu_1_1WireFrame3D.html#af693e080aa643dee2a1ec999fb65ed2e',1,'tinygpu::WireFrame3D']]],
+  ['rowstride_5f_33',['rowStride_',['../classtinygpu_1_1AVIWriter.html#a20c17a2fd925430b425d87b10f41d04e',1,'tinygpu::AVIWriter']]],
+  ['rst_5f_34',['rst_',['../classtinygpu_1_1DisplayDriverSPI.html#a96b0d01a6e254cb76b0ae7a3a88d9bdd',1,'tinygpu::DisplayDriverSPI']]]
 ];

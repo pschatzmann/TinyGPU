@@ -128,6 +128,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a954524202998581e636b371957f628c5"><td class="memItemLeft" align="right" valign="top">const uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1Surface.html#a954524202998581e636b371957f628c5">data</a> () const override</td></tr>
 <tr class="memdesc:a954524202998581e636b371957f628c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the raw data as bytes.  <br /></td></tr>
 <tr class="separator:a954524202998581e636b371957f628c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99c07c946023f413991a249db8b99ab0"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1Surface.html#a99c07c946023f413991a249db8b99ab0">data</a> ()</td></tr>
+<tr class="memdesc:a99c07c946023f413991a249db8b99ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable counterpart of <a class="el" href="classtinygpu_1_1Surface.html#a99c07c946023f413991a249db8b99ab0" title="Mutable counterpart of data() - a pointer to the raw pixel buffer as bytes, for callers that want to ...">data()</a> - a pointer to the raw pixel buffer as bytes, for callers that want to fill it directly (e.g. a codec's own RGB565/RGB666/RGB888 conversion output) instead of going through <a class="el" href="classtinygpu_1_1Surface.html#ad624974e8a3014913ea186f39f27f6f8" title="Sets the pixel at (x, y) to the specified color.">setPixel()</a> one pixel at a time. Same bytes <a class="el" href="classtinygpu_1_1Surface.html#a99c07c946023f413991a249db8b99ab0" title="Mutable counterpart of data() - a pointer to the raw pixel buffer as bytes, for callers that want to ...">data()</a> exposes read-only; writing <a class="el" href="classtinygpu_1_1Surface.html#ad7701a09a964eab360a8e51fa7ad2c16" title="Returns the size of the buffer in bytes.">size()</a> bytes through this pointer is exactly equivalent to that many <a class="el" href="classtinygpu_1_1Surface.html#ad624974e8a3014913ea186f39f27f6f8" title="Sets the pixel at (x, y) to the specified color.">setPixel()</a> calls.  <br /></td></tr>
+<tr class="separator:a99c07c946023f413991a249db8b99ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38f959f3976340e380ea391d5cf6efd3"><td class="memItemLeft" align="right" valign="top">RGB_T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1Surface.html#a38f959f3976340e380ea391d5cf6efd3">pixels</a> ()</td></tr>
+<tr class="memdesc:a38f959f3976340e380ea391d5cf6efd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable pointer to the pixel buffer, typed as RGB_T rather than raw bytes - the same buffer <a class="el" href="classtinygpu_1_1Surface.html#a99c07c946023f413991a249db8b99ab0" title="Mutable counterpart of data() - a pointer to the raw pixel buffer as bytes, for callers that want to ...">data()</a> above exposes, just typed for direct pixel-at-a-time indexing without a cast. RGB_T's binary layout matches a plain packed integer of the same width for every format this library ships (e.g. <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> &lt;-&gt; uint16_t), so a caller producing raw packed values can reinterpret_cast this pointer to that type if it doesn't want to construct RGB_T instances directly.  <br /></td></tr>
+<tr class="separator:a38f959f3976340e380ea391d5cf6efd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b25c7edd18faf4d58d1f8dedadf19f4"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1Surface.html#a3b25c7edd18faf4d58d1f8dedadf19f4">pixelCount</a> () const</td></tr>
+<tr class="memdesc:a3b25c7edd18faf4d58d1f8dedadf19f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of RGB_T entries <a class="el" href="classtinygpu_1_1Surface.html#a38f959f3976340e380ea391d5cf6efd3" title="Mutable pointer to the pixel buffer, typed as RGB_T rather than raw bytes - the same buffer data() ab...">pixels()</a>/data() has room for (<a class="el" href="classtinygpu_1_1SurfaceBase.html#ac39656d862f5a4a39182559bbf7c740b" title="Get the width of the surface.">width()</a> * <a class="el" href="classtinygpu_1_1SurfaceBase.html#a715f3df3dc638de8b40076ada0b54a89" title="Get the height of the surface.">height()</a>) - distinct from <a class="el" href="classtinygpu_1_1Surface.html#ad7701a09a964eab360a8e51fa7ad2c16" title="Returns the size of the buffer in bytes.">size()</a>, which is that count converted to bytes.  <br /></td></tr>
+<tr class="separator:a3b25c7edd18faf4d58d1f8dedadf19f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7701a09a964eab360a8e51fa7ad2c16"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1Surface.html#ad7701a09a964eab360a8e51fa7ad2c16">size</a> () const override</td></tr>
 <tr class="memdesc:ad7701a09a964eab360a8e51fa7ad2c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the buffer in bytes.  <br /></td></tr>
 <tr class="separator:ad7701a09a964eab360a8e51fa7ad2c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -391,8 +400,35 @@ class tinygpu::Surface&lt; RGB_T &gt;</div><p>In-memory bitmap surface with basi
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a99c07c946023f413991a249db8b99ab0" name="a99c07c946023f413991a249db8b99ab0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99c07c946023f413991a249db8b99ab0">&#9670;&#160;</a></span>data() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t * data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mutable counterpart of <a class="el" href="classtinygpu_1_1Surface.html#a99c07c946023f413991a249db8b99ab0" title="Mutable counterpart of data() - a pointer to the raw pixel buffer as bytes, for callers that want to ...">data()</a> - a pointer to the raw pixel buffer as bytes, for callers that want to fill it directly (e.g. a codec's own RGB565/RGB666/RGB888 conversion output) instead of going through <a class="el" href="classtinygpu_1_1Surface.html#ad624974e8a3014913ea186f39f27f6f8" title="Sets the pixel at (x, y) to the specified color.">setPixel()</a> one pixel at a time. Same bytes <a class="el" href="classtinygpu_1_1Surface.html#a99c07c946023f413991a249db8b99ab0" title="Mutable counterpart of data() - a pointer to the raw pixel buffer as bytes, for callers that want to ...">data()</a> exposes read-only; writing <a class="el" href="classtinygpu_1_1Surface.html#ad7701a09a964eab360a8e51fa7ad2c16" title="Returns the size of the buffer in bytes.">size()</a> bytes through this pointer is exactly equivalent to that many <a class="el" href="classtinygpu_1_1Surface.html#ad624974e8a3014913ea186f39f27f6f8" title="Sets the pixel at (x, y) to the specified color.">setPixel()</a> calls. </p>
+
+</div>
+</div>
 <a id="a954524202998581e636b371957f628c5" name="a954524202998581e636b371957f628c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a954524202998581e636b371957f628c5">&#9670;&#160;</a></span>data()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a954524202998581e636b371957f628c5">&#9670;&#160;</a></span>data() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -466,6 +502,60 @@ class tinygpu::Surface&lt; RGB_T &gt;</div><p>In-memory bitmap surface with basi
 <dl class="section return"><dt>Returns</dt><dd>Pixel color value </dd></dl>
 
 <p>Implements <a class="el" href="classtinygpu_1_1SurfaceBase.html#a3892bf7867e2204c556bc8ee87d99323">SurfaceBase&lt; PixelT &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a3b25c7edd18faf4d58d1f8dedadf19f4" name="a3b25c7edd18faf4d58d1f8dedadf19f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b25c7edd18faf4d58d1f8dedadf19f4">&#9670;&#160;</a></span>pixelCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t pixelCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of RGB_T entries <a class="el" href="classtinygpu_1_1Surface.html#a38f959f3976340e380ea391d5cf6efd3" title="Mutable pointer to the pixel buffer, typed as RGB_T rather than raw bytes - the same buffer data() ab...">pixels()</a>/data() has room for (<a class="el" href="classtinygpu_1_1SurfaceBase.html#ac39656d862f5a4a39182559bbf7c740b" title="Get the width of the surface.">width()</a> * <a class="el" href="classtinygpu_1_1SurfaceBase.html#a715f3df3dc638de8b40076ada0b54a89" title="Get the height of the surface.">height()</a>) - distinct from <a class="el" href="classtinygpu_1_1Surface.html#ad7701a09a964eab360a8e51fa7ad2c16" title="Returns the size of the buffer in bytes.">size()</a>, which is that count converted to bytes. </p>
+
+</div>
+</div>
+<a id="a38f959f3976340e380ea391d5cf6efd3" name="a38f959f3976340e380ea391d5cf6efd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38f959f3976340e380ea391d5cf6efd3">&#9670;&#160;</a></span>pixels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RGB_T * pixels </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mutable pointer to the pixel buffer, typed as RGB_T rather than raw bytes - the same buffer <a class="el" href="classtinygpu_1_1Surface.html#a99c07c946023f413991a249db8b99ab0" title="Mutable counterpart of data() - a pointer to the raw pixel buffer as bytes, for callers that want to ...">data()</a> above exposes, just typed for direct pixel-at-a-time indexing without a cast. RGB_T's binary layout matches a plain packed integer of the same width for every format this library ships (e.g. <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> &lt;-&gt; uint16_t), so a caller producing raw packed values can reinterpret_cast this pointer to that type if it doesn't want to construct RGB_T instances directly. </p>
 
 </div>
 </div>

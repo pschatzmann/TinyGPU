@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['warn_0',['WARN',['../classtinygpu_1_1TinyGPULoggerClass.html#a221b779e6bb7b8d40677d7642bfefac5a74dac7ac23d5b810db6d4067f14e8676',1,'tinygpu::TinyGPULoggerClass']]]
+  ['perspective_0',['Perspective',['../classtinygpu_1_1WireFrame3D.html#a635428fef8d6e4afba288610c9c65bd5aa80420eef88d11f77532f1b9cb467fa3',1,'tinygpu::WireFrame3D']]]
 ];

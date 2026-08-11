@@ -19,7 +19,8 @@ var searchData=
   ['rgb888_16',['RGB888',['../classtinygpu_1_1RGB888.html#af2a03f495d9d27b764bf9f89c23b0d91',1,'tinygpu::RGB888::RGB888()=default'],['../classtinygpu_1_1RGB888.html#a991171b97d572f82fb432fbc39670955',1,'tinygpu::RGB888::RGB888(uint8_t r, uint8_t g, uint8_t b)'],['../classtinygpu_1_1RGB888.html#a2a794ed7b8d6ddab9947bdbfb10a11b7',1,'tinygpu::RGB888::RGB888(uint8_t v)']]],
   ['rotatesprite_17',['rotateSprite',['../classtinygpu_1_1FrameBuffer.html#ad283d8a8837c5fc43957804c5a68b8f0',1,'tinygpu::FrameBuffer']]],
   ['rotatespriteimage_18',['rotateSpriteImage',['../classtinygpu_1_1FrameBuffer.html#af79e7282ecc9e8863ba9ba7b8eece940',1,'tinygpu::FrameBuffer']]],
-  ['rotationx_19',['rotationX',['../classtinygpu_1_1WireFrame3D.html#a4ab0c14bf16440bb3f75712f1310b74c',1,'tinygpu::WireFrame3D']]],
-  ['rotationy_20',['rotationY',['../classtinygpu_1_1WireFrame3D.html#a73e94d13875824199662399d85c38879',1,'tinygpu::WireFrame3D']]],
-  ['rotationz_21',['rotationZ',['../classtinygpu_1_1WireFrame3D.html#af693e080aa643dee2a1ec999fb65ed2e',1,'tinygpu::WireFrame3D']]]
+  ['rotation_19',['rotation',['../classtinygpu_1_1ILI9341Driver.html#ac4154d62016ae303eb96f5050034fa69',1,'tinygpu::ILI9341Driver']]],
+  ['rotationx_20',['rotationX',['../classtinygpu_1_1WireFrame3D.html#a4ab0c14bf16440bb3f75712f1310b74c',1,'tinygpu::WireFrame3D']]],
+  ['rotationy_21',['rotationY',['../classtinygpu_1_1WireFrame3D.html#a73e94d13875824199662399d85c38879',1,'tinygpu::WireFrame3D']]],
+  ['rotationz_22',['rotationZ',['../classtinygpu_1_1WireFrame3D.html#af693e080aa643dee2a1ec999fb65ed2e',1,'tinygpu::WireFrame3D']]]
 ];
