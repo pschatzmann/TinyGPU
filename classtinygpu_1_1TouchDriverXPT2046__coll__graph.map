@@ -1,5 +1,5 @@
 <map id="TouchDriverXPT2046" name="TouchDriverXPT2046">
-<area shape="rect" id="node1" title="Driver for XPT2046 touch controller (resistive touch)." alt="" coords="5,168,161,193"/>
-<area shape="rect" id="node2" href="$classtinygpu_1_1TouchDriver.html" title=" " alt="" coords="34,93,133,119"/>
-<area shape="rect" id="node3" href="$structtinygpu_1_1CalibrationData.html" title=" " alt="" coords="21,5,145,31"/>
+<area shape="rect" id="node1" title="XPT2046 resistive touch controller." alt="" coords="5,168,161,193"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="34,93,133,119"/>
+<area shape="rect" id="node3" href="$structtinygpu_1_1CalibrationData.html" title="Touch calibration configuration." alt="" coords="21,5,145,31"/>
 </map>

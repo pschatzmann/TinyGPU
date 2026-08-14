@@ -80,6 +80,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Touch calibration configuration.  
+ <a href="structtinygpu_1_1CalibrationData.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="TouchDriver_8h_source.html">TouchDriver.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -103,7 +106,12 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a1f314834123bd77463ad68546fc483d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1CalibrationData.html#a1f314834123bd77463ad68546fc483d7">swapXY</a> = false</td></tr>
 <tr class="separator:a1f314834123bd77463ad68546fc483d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Touch calibration configuration. </p>
+<p>rawXMin/rawXMax and rawYMin/rawYMax describe the raw controller coordinate ranges.</p>
+<p>screenWidth/screenHeight describe the unrotated display dimensions.</p>
+<p>swapXY is applied AFTER raw X/Y calibration. This is important when the X and Y calibration ranges differ. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="af9e252500ea87fc7b2f15fa5daa96cf0" name="af9e252500ea87fc7b2f15fa5daa96cf0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9e252500ea87fc7b2f15fa5daa96cf0">&#9670;&#160;</a></span>invertX</h2>
 

@@ -76,11 +76,15 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classtinygpu_1_1TouchDriver-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">TouchDriver Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Base class for touch controllers.  
+ <a href="classtinygpu_1_1TouchDriver.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="TouchDriver_8h_source.html">TouchDriver.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -88,10 +92,10 @@ Inheritance diagram for TouchDriver:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1TouchDriver__inherit__graph.png" border="0" usemap="#aTouchDriver_inherit__map" alt="Inheritance graph"/></div>
 <map name="aTouchDriver_inherit__map" id="aTouchDriver_inherit__map">
-<area shape="rect" title=" " alt="" coords="210,5,309,31"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriverCST816S.html" title="Driver for CST816S touch controller (capacitive touch)." alt="" coords="5,79,161,104"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriverFT6236.html" title="Driver for FT6236/FT6336 touch controller (capacitive touch). using I2C communication to read touch p..." alt="" coords="186,79,333,104"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriverXPT2046.html" title="Driver for XPT2046 touch controller (resistive touch)." alt="" coords="357,79,513,104"/>
+<area shape="rect" title="Base class for touch controllers." alt="" coords="210,5,309,31"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriverCST816S.html" title="CST816S capacitive touch controller." alt="" coords="5,79,161,104"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriverFT6236.html" title="FT6236 / FT6336 capacitive touch controller." alt="" coords="186,79,333,104"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriverXPT2046.html" title="XPT2046 resistive touch controller." alt="" coords="357,79,513,104"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -99,8 +103,8 @@ Collaboration diagram for TouchDriver:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1TouchDriver__coll__graph.png" border="0" usemap="#aTouchDriver_coll__map" alt="Collaboration graph"/></div>
 <map name="aTouchDriver_coll__map" id="aTouchDriver_coll__map">
-<area shape="rect" title=" " alt="" coords="18,93,117,119"/>
-<area shape="rect" href="structtinygpu_1_1CalibrationData.html" title=" " alt="" coords="5,5,129,31"/>
+<area shape="rect" title="Base class for touch controllers." alt="" coords="18,93,117,119"/>
+<area shape="rect" href="structtinygpu_1_1CalibrationData.html" title="Touch calibration configuration." alt="" coords="5,5,129,31"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -109,22 +113,42 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1a235893f2df04c3413465c6a12e5ae"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#ad1a235893f2df04c3413465c6a12e5ae">~TouchDriver</a> ()=default</td></tr>
 <tr class="separator:ad1a235893f2df04c3413465c6a12e5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8a0d9ca63f8bb3de100e347c3f3bca4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#ae8a0d9ca63f8bb3de100e347c3f3bca4">begin</a> ()=0</td></tr>
+<tr class="memdesc:ae8a0d9ca63f8bb3de100e347c3f3bca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the controller.  <br /></td></tr>
 <tr class="separator:ae8a0d9ca63f8bb3de100e347c3f3bca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29b2ef84d2fa0b850b4a3cbcee215554"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a29b2ef84d2fa0b850b4a3cbcee215554">isTouched</a> ()=0</td></tr>
+<tr class="memdesc:a29b2ef84d2fa0b850b4a3cbcee215554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether the panel currently appears touched.  <br /></td></tr>
 <tr class="separator:a29b2ef84d2fa0b850b4a3cbcee215554"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6959d576e3881edf4a7ba7b09b12a466"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a6959d576e3881edf4a7ba7b09b12a466">getPoint</a> (<a class="el" href="structtinygpu_1_1Point.html">Point</a> &amp;outPoint)=0</td></tr>
+<tr class="memdesc:a6959d576e3881edf4a7ba7b09b12a466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current touch point.  <br /></td></tr>
 <tr class="separator:a6959d576e3881edf4a7ba7b09b12a466"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac82ad20f04f597e1cf952371bf08b8a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#ac82ad20f04f597e1cf952371bf08b8a9">setRotation</a> (<a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681">Rotation</a> rotation)</td></tr>
 <tr class="separator:ac82ad20f04f597e1cf952371bf08b8a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ca54826d24d32b070c9f8b6c51304d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681">Rotation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a7ca54826d24d32b070c9f8b6c51304d4">getRotation</a> () const</td></tr>
 <tr class="separator:a7ca54826d24d32b070c9f8b6c51304d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a692e41d7ec5298c6bd550e9816464a14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a692e41d7ec5298c6bd550e9816464a14">setCalibration</a> (const <a class="el" href="structtinygpu_1_1CalibrationData.html">CalibrationData</a> &amp;cal)</td></tr>
-<tr class="separator:a692e41d7ec5298c6bd550e9816464a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ef0af1b798f38d19c06da17a96a101b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a3ef0af1b798f38d19c06da17a96a101b">setCalibration</a> (const <a class="el" href="structtinygpu_1_1CalibrationData.html">CalibrationData</a> &amp;cal)</td></tr>
+<tr class="memdesc:a3ef0af1b798f38d19c06da17a96a101b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set and validate calibration.  <br /></td></tr>
+<tr class="separator:a3ef0af1b798f38d19c06da17a96a101b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97b97816a18306b531c576fd2fa18245"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structtinygpu_1_1CalibrationData.html">CalibrationData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a97b97816a18306b531c576fd2fa18245">getCalibration</a> () const</td></tr>
+<tr class="separator:a97b97816a18306b531c576fd2fa18245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade3ebde0f4a9fbe9bedd38618146b1a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#ade3ebde0f4a9fbe9bedd38618146b1a9">hasCalibration</a> () const</td></tr>
+<tr class="separator:ade3ebde0f4a9fbe9bedd38618146b1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a4cdc2e41fca94a0591029d6e0d7a095d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtinygpu_1_1Point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a4cdc2e41fca94a0591029d6e0d7a095d">mapCoordinates</a> (int16_t rawX, int16_t rawY, uint16_t pressure=255) const</td></tr>
+<tr class="memdesc:a4cdc2e41fca94a0591029d6e0d7a095d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert raw controller coordinates into logical display space.  <br /></td></tr>
 <tr class="separator:a4cdc2e41fca94a0591029d6e0d7a095d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a1de1af5fbc4ae1d51edc99b1919918db"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a1de1af5fbc4ae1d51edc99b1919918db">validateCalibration</a> (const <a class="el" href="structtinygpu_1_1CalibrationData.html">CalibrationData</a> &amp;cal)</td></tr>
+<tr class="separator:a1de1af5fbc4ae1d51edc99b1919918db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bbd1abe420db2bc1967ff06f1526957"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a9bbd1abe420db2bc1967ff06f1526957">clamp32</a> (int32_t value, int32_t minimum, int32_t maximum)</td></tr>
+<tr class="memdesc:a9bbd1abe420db2bc1967ff06f1526957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamp an integer to an inclusive range.  <br /></td></tr>
+<tr class="separator:a9bbd1abe420db2bc1967ff06f1526957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328d4e29c741ff33aa2aa503312ced53"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a328d4e29c741ff33aa2aa503312ced53">mapRange</a> (int32_t value, int32_t inMin, int32_t inMax, int32_t outMin, int32_t outMax)</td></tr>
+<tr class="memdesc:a328d4e29c741ff33aa2aa503312ced53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map an integer from one range to another.  <br /></td></tr>
+<tr class="separator:a328d4e29c741ff33aa2aa503312ced53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -135,7 +159,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a5d0421b58b40e3f8cdc4ab00968e1a33"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a5d0421b58b40e3f8cdc4ab00968e1a33">hasCalibration_</a> = false</td></tr>
 <tr class="separator:a5d0421b58b40e3f8cdc4ab00968e1a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class for touch controllers. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad1a235893f2df04c3413465c6a12e5ae" name="ad1a235893f2df04c3413465c6a12e5ae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1a235893f2df04c3413465c6a12e5ae">&#9670;&#160;</a></span>~TouchDriver()</h2>
 
@@ -185,7 +211,79 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Initialize the controller. </p>
+<p>The driver does NOT initialize the SPI/I2C bus itself. The application is responsible for calling Wire.begin(), SPI.begin(), and configuring any board-specific bus pins. </p>
+
 <p>Implemented in <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverXPT2046</a>, <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverFT6236</a>, and <a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverCST816S</a>.</p>
+
+</div>
+</div>
+<a id="a9bbd1abe420db2bc1967ff06f1526957" name="a9bbd1abe420db2bc1967ff06f1526957"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bbd1abe420db2bc1967ff06f1526957">&#9670;&#160;</a></span>clamp32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t clamp32 </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>minimum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>maximum</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clamp an integer to an inclusive range. </p>
+
+</div>
+</div>
+<a id="a97b97816a18306b531c576fd2fa18245" name="a97b97816a18306b531c576fd2fa18245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97b97816a18306b531c576fd2fa18245">&#9670;&#160;</a></span>getCalibration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structtinygpu_1_1CalibrationData.html">CalibrationData</a> &amp; getCalibration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -213,6 +311,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Read the current touch point. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if a valid touch point was obtained. </dd></dl>
+
 <p>Implemented in <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html#a338a8285ece3265617760ce276c71109">TouchDriverXPT2046</a>, <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html#a338a8285ece3265617760ce276c71109">TouchDriverFT6236</a>, and <a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#a338a8285ece3265617760ce276c71109">TouchDriverCST816S</a>.</p>
 
 </div>
@@ -228,6 +329,31 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681">Rotation</a> getRotation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade3ebde0f4a9fbe9bedd38618146b1a9" name="ade3ebde0f4a9fbe9bedd38618146b1a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade3ebde0f4a9fbe9bedd38618146b1a9">&#9670;&#160;</a></span>hasCalibration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hasCalibration </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -264,6 +390,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Return whether the panel currently appears touched. </p>
+<p>For controllers without an IRQ pin this may perform a controller read. </p>
 
 <p>Implemented in <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverXPT2046</a>, <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverFT6236</a>, and <a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverCST816S</a>.</p>
 
@@ -309,10 +438,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Convert raw controller coordinates into logical display space. </p>
+<p>Processing order:</p>
+<p>raw coordinates -&gt; inversion -&gt; independent X/Y calibration -&gt; swap XY -&gt; display rotation</p>
+<p>This order is important. In particular, swapping raw X/Y before calibration would incorrectly apply the X calibration range to Y and vice versa. </p>
+
 </div>
 </div>
-<a id="a692e41d7ec5298c6bd550e9816464a14" name="a692e41d7ec5298c6bd550e9816464a14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a692e41d7ec5298c6bd550e9816464a14">&#9670;&#160;</a></span>setCalibration()</h2>
+<a id="a328d4e29c741ff33aa2aa503312ced53" name="a328d4e29c741ff33aa2aa503312ced53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a328d4e29c741ff33aa2aa503312ced53">&#9670;&#160;</a></span>mapRange()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -321,7 +455,68 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void setCalibration </td>
+          <td class="memname">static int32_t mapRange </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>inMin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>inMax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>outMin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>outMax</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Map an integer from one range to another. </p>
+<p>Unlike Arduino's map(), this function:</p><ul>
+<li>uses 64-bit intermediate arithmetic</li>
+<li>explicitly handles invalid ranges</li>
+<li>avoids accidental overflow for normal touch-controller ranges </li>
+</ul>
+
+</div>
+</div>
+<a id="a3ef0af1b798f38d19c06da17a96a101b" name="a3ef0af1b798f38d19c06da17a96a101b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ef0af1b798f38d19c06da17a96a101b">&#9670;&#160;</a></span>setCalibration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool setCalibration </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structtinygpu_1_1CalibrationData.html">CalibrationData</a> &amp;&#160;</td>
           <td class="paramname"><em>cal</em></td><td>)</td>
@@ -334,6 +529,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Set and validate calibration. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the calibration is valid. </dd></dl>
 
 </div>
 </div>
@@ -357,6 +555,32 @@ Protected Attributes</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1de1af5fbc4ae1d51edc99b1919918db" name="a1de1af5fbc4ae1d51edc99b1919918db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1de1af5fbc4ae1d51edc99b1919918db">&#9670;&#160;</a></span>validateCalibration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool validateCalibration </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtinygpu_1_1CalibrationData.html">CalibrationData</a> &amp;&#160;</td>
+          <td class="paramname"><em>cal</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

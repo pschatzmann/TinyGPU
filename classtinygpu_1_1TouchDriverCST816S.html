@@ -81,7 +81,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Driver for CST816S touch controller (capacitive touch).  
+<p>CST816S capacitive touch controller.  
  <a href="classtinygpu_1_1TouchDriverCST816S.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="TouchDriver_8h_source.html">TouchDriver.h</a>&gt;</code></p>
@@ -90,8 +90,8 @@ Inheritance diagram for TouchDriverCST816S:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1TouchDriverCST816S__inherit__graph.png" border="0" usemap="#aTouchDriverCST816S_inherit__map" alt="Inheritance graph"/></div>
 <map name="aTouchDriverCST816S_inherit__map" id="aTouchDriverCST816S_inherit__map">
-<area shape="rect" title="Driver for CST816S touch controller (capacitive touch)." alt="" coords="5,79,161,104"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriver.html" title=" " alt="" coords="34,5,133,31"/>
+<area shape="rect" title="CST816S capacitive touch controller." alt="" coords="5,79,161,104"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="34,5,133,31"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -99,9 +99,9 @@ Collaboration diagram for TouchDriverCST816S:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1TouchDriverCST816S__coll__graph.png" border="0" usemap="#aTouchDriverCST816S_coll__map" alt="Collaboration graph"/></div>
 <map name="aTouchDriverCST816S_coll__map" id="aTouchDriverCST816S_coll__map">
-<area shape="rect" title="Driver for CST816S touch controller (capacitive touch)." alt="" coords="5,168,161,193"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriver.html" title=" " alt="" coords="34,93,133,119"/>
-<area shape="rect" href="structtinygpu_1_1CalibrationData.html" title=" " alt="" coords="21,5,145,31"/>
+<area shape="rect" title="CST816S capacitive touch controller." alt="" coords="5,168,161,193"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="34,93,133,119"/>
+<area shape="rect" href="structtinygpu_1_1CalibrationData.html" title="Touch calibration configuration." alt="" coords="21,5,145,31"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -110,26 +110,37 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad0e428d4da592b529e086e703d05440c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#ad0e428d4da592b529e086e703d05440c">TouchDriverCST816S</a> (TwoWire &amp;wire=Wire, int8_t rstPin=-1, int8_t irqPin=-1)</td></tr>
 <tr class="separator:ad0e428d4da592b529e086e703d05440c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acba365cc28eb702040c382646cfb0a7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#acba365cc28eb702040c382646cfb0a7a">begin</a> () override</td></tr>
+<tr class="memdesc:acba365cc28eb702040c382646cfb0a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the controller.  <br /></td></tr>
 <tr class="separator:acba365cc28eb702040c382646cfb0a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03619dc33b1f9a8b9ef4b44e7b301507"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#a03619dc33b1f9a8b9ef4b44e7b301507">isTouched</a> () override</td></tr>
+<tr class="memdesc:a03619dc33b1f9a8b9ef4b44e7b301507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether the panel currently appears touched.  <br /></td></tr>
 <tr class="separator:a03619dc33b1f9a8b9ef4b44e7b301507"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a338a8285ece3265617760ce276c71109"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#a338a8285ece3265617760ce276c71109">getPoint</a> (<a class="el" href="structtinygpu_1_1Point.html">Point</a> &amp;outPoint) override</td></tr>
+<tr class="memdesc:a338a8285ece3265617760ce276c71109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current touch point.  <br /></td></tr>
 <tr class="separator:a338a8285ece3265617760ce276c71109"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtinygpu_1_1TouchDriver"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinygpu_1_1TouchDriver')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinygpu_1_1TouchDriver.html">TouchDriver</a></td></tr>
 <tr class="memitem:ad1a235893f2df04c3413465c6a12e5ae inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#ad1a235893f2df04c3413465c6a12e5ae">~TouchDriver</a> ()=default</td></tr>
 <tr class="separator:ad1a235893f2df04c3413465c6a12e5ae inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8a0d9ca63f8bb3de100e347c3f3bca4 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#ae8a0d9ca63f8bb3de100e347c3f3bca4">begin</a> ()=0</td></tr>
+<tr class="memdesc:ae8a0d9ca63f8bb3de100e347c3f3bca4 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the controller.  <br /></td></tr>
 <tr class="separator:ae8a0d9ca63f8bb3de100e347c3f3bca4 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29b2ef84d2fa0b850b4a3cbcee215554 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a29b2ef84d2fa0b850b4a3cbcee215554">isTouched</a> ()=0</td></tr>
+<tr class="memdesc:a29b2ef84d2fa0b850b4a3cbcee215554 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether the panel currently appears touched.  <br /></td></tr>
 <tr class="separator:a29b2ef84d2fa0b850b4a3cbcee215554 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6959d576e3881edf4a7ba7b09b12a466 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a6959d576e3881edf4a7ba7b09b12a466">getPoint</a> (<a class="el" href="structtinygpu_1_1Point.html">Point</a> &amp;outPoint)=0</td></tr>
+<tr class="memdesc:a6959d576e3881edf4a7ba7b09b12a466 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current touch point.  <br /></td></tr>
 <tr class="separator:a6959d576e3881edf4a7ba7b09b12a466 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac82ad20f04f597e1cf952371bf08b8a9 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#ac82ad20f04f597e1cf952371bf08b8a9">setRotation</a> (<a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681">Rotation</a> rotation)</td></tr>
 <tr class="separator:ac82ad20f04f597e1cf952371bf08b8a9 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ca54826d24d32b070c9f8b6c51304d4 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681">Rotation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a7ca54826d24d32b070c9f8b6c51304d4">getRotation</a> () const</td></tr>
 <tr class="separator:a7ca54826d24d32b070c9f8b6c51304d4 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a692e41d7ec5298c6bd550e9816464a14 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a692e41d7ec5298c6bd550e9816464a14">setCalibration</a> (const <a class="el" href="structtinygpu_1_1CalibrationData.html">CalibrationData</a> &amp;cal)</td></tr>
-<tr class="separator:a692e41d7ec5298c6bd550e9816464a14 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ef0af1b798f38d19c06da17a96a101b inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a3ef0af1b798f38d19c06da17a96a101b">setCalibration</a> (const <a class="el" href="structtinygpu_1_1CalibrationData.html">CalibrationData</a> &amp;cal)</td></tr>
+<tr class="memdesc:a3ef0af1b798f38d19c06da17a96a101b inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set and validate calibration.  <br /></td></tr>
+<tr class="separator:a3ef0af1b798f38d19c06da17a96a101b inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97b97816a18306b531c576fd2fa18245 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structtinygpu_1_1CalibrationData.html">CalibrationData</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a97b97816a18306b531c576fd2fa18245">getCalibration</a> () const</td></tr>
+<tr class="separator:a97b97816a18306b531c576fd2fa18245 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade3ebde0f4a9fbe9bedd38618146b1a9 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#ade3ebde0f4a9fbe9bedd38618146b1a9">hasCalibration</a> () const</td></tr>
+<tr class="separator:ade3ebde0f4a9fbe9bedd38618146b1a9 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -140,7 +151,17 @@ Static Public Attributes</h2></td></tr>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classtinygpu_1_1TouchDriver"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtinygpu_1_1TouchDriver')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtinygpu_1_1TouchDriver.html">TouchDriver</a></td></tr>
 <tr class="memitem:a4cdc2e41fca94a0591029d6e0d7a095d inherit pro_methods_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtinygpu_1_1Point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a4cdc2e41fca94a0591029d6e0d7a095d">mapCoordinates</a> (int16_t rawX, int16_t rawY, uint16_t pressure=255) const</td></tr>
+<tr class="memdesc:a4cdc2e41fca94a0591029d6e0d7a095d inherit pro_methods_classtinygpu_1_1TouchDriver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert raw controller coordinates into logical display space.  <br /></td></tr>
 <tr class="separator:a4cdc2e41fca94a0591029d6e0d7a095d inherit pro_methods_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_methods_classtinygpu_1_1TouchDriver"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_classtinygpu_1_1TouchDriver')"><img src="closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="classtinygpu_1_1TouchDriver.html">TouchDriver</a></td></tr>
+<tr class="memitem:a1de1af5fbc4ae1d51edc99b1919918db inherit pro_static_methods_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a1de1af5fbc4ae1d51edc99b1919918db">validateCalibration</a> (const <a class="el" href="structtinygpu_1_1CalibrationData.html">CalibrationData</a> &amp;cal)</td></tr>
+<tr class="separator:a1de1af5fbc4ae1d51edc99b1919918db inherit pro_static_methods_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bbd1abe420db2bc1967ff06f1526957 inherit pro_static_methods_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a9bbd1abe420db2bc1967ff06f1526957">clamp32</a> (int32_t value, int32_t minimum, int32_t maximum)</td></tr>
+<tr class="memdesc:a9bbd1abe420db2bc1967ff06f1526957 inherit pro_static_methods_classtinygpu_1_1TouchDriver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamp an integer to an inclusive range.  <br /></td></tr>
+<tr class="separator:a9bbd1abe420db2bc1967ff06f1526957 inherit pro_static_methods_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328d4e29c741ff33aa2aa503312ced53 inherit pro_static_methods_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a328d4e29c741ff33aa2aa503312ced53">mapRange</a> (int32_t value, int32_t inMin, int32_t inMax, int32_t outMin, int32_t outMax)</td></tr>
+<tr class="memdesc:a328d4e29c741ff33aa2aa503312ced53 inherit pro_static_methods_classtinygpu_1_1TouchDriver"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map an integer from one range to another.  <br /></td></tr>
+<tr class="separator:a328d4e29c741ff33aa2aa503312ced53 inherit pro_static_methods_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classtinygpu_1_1TouchDriver"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtinygpu_1_1TouchDriver')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtinygpu_1_1TouchDriver.html">TouchDriver</a></td></tr>
 <tr class="memitem:af85d39999294bd90181efc5ba42f488d inherit pro_attribs_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681">Rotation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#af85d39999294bd90181efc5ba42f488d">rotation_</a> = <a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681afcc3d26082cf729c96122174cb5a0672">Rotation::Deg0</a></td></tr>
 <tr class="separator:af85d39999294bd90181efc5ba42f488d inherit pro_attribs_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,8 +171,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a5d0421b58b40e3f8cdc4ab00968e1a33 inherit pro_attribs_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Driver for CST816S touch controller (capacitive touch). </p>
-<p>Handles I2C communication and touch point reading for CST816S. </p>
+<div class="textblock"><p>CST816S capacitive touch controller. </p>
+<p>I2C address: 0x15</p>
+<p>Register layout:</p>
+<p>0x01 GestureID 0x02 FingerNum 0x03 XposH 0x04 XposL 0x05 YposH 0x06 YposL </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad0e428d4da592b529e086e703d05440c" name="ad0e428d4da592b529e086e703d05440c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad0e428d4da592b529e086e703d05440c">&#9670;&#160;</a></span>TouchDriverCST816S()</h2>
@@ -219,6 +242,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Initialize the controller. </p>
+<p>The driver does NOT initialize the SPI/I2C bus itself. The application is responsible for calling Wire.begin(), SPI.begin(), and configuring any board-specific bus pins. </p>
+
 <p>Implements <a class="el" href="classtinygpu_1_1TouchDriver.html#ae8a0d9ca63f8bb3de100e347c3f3bca4">TouchDriver</a>.</p>
 
 </div>
@@ -247,6 +273,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Read the current touch point. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if a valid touch point was obtained. </dd></dl>
+
 <p>Implements <a class="el" href="classtinygpu_1_1TouchDriver.html#a6959d576e3881edf4a7ba7b09b12a466">TouchDriver</a>.</p>
 
 </div>
@@ -273,6 +302,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Return whether the panel currently appears touched. </p>
+<p>For controllers without an IRQ pin this may perform a controller read. </p>
 
 <p>Implements <a class="el" href="classtinygpu_1_1TouchDriver.html#a29b2ef84d2fa0b850b4a3cbcee215554">TouchDriver</a>.</p>
 

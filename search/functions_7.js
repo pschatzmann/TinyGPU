@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['haserror_0',['hasError',['../classtinygpu_1_1BMPParser.html#a81dd125e253592aaef5fea33dfc50c42',1,'tinygpu::BMPParser']]],
-  ['hastouchdriver_1',['hasTouchDriver',['../classLVGLDriver.html#a62ce61b6b38d09e07f4d38d53812c594',1,'LVGLDriver']]],
-  ['height_2',['height',['../classtinygpu_1_1BMPParser.html#adc662cea5b05cd9852d5a4538586d662',1,'tinygpu::BMPParser::height()'],['../classtinygpu_1_1CartesianView.html#a715f3df3dc638de8b40076ada0b54a89',1,'tinygpu::CartesianView::height()'],['../classtinygpu_1_1FrameBuffer.html#a715f3df3dc638de8b40076ada0b54a89',1,'tinygpu::FrameBuffer::height()'],['../classtinygpu_1_1ISurface.html#a2b329a3d2f3c79e7f52714fecfadec8c',1,'tinygpu::ISurface::height()'],['../classtinygpu_1_1SurfaceBase.html#a715f3df3dc638de8b40076ada0b54a89',1,'tinygpu::SurfaceBase::height()']]],
-  ['hx8357driver_3',['HX8357Driver',['../classtinygpu_1_1HX8357Driver.html#a19fd0f6e66aaa3dffaf67ac031e88dbc',1,'tinygpu::HX8357Driver']]]
+  ['hascalibration_0',['hasCalibration',['../classtinygpu_1_1TouchDriver.html#ade3ebde0f4a9fbe9bedd38618146b1a9',1,'tinygpu::TouchDriver']]],
+  ['haserror_1',['hasError',['../classtinygpu_1_1BMPParser.html#a81dd125e253592aaef5fea33dfc50c42',1,'tinygpu::BMPParser']]],
+  ['hastouchdriver_2',['hasTouchDriver',['../classLVGLDriver.html#a62ce61b6b38d09e07f4d38d53812c594',1,'LVGLDriver']]],
+  ['height_3',['height',['../classtinygpu_1_1BMPParser.html#adc662cea5b05cd9852d5a4538586d662',1,'tinygpu::BMPParser::height()'],['../classtinygpu_1_1CartesianView.html#a715f3df3dc638de8b40076ada0b54a89',1,'tinygpu::CartesianView::height()'],['../classtinygpu_1_1FrameBuffer.html#a715f3df3dc638de8b40076ada0b54a89',1,'tinygpu::FrameBuffer::height()'],['../classtinygpu_1_1ISurface.html#a2b329a3d2f3c79e7f52714fecfadec8c',1,'tinygpu::ISurface::height()'],['../classtinygpu_1_1SurfaceBase.html#a715f3df3dc638de8b40076ada0b54a89',1,'tinygpu::SurfaceBase::height()']]],
+  ['hx8357driver_4',['HX8357Driver',['../classtinygpu_1_1HX8357Driver.html#a19fd0f6e66aaa3dffaf67ac031e88dbc',1,'tinygpu::HX8357Driver']]]
 ];

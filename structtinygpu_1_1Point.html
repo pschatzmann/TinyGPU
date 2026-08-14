@@ -81,12 +81,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Touch point.  
+ <a href="structtinygpu_1_1Point.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="TouchDriver_8h_source.html">TouchDriver.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae30c03fc3e617a039c36242ccd3b8f12"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1Point.html#ae30c03fc3e617a039c36242ccd3b8f12">operator==</a> (const <a class="el" href="structtinygpu_1_1Point.html">Point</a> &amp;other) const</td></tr>
 <tr class="separator:ae30c03fc3e617a039c36242ccd3b8f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a270aafb0f9c0793d51ea43bf3e3c1a07"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1Point.html#a270aafb0f9c0793d51ea43bf3e3c1a07">operator!=</a> (const <a class="el" href="structtinygpu_1_1Point.html">Point</a> &amp;other) const</td></tr>
+<tr class="separator:a270aafb0f9c0793d51ea43bf3e3c1a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -97,7 +102,39 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a8f079b1c606a20607e789abe28c98c25"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1Point.html#a8f079b1c606a20607e789abe28c98c25">pressure</a> = 0</td></tr>
 <tr class="separator:a8f079b1c606a20607e789abe28c98c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Touch point. </p>
+<p>pressure semantics:</p><ul>
+<li>XPT2046: estimated Z/pressure-related value, 0..4095</li>
+<li>Capacitive controllers: 255 while touched </li>
+</ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a270aafb0f9c0793d51ea43bf3e3c1a07" name="a270aafb0f9c0793d51ea43bf3e3c1a07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a270aafb0f9c0793d51ea43bf3e3c1a07">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtinygpu_1_1Point.html">Point</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae30c03fc3e617a039c36242ccd3b8f12" name="ae30c03fc3e617a039c36242ccd3b8f12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae30c03fc3e617a039c36242ccd3b8f12">&#9670;&#160;</a></span>operator==()</h2>
 
