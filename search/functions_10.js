@@ -4,7 +4,7 @@ var searchData=
   ['table16x24_1',['table16x24',['../namespacetinygpu_1_1asciifont__detail.html#af23e826a9e6973da7628a2356d130ca5',1,'tinygpu::asciifont_detail']]],
   ['table8x12_2',['table8x12',['../namespacetinygpu_1_1asciifont__detail.html#affe0070aa64ee6fbe23ea8d4de5dcf60',1,'tinygpu::asciifont_detail']]],
   ['table8x8_3',['table8x8',['../namespacetinygpu_1_1asciifont__detail.html#a01e9738e490d97f40c97f70bda3c3800',1,'tinygpu::asciifont_detail']]],
-  ['touchdriver_4',['touchDriver',['../classLVGLDriver.html#aa9e565f42ccd7ec4a1efcfd5ad098ace',1,'LVGLDriver']]],
+  ['touchdriver_4',['touchDriver',['../classLVGLDriver.html#acddc765d7e545f10ac0d543690950d90',1,'LVGLDriver']]],
   ['touchdrivercst816s_5',['TouchDriverCST816S',['../classtinygpu_1_1TouchDriverCST816S.html#ad0e428d4da592b529e086e703d05440c',1,'tinygpu::TouchDriverCST816S']]],
   ['touchdriverft6236_6',['TouchDriverFT6236',['../classtinygpu_1_1TouchDriverFT6236.html#a650cd38d4a703a3fe68c8e2e2f615748',1,'tinygpu::TouchDriverFT6236']]],
   ['touchdriverxpt2046_7',['TouchDriverXPT2046',['../classtinygpu_1_1TouchDriverXPT2046.html#a07fe440f1fc12a4cdae9e26abf01c9e2',1,'tinygpu::TouchDriverXPT2046']]],

@@ -34,7 +34,7 @@ var searchData=
   ['setspacing_31',['setSpacing',['../classtinygpu_1_1LinePrinter.html#a6e6539be0229cc10869deee684c62325',1,'tinygpu::LinePrinter']]],
   ['settarget_32',['setTarget',['../classtinygpu_1_1LinePrinter.html#a753f3e3a2346f28151b8422bc4452333',1,'tinygpu::LinePrinter']]],
   ['settopborder_33',['setTopBorder',['../classtinygpu_1_1LinePrinter.html#a43abc4959f57f3c29bf9ad16db6d9656',1,'tinygpu::LinePrinter']]],
-  ['settouchdriver_34',['setTouchDriver',['../classLVGLDriver.html#a9d31e1b9387eb9b3d8e49dff338ffa17',1,'LVGLDriver']]],
+  ['settouchdriver_34',['setTouchDriver',['../classLVGLDriver.html#a6103b16badc3358b15461548955123c7',1,'LVGLDriver']]],
   ['settransformedsprite_35',['setTransformedSprite',['../structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#aa39f1a986e042b9e31b0efac2b720d0e',1,'tinygpu::FrameBuffer::SpriteInfo']]],
   ['setuppinsandreset_36',['setupPinsAndReset',['../classtinygpu_1_1DisplayDriverSPI.html#a9849207f588edffdb5e62b176b557c0c',1,'tinygpu::DisplayDriverSPI']]],
   ['setuptouch_37',['setupTouch',['../classLVGLDriver.html#acf729f710845cb462a18c52b165c10eb',1,'LVGLDriver']]],
