@@ -65,7 +65,7 @@ ILI9341Driver tftDriver(SPI, kPinCs, kPinDc, kPinRst);
 
 // --- ball state -----------------------------------------------------------
 constexpr float kBallRadius = 14.0f;
-const RGB565 kBallColor(255, 120, 0);
+const RGB565 kBallColor(255, 0, 0);
 const RGB565 kBackgroundColor(0, 0, 0);
 const RGB565 kBorderColor(0, 80, 160);
 
@@ -105,6 +105,7 @@ void renderBand(int bandIndex) {
 
   tftDriver.writeData(band, 0, bandStartY);
 }
+
 
 void renderFullScreen() {
   for (int i = 0; i < kBandCount; ++i) {

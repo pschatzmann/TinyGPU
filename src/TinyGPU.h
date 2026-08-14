@@ -7,6 +7,7 @@
 #include "TinyGPU/FrameBuffer.h"
 #include "TinyGPU/FrameBufferMonochrome.h"
 #include "TinyGPU/Surface.h"
+#include "TinyGPU/SurfaceWithExternalBuffer.h"
 #include "TinyGPU/SurfaceMonochrome.h"
 #include "TinyGPU/WireFrame3D.h"
 #include "TinyGPU/PSRAMAllocator.h"
