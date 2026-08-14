@@ -110,14 +110,14 @@ class LVGLDriver {
 
   /// Defines the touch driver to be used with LVGL. This is optional and can be
   /// set if a touch driver is available.
-  void setTouchDriver(ITouchDriver& touch) { touch_driver = &touch; }
+  void setTouchDriver(TouchDriver& touch) { touch_driver = &touch; }
 
   /// Checks if a touch driver has been set for this LVGLDriver.
   bool hasTouchDriver() const { return touch_driver != nullptr; }
 
   /// Provides a pointer to the touch driver, if one has been set. Returns
   /// nullptr if no touch driver is available.
-  ITouchDriver& touchDriver() { return *touch_driver; }
+  TouchDriver& touchDriver() { return *touch_driver; }
 
   /// Provides a reference to the underlying DisplayDriverSPI instance used by
   /// this LVGLDriver.
@@ -126,7 +126,7 @@ class LVGLDriver {
  protected:
   Vector<uint8_t> buf_1;
   DisplayDriverSPI* driver = nullptr;
-  ITouchDriver* touch_driver = nullptr;
+  TouchDriver* touch_driver = nullptr;
   lv_display_t* disp = nullptr;
   size_t disp_x = 0;
   size_t disp_y = 0;
@@ -151,7 +151,7 @@ class LVGLDriver {
     // Set static touch read callback
     lv_indev_set_read_cb(indev, [](lv_indev_t* indev, lv_indev_data_t* data) {
       auto* touch =
-          static_cast<ITouchDriver*>(lv_indev_get_user_data(indev));
+          static_cast<TouchDriver*>(lv_indev_get_user_data(indev));
       Point p;
       if (touch && touch->getPoint(p)) {
         data->point.x = p.x;
