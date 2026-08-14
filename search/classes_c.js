@@ -9,5 +9,6 @@ var searchData=
   ['surfacebase_6',['SurfaceBase',['../classtinygpu_1_1SurfaceBase.html',1,'tinygpu']]],
   ['surfacebase_3c_20bool_20_3e_7',['SurfaceBase&lt; bool &gt;',['../classtinygpu_1_1SurfaceBase.html',1,'tinygpu']]],
   ['surfacebase_3c_20rgb565_20_3e_8',['SurfaceBase&lt; RGB565 &gt;',['../classtinygpu_1_1SurfaceBase.html',1,'tinygpu']]],
-  ['surfacemonochrome_9',['SurfaceMonochrome',['../classtinygpu_1_1SurfaceMonochrome.html',1,'tinygpu']]]
+  ['surfacemonochrome_9',['SurfaceMonochrome',['../classtinygpu_1_1SurfaceMonochrome.html',1,'tinygpu']]],
+  ['surfacewithexternalbuffer_10',['SurfaceWithExternalBuffer',['../classtinygpu_1_1SurfaceWithExternalBuffer.html',1,'tinygpu']]]
 ];

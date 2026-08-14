@@ -1,11 +1,13 @@
 <map id="src/TinyGPUConfig.h" name="src/TinyGPUConfig.h">
-<area shape="rect" id="node1" title=" " alt="" coords="478,5,633,31"/>
-<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="360,372,474,397"/>
-<area shape="rect" id="node3" href="$BMPParser_8h.html" title=" " alt="" coords="44,299,230,324"/>
-<area shape="rect" id="node4" href="$FrameBuffer_8h.html" title=" " alt="" coords="463,152,659,177"/>
-<area shape="rect" id="node6" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="488,299,711,324"/>
-<area shape="rect" id="node7" href="$Surface_8h.html" title=" " alt="" coords="594,79,760,104"/>
-<area shape="rect" id="node8" href="$SurfaceMonochrome_8h.html" title=" " alt="" coords="188,152,438,177"/>
-<area shape="rect" id="node9" href="$WireFrame3D_8h.html" title=" " alt="" coords="836,225,1043,251"/>
-<area shape="rect" id="node5" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="225,225,508,251"/>
+<area shape="rect" id="node1" title=" " alt="" coords="538,5,693,31"/>
+<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="418,387,531,412"/>
+<area shape="rect" id="node4" href="$BMPParser_8h.html" title=" " alt="" coords="44,313,230,339"/>
+<area shape="rect" id="node5" href="$FrameBuffer_8h.html" title=" " alt="" coords="463,167,659,192"/>
+<area shape="rect" id="node7" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="511,313,734,339"/>
+<area shape="rect" id="node8" href="$Surface_8h.html" title=" " alt="" coords="594,86,760,111"/>
+<area shape="rect" id="node9" href="$SurfaceMonochrome_8h.html" title=" " alt="" coords="188,167,438,192"/>
+<area shape="rect" id="node10" href="$SurfaceWithExternalBuffer_8h.html" title=" " alt="" coords="943,79,1182,119"/>
+<area shape="rect" id="node11" href="$WireFrame3D_8h.html" title=" " alt="" coords="836,240,1043,265"/>
+<area shape="rect" id="node3" href="$LVGLDriver_8h.html" title=" " alt="" coords="380,460,568,485"/>
+<area shape="rect" id="node6" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="225,240,508,265"/>
 </map>

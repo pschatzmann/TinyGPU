@@ -10,5 +10,6 @@ var searchData=
   ['measuretextheight_7',['measureTextHeight',['../classtinygpu_1_1BitmapFont.html#a76aa7cc5027f0d3d6b201c6d0e855a87',1,'tinygpu::BitmapFont::measureTextHeight()'],['../classtinygpu_1_1FixedBitmapFont.html#a85d662ee844c24f3897d3f26ae24d4a5',1,'tinygpu::FixedBitmapFont::measureTextHeight()'],['../classtinygpu_1_1IFont.html#a85c21639162b7d29972ffb3d6269e1d0',1,'tinygpu::IFont::measureTextHeight()']]],
   ['measuretextwidth_8',['measureTextWidth',['../classtinygpu_1_1BitmapFont.html#a9033ba09137e8d9a88eb44a0c2963007',1,'tinygpu::BitmapFont::measureTextWidth()'],['../classtinygpu_1_1FixedBitmapFont.html#a96885a7015bb890c8074046f3057f69f',1,'tinygpu::FixedBitmapFont::measureTextWidth()'],['../classtinygpu_1_1IFont.html#aa2a81e1dc5c0c336c69bd07411e1bf31',1,'tinygpu::IFont::measureTextWidth()']]],
   ['mesh_9',['Mesh',['../structtinygpu_1_1WireFrame3D_1_1Mesh.html',1,'tinygpu::WireFrame3D']]],
-  ['movesprite_10',['moveSprite',['../classtinygpu_1_1FrameBuffer.html#a4adbd8f94608f38d8af8a05a8c644f06',1,'tinygpu::FrameBuffer']]]
+  ['movesprite_10',['moveSprite',['../classtinygpu_1_1FrameBuffer.html#a4adbd8f94608f38d8af8a05a8c644f06',1,'tinygpu::FrameBuffer']]],
+  ['my_5ftick_11',['my_tick',['../classLVGLDriver.html#afcf78f3684505b04e577ff51a3cd9e4c',1,'LVGLDriver']]]
 ];

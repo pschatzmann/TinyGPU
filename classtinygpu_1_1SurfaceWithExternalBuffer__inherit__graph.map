@@ -1,0 +1,5 @@
+<map id="SurfaceWithExternalBuffer&lt; RGB_T &gt;" name="SurfaceWithExternalBuffer&lt; RGB_T &gt;">
+<area shape="rect" id="node1" title="In&#45;memory bitmap surface with basic 2D drawing and text rendering." alt="" coords="5,152,200,192"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1SurfaceBase.html" title="Base class for 2D surfaces with drawing and text rendering support." alt="" coords="17,79,189,104"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1ISurface.html" title=" " alt="" coords="31,5,175,31"/>
+</map>

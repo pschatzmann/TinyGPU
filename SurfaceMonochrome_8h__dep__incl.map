@@ -1,6 +1,7 @@
 <map id="src/TinyGPU/SurfaceMonochrome.h" name="src/TinyGPU/SurfaceMonochrome.h">
 <area shape="rect" id="node1" title=" " alt="" coords="43,5,294,31"/>
 <area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="48,225,161,251"/>
-<area shape="rect" id="node3" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="27,79,310,104"/>
-<area shape="rect" id="node4" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="141,152,364,177"/>
+<area shape="rect" id="node4" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="27,79,310,104"/>
+<area shape="rect" id="node5" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="141,152,364,177"/>
+<area shape="rect" id="node3" href="$LVGLDriver_8h.html" title=" " alt="" coords="10,299,198,324"/>
 </map>
