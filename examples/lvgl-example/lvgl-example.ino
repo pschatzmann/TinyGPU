@@ -82,6 +82,5 @@ void setup() {
 
 void loop() {
   lv_timer_handler();
-  lv_tick_inc(5);
-  delay(5);
+  lvglDriver.delay(5);
 }

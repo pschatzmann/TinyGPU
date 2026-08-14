@@ -35,6 +35,7 @@ Apart form RGB565 we also support RGB666, RGB888 and Monochrome.
 - BMP file support
   - saving data
   - loading data
+- LVGLDriver: use this library to output data from the lvgl library
 - Arduino example sketches
 
 ## Overview

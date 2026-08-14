@@ -13,6 +13,7 @@
 #include "TinyGPU/PSRAMAllocator.h"
 #include "TinyGPU/TinyGPUGlobals.h"
 #include <TinyGPU/DeviceOutput.h>
+#include <TinyGPU/TouchDriver.h>
 #include <assert.h>
 
 #if defined(ARDUINO) || defined(TINYGPU_AUTO_NAMESPACE)

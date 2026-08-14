@@ -1,5 +1,6 @@
 
 #include "TinyGPU.h"
+#include "TouchAPI.h"
 #include "Vector.h"
 #include "lvgl.h"
 
@@ -19,7 +20,8 @@ class LVGLDriver {
     this->disp_x = x;
     this->disp_y = y;
     // Default buffer size in bytes (v9 buffer size is expressed in bytes)
-    this->dispBufferSize = bufferSize > 0 ? bufferSize : disp_x * sizeof(RGB565);
+    this->dispBufferSize =
+        bufferSize > 0 ? bufferSize : disp_x * sizeof(RGB565);
   }
 
   // Initializes LVGL and registers the TinyGPU Output driver with LVGL.
@@ -32,6 +34,15 @@ class LVGLDriver {
     lv_tick_set_cb(my_tick);
 
     driver->begin();
+
+    if (touch_driver) {
+      CalibrationData cal;
+      cal.screenWidth = disp_x;
+      cal.screenHeight = disp_y;
+      touch_driver->setCalibration(cal);
+      touch_driver->begin();
+      setupTouch();
+    }
 
     // Create display object in LVGL v9
     disp = lv_display_create(disp_x, disp_y);
@@ -76,7 +87,8 @@ class LVGLDriver {
     LVGLDriver* p_driver =
         static_cast<LVGLDriver*>(lv_display_get_user_data(disp));
 
-    SurfaceWithExternalBuffer<RGB565> surface(static_cast<size_t>(w), static_cast<size_t>(h));
+    SurfaceWithExternalBuffer<RGB565> surface(static_cast<size_t>(w),
+                                              static_cast<size_t>(h));
 
     // 1. Assign external buffer (pass size in bytes)
     surface.setExternalBuffer(px_map, w * h * sizeof(RGB565));
@@ -96,11 +108,25 @@ class LVGLDriver {
     delay(5);
   }
 
+  /// Defines the touch driver to be used with LVGL. This is optional and can be
+  /// set if a touch driver is available.
+  void setTouchDriver(ITouchDriver& touch) { touch_driver = &touch; }
+
+  /// Checks if a touch driver has been set for this LVGLDriver.
+  bool hasTouchDriver() const { return touch_driver != nullptr; }
+
+  /// Provides a pointer to the touch driver, if one has been set. Returns
+  /// nullptr if no touch driver is available.
+  ITouchDriver& touchDriver() { return *touch_driver; }
+
+  /// Provides a reference to the underlying DisplayDriverSPI instance used by
+  /// this LVGLDriver.
   DisplayDriverSPI& getDriver() { return *driver; }
 
  protected:
   Vector<uint8_t> buf_1;
   DisplayDriverSPI* driver = nullptr;
+  ITouchDriver* touch_driver = nullptr;
   lv_display_t* disp = nullptr;
   size_t disp_x = 0;
   size_t disp_y = 0;
@@ -108,6 +134,36 @@ class LVGLDriver {
 
   // Use Arduino's millis() as tick source
   static uint32_t my_tick(void) { return millis(); }
+
+  /**
+   * @brief Registers a touch driver with this LVGL display instance.
+   */
+  lv_indev_t* setupTouch() {
+    if (!disp) return nullptr;
+
+    lv_indev_t* indev = lv_indev_create();
+    if (!indev) return nullptr;
+
+    lv_indev_set_type(indev, LV_INDEV_TYPE_POINTER);
+    lv_indev_set_display(indev, disp);  // Binds touch to this specific display
+    lv_indev_set_user_data(indev, &touchDriver());
+
+    // Set static touch read callback
+    lv_indev_set_read_cb(indev, [](lv_indev_t* indev, lv_indev_data_t* data) {
+      auto* touch =
+          static_cast<ITouchDriver*>(lv_indev_get_user_data(indev));
+      Point p;
+      if (touch && touch->getPoint(p)) {
+        data->point.x = p.x;
+        data->point.y = p.y;
+        data->state = LV_INDEV_STATE_PRESSED;
+      } else {
+        data->state = LV_INDEV_STATE_RELEASED;
+      }
+    });
+
+    return indev;
+  }
 
   void dumpBuffer(const uint8_t* data, size_t len) {
     for (size_t i = 0; i < len; ++i) {
