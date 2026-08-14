@@ -1,0 +1,5 @@
+<map id="TouchDriverFT6236" name="TouchDriverFT6236">
+<area shape="rect" id="node1" title="Driver for FT6236/FT6336 touch controller (capacitive touch). using I2C communication to read touch p..." alt="" coords="5,168,152,193"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1TouchDriver.html" title=" " alt="" coords="29,93,128,119"/>
+<area shape="rect" id="node3" href="$structtinygpu_1_1CalibrationData.html" title=" " alt="" coords="17,5,141,31"/>
+</map>

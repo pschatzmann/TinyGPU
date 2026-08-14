@@ -1,9 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,104,199,129"/>
-<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="247,104,377,129"/>
-<area shape="rect" id="node3" href="$classtinygpu_1_1HX8357Driver.html" title="Driver for HX8357 SPI display controller." alt="" coords="425,5,539,31"/>
-<area shape="rect" id="node4" href="$classtinygpu_1_1ILI9341Driver.html" title="Driver for ILI9341 SPI display controller." alt="" coords="427,55,537,80"/>
-<area shape="rect" id="node5" href="$classtinygpu_1_1ST7735Driver.html" title="Driver for ST7735 SPI display controller." alt="" coords="427,104,537,129"/>
-<area shape="rect" id="node6" href="$classtinygpu_1_1ST7789Driver.html" title="Driver for ST7789 SPI display controller." alt="" coords="427,153,537,179"/>
-<area shape="rect" id="node7" href="$classtinygpu_1_1ST7796Driver.html" title="Driver for ST7796 SPI display controller." alt="" coords="427,203,537,228"/>
+<area shape="rect" id="node1" href="$classtinygpu_1_1DeviceOutput.html" title="Hardware abstraction for writing framebuffers to SPI&#45;based color displays." alt="" coords="5,5,189,31"/>
 </map>

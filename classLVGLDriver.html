@@ -95,6 +95,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aaf81d3fdaf258088d7692fa70cece087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f2dfce1046bdd2a2b753643726c2346"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a7f2dfce1046bdd2a2b753643726c2346">delay</a> (uint32_t ms)</td></tr>
 <tr class="separator:a7f2dfce1046bdd2a2b753643726c2346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d31e1b9387eb9b3d8e49dff338ffa17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a9d31e1b9387eb9b3d8e49dff338ffa17">setTouchDriver</a> (ITouchDriver &amp;touch)</td></tr>
+<tr class="separator:a9d31e1b9387eb9b3d8e49dff338ffa17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ce61b6b38d09e07f4d38d53812c594"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a62ce61b6b38d09e07f4d38d53812c594">hasTouchDriver</a> () const</td></tr>
+<tr class="memdesc:a62ce61b6b38d09e07f4d38d53812c594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a touch driver has been set for this <a class="el" href="classLVGLDriver.html" title="LVGLDriver is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the displ...">LVGLDriver</a>.  <br /></td></tr>
+<tr class="separator:a62ce61b6b38d09e07f4d38d53812c594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9e565f42ccd7ec4a1efcfd5ad098ace"><td class="memItemLeft" align="right" valign="top">ITouchDriver &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#aa9e565f42ccd7ec4a1efcfd5ad098ace">touchDriver</a> ()</td></tr>
+<tr class="separator:aa9e565f42ccd7ec4a1efcfd5ad098ace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22021c2a33317d72b703e41ee672a063"><td class="memItemLeft" align="right" valign="top">DisplayDriverSPI &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a22021c2a33317d72b703e41ee672a063">getDriver</a> ()</td></tr>
 <tr class="separator:a22021c2a33317d72b703e41ee672a063"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -105,6 +112,9 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:acf729f710845cb462a18c52b165c10eb"><td class="memItemLeft" align="right" valign="top">lv_indev_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#acf729f710845cb462a18c52b165c10eb">setupTouch</a> ()</td></tr>
+<tr class="memdesc:acf729f710845cb462a18c52b165c10eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a touch driver with this LVGL display instance.  <br /></td></tr>
+<tr class="separator:acf729f710845cb462a18c52b165c10eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a108495b8d02063ec001ddb76dedb91b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a108495b8d02063ec001ddb76dedb91b6">dumpBuffer</a> (const uint8_t *data, size_t len)</td></tr>
 <tr class="separator:a108495b8d02063ec001ddb76dedb91b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -119,6 +129,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a93f24bf6f93b1c0759e31ab91f47ebc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c858790f27679454883b95e55112ca3"><td class="memItemLeft" align="right" valign="top">DisplayDriverSPI *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a3c858790f27679454883b95e55112ca3">driver</a> = nullptr</td></tr>
 <tr class="separator:a3c858790f27679454883b95e55112ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdc0d9704848bd26d3edeb6e03087581"><td class="memItemLeft" align="right" valign="top">ITouchDriver *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#abdc0d9704848bd26d3edeb6e03087581">touch_driver</a> = nullptr</td></tr>
+<tr class="separator:abdc0d9704848bd26d3edeb6e03087581"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a647e5f267167a38dcd0e6fe55dfcfc61"><td class="memItemLeft" align="right" valign="top">lv_display_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a> = nullptr</td></tr>
 <tr class="separator:a647e5f267167a38dcd0e6fe55dfcfc61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8ce13ad0b734bb6eef28c7c96294853"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#aa8ce13ad0b734bb6eef28c7c96294853">disp_x</a> = 0</td></tr>
@@ -356,6 +368,34 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Provides a reference to the underlying DisplayDriverSPI instance used by this <a class="el" href="classLVGLDriver.html" title="LVGLDriver is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the displ...">LVGLDriver</a>. </p>
+
+</div>
+</div>
+<a id="a62ce61b6b38d09e07f4d38d53812c594" name="a62ce61b6b38d09e07f4d38d53812c594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62ce61b6b38d09e07f4d38d53812c594">&#9670;&#160;</a></span>hasTouchDriver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hasTouchDriver </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if a touch driver has been set for this <a class="el" href="classLVGLDriver.html" title="LVGLDriver is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the displ...">LVGLDriver</a>. </p>
 
 </div>
 </div>
@@ -382,6 +422,86 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d31e1b9387eb9b3d8e49dff338ffa17" name="a9d31e1b9387eb9b3d8e49dff338ffa17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d31e1b9387eb9b3d8e49dff338ffa17">&#9670;&#160;</a></span>setTouchDriver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setTouchDriver </td>
+          <td>(</td>
+          <td class="paramtype">ITouchDriver &amp;&#160;</td>
+          <td class="paramname"><em>touch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Defines the touch driver to be used with LVGL. This is optional and can be set if a touch driver is available. </p>
+
+</div>
+</div>
+<a id="acf729f710845cb462a18c52b165c10eb" name="acf729f710845cb462a18c52b165c10eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf729f710845cb462a18c52b165c10eb">&#9670;&#160;</a></span>setupTouch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lv_indev_t * setupTouch </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Registers a touch driver with this LVGL display instance. </p>
+
+</div>
+</div>
+<a id="aa9e565f42ccd7ec4a1efcfd5ad098ace" name="aa9e565f42ccd7ec4a1efcfd5ad098ace"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9e565f42ccd7ec4a1efcfd5ad098ace">&#9670;&#160;</a></span>touchDriver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ITouchDriver &amp; touchDriver </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Provides a pointer to the touch driver, if one has been set. Returns nullptr if no touch driver is available. </p>
 
 </div>
 </div>
@@ -507,6 +627,28 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">DisplayDriverSPI* driver = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abdc0d9704848bd26d3edeb6e03087581" name="abdc0d9704848bd26d3edeb6e03087581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdc0d9704848bd26d3edeb6e03087581">&#9670;&#160;</a></span>touch_driver</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ITouchDriver* touch_driver = nullptr</td>
         </tr>
       </table>
   </td>
