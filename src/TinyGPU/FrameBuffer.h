@@ -179,6 +179,17 @@ class FrameBuffer : public ISurface<RGB_T> {
     return std::nullopt;
   }
 
+  /// Returns the number of sprites currently managed by the framebuffer.
+  size_t getSpriteCount() const { return sprites_.size(); }
+
+  /// Returns a reference to the sprite at the given index, if valid.
+  std::optional<SpriteInfo&> getSprite(int idx) {
+    if (idx < 0 || idx >= static_cast<int>(sprites_.size())) {
+      return std::nullopt;
+    }
+    return *sprites_[idx];
+  }
+
   /// Moves a sprite to a new position and redraws it.
   void moveSprite(SpriteInfo& spriteInfo, size_t newX, size_t newY) {
     TinyGPULogger.log(TinyGPULoggerClass::INFO,
