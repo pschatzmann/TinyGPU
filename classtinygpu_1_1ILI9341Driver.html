@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyGPU: ILI9341Driver Class Reference</title>
+<title>TinyGPU: ILI9341Driver&lt; RGB_T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -79,7 +79,7 @@ $(function() {
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classtinygpu_1_1ILI9341Driver-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">ILI9341Driver Class Reference</div></div>
+  <div class="headertitle"><div class="title">ILI9341Driver&lt; RGB_T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -88,23 +88,25 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="DisplayDriverSPI_8h_source.html">DisplayDriverSPI.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for ILI9341Driver:</div>
+Inheritance diagram for ILI9341Driver&lt; RGB_T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="classtinygpu_1_1ILI9341Driver__inherit__graph.png" border="0" usemap="#aILI9341Driver_inherit__map" alt="Inheritance graph"/></div>
-<map name="aILI9341Driver_inherit__map" id="aILI9341Driver_inherit__map">
-<area shape="rect" title="Driver for ILI9341 SPI display controller." alt="" coords="47,152,157,177"/>
-<area shape="rect" href="classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="37,79,167,104"/>
-<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,5,199,31"/>
+<div class="center"><img src="classtinygpu_1_1ILI9341Driver__inherit__graph.png" border="0" usemap="#aILI9341Driver_3_01RGB__T_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="aILI9341Driver_3_01RGB__T_01_4_inherit__map" id="aILI9341Driver_3_01RGB__T_01_4_inherit__map">
+<area shape="rect" title="Driver for ILI9341 SPI display controller." alt="" coords="16,152,199,177"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="5,79,209,104"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title="Abstract base class for display drivers." alt="" coords="15,5,199,31"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
-Collaboration diagram for ILI9341Driver:</div>
+Collaboration diagram for ILI9341Driver&lt; RGB_T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="classtinygpu_1_1ILI9341Driver__coll__graph.png" border="0" usemap="#aILI9341Driver_coll__map" alt="Collaboration graph"/></div>
-<map name="aILI9341Driver_coll__map" id="aILI9341Driver_coll__map">
-<area shape="rect" title="Driver for ILI9341 SPI display controller." alt="" coords="47,152,157,177"/>
-<area shape="rect" href="classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="37,79,167,104"/>
-<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,5,199,31"/>
+<div class="center"><img src="classtinygpu_1_1ILI9341Driver__coll__graph.png" border="0" usemap="#aILI9341Driver_3_01RGB__T_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="aILI9341Driver_3_01RGB__T_01_4_coll__map" id="aILI9341Driver_3_01RGB__T_01_4_coll__map">
+<area shape="rect" title="Driver for ILI9341 SPI display controller." alt="" coords="16,317,199,343"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="5,243,209,268"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title="Abstract base class for display drivers." alt="" coords="15,168,199,193"/>
+<area shape="rect" href="classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="18,80,197,105"/>
+<area shape="rect" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="44,5,171,31"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -119,7 +121,6 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9a63b34d39d2daeed5d31475190dab43c3">kLandscapeFlipped</a> = 3
 <br />
  }</td></tr>
-<tr class="memdesc:a4940d1dc528122726d2c8c475657e1a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display orientation, sent via the MADCTL command (0x36) - same convention as Adafruit_ILI9341::setRotation(). kNone means "don't send MADCTL at all" - the panel's power-on-reset default orientation, preserving this driver's original (pre-rotation-support) behavior exactly for existing code that doesn't request a rotation.  <a href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9">More...</a><br /></td></tr>
 <tr class="separator:a4940d1dc528122726d2c8c475657e1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -129,42 +130,42 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acba365cc28eb702040c382646cfb0a7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin</a> () override</td></tr>
 <tr class="separator:acba365cc28eb702040c382646cfb0a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac82ad20f04f597e1cf952371bf08b8a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac82ad20f04f597e1cf952371bf08b8a9">setRotation</a> (<a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9">Rotation</a> <a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac4154d62016ae303eb96f5050034fa69">rotation</a>)</td></tr>
-<tr class="memdesc:ac82ad20f04f597e1cf952371bf08b8a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the display orientation after <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a> - sends MADCTL (0x36) directly, so it takes effect immediately without a full re-init. <a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9a35c3ace1970663a16e5c65baa5941b13">Rotation::kNone</a> is ignored.  <br /></td></tr>
 <tr class="separator:ac82ad20f04f597e1cf952371bf08b8a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4154d62016ae303eb96f5050034fa69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9">Rotation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac4154d62016ae303eb96f5050034fa69">rotation</a> () const</td></tr>
 <tr class="separator:ac4154d62016ae303eb96f5050034fa69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classtinygpu_1_1DisplayDriverSPI"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinygpu_1_1DisplayDriverSPI')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html">DisplayDriverSPI</a></td></tr>
+<tr class="inherit_header pub_methods_classtinygpu_1_1DisplayDriverSPI"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinygpu_1_1DisplayDriverSPI')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html">DisplayDriverSPI&lt; RGB_T &gt;</a></td></tr>
 <tr class="memitem:abfdc8122986250cac64a5da68cd986e9 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#abfdc8122986250cac64a5da68cd986e9">DisplayDriverSPI</a> (SPIClass &amp;spi, int8_t cs, int8_t dc, int8_t rst=-1, size_t xOffset=0, size_t yOffset=0, uint32_t frequencyHz=40000000, uint32_t readFrequencyHz=15000000)</td></tr>
 <tr class="separator:abfdc8122986250cac64a5da68cd986e9 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a13abd70a75284a85642f0e89c033bd inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a0a13abd70a75284a85642f0e89c033bd">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt; &amp;surface) override</td></tr>
-<tr class="separator:a0a13abd70a75284a85642f0e89c033bd inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53af38e05aecb1dbb2cbb1167ffcee40 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a53af38e05aecb1dbb2cbb1167ffcee40">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt; &amp;surface, size_t x, size_t y)</td></tr>
-<tr class="memdesc:a53af38e05aecb1dbb2cbb1167ffcee40 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a sub-region ("band") of pixel data starting at display coordinates (x, y).  <br /></td></tr>
-<tr class="separator:a53af38e05aecb1dbb2cbb1167ffcee40 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93ff16058c58eb122feb5da183453230 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a93ff16058c58eb122feb5da183453230">readData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt; &amp;surface, size_t x, size_t y)</td></tr>
-<tr class="memdesc:a93ff16058c58eb122feb5da183453230 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a rectangular region of pixels back from the display controller's own GRAM into <code>surface</code>, so a "sprite" background can be captured/restored without keeping a full local framebuffer.  <br /></td></tr>
-<tr class="separator:a93ff16058c58eb122feb5da183453230 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classtinygpu_1_1DisplayDriver"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinygpu_1_1DisplayDriver')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinygpu_1_1DisplayDriver.html">DisplayDriver&lt; RGB565 &gt;</a></td></tr>
+<tr class="memitem:afbde66ad2f1573278339e5341d311953 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#afbde66ad2f1573278339e5341d311953">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface) override</td></tr>
+<tr class="separator:afbde66ad2f1573278339e5341d311953 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6100cd127a1ce62fd89ace0ca3f3d7b inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ab6100cd127a1ce62fd89ace0ca3f3d7b">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface, size_t x, size_t y) override</td></tr>
+<tr class="separator:ab6100cd127a1ce62fd89ace0ca3f3d7b inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02fc96775e4bbcdf1fd42f6710c5ae73 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a02fc96775e4bbcdf1fd42f6710c5ae73">readData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface, size_t x, size_t y)</td></tr>
+<tr class="separator:a02fc96775e4bbcdf1fd42f6710c5ae73 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classtinygpu_1_1DisplayDriver"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinygpu_1_1DisplayDriver')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinygpu_1_1DisplayDriver.html">DisplayDriver&lt; RGB_T &gt;</a></td></tr>
 <tr class="memitem:ac023e3f44bf39c02975c0430b73a51cd inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#ac023e3f44bf39c02975c0430b73a51cd">~DisplayDriver</a> ()=default</td></tr>
 <tr class="separator:ac023e3f44bf39c02975c0430b73a51cd inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8a0d9ca63f8bb3de100e347c3f3bca4 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#ae8a0d9ca63f8bb3de100e347c3f3bca4">begin</a> ()=0</td></tr>
 <tr class="separator:ae8a0d9ca63f8bb3de100e347c3f3bca4 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc34417a19a7b70626d19c41072d72a5 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#adc34417a19a7b70626d19c41072d72a5">end</a> ()</td></tr>
 <tr class="separator:adc34417a19a7b70626d19c41072d72a5 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa65a4630add7360c3f2a44cbb054b512 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#aa65a4630add7360c3f2a44cbb054b512">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt; &amp;surface)=0</td></tr>
+<tr class="memitem:aa65a4630add7360c3f2a44cbb054b512 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#aa65a4630add7360c3f2a44cbb054b512">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface)=0</td></tr>
 <tr class="separator:aa65a4630add7360c3f2a44cbb054b512 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa426c1066b36c91a52fd8df26d7cc50a inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#aa426c1066b36c91a52fd8df26d7cc50a">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface, size_t x, size_t y)=0</td></tr>
+<tr class="separator:aa426c1066b36c91a52fd8df26d7cc50a inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43ecedff0e0f8b703205d407ee2550b5 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a43ecedff0e0f8b703205d407ee2550b5">writeColor</a> (size_t width, size_t height, RGB_T color)</td></tr>
+<tr class="separator:a43ecedff0e0f8b703205d407ee2550b5 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
 <tr class="memitem:a068b9c95ed674b312cad7b7ea8eba404"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#a068b9c95ed674b312cad7b7ea8eba404">madctlForRotation</a> (<a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9">Rotation</a> <a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac4154d62016ae303eb96f5050034fa69">rotation</a>)</td></tr>
-<tr class="memdesc:a068b9c95ed674b312cad7b7ea8eba404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adafruit_ILI9341-compatible MADCTL byte for <code>rotation</code>.  <br /></td></tr>
 <tr class="separator:a068b9c95ed674b312cad7b7ea8eba404"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:af85d39999294bd90181efc5ba42f488d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9">Rotation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#af85d39999294bd90181efc5ba42f488d">rotation_</a></td></tr>
 <tr class="separator:af85d39999294bd90181efc5ba42f488d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtinygpu_1_1DisplayDriverSPI')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html">DisplayDriverSPI</a></td></tr>
+<tr class="inherit_header pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtinygpu_1_1DisplayDriverSPI')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html">DisplayDriverSPI&lt; RGB_T &gt;</a></td></tr>
 <tr class="memitem:a09d0927246091ecfae18fabf897900eb inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">SPIClass &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a09d0927246091ecfae18fabf897900eb">spi_</a></td></tr>
 <tr class="separator:a09d0927246091ecfae18fabf897900eb inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c3e8634c21f804d261700d60995f77f inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a8c3e8634c21f804d261700d60995f77f">cs_</a></td></tr>
@@ -181,10 +182,13 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a25af0fdd54be07425d40a8f252851854 inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3d3fb7b72ef58dc0b318cf94dca04ca inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#af3d3fb7b72ef58dc0b318cf94dca04ca">readFrequencyHz_</a></td></tr>
 <tr class="separator:af3d3fb7b72ef58dc0b318cf94dca04ca inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classtinygpu_1_1DisplayDriver"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtinygpu_1_1DisplayDriver')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtinygpu_1_1DisplayDriver.html">DisplayDriver&lt; RGB_T &gt;</a></td></tr>
+<tr class="memitem:a4f980f9afeabd069a60f1edb3da7dcbe inherit pro_attribs_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt; RGB_T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a4f980f9afeabd069a60f1edb3da7dcbe">defaultFont</a></td></tr>
+<tr class="separator:a4f980f9afeabd069a60f1edb3da7dcbe inherit pro_attribs_classtinygpu_1_1DisplayDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_classtinygpu_1_1DisplayDriverSPI"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtinygpu_1_1DisplayDriverSPI')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html">DisplayDriverSPI</a></td></tr>
+<tr class="inherit_header pro_methods_classtinygpu_1_1DisplayDriverSPI"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtinygpu_1_1DisplayDriverSPI')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html">DisplayDriverSPI&lt; RGB_T &gt;</a></td></tr>
 <tr class="memitem:a76e82f601d94db65d50efcbb1e1858ce inherit pro_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a76e82f601d94db65d50efcbb1e1858ce">setColumnRowAddress</a> (size_t x, size_t y, size_t w, size_t h)</td></tr>
 <tr class="separator:a76e82f601d94db65d50efcbb1e1858ce inherit pro_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1c1dcc698fc551d226d0a6f176668aa inherit pro_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ad1c1dcc698fc551d226d0a6f176668aa">setAddressWindow</a> (size_t x, size_t y, size_t w, size_t h) override</td></tr>
@@ -201,8 +205,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a13ff6a8afbcb7bafe48a99445c45eaa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Driver for ILI9341 SPI display controller. </p>
-<p>Handles initialization and address window logic for ILI9341 displays. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename RGB_T = RGB565&gt;<br />
+class tinygpu::ILI9341Driver&lt; RGB_T &gt;</div><p>Driver for ILI9341 SPI display controller. </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a4940d1dc528122726d2c8c475657e1a9" name="a4940d1dc528122726d2c8c475657e1a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4940d1dc528122726d2c8c475657e1a9">&#9670;&#160;</a></span>Rotation</h2>
@@ -223,8 +227,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Display orientation, sent via the MADCTL command (0x36) - same convention as Adafruit_ILI9341::setRotation(). kNone means "don't send MADCTL at all" - the panel's power-on-reset default orientation, preserving this driver's original (pre-rotation-support) behavior exactly for existing code that doesn't request a rotation. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4940d1dc528122726d2c8c475657e1a9a35c3ace1970663a16e5c65baa5941b13" name="a4940d1dc528122726d2c8c475657e1a9a35c3ace1970663a16e5c65baa5941b13"></a>kNone&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a4940d1dc528122726d2c8c475657e1a9af2373e96d4abf53ae1971b0ebdd474e9" name="a4940d1dc528122726d2c8c475657e1a9af2373e96d4abf53ae1971b0ebdd474e9"></a>kPortrait&#160;</td><td class="fielddoc"></td></tr>
@@ -314,7 +316,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classtinygpu_1_1DisplayDriver.html#ae8a0d9ca63f8bb3de100e347c3f3bca4">DisplayDriver&lt; RGB565 &gt;</a>.</p>
+<p>Implements <a class="el" href="classtinygpu_1_1DisplayDriver.html#ae8a0d9ca63f8bb3de100e347c3f3bca4">DisplayDriver&lt; RGB_T &gt;</a>.</p>
 
 </div>
 </div>
@@ -342,8 +344,6 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Adafruit_ILI9341-compatible MADCTL byte for <code>rotation</code>. </p>
-
 </div>
 </div>
 <a id="ac4154d62016ae303eb96f5050034fa69" name="ac4154d62016ae303eb96f5050034fa69"></a>
@@ -368,7 +368,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The rotation passed to the constructor or <a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac82ad20f04f597e1cf952371bf08b8a9" title="Changes the display orientation after begin() - sends MADCTL (0x36) directly, so it takes effect imme...">setRotation()</a>, or <a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9a35c3ace1970663a16e5c65baa5941b13">Rotation::kNone</a> if neither has been called (MADCTL was never sent). </p>
 
 </div>
 </div>
@@ -395,8 +394,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Changes the display orientation after <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a> - sends MADCTL (0x36) directly, so it takes effect immediately without a full re-init. <a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9a35c3ace1970663a16e5c65baa5941b13">Rotation::kNone</a> is ignored. </p>
 
 </div>
 </div>

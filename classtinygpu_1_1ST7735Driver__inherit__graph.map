@@ -1,5 +1,5 @@
-<map id="ST7735Driver" name="ST7735Driver">
-<area shape="rect" id="node1" title="Driver for ST7735 SPI display controller." alt="" coords="47,152,157,177"/>
-<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="37,79,167,104"/>
-<area shape="rect" id="node3" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,5,199,31"/>
+<map id="ST7735Driver&lt; RGB_T &gt;" name="ST7735Driver&lt; RGB_T &gt;">
+<area shape="rect" id="node1" title="Driver for ST7735 SPI display controller." alt="" coords="16,152,199,177"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="5,79,209,104"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1DisplayDriver.html" title="Abstract base class for display drivers." alt="" coords="15,5,199,31"/>
 </map>

@@ -1,0 +1,11 @@
+<map id="SpriteInfo&lt; RGB_T, SurfaceT &gt;" name="SpriteInfo&lt; RGB_T, SurfaceT &gt;">
+<area shape="rect" id="node1" title=" " alt="" coords="172,256,319,296"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1RGB565.html" title="RGB color stored in 16&#45;bit RGB565 format." alt="" coords="5,168,80,193"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1ISurface.html" title=" " alt="" coords="104,168,261,193"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1Surface.html" title=" " alt="" coords="286,168,439,193"/>
+<area shape="rect" id="node5" href="$classtinygpu_1_1SurfaceBase.html" title="Base class for 2D surfaces with drawing and text rendering support." alt="" coords="277,93,449,119"/>
+<area shape="rect" id="node6" href="$classtinygpu_1_1ISurface.html" title=" " alt="" coords="133,5,277,31"/>
+<area shape="rect" id="node7" href="$classtinygpu_1_1IFont.html" title=" " alt="" coords="301,5,424,31"/>
+<area shape="rect" id="node8" href="$classtinygpu_1_1LinePrinter.html" title=" " alt="" coords="449,5,610,31"/>
+<area shape="rect" id="node9" href="$classtinygpu_1_1IFont.html" title=" " alt="" coords="464,168,600,193"/>
+</map>

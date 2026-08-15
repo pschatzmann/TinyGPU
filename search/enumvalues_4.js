@@ -1,8 +1,24 @@
 var searchData=
 [
-  ['klandscape_0',['kLandscape',['../classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9a8744b82551732080dcb3098123f4434b',1,'tinygpu::ILI9341Driver']]],
-  ['klandscapeflipped_1',['kLandscapeFlipped',['../classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9a63b34d39d2daeed5d31475190dab43c3',1,'tinygpu::ILI9341Driver']]],
-  ['knone_2',['kNone',['../classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9a35c3ace1970663a16e5c65baa5941b13',1,'tinygpu::ILI9341Driver']]],
-  ['kportrait_3',['kPortrait',['../classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9af2373e96d4abf53ae1971b0ebdd474e9',1,'tinygpu::ILI9341Driver']]],
-  ['kportraitflipped_4',['kPortraitFlipped',['../classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9af801c7588fd737ba120a5c8071faffbc',1,'tinygpu::ILI9341Driver']]]
+  ['kbegan_0',['kBegan',['../namespacetinygpu.html#a69abf21857f667743be06ad9b224138dac083b272840eb2cf7f134f1c2932dcc9',1,'tinygpu']]],
+  ['kchanged_1',['kChanged',['../namespacetinygpu.html#a69abf21857f667743be06ad9b224138da3ece808a5eec77326a9610ac33013018',1,'tinygpu']]],
+  ['kdoubletap_2',['kDoubleTap',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea4cbddef81c2dcc9206d5457a652f2258',1,'tinygpu']]],
+  ['kdrag_3',['kDrag',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea25b55ce9f974a87402f2bb5b14e7c36d',1,'tinygpu']]],
+  ['kended_4',['kEnded',['../namespacetinygpu.html#a69abf21857f667743be06ad9b224138dad0b7d9aeda3971989d58d5340938f046',1,'tinygpu']]],
+  ['klandscape_5',['kLandscape',['../classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9a8744b82551732080dcb3098123f4434b',1,'tinygpu::ILI9341Driver']]],
+  ['klandscapeflipped_6',['kLandscapeFlipped',['../classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9a63b34d39d2daeed5d31475190dab43c3',1,'tinygpu::ILI9341Driver']]],
+  ['klongpress_7',['kLongPress',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea41d44c43e89b3d61573ad650d06b5a9c',1,'tinygpu']]],
+  ['knone_8',['kNone',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea35c3ace1970663a16e5c65baa5941b13',1,'tinygpu::kNone()'],['../classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9a35c3ace1970663a16e5c65baa5941b13',1,'tinygpu::ILI9341Driver::kNone()']]],
+  ['kpan_9',['kPan',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea6adc2aad4825fd41c5ad1efe87907448',1,'tinygpu']]],
+  ['kpinchin_10',['kPinchIn',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effeaeb0d3df457312e26aea48cdfe4867d1a',1,'tinygpu']]],
+  ['kpinchout_11',['kPinchOut',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea7f252a3bb0d59d2401e875cd2b5afea8',1,'tinygpu']]],
+  ['kportrait_12',['kPortrait',['../classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9af2373e96d4abf53ae1971b0ebdd474e9',1,'tinygpu::ILI9341Driver']]],
+  ['kportraitflipped_13',['kPortraitFlipped',['../classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9af801c7588fd737ba120a5c8071faffbc',1,'tinygpu::ILI9341Driver']]],
+  ['krotate_14',['kRotate',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effeadd8fbbeef4ac758be454ff43078e8f08',1,'tinygpu']]],
+  ['kscroll_15',['kScroll',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effeafd2096c42ca5e0e4f535c2d82f39eb71',1,'tinygpu']]],
+  ['kswipedown_16',['kSwipeDown',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea0266741ebf63b64c15636b9c8af9dfbd',1,'tinygpu']]],
+  ['kswipeleft_17',['kSwipeLeft',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea63f9f506d7d1f58ed03033a059df8212',1,'tinygpu']]],
+  ['kswiperight_18',['kSwipeRight',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effeaf22a167b76ee31fdd9865e02695377e1',1,'tinygpu']]],
+  ['kswipeup_19',['kSwipeUp',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effeac7bee4dda4174ad5876ac3b05bf131bf',1,'tinygpu']]],
+  ['ktap_20',['kTap',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effeab09f8ac9b17cef04a5b6cd7a6b190fd6',1,'tinygpu']]]
 ];

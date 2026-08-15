@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['psramallocator_2eh_0',['PSRAMAllocator.h',['../PSRAMAllocator_8h.html',1,'']]]
+  ['lineprinter_2eh_0',['LinePrinter.h',['../LinePrinter_8h.html',1,'']]],
+  ['lvgldriver_2eh_1',['LVGLDriver.h',['../LVGLDriver_8h.html',1,'']]]
 ];

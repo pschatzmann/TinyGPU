@@ -1,11 +1,12 @@
 <map id="src/TinyGPU/RGB888.h" name="src/TinyGPU/RGB888.h">
-<area shape="rect" id="node1" title=" " alt="" coords="440,5,609,31"/>
-<area shape="rect" id="node2" href="$BitmapFont_8h.html" title=" " alt="" coords="495,79,687,104"/>
-<area shape="rect" id="node3" href="$Surface_8h.html" title=" " alt="" coords="253,159,420,185"/>
-<area shape="rect" id="node8" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="271,387,493,412"/>
-<area shape="rect" id="node9" href="$SurfaceWithExternalBuffer_8h.html" title=" " alt="" coords="547,152,785,192"/>
-<area shape="rect" id="node4" href="$TinyGPU_8h.html" title=" " alt="" coords="121,460,235,485"/>
-<area shape="rect" id="node6" href="$FrameBuffer_8h.html" title=" " alt="" coords="127,240,323,265"/>
-<area shape="rect" id="node5" href="$LVGLDriver_8h.html" title=" " alt="" coords="84,533,272,559"/>
-<area shape="rect" id="node7" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="37,313,319,339"/>
+<area shape="rect" id="node1" title=" " alt="" coords="446,5,615,31"/>
+<area shape="rect" id="node2" href="$BitmapFont_8h.html" title=" " alt="" coords="368,79,560,104"/>
+<area shape="rect" id="node3" href="$Surface_8h.html" title=" " alt="" coords="260,159,427,185"/>
+<area shape="rect" id="node8" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="359,387,582,412"/>
+<area shape="rect" id="node10" href="$SurfaceWithExternalBuffer_8h.html" title=" " alt="" coords="635,152,874,192"/>
+<area shape="rect" id="node4" href="$TinyGPU_8h.html" title=" " alt="" coords="210,460,323,485"/>
+<area shape="rect" id="node6" href="$FrameBuffer_8h.html" title=" " alt="" coords="35,240,231,265"/>
+<area shape="rect" id="node9" href="$SpriteDisplay_8h.html" title=" " alt="" coords="256,240,458,265"/>
+<area shape="rect" id="node5" href="$LVGLDriver_8h.html" title=" " alt="" coords="172,533,360,559"/>
+<area shape="rect" id="node7" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="125,313,408,339"/>
 </map>

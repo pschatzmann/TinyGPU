@@ -1,7 +1,7 @@
 var searchData=
 [
   ['validatecalibration_0',['validateCalibration',['../classtinygpu_1_1TouchDriver.html#a1de1af5fbc4ae1d51edc99b1919918db',1,'tinygpu::TouchDriver']]],
-  ['value_1',['value',['../classtinygpu_1_1BGR565.html#a900b69af7d674b8db3bceae754b4955a',1,'tinygpu::BGR565::value()'],['../classtinygpu_1_1RGB565.html#a900b69af7d674b8db3bceae754b4955a',1,'tinygpu::RGB565::value()'],['../classtinygpu_1_1RGB666.html#a0fee1dc0f9c734d9591dc4eed119c68a',1,'tinygpu::RGB666::value()'],['../classtinygpu_1_1RGB888.html#a0fee1dc0f9c734d9591dc4eed119c68a',1,'tinygpu::RGB888::value()']]],
+  ['value_1',['value',['../classtinygpu_1_1RGB888.html#a0fee1dc0f9c734d9591dc4eed119c68a',1,'tinygpu::RGB888::value()'],['../classtinygpu_1_1BGR565.html#a900b69af7d674b8db3bceae754b4955a',1,'tinygpu::BGR565::value()'],['../classtinygpu_1_1RBG565.html#a900b69af7d674b8db3bceae754b4955a',1,'tinygpu::RBG565::value()'],['../classtinygpu_1_1RGB565.html#a900b69af7d674b8db3bceae754b4955a',1,'tinygpu::RGB565::value()'],['../classtinygpu_1_1RGB666.html#a0fee1dc0f9c734d9591dc4eed119c68a',1,'tinygpu::RGB666::value()']]],
   ['vec3_2',['Vec3',['../structtinygpu_1_1WireFrame3D_1_1Vec3.html',1,'tinygpu::WireFrame3D']]],
   ['vec4_3',['Vec4',['../structtinygpu_1_1WireFrame3D_1_1Vec4.html',1,'tinygpu::WireFrame3D']]],
   ['vector_4',['Vector',['../namespacetinygpu.html#a81fe4d2f62958ae48f36d6a3beb16bb1',1,'tinygpu']]],

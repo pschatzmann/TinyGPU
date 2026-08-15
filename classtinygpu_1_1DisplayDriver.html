@@ -76,6 +76,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classtinygpu_1_1DisplayDriver-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">DisplayDriver&lt; RGB_T &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
@@ -90,8 +91,25 @@ Inheritance diagram for DisplayDriver&lt; RGB_T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1DisplayDriver__inherit__graph.png" border="0" usemap="#aDisplayDriver_3_01RGB__T_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aDisplayDriver_3_01RGB__T_01_4_inherit__map" id="aDisplayDriver_3_01RGB__T_01_4_inherit__map">
-<area shape="rect" title="Abstract base class for display drivers." alt="" coords="18,5,202,31"/>
-<area shape="rect" href="classtinygpu_1_1DisplayDriverSDL.html" title="Display class for rendering a Surface&lt;RGB565&gt; using the SDL2 library. This class can be used to displ..." alt="" coords="5,79,215,104"/>
+<area shape="rect" title="Abstract base class for display drivers." alt="" coords="5,55,189,80"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriverSPI.html" title=" " alt="" coords="237,5,451,31"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriverSDL.html" title="Display class for rendering a Surface&lt;RGB565&gt; using the SDL2 library. This class can be used to displ..." alt="" coords="239,55,449,80"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="242,104,446,129"/>
+<area shape="rect" href="classtinygpu_1_1HX8357Driver.html" title="Driver for HX8357 SPI display controller." alt="" coords="499,5,685,31"/>
+<area shape="rect" href="classtinygpu_1_1ILI9341Driver.html" title="Driver for ILI9341 SPI display controller." alt="" coords="501,55,683,80"/>
+<area shape="rect" href="classtinygpu_1_1ST7735Driver.html" title="Driver for ST7735 SPI display controller." alt="" coords="501,104,683,129"/>
+<area shape="rect" href="classtinygpu_1_1ST7789Driver.html" title="Driver for ST7789 SPI display controller." alt="" coords="501,153,683,179"/>
+<area shape="rect" href="classtinygpu_1_1ST7796Driver.html" title="Driver for ST7796 SPI display controller." alt="" coords="501,203,683,228"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for DisplayDriver&lt; RGB_T &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="classtinygpu_1_1DisplayDriver__coll__graph.png" border="0" usemap="#aDisplayDriver_3_01RGB__T_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="aDisplayDriver_3_01RGB__T_01_4_coll__map" id="aDisplayDriver_3_01RGB__T_01_4_coll__map">
+<area shape="rect" title="Abstract base class for display drivers." alt="" coords="5,168,189,193"/>
+<area shape="rect" href="classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="8,80,187,105"/>
+<area shape="rect" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="34,5,161,31"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -105,11 +123,20 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adc34417a19a7b70626d19c41072d72a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa65a4630add7360c3f2a44cbb054b512"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#aa65a4630add7360c3f2a44cbb054b512">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface)=0</td></tr>
 <tr class="separator:aa65a4630add7360c3f2a44cbb054b512"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa426c1066b36c91a52fd8df26d7cc50a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#aa426c1066b36c91a52fd8df26d7cc50a">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface, size_t x, size_t y)=0</td></tr>
+<tr class="separator:aa426c1066b36c91a52fd8df26d7cc50a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43ecedff0e0f8b703205d407ee2550b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a43ecedff0e0f8b703205d407ee2550b5">writeColor</a> (size_t width, size_t height, RGB_T color)</td></tr>
+<tr class="separator:a43ecedff0e0f8b703205d407ee2550b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a13ff6a8afbcb7bafe48a99445c45eaa3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a13ff6a8afbcb7bafe48a99445c45eaa3">setAddressWindow</a> (size_t x, size_t y, size_t w, size_t h)=0</td></tr>
 <tr class="separator:a13ff6a8afbcb7bafe48a99445c45eaa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a4f980f9afeabd069a60f1edb3da7dcbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt; RGB_T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a4f980f9afeabd069a60f1edb3da7dcbe">defaultFont</a></td></tr>
+<tr class="separator:a4f980f9afeabd069a60f1edb3da7dcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename RGB_T = RGB565&gt;<br />
@@ -165,7 +192,7 @@ class tinygpu::DisplayDriver&lt; RGB_T &gt;</div><p>Abstract base class for disp
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1DisplayDriverSDL.html#acba365cc28eb702040c382646cfb0a7a">DisplayDriverSDL&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1ST7735Driver.html#acba365cc28eb702040c382646cfb0a7a">ST7735Driver</a>, <a class="el" href="classtinygpu_1_1ST7789Driver.html#acba365cc28eb702040c382646cfb0a7a">ST7789Driver</a>, <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">ILI9341Driver</a>, <a class="el" href="classtinygpu_1_1HX8357Driver.html#acba365cc28eb702040c382646cfb0a7a">HX8357Driver</a>, and <a class="el" href="classtinygpu_1_1ST7796Driver.html#acba365cc28eb702040c382646cfb0a7a">ST7796Driver</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1DisplayDriverSDL.html#acba365cc28eb702040c382646cfb0a7a">DisplayDriverSDL&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1ST7735Driver.html#acba365cc28eb702040c382646cfb0a7a">ST7735Driver&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1ST7789Driver.html#acba365cc28eb702040c382646cfb0a7a">ST7789Driver&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">ILI9341Driver&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1HX8357Driver.html#acba365cc28eb702040c382646cfb0a7a">HX8357Driver&lt; RGB_T &gt;</a>, and <a class="el" href="classtinygpu_1_1ST7796Driver.html#acba365cc28eb702040c382646cfb0a7a">ST7796Driver&lt; RGB_T &gt;</a>.</p>
 
 </div>
 </div>
@@ -242,12 +269,54 @@ class tinygpu::DisplayDriver&lt; RGB_T &gt;</div><p>Abstract base class for disp
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1DisplayDriverSDL.html#ad1c1dcc698fc551d226d0a6f176668aa">DisplayDriverSDL&lt; RGB_T &gt;</a>, and <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ad1c1dcc698fc551d226d0a6f176668aa">DisplayDriverSPI</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1DisplayDriverSDL.html#ad1c1dcc698fc551d226d0a6f176668aa">DisplayDriverSDL&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ad1c1dcc698fc551d226d0a6f176668aa">DisplayDriverSPI&lt; RGB_T &gt;</a>, and <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ad1c1dcc698fc551d226d0a6f176668aa">DisplayDriverSPI&lt; RGB565 &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a43ecedff0e0f8b703205d407ee2550b5" name="a43ecedff0e0f8b703205d407ee2550b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43ecedff0e0f8b703205d407ee2550b5">&#9670;&#160;</a></span>writeColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void writeColor </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RGB_T&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <a id="aa65a4630add7360c3f2a44cbb054b512" name="aa65a4630add7360c3f2a44cbb054b512"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa65a4630add7360c3f2a44cbb054b512">&#9670;&#160;</a></span>writeData()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa65a4630add7360c3f2a44cbb054b512">&#9670;&#160;</a></span>writeData() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -270,7 +339,74 @@ class tinygpu::DisplayDriver&lt; RGB_T &gt;</div><p>Abstract base class for disp
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a0a13abd70a75284a85642f0e89c033bd">DisplayDriverSPI</a>, and <a class="el" href="classtinygpu_1_1DisplayDriverSDL.html#afbde66ad2f1573278339e5341d311953">DisplayDriverSDL&lt; RGB_T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1DisplayDriverSDL.html#afbde66ad2f1573278339e5341d311953">DisplayDriverSDL&lt; RGB_T &gt;</a>, and <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#afbde66ad2f1573278339e5341d311953">DisplayDriverSPI&lt; RGB_T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="aa426c1066b36c91a52fd8df26d7cc50a" name="aa426c1066b36c91a52fd8df26d7cc50a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa426c1066b36c91a52fd8df26d7cc50a">&#9670;&#160;</a></span>writeData() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool writeData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>surface</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classtinygpu_1_1DisplayDriverSDL.html#ab6100cd127a1ce62fd89ace0ca3f3d7b">DisplayDriverSDL&lt; RGB_T &gt;</a>, and <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ab6100cd127a1ce62fd89ace0ca3f3d7b">DisplayDriverSPI&lt; RGB_T &gt;</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4f980f9afeabd069a60f1edb3da7dcbe" name="a4f980f9afeabd069a60f1edb3da7dcbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f980f9afeabd069a60f1edb3da7dcbe">&#9670;&#160;</a></span>defaultFont</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt;RGB_T&gt; defaultFont</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

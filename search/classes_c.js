@@ -1,14 +1,8 @@
 var searchData=
 [
-  ['spriteinfo_0',['SpriteInfo',['../structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html',1,'tinygpu::FrameBuffer']]],
-  ['st7735driver_1',['ST7735Driver',['../classtinygpu_1_1ST7735Driver.html',1,'tinygpu']]],
-  ['st7789driver_2',['ST7789Driver',['../classtinygpu_1_1ST7789Driver.html',1,'tinygpu']]],
-  ['st7796driver_3',['ST7796Driver',['../classtinygpu_1_1ST7796Driver.html',1,'tinygpu']]],
-  ['surface_4',['Surface',['../classtinygpu_1_1Surface.html',1,'tinygpu']]],
-  ['surface_3c_20rgb565_20_3e_5',['Surface&lt; RGB565 &gt;',['../classtinygpu_1_1Surface.html',1,'tinygpu']]],
-  ['surfacebase_6',['SurfaceBase',['../classtinygpu_1_1SurfaceBase.html',1,'tinygpu']]],
-  ['surfacebase_3c_20bool_20_3e_7',['SurfaceBase&lt; bool &gt;',['../classtinygpu_1_1SurfaceBase.html',1,'tinygpu']]],
-  ['surfacebase_3c_20rgb565_20_3e_8',['SurfaceBase&lt; RGB565 &gt;',['../classtinygpu_1_1SurfaceBase.html',1,'tinygpu']]],
-  ['surfacemonochrome_9',['SurfaceMonochrome',['../classtinygpu_1_1SurfaceMonochrome.html',1,'tinygpu']]],
-  ['surfacewithexternalbuffer_10',['SurfaceWithExternalBuffer',['../classtinygpu_1_1SurfaceWithExternalBuffer.html',1,'tinygpu']]]
+  ['rbg565_0',['RBG565',['../classtinygpu_1_1RBG565.html',1,'tinygpu']]],
+  ['rect_1',['Rect',['../structtinygpu_1_1Rect.html',1,'tinygpu']]],
+  ['rgb565_2',['RGB565',['../classtinygpu_1_1RGB565.html',1,'tinygpu']]],
+  ['rgb666_3',['RGB666',['../classtinygpu_1_1RGB666.html',1,'tinygpu']]],
+  ['rgb888_4',['RGB888',['../classtinygpu_1_1RGB888.html',1,'tinygpu']]]
 ];

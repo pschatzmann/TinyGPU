@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['level_0',['Level',['../classtinygpu_1_1TinyGPULoggerClass.html#a221b779e6bb7b8d40677d7642bfefac5',1,'tinygpu::TinyGPULoggerClass']]]
+  ['gesturephase_0',['GesturePhase',['../namespacetinygpu.html#a69abf21857f667743be06ad9b224138d',1,'tinygpu']]],
+  ['gesturetype_1',['GestureType',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effe',1,'tinygpu']]]
 ];

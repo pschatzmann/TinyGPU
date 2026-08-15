@@ -121,6 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6959d576e3881edf4a7ba7b09b12a466"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a6959d576e3881edf4a7ba7b09b12a466">getPoint</a> (<a class="el" href="structtinygpu_1_1Point.html">Point</a> &amp;outPoint)=0</td></tr>
 <tr class="memdesc:a6959d576e3881edf4a7ba7b09b12a466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current touch point.  <br /></td></tr>
 <tr class="separator:a6959d576e3881edf4a7ba7b09b12a466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa07e8ba7a7e10e535f5f4b261431dd40"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#aa07e8ba7a7e10e535f5f4b261431dd40">getSecondPoint</a> (<a class="el" href="structtinygpu_1_1Point.html">Point</a> &amp;outPoint)</td></tr>
+<tr class="memdesc:aa07e8ba7a7e10e535f5f4b261431dd40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a second, simultaneous touch point, for multi-touch gestures (pinch/rotate).  <br /></td></tr>
+<tr class="separator:aa07e8ba7a7e10e535f5f4b261431dd40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac82ad20f04f597e1cf952371bf08b8a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#ac82ad20f04f597e1cf952371bf08b8a9">setRotation</a> (<a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681">Rotation</a> rotation)</td></tr>
 <tr class="separator:ac82ad20f04f597e1cf952371bf08b8a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ca54826d24d32b070c9f8b6c51304d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681">Rotation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#a7ca54826d24d32b070c9f8b6c51304d4">getRotation</a> () const</td></tr>
@@ -340,6 +343,35 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa07e8ba7a7e10e535f5f4b261431dd40" name="aa07e8ba7a7e10e535f5f4b261431dd40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa07e8ba7a7e10e535f5f4b261431dd40">&#9670;&#160;</a></span>getSecondPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool getSecondPoint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structtinygpu_1_1Point.html">Point</a> &amp;&#160;</td>
+          <td class="paramname"><em>outPoint</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read a second, simultaneous touch point, for multi-touch gestures (pinch/rotate). </p>
+<p>Returns false by default. Only override this if the underlying controller can genuinely report two simultaneous touches - none of the drivers built into this library can (XPT2046 is a resistive, inherently single-touch controller; CST816S/FT6236 are single-touch capacitive parts), so pinch/rotate gestures built on top of this will not fire against them. </p>
 
 </div>
 </div>

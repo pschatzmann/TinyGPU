@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['tinygpu_2eh_0',['TinyGPU.h',['../TinyGPU_8h.html',1,'']]],
-  ['tinygpuconfig_2eh_1',['TinyGPUConfig.h',['../TinyGPUConfig_8h.html',1,'']]],
-  ['tinygpuglobals_2eh_2',['TinyGPUGlobals.h',['../TinyGPUGlobals_8h.html',1,'']]],
-  ['tinygpulogger_2eh_3',['TinyGPULogger.h',['../TinyGPULogger_8h.html',1,'']]],
-  ['touchdriver_2eh_4',['TouchDriver.h',['../TouchDriver_8h.html',1,'']]]
+  ['spritedisplay_2eh_0',['SpriteDisplay.h',['../SpriteDisplay_8h.html',1,'']]],
+  ['spriteinfo_2eh_1',['SpriteInfo.h',['../SpriteInfo_8h.html',1,'']]],
+  ['surface_2eh_2',['Surface.h',['../Surface_8h.html',1,'']]],
+  ['surfacebase_2eh_3',['SurfaceBase.h',['../SurfaceBase_8h.html',1,'']]],
+  ['surfacemonochrome_2eh_4',['SurfaceMonochrome.h',['../SurfaceMonochrome_8h.html',1,'']]],
+  ['surfacewithexternalbuffer_2eh_5',['SurfaceWithExternalBuffer.h',['../SurfaceWithExternalBuffer_8h.html',1,'']]]
 ];
