@@ -149,6 +149,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2cab9f7746f1f1d0ac5e6f98fbfc9c01"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a2cab9f7746f1f1d0ac5e6f98fbfc9c01">getSprite</a> (size_t x, size_t y)</td></tr>
 <tr class="memdesc:a2cab9f7746f1f1d0ac5e6f98fbfc9c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the sprite at the given position, if any.  <br /></td></tr>
 <tr class="separator:a2cab9f7746f1f1d0ac5e6f98fbfc9c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a512296324c4c483970ae928b6b9f3acb"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a512296324c4c483970ae928b6b9f3acb">getSpriteCount</a> () const</td></tr>
+<tr class="memdesc:a512296324c4c483970ae928b6b9f3acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of sprites currently managed by the framebuffer.  <br /></td></tr>
+<tr class="separator:a512296324c4c483970ae928b6b9f3acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8762dbadd7b6c72152e5563989f1e02"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#aa8762dbadd7b6c72152e5563989f1e02">getSprite</a> (int idx)</td></tr>
+<tr class="memdesc:aa8762dbadd7b6c72152e5563989f1e02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the sprite at the given index, if valid.  <br /></td></tr>
+<tr class="separator:aa8762dbadd7b6c72152e5563989f1e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4adbd8f94608f38d8af8a05a8c644f06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a4adbd8f94608f38d8af8a05a8c644f06">moveSprite</a> (<a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &amp;spriteInfo, size_t newX, size_t newY)</td></tr>
 <tr class="memdesc:a4adbd8f94608f38d8af8a05a8c644f06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves a sprite to a new position and redraws it.  <br /></td></tr>
 <tr class="separator:a4adbd8f94608f38d8af8a05a8c644f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1729,8 +1735,36 @@ class tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;</div><p>Framebuffer with spr
 
 </div>
 </div>
+<a id="aa8762dbadd7b6c72152e5563989f1e02" name="aa8762dbadd7b6c72152e5563989f1e02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8762dbadd7b6c72152e5563989f1e02">&#9670;&#160;</a></span>getSprite() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &amp; &gt; getSprite </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the sprite at the given index, if valid. </p>
+
+</div>
+</div>
 <a id="a2cab9f7746f1f1d0ac5e6f98fbfc9c01" name="a2cab9f7746f1f1d0ac5e6f98fbfc9c01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2cab9f7746f1f1d0ac5e6f98fbfc9c01">&#9670;&#160;</a></span>getSprite()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cab9f7746f1f1d0ac5e6f98fbfc9c01">&#9670;&#160;</a></span>getSprite() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1764,6 +1798,33 @@ class tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;</div><p>Framebuffer with spr
 </div><div class="memdoc">
 
 <p>Returns a reference to the sprite at the given position, if any. </p>
+
+</div>
+</div>
+<a id="a512296324c4c483970ae928b6b9f3acb" name="a512296324c4c483970ae928b6b9f3acb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a512296324c4c483970ae928b6b9f3acb">&#9670;&#160;</a></span>getSpriteCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t getSpriteCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of sprites currently managed by the framebuffer. </p>
 
 </div>
 </div>
