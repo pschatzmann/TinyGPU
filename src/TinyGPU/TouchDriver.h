@@ -256,6 +256,11 @@ class TouchDriverFT6236 : public TouchDriver {
   int8_t irqPin_;
 };
 
+
+/// The FT6206 is a drop-in replacement for the FT6236, so we can alias it here.
+using TouchDriverFT6206 = TouchDriverFT6236;
+
+
 /**
  * @brief Driver for CST816S touch controller (capacitive touch).
  *

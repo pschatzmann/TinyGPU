@@ -80,6 +80,9 @@ class ISurface {
   virtual const uint8_t* data() const = 0;
   /// Provides the total data size in bytes.
   virtual size_t size() const = 0;
+  ///Checks if the given coordinates are within the surface bounds.
+  virtual bool contains(size_t x, size_t y) = 0;
+    
 };
 
 

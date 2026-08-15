@@ -4,11 +4,13 @@
 #include <cmath>
 #include <cstring>
 #include <memory>
+#include <optional>
 
 #include "Surface.h"
 #include "TinyGPU/Vector.h"
 #include "TinyGPUConfig.h"
 #include "TinyGPULogger.h"
+#include "TouchDriver.h"
 
 namespace tinygpu {
 
@@ -37,6 +39,7 @@ class FrameBuffer : public ISurface<RGB_T> {
     std::unique_ptr<SurfaceT> transformedSprite;
     SurfaceT originalPixels;
     IFont<RGB_T>& fontRef;
+    void (*onTouchCallback)(SpriteInfo&, Point) = nullptr;
 
     SpriteInfo(size_t startX, size_t startY,
                const ISurface<RGB_T>& sourceSprite, RGB_T transparentColor,
@@ -59,6 +62,12 @@ class FrameBuffer : public ISurface<RGB_T> {
     void saveOriginalPixels(ISurface<RGB_T>& framebuffer) {
       originalPixels.resize(currentSprite().width(), currentSprite().height());
       framebuffer.copySprite(x, y, originalPixels);
+    }
+
+    void onTouch(Point point) {
+      if (onTouchCallback) {
+        onTouchCallback(*this, point);
+      }
     }
 
     /// Set the maximum buffer size for transformedSprite and allocate buffer.
@@ -115,6 +124,8 @@ class FrameBuffer : public ISurface<RGB_T> {
   bool begin() override { return surface_.begin(); }
   void end() override { surface_.end(); }
 
+  void setTouchDriver(TouchDriver& touch) { p_touchDriver = &touch; }
+
   /// Adds a sprite to the framebuffer and draws it at the given position.
   SpriteInfo& addSprite(size_t x, size_t y, const ISurface<RGB_T>& sprite,
                         RGB_T invisibleColor = RGB_T(0)) {
@@ -155,6 +166,17 @@ class FrameBuffer : public ISurface<RGB_T> {
     if (it != sprites_.end()) {
       sprites_.erase(it);
     }
+  }
+
+  /// Returns a reference to the sprite at the given position, if any.
+  std::optional<SpriteInfo&> getSprite(size_t x, size_t y) {
+    for (auto& sprite : sprites_) {
+      if (x >= sprite->x && x < sprite->x + sprite->currentSprite().width() &&
+          y >= sprite->y && y < sprite->y + sprite->currentSprite().height()) {
+        return *sprite;
+      }
+    }
+    return std::nullopt;
   }
 
   /// Moves a sprite to a new position and redraws it.
@@ -289,7 +311,7 @@ class FrameBuffer : public ISurface<RGB_T> {
   size_t size() const override { return surface_.size(); }
 
   /// Sets the framebuffer pixel data directly, replacing the current content.
-  bool setData(uint8_t *data, size_t dataSize) {
+  bool setData(uint8_t* data, size_t dataSize) {
     memset(const_cast<uint8_t*>(surface_.data()), 0, surface_.size());
     if (dataSize > surface_.size()) {
       return false;
@@ -297,9 +319,33 @@ class FrameBuffer : public ISurface<RGB_T> {
     std::memcpy(const_cast<uint8_t*>(surface_.data()), data, dataSize);
   }
 
+  /// checks if the given coordinates are within the surface bounds.
+  bool contains(size_t x, size_t y) override { return surface_.contains(x, y); }
+
+  /// Processes touch input and dispatches events to sprites if touched.
+  void processTouch() {
+    if (p_touchDriver && p_touchDriver->isTouched()) {
+      Point point;
+      if (p_touchDriver->getPoint(point)) {
+        TinyGPULogger.log(TinyGPULoggerClass::INFO,
+                          "Touch detected at (%d, %d) with pressure %d",
+                          point.x, point.y, point.pressure);
+        auto sprite = getSprite(point.x, point.y);
+        if (sprite) {
+          TinyGPULogger.log(TinyGPULoggerClass::INFO,
+                            "Touch is within sprite at (%zu, %zu)", sprite->x,
+                            sprite->y);
+          // Call the sprite's onTouch callback if set             
+          sprite.get()->onTouch(point);
+        }
+      }
+    }
+  }
+
  protected:
   // Underlying surface for all drawing/storage
   SurfaceT surface_;
+  TouchDriver* p_touchDriver = nullptr;
 
   struct Rect {
     size_t x = 0;
@@ -363,7 +409,8 @@ class FrameBuffer : public ISurface<RGB_T> {
                      spriteInfo.invisibleColor);
   }
 
-  /// Calculates the coordinate to center a new size over an old position/size.
+  /// Calculates the coordinate to center a new size over an old
+  /// position/size.
   static size_t centeredCoordinate(size_t oldPosition, size_t oldSize,
                                    size_t newSize) {
     const float centeredPosition =

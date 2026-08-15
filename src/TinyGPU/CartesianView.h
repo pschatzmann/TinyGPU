@@ -120,6 +120,10 @@ class CartesianView : public ISurface<RGB_T> {
   /// Returns the font of the wrapped surface.
   IFont<RGB_T>& font() override { return surface_.font(); }
 
+  bool contains(size_t x, size_t y) override {
+    return surface_.contains(x, mappedY(y));
+  }
+
  protected:
   ISurface<RGB_T>& surface_;
 

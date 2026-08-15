@@ -265,6 +265,10 @@ class SurfaceBase : public ISurface<PixelT> {
     for (int x = startX; x <= endX; ++x) setPixel(x, y, color);
   }
 
+  bool contains(size_t x, size_t y) override {
+    return isInBounds(x, y);
+  }
+
  protected:
   size_t width_ = 0;
   size_t height_ = 0;
