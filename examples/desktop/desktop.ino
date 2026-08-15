@@ -1,3 +1,11 @@
+/**
+ * @file desktop.ino
+ * @brief TinyGPU desktop example using SDL2 for display output.
+ * This example demonstrates how to use the TinyGPU library with SDL2 to create
+ * a simple graphical application on desktop platforms. It initializes a
+ * framebuffer, creates a sprite, and animates the sprite across the screen
+ * while applying scaling and rotation transformations.
+ */
 #include <TinyGPU.h>
 #include <TinyGPU/DisplayDriverSDL.h>
 
@@ -15,10 +23,6 @@ float angle = 0.0f;
 size_t positionX = 8;
 size_t positionY = 18;
 int direction = 1;
-
-void sendFrameToDisplay(const ISurface<RGB565>& gpu) {
-  display.writeData(framebuffer);
-}
 
 void buildSprite() {
   sprite.begin();
@@ -42,8 +46,12 @@ void setup() {
   framebuffer.drawText(6, 6, "Sprite demo", RGB565(255, 255, 0));
 
   buildSprite();
-  spriteInfo = &framebuffer.addSprite(positionX, positionY, 40, 40, sprite, RGB565(0, 0, 0));
-  sendFrameToDisplay(framebuffer);
+  
+  spriteInfo = &framebuffer.addSprite(positionX, positionY, 40, 40, sprite,
+                                      RGB565(0, 0, 0));
+
+  // Send the initial framebuffer to the display
+  display.writeData(framebuffer);
 }
 
 void loop() {
@@ -71,5 +79,6 @@ void loop() {
   }
   framebuffer.rotateSprite(*spriteInfo, angle);
 
-  sendFrameToDisplay(framebuffer);
+  // Send the updated framebuffer to the display
+  display.writeData(framebuffer);
 }
