@@ -14,7 +14,6 @@ constexpr size_t kDisplayHeight = 64;
 
 FrameBuffer<RGB565> framebuffer(kDisplayWidth, kDisplayHeight, FontRGB565);
 Sprite<RGB565> sprite(18, 18, FontRGB565);
-FrameBuffer<RGB565>::SpriteInfo* spriteInfo = nullptr;
 DisplayDriverSDL driver(kDisplayWidth, kDisplayHeight);
 DeviceOutput display(driver);
 
@@ -46,20 +45,19 @@ void setup() {
   framebuffer.drawText(6, 6, "Sprite demo", RGB565(255, 255, 0));
 
   buildSprite();
-  
-  spriteInfo = &framebuffer.addSprite(positionX, positionY, 40, 40, sprite,
-                                      RGB565(0, 0, 0));
+  SpriteInfo<RGB565, Surface<RGB565>>& spriteInfo = framebuffer.addSprite(positionX, positionY, 40, 40, sprite,
+                                      RGB565(0, 0, 0)); 
 
   // Send the initial framebuffer to the display
   display.writeData(framebuffer);
 }
 
 void loop() {
-  assert(spriteInfo != nullptr);
+  SpriteInfo<RGB565, Surface<RGB565>>* spriteInfo = framebuffer.getSpritePtr(0);  // Assuming only one sprite is added for this demo
   if (spriteInfo == nullptr) {
+    Serial.println("No sprite found.");
     return;
   }
-
   positionX = static_cast<size_t>(static_cast<int>(positionX) + direction);
   if (positionX > 92) {
     direction = -1;

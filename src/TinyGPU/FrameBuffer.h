@@ -4,13 +4,13 @@
 #include <cmath>
 #include <cstring>
 #include <memory>
-#include <optional>
 
 #include "Surface.h"
 #include "TinyGPU/Vector.h"
 #include "TinyGPUConfig.h"
 #include "TinyGPULogger.h"
 #include "TouchDriver.h"
+#include "SpriteInfo.h"
 
 namespace tinygpu {
 
@@ -23,97 +23,6 @@ namespace tinygpu {
 template <typename RGB_T = RGB565, typename SurfaceT = Surface<RGB_T>>
 class FrameBuffer : public ISurface<RGB_T> {
  public:
-  /**
-   * Tracks a sprite instance together with its saved background pixels.
-   *
-   * Each SpriteInfo stores the sprite position, transparent color, current
-   * sprite image, and a snapshot of the framebuffer region covered by it.
-   */
-  struct SpriteInfo {
-    size_t x = 0;
-    size_t y = 0;
-    size_t maxWidth = 0;
-    size_t maxHeight = 0;
-    RGB_T invisibleColor = RGB_T(0);
-    const ISurface<RGB_T>* sprite = nullptr;
-    std::unique_ptr<SurfaceT> transformedSprite;
-    SurfaceT originalPixels;
-    IFont<RGB_T>& fontRef;
-    void (*onTouchCallback)(SpriteInfo&, Point) = nullptr;
-
-    SpriteInfo(size_t startX, size_t startY,
-               const ISurface<RGB_T>& sourceSprite, RGB_T transparentColor,
-               IFont<RGB_T>& font)
-        : x(startX),
-          y(startY),
-          invisibleColor(transparentColor),
-          sprite(&sourceSprite),
-          originalPixels(sourceSprite.width(), sourceSprite.height(), font),
-          fontRef(font) {}
-
-    /// Returns the sprite image currently used for drawing.
-    const ISurface<RGB_T>& currentSprite() const {
-      return transformedSprite
-                 ? static_cast<const ISurface<RGB_T>&>(*transformedSprite)
-                 : *sprite;
-    }
-
-    /// Saves the background pixels currently covered by the sprite.
-    void saveOriginalPixels(ISurface<RGB_T>& framebuffer) {
-      originalPixels.resize(currentSprite().width(), currentSprite().height());
-      framebuffer.copySprite(x, y, originalPixels);
-    }
-
-    void onTouch(Point point) {
-      if (onTouchCallback) {
-        onTouchCallback(*this, point);
-      }
-    }
-
-    /// Set the maximum buffer size for transformedSprite and allocate buffer.
-    void setMaxSize(size_t maxX, size_t maxY) {
-      maxWidth = maxX;
-      maxHeight = maxY;
-      if (!transformedSprite) {
-        transformedSprite =
-            std::make_unique<SurfaceT>(maxWidth, maxHeight, fontRef);
-        transformedSprite->begin();
-      }
-    }
-
-    /// Replaces the current transformed sprite image, using only the allocated
-    /// buffer.
-    void setTransformedSprite(SurfaceT&& newSprite) {
-      if (!transformedSprite) {
-        // If max size not set, use current size as max
-        maxWidth = newSprite.width();
-        maxHeight = newSprite.height();
-        transformedSprite =
-            std::make_unique<SurfaceT>(maxWidth, maxHeight, newSprite.font());
-        transformedSprite->begin();
-      }
-      // Only copy the region that fits
-      size_t copyWidth = std::min(maxWidth, newSprite.width());
-      size_t copyHeight = std::min(maxHeight, newSprite.height());
-      for (size_t y = 0; y < copyHeight; ++y) {
-        for (size_t x = 0; x < copyWidth; ++x) {
-          transformedSprite->setPixel(x, y, newSprite.getPixel(x, y));
-        }
-      }
-      // Optionally clear the rest if newSprite is smaller than max
-      for (size_t y = copyHeight; y < maxHeight; ++y) {
-        for (size_t x = 0; x < maxWidth; ++x) {
-          transformedSprite->setPixel(x, y, RGB_T(0));
-        }
-      }
-      for (size_t y = 0; y < copyHeight; ++y) {
-        for (size_t x = copyWidth; x < maxWidth; ++x) {
-          transformedSprite->setPixel(x, y, RGB_T(0));
-        }
-      }
-    }
-  };
-
   /// Creates an empty framebuffer.
   FrameBuffer() = default;
 
@@ -127,11 +36,11 @@ class FrameBuffer : public ISurface<RGB_T> {
   void setTouchDriver(TouchDriver& touch) { p_touchDriver = &touch; }
 
   /// Adds a sprite to the framebuffer and draws it at the given position.
-  SpriteInfo& addSprite(size_t x, size_t y, const ISurface<RGB_T>& sprite,
+  SpriteInfo<RGB_T, SurfaceT>& addSprite(size_t x, size_t y, const ISurface<RGB_T>& sprite,
                         RGB_T invisibleColor = RGB_T(0)) {
     TinyGPULogger.log(TinyGPULoggerClass::INFO, "Adding sprite at (%zu, %zu)",
                       x, y);
-    auto info = std::make_unique<SpriteInfo>(x, y, sprite, invisibleColor,
+    auto info = std::make_unique<SpriteInfo<RGB_T, SurfaceT>>(x, y, sprite, invisibleColor,
                                              activeFont());
 
     info->saveOriginalPixels(surface_);
@@ -142,13 +51,13 @@ class FrameBuffer : public ISurface<RGB_T> {
   }
 
   /// Adds a sprite with a preallocated max buffer size for transformations.
-  SpriteInfo& addSprite(size_t x, size_t y, size_t maxX, size_t maxY,
+  SpriteInfo<RGB_T, SurfaceT>& addSprite(size_t x, size_t y, size_t maxX, size_t maxY,
                         const ISurface<RGB_T>& sprite,
                         RGB_T invisibleColor = RGB_T(0)) {
     TinyGPULogger.log(TinyGPULoggerClass::INFO,
                       "Adding sprite at (%zu, %zu) with max size (%zu, %zu)", x,
                       y, maxX, maxY);
-    auto info = std::make_unique<SpriteInfo>(x, y, sprite, invisibleColor,
+    auto info = std::make_unique<SpriteInfo<RGB_T, SurfaceT>>(x, y, sprite, invisibleColor,
                                              activeFont());
     info->setMaxSize(maxX, maxY);
     info->saveOriginalPixels(surface_);
@@ -158,40 +67,48 @@ class FrameBuffer : public ISurface<RGB_T> {
   }
 
   /// Removes a sprite and restores the pixels behind it.
-  void removeSprite(SpriteInfo& spriteInfo) {
+  void removeSprite(SpriteInfo<RGB_T, SurfaceT>& spriteInfo) {
     TinyGPULogger.log(TinyGPULoggerClass::INFO, "Removing sprite at (%zu, %zu)",
                       spriteInfo.x, spriteInfo.y);
     restoreOriginalPixels(spriteInfo);
-    auto it = findSprite(spriteInfo);
+    auto it = tinygpu::findSprite(sprites_, spriteInfo);
     if (it != sprites_.end()) {
       sprites_.erase(it);
     }
   }
 
-  /// Returns a reference to the sprite at the given position, if any.
-  std::optional<SpriteInfo&> getSprite(size_t x, size_t y) {
+  /// Returns a pointer to the sprite at the given position, if any.
+  SpriteInfo<RGB_T, SurfaceT>* getSprite(size_t x, size_t y) {
     for (auto& sprite : sprites_) {
       if (x >= sprite->x && x < sprite->x + sprite->currentSprite().width() &&
           y >= sprite->y && y < sprite->y + sprite->currentSprite().height()) {
-        return *sprite;
+        return sprite.get();
       }
     }
-    return std::nullopt;
+    return nullptr;
   }
+
 
   /// Returns the number of sprites currently managed by the framebuffer.
   size_t getSpriteCount() const { return sprites_.size(); }
 
-  /// Returns a reference to the sprite at the given index, if valid.
-  std::optional<SpriteInfo&> getSprite(int idx) {
+  /// Returns a pointer to the sprite at the given index, if valid.
+  SpriteInfo<RGB_T, SurfaceT>* getSprite(int idx) {
     if (idx < 0 || idx >= static_cast<int>(sprites_.size())) {
-      return std::nullopt;
+      return nullptr;
     }
-    return *sprites_[idx];
+    return sprites_[idx].get();
+  }
+
+  SpriteInfo<RGB_T, SurfaceT>* getSpritePtr(int idx) {
+    if (idx < 0 || idx >= static_cast<int>(sprites_.size())) {
+      return nullptr;
+    }
+    return sprites_[idx].get();;
   }
 
   /// Moves a sprite to a new position and redraws it.
-  void moveSprite(SpriteInfo& spriteInfo, size_t newX, size_t newY) {
+  void moveSprite(SpriteInfo<RGB_T, SurfaceT>& spriteInfo, size_t newX, size_t newY) {
     TinyGPULogger.log(TinyGPULoggerClass::INFO,
                       "Moving sprite from (%zu, %zu) to (%zu, %zu)",
                       spriteInfo.x, spriteInfo.y, newX, newY);
@@ -204,7 +121,7 @@ class FrameBuffer : public ISurface<RGB_T> {
                          spriteInfo.currentSprite().height()};
     const Rect newBounds{newX, newY, spriteInfo.currentSprite().width(),
                          spriteInfo.currentSprite().height()};
-    const Rect overlap = intersect(oldBounds, newBounds);
+    const Rect overlap = Rect::intersect(oldBounds, newBounds);
 
     restoreExposedPixels(spriteInfo, oldBounds, overlap);
     Surface<RGB_T> movedBackground =
@@ -218,7 +135,7 @@ class FrameBuffer : public ISurface<RGB_T> {
   }
 
   /// Scales a sprite image and redraws it at its current position.
-  void scaleSprite(SpriteInfo& spriteInfo, float scale) {
+  void scaleSprite(SpriteInfo<RGB_T, SurfaceT>& spriteInfo, float scale) {
     TinyGPULogger.log(TinyGPULoggerClass::INFO,
                       "Scaling sprite at (%zu, %zu) by %.2f", spriteInfo.x,
                       spriteInfo.y, scale);
@@ -228,7 +145,7 @@ class FrameBuffer : public ISurface<RGB_T> {
   }
 
   /// Rotates a sprite image and redraws it at its current position.
-  void rotateSprite(SpriteInfo& spriteInfo, float angleDegrees) {
+  void rotateSprite(SpriteInfo<RGB_T, SurfaceT>& spriteInfo, float angleDegrees) {
     TinyGPULogger.log(TinyGPULoggerClass::INFO,
                       "Rotating sprite at (%zu, %zu) by %.2f degrees",
                       spriteInfo.x, spriteInfo.y, angleDegrees);
@@ -341,13 +258,13 @@ class FrameBuffer : public ISurface<RGB_T> {
         TinyGPULogger.log(TinyGPULoggerClass::INFO,
                           "Touch detected at (%d, %d) with pressure %d",
                           point.x, point.y, point.pressure);
-        auto sprite = getSprite(point.x, point.y);
+        auto* sprite = getSprite(point.x, point.y);
         if (sprite) {
           TinyGPULogger.log(TinyGPULoggerClass::INFO,
                             "Touch is within sprite at (%zu, %zu)", sprite->x,
                             sprite->y);
-          // Call the sprite's onTouch callback if set             
-          sprite.get()->onTouch(point);
+          // Call the sprite's onTouch callback if set
+          sprite->onTouch(point);
         }
       }
     }
@@ -358,35 +275,9 @@ class FrameBuffer : public ISurface<RGB_T> {
   SurfaceT surface_;
   TouchDriver* p_touchDriver = nullptr;
 
-  struct Rect {
-    size_t x = 0;
-    size_t y = 0;
-    size_t width = 0;
-    size_t height = 0;
-  };
-
   /// Returns the currently active font used by the framebuffer.
   IFont<RGB_T>& activeFont() { return surface_.font(); }
-  Vector<std::unique_ptr<SpriteInfo>> sprites_;
-
-  /// Returns the intersection rectangle of two rectangles.
-  static Rect intersect(const Rect& first, const Rect& second) {
-    const size_t overlapX = std::max(first.x, second.x);
-    const size_t overlapY = std::max(first.y, second.y);
-    const size_t firstRight = first.x + first.width;
-    const size_t firstBottom = first.y + first.height;
-    const size_t secondRight = second.x + second.width;
-    const size_t secondBottom = second.y + second.height;
-    const size_t overlapRight = std::min(firstRight, secondRight);
-    const size_t overlapBottom = std::min(firstBottom, secondBottom);
-
-    if (overlapX >= overlapRight || overlapY >= overlapBottom) {
-      return {};
-    }
-
-    return {overlapX, overlapY, overlapRight - overlapX,
-            overlapBottom - overlapY};
-  }
+  Vector<std::unique_ptr<SpriteInfo<RGB_T, SurfaceT>>> sprites_;
 
   /// Returns true if the rectangle is empty (zero width or height).
   static bool isEmpty(const Rect& rect) {
@@ -395,7 +286,7 @@ class FrameBuffer : public ISurface<RGB_T> {
 
   /// Applies a transformed sprite image to the framebuffer and updates
   /// bookkeeping.
-  void applyTransformedSprite(SpriteInfo& spriteInfo,
+  void applyTransformedSprite(SpriteInfo<RGB_T, SurfaceT>& spriteInfo,
                               Surface<RGB_T>&& transformedSprite) {
     const Rect oldBounds{spriteInfo.x, spriteInfo.y,
                          spriteInfo.currentSprite().width(),
@@ -406,7 +297,7 @@ class FrameBuffer : public ISurface<RGB_T> {
                                                 transformedSprite.height());
     const Rect newBounds{anchoredX, anchoredY, transformedSprite.width(),
                          transformedSprite.height()};
-    const Rect overlap = intersect(oldBounds, newBounds);
+    const Rect overlap = Rect::intersect(oldBounds, newBounds);
 
     restoreExposedPixels(spriteInfo, oldBounds, overlap);
     Surface<RGB_T> updatedBackground =
@@ -419,6 +310,7 @@ class FrameBuffer : public ISurface<RGB_T> {
     this->drawSprite(spriteInfo.x, spriteInfo.y, spriteInfo.currentSprite(),
                      spriteInfo.invisibleColor);
   }
+
 
   /// Calculates the coordinate to center a new size over an old
   /// position/size.
@@ -434,7 +326,7 @@ class FrameBuffer : public ISurface<RGB_T> {
 
   /// Restores only the pixels exposed by moving a sprite, using the overlap
   /// region.
-  void restoreExposedPixels(const SpriteInfo& spriteInfo, const Rect& oldBounds,
+  void restoreExposedPixels(const SpriteInfo<RGB_T, SurfaceT>& spriteInfo, const Rect& oldBounds,
                             const Rect& overlap) {
     if (isEmpty(overlap)) {
       restoreOriginalPixels(spriteInfo);
@@ -461,7 +353,7 @@ class FrameBuffer : public ISurface<RGB_T> {
   }
 
   /// Captures the updated background pixels after a sprite move/transform.
-  Surface<RGB_T> captureUpdatedBackground(const SpriteInfo& spriteInfo,
+  Surface<RGB_T> captureUpdatedBackground(const SpriteInfo<RGB_T, SurfaceT>& spriteInfo,
                                           const Rect& oldBounds,
                                           const Rect& newBounds,
                                           const Rect& overlap) {
@@ -552,109 +444,9 @@ class FrameBuffer : public ISurface<RGB_T> {
     }
   }
 
-  /// Returns a scaled copy of a sprite image.
-  static Surface<RGB_T> scaleSpriteImage(const ISurface<RGB_T>& source,
-                                         float scale, IFont<RGB_T>& font) {
-    size_t scaledWidth = static_cast<size_t>(source.width() * scale);
-    size_t scaledHeight = static_cast<size_t>(source.height() * scale);
-
-    if (scaledWidth == 0) {
-      scaledWidth = 1;
-    }
-    if (scaledHeight == 0) {
-      scaledHeight = 1;
-    }
-
-    Surface<RGB_T> scaledSprite(scaledWidth, scaledHeight, font);
-    scaledSprite.begin();
-    for (size_t currentY = 0; currentY < scaledHeight; ++currentY) {
-      const size_t sourceY =
-          static_cast<size_t>(static_cast<float>(currentY) / scale);
-      const size_t clampedY =
-          sourceY < source.height() ? sourceY : source.height() - 1;
-      for (size_t currentX = 0; currentX < scaledWidth; ++currentX) {
-        const size_t sourceX =
-            static_cast<size_t>(static_cast<float>(currentX) / scale);
-        const size_t clampedX =
-            sourceX < source.width() ? sourceX : source.width() - 1;
-        scaledSprite.setPixel(currentX, currentY,
-                              source.getPixel(clampedX, clampedY));
-      }
-    }
-
-    return scaledSprite;
-  }
-
-  /// Returns a rotated copy of a sprite image, filling empty space with
-  /// fillColor.
-  static Surface<RGB_T> rotateSpriteImage(const ISurface<RGB_T>& source,
-                                          float angleDegrees, RGB_T fillColor,
-                                          IFont<RGB_T>& font) {
-    const float radians =
-        static_cast<float>(angleDegrees) * 3.14159265358979323846 / 180.0;
-    const float cosine = std::cos(radians);
-    const float sine = std::sin(radians);
-    const float sourceWidth = static_cast<float>(source.width());
-    const float sourceHeight = static_cast<float>(source.height());
-    size_t rotatedWidth = static_cast<size_t>(std::ceil(
-        std::fabs(sourceWidth * cosine) + std::fabs(sourceHeight * sine)));
-    size_t rotatedHeight = static_cast<size_t>(std::ceil(
-        std::fabs(sourceWidth * sine) + std::fabs(sourceHeight * cosine)));
-
-    if (rotatedWidth == 0) {
-      rotatedWidth = 1;
-    }
-    if (rotatedHeight == 0) {
-      rotatedHeight = 1;
-    }
-
-    Surface<RGB_T> rotatedSprite(rotatedWidth, rotatedHeight, font);
-    rotatedSprite.begin();
-    rotatedSprite.clear(fillColor);
-
-    const float sourceCenterX = (sourceWidth - 1.0) / 2.0;
-    const float sourceCenterY = (sourceHeight - 1.0) / 2.0;
-    const float rotatedCenterX = (static_cast<float>(rotatedWidth) - 1.0) / 2.0;
-    const float rotatedCenterY =
-        (static_cast<float>(rotatedHeight) - 1.0) / 2.0;
-
-    for (size_t currentY = 0; currentY < rotatedHeight; ++currentY) {
-      for (size_t currentX = 0; currentX < rotatedWidth; ++currentX) {
-        const float targetX = static_cast<float>(currentX) - rotatedCenterX;
-        const float targetY = static_cast<float>(currentY) - rotatedCenterY;
-        const float sourceX =
-            (targetX * cosine) + (targetY * sine) + sourceCenterX;
-        const float sourceY =
-            (-targetX * sine) + (targetY * cosine) + sourceCenterY;
-        const long nearestX = std::lround(sourceX);
-        const long nearestY = std::lround(sourceY);
-
-        if (nearestX >= 0 && nearestY >= 0 &&
-            static_cast<size_t>(nearestX) < source.width() &&
-            static_cast<size_t>(nearestY) < source.height()) {
-          rotatedSprite.setPixel(
-              currentX, currentY,
-              source.getPixel(static_cast<size_t>(nearestX),
-                              static_cast<size_t>(nearestY)));
-        }
-      }
-    }
-
-    return rotatedSprite;
-  }
-
   /// Restores the original background pixels behind a sprite.
-  void restoreOriginalPixels(const SpriteInfo& spriteInfo) {
+  void restoreOriginalPixels(const SpriteInfo<RGB_T, SurfaceT>& spriteInfo) {
     surface_.drawSprite(spriteInfo.x, spriteInfo.y, spriteInfo.originalPixels);
-  }
-
-  /// Finds the iterator to a sprite in the internal sprite list.
-  auto findSprite(SpriteInfo& spriteInfo) {
-    return std::find_if(
-        sprites_.begin(), sprites_.end(),
-        [&spriteInfo](const std::unique_ptr<SpriteInfo>& entry) {
-          return entry.get() == &spriteInfo;
-        });
   }
 };
 

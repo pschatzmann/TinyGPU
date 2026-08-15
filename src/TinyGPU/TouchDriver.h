@@ -86,6 +86,19 @@ class TouchDriver {
    */
   virtual bool getPoint(Point& outPoint) = 0;
 
+  /**
+   * @brief Read a second, simultaneous touch point, for multi-touch
+   * gestures (pinch/rotate).
+   *
+   * Returns false by default. Only override this if the underlying
+   * controller can genuinely report two simultaneous touches - none of
+   * the drivers built into this library can (XPT2046 is a resistive,
+   * inherently single-touch controller; CST816S/FT6236 are single-touch
+   * capacitive parts), so pinch/rotate gestures built on top of this will
+   * not fire against them.
+   */
+  virtual bool getSecondPoint(Point& outPoint) { return false; }
+
   void setRotation(Rotation rotation) { rotation_ = rotation; }
 
   Rotation getRotation() const { return rotation_; }

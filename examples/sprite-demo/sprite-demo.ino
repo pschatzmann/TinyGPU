@@ -17,7 +17,7 @@ constexpr size_t kDisplayHeight = 64;
 
 FrameBuffer<RGB565> framebuffer(kDisplayWidth, kDisplayHeight, FontRGB565);
 Sprite<RGB565> sprite(18, 18, FontRGB565);
-FrameBuffer<RGB565>::SpriteInfo* spriteInfo = nullptr;
+SpriteInfo<RGB565, Surface<RGB565>>* spriteInfo = nullptr;
 float scale = 1.0f;
 float angle = 0.0f;
 size_t positionX = 8;

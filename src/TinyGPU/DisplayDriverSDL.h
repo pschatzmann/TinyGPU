@@ -38,16 +38,19 @@ class DisplayDriverSDL : public DisplayDriver<RGB_T> {
 
  public:
   bool writeData(ISurface<RGB_T>& surface) override {
-    setAddressWindow(0, 0, surface.width(), surface.height());
-    if (surface.width() != w_ || surface.height() != h_) {
-      return false;
-    }
-    SDL_Rect dstRect = {static_cast<int>(x_), static_cast<int>(y_),
-                        static_cast<int>(w_), static_cast<int>(h_)};
-    SDL_UpdateTexture(texture_, NULL, surface.data(),
+    return writeData(surface, 0, 0);
+  }
+
+  bool writeData(ISurface<RGB_T>& surface, size_t x, size_t y) override {
+    setAddressWindow(x, y, surface.width(), surface.height());
+    SDL_Rect updateRect = {static_cast<int>(x), static_cast<int>(y),
+                           static_cast<int>(surface.width()),
+                           static_cast<int>(surface.height())};
+    SDL_UpdateTexture(texture_, &updateRect, surface.data(),
                       surface.width() * sizeof(RGB_T));
+    SDL_Rect fullRect = {0, 0, static_cast<int>(w_), static_cast<int>(h_)};
     SDL_RenderClear(renderer_);
-    SDL_RenderCopy(renderer_, texture_, NULL, &dstRect);
+    SDL_RenderCopy(renderer_, texture_, NULL, &fullRect);
     SDL_RenderPresent(renderer_);
     return true;
   }
@@ -63,8 +66,6 @@ class DisplayDriverSDL : public DisplayDriver<RGB_T> {
   }
 
  protected:
-  size_t x_ = 0;
-  size_t y_ = 0;
   size_t w_ = 0;
   size_t h_ = 0;
   SDL_Window* window_ = nullptr;
@@ -73,10 +74,6 @@ class DisplayDriverSDL : public DisplayDriver<RGB_T> {
 
  protected:
   bool setAddressWindow(size_t x, size_t y, size_t w, size_t h) override {
-    x_ = x;
-    y_ = y;
-    w_ = w;
-    h_ = h;
     return true;
   }
 };

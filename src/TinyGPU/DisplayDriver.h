@@ -20,9 +20,21 @@ class DisplayDriver {
   virtual bool begin() = 0;
   virtual void end() {}
   virtual bool writeData(ISurface<RGB_T>& surface) = 0;
+  virtual bool writeData(ISurface<RGB_T>& surface, size_t x, size_t y) = 0;
+
+  void writeColor(size_t width, size_t height, RGB_T color) {
+    Sprite<RGB_T> tempSurface(width, 1, defaultFont);
+    tempSurface.begin();
+    for (int i = 0; i < width; ++i) tempSurface.setPixel(i, 0, color);
+
+    for (int j = 0; j < height; ++j) {
+      writeData(tempSurface, 0, j);
+    }
+  }
 
  protected:
   virtual bool setAddressWindow(size_t x, size_t y, size_t w, size_t h) = 0;
+  BitmapFont<RGB_T> defaultFont;
 };
 
 }  // namespace tinygpu
