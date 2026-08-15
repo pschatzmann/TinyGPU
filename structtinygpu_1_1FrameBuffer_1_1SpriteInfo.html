@@ -103,6 +103,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4833c7909689c5c6f2653d81f97b7712"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#a4833c7909689c5c6f2653d81f97b7712">saveOriginalPixels</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;framebuffer)</td></tr>
 <tr class="memdesc:a4833c7909689c5c6f2653d81f97b7712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the background pixels currently covered by the sprite.  <br /></td></tr>
 <tr class="separator:a4833c7909689c5c6f2653d81f97b7712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a7f37e73caf78fdceb5eb42405d0bb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#a3a7f37e73caf78fdceb5eb42405d0bb9">onTouch</a> (<a class="el" href="structtinygpu_1_1Point.html">Point</a> point)</td></tr>
+<tr class="separator:a3a7f37e73caf78fdceb5eb42405d0bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32956765337d9033b284ae0967aadf7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#a32956765337d9033b284ae0967aadf7c">setMaxSize</a> (size_t maxX, size_t maxY)</td></tr>
 <tr class="memdesc:a32956765337d9033b284ae0967aadf7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum buffer size for transformedSprite and allocate buffer.  <br /></td></tr>
 <tr class="separator:a32956765337d9033b284ae0967aadf7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,6 +131,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:ad0d54e874effcb1dd1b1d18ef74cb599"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d197c8a6931b111075bd8e20207afc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt; RGB_T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#a7d197c8a6931b111075bd8e20207afc8">fontRef</a></td></tr>
 <tr class="separator:a7d197c8a6931b111075bd8e20207afc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71357535f2887650f8a58a4e7f7c3a7b"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html#a71357535f2887650f8a58a4e7f7c3a7b">onTouchCallback</a> )(<a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &amp;, <a class="el" href="structtinygpu_1_1Point.html">Point</a>) = nullptr</td></tr>
+<tr class="separator:a71357535f2887650f8a58a4e7f7c3a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename RGB_T = RGB565, typename SurfaceT = Surface&lt;RGB_T&gt;&gt;<br />
@@ -214,6 +218,32 @@ struct tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;::SpriteInfo</div><p>Tracks 
 </div><div class="memdoc">
 
 <p>Returns the sprite image currently used for drawing. </p>
+
+</div>
+</div>
+<a id="a3a7f37e73caf78fdceb5eb42405d0bb9" name="a3a7f37e73caf78fdceb5eb42405d0bb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a7f37e73caf78fdceb5eb42405d0bb9">&#9670;&#160;</a></span>onTouch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void onTouch </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structtinygpu_1_1Point.html">Point</a>&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -361,6 +391,20 @@ struct tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;::SpriteInfo</div><p>Tracks 
       <table class="memname">
         <tr>
           <td class="memname">size_t maxWidth = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71357535f2887650f8a58a4e7f7c3a7b" name="a71357535f2887650f8a58a4e7f7c3a7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71357535f2887650f8a58a4e7f7c3a7b">&#9670;&#160;</a></span>onTouchCallback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* onTouchCallback) (<a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &amp;, <a class="el" href="structtinygpu_1_1Point.html">Point</a>) = nullptr</td>
         </tr>
       </table>
 </div><div class="memdoc">

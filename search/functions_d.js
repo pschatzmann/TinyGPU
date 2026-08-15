@@ -10,7 +10,8 @@ var searchData=
   ['plotdepthpixel_7',['plotDepthPixel',['../classtinygpu_1_1WireFrame3D.html#aff686e786b3888ea9c1dc47af4e5fd70',1,'tinygpu::WireFrame3D']]],
   ['print_8',['print',['../classtinygpu_1_1LinePrinter.html#a5de1d92da33aae3b3423fe61e97537fe',1,'tinygpu::LinePrinter']]],
   ['println_9',['println',['../classtinygpu_1_1LinePrinter.html#aede680223cdfbf2dd15efb4d3a4688e4',1,'tinygpu::LinePrinter::println(const char *text)'],['../classtinygpu_1_1LinePrinter.html#a23748bf8d1d488448069061c574897d6',1,'tinygpu::LinePrinter::println()']]],
-  ['projectionmatrix_10',['projectionMatrix',['../classtinygpu_1_1WireFrame3D.html#ae158e3e99dbdaba3f330acd8985a950f',1,'tinygpu::WireFrame3D']]],
-  ['projectpoint_11',['projectPoint',['../classtinygpu_1_1WireFrame3D.html#a30fbccd51c1ac27264fa7d3042bc352c',1,'tinygpu::WireFrame3D']]],
-  ['projectviewpoint_12',['projectViewPoint',['../classtinygpu_1_1WireFrame3D.html#a0c755c14323e8a2bb5e8eec5e0118042',1,'tinygpu::WireFrame3D']]]
+  ['processtouch_10',['processTouch',['../classtinygpu_1_1FrameBuffer.html#ab2742a681a2e469d920945fdf48e842f',1,'tinygpu::FrameBuffer']]],
+  ['projectionmatrix_11',['projectionMatrix',['../classtinygpu_1_1WireFrame3D.html#ae158e3e99dbdaba3f330acd8985a950f',1,'tinygpu::WireFrame3D']]],
+  ['projectpoint_12',['projectPoint',['../classtinygpu_1_1WireFrame3D.html#a30fbccd51c1ac27264fa7d3042bc352c',1,'tinygpu::WireFrame3D']]],
+  ['projectviewpoint_13',['projectViewPoint',['../classtinygpu_1_1WireFrame3D.html#a0c755c14323e8a2bb5e8eec5e0118042',1,'tinygpu::WireFrame3D']]]
 ];

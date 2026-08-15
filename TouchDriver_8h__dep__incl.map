@@ -1,5 +1,8 @@
 <map id="src/TinyGPU/TouchDriver.h" name="src/TinyGPU/TouchDriver.h">
-<area shape="rect" id="node1" title=" " alt="" coords="12,5,205,31"/>
-<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="5,79,119,104"/>
-<area shape="rect" id="node3" href="$LVGLDriver_8h.html" title=" " alt="" coords="15,152,203,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="45,5,238,31"/>
+<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="147,299,261,324"/>
+<area shape="rect" id="node3" href="$LVGLDriver_8h.html" title=" " alt="" coords="10,372,198,397"/>
+<area shape="rect" id="node4" href="$FrameBuffer_8h.html" title=" " alt="" coords="43,79,239,104"/>
+<area shape="rect" id="node5" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="144,152,427,177"/>
+<area shape="rect" id="node6" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="93,225,315,251"/>
 </map>

@@ -102,13 +102,15 @@ Collaboration diagram for FrameBuffer&lt; RGB_T, SurfaceT &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1FrameBuffer__coll__graph.png" border="0" usemap="#aFrameBuffer_3_01RGB__T_00_01SurfaceT_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="aFrameBuffer_3_01RGB__T_00_01SurfaceT_01_4_coll__map" id="aFrameBuffer_3_01RGB__T_00_01SurfaceT_01_4_coll__map">
-<area shape="rect" title="Framebuffer with sprite placement and background restoration support." alt="" coords="19,256,183,296"/>
-<area shape="rect" href="classtinygpu_1_1ISurface.html" title="Abstract framebuffer and drawing interface for TinyGPU surfaces." alt="" coords="5,168,153,193"/>
-<area shape="rect" href="classtinygpu_1_1Surface.html" title=" " alt="" coords="177,168,331,193"/>
-<area shape="rect" href="classtinygpu_1_1SurfaceBase.html" title="Base class for 2D surfaces with drawing and text rendering support." alt="" coords="168,93,340,119"/>
-<area shape="rect" href="classtinygpu_1_1ISurface.html" title=" " alt="" coords="25,5,169,31"/>
-<area shape="rect" href="classtinygpu_1_1IFont.html" title=" " alt="" coords="193,5,315,31"/>
-<area shape="rect" href="classtinygpu_1_1LinePrinter.html" title=" " alt="" coords="340,5,501,31"/>
+<area shape="rect" title="Framebuffer with sprite placement and background restoration support." alt="" coords="172,269,336,309"/>
+<area shape="rect" href="classtinygpu_1_1ISurface.html" title="Abstract framebuffer and drawing interface for TinyGPU surfaces." alt="" coords="5,181,153,207"/>
+<area shape="rect" href="classtinygpu_1_1Surface.html" title=" " alt="" coords="177,181,331,207"/>
+<area shape="rect" href="classtinygpu_1_1SurfaceBase.html" title="Base class for 2D surfaces with drawing and text rendering support." alt="" coords="155,93,327,119"/>
+<area shape="rect" href="classtinygpu_1_1ISurface.html" title=" " alt="" coords="11,5,155,31"/>
+<area shape="rect" href="classtinygpu_1_1IFont.html" title=" " alt="" coords="179,5,302,31"/>
+<area shape="rect" href="classtinygpu_1_1LinePrinter.html" title=" " alt="" coords="327,5,488,31"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="358,181,457,207"/>
+<area shape="rect" href="structtinygpu_1_1CalibrationData.html" title="Touch calibration configuration." alt="" coords="351,93,475,119"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -133,6 +135,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a64e9fa75beda50a9e8400ee0d4e61984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a64e9fa75beda50a9e8400ee0d4e61984">end</a> () override</td></tr>
 <tr class="memdesc:a64e9fa75beda50a9e8400ee0d4e61984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the framebuffer and releases resources.  <br /></td></tr>
 <tr class="separator:a64e9fa75beda50a9e8400ee0d4e61984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6103b16badc3358b15461548955123c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a6103b16badc3358b15461548955123c7">setTouchDriver</a> (<a class="el" href="classtinygpu_1_1TouchDriver.html">TouchDriver</a> &amp;touch)</td></tr>
+<tr class="separator:a6103b16badc3358b15461548955123c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c6402c0d5bb45f8ec3b1bf2bc86607a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a9c6402c0d5bb45f8ec3b1bf2bc86607a">addSprite</a> (size_t x, size_t y, const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;sprite, RGB_T invisibleColor=RGB_T(0))</td></tr>
 <tr class="memdesc:a9c6402c0d5bb45f8ec3b1bf2bc86607a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a sprite to the framebuffer and draws it at the given position.  <br /></td></tr>
 <tr class="separator:a9c6402c0d5bb45f8ec3b1bf2bc86607a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,6 +146,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae8632d9ae2f14bea74acda41f235c605"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#ae8632d9ae2f14bea74acda41f235c605">removeSprite</a> (<a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &amp;spriteInfo)</td></tr>
 <tr class="memdesc:ae8632d9ae2f14bea74acda41f235c605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a sprite and restores the pixels behind it.  <br /></td></tr>
 <tr class="separator:ae8632d9ae2f14bea74acda41f235c605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cab9f7746f1f1d0ac5e6f98fbfc9c01"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a2cab9f7746f1f1d0ac5e6f98fbfc9c01">getSprite</a> (size_t x, size_t y)</td></tr>
+<tr class="memdesc:a2cab9f7746f1f1d0ac5e6f98fbfc9c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the sprite at the given position, if any.  <br /></td></tr>
+<tr class="separator:a2cab9f7746f1f1d0ac5e6f98fbfc9c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4adbd8f94608f38d8af8a05a8c644f06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a4adbd8f94608f38d8af8a05a8c644f06">moveSprite</a> (<a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &amp;spriteInfo, size_t newX, size_t newY)</td></tr>
 <tr class="memdesc:a4adbd8f94608f38d8af8a05a8c644f06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves a sprite to a new position and redraws it.  <br /></td></tr>
 <tr class="separator:a4adbd8f94608f38d8af8a05a8c644f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -226,6 +233,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7207813f3d66f29cebe7247a24bb5ee4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a7207813f3d66f29cebe7247a24bb5ee4">setData</a> (uint8_t *<a class="el" href="classtinygpu_1_1FrameBuffer.html#a954524202998581e636b371957f628c5">data</a>, size_t dataSize)</td></tr>
 <tr class="memdesc:a7207813f3d66f29cebe7247a24bb5ee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the framebuffer pixel data directly, replacing the current content.  <br /></td></tr>
 <tr class="separator:a7207813f3d66f29cebe7247a24bb5ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ab689700d49d3a4e427a72cb704790f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a4ab689700d49d3a4e427a72cb704790f">contains</a> (size_t x, size_t y) override</td></tr>
+<tr class="memdesc:a4ab689700d49d3a4e427a72cb704790f"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if the given coordinates are within the surface bounds.  <br /></td></tr>
+<tr class="separator:a4ab689700d49d3a4e427a72cb704790f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2742a681a2e469d920945fdf48e842f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#ab2742a681a2e469d920945fdf48e842f">processTouch</a> ()</td></tr>
+<tr class="memdesc:ab2742a681a2e469d920945fdf48e842f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes touch input and dispatches events to sprites if touched.  <br /></td></tr>
+<tr class="separator:ab2742a681a2e469d920945fdf48e842f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtinygpu_1_1ISurface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinygpu_1_1ISurface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinygpu_1_1ISurface.html">ISurface&lt; RGB_T &gt;</a></td></tr>
 <tr class="memitem:a09eda0603dcc9eb48e0fd1451fa00530 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a09eda0603dcc9eb48e0fd1451fa00530">~ISurface</a> ()=default</td></tr>
 <tr class="memdesc:a09eda0603dcc9eb48e0fd1451fa00530 inherit pub_methods_classtinygpu_1_1ISurface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the framebuffer interface.  <br /></td></tr>
@@ -293,6 +306,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa983ddaeded5756189f46428be79c631 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#aa983ddaeded5756189f46428be79c631">size</a> () const =0</td></tr>
 <tr class="memdesc:aa983ddaeded5756189f46428be79c631 inherit pub_methods_classtinygpu_1_1ISurface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the total data size in bytes.  <br /></td></tr>
 <tr class="separator:aa983ddaeded5756189f46428be79c631 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c4b758f1438899cad34cea53b2e94c3 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a6c4b758f1438899cad34cea53b2e94c3">contains</a> (size_t x, size_t y)=0</td></tr>
+<tr class="memdesc:a6c4b758f1438899cad34cea53b2e94c3 inherit pub_methods_classtinygpu_1_1ISurface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given coordinates are within the surface bounds.  <br /></td></tr>
+<tr class="separator:a6c4b758f1438899cad34cea53b2e94c3 inherit pub_methods_classtinygpu_1_1ISurface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -327,7 +343,6 @@ Static Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a131e259a755ee5a7c9a3030f840d359a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the rectangle is empty (zero width or height).  <br /></td></tr>
 <tr class="separator:a131e259a755ee5a7c9a3030f840d359a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61af73a50c5a6adedee9c5509fd65781"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a61af73a50c5a6adedee9c5509fd65781">centeredCoordinate</a> (size_t oldPosition, size_t oldSize, size_t newSize)</td></tr>
-<tr class="memdesc:a61af73a50c5a6adedee9c5509fd65781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the coordinate to center a new size over an old position/size.  <br /></td></tr>
 <tr class="separator:a61af73a50c5a6adedee9c5509fd65781"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af15c2b0af9a4fa699233e4d48b906b98"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#af15c2b0af9a4fa699233e4d48b906b98">copySpriteRegion</a> (const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;source, size_t sourceX, size_t sourceY, <a class="el" href="classtinygpu_1_1Surface.html">Surface</a>&lt; RGB_T &gt; &amp;destination, size_t destX, size_t destY, size_t <a class="el" href="classtinygpu_1_1FrameBuffer.html#ac39656d862f5a4a39182559bbf7c740b">width</a>, size_t <a class="el" href="classtinygpu_1_1FrameBuffer.html#a715f3df3dc638de8b40076ada0b54a89">height</a>)</td></tr>
 <tr class="separator:af15c2b0af9a4fa699233e4d48b906b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -341,6 +356,8 @@ Static Protected Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a2936dcfac6f9b6e4caf774b1cfd54acd"><td class="memItemLeft" align="right" valign="top">SurfaceT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a2936dcfac6f9b6e4caf774b1cfd54acd">surface_</a></td></tr>
 <tr class="separator:a2936dcfac6f9b6e4caf774b1cfd54acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dfde9b08f1d8bd92bafb870cf0c6be0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1TouchDriver.html">TouchDriver</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a9dfde9b08f1d8bd92bafb870cf0c6be0">p_touchDriver</a> = nullptr</td></tr>
+<tr class="separator:a9dfde9b08f1d8bd92bafb870cf0c6be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a543b7e1fcae53f0fb2b627f99996d398"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinygpu.html#a81fe4d2f62958ae48f36d6a3beb16bb1">Vector</a>&lt; std::unique_ptr&lt; <a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1FrameBuffer.html#a543b7e1fcae53f0fb2b627f99996d398">sprites_</a></td></tr>
 <tr class="separator:a543b7e1fcae53f0fb2b627f99996d398"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -782,7 +799,6 @@ class tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;</div><p>Framebuffer with spr
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>Calculates the coordinate to center a new size over an old position/size. </p>
 
 </div>
@@ -866,6 +882,46 @@ class tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;</div><p>Framebuffer with spr
 <p>Clears a sprite. </p>
 
 <p>Implements <a class="el" href="classtinygpu_1_1ISurface.html#a6e85b84b03805b5907d87d94fe597185">ISurface&lt; RGB_T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a4ab689700d49d3a4e427a72cb704790f" name="a4ab689700d49d3a4e427a72cb704790f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ab689700d49d3a4e427a72cb704790f">&#9670;&#160;</a></span>contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool contains </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>checks if the given coordinates are within the surface bounds. </p>
+
+<p>Implements <a class="el" href="classtinygpu_1_1ISurface.html#a6c4b758f1438899cad34cea53b2e94c3">ISurface&lt; RGB_T &gt;</a>.</p>
 
 </div>
 </div>
@@ -1673,6 +1729,44 @@ class tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;</div><p>Framebuffer with spr
 
 </div>
 </div>
+<a id="a2cab9f7746f1f1d0ac5e6f98fbfc9c01" name="a2cab9f7746f1f1d0ac5e6f98fbfc9c01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cab9f7746f1f1d0ac5e6f98fbfc9c01">&#9670;&#160;</a></span>getSprite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="structtinygpu_1_1FrameBuffer_1_1SpriteInfo.html">SpriteInfo</a> &amp; &gt; getSprite </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the sprite at the given position, if any. </p>
+
+</div>
+</div>
 <a id="a715f3df3dc638de8b40076ada0b54a89" name="a715f3df3dc638de8b40076ada0b54a89"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a715f3df3dc638de8b40076ada0b54a89">&#9670;&#160;</a></span>height()</h2>
 
@@ -1874,6 +1968,33 @@ class tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;</div><p>Framebuffer with spr
 </div><div class="memdoc">
 
 <p>Moves a sprite to a new position and redraws it. </p>
+
+</div>
+</div>
+<a id="ab2742a681a2e469d920945fdf48e842f" name="ab2742a681a2e469d920945fdf48e842f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2742a681a2e469d920945fdf48e842f">&#9670;&#160;</a></span>processTouch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void processTouch </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Processes touch input and dispatches events to sprites if touched. </p>
 
 </div>
 </div>
@@ -2381,6 +2502,32 @@ class tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;</div><p>Framebuffer with spr
 
 </div>
 </div>
+<a id="a6103b16badc3358b15461548955123c7" name="a6103b16badc3358b15461548955123c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6103b16badc3358b15461548955123c7">&#9670;&#160;</a></span>setTouchDriver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setTouchDriver </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtinygpu_1_1TouchDriver.html">TouchDriver</a> &amp;&#160;</td>
+          <td class="paramname"><em>touch</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad7701a09a964eab360a8e51fa7ad2c16" name="ad7701a09a964eab360a8e51fa7ad2c16"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad7701a09a964eab360a8e51fa7ad2c16">&#9670;&#160;</a></span>size()</h2>
 
@@ -2440,6 +2587,28 @@ class tinygpu::FrameBuffer&lt; RGB_T, SurfaceT &gt;</div><p>Framebuffer with spr
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a9dfde9b08f1d8bd92bafb870cf0c6be0" name="a9dfde9b08f1d8bd92bafb870cf0c6be0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dfde9b08f1d8bd92bafb870cf0c6be0">&#9670;&#160;</a></span>p_touchDriver</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtinygpu_1_1TouchDriver.html">TouchDriver</a>* p_touchDriver = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a543b7e1fcae53f0fb2b627f99996d398" name="a543b7e1fcae53f0fb2b627f99996d398"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a543b7e1fcae53f0fb2b627f99996d398">&#9670;&#160;</a></span>sprites_</h2>
 

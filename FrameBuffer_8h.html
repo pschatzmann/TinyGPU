@@ -83,42 +83,49 @@ $(function() {
 <code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;cstring&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;optional&gt;</code><br />
 <code>#include &quot;<a class="el" href="Surface_8h_source.html">Surface.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Vector_8h_source.html">TinyGPU/Vector.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TinyGPUConfig_8h_source.html">TinyGPUConfig.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TinyGPULogger_8h_source.html">TinyGPULogger.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TouchDriver_8h_source.html">TouchDriver.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for FrameBuffer.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="FrameBuffer_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2FrameBuffer_8h" alt=""/></div>
 <map name="asrc_2TinyGPU_2FrameBuffer_8h" id="asrc_2TinyGPU_2FrameBuffer_8h">
-<area shape="rect" title=" " alt="" coords="1131,5,1327,31"/>
-<area shape="rect" title=" " alt="" coords="93,225,179,251"/>
-<area shape="rect" title=" " alt="" coords="1233,79,1295,104"/>
-<area shape="rect" title=" " alt="" coords="1320,79,1387,104"/>
-<area shape="rect" title=" " alt="" coords="1411,79,1488,104"/>
-<area shape="rect" href="Surface_8h.html" title=" " alt="" coords="531,79,613,104"/>
-<area shape="rect" href="TinyGPUConfig_8h.html" title=" " alt="" coords="1275,152,1405,177"/>
-<area shape="rect" href="Vector_8h.html" title=" " alt="" coords="1115,152,1250,177"/>
-<area shape="rect" href="TinyGPULogger_8h.html" title=" " alt="" coords="1512,79,1645,104"/>
-<area shape="rect" title=" " alt="" coords="763,445,837,471"/>
-<area shape="rect" title=" " alt="" coords="470,445,541,471"/>
-<area shape="rect" title=" " alt="" coords="299,152,370,177"/>
-<area shape="rect" href="BGR565_8h.html" title=" " alt="" coords="757,372,843,397"/>
-<area shape="rect" href="BitmapFont_8h.html" title=" " alt="" coords="689,225,799,251"/>
-<area shape="rect" href="RGB565_8h.html" title=" " alt="" coords="594,372,681,397"/>
-<area shape="rect" href="RGB888_8h.html" title=" " alt="" coords="867,372,954,397"/>
-<area shape="rect" href="IFont_8h.html" title=" " alt="" coords="488,299,555,324"/>
-<area shape="rect" href="ISurface_8h.html" title=" " alt="" coords="377,299,463,324"/>
-<area shape="rect" href="LinePrinter_8h.html" title=" " alt="" coords="305,225,407,251"/>
-<area shape="rect" href="RGB666_8h.html" title=" " alt="" coords="330,372,417,397"/>
-<area shape="rect" href="SurfaceBase_8h.html" title=" " alt="" coords="395,152,509,177"/>
-<area shape="rect" title=" " alt="" coords="883,299,939,324"/>
-<area shape="rect" title=" " alt="" coords="293,299,352,324"/>
-<area shape="rect" title=" " alt="" coords="1151,225,1214,251"/>
-<area shape="rect" href="PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="1241,225,1439,251"/>
-<area shape="rect" title=" " alt="" coords="1506,152,1577,177"/>
-<area shape="rect" title=" " alt="" coords="1601,152,1663,177"/>
+<area shape="rect" title=" " alt="" coords="619,5,815,31"/>
+<area shape="rect" title=" " alt="" coords="43,225,128,251"/>
+<area shape="rect" title=" " alt="" coords="350,79,413,104"/>
+<area shape="rect" title=" " alt="" coords="437,79,504,104"/>
+<area shape="rect" title=" " alt="" coords="528,79,605,104"/>
+<area shape="rect" title=" " alt="" coords="629,79,704,104"/>
+<area shape="rect" href="Surface_8h.html" title=" " alt="" coords="728,79,811,104"/>
+<area shape="rect" href="TinyGPUConfig_8h.html" title=" " alt="" coords="1152,152,1283,177"/>
+<area shape="rect" href="Vector_8h.html" title=" " alt="" coords="993,152,1127,177"/>
+<area shape="rect" href="TinyGPULogger_8h.html" title=" " alt="" coords="1276,79,1409,104"/>
+<area shape="rect" href="TouchDriver_8h.html" title=" " alt="" coords="1526,79,1637,104"/>
+<area shape="rect" title=" " alt="" coords="401,445,476,471"/>
+<area shape="rect" title=" " alt="" coords="782,445,853,471"/>
+<area shape="rect" title=" " alt="" coords="94,152,165,177"/>
+<area shape="rect" href="BGR565_8h.html" title=" " alt="" coords="609,372,695,397"/>
+<area shape="rect" href="BitmapFont_8h.html" title=" " alt="" coords="617,225,727,251"/>
+<area shape="rect" href="RGB565_8h.html" title=" " alt="" coords="395,372,482,397"/>
+<area shape="rect" href="RGB888_8h.html" title=" " alt="" coords="719,372,806,397"/>
+<area shape="rect" href="IFont_8h.html" title=" " alt="" coords="221,299,288,324"/>
+<area shape="rect" href="ISurface_8h.html" title=" " alt="" coords="395,299,482,324"/>
+<area shape="rect" href="LinePrinter_8h.html" title=" " alt="" coords="374,225,477,251"/>
+<area shape="rect" href="RGB666_8h.html" title=" " alt="" coords="830,372,917,397"/>
+<area shape="rect" href="SurfaceBase_8h.html" title=" " alt="" coords="428,152,543,177"/>
+<area shape="rect" title=" " alt="" coords="709,299,765,324"/>
+<area shape="rect" title=" " alt="" coords="312,299,371,324"/>
+<area shape="rect" title=" " alt="" coords="1094,225,1157,251"/>
+<area shape="rect" href="PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="1181,225,1379,251"/>
+<area shape="rect" title=" " alt="" coords="1307,152,1378,177"/>
+<area shape="rect" title=" " alt="" coords="1403,152,1464,177"/>
+<area shape="rect" title=" " alt="" coords="1539,152,1623,177"/>
+<area shape="rect" title=" " alt="" coords="1647,152,1702,177"/>
+<area shape="rect" title=" " alt="" coords="1727,152,1791,177"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
