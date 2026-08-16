@@ -147,7 +147,9 @@ class SpriteDisplay {
       return;
     }
 
-    clearSprite(sprite.x, sprite.y, sprite.currentSprite());
+    if (is_clear_on_sprite_move) {
+      clearSprite(sprite.x, sprite.y, sprite.currentSprite());
+    }
 
     sprite.x = newX;
     sprite.y = newY;
@@ -212,7 +214,14 @@ class SpriteDisplay {
     }
   }
 
+  /// Fills/clears the entire display with the specified color.
   void fillScreen(RGB_T color) { driver_.writeColor(width_, height_, color); }
+
+  /// Activates/deactivates the automatic clearing when we move a sprite
+  void setClearOnSpriteMove(bool clear) { is_clear_on_sprite_move = clear; }
+
+  /// Returns whether the automatic clearing is active when we move a sprite
+  bool isClearOnSpriteMove() const { return is_clear_on_sprite_move; }
 
  protected:
   DisplayDriver<RGB_T>& driver_;
@@ -223,6 +232,7 @@ class SpriteDisplay {
   RGB_T backgroundColor_;
   Vector<std::unique_ptr<SpriteInfo<RGB_T, Surface<RGB_T>>>> sprites_;
   BitmapFont<RGB_T> defaultFont_;
+  bool is_clear_on_sprite_move = true;
 
   /// Helper to calculate centered coordinate when scaling/rotating
   static size_t centeredCoordinate(size_t pos, size_t oldDim, size_t newDim) {
