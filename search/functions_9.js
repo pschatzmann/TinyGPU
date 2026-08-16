@@ -5,6 +5,5 @@ var searchData=
   ['lineprinter_2',['LinePrinter',['../classtinygpu_1_1LinePrinter.html#a0246f76c92171538686626e0d45e9cfd',1,'tinygpu::LinePrinter::LinePrinter()=default'],['../classtinygpu_1_1LinePrinter.html#adce48658f8a261ef44692cf3f4c8fad4',1,'tinygpu::LinePrinter::LinePrinter(IFont&lt; RGB_T &gt; &amp;font, ISurface&lt; RGB_T &gt; &amp;target)']]],
   ['log_3',['log',['../classtinygpu_1_1TinyGPULoggerClass.html#a62783368bc9a6a5713893e15ef77ce12',1,'tinygpu::TinyGPULoggerClass']]],
   ['lookat_4',['lookAt',['../classtinygpu_1_1WireFrame3D.html#a0a111a0696175e9d3fdfbe66406ace1e',1,'tinygpu::WireFrame3D']]],
-  ['lvgl_5ftgpu_5foutput_5fflush_5fcb_5',['lvgl_tgpu_output_flush_cb',['../LVGLDriver_8h.html#a97ca36c3ffbb07dc421dcd28aea97e83',1,'LVGLDriver.h']]],
-  ['lvgldriver_6',['LVGLDriver',['../classLVGLDriver.html#a25871a98eace74b2201915b52950c33f',1,'LVGLDriver']]]
+  ['lvgldriver_5',['LVGLDriver',['../classLVGLDriver.html#a4b67614b235306686d457cb2a6fb384f',1,'LVGLDriver']]]
 ];

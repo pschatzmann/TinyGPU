@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyGPU: LVGLDriver Class Reference</title>
+<title>TinyGPU: LVGLDriver&lt; RGB_T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,7 +76,7 @@ $(function() {
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classLVGLDriver-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">LVGLDriver Class Reference</div></div>
+  <div class="headertitle"><div class="title">LVGLDriver&lt; RGB_T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -84,11 +84,23 @@ $(function() {
  <a href="classLVGLDriver.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="LVGLDriver_8h_source.html">LVGLDriver.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for LVGLDriver&lt; RGB_T &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="classLVGLDriver__coll__graph.png" border="0" usemap="#aLVGLDriver_3_01RGB__T_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="aLVGLDriver_3_01RGB__T_01_4_coll__map" id="aLVGLDriver_3_01RGB__T_01_4_coll__map">
+<area shape="rect" title="LVGLDriver is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the displ..." alt="" coords="29,331,195,356"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriverSPI.html" title=" " alt="" coords="5,243,219,268"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title="Abstract base class for display drivers." alt="" coords="20,168,204,193"/>
+<area shape="rect" href="classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="23,80,201,105"/>
+<area shape="rect" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="49,5,175,31"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a25871a98eace74b2201915b52950c33f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a25871a98eace74b2201915b52950c33f">LVGLDriver</a> (DisplayDriverSPI &amp;<a class="el" href="classLVGLDriver.html#a3c858790f27679454883b95e55112ca3">driver</a>, size_t x, size_t y, size_t bufferSize=0)</td></tr>
-<tr class="separator:a25871a98eace74b2201915b52950c33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b67614b235306686d457cb2a6fb384f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a4b67614b235306686d457cb2a6fb384f">LVGLDriver</a> (DisplayDriverSPI&lt; RGB_T &gt; &amp;<a class="el" href="classLVGLDriver.html#ac054834b1720d033f137960b790a6c78">driver</a>, size_t x, size_t y, size_t bufferSize=0)</td></tr>
+<tr class="separator:a4b67614b235306686d457cb2a6fb384f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a601fb7cf1fc15db50c71a826f084f934"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a601fb7cf1fc15db50c71a826f084f934">begin</a> ()</td></tr>
 <tr class="separator:a601fb7cf1fc15db50c71a826f084f934"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf81d3fdaf258088d7692fa70cece087"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#aaf81d3fdaf258088d7692fa70cece087">end</a> ()</td></tr>
@@ -102,13 +114,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a62ce61b6b38d09e07f4d38d53812c594"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acddc765d7e545f10ac0d543690950d90"><td class="memItemLeft" align="right" valign="top">TouchDriver &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#acddc765d7e545f10ac0d543690950d90">touchDriver</a> ()</td></tr>
 <tr class="separator:acddc765d7e545f10ac0d543690950d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22021c2a33317d72b703e41ee672a063"><td class="memItemLeft" align="right" valign="top">DisplayDriverSPI &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a22021c2a33317d72b703e41ee672a063">getDriver</a> ()</td></tr>
-<tr class="separator:a22021c2a33317d72b703e41ee672a063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb3f66e48746fc15da999f216070169b"><td class="memItemLeft" align="right" valign="top">DisplayDriverSPI&lt; RGB_T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#abb3f66e48746fc15da999f216070169b">getDriver</a> ()</td></tr>
+<tr class="separator:abb3f66e48746fc15da999f216070169b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae918fb05758409bad3622a9fd6305428"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#ae918fb05758409bad3622a9fd6305428">display</a> (lv_display_t *<a class="el" href="classLVGLDriver.html#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a>, const lv_area_t *area, uint8_t *px_map)</td></tr>
 <tr class="separator:ae918fb05758409bad3622a9fd6305428"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa10377079aa3f1c8ee552d457e49c8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a2fa10377079aa3f1c8ee552d457e49c8">setGamma</a> (float gammaR, float gammaG, float gammaB)</td></tr>
+<tr class="separator:a2fa10377079aa3f1c8ee552d457e49c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -122,13 +136,21 @@ Protected Member Functions</h2></td></tr>
 Static Protected Member Functions</h2></td></tr>
 <tr class="memitem:afcf78f3684505b04e577ff51a3cd9e4c"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#afcf78f3684505b04e577ff51a3cd9e4c">my_tick</a> (void)</td></tr>
 <tr class="separator:afcf78f3684505b04e577ff51a3cd9e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f155127f2d86a524243d8ffa9e4c739"><td class="memItemLeft" align="right" valign="top">static GammaTable &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a6f155127f2d86a524243d8ffa9e4c739">gammaR_</a> ()</td></tr>
+<tr class="separator:a6f155127f2d86a524243d8ffa9e4c739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0421139233f6eb0d87182a2a13ecc18d"><td class="memItemLeft" align="right" valign="top">static GammaTable &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a0421139233f6eb0d87182a2a13ecc18d">gammaG_</a> ()</td></tr>
+<tr class="separator:a0421139233f6eb0d87182a2a13ecc18d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b48c43d188c7557f9b3432b53956073"><td class="memItemLeft" align="right" valign="top">static GammaTable &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a3b48c43d188c7557f9b3432b53956073">gammaB_</a> ()</td></tr>
+<tr class="separator:a3b48c43d188c7557f9b3432b53956073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2635e23cb4e102ea99befce3a80bdf1c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a2635e23cb4e102ea99befce3a80bdf1c">convertBuffer</a> (uint8_t *px_map, size_t pixelCount)</td></tr>
+<tr class="separator:a2635e23cb4e102ea99befce3a80bdf1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a93f24bf6f93b1c0759e31ab91f47ebc6"><td class="memItemLeft" align="right" valign="top">Vector&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a93f24bf6f93b1c0759e31ab91f47ebc6">buf_1</a></td></tr>
 <tr class="separator:a93f24bf6f93b1c0759e31ab91f47ebc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c858790f27679454883b95e55112ca3"><td class="memItemLeft" align="right" valign="top">DisplayDriverSPI *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a3c858790f27679454883b95e55112ca3">driver</a> = nullptr</td></tr>
-<tr class="separator:a3c858790f27679454883b95e55112ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac054834b1720d033f137960b790a6c78"><td class="memItemLeft" align="right" valign="top">DisplayDriverSPI&lt; RGB_T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#ac054834b1720d033f137960b790a6c78">driver</a> = nullptr</td></tr>
+<tr class="separator:ac054834b1720d033f137960b790a6c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d61ad4e4f51f862ac50c8c777b2e656"><td class="memItemLeft" align="right" valign="top">TouchDriver *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a0d61ad4e4f51f862ac50c8c777b2e656">touch_driver</a> = nullptr</td></tr>
 <tr class="separator:a0d61ad4e4f51f862ac50c8c777b2e656"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a647e5f267167a38dcd0e6fe55dfcfc61"><td class="memItemLeft" align="right" valign="top">lv_display_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a> = nullptr</td></tr>
@@ -141,10 +163,17 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a79d97d675587635bfab264086d23e79e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classLVGLDriver.html" title="LVGLDriver is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the displ...">LVGLDriver</a> is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the display buffer and flush callback for LVGL. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename RGB_T = RGB565&gt;<br />
+class LVGLDriver&lt; RGB_T &gt;</div><p><a class="el" href="classLVGLDriver.html" title="LVGLDriver is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the displ...">LVGLDriver</a> is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the display buffer and flush callback for LVGL. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RGB_T</td><td>The pixel format LVGL's rendered output is converted to before transmission. Defaults to RGB565, matching LVGL's own internal RGB565 color format exactly (a no-op conversion). Use RBG565 for panels whose controller routes the green/blue data fields to the wrong physical subpixels (colors come out with green and blue swapped) - see <a class="el" href="RBG565_8h.html">RBG565.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a25871a98eace74b2201915b52950c33f" name="a25871a98eace74b2201915b52950c33f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25871a98eace74b2201915b52950c33f">&#9670;&#160;</a></span>LVGLDriver()</h2>
+<a id="a4b67614b235306686d457cb2a6fb384f" name="a4b67614b235306686d457cb2a6fb384f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b67614b235306686d457cb2a6fb384f">&#9670;&#160;</a></span>LVGLDriver()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,7 +184,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classLVGLDriver.html">LVGLDriver</a> </td>
           <td>(</td>
-          <td class="paramtype">DisplayDriverSPI &amp;&#160;</td>
+          <td class="paramtype">DisplayDriverSPI&lt; RGB_T &gt; &amp;&#160;</td>
           <td class="paramname"><em>driver</em>, </td>
         </tr>
         <tr>
@@ -214,6 +243,43 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2635e23cb4e102ea99befce3a80bdf1c" name="a2635e23cb4e102ea99befce3a80bdf1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2635e23cb4e102ea99befce3a80bdf1c">&#9670;&#160;</a></span>convertBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void convertBuffer </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>px_map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>pixelCount</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Converts a buffer LVGL packed as RGB565 into RGB_T's own bit layout, applying per-channel gamma correction (see <a class="el" href="classLVGLDriver.html#a2fa10377079aa3f1c8ee552d457e49c8">setGamma()</a>), in place. Each pixel is decoded with RGB565's semantics (what LVGL actually wrote), gamma corrected, and re-encoded via RGB_T::fromRGB(), so RGB_T's own compensation (if any) is genuinely applied regardless of how RGB_T's constructor happens to order its arguments. </p>
 
 </div>
 </div>
@@ -346,8 +412,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a22021c2a33317d72b703e41ee672a063" name="a22021c2a33317d72b703e41ee672a063"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22021c2a33317d72b703e41ee672a063">&#9670;&#160;</a></span>getDriver()</h2>
+<a id="a3b48c43d188c7557f9b3432b53956073" name="a3b48c43d188c7557f9b3432b53956073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b48c43d188c7557f9b3432b53956073">&#9670;&#160;</a></span>gammaB_()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -356,7 +422,82 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">DisplayDriverSPI &amp; getDriver </td>
+          <td class="memname">static GammaTable &amp; gammaB_ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0421139233f6eb0d87182a2a13ecc18d" name="a0421139233f6eb0d87182a2a13ecc18d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0421139233f6eb0d87182a2a13ecc18d">&#9670;&#160;</a></span>gammaG_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static GammaTable &amp; gammaG_ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f155127f2d86a524243d8ffa9e4c739" name="a6f155127f2d86a524243d8ffa9e4c739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f155127f2d86a524243d8ffa9e4c739">&#9670;&#160;</a></span>gammaR_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static GammaTable &amp; gammaR_ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abb3f66e48746fc15da999f216070169b" name="abb3f66e48746fc15da999f216070169b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb3f66e48746fc15da999f216070169b">&#9670;&#160;</a></span>getDriver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DisplayDriverSPI&lt; RGB_T &gt; &amp; getDriver </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -422,6 +563,50 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2fa10377079aa3f1c8ee552d457e49c8" name="a2fa10377079aa3f1c8ee552d457e49c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fa10377079aa3f1c8ee552d457e49c8">&#9670;&#160;</a></span>setGamma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void setGamma </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gammaR</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gammaG</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gammaB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Applies independent per-channel gamma correction to every color LVGL renders, before RGB_T's own field layout/compensation is applied. gammaR=gammaG=gammaB=1.0 (the default) applies no correction.</p>
+<p>This is deliberately per-channel rather than one shared curve: some panels show a visible color tint in near-black/grey tones even with correct field compensation, because the panel's red/green/blue subpixels have different non-linear responses at low brightness. A single gamma applied equally to R, G and B can only ever change overall brightness - if R=G=B going in, the same curve on all three still gives R=G=B going out, so it mathematically cannot fix a hue tint in grey tones. Independent per-channel curves can, by deliberately un-balancing a grey input to counteract the panel's own imbalance. There's no single correct set of values for an unknown/ undocumented panel - try values on both sides of 1.0 per channel and compare on real hardware. See <a class="el" href="GammaTable_8h.html">GammaTable.h</a>. </p>
 
 </div>
 </div>
@@ -616,8 +801,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a3c858790f27679454883b95e55112ca3" name="a3c858790f27679454883b95e55112ca3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c858790f27679454883b95e55112ca3">&#9670;&#160;</a></span>driver</h2>
+<a id="ac054834b1720d033f137960b790a6c78" name="ac054834b1720d033f137960b790a6c78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac054834b1720d033f137960b790a6c78">&#9670;&#160;</a></span>driver</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -626,7 +811,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">DisplayDriverSPI* driver = nullptr</td>
+          <td class="memname">DisplayDriverSPI&lt;RGB_T&gt;* driver = nullptr</td>
         </tr>
       </table>
   </td>

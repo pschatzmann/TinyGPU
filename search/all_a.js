@@ -17,7 +17,6 @@ var searchData=
   ['log_14',['log',['../classtinygpu_1_1TinyGPULoggerClass.html#a62783368bc9a6a5713893e15ef77ce12',1,'tinygpu::TinyGPULoggerClass']]],
   ['longpressmindurationms_15',['longPressMinDurationMs',['../classtinygpu_1_1GestureDetector.html#aab8dfd0379d4afa4bbc4462e2eab1fa0',1,'tinygpu::GestureDetector']]],
   ['lookat_16',['lookAt',['../classtinygpu_1_1WireFrame3D.html#a0a111a0696175e9d3fdfbe66406ace1e',1,'tinygpu::WireFrame3D']]],
-  ['lvgl_5ftgpu_5foutput_5fflush_5fcb_17',['lvgl_tgpu_output_flush_cb',['../LVGLDriver_8h.html#a97ca36c3ffbb07dc421dcd28aea97e83',1,'LVGLDriver.h']]],
-  ['lvgldriver_18',['LVGLDriver',['../classLVGLDriver.html',1,'LVGLDriver'],['../classLVGLDriver.html#a25871a98eace74b2201915b52950c33f',1,'LVGLDriver::LVGLDriver()']]],
-  ['lvgldriver_2eh_19',['LVGLDriver.h',['../LVGLDriver_8h.html',1,'']]]
+  ['lvgldriver_17',['LVGLDriver',['../classLVGLDriver.html',1,'LVGLDriver&lt; RGB_T &gt;'],['../classLVGLDriver.html#a4b67614b235306686d457cb2a6fb384f',1,'LVGLDriver::LVGLDriver()']]],
+  ['lvgldriver_2eh_18',['LVGLDriver.h',['../LVGLDriver_8h.html',1,'']]]
 ];

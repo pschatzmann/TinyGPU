@@ -74,12 +74,13 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle"><div class="title">LVGLDriver.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="TinyGPU_8h_source.html">TinyGPU.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;type_traits&gt;</code><br />
+<code>#include &quot;<a class="el" href="GammaTable_8h_source.html">GammaTable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TinyGPU_8h_source.html">TinyGPU.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TouchDriver_8h_source.html">TouchDriver.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Vector_8h_source.html">Vector.h</a>&quot;</code><br />
 <code>#include &quot;lvgl.h&quot;</code><br />
@@ -88,56 +89,56 @@ Include dependency graph for LVGLDriver.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="LVGLDriver_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2LVGLDriver_8h" alt=""/></div>
 <map name="asrc_2TinyGPU_2LVGLDriver_8h" id="asrc_2TinyGPU_2LVGLDriver_8h">
-<area shape="rect" title=" " alt="" coords="3271,5,3459,31"/>
-<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="2864,79,2955,104"/>
-<area shape="rect" href="Vector_8h.html" title=" " alt="" coords="870,460,1005,485"/>
-<area shape="rect" href="TouchDriver_8h.html" title=" " alt="" coords="3766,460,3877,485"/>
-<area shape="rect" title=" " alt="" coords="3864,79,3923,104"/>
-<area shape="rect" href="TinyGPUConfig_8h.html" title=" " alt="" coords="1080,460,1211,485"/>
-<area shape="rect" href="PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="1820,533,2017,559"/>
-<area shape="rect" href="AVIWriter_8h.html" title=" " alt="" coords="3564,533,3719,559"/>
-<area shape="rect" href="BMPExporter_8h.html" title=" " alt="" coords="4070,533,4247,559"/>
-<area shape="rect" href="BMPParser_8h.html" title=" " alt="" coords="59,379,221,405"/>
-<area shape="rect" href="CartesianView_8h.html" title=" " alt="" coords="788,533,975,559"/>
-<area shape="rect" href="FrameBuffer_8h.html" title=" " alt="" coords="615,299,788,324"/>
-<area shape="rect" href="Surface_8h.html" title=" " alt="" coords="2100,379,2183,405"/>
-<area shape="rect" href="FrameBufferMonochrome_8h.html" title=" " alt="" coords="808,225,1067,251"/>
-<area shape="rect" href="SurfaceMonochrome_8h.html" title=" " alt="" coords="869,379,1037,405"/>
-<area shape="rect" href="SurfaceWithExternalBuffer_8h.html" title=" " alt="" coords="2758,372,2973,412"/>
-<area shape="rect" title=" " alt="" coords="3409,460,3484,485"/>
-<area shape="rect" href="WireFrame3D_8h.html" title=" " alt="" coords="1345,379,1527,405"/>
-<area shape="rect" href="TinyGPUGlobals_8h.html" title=" " alt="" coords="1806,152,2005,177"/>
-<area shape="rect" href="DeviceOutput_8h.html" title=" " alt="" coords="3559,460,3742,485"/>
-<area shape="rect" title=" " alt="" coords="1050,533,1113,559"/>
-<area shape="rect" title=" " alt="" coords="2179,753,2253,779"/>
-<area shape="rect" title=" " alt="" coords="2642,753,2713,779"/>
-<area shape="rect" href="ISurface_8h.html" title=" " alt="" coords="2282,607,2369,632"/>
-<area shape="rect" title=" " alt="" coords="3629,607,3693,632"/>
-<area shape="rect" href="RGB565_8h.html" title=" " alt="" coords="2238,680,2325,705"/>
-<area shape="rect" title=" " alt="" coords="1188,533,1273,559"/>
-<area shape="rect" href="IFont_8h.html" title=" " alt="" coords="1804,607,1871,632"/>
-<area shape="rect" title=" " alt="" coords="579,460,642,485"/>
-<area shape="rect" title=" " alt="" coords="555,379,621,405"/>
-<area shape="rect" title=" " alt="" coords="376,460,453,485"/>
-<area shape="rect" href="TinyGPULogger_8h.html" title=" " alt="" coords="245,379,379,405"/>
-<area shape="rect" href="SpriteInfo_8h.html" title=" " alt="" coords="646,379,743,405"/>
-<area shape="rect" title=" " alt="" coords="2494,460,2565,485"/>
-<area shape="rect" href="BGR565_8h.html" title=" " alt="" coords="2833,607,2919,632"/>
-<area shape="rect" href="BitmapFont_8h.html" title=" " alt="" coords="2727,533,2836,559"/>
-<area shape="rect" href="RGB888_8h.html" title=" " alt="" coords="3063,607,3150,632"/>
-<area shape="rect" href="LinePrinter_8h.html" title=" " alt="" coords="2245,533,2347,559"/>
-<area shape="rect" href="RGB666_8h.html" title=" " alt="" coords="2589,460,2675,485"/>
-<area shape="rect" href="SurfaceBase_8h.html" title=" " alt="" coords="1899,460,2013,485"/>
-<area shape="rect" title=" " alt="" coords="1588,607,1644,632"/>
-<area shape="rect" title=" " alt="" coords="195,460,266,485"/>
-<area shape="rect" title=" " alt="" coords="291,460,352,485"/>
-<area shape="rect" title=" " alt="" coords="3873,533,3957,559"/>
-<area shape="rect" title=" " alt="" coords="3794,533,3849,559"/>
-<area shape="rect" title=" " alt="" coords="3981,533,4045,559"/>
-<area shape="rect" title=" " alt="" coords="1387,460,1445,485"/>
-<area shape="rect" href="FixedBitmapFont_8h.html" title=" " alt="" coords="1399,533,1542,559"/>
-<area shape="rect" href="AsciiFonts_8h.html" title=" " alt="" coords="1571,460,1671,485"/>
-<area shape="rect" href="DisplayDriver_8h.html" title=" " alt="" coords="3367,533,3489,559"/>
+<area shape="rect" title=" " alt="" coords="359,5,547,31"/>
+<area shape="rect" title=" " alt="" coords="11,79,103,104"/>
+<area shape="rect" href="GammaTable_8h.html" title=" " alt="" coords="127,79,247,104"/>
+<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="1239,79,1330,104"/>
+<area shape="rect" href="Vector_8h.html" title=" " alt="" coords="1364,460,1499,485"/>
+<area shape="rect" href="TouchDriver_8h.html" title=" " alt="" coords="176,460,287,485"/>
+<area shape="rect" title=" " alt="" coords="1354,79,1413,104"/>
+<area shape="rect" title=" " alt="" coords="5,152,73,177"/>
+<area shape="rect" title=" " alt="" coords="2244,753,2315,779"/>
+<area shape="rect" href="TinyGPUConfig_8h.html" title=" " alt="" coords="1158,460,1289,485"/>
+<area shape="rect" href="PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="1222,533,1419,559"/>
+<area shape="rect" href="AVIWriter_8h.html" title=" " alt="" coords="3765,533,3919,559"/>
+<area shape="rect" href="BMPExporter_8h.html" title=" " alt="" coords="3944,533,4121,559"/>
+<area shape="rect" href="BMPParser_8h.html" title=" " alt="" coords="734,379,897,405"/>
+<area shape="rect" href="CartesianView_8h.html" title=" " alt="" coords="3503,533,3690,559"/>
+<area shape="rect" href="FrameBuffer_8h.html" title=" " alt="" coords="1623,299,1797,324"/>
+<area shape="rect" href="Surface_8h.html" title=" " alt="" coords="2358,379,2441,405"/>
+<area shape="rect" href="FrameBufferMonochrome_8h.html" title=" " alt="" coords="1239,225,1498,251"/>
+<area shape="rect" href="SurfaceMonochrome_8h.html" title=" " alt="" coords="971,379,1139,405"/>
+<area shape="rect" href="SurfaceWithExternalBuffer_8h.html" title=" " alt="" coords="3233,372,3448,412"/>
+<area shape="rect" title=" " alt="" coords="3229,460,3303,485"/>
+<area shape="rect" href="WireFrame3D_8h.html" title=" " alt="" coords="1164,379,1347,405"/>
+<area shape="rect" href="TinyGPUGlobals_8h.html" title=" " alt="" coords="2087,152,2285,177"/>
+<area shape="rect" href="DeviceOutput_8h.html" title=" " alt="" coords="311,460,493,485"/>
+<area shape="rect" title=" " alt="" coords="1444,533,1507,559"/>
+<area shape="rect" title=" " alt="" coords="2730,753,2805,779"/>
+<area shape="rect" href="ISurface_8h.html" title=" " alt="" coords="2408,607,2495,632"/>
+<area shape="rect" title=" " alt="" coords="3855,607,3919,632"/>
+<area shape="rect" href="RGB565_8h.html" title=" " alt="" coords="2276,680,2363,705"/>
+<area shape="rect" title=" " alt="" coords="1661,533,1746,559"/>
+<area shape="rect" href="IFont_8h.html" title=" " alt="" coords="2266,607,2333,632"/>
+<area shape="rect" title=" " alt="" coords="1523,460,1585,485"/>
+<area shape="rect" title=" " alt="" coords="1905,379,1971,405"/>
+<area shape="rect" title=" " alt="" coords="1711,460,1789,485"/>
+<area shape="rect" href="TinyGPULogger_8h.html" title=" " alt="" coords="1747,379,1881,405"/>
+<area shape="rect" href="SpriteInfo_8h.html" title=" " alt="" coords="1575,379,1672,405"/>
+<area shape="rect" title=" " alt="" coords="3133,460,3204,485"/>
+<area shape="rect" href="BGR565_8h.html" title=" " alt="" coords="3185,533,3272,559"/>
+<area shape="rect" href="BitmapFont_8h.html" title=" " alt="" coords="2847,460,2957,485"/>
+<area shape="rect" href="RGB888_8h.html" title=" " alt="" coords="2871,533,2957,559"/>
+<area shape="rect" href="LinePrinter_8h.html" title=" " alt="" coords="2489,533,2592,559"/>
+<area shape="rect" href="RGB666_8h.html" title=" " alt="" coords="2736,460,2823,485"/>
+<area shape="rect" href="SurfaceBase_8h.html" title=" " alt="" coords="2293,460,2407,485"/>
+<area shape="rect" title=" " alt="" coords="367,533,451,559"/>
+<area shape="rect" title=" " alt="" coords="288,533,343,559"/>
+<area shape="rect" title=" " alt="" coords="199,533,263,559"/>
+<area shape="rect" title=" " alt="" coords="974,460,1033,485"/>
+<area shape="rect" href="FixedBitmapFont_8h.html" title=" " alt="" coords="1967,533,2109,559"/>
+<area shape="rect" href="AsciiFonts_8h.html" title=" " alt="" coords="1965,460,2065,485"/>
+<area shape="rect" href="DisplayDriver_8h.html" title=" " alt="" coords="822,533,945,559"/>
 </map>
 </div>
 </div>
@@ -145,50 +146,10 @@ Include dependency graph for LVGLDriver.h:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html">LVGLDriver</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLVGLDriver.html">LVGLDriver&lt; RGB_T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classLVGLDriver.html" title="LVGLDriver is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the displ...">LVGLDriver</a> is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the display buffer and flush callback for LVGL.  <a href="classLVGLDriver.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a97ca36c3ffbb07dc421dcd28aea97e83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LVGLDriver_8h.html#a97ca36c3ffbb07dc421dcd28aea97e83">lvgl_tgpu_output_flush_cb</a> (lv_display_t *disp, const lv_area_t *area, uint8_t *px_map)</td></tr>
-<tr class="separator:a97ca36c3ffbb07dc421dcd28aea97e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a97ca36c3ffbb07dc421dcd28aea97e83" name="a97ca36c3ffbb07dc421dcd28aea97e83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97ca36c3ffbb07dc421dcd28aea97e83">&#9670;&#160;</a></span>lvgl_tgpu_output_flush_cb()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl_tgpu_output_flush_cb </td>
-          <td>(</td>
-          <td class="paramtype">lv_display_t *&#160;</td>
-          <td class="paramname"><em>disp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const lv_area_t *&#160;</td>
-          <td class="paramname"><em>area</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>px_map</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

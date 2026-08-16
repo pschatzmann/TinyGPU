@@ -119,6 +119,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:abd891da79a21755c98d7b21511ebdb98"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1BGR565.html#abd891da79a21755c98d7b21511ebdb98">fromRGB</a> (uint8_t r, uint8_t g, uint8_t b)</td></tr>
+<tr class="separator:abd891da79a21755c98d7b21511ebdb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e575c0e317caefa8c894561aeee5fba"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1BGR565.html#a3e575c0e317caefa8c894561aeee5fba">size</a> ()</td></tr>
 <tr class="memdesc:a3e575c0e317caefa8c894561aeee5fba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns size in bits.  <br /></td></tr>
 <tr class="separator:a3e575c0e317caefa8c894561aeee5fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,6 +234,49 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="abd891da79a21755c98d7b21511ebdb98" name="abd891da79a21755c98d7b21511ebdb98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd891da79a21755c98d7b21511ebdb98">&#9670;&#160;</a></span>fromRGB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a> fromRGB </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a color from semantic red/green/blue intensities, reordered to this class's own (b, g, r) constructor convention internally. Prefer this over the constructor in generic code that converts between pixel formats, where callers work with plain r, g, b and shouldn't need to know this class's field order. </p>
+
+</div>
+</div>
 <a id="a2bb2840fb3a0e87f4448f86c10098b63" name="a2bb2840fb3a0e87f4448f86c10098b63"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2bb2840fb3a0e87f4448f86c10098b63">&#9670;&#160;</a></span>getBlue()</h2>
 
