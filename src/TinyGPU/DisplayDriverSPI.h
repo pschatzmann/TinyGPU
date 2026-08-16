@@ -33,27 +33,37 @@ class DisplayDriverSPI : public DisplayDriver<RGB_T> {
 
   bool writeData(ISurface<RGB_T>& surface, size_t x, size_t y) override {
     static_assert(sizeof(RGB_T) == 2,
-                  "writeData's transfer16 loop assumes a 16bpp RGB_T");
+                  "writeData's byte-swap assumes a 16bpp RGB_T");
     setAddressWindow(x, y, surface.width(), surface.height());
     spi_.beginTransaction(SPISettings(frequencyHz_, MSBFIRST, SPI_MODE0));
     digitalWrite(dc_, HIGH);
     digitalWrite(cs_, LOW);
-    // Sent pixel-by-pixel via transfer16(), not as a raw byte-buffer
-    // write: SPIClass::transfer16() is part of the portable Arduino SPI
-    // API (available on every core, not just ESP32) and is specified to
-    // put the most significant byte on the wire first. A raw bulk write
-    // of the buffer's memory would instead send each pixel's bytes in
-    // the host's native (little-endian) order - low byte first - which
-    // is backwards from what the controller expects and corrupts color:
-    // it "rotates" saturated primary colors (only one field populated,
-    // so the corruption still lands roughly on a single field) while
-    // permanently tinting greys (all three fields populated, so the
-    // byte swap mixes bits across field boundaries with no clean fix at
-    // the pixel-format level).
-    const uint16_t* pixels = reinterpret_cast<const uint16_t*>(surface.data());
-    const size_t pixelCount = surface.size() / sizeof(uint16_t);
-    for (size_t i = 0; i < pixelCount; ++i) {
-      spi_.transfer16(pixels[i]);
+    // RGB_T values are stored in the buffer in the host's native
+    // (little-endian) byte order, but the panel expects each pixel's
+    // high byte first on the wire - sending the buffer's raw memory
+    // order corrupts color across field boundaries (see writePixels's
+    // history in git log for the symptom this caused). Byte-swapped
+    // through a small scratch buffer and sent with the portable bulk
+    // SPIClass::transfer(void*, size_t) - available on every core, not
+    // just ESP32 - rather than one SPIClass::transfer16() call per
+    // pixel, since transfer() lets the underlying implementation batch
+    // many bytes into fewer hardware transactions. Can't byte-swap the
+    // surface's own buffer in place and bulk-transfer that directly:
+    // transfer(buf, count) is full-duplex and overwrites buf with
+    // received data, which would corrupt the framebuffer itself.
+    constexpr size_t kChunkBytes = 256;
+    uint8_t chunk[kChunkBytes];
+    const uint8_t* src = surface.data();
+    size_t remaining = surface.size();
+    while (remaining > 0) {
+      const size_t n = remaining < kChunkBytes ? remaining : kChunkBytes;
+      for (size_t i = 0; i < n; i += 2) {
+        chunk[i] = src[i + 1];
+        chunk[i + 1] = src[i];
+      }
+      spi_.transfer(chunk, n);
+      src += n;
+      remaining -= n;
     }
     digitalWrite(cs_, HIGH);
     spi_.endTransaction();
