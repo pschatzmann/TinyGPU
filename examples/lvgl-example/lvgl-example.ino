@@ -15,27 +15,6 @@
  * All of it is touch-interactive through the CST816S capacitive touch
  * controller wired into LVGL's input device system by LVGLDriver.
  *
- * This panel's ILI9341-compatible controller doesn't honor the MADCTL
- * BGR/RGB bit per the datasheet, so colors come out with green and blue
- * swapped when sent as standard RGB565 (see RBG565.h). LVGLDriver is
- * templated on the pixel format it converts LVGL's rendered output to
- * before transmission, so using LVGLDriver<RBG565> (and ILI9341Driver
- * <RBG565> for the underlying SPI driver) corrects every LVGL-rendered
- * color - palette colors, hex colors, anti-aliased text edges - not just
- * colors constructed directly in application code. If your board doesn't
- * have this quirk, use plain RGB565/LVGLDriver<> (RGB565 is the default)
- * instead. Confirmed on real hardware: well-saturated colors (the palette
- * colors used below) render correctly with just this field compensation.
- *
- * Near-black/grey tones can still show a faint color tint on this panel
- * even with field compensation correct - that's a separate, lower-level
- * effect (the panel's subpixels likely have slightly different response
- * curves at low brightness) that field swapping can't fix, since it's
- * mathematically a no-op for any R=G=B input. LVGLDriver::setGamma(r, g,
- * b) applies an independent gamma curve per channel to compensate, if you
- * need it - see the note on that method. It's left at the default (no
- * correction) here; tune per-channel values against your own panel if
- * grey/near-black tones look tinted.
  */
 #include <TinyGPU.h>
 #include <TinyGPU/DisplayDriverSPI.h>
@@ -117,7 +96,6 @@ void buildDashboard() {
   lv_obj_t* title = lv_label_create(screen);
   lv_label_set_text(title, "TinyGPU Dashboard");
   lv_obj_set_style_text_color(title, lv_color_white(), LV_PART_MAIN);
-  lv_obj_set_style_text_font(title, &lv_font_montserrat_18, LV_PART_MAIN);
   lv_obj_align(title, LV_ALIGN_TOP_MID, 0, 10);
 
   // --- gauge arc (simulated sensor reading) ---
@@ -139,7 +117,6 @@ void buildDashboard() {
   lv_label_set_text(gaugeLabel, "0\xC2\xB0"
                                 "C");
   lv_obj_set_style_text_color(gaugeLabel, lv_color_white(), LV_PART_MAIN);
-  lv_obj_set_style_text_font(gaugeLabel, &lv_font_montserrat_24, LV_PART_MAIN);
   lv_obj_align_to(gaugeLabel, gaugeArc, LV_ALIGN_CENTER, 0, 10);
 
   // --- slider (real backlight brightness) ---
@@ -155,7 +132,6 @@ void buildDashboard() {
   sliderLabel = lv_label_create(screen);
   lv_label_set_text(sliderLabel, "Backlight: 100%");
   lv_obj_set_style_text_color(sliderLabel, lv_color_hex(0xAAAAAA), LV_PART_MAIN);
-  lv_obj_set_style_text_font(sliderLabel, &lv_font_montserrat_18, LV_PART_MAIN);
   lv_obj_align_to(sliderLabel, slider, LV_ALIGN_OUT_TOP_MID, 0, -8);
 
   // --- switch + LED indicator ---
@@ -178,13 +154,11 @@ void buildDashboard() {
 
   lv_obj_t* btnLabel = lv_label_create(btn);
   lv_label_set_text(btnLabel, "Tap me");
-  lv_obj_set_style_text_font(btnLabel, &lv_font_montserrat_18, LV_PART_MAIN);
   lv_obj_center(btnLabel);
 
   counterLabel = lv_label_create(screen);
   lv_label_set_text(counterLabel, "Taps: 0");
   lv_obj_set_style_text_color(counterLabel, lv_color_hex(0xAAAAAA), LV_PART_MAIN);
-  lv_obj_set_style_text_font(counterLabel, &lv_font_montserrat_18, LV_PART_MAIN);
   lv_obj_align_to(counterLabel, btn, LV_ALIGN_OUT_BOTTOM_MID, 0, 6);
 
   lv_timer_create(updateSensor, 80, nullptr);
@@ -208,20 +182,7 @@ void setup() {
     while (1);
   }
 
-  // Tune these per-channel if grey/near-black tones look tinted on your
-  // panel; 1.0 = no correction. See the note on setGamma() and the file
-  // header comment above for why this needs to be per-channel.
-  //
-  // Tried on real hardware: (1.5, 0.6, 1.5) overshot from a purple
-  // near-black background to fully green; (1.15, 0.85, 1.15) landed on
-  // blue instead, with individual widget colors then off in different,
-  // not obviously related directions (pink slider, olive arc, salmon
-  // LED). The panel's low-brightness response here is non-monotonic
-  // enough with respect to a single global per-channel curve that
-  // chasing an exact match isn't worth it - left at neutral (no
-  // correction), which measured best for keeping dashboard elements
-  // visually distinguishable from each other and from the background.
-  lvglDriver.setGamma(1.0f, 1.0f, 1.0f);
+  // lvglDriver.setGamma(1.0f, 1.0f, 1.0f);
 
   buildDashboard();
 
