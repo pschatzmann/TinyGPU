@@ -158,7 +158,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab2742a681a2e469d920945fdf48e842f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes touch input and dispatches events to sprites if touched.  <br /></td></tr>
 <tr class="separator:ab2742a681a2e469d920945fdf48e842f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99c2017d16c7f44001f62b638f9ef49c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SpriteDisplay.html#a99c2017d16c7f44001f62b638f9ef49c">fillScreen</a> (RGB_T color)</td></tr>
+<tr class="memdesc:a99c2017d16c7f44001f62b638f9ef49c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills/clears the entire display with the specified color.  <br /></td></tr>
 <tr class="separator:a99c2017d16c7f44001f62b638f9ef49c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac58afc762f9b78481dff8b133ecf5e76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SpriteDisplay.html#ac58afc762f9b78481dff8b133ecf5e76">setClearOnSpriteMove</a> (bool <a class="el" href="classtinygpu_1_1SpriteDisplay.html#ac8bb3912a3ce86b15842e79d0b421204">clear</a>)</td></tr>
+<tr class="memdesc:ac58afc762f9b78481dff8b133ecf5e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates/deactivates the automatic clearing when we move a sprite.  <br /></td></tr>
+<tr class="separator:ac58afc762f9b78481dff8b133ecf5e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a656d68e7331915f46e7f7d1ff4dc7d50"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SpriteDisplay.html#a656d68e7331915f46e7f7d1ff4dc7d50">isClearOnSpriteMove</a> () const</td></tr>
+<tr class="memdesc:a656d68e7331915f46e7f7d1ff4dc7d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the automatic clearing is active when we move a sprite.  <br /></td></tr>
+<tr class="separator:a656d68e7331915f46e7f7d1ff4dc7d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -199,6 +206,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a9bbb16c841a5ec83440df5cc4f2367d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade01534dff5e230e443a38e3630bd409"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt; RGB_T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SpriteDisplay.html#ade01534dff5e230e443a38e3630bd409">defaultFont_</a></td></tr>
 <tr class="separator:ade01534dff5e230e443a38e3630bd409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85af9ae17c07bc4664207d2636bec226"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SpriteDisplay.html#a85af9ae17c07bc4664207d2636bec226">is_clear_on_sprite_move</a> = true</td></tr>
+<tr class="separator:a85af9ae17c07bc4664207d2636bec226"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a45b72bb80286a6d196ac620267b82a11" name="a45b72bb80286a6d196ac620267b82a11"></a>
@@ -754,6 +763,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Fills/clears the entire display with the specified color. </p>
+
 </div>
 </div>
 <a id="a61ad115967a9894acf9da1a7c02ad52c" name="a61ad115967a9894acf9da1a7c02ad52c"></a>
@@ -873,6 +884,33 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the number of sprites currently managed by the framebuffer. </p>
+
+</div>
+</div>
+<a id="a656d68e7331915f46e7f7d1ff4dc7d50" name="a656d68e7331915f46e7f7d1ff4dc7d50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a656d68e7331915f46e7f7d1ff4dc7d50">&#9670;&#160;</a></span>isClearOnSpriteMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isClearOnSpriteMove </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns whether the automatic clearing is active when we move a sprite. </p>
 
 </div>
 </div>
@@ -1077,6 +1115,34 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac58afc762f9b78481dff8b133ecf5e76" name="ac58afc762f9b78481dff8b133ecf5e76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac58afc762f9b78481dff8b133ecf5e76">&#9670;&#160;</a></span>setClearOnSpriteMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setClearOnSpriteMove </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>clear</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Activates/deactivates the automatic clearing when we move a sprite. </p>
+
+</div>
+</div>
 <a id="a6103b16badc3358b15461548955123c7" name="a6103b16badc3358b15461548955123c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6103b16badc3358b15461548955123c7">&#9670;&#160;</a></span>setTouchDriver()</h2>
 
@@ -1205,6 +1271,28 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">size_t height_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85af9ae17c07bc4664207d2636bec226" name="a85af9ae17c07bc4664207d2636bec226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85af9ae17c07bc4664207d2636bec226">&#9670;&#160;</a></span>is_clear_on_sprite_move</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_clear_on_sprite_move = true</td>
         </tr>
       </table>
   </td>
