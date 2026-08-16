@@ -19,13 +19,14 @@ var searchData=
   ['writedata_16',['writeData',['../classtinygpu_1_1DisplayDriverSPI.html#afbde66ad2f1573278339e5341d311953',1,'tinygpu::DisplayDriverSPI::writeData()'],['../classtinygpu_1_1DeviceOutput.html#aa34ad44c3ab8b83067914358732e2c41',1,'tinygpu::DeviceOutput::writeData()'],['../classtinygpu_1_1DisplayDriver.html#aa65a4630add7360c3f2a44cbb054b512',1,'tinygpu::DisplayDriver::writeData(ISurface&lt; RGB_T &gt; &amp;surface)=0'],['../classtinygpu_1_1DisplayDriver.html#aa426c1066b36c91a52fd8df26d7cc50a',1,'tinygpu::DisplayDriver::writeData(ISurface&lt; RGB_T &gt; &amp;surface, size_t x, size_t y)=0'],['../classtinygpu_1_1DisplayDriverSDL.html#afbde66ad2f1573278339e5341d311953',1,'tinygpu::DisplayDriverSDL::writeData()'],['../classtinygpu_1_1DisplayDriverSPI.html#ab6100cd127a1ce62fd89ace0ca3f3d7b',1,'tinygpu::DisplayDriverSPI::writeData()'],['../classtinygpu_1_1DisplayDriverSDL.html#ab6100cd127a1ce62fd89ace0ca3f3d7b',1,'tinygpu::DisplayDriverSDL::writeData()']]],
   ['writedata16_17',['writeData16',['../classtinygpu_1_1DisplayDriverSPI.html#afc63b928f6c4b7de939b930c0020d429',1,'tinygpu::DisplayDriverSPI']]],
   ['writedata8_18',['writeData8',['../classtinygpu_1_1DisplayDriverSPI.html#ae6e71097b5f49bda225fe75c8f46ea57',1,'tinygpu::DisplayDriverSPI']]],
-  ['writefileheader_19',['writeFileHeader',['../classtinygpu_1_1BMPExporter.html#a5c5673f4ad9c48fdd9bdb431a5d448d0',1,'tinygpu::BMPExporter']]],
-  ['writefourcc_20',['writeFourCC',['../classtinygpu_1_1AVIWriter.html#ac91297831b22fd0a5ede4e569df42ae6',1,'tinygpu::AVIWriter']]],
-  ['writeframe_21',['writeFrame',['../classtinygpu_1_1AVIWriter.html#a70768a70a806599848a298011798352c',1,'tinygpu::AVIWriter']]],
-  ['writeheader_22',['writeHeader',['../classtinygpu_1_1AVIWriter.html#a2e19c2ee025cf0d8494654f6baa42176',1,'tinygpu::AVIWriter']]],
-  ['writeindex_23',['writeIndex',['../classtinygpu_1_1AVIWriter.html#a1a56c068e2104fc00cfcb4b54e0bcc1f',1,'tinygpu::AVIWriter']]],
-  ['writeinfoheader_24',['writeInfoHeader',['../classtinygpu_1_1BMPExporter.html#a92f5d1841a70330d483639a823d0532e',1,'tinygpu::BMPExporter']]],
-  ['writeu16_25',['writeU16',['../classtinygpu_1_1AVIWriter.html#a5bac605ad41336684b2051b181ec6bbc',1,'tinygpu::AVIWriter::writeU16()'],['../classtinygpu_1_1BMPExporter.html#a14e60fdd0a43356cf0591b3f52120475',1,'tinygpu::BMPExporter::writeU16()']]],
-  ['writeu32_26',['writeU32',['../classtinygpu_1_1AVIWriter.html#a5b113c761006c35647f61e4d1777507f',1,'tinygpu::AVIWriter::writeU32()'],['../classtinygpu_1_1BMPExporter.html#add80b898b76babad44121913dac26292',1,'tinygpu::BMPExporter::writeU32()']]],
-  ['writeu8_27',['writeU8',['../classtinygpu_1_1AVIWriter.html#a547a31d993f99ab29f7731e6e312f5d1',1,'tinygpu::AVIWriter']]]
+  ['writedatan_19',['writeDataN',['../classtinygpu_1_1DisplayDriverSPI.html#a6311a57ca3e27afdb834efbcec8454d7',1,'tinygpu::DisplayDriverSPI']]],
+  ['writefileheader_20',['writeFileHeader',['../classtinygpu_1_1BMPExporter.html#a5c5673f4ad9c48fdd9bdb431a5d448d0',1,'tinygpu::BMPExporter']]],
+  ['writefourcc_21',['writeFourCC',['../classtinygpu_1_1AVIWriter.html#ac91297831b22fd0a5ede4e569df42ae6',1,'tinygpu::AVIWriter']]],
+  ['writeframe_22',['writeFrame',['../classtinygpu_1_1AVIWriter.html#a70768a70a806599848a298011798352c',1,'tinygpu::AVIWriter']]],
+  ['writeheader_23',['writeHeader',['../classtinygpu_1_1AVIWriter.html#a2e19c2ee025cf0d8494654f6baa42176',1,'tinygpu::AVIWriter']]],
+  ['writeindex_24',['writeIndex',['../classtinygpu_1_1AVIWriter.html#a1a56c068e2104fc00cfcb4b54e0bcc1f',1,'tinygpu::AVIWriter']]],
+  ['writeinfoheader_25',['writeInfoHeader',['../classtinygpu_1_1BMPExporter.html#a92f5d1841a70330d483639a823d0532e',1,'tinygpu::BMPExporter']]],
+  ['writeu16_26',['writeU16',['../classtinygpu_1_1AVIWriter.html#a5bac605ad41336684b2051b181ec6bbc',1,'tinygpu::AVIWriter::writeU16()'],['../classtinygpu_1_1BMPExporter.html#a14e60fdd0a43356cf0591b3f52120475',1,'tinygpu::BMPExporter::writeU16()']]],
+  ['writeu32_27',['writeU32',['../classtinygpu_1_1AVIWriter.html#a5b113c761006c35647f61e4d1777507f',1,'tinygpu::AVIWriter::writeU32()'],['../classtinygpu_1_1BMPExporter.html#add80b898b76babad44121913dac26292',1,'tinygpu::BMPExporter::writeU32()']]],
+  ['writeu8_28',['writeU8',['../classtinygpu_1_1AVIWriter.html#a547a31d993f99ab29f7731e6e312f5d1',1,'tinygpu::AVIWriter']]]
 ];

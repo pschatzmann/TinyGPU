@@ -91,13 +91,14 @@ Inheritance diagram for DisplayDriverSPI&lt; RGB_T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1DisplayDriverSPI__inherit__graph.png" border="0" usemap="#aDisplayDriverSPI_3_01RGB__T_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aDisplayDriverSPI_3_01RGB__T_01_4_inherit__map" id="aDisplayDriverSPI_3_01RGB__T_01_4_inherit__map">
-<area shape="rect" title="Common base class for SPI&#45;based display drivers." alt="" coords="237,104,441,129"/>
+<area shape="rect" title="Common base class for SPI&#45;based display drivers." alt="" coords="237,129,441,155"/>
 <area shape="rect" href="classtinygpu_1_1HX8357Driver.html" title="Driver for HX8357 SPI display controller." alt="" coords="489,5,676,31"/>
 <area shape="rect" href="classtinygpu_1_1ILI9341Driver.html" title="Driver for ILI9341 SPI display controller." alt="" coords="491,55,674,80"/>
-<area shape="rect" href="classtinygpu_1_1ST7735Driver.html" title="Driver for ST7735 SPI display controller." alt="" coords="491,104,674,129"/>
-<area shape="rect" href="classtinygpu_1_1ST7789Driver.html" title="Driver for ST7789 SPI display controller." alt="" coords="491,153,674,179"/>
-<area shape="rect" href="classtinygpu_1_1ST7796Driver.html" title="Driver for ST7796 SPI display controller." alt="" coords="491,203,674,228"/>
-<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title="Abstract base class for display drivers." alt="" coords="5,104,189,129"/>
+<area shape="rect" href="classtinygpu_1_1ILI9342Driver.html" title="Driver for ILI9342 SPI display controller." alt="" coords="491,104,674,129"/>
+<area shape="rect" href="classtinygpu_1_1ST7735Driver.html" title="Driver for ST7735 SPI display controller." alt="" coords="491,153,674,179"/>
+<area shape="rect" href="classtinygpu_1_1ST7789Driver.html" title="Driver for ST7789 SPI display controller." alt="" coords="491,203,674,228"/>
+<area shape="rect" href="classtinygpu_1_1ST7796Driver.html" title="Driver for ST7796 SPI display controller." alt="" coords="491,252,674,277"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title="Abstract base class for display drivers." alt="" coords="5,129,189,155"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -150,6 +151,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:afc63b928f6c4b7de939b930c0020d429"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6e71097b5f49bda225fe75c8f46ea57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ae6e71097b5f49bda225fe75c8f46ea57">writeData8</a> (uint8_t data)</td></tr>
 <tr class="separator:ae6e71097b5f49bda225fe75c8f46ea57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6311a57ca3e27afdb834efbcec8454d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a6311a57ca3e27afdb834efbcec8454d7">writeDataN</a> (std::initializer_list&lt; uint8_t &gt; bytes)</td></tr>
+<tr class="separator:a6311a57ca3e27afdb834efbcec8454d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13ff6a8afbcb7bafe48a99445c45eaa3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a13ff6a8afbcb7bafe48a99445c45eaa3">setAddressWindow</a> (size_t x, size_t y, size_t w, size_t h)=0</td></tr>
 <tr class="separator:a13ff6a8afbcb7bafe48a99445c45eaa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -574,6 +577,33 @@ class tinygpu::DisplayDriverSPI&lt; RGB_T &gt;</div><p>Common base class for SPI
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6311a57ca3e27afdb834efbcec8454d7" name="a6311a57ca3e27afdb834efbcec8454d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6311a57ca3e27afdb834efbcec8454d7">&#9670;&#160;</a></span>writeDataN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void writeDataN </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; uint8_t &gt;&#160;</td>
+          <td class="paramname"><em>bytes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Writes each byte as a separate <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ae6e71097b5f49bda225fe75c8f46ea57">writeData8()</a> call - a convenience for sending a command's multi-byte parameter list during init sequences. </p>
 
 </div>
 </div>
