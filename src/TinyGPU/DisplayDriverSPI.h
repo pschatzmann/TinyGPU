@@ -32,22 +32,29 @@ class DisplayDriverSPI : public DisplayDriver<RGB_T> {
   }
 
   bool writeData(ISurface<RGB_T>& surface, size_t x, size_t y) override {
+    static_assert(sizeof(RGB_T) == 2,
+                  "writeData's transfer16 loop assumes a 16bpp RGB_T");
     setAddressWindow(x, y, surface.width(), surface.height());
     spi_.beginTransaction(SPISettings(frequencyHz_, MSBFIRST, SPI_MODE0));
     digitalWrite(dc_, HIGH);
     digitalWrite(cs_, LOW);
-    // writePixels (not writeBytes!) byte-swaps each 16-bit pixel word to
-    // match the panel's expected high-byte-first wire order. RGB_T values
-    // are stored in the buffer in the ESP32's native little-endian byte
-    // order, so a raw writeBytes() sends each pixel's low byte before its
-    // high byte - the two bytes arrive swapped relative to what the
-    // controller expects, corrupting color across field boundaries. That
-    // silently "rotates" saturated primary colors (only one field
-    // populated, so the corruption still lands roughly on a single field)
-    // while permanently tinting greys (all three fields populated, so the
-    // swap mixes bits across field boundaries with no clean fix at the
-    // pixel-format level).
-    spi_.writePixels(surface.data(), surface.size());
+    // Sent pixel-by-pixel via transfer16(), not as a raw byte-buffer
+    // write: SPIClass::transfer16() is part of the portable Arduino SPI
+    // API (available on every core, not just ESP32) and is specified to
+    // put the most significant byte on the wire first. A raw bulk write
+    // of the buffer's memory would instead send each pixel's bytes in
+    // the host's native (little-endian) order - low byte first - which
+    // is backwards from what the controller expects and corrupts color:
+    // it "rotates" saturated primary colors (only one field populated,
+    // so the corruption still lands roughly on a single field) while
+    // permanently tinting greys (all three fields populated, so the
+    // byte swap mixes bits across field boundaries with no clean fix at
+    // the pixel-format level).
+    const uint16_t* pixels = reinterpret_cast<const uint16_t*>(surface.data());
+    const size_t pixelCount = surface.size() / sizeof(uint16_t);
+    for (size_t i = 0; i < pixelCount; ++i) {
+      spi_.transfer16(pixels[i]);
+    }
     digitalWrite(cs_, HIGH);
     spi_.endTransaction();
     return true;
