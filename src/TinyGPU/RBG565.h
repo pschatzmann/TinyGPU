@@ -32,6 +32,15 @@ class RBG565 {
   /// Creates a color from a packed RBG565 value.
   explicit RBG565(uint16_t packed) : value(packed) {}
 
+  /// Creates a color from semantic red/green/blue intensities, reordered
+  /// to this class's own (r, b, g) constructor convention internally.
+  /// Prefer this over the constructor in generic code that converts
+  /// between pixel formats, where callers work with plain r, g, b and
+  /// shouldn't need to know this class's field order.
+  static RBG565 fromRGB(uint8_t r, uint8_t g, uint8_t b) {
+    return RBG565(r, b, g);
+  }
+
   /// Sets the color from 8-bit red, green, and blue components.
   void setValue(uint8_t r, uint8_t b, uint8_t g) {
     value = (static_cast<uint16_t>(r & 0xF8) << 8) |

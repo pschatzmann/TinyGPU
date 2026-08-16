@@ -21,6 +21,15 @@ class BGR565 {
   /// Creates a color from a packed BGR565 value.
   explicit BGR565(uint16_t packed) : value(packed) {}
 
+  /// Creates a color from semantic red/green/blue intensities, reordered
+  /// to this class's own (b, g, r) constructor convention internally.
+  /// Prefer this over the constructor in generic code that converts
+  /// between pixel formats, where callers work with plain r, g, b and
+  /// shouldn't need to know this class's field order.
+  static BGR565 fromRGB(uint8_t r, uint8_t g, uint8_t b) {
+    return BGR565(b, g, r);
+  }
+
   /// Sets the color from 8-bit blue, green, and red components.
   void setValue(uint8_t b, uint8_t g, uint8_t r) {
     value = (static_cast<uint16_t>(b & 0xF8) << 8) |

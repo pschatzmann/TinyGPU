@@ -22,6 +22,16 @@ class RGB565 {
   /// Creates a color from a packed RGB565 value.
   explicit RGB565(uint16_t packed) : value(packed) {}
 
+  /// Creates a color from semantic red/green/blue intensities, regardless
+  /// of this class's own constructor argument order. Unlike the (r, g, b)
+  /// constructor above - which for other "565-family" classes (e.g.
+  /// RBG565, BGR565) matches THEIR class name's letter order, not
+  /// necessarily r, g, b - this always means semantic red/green/blue.
+  /// Prefer this in generic code that converts between pixel formats.
+  static RGB565 fromRGB(uint8_t r, uint8_t g, uint8_t b) {
+    return RGB565(r, g, b);
+  }
+
   /// Sets the color from 8-bit red, green, and blue components.
   void setValue(uint8_t r, uint8_t g, uint8_t b) {
       value = (static_cast<uint16_t>(r & 0xF8) << 8) |
