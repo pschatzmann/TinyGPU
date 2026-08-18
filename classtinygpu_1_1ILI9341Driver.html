@@ -133,6 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac82ad20f04f597e1cf952371bf08b8a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4154d62016ae303eb96f5050034fa69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9">Rotation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac4154d62016ae303eb96f5050034fa69">rotation</a> () const</td></tr>
 <tr class="separator:ac4154d62016ae303eb96f5050034fa69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22046f3478c928d2538401d9e134bea5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#a22046f3478c928d2538401d9e134bea5">setInvertColor</a> (bool invert)</td></tr>
+<tr class="memdesc:a22046f3478c928d2538401d9e134bea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles the ILI9341's display inversion (DINVON/DINVOFF, 0x21/ 0x20). Some cheap ILI9341-compatible clone panels' color filter needs this set, or every color renders as its photographic negative (RED shows as cyan, GREEN as magenta, BLUE as yellow) - confirmed on real hardware. Safe to call any time after <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a>.  <br /></td></tr>
+<tr class="separator:a22046f3478c928d2538401d9e134bea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtinygpu_1_1DisplayDriverSPI"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinygpu_1_1DisplayDriverSPI')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html">DisplayDriverSPI&lt; RGB_T &gt;</a></td></tr>
 <tr class="memitem:abfdc8122986250cac64a5da68cd986e9 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#abfdc8122986250cac64a5da68cd986e9">DisplayDriverSPI</a> (SPIClass &amp;spi, int8_t cs, int8_t dc, int8_t rst=-1, size_t xOffset=0, size_t yOffset=0, uint32_t frequencyHz=40000000, uint32_t readFrequencyHz=15000000)</td></tr>
 <tr class="separator:abfdc8122986250cac64a5da68cd986e9 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -371,6 +374,34 @@ class tinygpu::ILI9341Driver&lt; RGB_T &gt;</div><p>Driver for ILI9341 SPI displ
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22046f3478c928d2538401d9e134bea5" name="a22046f3478c928d2538401d9e134bea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22046f3478c928d2538401d9e134bea5">&#9670;&#160;</a></span>setInvertColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setInvertColor </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>invert</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Toggles the ILI9341's display inversion (DINVON/DINVOFF, 0x21/ 0x20). Some cheap ILI9341-compatible clone panels' color filter needs this set, or every color renders as its photographic negative (RED shows as cyan, GREEN as magenta, BLUE as yellow) - confirmed on real hardware. Safe to call any time after <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a>. </p>
 
 </div>
 </div>
