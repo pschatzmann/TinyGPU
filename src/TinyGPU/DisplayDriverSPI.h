@@ -352,6 +352,15 @@ class ILI9341Driver : public DisplayDriverSPI<RGB_T> {
 
   Rotation rotation() const { return rotation_; }
 
+  /**
+   * @brief Toggles the ILI9341's display inversion (DINVON/DINVOFF, 0x21/
+   * 0x20). Some cheap ILI9341-compatible clone panels' color filter needs
+   * this set, or every color renders as its photographic negative (RED
+   * shows as cyan, GREEN as magenta, BLUE as yellow) - confirmed on real
+   * hardware. Safe to call any time after begin().
+   */
+  void setInvertColor(bool invert) { writeCommand(invert ? 0x21 : 0x20); }
+
  protected:
   Rotation rotation_;
 
