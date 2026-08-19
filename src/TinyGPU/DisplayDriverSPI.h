@@ -268,8 +268,10 @@ class ILI9341Driver : public DisplayDriverSPI<RGB_T> {
   };
 
   ILI9341Driver(SPIClass& spi, int8_t cs, int8_t dc, int8_t rst = -1,
-                Rotation rotation = Rotation::kNone)
-      : DisplayDriverSPI<RGB_T>(spi, cs, dc, rst, 0, 0), rotation_(rotation) {}
+                Rotation rotation = Rotation::kNone,
+                uint32_t frequencyHz = 40000000)
+      : DisplayDriverSPI<RGB_T>(spi, cs, dc, rst, 0, 0, frequencyHz),
+        rotation_(rotation) {}
 
   bool begin() override {
     setupPinsAndReset();

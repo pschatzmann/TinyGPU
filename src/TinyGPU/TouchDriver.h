@@ -727,4 +727,199 @@ class TouchDriverCST816S : public TouchDriver {
   }
 };
 
+/**
+ * @brief GT911 capacitive touch controller.
+ *
+ * I2C address is normally 0x5D (alt 0x14, selected via the INT pin's level
+ * while RST is pulsed - see begin()). Unlike FT6236/CST816S, GT911's
+ * register addresses are 16-bit (MSB first), and its X/Y bytes are
+ * little-endian (low byte first) rather than the big-endian nibble-packed
+ * layout FT6236 uses.
+ *
+ * Register layout used:
+ *
+ *   0x8100  CONFIG_FRESH: write 1 after reset to make the chip start its
+ *           sensing engine. Without this, the chip stays fully alive and
+ *           correctly configured but never scans - status sits at 0x80
+ *           ("config loaded, idle") forever.
+ *   0x80FF  config checksum: round-tripped (read then written back
+ *           unchanged) alongside the CONFIG_FRESH write.
+ *   0x814E  status: bit7 = buffer ready, bits[3:0] = touch point count.
+ *           Must be cleared (write 0x00) unconditionally on every poll,
+ *           not only when a touch was found - clearing it only after a
+ *           detected touch is a deadlock, since a stale, unacknowledged
+ *           flag prevents the chip from ever reporting a new one.
+ *   0x814F  point 0 data (7 bytes: track_id, x_lo, x_hi, y_lo, y_hi,
+ *           size_lo, size_hi); point N starts at 0x814F + N*7.
+ *
+ * Because status must be cleared unconditionally exactly once per poll
+ * cycle, isTouched() does the chip's actual read/clear I/O and caches
+ * whatever point data was present; getPoint()/getSecondPoint() just
+ * return the cached result rather than re-querying the chip. Call
+ * isTouched() once per loop iteration (the same usage pattern as this
+ * file's other touch drivers) - calling it more than once between
+ * getPoint() calls will consume/clear a pending touch before getPoint()
+ * sees it.
+ *
+ * GT911 genuinely reports up to 5 simultaneous touches (unlike the
+ * single-touch FT6236/CST816S/XPT2046 parts also in this file), so
+ * getSecondPoint() is a real second contact, not a stub.
+ */
+class TouchDriverGT911 : public TouchDriver {
+ public:
+  static constexpr uint8_t I2C_ADDR_1 = 0x5D;
+  static constexpr uint8_t I2C_ADDR_2 = 0x14;
+
+  TouchDriverGT911(TwoWire& wire = Wire, int8_t rstPin = -1,
+                   int8_t irqPin = -1, uint8_t i2cAddr = I2C_ADDR_1)
+      : wire_(wire), rstPin_(rstPin), irqPin_(irqPin), addr_(i2cAddr) {}
+
+  bool begin() override {
+    if (rstPin_ >= 0) {
+      /*
+       * Address-select reset sequence (GT911 datasheet): INT is held at
+       * the level matching the desired I2C address while RST is pulsed,
+       * then released to become the (unused, polled) touch IRQ line.
+       */
+      pinMode(rstPin_, OUTPUT);
+
+      if (irqPin_ >= 0) {
+        pinMode(irqPin_, OUTPUT);
+        digitalWrite(irqPin_, addr_ == I2C_ADDR_1 ? LOW : HIGH);
+      }
+
+      digitalWrite(rstPin_, LOW);
+      delay(10);
+
+      if (irqPin_ >= 0) {
+        digitalWrite(irqPin_, addr_ == I2C_ADDR_1 ? LOW : HIGH);
+      }
+      delay(1);
+
+      digitalWrite(rstPin_, HIGH);
+      delay(5);
+
+      if (irqPin_ >= 0) {
+        digitalWrite(irqPin_, LOW);
+      }
+      delay(50);
+    }
+
+    if (irqPin_ >= 0) {
+      pinMode(irqPin_, INPUT_PULLUP);
+    }
+
+    delay(50);  // GT911 needs time after reset before it will ACK on I2C
+
+    wire_.beginTransmission(addr_);
+    if (wire_.endTransmission() != 0) {
+      return false;
+    }
+
+    /* Activate the sensing engine - see class comment. */
+    uint8_t checksum = 0;
+    readRegister(kRegConfigChecksum, checksum);
+    writeRegister(kRegConfigChecksum, checksum);
+    writeRegister(kRegConfigFresh, 0x01);
+    delay(10);
+
+    return true;
+  }
+
+  bool isTouched() override {
+    uint8_t status = 0;
+    readRegister(kRegStatus, status);
+    const bool bufferReady = (status & 0x80) != 0;
+    cachedTouches_ = status & 0x0F;
+
+    if (bufferReady && cachedTouches_ > 0) {
+      const uint8_t pointsToRead =
+          cachedTouches_ > 2 ? 2 : cachedTouches_;  // this driver only caches 2
+
+      for (uint8_t i = 0; i < pointsToRead; ++i) {
+        uint8_t buf[7];
+        if (readRegisters(kRegPoint0 + i * 7, buf, sizeof(buf))) {
+          const uint16_t rawX = (static_cast<uint16_t>(buf[2]) << 8) | buf[1];
+          const uint16_t rawY = (static_cast<uint16_t>(buf[4]) << 8) | buf[3];
+          cachedPoints_[i] = mapCoordinates(static_cast<int16_t>(rawX),
+                                            static_cast<int16_t>(rawY), 255);
+        }
+      }
+    }
+
+    writeRegister(kRegStatus, 0x00);  // unconditional - see class comment
+    return cachedTouches_ > 0;
+  }
+
+  bool getPoint(Point& outPoint) override {
+    if (cachedTouches_ == 0) return false;
+    outPoint = cachedPoints_[0];
+    return true;
+  }
+
+  bool getSecondPoint(Point& outPoint) override {
+    if (cachedTouches_ < 2) return false;
+    outPoint = cachedPoints_[1];
+    return true;
+  }
+
+ private:
+  static constexpr uint16_t kRegConfigChecksum = 0x80FF;
+  static constexpr uint16_t kRegConfigFresh = 0x8100;
+  static constexpr uint16_t kRegStatus = 0x814E;
+  static constexpr uint16_t kRegPoint0 = 0x814F;
+
+  TwoWire& wire_;
+  int8_t rstPin_;
+  int8_t irqPin_;
+  uint8_t addr_;
+  uint8_t cachedTouches_ = 0;
+  Point cachedPoints_[2];
+
+  bool readRegister(uint16_t reg, uint8_t& value) {
+    return readRegisters(reg, &value, 1);
+  }
+
+  bool readRegisters(uint16_t startRegister, uint8_t* buffer, size_t length) {
+    if (buffer == nullptr || length == 0) {
+      return false;
+    }
+
+    wire_.beginTransmission(addr_);
+    wire_.write(static_cast<uint8_t>(startRegister >> 8));
+    wire_.write(static_cast<uint8_t>(startRegister & 0xFF));
+
+    if (wire_.endTransmission(false) != 0) {
+      return false;
+    }
+
+    const size_t received =
+        wire_.requestFrom(static_cast<int>(addr_), static_cast<int>(length));
+
+    if (received != length) {
+      while (wire_.available()) {
+        (void)wire_.read();
+      }
+      return false;
+    }
+
+    for (size_t i = 0; i < length; ++i) {
+      if (!wire_.available()) {
+        return false;
+      }
+      buffer[i] = static_cast<uint8_t>(wire_.read());
+    }
+
+    return true;
+  }
+
+  void writeRegister(uint16_t reg, uint8_t value) {
+    wire_.beginTransmission(addr_);
+    wire_.write(static_cast<uint8_t>(reg >> 8));
+    wire_.write(static_cast<uint8_t>(reg & 0xFF));
+    wire_.write(value);
+    wire_.endTransmission();
+  }
+};
+
 }  // namespace tinygpu
