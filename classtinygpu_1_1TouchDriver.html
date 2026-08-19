@@ -92,10 +92,11 @@ Inheritance diagram for TouchDriver:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1TouchDriver__inherit__graph.png" border="0" usemap="#aTouchDriver_inherit__map" alt="Inheritance graph"/></div>
 <map name="aTouchDriver_inherit__map" id="aTouchDriver_inherit__map">
-<area shape="rect" title="Base class for touch controllers." alt="" coords="210,5,309,31"/>
+<area shape="rect" title="Base class for touch controllers." alt="" coords="294,5,393,31"/>
 <area shape="rect" href="classtinygpu_1_1TouchDriverCST816S.html" title="CST816S capacitive touch controller." alt="" coords="5,79,161,104"/>
 <area shape="rect" href="classtinygpu_1_1TouchDriverFT6236.html" title="FT6236 / FT6336 capacitive touch controller." alt="" coords="186,79,333,104"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriverXPT2046.html" title="XPT2046 resistive touch controller." alt="" coords="357,79,513,104"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriverGT911.html" title="GT911 capacitive touch controller." alt="" coords="357,79,498,104"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriverXPT2046.html" title="XPT2046 resistive touch controller." alt="" coords="523,79,679,104"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -217,7 +218,7 @@ Protected Attributes</h2></td></tr>
 <p>Initialize the controller. </p>
 <p>The driver does NOT initialize the SPI/I2C bus itself. The application is responsible for calling Wire.begin(), SPI.begin(), and configuring any board-specific bus pins. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverXPT2046</a>, <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverFT6236</a>, and <a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverCST816S</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverXPT2046</a>, <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverFT6236</a>, <a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverCST816S</a>, and <a class="el" href="classtinygpu_1_1TouchDriverGT911.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverGT911</a>.</p>
 
 </div>
 </div>
@@ -317,7 +318,7 @@ Protected Attributes</h2></td></tr>
 <p>Read the current touch point. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if a valid touch point was obtained. </dd></dl>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html#a338a8285ece3265617760ce276c71109">TouchDriverXPT2046</a>, <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html#a338a8285ece3265617760ce276c71109">TouchDriverFT6236</a>, and <a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#a338a8285ece3265617760ce276c71109">TouchDriverCST816S</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html#a338a8285ece3265617760ce276c71109">TouchDriverXPT2046</a>, <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html#a338a8285ece3265617760ce276c71109">TouchDriverFT6236</a>, <a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#a338a8285ece3265617760ce276c71109">TouchDriverCST816S</a>, and <a class="el" href="classtinygpu_1_1TouchDriverGT911.html#a338a8285ece3265617760ce276c71109">TouchDriverGT911</a>.</p>
 
 </div>
 </div>
@@ -373,6 +374,8 @@ Protected Attributes</h2></td></tr>
 <p>Read a second, simultaneous touch point, for multi-touch gestures (pinch/rotate). </p>
 <p>Returns false by default. Only override this if the underlying controller can genuinely report two simultaneous touches - none of the drivers built into this library can (XPT2046 is a resistive, inherently single-touch controller; CST816S/FT6236 are single-touch capacitive parts), so pinch/rotate gestures built on top of this will not fire against them. </p>
 
+<p>Reimplemented in <a class="el" href="classtinygpu_1_1TouchDriverGT911.html#ae2e3548050b5f30ef058263089b22837">TouchDriverGT911</a>.</p>
+
 </div>
 </div>
 <a id="ade3ebde0f4a9fbe9bedd38618146b1a9" name="ade3ebde0f4a9fbe9bedd38618146b1a9"></a>
@@ -426,7 +429,7 @@ Protected Attributes</h2></td></tr>
 <p>Return whether the panel currently appears touched. </p>
 <p>For controllers without an IRQ pin this may perform a controller read. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverXPT2046</a>, <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverFT6236</a>, and <a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverCST816S</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverXPT2046</a>, <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverFT6236</a>, <a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverCST816S</a>, and <a class="el" href="classtinygpu_1_1TouchDriverGT911.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverGT911</a>.</p>
 
 </div>
 </div>

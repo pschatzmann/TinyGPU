@@ -29,11 +29,12 @@ var searchData=
   ['touchdrivercst816s_26',['TouchDriverCST816S',['../classtinygpu_1_1TouchDriverCST816S.html',1,'TouchDriverCST816S'],['../classtinygpu_1_1TouchDriverCST816S.html#ad0e428d4da592b529e086e703d05440c',1,'tinygpu::TouchDriverCST816S::TouchDriverCST816S()']]],
   ['touchdriverft6206_27',['TouchDriverFT6206',['../namespacetinygpu.html#a34c07b590b97132497328cfce9988661',1,'tinygpu']]],
   ['touchdriverft6236_28',['TouchDriverFT6236',['../classtinygpu_1_1TouchDriverFT6236.html',1,'TouchDriverFT6236'],['../classtinygpu_1_1TouchDriverFT6236.html#a650cd38d4a703a3fe68c8e2e2f615748',1,'tinygpu::TouchDriverFT6236::TouchDriverFT6236()']]],
-  ['touchdriverxpt2046_29',['TouchDriverXPT2046',['../classtinygpu_1_1TouchDriverXPT2046.html',1,'TouchDriverXPT2046'],['../classtinygpu_1_1TouchDriverXPT2046.html#a07fe440f1fc12a4cdae9e26abf01c9e2',1,'tinygpu::TouchDriverXPT2046::TouchDriverXPT2046()']]],
-  ['transformaffine_30',['transformAffine',['../classtinygpu_1_1WireFrame3D.html#a26ed1028b0b633c5707c44c64fc67135',1,'tinygpu::WireFrame3D']]],
-  ['transformedsprite_31',['transformedSprite',['../structtinygpu_1_1SpriteInfo.html#a234c549621bff6d06f9c0cb2ec697a2c',1,'tinygpu::SpriteInfo']]],
-  ['transformpoint_32',['transformPoint',['../classtinygpu_1_1WireFrame3D.html#ae997a0b1b2f4681a08776d948adbe30d',1,'tinygpu::WireFrame3D']]],
-  ['translation_33',['translation',['../classtinygpu_1_1WireFrame3D.html#a5946e7ca404a3dd295a94bb7d600c8e8',1,'tinygpu::WireFrame3D']]],
-  ['trydecode_34',['tryDecode',['../classtinygpu_1_1BMPParser.html#a795a389cad57f7b12df2a9d0f8821afd',1,'tinygpu::BMPParser']]],
-  ['type_35',['type',['../structtinygpu_1_1GestureEvent.html#a9c6d77b3474d62744d429613c66ab063',1,'tinygpu::GestureEvent']]]
+  ['touchdrivergt911_29',['TouchDriverGT911',['../classtinygpu_1_1TouchDriverGT911.html',1,'TouchDriverGT911'],['../classtinygpu_1_1TouchDriverGT911.html#a8ab29abdcd51aad84411de5d4f0f1aa4',1,'tinygpu::TouchDriverGT911::TouchDriverGT911()']]],
+  ['touchdriverxpt2046_30',['TouchDriverXPT2046',['../classtinygpu_1_1TouchDriverXPT2046.html',1,'TouchDriverXPT2046'],['../classtinygpu_1_1TouchDriverXPT2046.html#a07fe440f1fc12a4cdae9e26abf01c9e2',1,'tinygpu::TouchDriverXPT2046::TouchDriverXPT2046()']]],
+  ['transformaffine_31',['transformAffine',['../classtinygpu_1_1WireFrame3D.html#a26ed1028b0b633c5707c44c64fc67135',1,'tinygpu::WireFrame3D']]],
+  ['transformedsprite_32',['transformedSprite',['../structtinygpu_1_1SpriteInfo.html#a234c549621bff6d06f9c0cb2ec697a2c',1,'tinygpu::SpriteInfo']]],
+  ['transformpoint_33',['transformPoint',['../classtinygpu_1_1WireFrame3D.html#ae997a0b1b2f4681a08776d948adbe30d',1,'tinygpu::WireFrame3D']]],
+  ['translation_34',['translation',['../classtinygpu_1_1WireFrame3D.html#a5946e7ca404a3dd295a94bb7d600c8e8',1,'tinygpu::WireFrame3D']]],
+  ['trydecode_35',['tryDecode',['../classtinygpu_1_1BMPParser.html#a795a389cad57f7b12df2a9d0f8821afd',1,'tinygpu::BMPParser']]],
+  ['type_36',['type',['../structtinygpu_1_1GestureEvent.html#a9c6d77b3474d62744d429613c66ab063',1,'tinygpu::GestureEvent']]]
 ];

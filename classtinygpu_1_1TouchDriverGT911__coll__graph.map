@@ -1,0 +1,5 @@
+<map id="TouchDriverGT911" name="TouchDriverGT911">
+<area shape="rect" id="node1" title="GT911 capacitive touch controller." alt="" coords="5,168,147,193"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="27,93,125,119"/>
+<area shape="rect" id="node3" href="$structtinygpu_1_1CalibrationData.html" title="Touch calibration configuration." alt="" coords="14,5,138,31"/>
+</map>

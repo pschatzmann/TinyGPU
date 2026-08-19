@@ -1,14 +1,16 @@
 var searchData=
 [
   ['i2c_5faddr_0',['I2C_ADDR',['../classtinygpu_1_1TouchDriverFT6236.html#ae4172d007d8937ec28341b4f4cb12b91',1,'tinygpu::TouchDriverFT6236::I2C_ADDR()'],['../classtinygpu_1_1TouchDriverCST816S.html#ae4172d007d8937ec28341b4f4cb12b91',1,'tinygpu::TouchDriverCST816S::I2C_ADDR()']]],
-  ['imageheight_5f_1',['imageHeight_',['../classtinygpu_1_1BMPParser.html#a7d0f805cfb6a750c2968776e52fc39a8',1,'tinygpu::BMPParser']]],
-  ['imagesize_2',['imageSize',['../structtinygpu_1_1BMPParser_1_1HeaderInfo.html#ab1ce8bb44bc98a61115233a58117c2ad',1,'tinygpu::BMPParser::HeaderInfo']]],
-  ['imagewidth_5f_3',['imageWidth_',['../classtinygpu_1_1BMPParser.html#a85216657dbf6a1a84ee2c3f4646b57b5',1,'tinygpu::BMPParser']]],
-  ['invertx_4',['invertX',['../structtinygpu_1_1CalibrationData.html#af9e252500ea87fc7b2f15fa5daa96cf0',1,'tinygpu::CalibrationData']]],
-  ['inverty_5',['invertY',['../structtinygpu_1_1CalibrationData.html#a40424b6ac7a90f29a9d4ba2c8e019cb5',1,'tinygpu::CalibrationData']]],
-  ['invisiblecolor_6',['invisibleColor',['../structtinygpu_1_1SpriteInfo.html#ad8155c7caaa42fe9f29bfe4bb4aaf46b',1,'tinygpu::SpriteInfo']]],
-  ['is_5fclear_5fon_5fsprite_5fmove_7',['is_clear_on_sprite_move',['../classtinygpu_1_1SpriteDisplay.html#a85af9ae17c07bc4664207d2636bec226',1,'tinygpu::SpriteDisplay']]],
-  ['isdraggable_8',['isDraggable',['../classtinygpu_1_1GestureDetector.html#ad55664f9406b6e33012c0e73c233112a',1,'tinygpu::GestureDetector']]],
-  ['isopen_5f_9',['isOpen_',['../classtinygpu_1_1AVIWriter.html#a9d7c8d95df25ae3955000ed5f0415dfd',1,'tinygpu::AVIWriter']]],
-  ['issurfaceautodelete_10',['isSurfaceAutoDelete',['../structtinygpu_1_1SpriteInfo.html#a1770c9eb0e976f596be344757002239f',1,'tinygpu::SpriteInfo']]]
+  ['i2c_5faddr_5f1_1',['I2C_ADDR_1',['../classtinygpu_1_1TouchDriverGT911.html#a7e49959c4642f31215ccfd1dcb9021f6',1,'tinygpu::TouchDriverGT911']]],
+  ['i2c_5faddr_5f2_2',['I2C_ADDR_2',['../classtinygpu_1_1TouchDriverGT911.html#a326bc2809378180278bc781abe6dda31',1,'tinygpu::TouchDriverGT911']]],
+  ['imageheight_5f_3',['imageHeight_',['../classtinygpu_1_1BMPParser.html#a7d0f805cfb6a750c2968776e52fc39a8',1,'tinygpu::BMPParser']]],
+  ['imagesize_4',['imageSize',['../structtinygpu_1_1BMPParser_1_1HeaderInfo.html#ab1ce8bb44bc98a61115233a58117c2ad',1,'tinygpu::BMPParser::HeaderInfo']]],
+  ['imagewidth_5f_5',['imageWidth_',['../classtinygpu_1_1BMPParser.html#a85216657dbf6a1a84ee2c3f4646b57b5',1,'tinygpu::BMPParser']]],
+  ['invertx_6',['invertX',['../structtinygpu_1_1CalibrationData.html#af9e252500ea87fc7b2f15fa5daa96cf0',1,'tinygpu::CalibrationData']]],
+  ['inverty_7',['invertY',['../structtinygpu_1_1CalibrationData.html#a40424b6ac7a90f29a9d4ba2c8e019cb5',1,'tinygpu::CalibrationData']]],
+  ['invisiblecolor_8',['invisibleColor',['../structtinygpu_1_1SpriteInfo.html#ad8155c7caaa42fe9f29bfe4bb4aaf46b',1,'tinygpu::SpriteInfo']]],
+  ['is_5fclear_5fon_5fsprite_5fmove_9',['is_clear_on_sprite_move',['../classtinygpu_1_1SpriteDisplay.html#a85af9ae17c07bc4664207d2636bec226',1,'tinygpu::SpriteDisplay']]],
+  ['isdraggable_10',['isDraggable',['../classtinygpu_1_1GestureDetector.html#ad55664f9406b6e33012c0e73c233112a',1,'tinygpu::GestureDetector']]],
+  ['isopen_5f_11',['isOpen_',['../classtinygpu_1_1AVIWriter.html#a9d7c8d95df25ae3955000ed5f0415dfd',1,'tinygpu::AVIWriter']]],
+  ['issurfaceautodelete_12',['isSurfaceAutoDelete',['../structtinygpu_1_1SpriteInfo.html#a1770c9eb0e976f596be344757002239f',1,'tinygpu::SpriteInfo']]]
 ];

@@ -8,9 +8,10 @@ var searchData=
   ['touchdriver_5',['touchDriver',['../classLVGLDriver.html#acddc765d7e545f10ac0d543690950d90',1,'LVGLDriver']]],
   ['touchdrivercst816s_6',['TouchDriverCST816S',['../classtinygpu_1_1TouchDriverCST816S.html#ad0e428d4da592b529e086e703d05440c',1,'tinygpu::TouchDriverCST816S']]],
   ['touchdriverft6236_7',['TouchDriverFT6236',['../classtinygpu_1_1TouchDriverFT6236.html#a650cd38d4a703a3fe68c8e2e2f615748',1,'tinygpu::TouchDriverFT6236']]],
-  ['touchdriverxpt2046_8',['TouchDriverXPT2046',['../classtinygpu_1_1TouchDriverXPT2046.html#a07fe440f1fc12a4cdae9e26abf01c9e2',1,'tinygpu::TouchDriverXPT2046']]],
-  ['transformaffine_9',['transformAffine',['../classtinygpu_1_1WireFrame3D.html#a26ed1028b0b633c5707c44c64fc67135',1,'tinygpu::WireFrame3D']]],
-  ['transformpoint_10',['transformPoint',['../classtinygpu_1_1WireFrame3D.html#ae997a0b1b2f4681a08776d948adbe30d',1,'tinygpu::WireFrame3D']]],
-  ['translation_11',['translation',['../classtinygpu_1_1WireFrame3D.html#a5946e7ca404a3dd295a94bb7d600c8e8',1,'tinygpu::WireFrame3D']]],
-  ['trydecode_12',['tryDecode',['../classtinygpu_1_1BMPParser.html#a795a389cad57f7b12df2a9d0f8821afd',1,'tinygpu::BMPParser']]]
+  ['touchdrivergt911_8',['TouchDriverGT911',['../classtinygpu_1_1TouchDriverGT911.html#a8ab29abdcd51aad84411de5d4f0f1aa4',1,'tinygpu::TouchDriverGT911']]],
+  ['touchdriverxpt2046_9',['TouchDriverXPT2046',['../classtinygpu_1_1TouchDriverXPT2046.html#a07fe440f1fc12a4cdae9e26abf01c9e2',1,'tinygpu::TouchDriverXPT2046']]],
+  ['transformaffine_10',['transformAffine',['../classtinygpu_1_1WireFrame3D.html#a26ed1028b0b633c5707c44c64fc67135',1,'tinygpu::WireFrame3D']]],
+  ['transformpoint_11',['transformPoint',['../classtinygpu_1_1WireFrame3D.html#ae997a0b1b2f4681a08776d948adbe30d',1,'tinygpu::WireFrame3D']]],
+  ['translation_12',['translation',['../classtinygpu_1_1WireFrame3D.html#a5946e7ca404a3dd295a94bb7d600c8e8',1,'tinygpu::WireFrame3D']]],
+  ['trydecode_13',['tryDecode',['../classtinygpu_1_1BMPParser.html#a795a389cad57f7b12df2a9d0f8821afd',1,'tinygpu::BMPParser']]]
 ];

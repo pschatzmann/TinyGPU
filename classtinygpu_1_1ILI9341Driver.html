@@ -125,8 +125,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1acaa5907cb1eae8610b75a5e2ade2f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#a1acaa5907cb1eae8610b75a5e2ade2f1">ILI9341Driver</a> (SPIClass &amp;spi, int8_t cs, int8_t dc, int8_t rst=-1, <a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9">Rotation</a> <a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac4154d62016ae303eb96f5050034fa69">rotation</a>=<a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9a35c3ace1970663a16e5c65baa5941b13">Rotation::kNone</a>)</td></tr>
-<tr class="separator:a1acaa5907cb1eae8610b75a5e2ade2f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a824d51e1ddbf23e5a2985c35ea21179c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#a824d51e1ddbf23e5a2985c35ea21179c">ILI9341Driver</a> (SPIClass &amp;spi, int8_t cs, int8_t dc, int8_t rst=-1, <a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9">Rotation</a> <a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac4154d62016ae303eb96f5050034fa69">rotation</a>=<a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9a35c3ace1970663a16e5c65baa5941b13">Rotation::kNone</a>, uint32_t frequencyHz=40000000)</td></tr>
+<tr class="separator:a824d51e1ddbf23e5a2985c35ea21179c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acba365cc28eb702040c382646cfb0a7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin</a> () override</td></tr>
 <tr class="separator:acba365cc28eb702040c382646cfb0a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac82ad20f04f597e1cf952371bf08b8a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac82ad20f04f597e1cf952371bf08b8a9">setRotation</a> (<a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9">Rotation</a> <a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac4154d62016ae303eb96f5050034fa69">rotation</a>)</td></tr>
@@ -244,8 +244,8 @@ class tinygpu::ILI9341Driver&lt; RGB_T &gt;</div><p>Driver for ILI9341 SPI displ
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a1acaa5907cb1eae8610b75a5e2ade2f1" name="a1acaa5907cb1eae8610b75a5e2ade2f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1acaa5907cb1eae8610b75a5e2ade2f1">&#9670;&#160;</a></span>ILI9341Driver()</h2>
+<a id="a824d51e1ddbf23e5a2985c35ea21179c" name="a824d51e1ddbf23e5a2985c35ea21179c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a824d51e1ddbf23e5a2985c35ea21179c">&#9670;&#160;</a></span>ILI9341Driver()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -281,7 +281,13 @@ class tinygpu::ILI9341Driver&lt; RGB_T &gt;</div><p>Driver for ILI9341 SPI displ
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9">Rotation</a>&#160;</td>
-          <td class="paramname"><em>rotation</em> = <code><a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9a35c3ace1970663a16e5c65baa5941b13">Rotation::kNone</a></code>&#160;</td>
+          <td class="paramname"><em>rotation</em> = <code><a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4940d1dc528122726d2c8c475657e1a9a35c3ace1970663a16e5c65baa5941b13">Rotation::kNone</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>frequencyHz</em> = <code>40000000</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
