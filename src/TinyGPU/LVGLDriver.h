@@ -13,16 +13,15 @@
  *
  * @tparam RGB_T The pixel format LVGL's rendered output is converted to
  * before transmission. Defaults to RGB565, matching LVGL's own internal
- * RGB565 color format exactly (a no-op conversion). Use RBG565 for panels
- * whose controller routes the green/blue data fields to the wrong physical
- * subpixels (colors come out with green and blue swapped) - see RBG565.h.
+ * RGB565 color format (convertBuffer() below still has to undo RGB565's
+ * own byte-swapped storage - see RGB565.h - even in that default case).
  */
 template <typename RGB_T = RGB565>
 class LVGLDriver {
   static_assert(sizeof(RGB_T) == 2,
                "LVGLDriver currently hardcodes LV_COLOR_FORMAT_RGB565 (a "
                "16-bit format) for LVGL's own rendering, so RGB_T must also "
-               "be a 16-bit pixel type (RGB565, RBG565, BGR565).");
+               "be a 16-bit pixel type.");
 
  public:
   LVGLDriver(DisplayDriverSPI<RGB_T>& driver, size_t x, size_t y,
@@ -114,11 +113,10 @@ class LVGLDriver {
         static_cast<LVGLDriver*>(lv_display_get_user_data(disp));
 
     // px_map is packed by LVGL itself according to LV_COLOR_FORMAT_RGB565,
-    // which is LVGL's own fixed bit layout - unrelated to RGB_T. Re-pack
-    // each pixel into RGB_T's layout (and apply gamma correction, if set)
-    // before handing the buffer to the driver, so a compensating RGB_T
-    // (e.g. RBG565) actually changes what gets transmitted rather than
-    // just relabeling the same bytes.
+    // which is LVGL's own fixed (native-order) bit layout - unrelated to
+    // RGB_T's own storage convention. Re-pack each pixel into RGB_T's
+    // layout (and apply gamma correction, if set) before handing the
+    // buffer to the driver.
     convertBuffer(px_map, w * h);
 
     // SurfaceWithExternalBuffer's default font argument is hardcoded to
@@ -205,25 +203,36 @@ class LVGLDriver {
     return table;
   }
 
-  /// Converts a buffer LVGL packed as RGB565 into RGB_T's own bit layout,
-  /// applying per-channel gamma correction (see setGamma()), in place.
-  /// Each pixel is decoded with RGB565's semantics (what LVGL actually
-  /// wrote), gamma corrected, and re-encoded via RGB_T::fromRGB(), so
-  /// RGB_T's own compensation (if any) is genuinely applied regardless of
-  /// how RGB_T's constructor happens to order its arguments.
+  /// Converts a buffer LVGL packed as (native-order) RGB565 into RGB_T's
+  /// own byte layout, applying per-channel gamma correction (see
+  /// setGamma()), in place. Each pixel is decoded with RGB565's semantics
+  /// (what LVGL actually wrote), gamma corrected, and re-encoded via
+  /// RGB_T::fromRGB(), so RGB_T's own compensation (if any) is genuinely
+  /// applied regardless of how RGB_T's constructor happens to order its
+  /// arguments.
   static void convertBuffer(uint8_t* px_map, size_t pixelCount) {
-    const bool needsRepack = !std::is_same<RGB_T, RGB565>::value;
+    const bool sameFormat = std::is_same<RGB_T, RGB565>::value;
     const bool needsGamma = (gammaR_().gamma() != 1.0f) ||
                             (gammaG_().gamma() != 1.0f) ||
                             (gammaB_().gamma() != 1.0f);
-    if (!needsRepack && !needsGamma) return;
+    uint16_t* pixels = reinterpret_cast<uint16_t*>(px_map);
+    if (sameFormat && !needsGamma) {
+      // No channel repacking or gamma to apply, but RGB565 stores bytes
+      // swapped from LVGL's native order (see RGB565.h) - a raw swap is
+      // still needed.
+      for (size_t i = 0; i < pixelCount; ++i) {
+        pixels[i] = RGB565::swapBytes(pixels[i]);
+      }
+      return;
+    }
 
     const GammaTable& gr = gammaR_();
     const GammaTable& gg = gammaG_();
     const GammaTable& gb = gammaB_();
-    uint16_t* pixels = reinterpret_cast<uint16_t*>(px_map);
     for (size_t i = 0; i < pixelCount; ++i) {
-      const RGB565 src(pixels[i]);
+      // pixels[i] is LVGL's native-order pixel; byte-swap it into
+      // RGB565's stored (wire) order before decoding.
+      const RGB565 src(RGB565::swapBytes(pixels[i]));
       uint8_t r = src.getRed();
       uint8_t g = src.getGreen();
       uint8_t b = src.getBlue();

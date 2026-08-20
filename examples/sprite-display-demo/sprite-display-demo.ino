@@ -19,10 +19,10 @@
  * This panel's ILI9341-compatible controller also doesn't honor the MADCTL
  * BGR/RGB bit per the datasheet - colors sent as standard RGB565 come out
  * with green and blue swapped (confirmed on real hardware: a green fill
- * shows up blue and vice versa). RBG565 packs the same (r, g, b) values
- * with the green/blue bit fields pre-swapped to compensate, so colors
- * constructed the normal way render correctly on this hardware. If your
- * board doesn't have this quirk, use RGB565 instead.
+ * shows up blue and vice versa). This example no longer compensates for
+ * that quirk (the RBG565 field-swap workaround was removed); if you hit
+ * it on your own panel, swap the green/blue arguments at each color
+ * constructor call below as a manual workaround.
  *
  * pinch_in/pinch_out/rotate need a second simultaneous touch point, which
  * this board's single-touch CST816S can never supply, so they won't fire
@@ -32,7 +32,6 @@
 #include <TinyGPU/DisplayDriverSPI.h>
 #include <TinyGPU/SpriteDisplay.h>
 #include <TinyGPU/GestureDetector.h>
-#include <TinyGPU/RBG565.h>
 #include <lvgl.h>
 
 // --- display geometry (Landscape) ----------------------------------------
@@ -53,20 +52,18 @@ constexpr int8_t kPinTouchSda = 33;
 constexpr int8_t kPinTouchScl = 32;
 constexpr int8_t kPinTouchIrq = 36;
 
-// RBG565 args are (r, b, g) - matching the class name - so blue's intensity
-// goes in the 2nd slot and green's in the 3rd.
-RBG565 red(255, 0, 0);
-RBG565 green(0, 0, 255);
-RBG565 blue(0, 255, 0);
-RBG565 white(255, 255, 255);
-RBG565 black(0, 0, 0);
+RGB565 red(255, 0, 0);
+RGB565 green(0, 255, 0);
+RGB565 blue(0, 0, 255);
+RGB565 white(255, 255, 255);
+RGB565 black(0, 0, 0);
 
 TouchDriverCST816S touchDriver(Wire, /*rstPin=*/-1, kPinTouchIrq);
-ILI9341Driver<RBG565> tftDriver(SPI, kPinCs, kPinDc, kPinRst);
-SpriteDisplay<RBG565> display(kDisplayWidth, kDisplayHeight, tftDriver, red);
+ILI9341Driver<RGB565> tftDriver(SPI, kPinCs, kPinDc, kPinRst);
+SpriteDisplay<RGB565> display(kDisplayWidth, kDisplayHeight, tftDriver, red);
 GestureDetector gestures;
 
-SpriteInfo<RBG565, Surface<RBG565>>* draggedSprite = nullptr;
+SpriteInfo<RGB565, Surface<RGB565>>* draggedSprite = nullptr;
 size_t draggedSpriteStartX = 0;
 size_t draggedSpriteStartY = 0;
 

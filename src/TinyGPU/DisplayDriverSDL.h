@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "DisplayDriver.h"
+#include "RGB565.h"
 
 namespace tinygpu {
 
@@ -19,6 +20,9 @@ class DisplayDriverSDL : public DisplayDriver<RGB_T> {
   DisplayDriverSDL(size_t width, size_t height) : w_(width), h_(height) {}
   DisplayDriverSDL(const ISurface<RGB_T>& surface)
       : w_(surface.width()), h_(surface.height()) {}
+
+  size_t width() const override { return w_; }
+  size_t height() const override { return h_; }
 
   bool begin() override {
     SDL_Init(SDL_INIT_VIDEO);
@@ -42,11 +46,25 @@ class DisplayDriverSDL : public DisplayDriver<RGB_T> {
   }
 
   bool writeData(ISurface<RGB_T>& surface, size_t x, size_t y) override {
+    static_assert(sizeof(RGB_T) == 2,
+                  "DisplayDriverSDL assumes a 16bpp RGB_T (RGB565)");
     setAddressWindow(x, y, surface.width(), surface.height());
     SDL_Rect updateRect = {static_cast<int>(x), static_cast<int>(y),
                            static_cast<int>(surface.width()),
                            static_cast<int>(surface.height())};
-    SDL_UpdateTexture(texture_, &updateRect, surface.data(),
+    // RGB_T (RGB565) values are stored byte-swapped to SPI/QSPI wire
+    // order (see RGB565.h), but SDL_PIXELFORMAT_RGB565 expects the
+    // conventional (native) bit layout - swap back into a scratch
+    // buffer before uploading, rather than mutating the surface itself.
+    const size_t n = surface.size();
+    if (scratch_.size() < n) scratch_.resize(n);
+    const uint16_t* src = reinterpret_cast<const uint16_t*>(surface.data());
+    uint16_t* dst = reinterpret_cast<uint16_t*>(scratch_.data());
+    const size_t pixelCount = n / sizeof(RGB_T);
+    for (size_t i = 0; i < pixelCount; ++i) {
+      dst[i] = RGB565::swapBytes(src[i]);
+    }
+    SDL_UpdateTexture(texture_, &updateRect, scratch_.data(),
                       surface.width() * sizeof(RGB_T));
     SDL_Rect fullRect = {0, 0, static_cast<int>(w_), static_cast<int>(h_)};
     SDL_RenderClear(renderer_);
@@ -71,6 +89,7 @@ class DisplayDriverSDL : public DisplayDriver<RGB_T> {
   SDL_Window* window_ = nullptr;
   SDL_Renderer* renderer_ = nullptr;
   SDL_Texture* texture_ = nullptr;
+  std::vector<uint8_t> scratch_;
 
  protected:
   bool setAddressWindow(size_t x, size_t y, size_t w, size_t h) override {

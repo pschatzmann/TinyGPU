@@ -1,6 +1,7 @@
 #pragma once
 #include <Arduino.h>
 #include <stdint.h>
+#include <string.h>
 
 #include "DisplayDriver.h"
 
@@ -63,31 +64,34 @@ class DisplayDriverQSPI : public DisplayDriver<RGB_T> {
 
   ~DisplayDriverQSPI() override { delete[] scratch_; }
 
+  size_t width() const override { return width_; }
+  size_t height() const override { return height_; }
+
   bool writeData(ISurface<RGB_T>& surface) override {
     return writeData(surface, 0, 0);
   }
 
   bool writeData(ISurface<RGB_T>& surface, size_t x, size_t y) override {
     static_assert(sizeof(RGB_T) == 2,
-                  "writeData's byte-swap assumes a 16bpp RGB_T");
+                  "writeData assumes a 16bpp RGB_T (RGB565) stored in "
+                  "wire byte order");
     if (io_ == nullptr) return false;
     if (!setAddressWindow(x, y, surface.width(), surface.height())) {
       return false;
     }
 
-    // RGB_T values are stored in the surface in the host's native
-    // (little-endian) byte order, but this panel expects each pixel's
-    // high byte first on the wire - sending the buffer's raw memory
-    // order produces a rotated-looking color channel mapping (confirmed
-    // on real hardware). Same reasoning as DisplayDriverSPI's
-    // writeData(), but esp_lcd_panel_io_tx_color() is asynchronous
-    // (trans_queue_depth > 1 above), so unlike that SPI version this
-    // can't reuse/free a scratch buffer based on assumptions about when
-    // a previous transfer happens to finish - that raced with the DMA
-    // still reading the old buffer and crashed on real hardware. Using
-    // one persistent, surface-sized scratch buffer, and blocking (via
-    // the on_color_trans_done callback set up in beginBus()) until the
-    // whole transfer completes before returning.
+    // RGB_T (RGB565) values are stored in the surface already
+    // byte-swapped to this panel's wire order (see RGB565.h), so no
+    // per-pixel swap is needed here anymore. Still copied into a scratch
+    // buffer because esp_lcd_panel_io_tx_color() is asynchronous
+    // (trans_queue_depth > 1 above), so unlike DisplayDriverSPI's
+    // writeData() this can't reuse/free a scratch buffer based on
+    // assumptions about when a previous transfer happens to finish -
+    // that raced with the DMA still reading the old buffer and crashed
+    // on real hardware. Using one persistent, surface-sized scratch
+    // buffer, and blocking (via the on_color_trans_done callback set up
+    // in beginBus()) until the whole transfer completes before
+    // returning.
     //
     // IMPORTANT: send this as ONE tx_color() call, not chunked at this
     // level. esp_lcd's own SPI backend (esp_lcd_panel_io_spi.c) already
@@ -106,11 +110,7 @@ class DisplayDriverQSPI : public DisplayDriver<RGB_T> {
       scratch_ = new uint8_t[n];
       scratchCapacity_ = n;
     }
-    const uint8_t* src = surface.data();
-    for (size_t i = 0; i + 1 < n; i += 2) {
-      scratch_[i] = src[i + 1];
-      scratch_[i + 1] = src[i];
-    }
+    memcpy(scratch_, surface.data(), n);
 
     colorTransPending_ = true;
     if (esp_lcd_panel_io_tx_color(io_, qspiCmd(kOpcodeColor, kCmdRamWrite),

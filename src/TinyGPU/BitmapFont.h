@@ -6,7 +6,6 @@
 #include <array>
 #include "RGB565.h"
 #include "RGB888.h"
-#include "BGR565.h"
 #include "IFont.h"
 #include "ISurface.h"
 
@@ -779,7 +778,6 @@ class BitmapFont : public IFont<RGB_T> {
 
 static BitmapFont<RGB565> FontRGB565;
 static BitmapFont<RGB888> FontRGB888;
-static BitmapFont<BGR565> FontBGR565;
 static BitmapFont<bool> FontMonochrome;
 
 }  // namespace tinygpu

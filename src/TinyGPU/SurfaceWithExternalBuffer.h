@@ -6,7 +6,6 @@
 #include <algorithm>
 #include <cstddef>
 
-#include "BGR565.h"
 #include "BitmapFont.h"
 #include "IFont.h"
 #include "ISurface.h"

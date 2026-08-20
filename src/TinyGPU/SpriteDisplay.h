@@ -9,6 +9,7 @@
 #include "TinyGPUConfig.h"
 #include "TinyGPULogger.h"
 #include "TouchDriver.h"
+#include "LCDBoards.h"
 
 namespace tinygpu {
 
@@ -32,6 +33,24 @@ class SpriteDisplay {
         driver_(driver),
         backgroundColor_(backgroundColor) {}
 
+  /// Constructs from an LCDBoard (see LCDBoards.h): takes its display
+  /// driver and dimensions, and auto-attaches its touch controller if one
+  /// is present. Only valid for RGB_T = RGB565, since every LCDBoard's
+  /// display() is RGB565.
+  ///
+  /// begin() on the resulting SpriteDisplay calls LCDBoard::begin()
+  /// (backlight + SPI/QSPI bus + display controller + touch controller)
+  /// instead of just the display driver's begin() - do not also call
+  /// board.begin() yourself, or the display controller's init sequence
+  /// (and, on boards that need it, the display-inversion fix) runs twice.
+  explicit SpriteDisplay(LCDBoard& board, RGB_T backgroundColor = RGB_T(0))
+      : driver_(board.display()),
+        p_touchDriver(board.touch()),
+        p_board_(&board),
+        width_(board.width()),
+        height_(board.height()),
+        backgroundColor_(backgroundColor) {}
+
   /// Adds a sprite to the framebuffer and draws it at the given position.
   SpriteInfo<RGB_T, Surface<RGB_T>>& addSprite(size_t x, size_t y,
                                                const ISurface<RGB_T>& sprite) {
@@ -46,9 +65,11 @@ class SpriteDisplay {
     return *sprites_.back();
   }
 
-  /// Starts the processing
+  /// Starts the processing. If constructed from an LCDBoard, this brings
+  /// up the whole board (LCDBoard::begin()); otherwise just the display
+  /// driver (driver_.begin()).
   bool begin() {
-    bool ok = driver_.begin();
+    bool ok = p_board_ != nullptr ? p_board_->begin() : driver_.begin();
     clear();
     return ok;
   }
@@ -226,6 +247,7 @@ class SpriteDisplay {
  protected:
   DisplayDriver<RGB_T>& driver_;
   TouchDriver* p_touchDriver = nullptr;
+  LCDBoard* p_board_ = nullptr;
   Sprite<RGB_T> actual_sprite_background_;
   size_t width_;
   size_t height_;

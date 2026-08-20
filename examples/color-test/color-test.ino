@@ -8,7 +8,7 @@
  *    ILI9341-compatible clone controllers don't honor the MADCTL BGR/RGB
  *    bit per the datasheet and route color data to the wrong physical
  *    subpixels - the RGB test makes that obvious (e.g. the "green" band
- *    showing up blue). See RBG565.h for the fix and how to tell.
+ *    showing up blue).
  *  - Spotting low-brightness color tint. Some panels show a visible hue
  *    in near-black/grey tones even with field wiring correct - the
  *    greyscale ramp makes that easy to see across the full brightness
@@ -109,7 +109,7 @@ void showGreyscaleTest() {
     addLabeledBand(0, i * bandHeight, kDisplayWidth, bandHeight, color,
                   textColor, label);
     Serial.printf("  band %2d: grey %3d  packed 0x%04X\n", i, value,
-                  color.getValue());
+                  color.getValueSwapped());
   }
 }
 

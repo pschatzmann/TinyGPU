@@ -5,7 +5,6 @@
 #include "FrameBufferMonochrome.h"
 #include "IFont.h"
 #include "LinePrinter.h"
-#include "BGR565.h"
 #include "RGB565.h"
 #include "RGB666.h"
 #include "RGB888.h"
@@ -32,11 +31,6 @@ using SurfaceRGB666 = Surface<RGB666>;
  *  @brief Surface with RGB888 pixel format.
  */
 using SurfaceRGB888 = Surface<RGB888>;
-/**
- *  @typedef SurfaceBGR565
- *  @brief Surface with BGR565 pixel format.
- */
-using SurfaceBGR565 = Surface<BGR565>;
 
 /**
  *  @typedef FrameBufferRGB565
@@ -54,11 +48,6 @@ using FrameBufferRGB666 = FrameBuffer<RGB666>;
  */
 using FrameBufferRGB888 = FrameBuffer<RGB888>;
 /**
- *  @typedef FrameBufferBGR565
- *  @brief FrameBuffer with BGR565 pixel format.
- */
-using FrameBufferBGR565 = FrameBuffer<BGR565>;
-/**
  *  @typedef SpriteRGB565
  *  @brief Sprite with RGB565 pixel format.
  */
@@ -74,11 +63,6 @@ using SpriteRGB666 = Sprite<RGB666>;
  */
 using SpriteRGB888 = Sprite<RGB888>;
 /**
- *  @typedef SpriteBGR565
- *  @brief Sprite with BGR565 pixel format.
- */
-using SpriteBGR565 = Sprite<BGR565>;
-/**
  *  @typedef LinePrinterRGB565
  *  @brief LinePrinter with RGB565 pixel format.
  */
@@ -92,11 +76,6 @@ using LinePrinterRGB666 = LinePrinter<RGB666>;
  *  @brief LinePrinter with RGB888 pixel format.
  */
 using LinePrinterRGB888 = LinePrinter<RGB888>;
-/**
- *  @typedef LinePrinterBGR565
- *  @brief LinePrinter with BGR565 pixel format.
- */
-using LinePrinterBGR565 = LinePrinter<BGR565>;
 /**
  *  @typedef BitmapFontRGB565
  *  @brief BitmapFont with RGB565 pixel format.
@@ -112,10 +91,6 @@ using BitmapFontRGB666 = BitmapFont<RGB666>;
  *  @brief BitmapFont with RGB888 pixel format.
  */
 using BitmapFontRGB888 = BitmapFont<RGB888>;
-/** @typedef BitmapFontBGR565
- *  @brief BitmapFont with BGR565 pixel format.
- */
-using BitmapFontBGR565 = BitmapFont<BGR565>;
 /**
  *  @typedef IFontRGB565
  *  @brief IFont with RGB565 pixel format.
@@ -131,10 +106,6 @@ using IFontRGB666 = IFont<RGB666>;
  *  @brief IFont with RGB888 pixel format.
  */
 using IFontRGB888 = IFont<RGB888>;
-/** @typedef IFontBGR565
- *  @brief IFont with BGR565 pixel format.
- */
-using IFontBGR565 = IFont<BGR565>;
 
 /// @brief Font8x8 (converted from STM32-EVAL fonts.c) with RGB565 pixel format.
 using Font8x8RGB565 = Font8x8<RGB565>;
@@ -142,8 +113,6 @@ using Font8x8RGB565 = Font8x8<RGB565>;
 using Font8x8RGB666 = Font8x8<RGB666>;
 /// @brief Font8x8 (converted from STM32-EVAL fonts.c) with RGB888 pixel format.
 using Font8x8RGB888 = Font8x8<RGB888>;
-/// @brief Font8x8 (converted from STM32-EVAL fonts.c) with BGR565 pixel format.
-using Font8x8BGR565 = Font8x8<BGR565>;
 
 /// @brief Font8x12 (converted from STM32-EVAL fonts.c) with RGB565 pixel format.
 using Font8x12RGB565 = Font8x12<RGB565>;
@@ -151,8 +120,6 @@ using Font8x12RGB565 = Font8x12<RGB565>;
 using Font8x12RGB666 = Font8x12<RGB666>;
 /// @brief Font8x12 (converted from STM32-EVAL fonts.c) with RGB888 pixel format.
 using Font8x12RGB888 = Font8x12<RGB888>;
-/// @brief Font8x12 (converted from STM32-EVAL fonts.c) with BGR565 pixel format.
-using Font8x12BGR565 = Font8x12<BGR565>;
 
 /// @brief Font12x12 (converted from STM32-EVAL fonts.c) with RGB565 pixel format.
 using Font12x12RGB565 = Font12x12<RGB565>;
@@ -160,8 +127,6 @@ using Font12x12RGB565 = Font12x12<RGB565>;
 using Font12x12RGB666 = Font12x12<RGB666>;
 /// @brief Font12x12 (converted from STM32-EVAL fonts.c) with RGB888 pixel format.
 using Font12x12RGB888 = Font12x12<RGB888>;
-/// @brief Font12x12 (converted from STM32-EVAL fonts.c) with BGR565 pixel format.
-using Font12x12BGR565 = Font12x12<BGR565>;
 
 /// @brief Font16x24 (converted from STM32-EVAL fonts.c) with RGB565 pixel format.
 using Font16x24RGB565 = Font16x24<RGB565>;
@@ -169,8 +134,6 @@ using Font16x24RGB565 = Font16x24<RGB565>;
 using Font16x24RGB666 = Font16x24<RGB666>;
 /// @brief Font16x24 (converted from STM32-EVAL fonts.c) with RGB888 pixel format.
 using Font16x24RGB888 = Font16x24<RGB888>;
-/// @brief Font16x24 (converted from STM32-EVAL fonts.c) with BGR565 pixel format.
-using Font16x24BGR565 = Font16x24<BGR565>;
 
 /**
  *  @typedef WireFrame3D_RGB565
@@ -187,11 +150,6 @@ using WireFrame3D_RGB666 = WireFrame3D<RGB666>;
  *  @brief WireFrame3D with RGB888 pixel format.
  */
 using WireFrame3D_RGB888 = WireFrame3D<RGB888>;
-/**
- * @typedef WireFrame3D_BGR565
- * @brief   WireFrame3D_BGR565
- */
-using WireFrame3D_BGR565 = WireFrame3D<BGR565>;
 
 /// @brief CartesianView with RGB565 pixel format.
 using CartesianViewRGB565 = CartesianView<RGB565>;
@@ -199,7 +157,5 @@ using CartesianViewRGB565 = CartesianView<RGB565>;
 using CartesianViewRGB666 = CartesianView<RGB666>;
 /// @brief CartesianView with RGB888 pixel format.
 using CartesianViewRGB888 = CartesianView<RGB888>;
-/// @brief CartesianView with BGR565 pixel format.
-using CartesianViewBGR565 = CartesianView<BGR565>;
 
 }  // namespace tinygpu

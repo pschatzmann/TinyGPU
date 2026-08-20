@@ -226,7 +226,10 @@ class AVIWriter {
     for (uint32_t row = 0; row < height; ++row) {
       const uint32_t sourceY = height - 1U - row;
       for (uint32_t x = 0; x < width; ++x) {
-        writeU16(surface.getPixel(x, sourceY).getValue());
+        // getValue() is byte-swapped (SPI/QSPI wire order); the header
+        // above declares standard RGB565 bitmasks, which describe the
+        // conventional (native) bit layout, so undo the swap here.
+        writeU16(surface.getPixel(x, sourceY).getValueSwapped());
       }
       for (uint32_t padding = width * 2U; padding < rowStride; ++padding) {
         writeBytes(&padByte, 1);

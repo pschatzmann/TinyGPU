@@ -3,6 +3,7 @@
 #include <SPI.h>
 #include <initializer_list>
 #include <stdint.h>
+#include <string.h>
 
 #include "DisplayDriver.h"
 
@@ -33,34 +34,30 @@ class DisplayDriverSPI : public DisplayDriver<RGB_T> {
 
   bool writeData(ISurface<RGB_T>& surface, size_t x, size_t y) override {
     static_assert(sizeof(RGB_T) == 2,
-                  "writeData's byte-swap assumes a 16bpp RGB_T");
+                  "writeData assumes a 16bpp RGB_T (RGB565) stored in "
+                  "wire byte order");
     setAddressWindow(x, y, surface.width(), surface.height());
     spi_.beginTransaction(SPISettings(frequencyHz_, MSBFIRST, SPI_MODE0));
     digitalWrite(dc_, HIGH);
     digitalWrite(cs_, LOW);
-    // RGB_T values are stored in the buffer in the host's native
-    // (little-endian) byte order, but the panel expects each pixel's
-    // high byte first on the wire - sending the buffer's raw memory
-    // order corrupts color across field boundaries (see writePixels's
-    // history in git log for the symptom this caused). Byte-swapped
-    // through a small scratch buffer and sent with the portable bulk
-    // SPIClass::transfer(void*, size_t) - available on every core, not
-    // just ESP32 - rather than one SPIClass::transfer16() call per
-    // pixel, since transfer() lets the underlying implementation batch
-    // many bytes into fewer hardware transactions. Can't byte-swap the
-    // surface's own buffer in place and bulk-transfer that directly:
-    // transfer(buf, count) is full-duplex and overwrites buf with
-    // received data, which would corrupt the framebuffer itself.
+    // RGB_T (RGB565) values are stored in the buffer already byte-swapped
+    // to the panel's wire order (see RGB565.h), so the buffer's raw memory
+    // order can be sent as-is - no per-pixel swap needed here anymore.
+    // Still copied through a small scratch buffer and sent with the
+    // portable bulk SPIClass::transfer(void*, size_t) - available on every
+    // core, not just ESP32 - rather than one SPIClass::transfer16() call
+    // per pixel, since transfer() lets the underlying implementation batch
+    // many bytes into fewer hardware transactions. Can't bulk-transfer the
+    // surface's own buffer directly: transfer(buf, count) is full-duplex
+    // and overwrites buf with received data, which would corrupt the
+    // framebuffer itself.
     constexpr size_t kChunkBytes = 256;
     uint8_t chunk[kChunkBytes];
     const uint8_t* src = surface.data();
     size_t remaining = surface.size();
     while (remaining > 0) {
       const size_t n = remaining < kChunkBytes ? remaining : kChunkBytes;
-      for (size_t i = 0; i < n; i += 2) {
-        chunk[i] = src[i + 1];
-        chunk[i + 1] = src[i];
-      }
+      memcpy(chunk, src, n);
       spi_.transfer(chunk, n);
       src += n;
       remaining -= n;
@@ -259,19 +256,32 @@ class ILI9341Driver : public DisplayDriverSPI<RGB_T> {
   using DisplayDriverSPI<RGB_T>::writeData8;
   using DisplayDriverSPI<RGB_T>::writeDataN;
 
-  enum class Rotation {
-    kNone = -1,
-    kPortrait = 0,
-    kLandscape = 1,
-    kPortraitFlipped = 2,
-    kLandscapeFlipped = 3,
-  };
+  /// Alias for the shared tinygpu::DisplayRotation (see DisplayDriver.h) - kept
+  /// so existing code written against ILI9341Driver<RGB_T>::Rotation
+  /// still compiles unchanged now that the enum lives on the base class.
+  using Rotation = tinygpu::DisplayRotation;
 
+  /// @param nativeWidth/nativeHeight the panel's physical resolution in
+  /// its native (portrait, MV bit clear) orientation - 240x320 is the
+  /// common ILI9341 module size and the default; pass your panel's real
+  /// values if it differs. width()/height() report these swapped or not
+  /// depending on `rotation` (and any later setRotation() call) - see
+  /// isLandscapeFamily().
   ILI9341Driver(SPIClass& spi, int8_t cs, int8_t dc, int8_t rst = -1,
                 Rotation rotation = Rotation::kNone,
-                uint32_t frequencyHz = 40000000)
+                uint32_t frequencyHz = 40000000,
+                size_t nativeWidth = 240, size_t nativeHeight = 320)
       : DisplayDriverSPI<RGB_T>(spi, cs, dc, rst, 0, 0, frequencyHz),
-        rotation_(rotation) {}
+        rotation_(rotation),
+        nativeWidth_(nativeWidth),
+        nativeHeight_(nativeHeight) {}
+
+  size_t width() const override {
+    return isLandscapeFamily(rotation_) ? nativeHeight_ : nativeWidth_;
+  }
+  size_t height() const override {
+    return isLandscapeFamily(rotation_) ? nativeWidth_ : nativeHeight_;
+  }
 
   bool begin() override {
     setupPinsAndReset();
@@ -345,7 +355,7 @@ class ILI9341Driver : public DisplayDriverSPI<RGB_T> {
     return true;
   }
 
-  void setRotation(Rotation rotation) {
+  void setRotation(Rotation rotation) override {
     if (rotation == Rotation::kNone) return;
     rotation_ = rotation;
     writeCommand(0x36);
@@ -365,6 +375,7 @@ class ILI9341Driver : public DisplayDriverSPI<RGB_T> {
 
  protected:
   Rotation rotation_;
+  size_t nativeWidth_, nativeHeight_;
 
   // MADCTL values with the BGR bit set (0x08), matching the MX/MY/MV
   // (row/column/exchange) + BGR combinations Bodmer/TFT_eSPI's ILI9341
@@ -410,17 +421,31 @@ class ILI9342Driver : public DisplayDriverSPI<RGB_T> {
   using DisplayDriverSPI<RGB_T>::writeData8;
   using DisplayDriverSPI<RGB_T>::writeDataN;
 
-  enum class Rotation {
-    kNone = -1,
-    kPortrait = 0,
-    kLandscape = 1,
-    kPortraitFlipped = 2,
-    kLandscapeFlipped = 3,
-  };
+  /// Alias for the shared tinygpu::DisplayRotation (see DisplayDriver.h) - kept
+  /// so existing code written against ILI9342Driver<RGB_T>::Rotation
+  /// still compiles unchanged now that the enum lives on the base class.
+  using Rotation = tinygpu::DisplayRotation;
 
+  /// @param nativeWidth/nativeHeight the panel's physical resolution in
+  /// its native (portrait, MV bit clear) orientation - 240x320 is the
+  /// common size for this chip family and the default; pass your panel's
+  /// real values if it differs. width()/height() report these swapped or
+  /// not depending on `rotation` (and any later setRotation() call) -
+  /// see isLandscapeFamily().
   ILI9342Driver(SPIClass& spi, int8_t cs, int8_t dc, int8_t rst = -1,
-               Rotation rotation = Rotation::kNone)
-      : DisplayDriverSPI<RGB_T>(spi, cs, dc, rst, 0, 0), rotation_(rotation) {}
+               Rotation rotation = Rotation::kNone,
+               size_t nativeWidth = 240, size_t nativeHeight = 320)
+      : DisplayDriverSPI<RGB_T>(spi, cs, dc, rst, 0, 0),
+        rotation_(rotation),
+        nativeWidth_(nativeWidth),
+        nativeHeight_(nativeHeight) {}
+
+  size_t width() const override {
+    return isLandscapeFamily(rotation_) ? nativeHeight_ : nativeWidth_;
+  }
+  size_t height() const override {
+    return isLandscapeFamily(rotation_) ? nativeWidth_ : nativeHeight_;
+  }
 
   bool begin() override {
     setupPinsAndReset();
@@ -491,7 +516,7 @@ class ILI9342Driver : public DisplayDriverSPI<RGB_T> {
     return true;
   }
 
-  void setRotation(Rotation rotation) {
+  void setRotation(Rotation rotation) override {
     if (rotation == Rotation::kNone) return;
     rotation_ = rotation;
     writeCommand(0x36);
@@ -502,6 +527,7 @@ class ILI9342Driver : public DisplayDriverSPI<RGB_T> {
 
  protected:
   Rotation rotation_;
+  size_t nativeWidth_, nativeHeight_;
 
   static uint8_t madctlForRotation(Rotation rotation) {
     switch (rotation) {

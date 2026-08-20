@@ -19,7 +19,6 @@
 #include <TinyGPU.h>
 #include <TinyGPU/DisplayDriverSPI.h>
 #include <TinyGPU/LVGLDriver.h>
-#include <TinyGPU/RBG565.h>
 #include <lvgl.h>
 #include <math.h>
 
@@ -43,8 +42,8 @@ constexpr int8_t kPinTouchIrq = 36;
 
 // Explicit buffer allocation size (320 * 20 lines * 2 bytes)
 constexpr size_t kLvglBufferSize = kDisplayWidth * 2;
-ILI9341Driver<RBG565> tftDriver(SPI, kPinCs, kPinDc, kPinRst);
-LVGLDriver<RBG565> lvglDriver(tftDriver, kDisplayWidth, kDisplayHeight,
+ILI9341Driver<RGB565> tftDriver(SPI, kPinCs, kPinDc, kPinRst);
+LVGLDriver<RGB565> lvglDriver(tftDriver, kDisplayWidth, kDisplayHeight,
                               kLvglBufferSize);
 TouchDriverCST816S touchDriver(Wire, /*rstPin=*/-1, kPinTouchIrq);
 
