@@ -287,7 +287,7 @@ class tinygpu::SurfaceBase&lt; PixelT &gt;</div><p>Base class for 2D surfaces wi
 <p><a class="el" href="classtinygpu_1_1SurfaceBase.html" title="Base class for 2D surfaces with drawing and text rendering support.">SurfaceBase</a> provides common logic for managing surface dimensions, font handling, and basic geometry operations. It is intended to be subclassed by concrete surface implementations that provide pixel storage and access (e.g., <a class="el" href="classtinygpu_1_1Surface.html" title="In-memory bitmap surface with basic 2D drawing and text rendering.">Surface</a>, <a class="el" href="classtinygpu_1_1SurfaceMonochrome.html" title="In-memory 1-bit (monochrome) bitmap surface with 2D drawing and text rendering.">SurfaceMonochrome</a>).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">PixelT</td><td>The pixel color type (e.g., <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a>, bool, etc.) </td></tr>
+    <tr><td class="paramname">PixelT</td><td>The pixel color type (e.g., <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a>, bool, etc.) </td></tr>
   </table>
   </dd>
 </dl>

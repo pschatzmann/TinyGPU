@@ -82,16 +82,13 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract base class for display drivers.  
- <a href="classtinygpu_1_1DisplayDriver.html#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="DisplayDriver_8h_source.html">DisplayDriver.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for DisplayDriver&lt; RGB_T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1DisplayDriver__inherit__graph.png" border="0" usemap="#aDisplayDriver_3_01RGB__T_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aDisplayDriver_3_01RGB__T_01_4_inherit__map" id="aDisplayDriver_3_01RGB__T_01_4_inherit__map">
-<area shape="rect" title="Abstract base class for display drivers." alt="" coords="5,80,189,105"/>
+<area shape="rect" title=" " alt="" coords="5,80,189,105"/>
 <area shape="rect" href="classtinygpu_1_1DisplayDriverSPI.html" title=" " alt="" coords="237,31,451,56"/>
 <area shape="rect" href="classtinygpu_1_1DisplayDriverSDL.html" title="Display class for rendering a Surface&lt;RGB565&gt; using the SDL2 library. This class can be used to displ..." alt="" coords="239,80,449,105"/>
 <area shape="rect" href="classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="242,129,446,155"/>
@@ -108,7 +105,7 @@ Collaboration diagram for DisplayDriver&lt; RGB_T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1DisplayDriver__coll__graph.png" border="0" usemap="#aDisplayDriver_3_01RGB__T_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="aDisplayDriver_3_01RGB__T_01_4_coll__map" id="aDisplayDriver_3_01RGB__T_01_4_coll__map">
-<area shape="rect" title="Abstract base class for display drivers." alt="" coords="5,168,189,193"/>
+<area shape="rect" title=" " alt="" coords="5,168,189,193"/>
 <area shape="rect" href="classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="8,80,187,105"/>
 <area shape="rect" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="34,5,161,31"/>
 </map>
@@ -126,7 +123,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa65a4630add7360c3f2a44cbb054b512"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa426c1066b36c91a52fd8df26d7cc50a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#aa426c1066b36c91a52fd8df26d7cc50a">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface, size_t x, size_t y)=0</td></tr>
 <tr class="separator:aa426c1066b36c91a52fd8df26d7cc50a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43ecedff0e0f8b703205d407ee2550b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a43ecedff0e0f8b703205d407ee2550b5">writeColor</a> (size_t width, size_t height, RGB_T color)</td></tr>
+<tr class="memitem:a76f274dae1869afa29ebe052085790b0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a76f274dae1869afa29ebe052085790b0">setRotation</a> (<a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">DisplayRotation</a> rotation)</td></tr>
+<tr class="separator:a76f274dae1869afa29ebe052085790b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0b1032913cf74902ae68d05a8d982d1"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#ab0b1032913cf74902ae68d05a8d982d1">width</a> () const =0</td></tr>
+<tr class="separator:ab0b1032913cf74902ae68d05a8d982d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b329a3d2f3c79e7f52714fecfadec8c"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a2b329a3d2f3c79e7f52714fecfadec8c">height</a> () const =0</td></tr>
+<tr class="separator:a2b329a3d2f3c79e7f52714fecfadec8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43ecedff0e0f8b703205d407ee2550b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a43ecedff0e0f8b703205d407ee2550b5">writeColor</a> (size_t <a class="el" href="classtinygpu_1_1DisplayDriver.html#ab0b1032913cf74902ae68d05a8d982d1">width</a>, size_t <a class="el" href="classtinygpu_1_1DisplayDriver.html#a2b329a3d2f3c79e7f52714fecfadec8c">height</a>, RGB_T color)</td></tr>
 <tr class="separator:a43ecedff0e0f8b703205d407ee2550b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
@@ -139,11 +142,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a4f980f9afeabd069a60f1edb3da7dcbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt; RGB_T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a4f980f9afeabd069a60f1edb3da7dcbe">defaultFont</a></td></tr>
 <tr class="separator:a4f980f9afeabd069a60f1edb3da7dcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename RGB_T = RGB565&gt;<br />
-class tinygpu::DisplayDriver&lt; RGB_T &gt;</div><p>Abstract base class for display drivers. </p>
-<p>Defines the interface for initializing the display, setting the address window, and writing pixel data from a <a class="el" href="classtinygpu_1_1Surface.html" title="In-memory bitmap surface with basic 2D drawing and text rendering.">Surface</a>. Specific display drivers (e.g. SPI, SDL) should inherit from this and implement the virtual methods. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac023e3f44bf39c02975c0430b73a51cd" name="ac023e3f44bf39c02975c0430b73a51cd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac023e3f44bf39c02975c0430b73a51cd">&#9670;&#160;</a></span>~DisplayDriver()</h2>
 
@@ -224,6 +223,33 @@ class tinygpu::DisplayDriver&lt; RGB_T &gt;</div><p>Abstract base class for disp
 
 </div>
 </div>
+<a id="a2b329a3d2f3c79e7f52714fecfadec8c" name="a2b329a3d2f3c79e7f52714fecfadec8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b329a3d2f3c79e7f52714fecfadec8c">&#9670;&#160;</a></span>height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t height </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classtinygpu_1_1DisplayDriverSDL.html#a715f3df3dc638de8b40076ada0b54a89">DisplayDriverSDL&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1ILI9341Driver.html#a715f3df3dc638de8b40076ada0b54a89">ILI9341Driver&lt; RGB_T &gt;</a>, and <a class="el" href="classtinygpu_1_1ILI9342Driver.html#a715f3df3dc638de8b40076ada0b54a89">ILI9342Driver&lt; RGB_T &gt;</a>.</p>
+
+</div>
+</div>
 <a id="a13ff6a8afbcb7bafe48a99445c45eaa3" name="a13ff6a8afbcb7bafe48a99445c45eaa3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a13ff6a8afbcb7bafe48a99445c45eaa3">&#9670;&#160;</a></span>setAddressWindow()</h2>
 
@@ -271,6 +297,63 @@ class tinygpu::DisplayDriver&lt; RGB_T &gt;</div><p>Abstract base class for disp
 </div><div class="memdoc">
 
 <p>Implemented in <a class="el" href="classtinygpu_1_1DisplayDriverSDL.html#ad1c1dcc698fc551d226d0a6f176668aa">DisplayDriverSDL&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ad1c1dcc698fc551d226d0a6f176668aa">DisplayDriverSPI&lt; RGB_T &gt;</a>, and <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ad1c1dcc698fc551d226d0a6f176668aa">DisplayDriverSPI&lt; RGB565 &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a76f274dae1869afa29ebe052085790b0" name="a76f274dae1869afa29ebe052085790b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76f274dae1869afa29ebe052085790b0">&#9670;&#160;</a></span>setRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void setRotation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">DisplayRotation</a>&#160;</td>
+          <td class="paramname"><em>rotation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Changes the panel's rotation after <a class="el" href="classtinygpu_1_1DisplayDriver.html#ae8a0d9ca63f8bb3de100e347c3f3bca4">begin()</a>. Default no-op, for drivers with no such concept (e.g. a fixed-orientation panel, or a desktop/SDL backend) - concrete SPI drivers (<a class="el" href="classtinygpu_1_1ILI9341Driver.html" title="Driver for ILI9341 SPI display controller.">ILI9341Driver</a>, <a class="el" href="classtinygpu_1_1ILI9342Driver.html" title="Driver for ILI9342 SPI display controller.">ILI9342Driver</a>) override this to reprogram MADCTL. </p>
+
+<p>Reimplemented in <a class="el" href="classtinygpu_1_1ILI9341Driver.html#af2e0bf18c68fa7d969d6af6570c10a63">ILI9341Driver&lt; RGB_T &gt;</a>, and <a class="el" href="classtinygpu_1_1ILI9342Driver.html#af2e0bf18c68fa7d969d6af6570c10a63">ILI9342Driver&lt; RGB_T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ab0b1032913cf74902ae68d05a8d982d1" name="ab0b1032913cf74902ae68d05a8d982d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0b1032913cf74902ae68d05a8d982d1">&#9670;&#160;</a></span>width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t width </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Current addressable panel width/height in pixels - for a driver that supports <a class="el" href="classtinygpu_1_1DisplayDriver.html#a76f274dae1869afa29ebe052085790b0">setRotation()</a>, these reflect the <em>current</em> rotation (landscape vs portrait swaps them; see <a class="el" href="namespacetinygpu.html#a49d2bcea04c3ee104bded423d489d5da">isLandscapeFamily()</a>), not necessarily the panel's native/physical orientation. Callers that need to lay out content (e.g. OutputTinyGPU's scale_to_fit target, or clearScreen()'s band loop) should read these fresh rather than caching their own copy, so a <a class="el" href="classtinygpu_1_1DisplayDriver.html#a76f274dae1869afa29ebe052085790b0">setRotation()</a> call is picked up automatically without needing separate bookkeeping. </p>
+
+<p>Implemented in <a class="el" href="classtinygpu_1_1DisplayDriverSDL.html#ac39656d862f5a4a39182559bbf7c740b">DisplayDriverSDL&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac39656d862f5a4a39182559bbf7c740b">ILI9341Driver&lt; RGB_T &gt;</a>, and <a class="el" href="classtinygpu_1_1ILI9342Driver.html#ac39656d862f5a4a39182559bbf7c740b">ILI9342Driver&lt; RGB_T &gt;</a>.</p>
 
 </div>
 </div>

@@ -1,5 +1,5 @@
 <map id="DisplayDriver&lt; RGB_T &gt;" name="DisplayDriver&lt; RGB_T &gt;">
-<area shape="rect" id="node1" title="Abstract base class for display drivers." alt="" coords="5,80,189,105"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,189,105"/>
 <area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriverSPI.html" title=" " alt="" coords="237,31,451,56"/>
 <area shape="rect" id="node3" href="$classtinygpu_1_1DisplayDriverSDL.html" title="Display class for rendering a Surface&lt;RGB565&gt; using the SDL2 library. This class can be used to displ..." alt="" coords="239,80,449,105"/>
 <area shape="rect" id="node4" href="$classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="242,129,446,155"/>

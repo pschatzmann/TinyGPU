@@ -88,10 +88,7 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1AVIWriter.html">AVIWriter</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a simple AVI movie containing <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> frames.  <a href="classtinygpu_1_1AVIWriter.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">BGR color stored in 16-bit <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> format.  <a href="classtinygpu_1_1BGR565.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a simple AVI movie containing <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> frames.  <a href="classtinygpu_1_1AVIWriter.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fixed-size 5x7 bitmap font with ASCII and extended character support.  <a href="classtinygpu_1_1BitmapFont.html#details">More...</a><br /></td></tr>
@@ -112,7 +109,6 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware abstraction for writing framebuffers to SPI-based color displays.  <a href="classtinygpu_1_1DeviceOutput.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html">DisplayDriver</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract base class for display drivers.  <a href="classtinygpu_1_1DisplayDriver.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSDL.html">DisplayDriverSDL</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display class for rendering a <a class="el" href="classtinygpu_1_1Surface.html">Surface&lt;RGB565&gt;</a> using the SDL2 library. This class can be used to display the contents of a TinyGPU <a class="el" href="classtinygpu_1_1Surface.html">Surface&lt;RGB565&gt;</a> on a desktop environment for testing and debugging purposes.  <a href="classtinygpu_1_1DisplayDriverSDL.html#details">More...</a><br /></td></tr>
@@ -149,6 +145,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1HX8357Driver.html">HX8357Driver</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for HX8357 SPI display controller.  <a href="classtinygpu_1_1HX8357Driver.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1I2SPins.html">I2SPins</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1IFont.html">IFont</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Font rendering interface for TinyGPU-compatible framebuffers.  <a href="classtinygpu_1_1IFont.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,20 +159,21 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract framebuffer and drawing interface for TinyGPU surfaces.  <a href="classtinygpu_1_1ISurface.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoard.html">LCDBoard</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1LEDPins.html">LEDPins</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper for printing wrapped lines of text onto a TinyGPU target.  <a href="classtinygpu_1_1LinePrinter.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1Point.html">Point</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch point.  <a href="structtinygpu_1_1Point.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RBG565.html">RBG565</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color stored in a 16-bit word with an R:5 - B:6 - G:5 bit layout (green and blue swapped relative to <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a>), following the same constructor-order-matches-the-class-name convention as <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a>: pass components in R, B, G order and they're packed into those field positions directly, with no reordering.  <a href="classtinygpu_1_1RBG565.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1Rect.html">Rect</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a rectangular area on the screen or surface.  <a href="structtinygpu_1_1Rect.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RGB color stored in 16-bit <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> format.  <a href="classtinygpu_1_1RGB565.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RGB color stored in 16-bit <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> format, byte-swapped from the conventional bit layout.  <a href="classtinygpu_1_1RGB565.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RGB666.html">RGB666</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RGB color stored in 18-bit <a class="el" href="classtinygpu_1_1RGB666.html" title="RGB color stored in 18-bit RGB666 format.">RGB666</a> format.  <a href="classtinygpu_1_1RGB666.html#details">More...</a><br /></td></tr>
@@ -244,7 +243,7 @@ Typedefs</h2></td></tr>
 <tr class="memdesc:a353d51e0e782a9a2a9e850a352b84b24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for a monochrome sprite surface.  <br /></td></tr>
 <tr class="separator:a353d51e0e782a9a2a9e850a352b84b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ea39cc37eb3046afe513efdc085374c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a8ea39cc37eb3046afe513efdc085374c">SurfaceRGB565</a> = <a class="el" href="classtinygpu_1_1Surface.html">Surface</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt;</td></tr>
-<tr class="memdesc:a8ea39cc37eb3046afe513efdc085374c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Surface.html" title="In-memory bitmap surface with basic 2D drawing and text rendering.">Surface</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format.  <br /></td></tr>
+<tr class="memdesc:a8ea39cc37eb3046afe513efdc085374c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Surface.html" title="In-memory bitmap surface with basic 2D drawing and text rendering.">Surface</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format.  <br /></td></tr>
 <tr class="separator:a8ea39cc37eb3046afe513efdc085374c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28a1495c10eeb420d0fc8e4475d1dc3f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a28a1495c10eeb420d0fc8e4475d1dc3f">SurfaceRGB666</a> = <a class="el" href="classtinygpu_1_1Surface.html">Surface</a>&lt; <a class="el" href="classtinygpu_1_1RGB666.html">RGB666</a> &gt;</td></tr>
 <tr class="memdesc:a28a1495c10eeb420d0fc8e4475d1dc3f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Surface.html" title="In-memory bitmap surface with basic 2D drawing and text rendering.">Surface</a> with <a class="el" href="classtinygpu_1_1RGB666.html" title="RGB color stored in 18-bit RGB666 format.">RGB666</a> pixel format.  <br /></td></tr>
@@ -252,11 +251,8 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a1a96835a106885da878c2c59b2c8719b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a1a96835a106885da878c2c59b2c8719b">SurfaceRGB888</a> = <a class="el" href="classtinygpu_1_1Surface.html">Surface</a>&lt; <a class="el" href="classtinygpu_1_1RGB888.html">RGB888</a> &gt;</td></tr>
 <tr class="memdesc:a1a96835a106885da878c2c59b2c8719b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Surface.html" title="In-memory bitmap surface with basic 2D drawing and text rendering.">Surface</a> with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format.  <br /></td></tr>
 <tr class="separator:a1a96835a106885da878c2c59b2c8719b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad21fd3528e597f17221f5d6ccde41c15"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#ad21fd3528e597f17221f5d6ccde41c15">SurfaceBGR565</a> = <a class="el" href="classtinygpu_1_1Surface.html">Surface</a>&lt; <a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a> &gt;</td></tr>
-<tr class="memdesc:ad21fd3528e597f17221f5d6ccde41c15"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Surface.html" title="In-memory bitmap surface with basic 2D drawing and text rendering.">Surface</a> with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format.  <br /></td></tr>
-<tr class="separator:ad21fd3528e597f17221f5d6ccde41c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f572638e7d61fb9186cdd03bf110163"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a0f572638e7d61fb9186cdd03bf110163">FrameBufferRGB565</a> = <a class="el" href="classtinygpu_1_1FrameBuffer.html">FrameBuffer</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt;</td></tr>
-<tr class="memdesc:a0f572638e7d61fb9186cdd03bf110163"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1FrameBuffer.html" title="Framebuffer with sprite placement and background restoration support.">FrameBuffer</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format.  <br /></td></tr>
+<tr class="memdesc:a0f572638e7d61fb9186cdd03bf110163"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1FrameBuffer.html" title="Framebuffer with sprite placement and background restoration support.">FrameBuffer</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format.  <br /></td></tr>
 <tr class="separator:a0f572638e7d61fb9186cdd03bf110163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0b85571fb5193c6fad3b768c3b7be7f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#ad0b85571fb5193c6fad3b768c3b7be7f">FrameBufferRGB666</a> = <a class="el" href="classtinygpu_1_1FrameBuffer.html">FrameBuffer</a>&lt; <a class="el" href="classtinygpu_1_1RGB666.html">RGB666</a> &gt;</td></tr>
 <tr class="memdesc:ad0b85571fb5193c6fad3b768c3b7be7f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1FrameBuffer.html" title="Framebuffer with sprite placement and background restoration support.">FrameBuffer</a> with <a class="el" href="classtinygpu_1_1RGB666.html" title="RGB color stored in 18-bit RGB666 format.">RGB666</a> pixel format.  <br /></td></tr>
@@ -264,11 +260,8 @@ Typedefs</h2></td></tr>
 <tr class="memitem:aa9c63b58163207d3995179ae9026a01e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#aa9c63b58163207d3995179ae9026a01e">FrameBufferRGB888</a> = <a class="el" href="classtinygpu_1_1FrameBuffer.html">FrameBuffer</a>&lt; <a class="el" href="classtinygpu_1_1RGB888.html">RGB888</a> &gt;</td></tr>
 <tr class="memdesc:aa9c63b58163207d3995179ae9026a01e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1FrameBuffer.html" title="Framebuffer with sprite placement and background restoration support.">FrameBuffer</a> with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format.  <br /></td></tr>
 <tr class="separator:aa9c63b58163207d3995179ae9026a01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab995f293f2db79dcf025f1e2e49249b5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#ab995f293f2db79dcf025f1e2e49249b5">FrameBufferBGR565</a> = <a class="el" href="classtinygpu_1_1FrameBuffer.html">FrameBuffer</a>&lt; <a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a> &gt;</td></tr>
-<tr class="memdesc:ab995f293f2db79dcf025f1e2e49249b5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1FrameBuffer.html" title="Framebuffer with sprite placement and background restoration support.">FrameBuffer</a> with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format.  <br /></td></tr>
-<tr class="separator:ab995f293f2db79dcf025f1e2e49249b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af784c9ee239f661a45e26962e9f378bf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#af784c9ee239f661a45e26962e9f378bf">SpriteRGB565</a> = <a class="el" href="namespacetinygpu.html#a95e748eeb33500b9306b93593276421c">Sprite</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt;</td></tr>
-<tr class="memdesc:af784c9ee239f661a45e26962e9f378bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format.  <br /></td></tr>
+<tr class="memdesc:af784c9ee239f661a45e26962e9f378bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format.  <br /></td></tr>
 <tr class="separator:af784c9ee239f661a45e26962e9f378bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09f7fe02e0be0cb008b07e6bded36c23"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a09f7fe02e0be0cb008b07e6bded36c23">SpriteRGB666</a> = <a class="el" href="namespacetinygpu.html#a95e748eeb33500b9306b93593276421c">Sprite</a>&lt; <a class="el" href="classtinygpu_1_1RGB666.html">RGB666</a> &gt;</td></tr>
 <tr class="memdesc:a09f7fe02e0be0cb008b07e6bded36c23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite with <a class="el" href="classtinygpu_1_1RGB666.html" title="RGB color stored in 18-bit RGB666 format.">RGB666</a> pixel format.  <br /></td></tr>
@@ -276,11 +269,8 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a0955c9dc755069342e3771a97a0db703"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a0955c9dc755069342e3771a97a0db703">SpriteRGB888</a> = <a class="el" href="namespacetinygpu.html#a95e748eeb33500b9306b93593276421c">Sprite</a>&lt; <a class="el" href="classtinygpu_1_1RGB888.html">RGB888</a> &gt;</td></tr>
 <tr class="memdesc:a0955c9dc755069342e3771a97a0db703"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format.  <br /></td></tr>
 <tr class="separator:a0955c9dc755069342e3771a97a0db703"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c8dc5327fc32c5baa442b0889168729"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a8c8dc5327fc32c5baa442b0889168729">SpriteBGR565</a> = <a class="el" href="namespacetinygpu.html#a95e748eeb33500b9306b93593276421c">Sprite</a>&lt; <a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a> &gt;</td></tr>
-<tr class="memdesc:a8c8dc5327fc32c5baa442b0889168729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprite with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format.  <br /></td></tr>
-<tr class="separator:a8c8dc5327fc32c5baa442b0889168729"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac59c162090ce4205d40f44c99951513a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#ac59c162090ce4205d40f44c99951513a">LinePrinterRGB565</a> = <a class="el" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt;</td></tr>
-<tr class="memdesc:ac59c162090ce4205d40f44c99951513a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1LinePrinter.html" title="Helper for printing wrapped lines of text onto a TinyGPU target.">LinePrinter</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format.  <br /></td></tr>
+<tr class="memdesc:ac59c162090ce4205d40f44c99951513a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1LinePrinter.html" title="Helper for printing wrapped lines of text onto a TinyGPU target.">LinePrinter</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format.  <br /></td></tr>
 <tr class="separator:ac59c162090ce4205d40f44c99951513a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e03ba46f60fbab042c0f811f7baa97f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a2e03ba46f60fbab042c0f811f7baa97f">LinePrinterRGB666</a> = <a class="el" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a>&lt; <a class="el" href="classtinygpu_1_1RGB666.html">RGB666</a> &gt;</td></tr>
 <tr class="memdesc:a2e03ba46f60fbab042c0f811f7baa97f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1LinePrinter.html" title="Helper for printing wrapped lines of text onto a TinyGPU target.">LinePrinter</a> with <a class="el" href="classtinygpu_1_1RGB666.html" title="RGB color stored in 18-bit RGB666 format.">RGB666</a> pixel format.  <br /></td></tr>
@@ -288,11 +278,8 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a14a336ed4f16f548a81d9c1f8ba584e7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a14a336ed4f16f548a81d9c1f8ba584e7">LinePrinterRGB888</a> = <a class="el" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a>&lt; <a class="el" href="classtinygpu_1_1RGB888.html">RGB888</a> &gt;</td></tr>
 <tr class="memdesc:a14a336ed4f16f548a81d9c1f8ba584e7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1LinePrinter.html" title="Helper for printing wrapped lines of text onto a TinyGPU target.">LinePrinter</a> with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format.  <br /></td></tr>
 <tr class="separator:a14a336ed4f16f548a81d9c1f8ba584e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5672e190121704b650a721000952dd32"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a5672e190121704b650a721000952dd32">LinePrinterBGR565</a> = <a class="el" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a>&lt; <a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a> &gt;</td></tr>
-<tr class="memdesc:a5672e190121704b650a721000952dd32"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1LinePrinter.html" title="Helper for printing wrapped lines of text onto a TinyGPU target.">LinePrinter</a> with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format.  <br /></td></tr>
-<tr class="separator:a5672e190121704b650a721000952dd32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a448c38c6511579fe4ba4be1ef97b0cde"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a448c38c6511579fe4ba4be1ef97b0cde">BitmapFontRGB565</a> = <a class="el" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt;</td></tr>
-<tr class="memdesc:a448c38c6511579fe4ba4be1ef97b0cde"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1BitmapFont.html" title="Fixed-size 5x7 bitmap font with ASCII and extended character support.">BitmapFont</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format.  <br /></td></tr>
+<tr class="memdesc:a448c38c6511579fe4ba4be1ef97b0cde"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1BitmapFont.html" title="Fixed-size 5x7 bitmap font with ASCII and extended character support.">BitmapFont</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format.  <br /></td></tr>
 <tr class="separator:a448c38c6511579fe4ba4be1ef97b0cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1c62809c166f76514a568553eb2b13a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#af1c62809c166f76514a568553eb2b13a">BitmapFontRGB666</a> = <a class="el" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt; <a class="el" href="classtinygpu_1_1RGB666.html">RGB666</a> &gt;</td></tr>
 <tr class="memdesc:af1c62809c166f76514a568553eb2b13a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1BitmapFont.html" title="Fixed-size 5x7 bitmap font with ASCII and extended character support.">BitmapFont</a> with <a class="el" href="classtinygpu_1_1RGB666.html" title="RGB color stored in 18-bit RGB666 format.">RGB666</a> pixel format.  <br /></td></tr>
@@ -300,11 +287,8 @@ Typedefs</h2></td></tr>
 <tr class="memitem:aea79613e855e3fbf1ad6d156b2fbb261"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#aea79613e855e3fbf1ad6d156b2fbb261">BitmapFontRGB888</a> = <a class="el" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt; <a class="el" href="classtinygpu_1_1RGB888.html">RGB888</a> &gt;</td></tr>
 <tr class="memdesc:aea79613e855e3fbf1ad6d156b2fbb261"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1BitmapFont.html" title="Fixed-size 5x7 bitmap font with ASCII and extended character support.">BitmapFont</a> with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format.  <br /></td></tr>
 <tr class="separator:aea79613e855e3fbf1ad6d156b2fbb261"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1027896f12b032c3815b8cea2a2f4e4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#af1027896f12b032c3815b8cea2a2f4e4">BitmapFontBGR565</a> = <a class="el" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt; <a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a> &gt;</td></tr>
-<tr class="memdesc:af1027896f12b032c3815b8cea2a2f4e4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1BitmapFont.html" title="Fixed-size 5x7 bitmap font with ASCII and extended character support.">BitmapFont</a> with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format.  <br /></td></tr>
-<tr class="separator:af1027896f12b032c3815b8cea2a2f4e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae955cbb52b3194484a7c438602a2104d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#ae955cbb52b3194484a7c438602a2104d">IFontRGB565</a> = <a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt;</td></tr>
-<tr class="memdesc:ae955cbb52b3194484a7c438602a2104d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU-compatible framebuffers.">IFont</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format.  <br /></td></tr>
+<tr class="memdesc:ae955cbb52b3194484a7c438602a2104d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU-compatible framebuffers.">IFont</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format.  <br /></td></tr>
 <tr class="separator:ae955cbb52b3194484a7c438602a2104d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94fc54025b2137574adc5c7d5eb8cdb0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a94fc54025b2137574adc5c7d5eb8cdb0">IFontRGB666</a> = <a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt; <a class="el" href="classtinygpu_1_1RGB666.html">RGB666</a> &gt;</td></tr>
 <tr class="memdesc:a94fc54025b2137574adc5c7d5eb8cdb0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU-compatible framebuffers.">IFont</a> with <a class="el" href="classtinygpu_1_1RGB666.html" title="RGB color stored in 18-bit RGB666 format.">RGB666</a> pixel format.  <br /></td></tr>
@@ -312,11 +296,8 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a0e9a6af74007cb9c991badb76f7aa829"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a0e9a6af74007cb9c991badb76f7aa829">IFontRGB888</a> = <a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt; <a class="el" href="classtinygpu_1_1RGB888.html">RGB888</a> &gt;</td></tr>
 <tr class="memdesc:a0e9a6af74007cb9c991badb76f7aa829"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU-compatible framebuffers.">IFont</a> with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format.  <br /></td></tr>
 <tr class="separator:a0e9a6af74007cb9c991badb76f7aa829"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0339fc7e4bcea3027acc0bc9b9b2359a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a0339fc7e4bcea3027acc0bc9b9b2359a">IFontBGR565</a> = <a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt; <a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a> &gt;</td></tr>
-<tr class="memdesc:a0339fc7e4bcea3027acc0bc9b9b2359a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU-compatible framebuffers.">IFont</a> with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format.  <br /></td></tr>
-<tr class="separator:a0339fc7e4bcea3027acc0bc9b9b2359a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f3d425bf5e579be03a9c7f4734a0f16"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a6f3d425bf5e579be03a9c7f4734a0f16">Font8x8RGB565</a> = <a class="el" href="classtinygpu_1_1Font8x8.html">Font8x8</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt;</td></tr>
-<tr class="memdesc:a6f3d425bf5e579be03a9c7f4734a0f16"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font8x8.html" title="8x8 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x8_Table.">Font8x8</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format.  <br /></td></tr>
+<tr class="memdesc:a6f3d425bf5e579be03a9c7f4734a0f16"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font8x8.html" title="8x8 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x8_Table.">Font8x8</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format.  <br /></td></tr>
 <tr class="separator:a6f3d425bf5e579be03a9c7f4734a0f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76def6699045c45368cc9e8f809f920b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a76def6699045c45368cc9e8f809f920b">Font8x8RGB666</a> = <a class="el" href="classtinygpu_1_1Font8x8.html">Font8x8</a>&lt; <a class="el" href="classtinygpu_1_1RGB666.html">RGB666</a> &gt;</td></tr>
 <tr class="memdesc:a76def6699045c45368cc9e8f809f920b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font8x8.html" title="8x8 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x8_Table.">Font8x8</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB666.html" title="RGB color stored in 18-bit RGB666 format.">RGB666</a> pixel format.  <br /></td></tr>
@@ -324,11 +305,8 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a09da82a310371cd45d768ca565a25baa"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a09da82a310371cd45d768ca565a25baa">Font8x8RGB888</a> = <a class="el" href="classtinygpu_1_1Font8x8.html">Font8x8</a>&lt; <a class="el" href="classtinygpu_1_1RGB888.html">RGB888</a> &gt;</td></tr>
 <tr class="memdesc:a09da82a310371cd45d768ca565a25baa"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font8x8.html" title="8x8 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x8_Table.">Font8x8</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format.  <br /></td></tr>
 <tr class="separator:a09da82a310371cd45d768ca565a25baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ec8e96cda70430cbc130187b2d0d05e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a5ec8e96cda70430cbc130187b2d0d05e">Font8x8BGR565</a> = <a class="el" href="classtinygpu_1_1Font8x8.html">Font8x8</a>&lt; <a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a> &gt;</td></tr>
-<tr class="memdesc:a5ec8e96cda70430cbc130187b2d0d05e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font8x8.html" title="8x8 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x8_Table.">Font8x8</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format.  <br /></td></tr>
-<tr class="separator:a5ec8e96cda70430cbc130187b2d0d05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefc70db56c115625492b8a4f01fb5093"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#aefc70db56c115625492b8a4f01fb5093">Font8x12RGB565</a> = <a class="el" href="classtinygpu_1_1Font8x12.html">Font8x12</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt;</td></tr>
-<tr class="memdesc:aefc70db56c115625492b8a4f01fb5093"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font8x12.html" title="8x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x12_Table.">Font8x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format.  <br /></td></tr>
+<tr class="memdesc:aefc70db56c115625492b8a4f01fb5093"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font8x12.html" title="8x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x12_Table.">Font8x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format.  <br /></td></tr>
 <tr class="separator:aefc70db56c115625492b8a4f01fb5093"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecf1a96e92bc8ec48ffbf7494ac089ac"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#aecf1a96e92bc8ec48ffbf7494ac089ac">Font8x12RGB666</a> = <a class="el" href="classtinygpu_1_1Font8x12.html">Font8x12</a>&lt; <a class="el" href="classtinygpu_1_1RGB666.html">RGB666</a> &gt;</td></tr>
 <tr class="memdesc:aecf1a96e92bc8ec48ffbf7494ac089ac"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font8x12.html" title="8x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x12_Table.">Font8x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB666.html" title="RGB color stored in 18-bit RGB666 format.">RGB666</a> pixel format.  <br /></td></tr>
@@ -336,11 +314,8 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a3ebad33cf07123f974b646e5aeadc537"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a3ebad33cf07123f974b646e5aeadc537">Font8x12RGB888</a> = <a class="el" href="classtinygpu_1_1Font8x12.html">Font8x12</a>&lt; <a class="el" href="classtinygpu_1_1RGB888.html">RGB888</a> &gt;</td></tr>
 <tr class="memdesc:a3ebad33cf07123f974b646e5aeadc537"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font8x12.html" title="8x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x12_Table.">Font8x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format.  <br /></td></tr>
 <tr class="separator:a3ebad33cf07123f974b646e5aeadc537"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7f9c30c1123581aec2e5940f18da8cc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#af7f9c30c1123581aec2e5940f18da8cc">Font8x12BGR565</a> = <a class="el" href="classtinygpu_1_1Font8x12.html">Font8x12</a>&lt; <a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a> &gt;</td></tr>
-<tr class="memdesc:af7f9c30c1123581aec2e5940f18da8cc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font8x12.html" title="8x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x12_Table.">Font8x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format.  <br /></td></tr>
-<tr class="separator:af7f9c30c1123581aec2e5940f18da8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f2a78808e970fa7a6ed3946c06e6e82"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a0f2a78808e970fa7a6ed3946c06e6e82">Font12x12RGB565</a> = <a class="el" href="classtinygpu_1_1Font12x12.html">Font12x12</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt;</td></tr>
-<tr class="memdesc:a0f2a78808e970fa7a6ed3946c06e6e82"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font12x12.html" title="12x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII12x12_Table.">Font12x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format.  <br /></td></tr>
+<tr class="memdesc:a0f2a78808e970fa7a6ed3946c06e6e82"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font12x12.html" title="12x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII12x12_Table.">Font12x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format.  <br /></td></tr>
 <tr class="separator:a0f2a78808e970fa7a6ed3946c06e6e82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1c62480c75dcf1866307890449ebfb0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#ae1c62480c75dcf1866307890449ebfb0">Font12x12RGB666</a> = <a class="el" href="classtinygpu_1_1Font12x12.html">Font12x12</a>&lt; <a class="el" href="classtinygpu_1_1RGB666.html">RGB666</a> &gt;</td></tr>
 <tr class="memdesc:ae1c62480c75dcf1866307890449ebfb0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font12x12.html" title="12x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII12x12_Table.">Font12x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB666.html" title="RGB color stored in 18-bit RGB666 format.">RGB666</a> pixel format.  <br /></td></tr>
@@ -348,11 +323,8 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ad6917298cbdd781475bc5ae2e876f79a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#ad6917298cbdd781475bc5ae2e876f79a">Font12x12RGB888</a> = <a class="el" href="classtinygpu_1_1Font12x12.html">Font12x12</a>&lt; <a class="el" href="classtinygpu_1_1RGB888.html">RGB888</a> &gt;</td></tr>
 <tr class="memdesc:ad6917298cbdd781475bc5ae2e876f79a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font12x12.html" title="12x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII12x12_Table.">Font12x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format.  <br /></td></tr>
 <tr class="separator:ad6917298cbdd781475bc5ae2e876f79a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a505f61b935bca19d37934c4693308859"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a505f61b935bca19d37934c4693308859">Font12x12BGR565</a> = <a class="el" href="classtinygpu_1_1Font12x12.html">Font12x12</a>&lt; <a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a> &gt;</td></tr>
-<tr class="memdesc:a505f61b935bca19d37934c4693308859"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font12x12.html" title="12x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII12x12_Table.">Font12x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format.  <br /></td></tr>
-<tr class="separator:a505f61b935bca19d37934c4693308859"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a139dff55a9b5b6ac4ac744a6795398"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a9a139dff55a9b5b6ac4ac744a6795398">Font16x24RGB565</a> = <a class="el" href="classtinygpu_1_1Font16x24.html">Font16x24</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt;</td></tr>
-<tr class="memdesc:a9a139dff55a9b5b6ac4ac744a6795398"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font16x24.html" title="16x24 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII16x24_Table.">Font16x24</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format.  <br /></td></tr>
+<tr class="memdesc:a9a139dff55a9b5b6ac4ac744a6795398"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font16x24.html" title="16x24 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII16x24_Table.">Font16x24</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format.  <br /></td></tr>
 <tr class="separator:a9a139dff55a9b5b6ac4ac744a6795398"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a047b1e939f9c7daf5514f84e00ee0805"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a047b1e939f9c7daf5514f84e00ee0805">Font16x24RGB666</a> = <a class="el" href="classtinygpu_1_1Font16x24.html">Font16x24</a>&lt; <a class="el" href="classtinygpu_1_1RGB666.html">RGB666</a> &gt;</td></tr>
 <tr class="memdesc:a047b1e939f9c7daf5514f84e00ee0805"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font16x24.html" title="16x24 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII16x24_Table.">Font16x24</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB666.html" title="RGB color stored in 18-bit RGB666 format.">RGB666</a> pixel format.  <br /></td></tr>
@@ -360,11 +332,8 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a15e74f8a8608f9120c10a89128a6d280"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a15e74f8a8608f9120c10a89128a6d280">Font16x24RGB888</a> = <a class="el" href="classtinygpu_1_1Font16x24.html">Font16x24</a>&lt; <a class="el" href="classtinygpu_1_1RGB888.html">RGB888</a> &gt;</td></tr>
 <tr class="memdesc:a15e74f8a8608f9120c10a89128a6d280"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font16x24.html" title="16x24 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII16x24_Table.">Font16x24</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format.  <br /></td></tr>
 <tr class="separator:a15e74f8a8608f9120c10a89128a6d280"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaaa8f37bc8dff70dfe8e733cf183d254"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#aaaa8f37bc8dff70dfe8e733cf183d254">Font16x24BGR565</a> = <a class="el" href="classtinygpu_1_1Font16x24.html">Font16x24</a>&lt; <a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a> &gt;</td></tr>
-<tr class="memdesc:aaaa8f37bc8dff70dfe8e733cf183d254"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1Font16x24.html" title="16x24 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII16x24_Table.">Font16x24</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format.  <br /></td></tr>
-<tr class="separator:aaaa8f37bc8dff70dfe8e733cf183d254"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad54ebe99d3fff7f6e2c4d4a89dc40207"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#ad54ebe99d3fff7f6e2c4d4a89dc40207">WireFrame3D_RGB565</a> = <a class="el" href="classtinygpu_1_1WireFrame3D.html">WireFrame3D</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt;</td></tr>
-<tr class="memdesc:ad54ebe99d3fff7f6e2c4d4a89dc40207"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1WireFrame3D.html" title="Lightweight 3D wireframe renderer for TinyGPU drawing targets.">WireFrame3D</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format.  <br /></td></tr>
+<tr class="memdesc:ad54ebe99d3fff7f6e2c4d4a89dc40207"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1WireFrame3D.html" title="Lightweight 3D wireframe renderer for TinyGPU drawing targets.">WireFrame3D</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format.  <br /></td></tr>
 <tr class="separator:ad54ebe99d3fff7f6e2c4d4a89dc40207"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b8c8678a6b89bae896fb56bf96eb957"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a4b8c8678a6b89bae896fb56bf96eb957">WireFrame3D_RGB666</a> = <a class="el" href="classtinygpu_1_1WireFrame3D.html">WireFrame3D</a>&lt; <a class="el" href="classtinygpu_1_1RGB666.html">RGB666</a> &gt;</td></tr>
 <tr class="memdesc:a4b8c8678a6b89bae896fb56bf96eb957"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1WireFrame3D.html" title="Lightweight 3D wireframe renderer for TinyGPU drawing targets.">WireFrame3D</a> with <a class="el" href="classtinygpu_1_1RGB666.html" title="RGB color stored in 18-bit RGB666 format.">RGB666</a> pixel format.  <br /></td></tr>
@@ -372,11 +341,8 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ac07a7307eb94b48a3f8e9cc886baa994"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#ac07a7307eb94b48a3f8e9cc886baa994">WireFrame3D_RGB888</a> = <a class="el" href="classtinygpu_1_1WireFrame3D.html">WireFrame3D</a>&lt; <a class="el" href="classtinygpu_1_1RGB888.html">RGB888</a> &gt;</td></tr>
 <tr class="memdesc:ac07a7307eb94b48a3f8e9cc886baa994"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1WireFrame3D.html" title="Lightweight 3D wireframe renderer for TinyGPU drawing targets.">WireFrame3D</a> with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format.  <br /></td></tr>
 <tr class="separator:ac07a7307eb94b48a3f8e9cc886baa994"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27e41f2282d3ab836442a2bc5a0809db"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a27e41f2282d3ab836442a2bc5a0809db">WireFrame3D_BGR565</a> = <a class="el" href="classtinygpu_1_1WireFrame3D.html">WireFrame3D</a>&lt; <a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a> &gt;</td></tr>
-<tr class="memdesc:a27e41f2282d3ab836442a2bc5a0809db"><td class="mdescLeft">&#160;</td><td class="mdescRight">WireFrame3D_BGR565.  <br /></td></tr>
-<tr class="separator:a27e41f2282d3ab836442a2bc5a0809db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56974a1f7c8945af678b0960b5ff8c83"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a56974a1f7c8945af678b0960b5ff8c83">CartesianViewRGB565</a> = <a class="el" href="classtinygpu_1_1CartesianView.html">CartesianView</a>&lt; <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a> &gt;</td></tr>
-<tr class="memdesc:a56974a1f7c8945af678b0960b5ff8c83"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1CartesianView.html" title="Bottom-left Cartesian coordinate view over an existing Surface.">CartesianView</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format.  <br /></td></tr>
+<tr class="memdesc:a56974a1f7c8945af678b0960b5ff8c83"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1CartesianView.html" title="Bottom-left Cartesian coordinate view over an existing Surface.">CartesianView</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format.  <br /></td></tr>
 <tr class="separator:a56974a1f7c8945af678b0960b5ff8c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fc49611f36e4fa70d06e8d7d2655740"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a5fc49611f36e4fa70d06e8d7d2655740">CartesianViewRGB666</a> = <a class="el" href="classtinygpu_1_1CartesianView.html">CartesianView</a>&lt; <a class="el" href="classtinygpu_1_1RGB666.html">RGB666</a> &gt;</td></tr>
 <tr class="memdesc:a5fc49611f36e4fa70d06e8d7d2655740"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1CartesianView.html" title="Bottom-left Cartesian coordinate view over an existing Surface.">CartesianView</a> with <a class="el" href="classtinygpu_1_1RGB666.html" title="RGB color stored in 18-bit RGB666 format.">RGB666</a> pixel format.  <br /></td></tr>
@@ -384,9 +350,6 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a8b6a0af8e2b4f9069c666c6bd6c73c70"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a8b6a0af8e2b4f9069c666c6bd6c73c70">CartesianViewRGB888</a> = <a class="el" href="classtinygpu_1_1CartesianView.html">CartesianView</a>&lt; <a class="el" href="classtinygpu_1_1RGB888.html">RGB888</a> &gt;</td></tr>
 <tr class="memdesc:a8b6a0af8e2b4f9069c666c6bd6c73c70"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1CartesianView.html" title="Bottom-left Cartesian coordinate view over an existing Surface.">CartesianView</a> with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format.  <br /></td></tr>
 <tr class="separator:a8b6a0af8e2b4f9069c666c6bd6c73c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68ba9f7692b6ffd50cc3eb37cf2bf896"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a68ba9f7692b6ffd50cc3eb37cf2bf896">CartesianViewBGR565</a> = <a class="el" href="classtinygpu_1_1CartesianView.html">CartesianView</a>&lt; <a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a> &gt;</td></tr>
-<tr class="memdesc:a68ba9f7692b6ffd50cc3eb37cf2bf896"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1CartesianView.html" title="Bottom-left Cartesian coordinate view over an existing Surface.">CartesianView</a> with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format.  <br /></td></tr>
-<tr class="separator:a68ba9f7692b6ffd50cc3eb37cf2bf896"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34c07b590b97132497328cfce9988661"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a34c07b590b97132497328cfce9988661">TouchDriverFT6206</a> = <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html">TouchDriverFT6236</a></td></tr>
 <tr class="memdesc:a34c07b590b97132497328cfce9988661"><td class="mdescLeft">&#160;</td><td class="mdescRight">The FT6206 is a drop-in replacement for the FT6236, so we can alias it here.  <br /></td></tr>
 <tr class="separator:a34c07b590b97132497328cfce9988661"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -396,6 +359,17 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:aaf854447c39c56bbaf8275faddd3476d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">DisplayRotation</a> { <br />
+&#160;&#160;<a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476da35c3ace1970663a16e5c65baa5941b13">kNone</a> = -1
+, <a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476daf2373e96d4abf53ae1971b0ebdd474e9">kPortrait</a> = 0
+, <a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476da8744b82551732080dcb3098123f4434b">kLandscape</a> = 1
+, <a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476daf801c7588fd737ba120a5c8071faffbc">kPortraitFlipped</a> = 2
+, <br />
+&#160;&#160;<a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476da63b34d39d2daeed5d31475190dab43c3">kLandscapeFlipped</a> = 3
+<br />
+ }</td></tr>
+<tr class="memdesc:aaf854447c39c56bbaf8275faddd3476d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract base class for display drivers.  <a href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">More...</a><br /></td></tr>
+<tr class="separator:aaf854447c39c56bbaf8275faddd3476d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69abf21857f667743be06ad9b224138d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a69abf21857f667743be06ad9b224138d">GesturePhase</a> : uint8_t { <a class="el" href="namespacetinygpu.html#a69abf21857f667743be06ad9b224138dac083b272840eb2cf7f134f1c2932dcc9">kBegan</a>
 , <a class="el" href="namespacetinygpu.html#a69abf21857f667743be06ad9b224138da3ece808a5eec77326a9610ac33013018">kChanged</a>
 , <a class="el" href="namespacetinygpu.html#a69abf21857f667743be06ad9b224138dad0b7d9aeda3971989d58d5340938f046">kEnded</a>
@@ -432,13 +406,11 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aebae79e5466de9b7ed2a52cc99270dda"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#aebae79e5466de9b7ed2a52cc99270dda">operator!=</a> (const <a class="el" href="classtinygpu_1_1BGR565.html">tinygpu::BGR565</a> &amp;lhs, const <a class="el" href="classtinygpu_1_1BGR565.html">tinygpu::BGR565</a> &amp;rhs)</td></tr>
-<tr class="separator:aebae79e5466de9b7ed2a52cc99270dda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49d2bcea04c3ee104bded423d489d5da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a49d2bcea04c3ee104bded423d489d5da">isLandscapeFamily</a> (<a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">DisplayRotation</a> r)</td></tr>
+<tr class="separator:a49d2bcea04c3ee104bded423d489d5da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ad437ede63c0331c6b268da0ffbe716"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a0ad437ede63c0331c6b268da0ffbe716">toString</a> (<a class="el" href="namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effe">GestureType</a> type)</td></tr>
 <tr class="memdesc:a0ad437ede63c0331c6b268da0ffbe716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Human-readable name for a GestureType, useful for logging.  <br /></td></tr>
 <tr class="separator:a0ad437ede63c0331c6b268da0ffbe716"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a316b047a4a5878d381d56f058159ae08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a316b047a4a5878d381d56f058159ae08">operator!=</a> (const <a class="el" href="classtinygpu_1_1RBG565.html">tinygpu::RBG565</a> &amp;lhs, const <a class="el" href="classtinygpu_1_1RBG565.html">tinygpu::RBG565</a> &amp;rhs)</td></tr>
-<tr class="separator:a316b047a4a5878d381d56f058159ae08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53a5f160b235d8b32a465872771bfc50"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a53a5f160b235d8b32a465872771bfc50">operator!=</a> (const <a class="el" href="classtinygpu_1_1RGB565.html">tinygpu::RGB565</a> &amp;lhs, const <a class="el" href="classtinygpu_1_1RGB565.html">tinygpu::RGB565</a> &amp;rhs)</td></tr>
 <tr class="separator:a53a5f160b235d8b32a465872771bfc50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a600fc844cb15403c4587f274fd5f69b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a600fc844cb15403c4587f274fd5f69b9">operator!=</a> (const <a class="el" href="classtinygpu_1_1RGB888.html">tinygpu::RGB888</a> &amp;lhs, const <a class="el" href="classtinygpu_1_1RGB888.html">tinygpu::RGB888</a> &amp;rhs)</td></tr>
@@ -454,22 +426,6 @@ Functions</h2></td></tr>
 <tr class="separator:a49877e1b23d7ce237ee872df3f412be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="af1027896f12b032c3815b8cea2a2f4e4" name="af1027896f12b032c3815b8cea2a2f4e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1027896f12b032c3815b8cea2a2f4e4">&#9670;&#160;</a></span>BitmapFontBGR565</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacetinygpu.html#af1027896f12b032c3815b8cea2a2f4e4">BitmapFontBGR565</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classtinygpu_1_1BitmapFont.html" title="Fixed-size 5x7 bitmap font with ASCII and extended character support.">BitmapFont</a> with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format. </p>
-
-</div>
-</div>
 <a id="a448c38c6511579fe4ba4be1ef97b0cde" name="a448c38c6511579fe4ba4be1ef97b0cde"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a448c38c6511579fe4ba4be1ef97b0cde">&#9670;&#160;</a></span>BitmapFontRGB565</h2>
 
@@ -482,7 +438,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classtinygpu_1_1BitmapFont.html" title="Fixed-size 5x7 bitmap font with ASCII and extended character support.">BitmapFont</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format. </p>
+<p><a class="el" href="classtinygpu_1_1BitmapFont.html" title="Fixed-size 5x7 bitmap font with ASCII and extended character support.">BitmapFont</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format. </p>
 
 </div>
 </div>
@@ -518,22 +474,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a68ba9f7692b6ffd50cc3eb37cf2bf896" name="a68ba9f7692b6ffd50cc3eb37cf2bf896"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68ba9f7692b6ffd50cc3eb37cf2bf896">&#9670;&#160;</a></span>CartesianViewBGR565</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespacetinygpu.html#a68ba9f7692b6ffd50cc3eb37cf2bf896">CartesianViewBGR565</a> =  <a class="el" href="classtinygpu_1_1CartesianView.html">CartesianView</a>&lt;<a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classtinygpu_1_1CartesianView.html" title="Bottom-left Cartesian coordinate view over an existing Surface.">CartesianView</a> with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format. </p>
-
-</div>
-</div>
 <a id="a56974a1f7c8945af678b0960b5ff8c83" name="a56974a1f7c8945af678b0960b5ff8c83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56974a1f7c8945af678b0960b5ff8c83">&#9670;&#160;</a></span>CartesianViewRGB565</h2>
 
@@ -546,7 +486,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classtinygpu_1_1CartesianView.html" title="Bottom-left Cartesian coordinate view over an existing Surface.">CartesianView</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format. </p>
+<p><a class="el" href="classtinygpu_1_1CartesianView.html" title="Bottom-left Cartesian coordinate view over an existing Surface.">CartesianView</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format. </p>
 
 </div>
 </div>
@@ -582,22 +522,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a505f61b935bca19d37934c4693308859" name="a505f61b935bca19d37934c4693308859"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a505f61b935bca19d37934c4693308859">&#9670;&#160;</a></span>Font12x12BGR565</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespacetinygpu.html#a505f61b935bca19d37934c4693308859">Font12x12BGR565</a> =  <a class="el" href="classtinygpu_1_1Font12x12.html">Font12x12</a>&lt;<a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classtinygpu_1_1Font12x12.html" title="12x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII12x12_Table.">Font12x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format. </p>
-
-</div>
-</div>
 <a id="a0f2a78808e970fa7a6ed3946c06e6e82" name="a0f2a78808e970fa7a6ed3946c06e6e82"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f2a78808e970fa7a6ed3946c06e6e82">&#9670;&#160;</a></span>Font12x12RGB565</h2>
 
@@ -610,7 +534,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classtinygpu_1_1Font12x12.html" title="12x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII12x12_Table.">Font12x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format. </p>
+<p><a class="el" href="classtinygpu_1_1Font12x12.html" title="12x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII12x12_Table.">Font12x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format. </p>
 
 </div>
 </div>
@@ -646,22 +570,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aaaa8f37bc8dff70dfe8e733cf183d254" name="aaaa8f37bc8dff70dfe8e733cf183d254"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaaa8f37bc8dff70dfe8e733cf183d254">&#9670;&#160;</a></span>Font16x24BGR565</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespacetinygpu.html#aaaa8f37bc8dff70dfe8e733cf183d254">Font16x24BGR565</a> =  <a class="el" href="classtinygpu_1_1Font16x24.html">Font16x24</a>&lt;<a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classtinygpu_1_1Font16x24.html" title="16x24 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII16x24_Table.">Font16x24</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format. </p>
-
-</div>
-</div>
 <a id="a9a139dff55a9b5b6ac4ac744a6795398" name="a9a139dff55a9b5b6ac4ac744a6795398"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9a139dff55a9b5b6ac4ac744a6795398">&#9670;&#160;</a></span>Font16x24RGB565</h2>
 
@@ -674,7 +582,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classtinygpu_1_1Font16x24.html" title="16x24 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII16x24_Table.">Font16x24</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format. </p>
+<p><a class="el" href="classtinygpu_1_1Font16x24.html" title="16x24 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII16x24_Table.">Font16x24</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format. </p>
 
 </div>
 </div>
@@ -710,22 +618,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af7f9c30c1123581aec2e5940f18da8cc" name="af7f9c30c1123581aec2e5940f18da8cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7f9c30c1123581aec2e5940f18da8cc">&#9670;&#160;</a></span>Font8x12BGR565</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespacetinygpu.html#af7f9c30c1123581aec2e5940f18da8cc">Font8x12BGR565</a> =  <a class="el" href="classtinygpu_1_1Font8x12.html">Font8x12</a>&lt;<a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classtinygpu_1_1Font8x12.html" title="8x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x12_Table.">Font8x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format. </p>
-
-</div>
-</div>
 <a id="aefc70db56c115625492b8a4f01fb5093" name="aefc70db56c115625492b8a4f01fb5093"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aefc70db56c115625492b8a4f01fb5093">&#9670;&#160;</a></span>Font8x12RGB565</h2>
 
@@ -738,7 +630,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classtinygpu_1_1Font8x12.html" title="8x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x12_Table.">Font8x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format. </p>
+<p><a class="el" href="classtinygpu_1_1Font8x12.html" title="8x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x12_Table.">Font8x12</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format. </p>
 
 </div>
 </div>
@@ -774,22 +666,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5ec8e96cda70430cbc130187b2d0d05e" name="a5ec8e96cda70430cbc130187b2d0d05e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ec8e96cda70430cbc130187b2d0d05e">&#9670;&#160;</a></span>Font8x8BGR565</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespacetinygpu.html#a5ec8e96cda70430cbc130187b2d0d05e">Font8x8BGR565</a> =  <a class="el" href="classtinygpu_1_1Font8x8.html">Font8x8</a>&lt;<a class="el" href="classtinygpu_1_1BGR565.html">BGR565</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classtinygpu_1_1Font8x8.html" title="8x8 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x8_Table.">Font8x8</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format. </p>
-
-</div>
-</div>
 <a id="a6f3d425bf5e579be03a9c7f4734a0f16" name="a6f3d425bf5e579be03a9c7f4734a0f16"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6f3d425bf5e579be03a9c7f4734a0f16">&#9670;&#160;</a></span>Font8x8RGB565</h2>
 
@@ -802,7 +678,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classtinygpu_1_1Font8x8.html" title="8x8 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x8_Table.">Font8x8</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format. </p>
+<p><a class="el" href="classtinygpu_1_1Font8x8.html" title="8x8 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII8x8_Table.">Font8x8</a> (converted from STM32-EVAL fonts.c) with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format. </p>
 
 </div>
 </div>
@@ -838,22 +714,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab995f293f2db79dcf025f1e2e49249b5" name="ab995f293f2db79dcf025f1e2e49249b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab995f293f2db79dcf025f1e2e49249b5">&#9670;&#160;</a></span>FrameBufferBGR565</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacetinygpu.html#ab995f293f2db79dcf025f1e2e49249b5">FrameBufferBGR565</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classtinygpu_1_1FrameBuffer.html" title="Framebuffer with sprite placement and background restoration support.">FrameBuffer</a> with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format. </p>
-
-</div>
-</div>
 <a id="a7a537bb2bb57dae7d04aa2961d02662a" name="a7a537bb2bb57dae7d04aa2961d02662a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a537bb2bb57dae7d04aa2961d02662a">&#9670;&#160;</a></span>FrameBufferMonochrome</h2>
 
@@ -883,7 +743,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classtinygpu_1_1FrameBuffer.html" title="Framebuffer with sprite placement and background restoration support.">FrameBuffer</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format. </p>
+<p><a class="el" href="classtinygpu_1_1FrameBuffer.html" title="Framebuffer with sprite placement and background restoration support.">FrameBuffer</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format. </p>
 
 </div>
 </div>
@@ -919,22 +779,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0339fc7e4bcea3027acc0bc9b9b2359a" name="a0339fc7e4bcea3027acc0bc9b9b2359a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0339fc7e4bcea3027acc0bc9b9b2359a">&#9670;&#160;</a></span>IFontBGR565</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacetinygpu.html#a0339fc7e4bcea3027acc0bc9b9b2359a">IFontBGR565</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU-compatible framebuffers.">IFont</a> with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format. </p>
-
-</div>
-</div>
 <a id="ae955cbb52b3194484a7c438602a2104d" name="ae955cbb52b3194484a7c438602a2104d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae955cbb52b3194484a7c438602a2104d">&#9670;&#160;</a></span>IFontRGB565</h2>
 
@@ -947,7 +791,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU-compatible framebuffers.">IFont</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format. </p>
+<p><a class="el" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU-compatible framebuffers.">IFont</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format. </p>
 
 </div>
 </div>
@@ -983,22 +827,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5672e190121704b650a721000952dd32" name="a5672e190121704b650a721000952dd32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5672e190121704b650a721000952dd32">&#9670;&#160;</a></span>LinePrinterBGR565</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacetinygpu.html#a5672e190121704b650a721000952dd32">LinePrinterBGR565</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classtinygpu_1_1LinePrinter.html" title="Helper for printing wrapped lines of text onto a TinyGPU target.">LinePrinter</a> with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format. </p>
-
-</div>
-</div>
 <a id="ac59c162090ce4205d40f44c99951513a" name="ac59c162090ce4205d40f44c99951513a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac59c162090ce4205d40f44c99951513a">&#9670;&#160;</a></span>LinePrinterRGB565</h2>
 
@@ -1011,7 +839,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classtinygpu_1_1LinePrinter.html" title="Helper for printing wrapped lines of text onto a TinyGPU target.">LinePrinter</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format. </p>
+<p><a class="el" href="classtinygpu_1_1LinePrinter.html" title="Helper for printing wrapped lines of text onto a TinyGPU target.">LinePrinter</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format. </p>
 
 </div>
 </div>
@@ -1063,22 +891,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8c8dc5327fc32c5baa442b0889168729" name="a8c8dc5327fc32c5baa442b0889168729"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c8dc5327fc32c5baa442b0889168729">&#9670;&#160;</a></span>SpriteBGR565</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacetinygpu.html#a8c8dc5327fc32c5baa442b0889168729">SpriteBGR565</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sprite with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format. </p>
-
-</div>
-</div>
 <a id="a353d51e0e782a9a2a9e850a352b84b24" name="a353d51e0e782a9a2a9e850a352b84b24"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a353d51e0e782a9a2a9e850a352b84b24">&#9670;&#160;</a></span>SpriteMonochrome</h2>
 
@@ -1107,7 +919,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sprite with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format. </p>
+<p>Sprite with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format. </p>
 
 </div>
 </div>
@@ -1143,22 +955,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad21fd3528e597f17221f5d6ccde41c15" name="ad21fd3528e597f17221f5d6ccde41c15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad21fd3528e597f17221f5d6ccde41c15">&#9670;&#160;</a></span>SurfaceBGR565</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacetinygpu.html#ad21fd3528e597f17221f5d6ccde41c15">SurfaceBGR565</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classtinygpu_1_1Surface.html" title="In-memory bitmap surface with basic 2D drawing and text rendering.">Surface</a> with <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a> pixel format. </p>
-
-</div>
-</div>
 <a id="a8ea39cc37eb3046afe513efdc085374c" name="a8ea39cc37eb3046afe513efdc085374c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ea39cc37eb3046afe513efdc085374c">&#9670;&#160;</a></span>SurfaceRGB565</h2>
 
@@ -1171,7 +967,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classtinygpu_1_1Surface.html" title="In-memory bitmap surface with basic 2D drawing and text rendering.">Surface</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format. </p>
+<p><a class="el" href="classtinygpu_1_1Surface.html" title="In-memory bitmap surface with basic 2D drawing and text rendering.">Surface</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format. </p>
 
 </div>
 </div>
@@ -1237,22 +1033,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a27e41f2282d3ab836442a2bc5a0809db" name="a27e41f2282d3ab836442a2bc5a0809db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27e41f2282d3ab836442a2bc5a0809db">&#9670;&#160;</a></span>WireFrame3D_BGR565</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespacetinygpu.html#a27e41f2282d3ab836442a2bc5a0809db">WireFrame3D_BGR565</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>WireFrame3D_BGR565. </p>
-
-</div>
-</div>
 <a id="ad54ebe99d3fff7f6e2c4d4a89dc40207" name="ad54ebe99d3fff7f6e2c4d4a89dc40207"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad54ebe99d3fff7f6e2c4d4a89dc40207">&#9670;&#160;</a></span>WireFrame3D_RGB565</h2>
 
@@ -1265,7 +1045,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classtinygpu_1_1WireFrame3D.html" title="Lightweight 3D wireframe renderer for TinyGPU drawing targets.">WireFrame3D</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> pixel format. </p>
+<p><a class="el" href="classtinygpu_1_1WireFrame3D.html" title="Lightweight 3D wireframe renderer for TinyGPU drawing targets.">WireFrame3D</a> with <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> pixel format. </p>
 
 </div>
 </div>
@@ -1302,6 +1082,38 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="aaf854447c39c56bbaf8275faddd3476d" name="aaf854447c39c56bbaf8275faddd3476d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf854447c39c56bbaf8275faddd3476d">&#9670;&#160;</a></span>DisplayRotation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">DisplayRotation</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Abstract base class for display drivers. </p>
+<p>Defines the interface for initializing the display, setting the address window, and writing pixel data from a <a class="el" href="classtinygpu_1_1Surface.html" title="In-memory bitmap surface with basic 2D drawing and text rendering.">Surface</a>. Specific display drivers (e.g. SPI, SDL) should inherit from this and implement the virtual methods. Common rotation values for rectangular display drivers (row/column exchange plus optional axis mirroring) - shared here, rather than duplicated as a nested enum per concrete driver (as ILI9341Driver/ <a class="el" href="classtinygpu_1_1ILI9342Driver.html" title="Driver for ILI9342 SPI display controller.">ILI9342Driver</a> used to each define their own, identical, copy), so generic code holding only a DisplayDriver&lt;RGB_T&gt;&amp; (e.g. an <a class="el" href="classtinygpu_1_1LCDBoard.html">LCDBoard</a>'s display()) can call setRotation() without knowing the concrete driver type. Concrete drivers keep a <code>using Rotation = <a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d" title="Abstract base class for display drivers.">tinygpu::DisplayRotation</a>;</code> alias so existing code written against e.g. ILI9341Driver&lt;RGB565&gt;:: Rotation still compiles unchanged. Named DisplayRotation (not just Rotation) to avoid colliding with the differently-shaped touch <a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681" title="Logical display rotation.">tinygpu::Rotation</a> (Deg0/Deg90/Deg180/Deg270) in <a class="el" href="TouchDriver_8h.html">TouchDriver.h</a>. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aaf854447c39c56bbaf8275faddd3476da35c3ace1970663a16e5c65baa5941b13" name="aaf854447c39c56bbaf8275faddd3476da35c3ace1970663a16e5c65baa5941b13"></a>kNone&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaf854447c39c56bbaf8275faddd3476daf2373e96d4abf53ae1971b0ebdd474e9" name="aaf854447c39c56bbaf8275faddd3476daf2373e96d4abf53ae1971b0ebdd474e9"></a>kPortrait&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaf854447c39c56bbaf8275faddd3476da8744b82551732080dcb3098123f4434b" name="aaf854447c39c56bbaf8275faddd3476da8744b82551732080dcb3098123f4434b"></a>kLandscape&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaf854447c39c56bbaf8275faddd3476daf801c7588fd737ba120a5c8071faffbc" name="aaf854447c39c56bbaf8275faddd3476daf801c7588fd737ba120a5c8071faffbc"></a>kPortraitFlipped&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaf854447c39c56bbaf8275faddd3476da63b34d39d2daeed5d31475190dab43c3" name="aaf854447c39c56bbaf8275faddd3476da63b34d39d2daeed5d31475190dab43c3"></a>kLandscapeFlipped&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <a id="a69abf21857f667743be06ad9b224138d" name="a69abf21857f667743be06ad9b224138d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a69abf21857f667743be06ad9b224138d">&#9670;&#160;</a></span>GesturePhase</h2>
 
@@ -1443,8 +1255,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aebae79e5466de9b7ed2a52cc99270dda" name="aebae79e5466de9b7ed2a52cc99270dda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebae79e5466de9b7ed2a52cc99270dda">&#9670;&#160;</a></span>operator!=() <span class="overload">[1/4]</span></h2>
+<a id="a49d2bcea04c3ee104bded423d489d5da" name="a49d2bcea04c3ee104bded423d489d5da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49d2bcea04c3ee104bded423d489d5da">&#9670;&#160;</a></span>isLandscapeFamily()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1453,21 +1265,11 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool operator!= </td>
+          <td class="memname">bool isLandscapeFamily </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtinygpu_1_1BGR565.html">tinygpu::BGR565</a> &amp;&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">DisplayRotation</a>&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classtinygpu_1_1BGR565.html">tinygpu::BGR565</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -1476,47 +1278,12 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="a316b047a4a5878d381d56f058159ae08" name="a316b047a4a5878d381d56f058159ae08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a316b047a4a5878d381d56f058159ae08">&#9670;&#160;</a></span>operator!=() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool operator!= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classtinygpu_1_1RBG565.html">tinygpu::RBG565</a> &amp;&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classtinygpu_1_1RBG565.html">tinygpu::RBG565</a> &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>True for the landscape family (kLandscape/kLandscapeFlipped) - false for portrait (kPortrait/kPortraitFlipped) or kNone. The landscape family has its row/column addressing exchanged relative to portrait (MV bit, on MIPI-DCS-style controllers), which is what makes width()/height() swap between the two families - a same-family rotation (e.g. kLandscape to kLandscapeFlipped, a 180 degree flip) only changes scan direction, not addressable width/height. </p>
 
 </div>
 </div>
 <a id="a53a5f160b235d8b32a465872771bfc50" name="a53a5f160b235d8b32a465872771bfc50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53a5f160b235d8b32a465872771bfc50">&#9670;&#160;</a></span>operator!=() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a53a5f160b235d8b32a465872771bfc50">&#9670;&#160;</a></span>operator!=() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1552,7 +1319,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a600fc844cb15403c4587f274fd5f69b9" name="a600fc844cb15403c4587f274fd5f69b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a600fc844cb15403c4587f274fd5f69b9">&#9670;&#160;</a></span>operator!=() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a600fc844cb15403c4587f274fd5f69b9">&#9670;&#160;</a></span>operator!=() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

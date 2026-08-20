@@ -82,7 +82,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>RGB color stored in 16-bit <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> format.  
+<p>RGB color stored in 16-bit <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> format, byte-swapped from the conventional bit layout.  
  <a href="classtinygpu_1_1RGB565.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="RGB565_8h_source.html">RGB565.h</a>&gt;</code></p>
@@ -90,19 +90,17 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2b1368ae2f6eea6c076c1686f08db0a0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RGB565.html#a2b1368ae2f6eea6c076c1686f08db0a0">RGB565</a> ()=default</td></tr>
-<tr class="memdesc:a2b1368ae2f6eea6c076c1686f08db0a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a black <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> color.  <br /></td></tr>
+<tr class="memdesc:a2b1368ae2f6eea6c076c1686f08db0a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a black <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> color.  <br /></td></tr>
 <tr class="separator:a2b1368ae2f6eea6c076c1686f08db0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0fe922a7afa99ef17ab8ee540399aaa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RGB565.html#ad0fe922a7afa99ef17ab8ee540399aaa">RGB565</a> (uint8_t r, uint8_t g, uint8_t b)</td></tr>
 <tr class="memdesc:ad0fe922a7afa99ef17ab8ee540399aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a color from 8-bit red, green, and blue components.  <br /></td></tr>
 <tr class="separator:ad0fe922a7afa99ef17ab8ee540399aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39a5a488782d26d0ca4b5c80d6c59847"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RGB565.html#a39a5a488782d26d0ca4b5c80d6c59847">RGB565</a> (uint16_t packed)</td></tr>
-<tr class="memdesc:a39a5a488782d26d0ca4b5c80d6c59847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a color from a packed <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> value.  <br /></td></tr>
 <tr class="separator:a39a5a488782d26d0ca4b5c80d6c59847"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeae44d862c7e79165c0159ba3956b3ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RGB565.html#aeae44d862c7e79165c0159ba3956b3ef">setValue</a> (uint8_t r, uint8_t g, uint8_t b)</td></tr>
 <tr class="memdesc:aeae44d862c7e79165c0159ba3956b3ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color from 8-bit red, green, and blue components.  <br /></td></tr>
 <tr class="separator:aeae44d862c7e79165c0159ba3956b3ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fb11d0702ed4e792fdb500ab72f379e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RGB565.html#a8fb11d0702ed4e792fdb500ab72f379e">setValue</a> (uint16_t packed)</td></tr>
-<tr class="memdesc:a8fb11d0702ed4e792fdb500ab72f379e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color from a packed <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> value.  <br /></td></tr>
 <tr class="separator:a8fb11d0702ed4e792fdb500ab72f379e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75cf52383c6d8731ff0b7a629e3dfd72"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RGB565.html#a75cf52383c6d8731ff0b7a629e3dfd72">getRed</a> () const</td></tr>
 <tr class="memdesc:a75cf52383c6d8731ff0b7a629e3dfd72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the red component expanded to 8 bits.  <br /></td></tr>
@@ -114,13 +112,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2bb2840fb3a0e87f4448f86c10098b63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the blue component expanded to 8 bits.  <br /></td></tr>
 <tr class="separator:a2bb2840fb3a0e87f4448f86c10098b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24e624c4c453021679a8fea5199ff5de"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RGB565.html#a24e624c4c453021679a8fea5199ff5de">getValue</a> () const</td></tr>
-<tr class="memdesc:a24e624c4c453021679a8fea5199ff5de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the packed <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> value.  <br /></td></tr>
 <tr class="separator:a24e624c4c453021679a8fea5199ff5de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a756b9c2ac4af7e167d1398325e6b1810"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RGB565.html#a756b9c2ac4af7e167d1398325e6b1810">getValueSwapped</a> () const</td></tr>
+<tr class="separator:a756b9c2ac4af7e167d1398325e6b1810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af9e14a9081c12326189c14852d952393"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classtinygpu_1_1RGB565.html">RGB565</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RGB565.html#af9e14a9081c12326189c14852d952393">fromRGB</a> (uint8_t r, uint8_t g, uint8_t b)</td></tr>
 <tr class="separator:af9e14a9081c12326189c14852d952393"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9241f7cd375a6fc15db779e6193409fe"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RGB565.html#a9241f7cd375a6fc15db779e6193409fe">swapBytes</a> (uint16_t v)</td></tr>
+<tr class="separator:a9241f7cd375a6fc15db779e6193409fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e575c0e317caefa8c894561aeee5fba"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RGB565.html#a3e575c0e317caefa8c894561aeee5fba">size</a> ()</td></tr>
 <tr class="memdesc:a3e575c0e317caefa8c894561aeee5fba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns size in bits.  <br /></td></tr>
 <tr class="separator:a3e575c0e317caefa8c894561aeee5fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,8 +132,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a900b69af7d674b8db3bceae754b4955a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>RGB color stored in 16-bit <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> format. </p>
-<p>The class provides conversion between 8-bit per channel RGB values and the packed 16-bit representation commonly used by embedded displays. </p>
+<div class="textblock"><p>RGB color stored in 16-bit <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> format, byte-swapped from the conventional bit layout. </p>
+<p>The class provides conversion between 8-bit per channel RGB values and the packed 16-bit representation commonly used by embedded displays.</p>
+<p>Storage note: <code>value</code> holds the two bytes of the conventional <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> packing (R:5 G:6 B:5, red in the high bits) swapped - i.e. exactly the byte order every SPI/QSPI panel driver in this codebase (<a class="el" href="classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI-based display drivers.">DisplayDriverSPI</a>, DisplayDriverQSPI) needs on the wire. That's the overwhelmingly common consumer, so <a class="el" href="classtinygpu_1_1RGB565.html#a24e624c4c453021679a8fea5199ff5de">getValue()</a>/writeData() need no per-pixel swap. Anything that instead needs the conventional (native) bit layout - LVGL's own pixel buffer, SDL's SDL_PIXELFORMAT_RGB565 texture upload, or a file format like AVI/BMP that declares standard <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> bitmasks - must go through <a class="el" href="classtinygpu_1_1RGB565.html#a756b9c2ac4af7e167d1398325e6b1810">getValueSwapped()</a> (or construct via the swapped packed value) to undo it. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2b1368ae2f6eea6c076c1686f08db0a0" name="a2b1368ae2f6eea6c076c1686f08db0a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b1368ae2f6eea6c076c1686f08db0a0">&#9670;&#160;</a></span>RGB565() <span class="overload">[1/3]</span></h2>
@@ -157,7 +159,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Creates a black <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> color. </p>
+<p>Creates a black <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> color. </p>
 
 </div>
 </div>
@@ -228,8 +230,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Creates a color from a packed <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> value. </p>
+<p>Creates a color from a packed value already in this class's stored (byte-swapped) order - i.e. one that round-trips through <a class="el" href="classtinygpu_1_1RGB565.html#a24e624c4c453021679a8fea5199ff5de">getValue()</a>. To decode a packed value in the conventional (native) bit layout instead - e.g. a raw pixel from LVGL's own buffer - byte-swap it first: RGB565(swapBytes(nativePacked)). </p>
 
 </div>
 </div>
@@ -273,7 +274,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Creates a color from semantic red/green/blue intensities, regardless of this class's own constructor argument order. Unlike the (r, g, b) constructor above - which for other "565-family" classes (e.g. <a class="el" href="classtinygpu_1_1RBG565.html" title="Color stored in a 16-bit word with an R:5 - B:6 - G:5 bit layout (green and blue swapped relative to ...">RBG565</a>, <a class="el" href="classtinygpu_1_1BGR565.html" title="BGR color stored in 16-bit BGR565 format.">BGR565</a>) matches THEIR class name's letter order, not necessarily r, g, b - this always means semantic red/green/blue. Prefer this in generic code that converts between pixel formats. </p>
+<p>Creates a color from semantic red/green/blue intensities, regardless of this class's own constructor argument order. Prefer this in generic code that converts between pixel formats. </p>
 
 </div>
 </div>
@@ -380,8 +381,33 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Returns the packed value in this class's stored (byte-swapped) order - i.e. wire-ready for DisplayDriverSPI/DisplayDriverQSPI with no further swap needed. </p>
 
-<p>Returns the packed <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> value. </p>
+</div>
+</div>
+<a id="a756b9c2ac4af7e167d1398325e6b1810" name="a756b9c2ac4af7e167d1398325e6b1810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a756b9c2ac4af7e167d1398325e6b1810">&#9670;&#160;</a></span>getValueSwapped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t getValueSwapped </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the packed value in the conventional (native) <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> bit layout (R:5 G:6 B:5, red in the high bits) - the order LVGL, SDL, and standard <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> file-format bitmasks (e.g. AVI/BMP) expect. </p>
 
 </div>
 </div>
@@ -408,8 +434,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Sets the color from a packed <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> value. </p>
+<p>Sets the color from a packed value already in this class's stored (byte-swapped) order - see the constructor note above. </p>
 
 </div>
 </div>
@@ -481,6 +506,33 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns size in bits. </p>
+
+</div>
+</div>
+<a id="a9241f7cd375a6fc15db779e6193409fe" name="a9241f7cd375a6fc15db779e6193409fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9241f7cd375a6fc15db779e6193409fe">&#9670;&#160;</a></span>swapBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t swapBytes </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Byte-swaps a 16-bit value; used to convert between this class's stored (wire) order and the conventional (native) <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> bit layout. </p>
 
 </div>
 </div>

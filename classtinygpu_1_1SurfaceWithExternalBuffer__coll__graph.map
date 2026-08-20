@@ -4,5 +4,5 @@
 <area shape="rect" id="node3" href="$classtinygpu_1_1ISurface.html" title=" " alt="" coords="5,5,149,31"/>
 <area shape="rect" id="node4" href="$classtinygpu_1_1IFont.html" title=" " alt="" coords="173,5,296,31"/>
 <area shape="rect" id="node5" href="$classtinygpu_1_1LinePrinter.html" title=" " alt="" coords="321,5,482,31"/>
-<area shape="rect" id="node6" href="$classtinygpu_1_1RGB565.html" title="RGB color stored in 16&#45;bit RGB565 format." alt="" coords="345,93,420,119"/>
+<area shape="rect" id="node6" href="$classtinygpu_1_1RGB565.html" title="RGB color stored in 16&#45;bit RGB565 format, byte&#45;swapped from the conventional bit layout." alt="" coords="345,93,420,119"/>
 </map>

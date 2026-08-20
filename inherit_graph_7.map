@@ -1,3 +1,12 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,5,199,31"/>
+<area shape="rect" id="node1" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,80,189,105"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriverSPI.html" title=" " alt="" coords="237,31,451,56"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1DisplayDriverSDL.html" title="Display class for rendering a Surface&lt;RGB565&gt; using the SDL2 library. This class can be used to displ..." alt="" coords="239,80,449,105"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="242,129,446,155"/>
+<area shape="rect" id="node5" href="$classtinygpu_1_1HX8357Driver.html" title="Driver for HX8357 SPI display controller." alt="" coords="499,5,685,31"/>
+<area shape="rect" id="node6" href="$classtinygpu_1_1ILI9341Driver.html" title="Driver for ILI9341 SPI display controller." alt="" coords="501,55,683,80"/>
+<area shape="rect" id="node7" href="$classtinygpu_1_1ILI9342Driver.html" title="Driver for ILI9342 SPI display controller." alt="" coords="501,104,683,129"/>
+<area shape="rect" id="node8" href="$classtinygpu_1_1ST7735Driver.html" title="Driver for ST7735 SPI display controller." alt="" coords="501,153,683,179"/>
+<area shape="rect" id="node9" href="$classtinygpu_1_1ST7789Driver.html" title="Driver for ST7789 SPI display controller." alt="" coords="501,203,683,228"/>
+<area shape="rect" id="node10" href="$classtinygpu_1_1ST7796Driver.html" title="Driver for ST7796 SPI display controller." alt="" coords="501,252,683,277"/>
 </map>

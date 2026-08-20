@@ -10,7 +10,7 @@ var searchData=
   ['decoderow_7',['decodeRow',['../classtinygpu_1_1BMPParser.html#af0bdd47986dcb3d3a60aac4894ee5aa5',1,'tinygpu::BMPParser']]],
   ['delay_8',['delay',['../classLVGLDriver.html#a7f2dfce1046bdd2a2b753643726c2346',1,'LVGLDriver']]],
   ['deviceoutput_9',['DeviceOutput',['../classtinygpu_1_1DeviceOutput.html#ad87b50cfa6c96dd6a406853a09b4d360',1,'tinygpu::DeviceOutput']]],
-  ['display_10',['display',['../classLVGLDriver.html#ae918fb05758409bad3622a9fd6305428',1,'LVGLDriver']]],
+  ['display_10',['display',['../classtinygpu_1_1LCDBoard.html#a801bff17264424af674e782959c22377',1,'tinygpu::LCDBoard::display()'],['../classLVGLDriver.html#ae918fb05758409bad3622a9fd6305428',1,'LVGLDriver::display()']]],
   ['displaydriversdl_11',['DisplayDriverSDL',['../classtinygpu_1_1DisplayDriverSDL.html#a1e37f38404d5cf5dea9723e4269f56fc',1,'tinygpu::DisplayDriverSDL::DisplayDriverSDL(size_t width, size_t height)'],['../classtinygpu_1_1DisplayDriverSDL.html#a92ea53f718281d1f037ba9dc56ab4935',1,'tinygpu::DisplayDriverSDL::DisplayDriverSDL(const ISurface&lt; RGB_T &gt; &amp;surface)']]],
   ['displaydriverspi_12',['DisplayDriverSPI',['../classtinygpu_1_1DisplayDriverSPI.html#abfdc8122986250cac64a5da68cd986e9',1,'tinygpu::DisplayDriverSPI']]],
   ['displaysprite_13',['displaySprite',['../classtinygpu_1_1SpriteDisplay.html#ad6f697ceb6f335da2b6d54c502a14600',1,'tinygpu::SpriteDisplay']]],

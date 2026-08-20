@@ -91,7 +91,7 @@ Inheritance diagram for ST7796Driver&lt; RGB_T &gt;:</div>
 <map name="aST7796Driver_3_01RGB__T_01_4_inherit__map" id="aST7796Driver_3_01RGB__T_01_4_inherit__map">
 <area shape="rect" title="Driver for ST7796 SPI display controller." alt="" coords="16,152,199,177"/>
 <area shape="rect" href="classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="5,79,209,104"/>
-<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title="Abstract base class for display drivers." alt="" coords="15,5,199,31"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="15,5,199,31"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -101,7 +101,7 @@ Collaboration diagram for ST7796Driver&lt; RGB_T &gt;:</div>
 <map name="aST7796Driver_3_01RGB__T_01_4_coll__map" id="aST7796Driver_3_01RGB__T_01_4_coll__map">
 <area shape="rect" title="Driver for ST7796 SPI display controller." alt="" coords="16,317,199,343"/>
 <area shape="rect" href="classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="5,243,209,268"/>
-<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title="Abstract base class for display drivers." alt="" coords="15,168,199,193"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="15,168,199,193"/>
 <area shape="rect" href="classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="18,80,197,105"/>
 <area shape="rect" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="44,5,171,31"/>
 </map>
@@ -133,7 +133,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa65a4630add7360c3f2a44cbb054b512 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa426c1066b36c91a52fd8df26d7cc50a inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#aa426c1066b36c91a52fd8df26d7cc50a">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface, size_t x, size_t y)=0</td></tr>
 <tr class="separator:aa426c1066b36c91a52fd8df26d7cc50a inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43ecedff0e0f8b703205d407ee2550b5 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a43ecedff0e0f8b703205d407ee2550b5">writeColor</a> (size_t width, size_t height, RGB_T color)</td></tr>
+<tr class="memitem:a76f274dae1869afa29ebe052085790b0 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a76f274dae1869afa29ebe052085790b0">setRotation</a> (<a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">DisplayRotation</a> rotation)</td></tr>
+<tr class="separator:a76f274dae1869afa29ebe052085790b0 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0b1032913cf74902ae68d05a8d982d1 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#ab0b1032913cf74902ae68d05a8d982d1">width</a> () const =0</td></tr>
+<tr class="separator:ab0b1032913cf74902ae68d05a8d982d1 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b329a3d2f3c79e7f52714fecfadec8c inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a2b329a3d2f3c79e7f52714fecfadec8c">height</a> () const =0</td></tr>
+<tr class="separator:a2b329a3d2f3c79e7f52714fecfadec8c inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43ecedff0e0f8b703205d407ee2550b5 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a43ecedff0e0f8b703205d407ee2550b5">writeColor</a> (size_t <a class="el" href="classtinygpu_1_1DisplayDriver.html#ab0b1032913cf74902ae68d05a8d982d1">width</a>, size_t <a class="el" href="classtinygpu_1_1DisplayDriver.html#a2b329a3d2f3c79e7f52714fecfadec8c">height</a>, RGB_T color)</td></tr>
 <tr class="separator:a43ecedff0e0f8b703205d407ee2550b5 inherit pub_methods_classtinygpu_1_1DisplayDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>

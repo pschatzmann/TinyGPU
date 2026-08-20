@@ -91,7 +91,7 @@ Collaboration diagram for LVGLDriver&lt; RGB_T &gt;:</div>
 <map name="aLVGLDriver_3_01RGB__T_01_4_coll__map" id="aLVGLDriver_3_01RGB__T_01_4_coll__map">
 <area shape="rect" title="LVGLDriver is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the displ..." alt="" coords="29,331,195,356"/>
 <area shape="rect" href="classtinygpu_1_1DisplayDriverSPI.html" title=" " alt="" coords="5,243,219,268"/>
-<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title="Abstract base class for display drivers." alt="" coords="20,168,204,193"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="20,168,204,193"/>
 <area shape="rect" href="classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="23,80,201,105"/>
 <area shape="rect" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="49,5,175,31"/>
 </map>
@@ -167,7 +167,7 @@ Protected Attributes</h2></td></tr>
 class LVGLDriver&lt; RGB_T &gt;</div><p><a class="el" href="classLVGLDriver.html" title="LVGLDriver is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the displ...">LVGLDriver</a> is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the display buffer and flush callback for LVGL. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">RGB_T</td><td>The pixel format LVGL's rendered output is converted to before transmission. Defaults to RGB565, matching LVGL's own internal RGB565 color format exactly (a no-op conversion). Use RBG565 for panels whose controller routes the green/blue data fields to the wrong physical subpixels (colors come out with green and blue swapped) - see <a class="el" href="RBG565_8h.html">RBG565.h</a>. </td></tr>
+    <tr><td class="paramname">RGB_T</td><td>The pixel format LVGL's rendered output is converted to before transmission. Defaults to RGB565, matching LVGL's own internal RGB565 color format (<a class="el" href="classLVGLDriver.html#a2635e23cb4e102ea99befce3a80bdf1c">convertBuffer()</a> below still has to undo RGB565's own byte-swapped storage - see <a class="el" href="RGB565_8h.html">RGB565.h</a> - even in that default case). </td></tr>
   </table>
   </dd>
 </dl>
@@ -279,7 +279,7 @@ class LVGLDriver&lt; RGB_T &gt;</div><p><a class="el" href="classLVGLDriver.html
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Converts a buffer LVGL packed as RGB565 into RGB_T's own bit layout, applying per-channel gamma correction (see <a class="el" href="classLVGLDriver.html#a2fa10377079aa3f1c8ee552d457e49c8">setGamma()</a>), in place. Each pixel is decoded with RGB565's semantics (what LVGL actually wrote), gamma corrected, and re-encoded via RGB_T::fromRGB(), so RGB_T's own compensation (if any) is genuinely applied regardless of how RGB_T's constructor happens to order its arguments. </p>
+<p>Converts a buffer LVGL packed as (native-order) RGB565 into RGB_T's own byte layout, applying per-channel gamma correction (see <a class="el" href="classLVGLDriver.html#a2fa10377079aa3f1c8ee552d457e49c8">setGamma()</a>), in place. Each pixel is decoded with RGB565's semantics (what LVGL actually wrote), gamma corrected, and re-encoded via RGB_T::fromRGB(), so RGB_T's own compensation (if any) is genuinely applied regardless of how RGB_T's constructor happens to order its arguments. </p>
 
 </div>
 </div>

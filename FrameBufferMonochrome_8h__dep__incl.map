@@ -1,6 +1,8 @@
 <map id="src/TinyGPU/FrameBufferMonochrome.h" name="src/TinyGPU/FrameBufferMonochrome.h">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,288,31"/>
-<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="90,152,203,177"/>
-<area shape="rect" id="node4" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="110,79,333,104"/>
-<area shape="rect" id="node3" href="$LVGLDriver_8h.html" title=" " alt="" coords="53,225,241,251"/>
+<area shape="rect" id="node1" title=" " alt="" coords="71,5,353,31"/>
+<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="155,152,269,177"/>
+<area shape="rect" id="node6" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="175,79,398,104"/>
+<area shape="rect" id="node3" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="13,225,201,251"/>
+<area shape="rect" id="node5" href="$LVGLDriver_8h.html" title=" " alt="" coords="225,225,413,251"/>
+<area shape="rect" id="node4" href="$SpriteDisplay_8h.html" title=" " alt="" coords="5,299,208,324"/>
 </map>

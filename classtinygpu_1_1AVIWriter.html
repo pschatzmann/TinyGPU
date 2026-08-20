@@ -83,7 +83,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Writes a simple AVI movie containing <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> frames.  
+<p>Writes a simple AVI movie containing <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> frames.  
  <a href="classtinygpu_1_1AVIWriter.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AVIWriter_8h_source.html">AVIWriter.h</a>&gt;</code></p>
@@ -102,7 +102,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aaf81d3fdaf258088d7692fa70cece087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes the AVI stream and writes the optional frame index.  <br /></td></tr>
 <tr class="separator:aaf81d3fdaf258088d7692fa70cece087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa8352c64bd3f4fda927cb24b9b0e677"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1AVIWriter.html#aaa8352c64bd3f4fda927cb24b9b0e677">add</a> (const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface)</td></tr>
-<tr class="memdesc:aaa8352c64bd3f4fda927cb24b9b0e677"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends one <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> frame to the AVI stream.  <br /></td></tr>
+<tr class="memdesc:aaa8352c64bd3f4fda927cb24b9b0e677"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends one <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> frame to the AVI stream.  <br /></td></tr>
 <tr class="separator:aaa8352c64bd3f4fda927cb24b9b0e677"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
@@ -114,7 +114,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a2e19c2ee025cf0d8494654f6baa42176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the RIFF, AVI, stream, and movi headers.  <br /></td></tr>
 <tr class="separator:a2e19c2ee025cf0d8494654f6baa42176"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70768a70a806599848a298011798352c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1AVIWriter.html#a70768a70a806599848a298011798352c">writeFrame</a> (const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface)</td></tr>
-<tr class="memdesc:a70768a70a806599848a298011798352c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes one surface as a bottom-up padded <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> AVI frame.  <br /></td></tr>
+<tr class="memdesc:a70768a70a806599848a298011798352c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes one surface as a bottom-up padded <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> AVI frame.  <br /></td></tr>
 <tr class="separator:a70768a70a806599848a298011798352c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a56c068e2104fc00cfcb4b54e0bcc1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1AVIWriter.html#a1a56c068e2104fc00cfcb4b54e0bcc1f">writeIndex</a> ()</td></tr>
 <tr class="memdesc:a1a56c068e2104fc00cfcb4b54e0bcc1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the idx1 frame index when a frame count was provided.  <br /></td></tr>
@@ -138,7 +138,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
 <tr class="memitem:a87f3514a7fd91f203243f32a3cebaf30"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1AVIWriter.html#a87f3514a7fd91f203243f32a3cebaf30">frameRowStride</a> (uint32_t width)</td></tr>
-<tr class="memdesc:a87f3514a7fd91f203243f32a3cebaf30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the padded byte stride of one <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> frame row.  <br /></td></tr>
+<tr class="memdesc:a87f3514a7fd91f203243f32a3cebaf30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the padded byte stride of one <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> frame row.  <br /></td></tr>
 <tr class="separator:a87f3514a7fd91f203243f32a3cebaf30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20065ff36b1b57187d719a34af07117c"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1AVIWriter.html#a20065ff36b1b57187d719a34af07117c">paddedChunkSize</a> (uint32_t dataSize)</td></tr>
 <tr class="memdesc:a20065ff36b1b57187d719a34af07117c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the data size rounded up to an even AVI chunk length.  <br /></td></tr>
@@ -167,8 +167,8 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename RGB_T = RGB565&gt;<br />
-class tinygpu::AVIWriter&lt; RGB_T &gt;</div><p>Writes a simple AVI movie containing <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> frames. </p>
-<p>The implementation writes frames directly to the output stream as they are added. When the expected frame count is provided in <a class="el" href="classtinygpu_1_1AVIWriter.html#a55e50209e42164e31907cade274739e5">begin()</a>, the AVI headers and optional idx1 index can be precomputed without buffering the frame data. Frames are encoded as uncompressed 16-bit BI_BITFIELDS video using <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> channel masks. </p>
+class tinygpu::AVIWriter&lt; RGB_T &gt;</div><p>Writes a simple AVI movie containing <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> frames. </p>
+<p>The implementation writes frames directly to the output stream as they are added. When the expected frame count is provided in <a class="el" href="classtinygpu_1_1AVIWriter.html#a55e50209e42164e31907cade274739e5">begin()</a>, the AVI headers and optional idx1 index can be precomputed without buffering the frame data. Frames are encoded as uncompressed 16-bit BI_BITFIELDS video using <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> channel masks. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad32757a5b484e38c6264c03d5a11b0b3" name="ad32757a5b484e38c6264c03d5a11b0b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad32757a5b484e38c6264c03d5a11b0b3">&#9670;&#160;</a></span>AVIWriter()</h2>
@@ -250,7 +250,7 @@ class tinygpu::AVIWriter&lt; RGB_T &gt;</div><p>Writes a simple AVI movie contai
 </table>
 </div><div class="memdoc">
 
-<p>Appends one <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> frame to the AVI stream. </p>
+<p>Appends one <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> frame to the AVI stream. </p>
 
 </div>
 </div>
@@ -348,7 +348,7 @@ class tinygpu::AVIWriter&lt; RGB_T &gt;</div><p>Writes a simple AVI movie contai
 </table>
 </div><div class="memdoc">
 
-<p>Returns the padded byte stride of one <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> frame row. </p>
+<p>Returns the padded byte stride of one <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> frame row. </p>
 
 </div>
 </div>
@@ -497,7 +497,7 @@ class tinygpu::AVIWriter&lt; RGB_T &gt;</div><p>Writes a simple AVI movie contai
 </table>
 </div><div class="memdoc">
 
-<p>Writes one surface as a bottom-up padded <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> AVI frame. </p>
+<p>Writes one surface as a bottom-up padded <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> AVI frame. </p>
 
 </div>
 </div>

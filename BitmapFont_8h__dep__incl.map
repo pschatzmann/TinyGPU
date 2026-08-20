@@ -1,11 +1,12 @@
 <map id="src/TinyGPU/BitmapFont.h" name="src/TinyGPU/BitmapFont.h">
-<area shape="rect" id="node1" title=" " alt="" coords="570,5,762,31"/>
-<area shape="rect" id="node2" href="$Surface_8h.html" title=" " alt="" coords="305,79,472,104"/>
-<area shape="rect" id="node7" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="251,313,473,339"/>
-<area shape="rect" id="node9" href="$SurfaceWithExternalBuffer_8h.html" title=" " alt="" coords="704,225,943,265"/>
-<area shape="rect" id="node3" href="$TinyGPU_8h.html" title=" " alt="" coords="127,387,240,412"/>
-<area shape="rect" id="node5" href="$FrameBuffer_8h.html" title=" " alt="" coords="108,152,304,177"/>
-<area shape="rect" id="node8" href="$SpriteDisplay_8h.html" title=" " alt="" coords="426,152,629,177"/>
-<area shape="rect" id="node4" href="$LVGLDriver_8h.html" title=" " alt="" coords="89,460,277,485"/>
-<area shape="rect" id="node6" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="42,233,325,258"/>
+<area shape="rect" id="node1" title=" " alt="" coords="455,5,647,31"/>
+<area shape="rect" id="node2" href="$Surface_8h.html" title=" " alt="" coords="238,79,405,104"/>
+<area shape="rect" id="node9" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="389,313,611,339"/>
+<area shape="rect" id="node10" href="$SurfaceWithExternalBuffer_8h.html" title=" " alt="" coords="639,152,878,192"/>
+<area shape="rect" id="node3" href="$TinyGPU_8h.html" title=" " alt="" coords="265,387,378,412"/>
+<area shape="rect" id="node5" href="$SpriteDisplay_8h.html" title=" " alt="" coords="5,533,208,559"/>
+<area shape="rect" id="node7" href="$FrameBuffer_8h.html" title=" " alt="" coords="223,159,419,185"/>
+<area shape="rect" id="node4" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="79,460,267,485"/>
+<area shape="rect" id="node6" href="$LVGLDriver_8h.html" title=" " alt="" coords="291,460,479,485"/>
+<area shape="rect" id="node8" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="180,240,463,265"/>
 </map>

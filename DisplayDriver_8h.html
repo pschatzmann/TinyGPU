@@ -75,7 +75,9 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">DisplayDriver.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -98,13 +100,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="DisplayDriver_8h__dep__incl.png" border="0" usemap="#asrc_2TinyGPU_2DisplayDriver_8hdep" alt=""/></div>
 <map name="asrc_2TinyGPU_2DisplayDriver_8hdep" id="asrc_2TinyGPU_2DisplayDriver_8hdep">
-<area shape="rect" title=" " alt="" coords="341,5,546,31"/>
-<area shape="rect" href="DeviceOutput_8h.html" title=" " alt="" coords="5,86,212,111"/>
-<area shape="rect" href="DisplayDriverQSPI_8h.html" title=" " alt="" coords="237,79,431,119"/>
-<area shape="rect" href="DisplayDriverSDL_8h.html" title=" " alt="" coords="455,79,650,119"/>
-<area shape="rect" href="DisplayDriverSPI_8h.html" title=" " alt="" coords="674,79,869,119"/>
-<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="52,167,165,192"/>
-<area shape="rect" href="LVGLDriver_8h.html" title=" " alt="" coords="15,240,203,265"/>
+<area shape="rect" title=" " alt="" coords="453,5,658,31"/>
+<area shape="rect" href="DeviceOutput_8h.html" title=" " alt="" coords="67,86,273,111"/>
+<area shape="rect" href="LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="217,240,405,265"/>
+<area shape="rect" href="DisplayDriverDSI_8h.html" title=" " alt="" coords="349,79,543,119"/>
+<area shape="rect" href="DisplayDriverQSPI_8h.html" title=" " alt="" coords="567,79,762,119"/>
+<area shape="rect" href="DisplayDriverSDL_8h.html" title=" " alt="" coords="786,79,981,119"/>
+<area shape="rect" href="DisplayDriverSPI_8h.html" title=" " alt="" coords="1005,79,1199,119"/>
+<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="113,167,227,192"/>
+<area shape="rect" href="LVGLDriver_8h.html" title=" " alt="" coords="5,240,193,265"/>
+<area shape="rect" href="SpriteDisplay_8h.html" title=" " alt="" coords="210,313,413,339"/>
 </map>
 </div>
 </div>
@@ -113,13 +118,31 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html">DisplayDriver&lt; RGB_T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract base class for display drivers.  <a href="classtinygpu_1_1DisplayDriver.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacetinygpu"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html">tinygpu</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:aaf854447c39c56bbaf8275faddd3476d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">DisplayRotation</a> { <br />
+&#160;&#160;<a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476da35c3ace1970663a16e5c65baa5941b13">kNone</a> = -1
+, <a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476daf2373e96d4abf53ae1971b0ebdd474e9">kPortrait</a> = 0
+, <a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476da8744b82551732080dcb3098123f4434b">kLandscape</a> = 1
+, <a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476daf801c7588fd737ba120a5c8071faffbc">kPortraitFlipped</a> = 2
+, <br />
+&#160;&#160;<a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476da63b34d39d2daeed5d31475190dab43c3">kLandscapeFlipped</a> = 3
+<br />
+ }</td></tr>
+<tr class="memdesc:aaf854447c39c56bbaf8275faddd3476d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract base class for display drivers.  <a href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">More...</a><br /></td></tr>
+<tr class="separator:aaf854447c39c56bbaf8275faddd3476d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a49d2bcea04c3ee104bded423d489d5da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a49d2bcea04c3ee104bded423d489d5da">isLandscapeFamily</a> (DisplayRotation r)</td></tr>
+<tr class="separator:a49d2bcea04c3ee104bded423d489d5da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

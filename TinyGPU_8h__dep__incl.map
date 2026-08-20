@@ -1,4 +1,6 @@
 <map id="src/TinyGPU.h" name="src/TinyGPU.h">
-<area shape="rect" id="node1" title=" " alt="" coords="43,5,156,31"/>
-<area shape="rect" id="node2" href="$LVGLDriver_8h.html" title=" " alt="" coords="5,79,193,104"/>
+<area shape="rect" id="node1" title=" " alt="" coords="155,5,269,31"/>
+<area shape="rect" id="node2" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="13,79,201,104"/>
+<area shape="rect" id="node4" href="$LVGLDriver_8h.html" title=" " alt="" coords="225,79,413,104"/>
+<area shape="rect" id="node3" href="$SpriteDisplay_8h.html" title=" " alt="" coords="5,152,208,177"/>
 </map>

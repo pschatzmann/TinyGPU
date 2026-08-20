@@ -1,5 +1,7 @@
 <map id="src/TinyGPU/BMPExporter.h" name="src/TinyGPU/BMPExporter.h">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,205,31"/>
-<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="49,79,162,104"/>
-<area shape="rect" id="node3" href="$LVGLDriver_8h.html" title=" " alt="" coords="11,152,199,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="112,5,312,31"/>
+<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="155,79,269,104"/>
+<area shape="rect" id="node3" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="13,152,201,177"/>
+<area shape="rect" id="node5" href="$LVGLDriver_8h.html" title=" " alt="" coords="225,152,413,177"/>
+<area shape="rect" id="node4" href="$SpriteDisplay_8h.html" title=" " alt="" coords="5,225,208,251"/>
 </map>

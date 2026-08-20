@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['status_0',['Status',['../classtinygpu_1_1BMPParser.html#a67a0db04d321a74b7e7fcfd3f1a3f70b',1,'tinygpu::BMPParser']]]
+  ['rotation_0',['Rotation',['../namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681',1,'tinygpu']]]
 ];

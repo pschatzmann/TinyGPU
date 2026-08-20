@@ -1,5 +1,7 @@
 <map id="src/TinyGPU/SurfaceWithExternalBuffer.h" name="src/TinyGPU/SurfaceWithExternalBuffer.h">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,244,45"/>
-<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="68,93,181,119"/>
-<area shape="rect" id="node3" href="$LVGLDriver_8h.html" title=" " alt="" coords="31,167,219,192"/>
+<area shape="rect" id="node1" title=" " alt="" coords="93,5,331,45"/>
+<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="155,93,269,119"/>
+<area shape="rect" id="node3" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="13,167,201,192"/>
+<area shape="rect" id="node5" href="$LVGLDriver_8h.html" title=" " alt="" coords="225,167,413,192"/>
+<area shape="rect" id="node4" href="$SpriteDisplay_8h.html" title=" " alt="" coords="5,240,208,265"/>
 </map>

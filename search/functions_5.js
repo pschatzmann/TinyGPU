@@ -12,5 +12,5 @@ var searchData=
   ['font8x8_9',['Font8x8',['../classtinygpu_1_1Font8x8.html#ac06d838e060766687e6d3481ef199dee',1,'tinygpu::Font8x8']]],
   ['framebuffer_10',['FrameBuffer',['../classtinygpu_1_1FrameBuffer.html#aa15e500fe297ca4829347fa5bbc9ad52',1,'tinygpu::FrameBuffer::FrameBuffer()=default'],['../classtinygpu_1_1FrameBuffer.html#aa5a883ec83c3a7ab89a645676396c37a',1,'tinygpu::FrameBuffer::FrameBuffer(size_t width, size_t height, IFont&lt; RGB_T &gt; &amp;font)']]],
   ['framerowstride_11',['frameRowStride',['../classtinygpu_1_1AVIWriter.html#a87f3514a7fd91f203243f32a3cebaf30',1,'tinygpu::AVIWriter']]],
-  ['fromrgb_12',['fromRGB',['../classtinygpu_1_1BGR565.html#abd891da79a21755c98d7b21511ebdb98',1,'tinygpu::BGR565::fromRGB()'],['../classtinygpu_1_1RBG565.html#a6111228bc438101a253beb1418dd1cae',1,'tinygpu::RBG565::fromRGB()'],['../classtinygpu_1_1RGB565.html#af9e14a9081c12326189c14852d952393',1,'tinygpu::RGB565::fromRGB()']]]
+  ['fromrgb_12',['fromRGB',['../classtinygpu_1_1RGB565.html#af9e14a9081c12326189c14852d952393',1,'tinygpu::RGB565']]]
 ];

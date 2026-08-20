@@ -96,16 +96,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaf81d3fdaf258088d7692fa70cece087"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DeviceOutput.html#aaf81d3fdaf258088d7692fa70cece087">end</a> ()</td></tr>
 <tr class="separator:aaf81d3fdaf258088d7692fa70cece087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa34ad44c3ab8b83067914358732e2c41"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DeviceOutput.html#aa34ad44c3ab8b83067914358732e2c41">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface)</td></tr>
-<tr class="memdesc:aa34ad44c3ab8b83067914358732e2c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a framebuffer to the display (w x h, <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a>, 2 bytes per pixel).  <br /></td></tr>
+<tr class="memdesc:aa34ad44c3ab8b83067914358732e2c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a framebuffer to the display (w x h, <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a>, 2 bytes per pixel).  <br /></td></tr>
 <tr class="separator:aa34ad44c3ab8b83067914358732e2c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename RGB_T = RGB565&gt;<br />
 class tinygpu::DeviceOutput&lt; RGB_T &gt;</div><p>Hardware abstraction for writing framebuffers to SPI-based color displays. </p>
-<p><a class="el" href="classtinygpu_1_1DeviceOutput.html" title="Hardware abstraction for writing framebuffers to SPI-based color displays.">DeviceOutput</a> provides a unified interface for sending <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a> framebuffer data to common embedded display controllers (ST7735, ST7789, ILI9341, HX8357) using the Arduino SPI API.</p>
+<p><a class="el" href="classtinygpu_1_1DeviceOutput.html" title="Hardware abstraction for writing framebuffers to SPI-based color displays.">DeviceOutput</a> provides a unified interface for sending <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> framebuffer data to common embedded display controllers (ST7735, ST7789, ILI9341, HX8357) using the Arduino SPI API.</p>
 <p>Features:</p><ul>
 <li>Handles X/Y offsets for displays that require them (via driver)</li>
-<li>Supports configurable color order (RGB/BGR) via <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a></li>
+<li>Supports configurable color order (RGB/BGR) via <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a></li>
 <li>Initialization sequence and address window logic delegated to driver</li>
 <li>Optional hardware reset pin (via driver)</li>
 <li>Efficient bulk framebuffer transfer</li>
@@ -226,7 +226,7 @@ class tinygpu::DeviceOutput&lt; RGB_T &gt;</div><p>Hardware abstraction for writ
 </table>
 </div><div class="memdoc">
 
-<p>Write a framebuffer to the display (w x h, <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format.">RGB565</a>, 2 bytes per pixel). </p>
+<p>Write a framebuffer to the display (w x h, <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a>, 2 bytes per pixel). </p>
 
 </div>
 </div>

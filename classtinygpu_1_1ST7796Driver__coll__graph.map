@@ -1,7 +1,7 @@
 <map id="ST7796Driver&lt; RGB_T &gt;" name="ST7796Driver&lt; RGB_T &gt;">
 <area shape="rect" id="node1" title="Driver for ST7796 SPI display controller." alt="" coords="16,317,199,343"/>
 <area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="5,243,209,268"/>
-<area shape="rect" id="node3" href="$classtinygpu_1_1DisplayDriver.html" title="Abstract base class for display drivers." alt="" coords="15,168,199,193"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="15,168,199,193"/>
 <area shape="rect" id="node4" href="$classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="18,80,197,105"/>
 <area shape="rect" id="node5" href="$classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="44,5,171,31"/>
 </map>
