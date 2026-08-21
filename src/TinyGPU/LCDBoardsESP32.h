@@ -24,18 +24,21 @@
 
 #if defined(ESP32)
 
+#include <SD_MMC.h>
 #include <SPI.h>
 #include <Wire.h>
 
-#include "LCDBoards.h"
+#include "DisplayDriverDSI.h"
 #include "DisplayDriverQSPI.h"
 #include "DisplayDriverSPI.h"
+#include "LCDBoards.h"
 
 namespace tinygpu {
 
 /**
  * @brief "2.8" ESP32-S3 Display" - ILI9341 SPI TFT + FT6336G capacitive
  * touch (I2C, shares its bus with the board's ES8311 audio codec).
+ * (FBBA0125-002) - also named ESP32-S3 Hosyond Display
  *
  * Display: ILI9341, 240x320, SPI - CS=10 DC=46 SCK=12 MOSI=11 MISO=13
  *          BL=45; RST is tied to the board's EN line, so there is no
@@ -119,20 +122,28 @@ class LCDBoardESP32S3_2_8Display : public LCDBoard {
   // per-frame SPI transfer time versus leaving it at the default. Rotation
   // stays kNone here since callers set it explicitly (e.g. via
   // OutputTinyGPU::setRotation()) after begin().
-  ILI9341Driver<RGB565> display_{SPI, kPinCs, kPinDc, /*rst=*/-1,
+  ILI9341Driver<RGB565> display_{SPI,
+                                 kPinCs,
+                                 kPinDc,
+                                 /*rst=*/-1,
                                  ILI9341Driver<RGB565>::Rotation::kNone,
                                  /*frequencyHz=*/80000000};
   TouchDriverFT6236 touch_{Wire, kPinTouchRst, /*irq=*/-1};
-  I2SPins i2s_{/*mclk=*/4,       /*bck=*/5,   /*ws=*/7,
-              /*dataOut=*/8,    /*dataIn=*/6,
-              /*paEnable=*/1,  /*paEnableActiveLow=*/true};
+  I2SPins i2s_{/*mclk=*/4,     /*bck=*/5,
+               /*ws=*/7,
+               /*dataOut=*/8,  /*dataIn=*/6,
+               /*paEnable=*/1, /*paEnableActiveLow=*/true};
   LEDPins led_{/*single=*/42};
 };
 
+using FBBA0125_002 = LCDBoardESP32S3_2_8Display;
+using ESP32S3HosyondDisplay = LCDBoardESP32S3_2_8Display;
+
 /**
- * @brief "Guition ESP32-S3 4.3" 480x272 Capacitive Touch Display" -
+ * @brief "Guition ESP32-S3 4.3" 480x272 Capacitive Touch Display" (JC4827W543C_I): it has a NV3041A QSPI display, GT911 capacitive touch
  * NV3041A QSPI TFT + GT911 capacitive touch (I2C) + NS4168 speaker amp
  * (speaker output only - no codec/mic on this board).
+ * 
  *
  * Display: NV3041A, 480x272, QSPI - CS=45 SCLK=47 D0=21 D1=48 D2=40 D3=39
  *          BL=1, 32MHz.
@@ -193,17 +204,22 @@ class LCDBoardGuitionESP32S3_4_3Display : public LCDBoard {
   static constexpr int8_t kPinTouchIrq = 3;
   static constexpr int8_t kPinTouchRst = 38;
 
-  NV3041ADriver<RGB565> display_{kPinCs, kPinSclk, kPinD0, kPinD1, kPinD2,
-                                 kPinD3};
+  NV3041ADriver<RGB565> display_{kPinCs, kPinSclk, kPinD0,
+                                 kPinD1, kPinD2,   kPinD3};
   TouchDriverGT911 touch_{Wire, kPinTouchRst, kPinTouchIrq};
   I2SPins i2s_{/*mclk=*/-1, /*bck=*/42, /*ws=*/2, /*dataOut=*/41,
-              /*dataIn=*/-1};
+               /*dataIn=*/-1};
   LEDPins led_{};
 };
+
+using JC4827W543C_I = LCDBoardGuitionESP32S3_4_3Display;
 
 /**
  * @brief "ESP32 Arduino LVGL WiFi&Bluetooth Development Board, 2.4" LCD
  * TFT Module" - ILI9341 SPI TFT + CST816S capacitive touch, no PSRAM.
+ * (ESP32-2432S028R) - also named ESP32 Cheap Yellow Diplay
+ * 
+ * 
  * This is the same board pinout TinyGPU's own examples (e.g.
  * examples/color-test) are tested against.
  *
@@ -226,7 +242,7 @@ class LCDBoardGuitionESP32S3_4_3Display : public LCDBoard {
  *   cfg.sample_rate = 44100; cfg.channels = 1; cfg.bits_per_sample = 16;
  *   out.begin(cfg);
  */
-class LCDBoardESP32_LVGL_2_4Display : public LCDBoard {
+class LCDBoardGuitionESP32_LVGL_2_4Display : public LCDBoard {
  public:
   /// Sets up the backlight, SPI bus, display controller, and touch
   /// controller. Returns false if the display or touch begin() fails.
@@ -270,8 +286,140 @@ class LCDBoardESP32_LVGL_2_4Display : public LCDBoard {
   TouchDriverCST816S touch_{Wire, /*rst=*/-1, kPinTouchIrq};
   I2SPins i2s_{};
   LEDPins led_{/*single=*/-1, /*r=*/4, /*g=*/16, /*b=*/17,
-              /*activeLow=*/true};
+               /*activeLow=*/true};
 };
+
+using ESP32_2432S028R = LCDBoardGuitionESP32_LVGL_2_4Display;
+using ESP32CheapYellowDisplay = LCDBoardGuitionESP32_LVGL_2_4Display;
+
+/**
+ * @brief "Guition ESP32-H4 4.3" 480x800 Capacitive Touch Display -
+ * (JC4880P443C_I_W): it has a ST7701 MIPI-DSI display, GT911 capacitive touch
+ (I2C), and an ES8311 audio codec with NS4150 speaker amp (speaker output only -
+ this board has no mic). The board also has a WiFi SDIO interface and an SD_MMC
+ interface, both of which need their own pin setup.
+ *
+ *  * @note Audio setup: this board's ES8311 codec needs its own I2C init
+ (volume,
+ * mic gain, ...), not just I2S pins, so plain I2SStream
+ * leaves the codec unconfigured. If the sketch also depends on
+ * arduino-audio-driver, use its ready-made board definition instead,
+ * which owns the codec init and I2S pins together:
+ *
+ *   #include "AudioTools.h"
+ *   #include "AudioTools/AudioLibs/AudioBoardStream.h"
+ *   #include "AudioBoards/ESP32S3HosyondDisplay.h"  // arduino-audio-driver
+ *
+ *   audio_tools::AudioBoardStream out(audio_driver::ESP32S3HosyondDisplay);
+ *   auto cfg = out.defaultConfig(TX_MODE);
+ *   out.begin(cfg);
+ *   out.setVolume(0.5f);
+ *
+ * Without arduino-audio-driver, i2s()/setI2SPins() still give the raw
+ * MCLK/BCK/WS/DOUT/DIN pins for a plain I2SStream, but the caller is then
+ * responsible for the ES8311's I2C init and driving the PA-enable pin
+ * (i2s().paEnable, active low per paEnableActiveLow) itself.
+
+ */
+class LCDBoardGuitionESP32H4_4_3Display : public LCDBoard {
+ public:
+  /// Sets up the backlight, QSPI display controller, and touch controller.
+  /// Returns false if the display or touch begin() fails.
+  bool begin() override {
+    pinMode(kPinLcdBacklight, OUTPUT);
+    digitalWrite(kPinLcdBacklight, HIGH);
+
+    if (!display_.begin()) return false;
+
+    Wire.begin(kPinTouchSda, kPinTouchScl);
+    if (!touch_.begin()) return false;
+
+    // set wifi pins
+    if (!setupWifi()) return false;
+
+    // set SD_MMC pins
+    if (!SD_MMC.setPins(kPinSdClk, kPinSdCmd, kPinSdD0, kPinSdD1, kPinSdD2,
+                        kPinSdD3)) {
+      return false;
+    }
+
+    return true;
+  }
+
+  /// Panel width in pixels.
+  size_t width() const override { return kDisplayWidth; }
+  /// Panel height in pixels.
+  size_t height() const override { return kDisplayHeight; }
+
+  /// The board's display driver.
+  ST7701Driver<RGB565>& display() override { return display_; }
+  /// The board's touch controller.
+  TouchDriver* touch() override { return &touch_; }
+  /// The board's I2S pin assignment.
+  const I2SPins& i2s() const override { return i2s_; }
+  /// This board has no RGB LED - every LEDPins field is -1.
+  const LEDPins& led() const override { return led_; }
+
+ private:
+  static constexpr int kPinI2sMclk = 13;
+  static constexpr int kPinI2sBck = 12;
+  static constexpr int kPinI2sWs = 10;
+  static constexpr int kPinI2sDout = 9;  // P4 -> codec
+  static constexpr int kPinI2sDin = 48;
+  static constexpr int kPinCodecScl = 8;  // shared with GT911 touch bus
+  static constexpr int kPinCodecSda = 7;
+  static constexpr int kPinAmpEnable = 11;  // NS4150 PA_EN
+
+  // sdcard pins (SDMMC1, 4-bit mode) -
+  static constexpr int kPinSdClk = 43;
+  static constexpr int kPinSdCmd = 44;
+  static constexpr int kPinSdD0 = 39;
+  static constexpr int kPinSdD1 = 40;
+  static constexpr int kPinSdD2 = 41;
+  static constexpr int kPinSdD3 = 42;
+  static constexpr int kSdLdoChannel = 4;  // TF_VCC - see file header
+
+  // --- display geometry (native portrait) --------------------------------
+  static constexpr int kDisplayWidth = 480;
+  static constexpr int kDisplayHeight = 800;
+
+  // --- Display pins/config (ST7701S MIPI-DSI), from
+  // guition-jc4880p4-bsp's board_p4_pins.h/board_p4.c ---------------------
+  static constexpr int8_t kPinLcdRst = 5;
+  static constexpr int8_t kPinLcdBacklight = 23;
+  static constexpr int8_t kDsiPhyLdoChan = 3;
+  static constexpr uint16_t kDsiPhyLdoMv = 2500;
+
+  // --- Touch I2C pins (GT911), same source ---------------------------------
+  static constexpr int8_t kPinTouchSda = 7;
+  static constexpr int8_t kPinTouchScl = 8;
+  static constexpr int8_t kPinTouchRst = 3;
+  static constexpr int8_t kPinTouchInt = -1;  // unused/polled on this board
+
+  // --- WiFi SDIO pins (SDIO1), same source ---------------------------------
+  static constexpr int kPinWifiSdioClk = 18;
+  static constexpr int kPinWifiSdioCmd = 19;
+  static constexpr int kPinWifiSdioD0 = 14;
+  static constexpr int kPinWifiSdioD1 = 15;
+  static constexpr int kPinWifiSdioD2 = 16;
+  static constexpr int kPinWifiSdioD3 = 17;
+  static constexpr int kPinWifiC6Reset = 54;
+
+  ST7701Driver<RGB565> display_{kPinLcdRst,     kPinLcdBacklight, kDisplayWidth,
+                                kDisplayHeight, kDsiPhyLdoChan,   kDsiPhyLdoMv};
+  TouchDriverGT911 touch_{Wire, kPinTouchRst, kPinTouchInt};
+
+  I2SPins i2s_{kPinI2sMclk, kPinI2sBck, kPinI2sWs, kPinI2sDout, kPinI2sDin};
+  LEDPins led_{};
+
+  bool setupWifi() {
+    return hostedSetPins(kPinWifiSdioClk, kPinWifiSdioCmd, kPinWifiSdioD0,
+                         kPinWifiSdioD1, kPinWifiSdioD2, kPinWifiSdioD3,
+                         kPinWifiC6Reset);
+  }
+};
+
+using JC4880P443C_I_W = LCDBoardGuitionESP32H4_4_3Display;
 
 }  // namespace tinygpu
 
