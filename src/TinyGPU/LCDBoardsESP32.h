@@ -299,27 +299,35 @@ using ESP32_2432S028R = LCDBoardGuitionESP32_LVGL_2_4Display;
 using ESP32CheapYellowDisplay = LCDBoardGuitionESP32_LVGL_2_4Display;
 
 /**
- * @brief "Guition ESP32-H4 4.3" 480x800 Capacitive Touch Display -
- * (JC4880P443C_I_W): it has a ST7701 MIPI-DSI display, GT911 capacitive touch
- (I2C), and an ES8311 audio codec with NS4150 speaker amp (speaker output only -
- this board has no mic). The board also has a WiFi SDIO interface and an SD_MMC
- interface, both of which need their own pin setup.
+ * @brief "Guition ESP32-P4 4.3" 480x800 Capacitive Touch Display"
+ * (JC4880P443C_I_W): it has an ST7701 MIPI-DSI display, GT911 capacitive
+ * touch (I2C), and an ES8311 audio codec with NS4150 speaker amp (speaker
+ * output only - this board has no mic). The board also has a WiFi SDIO
+ * interface and an SD_MMC interface, both of which need their own pin setup.
  *
- *  * @note Audio setup: this board's ES8311 codec needs its own I2C init
- (volume,
- * mic gain, ...), not just I2S pins, so plain I2SStream
+ * Note: despite the class name (kept for historical/API-compatibility
+ * reasons), the chip on this board is an ESP32-P4, not an ESP32-H4 - see
+ * ST7701Driver's docs in DisplayDriverDSI.h and the guition-jc4880p4-bsp
+ * source this driver was transcribed from.
+ *
+ * @note SD card power: kSdLdoChannel (TF_VCC) is recorded from the BSP
+ * source but not currently driven by begin() - unlike kDsiPhyLdoChan, which
+ * IS wired into ST7701Driver. If the TF socket needs that LDO switched on to
+ * work, SD_MMC.begin() may fail until this is enabled explicitly.
+ *
+ * @note Audio setup: this board's ES8311 codec needs its own I2C init
+ * (volume, mic gain, ...), not just I2S pins, so plain I2SStream
  * leaves the codec unconfigured. If the sketch also depends on
  * arduino-audio-driver, use its ready-made board definition instead,
  * which owns the codec init and I2S pins together:
  *
  *   #include "AudioTools.h"
  *   #include "AudioTools/AudioLibs/AudioBoardStream.h"
- *   #include "AudioBoards/ESP32S3HosyondDisplay.h"  // arduino-audio-driver
  *
  *   AudioBoardStream i2s(GenericES8311);
  *   auto config = i2s.defaultConfig(TX_MODE);
  *   board.setI2SPins<I2SConfig>(config);
-     i2s.begin(config);
+ *   i2s.begin(config);
  *   i2s.setVolume(0.5f);
  *   board.setAmplifierActive(true);
  *
@@ -327,7 +335,6 @@ using ESP32CheapYellowDisplay = LCDBoardGuitionESP32_LVGL_2_4Display;
  * MCLK/BCK/WS/DOUT/DIN pins for a plain I2SStream, but the caller is then
  * responsible for the ES8311's I2C init and driving the PA-enable pin
  * (i2s().paEnable, active low per paEnableActiveLow) itself.
-
  */
 
 class LCDBoardGuitionESP32H4_4_3Display : public LCDBoard {
@@ -347,13 +354,14 @@ class LCDBoardGuitionESP32H4_4_3Display : public LCDBoard {
     }
   }
 
-  /// Sets up the backlight, QSPI display controller, and touch controller.
-  /// Returns false if the display or touch begin() fails. The aplifier is not activated!
+  /// Sets up the backlight, QSPI display controller, touch controller,
+  /// WiFi SDIO pins, and SD_MMC pins. Returns false if the display or touch
+  /// begin() fails. The speaker amp is not activated - call
+  /// setAmplifierActive(true) explicitly.
   bool begin() override {
     pinMode(kPinLcdBacklight, OUTPUT);
     digitalWrite(kPinLcdBacklight, HIGH);
 
-   
     if (!display_.begin()) return false;
 
     // setup wire for I2S codec and touch controller (GT911)
@@ -437,7 +445,9 @@ class LCDBoardGuitionESP32H4_4_3Display : public LCDBoard {
   static constexpr int kPinSdD1 = 40;
   static constexpr int kPinSdD2 = 41;
   static constexpr int kPinSdD3 = 42;
-  static constexpr int kSdLdoChannel = 4;  // TF_VCC - see file header
+  // TF_VCC LDO channel, from guition-jc4880p4-bsp; not currently driven by
+  // begin() - see class doc note on SD card power.
+  static constexpr int kSdLdoChannel = 4;
 
   // --- display geometry (native portrait) --------------------------------
   static constexpr int kDisplayWidth = 480;

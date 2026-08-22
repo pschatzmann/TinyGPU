@@ -36,6 +36,11 @@ Apart form RGB565 we also support RGB666, RGB888 and Monochrome.
   - saving data
   - loading data
 - LVGLDriver: use this library to output data from the lvgl library
+- LCDBoard: one-call setup (display + touch, and I2S pins where present) for ESP32(-S3/-P4) boards from the [arduino-audio-tools Audio Boards wiki](https://github.com/pschatzmann/arduino-audio-tools/wiki/Audio-Boards)
+  - ESP32-S3 2.8" Display (FBBA0125-002 / ESP32-S3 Hosyond Display)
+  - Guition ESP32-S3 4.3" Capacitive Touch Display (JC4827W543C_I)
+  - ESP32 Arduino LVGL WiFi&Bluetooth 2.4" LCD (ESP32-2432S028R / ESP32 Cheap Yellow Display)
+  - Guition ESP32-P4 4.3" 480x800 Capacitive Touch Display (JC4880P443C_I_W)
 - Arduino example sketches
 
 ## Overview
