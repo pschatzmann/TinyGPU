@@ -3,8 +3,8 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#include "ISurface.h"
-#include "IFont.h"
+#include "TinyGPU/Surface/ISurface.h"
+#include "TinyGPU/Font/IFont.h"
 
 namespace tinygpu {
 

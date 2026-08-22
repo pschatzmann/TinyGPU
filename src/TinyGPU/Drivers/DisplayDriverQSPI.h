@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include <string.h>
 
-#include "DisplayDriver.h"
+#include "TinyGPU/Drivers/DisplayDriver.h"
 
 #if defined(ESP32)
 #include "driver/spi_master.h"

@@ -5,9 +5,9 @@
 #include <algorithm>
 #include <vector>
 
-#include "IFont.h"
-#include "ISurface.h"
-#include "LinePrinter.h"
+#include "TinyGPU/Font/IFont.h"
+#include "TinyGPU/Surface/ISurface.h"
+#include "TinyGPU/Font/LinePrinter.h"
 
 namespace tinygpu {
 

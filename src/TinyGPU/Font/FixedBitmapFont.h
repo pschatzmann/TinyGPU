@@ -5,9 +5,9 @@
 
 #include <array>
 
-#include "IFont.h"
-#include "ISurface.h"
-#include "RGB565.h"
+#include "TinyGPU/Font/IFont.h"
+#include "TinyGPU/Surface/ISurface.h"
+#include "TinyGPU/Color/RGB565.h"
 
 namespace tinygpu {
 

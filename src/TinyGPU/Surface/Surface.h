@@ -7,16 +7,16 @@
 #include <algorithm>
 #include <cstddef>
 
-#include "BitmapFont.h"
-#include "IFont.h"
-#include "ISurface.h"
-#include "LinePrinter.h"
-#include "RGB565.h"
-#include "RGB666.h"
-#include "RGB888.h"
-#include "SurfaceBase.h"
+#include "TinyGPU/Font/BitmapFont.h"
+#include "TinyGPU/Font/IFont.h"
+#include "TinyGPU/Surface/ISurface.h"
+#include "TinyGPU/Font/LinePrinter.h"
+#include "TinyGPU/Color/RGB565.h"
+#include "TinyGPU/Color/RGB666.h"
+#include "TinyGPU/Color/RGB888.h"
+#include "TinyGPU/Surface/SurfaceBase.h"
 #include "TinyGPUConfig.h"
-#include "TinyGPU/Vector.h"
+#include "TinyGPU/ThreeD/Vector.h"
 
 namespace tinygpu {
 

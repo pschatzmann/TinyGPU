@@ -3,7 +3,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#include "ISurface.h"
+#include "TinyGPU/Surface/ISurface.h"
 #include "Print.h"
 
 namespace tinygpu {

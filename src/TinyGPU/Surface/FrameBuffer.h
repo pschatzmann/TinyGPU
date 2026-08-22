@@ -5,12 +5,12 @@
 #include <cstring>
 #include <memory>
 
-#include "Surface.h"
-#include "TinyGPU/Vector.h"
+#include "TinyGPU/Surface/Surface.h"
+#include "TinyGPU/ThreeD/Vector.h"
 #include "TinyGPUConfig.h"
-#include "TinyGPULogger.h"
-#include "TouchDriver.h"
-#include "SpriteInfo.h"
+#include "TinyGPU/Util/TinyGPULogger.h"
+#include "TinyGPU/Input/TouchDriver.h"
+#include "TinyGPU/Surface/SpriteInfo.h"
 
 namespace tinygpu {
 

@@ -1,8 +1,10 @@
 /**
  * @file bouncing-ball.ino
- * @brief TinyGPU bouncing ball demo for a 3.5" 240x320 ILI9341 SPI TFT
- * touch board, e.g. the "ESP32 LVGL WiFi & Bluetooth" development boards
- * sold with a 3.5" 240x320 touch display.
+ * @brief TinyGPU bouncing ball demo for the ESP32 Cheap Yellow Display
+ * (ESP32-2432S028R), a 240x320 ILI9341 SPI TFT board - built up here via
+ * the LCDBoardGuitionESP32_LVGL_2_4Display board class (LCDBoardsESP32.h),
+ * so its pin wiring doesn't need to be repeated here. Swap the board type
+ * below for a different LCDBoard if yours differs.
  *
  * A full 240x320 RGB565 framebuffer needs ~150 KB in one contiguous
  * allocation, which a classic ESP32 without PSRAM often can't satisfy even
@@ -22,17 +24,13 @@
  *    a full-screen redraw. That cuts per-frame SPI traffic from ~150 KB to
  *    a few KB.
  *
- *   TFT_MOSI -> GPIO13   TFT_MISO -> GPIO12   TFT_SCLK -> GPIO14
- *   TFT_CS   -> GPIO15   TFT_DC   -> GPIO2    TFT_RST  -> not connected (-1)
- *   TFT_BL   -> GPIO27 (backlight)
- *
- * If the screen stays blank: check the backlight pin and SPI pins first.
- * If it lights up but shows garbage/wrong colors/shifted image: see the
- * troubleshooting notes below setup().
+ * If the screen stays blank: check the board's backlight and bus wiring
+ * first. If it lights up but shows garbage/wrong colors/shifted image: see
+ * the troubleshooting notes below setup().
  */
 
 #include <TinyGPU.h>
-#include <TinyGPU/DisplayDriverSPI.h>
+#include <TinyGPU/Boards/LCDBoardsESP32.h>
 
 // --- display geometry ---------------------------------------------------
 constexpr int kDisplayWidth = 240;
@@ -50,18 +48,9 @@ constexpr int kBandCount = kDisplayHeight / kBandHeight;
 // 40 x 40 x 2 bytes = 3,200 bytes.
 constexpr int kSpriteSize = 40;
 
-// --- SPI / display pins ---------------------------------------------------
-constexpr int8_t kPinMosi = 13;
-constexpr int8_t kPinMiso = 12;
-constexpr int8_t kPinSclk = 14;
-constexpr int8_t kPinCs = 15;
-constexpr int8_t kPinDc = 2;
-constexpr int8_t kPinRst = -1;
-constexpr int8_t kPinBacklight = 27;
-
 SurfaceRGB565 band(kDisplayWidth, kBandHeight, FontRGB565);
 SurfaceRGB565 spriteWindow(kSpriteSize, kSpriteSize, FontRGB565);
-ILI9341Driver tftDriver(SPI, kPinCs, kPinDc, kPinRst);
+ESP32CheapYellowDisplay board;
 
 // --- ball state -----------------------------------------------------------
 constexpr float kBallRadius = 14.0f;
@@ -103,7 +92,7 @@ void renderBand(int bandIndex) {
                     static_cast<size_t>(kBallRadius), kBallColor);
   }
 
-  tftDriver.writeData(band, 0, bandStartY);
+  board.display().writeData(band, 0, bandStartY);
 }
 
 
@@ -152,19 +141,13 @@ void renderBallWindow(float oldX, float oldY) {
                           static_cast<size_t>(localBallY),
                           static_cast<size_t>(kBallRadius), kBallColor);
 
-  tftDriver.writeData(spriteWindow, windowX, windowY);
+  board.display().writeData(spriteWindow, windowX, windowY);
 }
 
 void setup() {
   Serial.begin(115200);
 
-  if (kPinBacklight >= 0) {
-    pinMode(kPinBacklight, OUTPUT);
-    digitalWrite(kPinBacklight, HIGH);
-  }
-
-  SPI.begin(kPinSclk, kPinMiso, kPinMosi, kPinCs);
-  tftDriver.begin();
+  board.begin();
 
   band.begin();
   spriteWindow.begin();

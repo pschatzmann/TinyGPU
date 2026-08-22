@@ -7,7 +7,7 @@
  * while applying scaling and rotation transformations.
  */
 #include <TinyGPU.h>
-#include <TinyGPU/DisplayDriverSDL.h>
+#include <TinyGPU/Drivers/DisplayDriverSDL.h>
 
 constexpr size_t kDisplayWidth = 128;
 constexpr size_t kDisplayHeight = 64;

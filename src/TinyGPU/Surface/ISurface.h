@@ -4,7 +4,7 @@
 #include <stdint.h>
 
 
-#include "RGB565.h"
+#include "TinyGPU/Color/RGB565.h"
 
 namespace tinygpu {
 

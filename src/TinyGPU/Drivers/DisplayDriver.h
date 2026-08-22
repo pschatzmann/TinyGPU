@@ -1,7 +1,7 @@
 #pragma once
 #include <stddef.h>
 
-#include "ISurface.h"
+#include "TinyGPU/Surface/ISurface.h"
 
 namespace tinygpu {
 

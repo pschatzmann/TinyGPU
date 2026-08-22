@@ -1,19 +1,19 @@
 #pragma once
 #include "TinyGPUConfig.h"
-#include "TinyGPU/AVIWriter.h"
-#include "TinyGPU/BMPExporter.h"
-#include "TinyGPU/BMPParser.h"
-#include "TinyGPU/CartesianView.h"
-#include "TinyGPU/FrameBuffer.h"
-#include "TinyGPU/FrameBufferMonochrome.h"
-#include "TinyGPU/Surface.h"
-#include "TinyGPU/SurfaceWithExternalBuffer.h"
-#include "TinyGPU/SurfaceMonochrome.h"
-#include "TinyGPU/WireFrame3D.h"
-#include "TinyGPU/PSRAMAllocator.h"
-#include "TinyGPU/TinyGPUGlobals.h"
-#include <TinyGPU/DeviceOutput.h>
-#include <TinyGPU/TouchDriver.h>
+#include "TinyGPU/IO/AVIWriter.h"
+#include "TinyGPU/IO/BMPExporter.h"
+#include "TinyGPU/IO/BMPParser.h"
+#include "TinyGPU/Surface/CartesianView.h"
+#include "TinyGPU/Surface/FrameBuffer.h"
+#include "TinyGPU/Surface/FrameBufferMonochrome.h"
+#include "TinyGPU/Surface/Surface.h"
+#include "TinyGPU/Surface/SurfaceWithExternalBuffer.h"
+#include "TinyGPU/Surface/SurfaceMonochrome.h"
+#include "TinyGPU/ThreeD/WireFrame3D.h"
+#include "TinyGPU/Util/PSRAMAllocator.h"
+#include "TinyGPU/Util/TinyGPUGlobals.h"
+#include <TinyGPU/Drivers/DeviceOutput.h>
+#include <TinyGPU/Input/TouchDriver.h>
 #include <assert.h>
 
 #if defined(ARDUINO) || defined(TINYGPU_AUTO_NAMESPACE)

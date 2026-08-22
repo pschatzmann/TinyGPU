@@ -4,10 +4,10 @@
 #include <stdint.h>
 
 #include <array>
-#include "RGB565.h"
-#include "RGB888.h"
-#include "IFont.h"
-#include "ISurface.h"
+#include "TinyGPU/Color/RGB565.h"
+#include "TinyGPU/Color/RGB888.h"
+#include "TinyGPU/Font/IFont.h"
+#include "TinyGPU/Surface/ISurface.h"
 
 namespace tinygpu {
 

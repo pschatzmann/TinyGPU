@@ -42,7 +42,7 @@ namespace tinygpu {
  *
  * Example usage:
  * @code
- * #include "PSRAMAllocator.h"
+ * #include "TinyGPU/Util/PSRAMAllocator.h"
  *
  * // Use PSRAMAllocator with Vector for large buffers
  * std::vector<uint8_t, PSRAMAllocator<uint8_t>> largeBuffer;

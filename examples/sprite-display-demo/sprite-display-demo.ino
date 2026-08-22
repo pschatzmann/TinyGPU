@@ -4,17 +4,13 @@
  * using a framebuffer to minimize the required memory. The Sprites are also
  * supporting touch events and can be moved, scaled and rotated.
  *
- * Tested using a 3.5" 240x320 ILI9341 SPI TFT touch board, e.g. the "ESP32 LVGL
- * WiFi & Bluetooth" development boards sold with a 3.5" 240x320 touch display.
- *
- * This board family is sold in two touch variants that look identical but
- * use completely different touch hardware: resistive (XPT2046 over SPI) and
- * capacitive (CST816S over I2C). Verified against real hardware: this unit
- * is the capacitive variant - probing the XPT2046 SPI pins always read back
- * zero, while scanning I2C found a device at 0x15 (SDA=33, SCL=32), which is
- * the CST816S's fixed address. If your board is the resistive variant
- * instead, swap TouchDriverCST816S below for TouchDriverXPT2046 and use the
- * SPI touch pins (see git history of this file for that wiring).
+ * Tested on the ESP32 Cheap Yellow Display (ESP32-2432S028R), a 240x320
+ * ILI9341 SPI TFT board with a CST816S capacitive touch controller -
+ * built up here via the LCDBoardGuitionESP32_LVGL_2_4Display board class
+ * (LCDBoardsESP32.h), so its pin wiring doesn't need to be repeated here.
+ * Swap the board type below for a different LCDBoard if yours differs -
+ * e.g. a resistive-touch (XPT2046) variant of this board family needs a
+ * different LCDBoard/TouchDriver pairing than this capacitive one.
  *
  * This panel's ILI9341-compatible controller also doesn't honor the MADCTL
  * BGR/RGB bit per the datasheet - colors sent as standard RGB565 come out
@@ -29,28 +25,10 @@
  * here even though GestureDetector supports them for multi-touch hardware.
  */
 #include <TinyGPU.h>
-#include <TinyGPU/DisplayDriverSPI.h>
-#include <TinyGPU/SpriteDisplay.h>
-#include <TinyGPU/GestureDetector.h>
+#include <TinyGPU/Boards/LCDBoardsESP32.h>
+#include <TinyGPU/Surface/SpriteDisplay.h>
+#include <TinyGPU/Input/GestureDetector.h>
 #include <lvgl.h>
-
-// --- display geometry (Landscape) ----------------------------------------
-constexpr int kDisplayWidth = 240;   // 320;  // Swapped for Landscape
-constexpr int kDisplayHeight = 320;  // 240;
-
-// --- SPI / display pins ---------------------------------------------------
-constexpr int8_t kPinMosi = 13;
-constexpr int8_t kPinMiso = 12;
-constexpr int8_t kPinSclk = 14;
-constexpr int8_t kPinCs = 15;
-constexpr int8_t kPinDc = 2;
-constexpr int8_t kPinRst = -1;
-constexpr int8_t kPinBacklight = 27;
-
-// --- Touch I2C Pins (CST816S capacitive touch) -----------------------------
-constexpr int8_t kPinTouchSda = 33;
-constexpr int8_t kPinTouchScl = 32;
-constexpr int8_t kPinTouchIrq = 36;
 
 RGB565 red(255, 0, 0);
 RGB565 green(0, 255, 0);
@@ -58,9 +36,8 @@ RGB565 blue(0, 0, 255);
 RGB565 white(255, 255, 255);
 RGB565 black(0, 0, 0);
 
-TouchDriverCST816S touchDriver(Wire, /*rstPin=*/-1, kPinTouchIrq);
-ILI9341Driver<RGB565> tftDriver(SPI, kPinCs, kPinDc, kPinRst);
-SpriteDisplay<RGB565> display(kDisplayWidth, kDisplayHeight, tftDriver, red);
+ESP32CheapYellowDisplay board;
+SpriteDisplay<RGB565> display(board, red);
 GestureDetector gestures;
 
 SpriteInfo<RGB565, Surface<RGB565>>* draggedSprite = nullptr;
@@ -100,18 +77,7 @@ void onGesture(GestureEvent& e) {
 void setup() {
   Serial.begin(115200);
 
-  // activate backlight
-  pinMode(kPinBacklight, OUTPUT);
-  digitalWrite(kPinBacklight, HIGH);
-
-  // setup display
-  SPI.begin(kPinSclk, kPinMiso, kPinMosi, kPinCs);
-  display.setTouchDriver(touchDriver);
-  display.begin();
-
-  // setup touch
-  Wire.begin(kPinTouchSda, kPinTouchScl);
-  touchDriver.begin();
+  display.begin();  // brings up the whole board (see SpriteDisplay(LCDBoard&))
 
   display.addSprite(20, 20, 90, 90, green);
   display.addSprite(130, 20, 90, 90, blue);
@@ -120,4 +86,4 @@ void setup() {
   gestures.isDraggable = isOverSprite;
 }
 
-void loop() { gestures.update(touchDriver); }
+void loop() { gestures.update(*board.touch()); }

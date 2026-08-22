@@ -3,8 +3,8 @@
 #include <cmath>
 #include <memory>
 
-#include "RGB565.h"
-#include "TinyGPU/Vector.h"
+#include "TinyGPU/Color/RGB565.h"
+#include "TinyGPU/ThreeD/Vector.h"
 
 namespace tinygpu {
 

@@ -1,8 +1,10 @@
 /**
  * @file lvgl-example.ino
- * @brief TinyGPU LVGL v9 dashboard example for a 3.5" 240x320 ILI9341 SPI
- * TFT touch board, e.g. the "ESP32 LVGL WiFi & Bluetooth" development
- * boards sold with a 3.5" 240x320 touch display.
+ * @brief TinyGPU LVGL v9 dashboard example for the ESP32 Cheap Yellow
+ * Display (ESP32-2432S028R), a 240x320 ILI9341 SPI TFT board - built up
+ * here via the LCDBoardGuitionESP32_LVGL_2_4Display board class
+ * (LCDBoardsESP32.h), so its pin wiring doesn't need to be repeated here.
+ * Swap the board type below for a different LCDBoard if yours differs.
  *
  * Demonstrates a small interactive dashboard built entirely with LVGL
  * widgets running on top of TinyGPU's LVGLDriver:
@@ -17,8 +19,8 @@
  *
  */
 #include <TinyGPU.h>
-#include <TinyGPU/DisplayDriverSPI.h>
-#include <TinyGPU/LVGLDriver.h>
+#include <TinyGPU/Boards/LCDBoardsESP32.h>
+#include <TinyGPU/Integrations/LVGLDriver.h>
 #include <lvgl.h>
 #include <math.h>
 
@@ -26,26 +28,11 @@
 constexpr int kDisplayWidth = 240;   // 320;  // Swapped for Landscape
 constexpr int kDisplayHeight = 320;  // 240;
 
-// --- SPI / display pins ---------------------------------------------------
-constexpr int8_t kPinMosi = 13;
-constexpr int8_t kPinMiso = 12;
-constexpr int8_t kPinSclk = 14;
-constexpr int8_t kPinCs = 15;
-constexpr int8_t kPinDc = 2;
-constexpr int8_t kPinRst = -1;
-constexpr int8_t kPinBacklight = 27;
-
-// --- Touch I2C Pins (CST816S capacitive touch) -----------------------------
-constexpr int8_t kPinTouchSda = 33;
-constexpr int8_t kPinTouchScl = 32;
-constexpr int8_t kPinTouchIrq = 36;
-
 // Explicit buffer allocation size (320 * 20 lines * 2 bytes)
 constexpr size_t kLvglBufferSize = kDisplayWidth * 2;
-ILI9341Driver<RGB565> tftDriver(SPI, kPinCs, kPinDc, kPinRst);
-LVGLDriver<RGB565> lvglDriver(tftDriver, kDisplayWidth, kDisplayHeight,
+ESP32CheapYellowDisplay board;
+LVGLDriver<RGB565> lvglDriver(board.display(), kDisplayWidth, kDisplayHeight,
                               kLvglBufferSize);
-TouchDriverCST816S touchDriver(Wire, /*rstPin=*/-1, kPinTouchIrq);
 
 // --- dashboard widgets ------------------------------------------------------
 lv_obj_t* gaugeArc = nullptr;
@@ -69,7 +56,7 @@ void onSliderChanged(lv_event_t* e) {
   lv_obj_t* slider = static_cast<lv_obj_t*>(lv_event_get_target(e));
   int32_t value = lv_slider_get_value(slider);
   lv_label_set_text_fmt(sliderLabel, "Backlight: %ld%%", static_cast<long>(value));
-  ledcWrite(kPinBacklight, map(value, 0, 100, 0, 255));
+  ledcWrite(board.backlightPin(), map(value, 0, 100, 0, 255));
 }
 
 void onSwitchToggled(lv_event_t* e) {
@@ -169,12 +156,17 @@ void setup() {
   Serial.begin(115200);
   Serial.println("starting...");
 
-  ledcAttach(kPinBacklight, 5000, 8);
-  ledcWrite(kPinBacklight, 255);
+  if (!board.begin()) {
+    Serial.println("Board initialization failed!");
+    while (1);
+  }
 
-  SPI.begin(kPinSclk, kPinMiso, kPinMosi, kPinCs);
-  Wire.begin(kPinTouchSda, kPinTouchScl);
-  lvglDriver.setTouchDriver(touchDriver);
+  // Reconfigure the board's backlight pin for PWM dimming - board.begin()
+  // already drove it digitally HIGH (full brightness).
+  ledcAttach(board.backlightPin(), 5000, 8);
+  ledcWrite(board.backlightPin(), 255);
+
+  lvglDriver.setTouchDriver(*board.touch());
 
   if (!lvglDriver.begin()) {
     Serial.println("LVGL Driver initialization failed!");

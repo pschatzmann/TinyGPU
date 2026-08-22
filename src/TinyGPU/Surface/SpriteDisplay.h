@@ -2,14 +2,14 @@
 #include <algorithm>
 #include <memory>
 
-#include "RGB565.h"
-#include "SpriteInfo.h"
-#include "Surface.h"
-#include "TinyGPU/Vector.h"
+#include "TinyGPU/Color/RGB565.h"
+#include "TinyGPU/Surface/SpriteInfo.h"
+#include "TinyGPU/Surface/Surface.h"
+#include "TinyGPU/ThreeD/Vector.h"
 #include "TinyGPUConfig.h"
-#include "TinyGPULogger.h"
-#include "TouchDriver.h"
-#include "LCDBoards.h"
+#include "TinyGPU/Util/TinyGPULogger.h"
+#include "TinyGPU/Input/TouchDriver.h"
+#include "TinyGPU/Boards/LCDBoards.h"
 
 namespace tinygpu {
 

@@ -7,9 +7,9 @@
 #include <cmath>
 #include <limits>
 
-#include "ISurface.h"
+#include "TinyGPU/Surface/ISurface.h"
 #include "TinyGPUConfig.h"
-#include "TinyGPU/Vector.h"
+#include "TinyGPU/ThreeD/Vector.h"
 
 #if TINYGPU_ENABLE_ESP32S3_OPTIMIZATIONS
 #include "esp_dsp.h"

@@ -28,10 +28,10 @@
 #include <SPI.h>
 #include <Wire.h>
 
-#include "DisplayDriverDSI.h"
-#include "DisplayDriverQSPI.h"
-#include "DisplayDriverSPI.h"
-#include "LCDBoards.h"
+#include "TinyGPU/Drivers/DisplayDriverDSI.h"
+#include "TinyGPU/Drivers/DisplayDriverQSPI.h"
+#include "TinyGPU/Drivers/DisplayDriverSPI.h"
+#include "TinyGPU/Boards/LCDBoards.h"
 #include "esp_adc/adc_cali.h"
 #include "esp_adc/adc_cali_scheme.h"
 #include "esp_adc/adc_oneshot.h"
@@ -110,6 +110,8 @@ class LCDBoardESP32S3_2_8Display : public LCDBoard {
   const I2SPins& i2s() const override { return i2s_; }
   /// The board's LED pin assignment.
   const LEDPins& led() const override { return led_; }
+  /// The board's backlight GPIO pin.
+  int8_t backlightPin() const override { return kPinBacklight; }
 
  private:
   static constexpr int8_t kPinCs = 10;
@@ -196,6 +198,8 @@ class LCDBoardGuitionESP32S3_4_3Display : public LCDBoard {
   const I2SPins& i2s() const override { return i2s_; }
   /// This board has no RGB LED - every LEDPins field is -1.
   const LEDPins& led() const override { return led_; }
+  /// The board's backlight GPIO pin.
+  int8_t backlightPin() const override { return kPinBacklight; }
 
  private:
   static constexpr int8_t kPinCs = 45;
@@ -276,6 +280,8 @@ class LCDBoardGuitionESP32_LVGL_2_4Display : public LCDBoard {
   const I2SPins& i2s() const override { return i2s_; }
   /// The board's LED pin assignment.
   const LEDPins& led() const override { return led_; }
+  /// The board's backlight GPIO pin.
+  int8_t backlightPin() const override { return kPinBacklight; }
 
  private:
   static constexpr int8_t kPinCs = 15;
@@ -297,6 +303,15 @@ class LCDBoardGuitionESP32_LVGL_2_4Display : public LCDBoard {
 
 using ESP32_2432S028R = LCDBoardGuitionESP32_LVGL_2_4Display;
 using ESP32CheapYellowDisplay = LCDBoardGuitionESP32_LVGL_2_4Display;
+
+// The rest of this file is ESP32-P4-only: ST7701Driver (DisplayDriverDSI.h)
+// only exists when TINYGPU_HAS_ESP_LCD_DSI is defined (i.e. esp_lcd_mipi_dsi.h
+// is available, which the Arduino-ESP32 core only ships for the P4), and
+// hostedSetPins() below is likewise a P4-only ESP-Hosted-Wi-Fi API. Without
+// this guard, merely #including this file for any other chip (classic
+// ESP32, S3, ...) fails to compile even if the sketch never touches this
+// board class.
+#ifdef TINYGPU_HAS_ESP_LCD_DSI
 
 /**
  * @brief "Guition ESP32-P4 4.3" 480x800 Capacitive Touch Display"
@@ -402,6 +417,8 @@ class LCDBoardGuitionESP32H4_4_3Display : public LCDBoard {
   const I2SPins& i2s() const override { return i2s_; }
   /// This board has no RGB LED - every LEDPins field is -1.
   const LEDPins& led() const override { return led_; }
+  /// The board's backlight GPIO pin.
+  int8_t backlightPin() const override { return kPinLcdBacklight; }
 
   /// Reads and returns the battery charge percentage (0 - 100).
   int battery(int battery_readings_ = 100) {
@@ -536,6 +553,8 @@ class LCDBoardGuitionESP32H4_4_3Display : public LCDBoard {
 };
 
 using JC4880P443C_I_W = LCDBoardGuitionESP32H4_4_3Display;
+
+#endif  // TINYGPU_HAS_ESP_LCD_DSI
 
 }  // namespace tinygpu
 

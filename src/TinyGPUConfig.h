@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include "TinyGPU/PSRAMAllocator.h"
+#include "TinyGPU/Util/PSRAMAllocator.h"
 
 /// Activate ESP32-S3-specific optimizations 
 #ifndef TINYGPU_ENABLE_ESP32S3_OPTIMIZATIONS

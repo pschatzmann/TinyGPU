@@ -1,10 +1,10 @@
 
 #include <type_traits>
 
-#include "GammaTable.h"
+#include "TinyGPU/Color/GammaTable.h"
 #include "TinyGPU.h"
-#include "TouchDriver.h"
-#include "Vector.h"
+#include "TinyGPU/Input/TouchDriver.h"
+#include "TinyGPU/ThreeD/Vector.h"
 #include "lvgl.h"
 
 /**

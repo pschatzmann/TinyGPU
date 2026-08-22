@@ -1,7 +1,7 @@
 #pragma once
 
-#include "FrameBuffer.h"
-#include "SurfaceMonochrome.h"
+#include "TinyGPU/Surface/FrameBuffer.h"
+#include "TinyGPU/Surface/SurfaceMonochrome.h"
 
 namespace tinygpu {
 

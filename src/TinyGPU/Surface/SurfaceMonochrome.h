@@ -2,10 +2,10 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#include "IFont.h"
-#include "SurfaceBase.h"
+#include "TinyGPU/Font/IFont.h"
+#include "TinyGPU/Surface/SurfaceBase.h"
 #include "TinyGPUConfig.h"
-#include "TinyGPU/Vector.h"
+#include "TinyGPU/ThreeD/Vector.h"
 
 namespace tinygpu {
 

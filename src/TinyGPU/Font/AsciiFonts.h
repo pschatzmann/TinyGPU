@@ -2,8 +2,8 @@
 
 #include <array>
 
-#include "FixedBitmapFont.h"
-#include "RGB565.h"
+#include "TinyGPU/Font/FixedBitmapFont.h"
+#include "TinyGPU/Color/RGB565.h"
 
 // Fonts converted from the STM32 STM32-EVAL LCD font tables (fonts.c), see
 // https://github.com/codenuke/STM32-Library-V3.5/blob/master/Utilities/STM32_EVAL/Common/fonts.c

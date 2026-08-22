@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdint.h>
 
-#include "TouchDriver.h"
+#include "TinyGPU/Input/TouchDriver.h"
 
 namespace tinygpu {
 

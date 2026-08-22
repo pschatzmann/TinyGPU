@@ -13,9 +13,9 @@
  */
 #include <Arduino.h>
 
-#include "../TinyGPU.h"
-#include "DisplayDriver.h"
-#include "TouchDriver.h"
+#include "../../TinyGPU.h"
+#include "TinyGPU/Drivers/DisplayDriver.h"
+#include "TinyGPU/Input/TouchDriver.h"
 
 namespace tinygpu {
 
@@ -82,6 +82,11 @@ class LCDBoard {
   virtual const I2SPins& i2s() const = 0;
   /// The board's LED pin assignment.
   virtual const LEDPins& led() const = 0;
+  /// The board's backlight GPIO pin, or -1 if unknown/not applicable.
+  /// begin() already drives it digitally HIGH; this accessor exists so
+  /// callers can reconfigure the same pin for PWM brightness control
+  /// (e.g. via ledcAttach/ledcWrite) after begin().
+  virtual int8_t backlightPin() const { return -1; }
 
   /// Copies this board's I2S pins into an audio_tools-style I2SConfig
   /// (any type exposing pin_bck/pin_ws/pin_data/pin_data_rx).

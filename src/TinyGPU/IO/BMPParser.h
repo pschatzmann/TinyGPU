@@ -6,8 +6,8 @@
 #include <algorithm>
 
 #include "TinyGPUConfig.h"
-#include "ISurface.h"
-#include "TinyGPU/Vector.h"
+#include "TinyGPU/Surface/ISurface.h"
+#include "TinyGPU/ThreeD/Vector.h"
 
 namespace tinygpu {
 

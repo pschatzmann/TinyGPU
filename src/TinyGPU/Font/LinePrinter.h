@@ -2,8 +2,8 @@
 
 #include <string>
 
-#include "IFont.h"
-#include "ISurface.h"
+#include "TinyGPU/Font/IFont.h"
+#include "TinyGPU/Surface/ISurface.h"
 
 namespace tinygpu {
 

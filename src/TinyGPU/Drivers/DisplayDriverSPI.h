@@ -5,7 +5,7 @@
 #include <stdint.h>
 #include <string.h>
 
-#include "DisplayDriver.h"
+#include "TinyGPU/Drivers/DisplayDriver.h"
 
 namespace tinygpu {
 

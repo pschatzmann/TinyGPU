@@ -5,8 +5,8 @@
 #include <SPI.h>
 #include <stdint.h>
 
-#include "ISurface.h"
-#include "DisplayDriver.h"
+#include "TinyGPU/Surface/ISurface.h"
+#include "TinyGPU/Drivers/DisplayDriver.h"
 
 namespace tinygpu {
 

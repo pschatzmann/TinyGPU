@@ -1,7 +1,7 @@
 #pragma once
 #include <stddef.h>
 #include <stdint.h>
-#include "RGB565.h"
+#include "TinyGPU/Color/RGB565.h"
 
 namespace tinygpu {
 // Forward declaration to avoid circular dependency

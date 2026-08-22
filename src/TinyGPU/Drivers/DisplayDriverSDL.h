@@ -4,8 +4,8 @@
 #include <cstdint>
 #include <vector>
 
-#include "DisplayDriver.h"
-#include "RGB565.h"
+#include "TinyGPU/Drivers/DisplayDriver.h"
+#include "TinyGPU/Color/RGB565.h"
 
 namespace tinygpu {
 

@@ -3,8 +3,8 @@
 #include <stdint.h>
 #include <string.h>
 
-#include "DisplayDriver.h"
-#include "RGB565.h"
+#include "TinyGPU/Drivers/DisplayDriver.h"
+#include "TinyGPU/Color/RGB565.h"
 
 // esp_lcd_mipi_dsi.h only exists in the ESP32-P4 variant of arduino-esp32's
 // bundled ESP-IDF (MIPI-DSI is a P4-only peripheral) - __has_include lets

@@ -18,14 +18,15 @@
  * description of each band, in case a tint or swap makes a band
  * ambiguous by eye alone.
  *
- * Tested on a 3.5" 240x320 ILI9341 SPI TFT touch board (the "ESP32 LVGL
- * WiFi & Bluetooth" boards) with a CST816S capacitive touch controller -
- * adjust the pins below (and the touch driver, if yours is different or
- * absent) for your own hardware.
+ * Tested on the ESP32 Cheap Yellow Display (ESP32-2432S028R), a 240x320
+ * ILI9341 SPI TFT board with a CST816S capacitive touch controller -
+ * built up here via the LCDBoardGuitionESP32_LVGL_2_4Display board class
+ * (LCDBoardsESP32.h), so its pin wiring doesn't need to be repeated here.
+ * Swap the board type below for a different LCDBoard if yours differs.
  */
 #include <TinyGPU.h>
-#include <TinyGPU/DisplayDriverSPI.h>
-#include <TinyGPU/SpriteDisplay.h>
+#include <TinyGPU/Boards/LCDBoardsESP32.h>
+#include <TinyGPU/Surface/SpriteDisplay.h>
 
 // Plain RGB565 - no field-swap compensation needed. The earlier color
 // rotation/tint on this panel wasn't a field-wiring quirk at all; it was
@@ -37,24 +38,8 @@ using PixelT = RGB565;
 constexpr int kDisplayWidth = 240;
 constexpr int kDisplayHeight = 320;
 
-// --- SPI / display pins ---------------------------------------------------
-constexpr int8_t kPinMosi = 13;
-constexpr int8_t kPinMiso = 12;
-constexpr int8_t kPinSclk = 14;
-constexpr int8_t kPinCs = 15;
-constexpr int8_t kPinDc = 2;
-constexpr int8_t kPinRst = -1;
-constexpr int8_t kPinBacklight = 27;
-
-// --- Touch I2C pins (optional - only used to tap-switch tests) -----------
-constexpr int8_t kPinTouchSda = 33;
-constexpr int8_t kPinTouchScl = 32;
-constexpr int8_t kPinTouchIrq = 36;
-
-ILI9341Driver<PixelT> tftDriver(SPI, kPinCs, kPinDc, kPinRst);
-SpriteDisplay<PixelT> display(kDisplayWidth, kDisplayHeight, tftDriver,
-                              PixelT::fromRGB(0, 0, 0));
-TouchDriverCST816S touchDriver(Wire, /*rstPin=*/-1, kPinTouchIrq);
+ESP32CheapYellowDisplay board;
+SpriteDisplay<PixelT> display(board);
 BitmapFont<PixelT> font;
 
 // Draws a solid band with a text label burned into it. Safe against the
@@ -127,22 +112,14 @@ void toggleTest() {
 void setup() {
   Serial.begin(115200);
 
-  pinMode(kPinBacklight, OUTPUT);
-  digitalWrite(kPinBacklight, HIGH);
-
-  SPI.begin(kPinSclk, kPinMiso, kPinMosi, kPinCs);
-  display.begin();
-
-  Wire.begin(kPinTouchSda, kPinTouchScl);
-  touchDriver.begin();
-  display.setTouchDriver(touchDriver);
+  display.begin();  // brings up the whole board (see SpriteDisplay(LCDBoard&))
 
   showRgbTest();
 }
 
 void loop() {
   static bool wasTouched = false;
-  const bool touched = touchDriver.isTouched();
+  const bool touched = board.touch()->isTouched();
   if (touched && !wasTouched) {
     toggleTest();
   }
