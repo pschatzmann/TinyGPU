@@ -316,10 +316,12 @@ using ESP32CheapYellowDisplay = LCDBoardGuitionESP32_LVGL_2_4Display;
  *   #include "AudioTools/AudioLibs/AudioBoardStream.h"
  *   #include "AudioBoards/ESP32S3HosyondDisplay.h"  // arduino-audio-driver
  *
- *   audio_tools::AudioBoardStream out(audio_driver::ESP32S3HosyondDisplay);
- *   auto cfg = out.defaultConfig(TX_MODE);
- *   out.begin(cfg);
- *   out.setVolume(0.5f);
+ *   AudioBoardStream i2s(GenericES8311);
+ *   auto config = i2s.defaultConfig(TX_MODE);
+ *   board.setI2SPins<I2SConfig>(config);
+     i2s.begin(config);
+ *   i2s.setVolume(0.5f);
+ *   board.setAmplifierActive(true);
  *
  * Without arduino-audio-driver, i2s()/setI2SPins() still give the raw
  * MCLK/BCK/WS/DOUT/DIN pins for a plain I2SStream, but the caller is then
@@ -346,14 +348,17 @@ class LCDBoardGuitionESP32H4_4_3Display : public LCDBoard {
   }
 
   /// Sets up the backlight, QSPI display controller, and touch controller.
-  /// Returns false if the display or touch begin() fails.
+  /// Returns false if the display or touch begin() fails. The aplifier is not activated!
   bool begin() override {
     pinMode(kPinLcdBacklight, OUTPUT);
     digitalWrite(kPinLcdBacklight, HIGH);
 
+   
     if (!display_.begin()) return false;
 
-    Wire.begin(kPinTouchSda, kPinTouchScl);
+    // setup wire for I2S codec and touch controller (GT911)
+    Wire.begin(kPinSda, kPinScl);
+
     if (!touch_.begin()) return false;
 
     // set wifi pins
@@ -366,6 +371,14 @@ class LCDBoardGuitionESP32H4_4_3Display : public LCDBoard {
     }
 
     return true;
+  }
+
+  /// Activates or deactivates the NS4150 speaker amp. The amp is active when
+  /// the pin is driven low, so this function inverts the active state to
+  /// make it more intuitive to the caller.
+  void setAmplifierActive(bool active) {
+    pinMode(kPinAmpEnable, OUTPUT);
+    digitalWrite(kPinAmpEnable, active ? HIGH : LOW);
   }
 
   /// Panel width in pixels.
@@ -413,8 +426,8 @@ class LCDBoardGuitionESP32H4_4_3Display : public LCDBoard {
   static constexpr int kPinI2sWs = 10;
   static constexpr int kPinI2sDout = 9;  // P4 -> codec
   static constexpr int kPinI2sDin = 48;
-  static constexpr int kPinCodecScl = 8;  // shared with GT911 touch bus
-  static constexpr int kPinCodecSda = 7;
+  static constexpr int kPinScl = 8;  // shared with GT911 touch bus
+  static constexpr int kPinSda = 7;
   static constexpr int kPinAmpEnable = 11;  // NS4150 PA_EN
 
   // sdcard pins (SDMMC1, 4-bit mode) -
@@ -438,8 +451,6 @@ class LCDBoardGuitionESP32H4_4_3Display : public LCDBoard {
   static constexpr uint16_t kDsiPhyLdoMv = 2500;
 
   // --- Touch I2C pins (GT911), same source ---------------------------------
-  static constexpr int8_t kPinTouchSda = 7;
-  static constexpr int8_t kPinTouchScl = 8;
   static constexpr int8_t kPinTouchRst = 3;
   static constexpr int8_t kPinTouchInt = -1;  // unused/polled on this board
 
