@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyGPU: src/TinyGPU/BMPParser.h Source File</title>
+<title>TinyGPU: src/TinyGPU/IO/BMPParser.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li><li class="navelem"><a class="el" href="dir_08154729259f1a6bb3b5e031b4dc721b.html">IO</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -84,8 +84,8 @@ $(function() {
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">algorithm</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="TinyGPUConfig_8h.html">&quot;TinyGPUConfig.h&quot;</a></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="ISurface_8h.html">&quot;ISurface.h&quot;</a></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/Vector.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/Surface/ISurface.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/ThreeD/Vector.h&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="namespacetinygpu.html">tinygpu</a> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
@@ -533,7 +533,7 @@ $(function() {
 <div class="ttc" id="aclasstinygpu_1_1BMPParser_html_af9b348f36c486265c7771cfd2b500b6d"><div class="ttname"><a href="classtinygpu_1_1BMPParser.html#af9b348f36c486265c7771cfd2b500b6d">tinygpu::BMPParser::readU16</a></div><div class="ttdeci">uint16_t readU16(size_t offset) const</div><div class="ttdef"><b>Definition:</b> BMPParser.h:390</div></div>
 <div class="ttc" id="aclasstinygpu_1_1RGB565_html"><div class="ttname"><a href="classtinygpu_1_1RGB565.html">tinygpu::RGB565</a></div><div class="ttdoc">RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.</div><div class="ttdef"><b>Definition:</b> RGB565.h:24</div></div>
 <div class="ttc" id="aclasstinygpu_1_1RGB565_html_ad0fe922a7afa99ef17ab8ee540399aaa"><div class="ttname"><a href="classtinygpu_1_1RGB565.html#ad0fe922a7afa99ef17ab8ee540399aaa">tinygpu::RGB565::RGB565</a></div><div class="ttdeci">RGB565(uint8_t r, uint8_t g, uint8_t b)</div><div class="ttdoc">Creates a color from 8-bit red, green, and blue components.</div><div class="ttdef"><b>Definition:</b> RGB565.h:31</div></div>
-<div class="ttc" id="anamespacetinygpu_html"><div class="ttname"><a href="namespacetinygpu.html">tinygpu</a></div><div class="ttdef"><b>Definition:</b> AsciiFonts.h:19</div></div>
+<div class="ttc" id="anamespacetinygpu_html"><div class="ttname"><a href="namespacetinygpu.html">tinygpu</a></div><div class="ttdef"><b>Definition:</b> LCDBoards.h:20</div></div>
 <div class="ttc" id="astructtinygpu_1_1BMPParser_1_1HeaderInfo_html"><div class="ttname"><a href="structtinygpu_1_1BMPParser_1_1HeaderInfo.html">tinygpu::BMPParser::HeaderInfo</a></div><div class="ttdoc">Stores parsed BMP metadata.</div><div class="ttdef"><b>Definition:</b> BMPParser.h:81</div></div>
 <div class="ttc" id="astructtinygpu_1_1BMPParser_1_1HeaderInfo_html_a360ebde51c4e8da4c1b518d07800c3d7"><div class="ttname"><a href="structtinygpu_1_1BMPParser_1_1HeaderInfo.html#a360ebde51c4e8da4c1b518d07800c3d7">tinygpu::BMPParser::HeaderInfo::alphaMask</a></div><div class="ttdeci">uint32_t alphaMask</div><div class="ttdef"><b>Definition:</b> BMPParser.h:95</div></div>
 <div class="ttc" id="astructtinygpu_1_1BMPParser_1_1HeaderInfo_html_a395d15e7c2b09961c1bfd1da6179b64c"><div class="ttname"><a href="structtinygpu_1_1BMPParser_1_1HeaderInfo.html#a395d15e7c2b09961c1bfd1da6179b64c">tinygpu::BMPParser::HeaderInfo::width</a></div><div class="ttdeci">int32_t width</div><div class="ttdef"><b>Definition:</b> BMPParser.h:85</div></div>

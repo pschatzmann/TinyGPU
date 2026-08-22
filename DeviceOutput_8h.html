@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyGPU: src/TinyGPU/DeviceOutput.h File Reference</title>
+<title>TinyGPU: src/TinyGPU/Drivers/DeviceOutput.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li><li class="navelem"><a class="el" href="dir_a67c8eb9763d395e693e613a8f81a0ac.html">Drivers</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -82,33 +82,34 @@ $(function() {
 <div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
 <code>#include &lt;SPI.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="ISurface_8h_source.html">ISurface.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DisplayDriver_8h_source.html">DisplayDriver.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ISurface_8h_source.html">TinyGPU/Surface/ISurface.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DisplayDriver_8h_source.html">TinyGPU/Drivers/DisplayDriver.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for DeviceOutput.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="DeviceOutput_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2DeviceOutput_8h" alt=""/></div>
-<map name="asrc_2TinyGPU_2DeviceOutput_8h" id="asrc_2TinyGPU_2DeviceOutput_8h">
-<area shape="rect" title=" " alt="" coords="103,5,309,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,89,104"/>
-<area shape="rect" title=" " alt="" coords="113,79,168,104"/>
-<area shape="rect" title=" " alt="" coords="221,299,292,324"/>
-<area shape="rect" href="ISurface_8h.html" title=" " alt="" coords="295,152,381,177"/>
-<area shape="rect" href="DisplayDriver_8h.html" title=" " alt="" coords="294,79,417,104"/>
-<area shape="rect" title=" " alt="" coords="382,299,457,324"/>
-<area shape="rect" href="RGB565_8h.html" title=" " alt="" coords="295,225,381,251"/>
+<div class="center"><img src="DeviceOutput_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2Drivers_2DeviceOutput_8h" alt=""/></div>
+<map name="asrc_2TinyGPU_2Drivers_2DeviceOutput_8h" id="asrc_2TinyGPU_2Drivers_2DeviceOutput_8h">
+<area shape="rect" title=" " alt="" coords="130,5,282,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,89,119"/>
+<area shape="rect" title=" " alt="" coords="113,93,168,119"/>
+<area shape="rect" title=" " alt="" coords="221,313,292,339"/>
+<area shape="rect" href="ISurface_8h.html" title=" " alt="" coords="286,167,486,192"/>
+<area shape="rect" href="DisplayDriver_8h.html" title=" " alt="" coords="295,93,528,119"/>
+<area shape="rect" title=" " alt="" coords="478,313,553,339"/>
+<area shape="rect" href="RGB565_8h.html" title=" " alt="" coords="294,240,478,265"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="DeviceOutput_8h__dep__incl.png" border="0" usemap="#asrc_2TinyGPU_2DeviceOutput_8hdep" alt=""/></div>
-<map name="asrc_2TinyGPU_2DeviceOutput_8hdep" id="asrc_2TinyGPU_2DeviceOutput_8hdep">
-<area shape="rect" title=" " alt="" coords="109,5,315,31"/>
-<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="155,79,269,104"/>
-<area shape="rect" href="LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="13,152,201,177"/>
-<area shape="rect" href="LVGLDriver_8h.html" title=" " alt="" coords="225,152,413,177"/>
-<area shape="rect" href="SpriteDisplay_8h.html" title=" " alt="" coords="5,225,208,251"/>
+<div class="center"><img src="DeviceOutput_8h__dep__incl.png" border="0" usemap="#asrc_2TinyGPU_2Drivers_2DeviceOutput_8hdep" alt=""/></div>
+<map name="asrc_2TinyGPU_2Drivers_2DeviceOutput_8hdep" id="asrc_2TinyGPU_2Drivers_2DeviceOutput_8hdep">
+<area shape="rect" title=" " alt="" coords="196,5,348,45"/>
+<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="215,93,329,119"/>
+<area shape="rect" href="LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,167,253,207"/>
+<area shape="rect" href="LVGLDriver_8h.html" title=" " alt="" coords="277,167,459,207"/>
+<area shape="rect" href="Boards_8h.html" title=" " alt="" coords="5,262,168,287"/>
+<area shape="rect" href="SpriteDisplay_8h.html" title=" " alt="" coords="192,255,347,295"/>
 </map>
 </div>
 </div>

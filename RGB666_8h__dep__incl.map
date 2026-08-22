@@ -1,12 +1,13 @@
-<map id="src/TinyGPU/RGB666.h" name="src/TinyGPU/RGB666.h">
-<area shape="rect" id="node1" title=" " alt="" coords="466,5,635,31"/>
-<area shape="rect" id="node2" href="$Surface_8h.html" title=" " alt="" coords="238,79,405,104"/>
-<area shape="rect" id="node9" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="389,313,611,339"/>
-<area shape="rect" id="node10" href="$SurfaceWithExternalBuffer_8h.html" title=" " alt="" coords="639,152,878,192"/>
-<area shape="rect" id="node3" href="$TinyGPU_8h.html" title=" " alt="" coords="265,387,378,412"/>
-<area shape="rect" id="node5" href="$SpriteDisplay_8h.html" title=" " alt="" coords="5,533,208,559"/>
-<area shape="rect" id="node7" href="$FrameBuffer_8h.html" title=" " alt="" coords="223,159,419,185"/>
-<area shape="rect" id="node4" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="79,460,267,485"/>
-<area shape="rect" id="node6" href="$LVGLDriver_8h.html" title=" " alt="" coords="291,460,479,485"/>
-<area shape="rect" id="node8" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="180,240,463,265"/>
+<map id="src/TinyGPU/Color/RGB666.h" name="src/TinyGPU/Color/RGB666.h">
+<area shape="rect" id="node1" title=" " alt="" coords="265,5,472,31"/>
+<area shape="rect" id="node2" href="$Surface_8h.html" title=" " alt="" coords="291,79,446,119"/>
+<area shape="rect" id="node10" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="5,343,255,368"/>
+<area shape="rect" id="node11" href="$SurfaceWithExternalBuffer_8h.html" title=" " alt="" coords="547,167,756,207"/>
+<area shape="rect" id="node3" href="$TinyGPU_8h.html" title=" " alt="" coords="339,416,452,441"/>
+<area shape="rect" id="node6" href="$SpriteDisplay_8h.html" title=" " alt="" coords="431,577,586,617"/>
+<area shape="rect" id="node8" href="$FrameBuffer_8h.html" title=" " alt="" coords="225,167,379,207"/>
+<area shape="rect" id="node4" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="320,489,471,529"/>
+<area shape="rect" id="node7" href="$LVGLDriver_8h.html" title=" " alt="" coords="113,489,296,529"/>
+<area shape="rect" id="node5" href="$Boards_8h.html" title=" " alt="" coords="245,585,407,610"/>
+<area shape="rect" id="node9" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="167,255,370,295"/>
 </map>

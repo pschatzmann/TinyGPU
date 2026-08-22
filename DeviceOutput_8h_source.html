@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyGPU: src/TinyGPU/DeviceOutput.h Source File</title>
+<title>TinyGPU: src/TinyGPU/Drivers/DeviceOutput.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li><li class="navelem"><a class="el" href="dir_a67c8eb9763d395e693e613a8f81a0ac.html">Drivers</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -83,8 +83,8 @@ $(function() {
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">SPI</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">stdint</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="ISurface_8h.html">&quot;ISurface.h&quot;</a></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="DisplayDriver_8h.html">&quot;DisplayDriver.h&quot;</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/Surface/ISurface.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/Drivers/DisplayDriver.h&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="namespacetinygpu.html">tinygpu</a> {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
@@ -159,7 +159,7 @@ $(function() {
 <div class="ttc" id="aclasstinygpu_1_1DeviceOutput_html_ad87b50cfa6c96dd6a406853a09b4d360"><div class="ttname"><a href="classtinygpu_1_1DeviceOutput.html#ad87b50cfa6c96dd6a406853a09b4d360">tinygpu::DeviceOutput::DeviceOutput</a></div><div class="ttdeci">DeviceOutput(DisplayDriver&lt; RGB_T &gt; &amp;driver)</div><div class="ttdoc">Construct a DeviceOutput with a display driver.</div><div class="ttdef"><b>Definition:</b> DeviceOutput.h:44</div></div>
 <div class="ttc" id="aclasstinygpu_1_1DisplayDriver_html"><div class="ttname"><a href="classtinygpu_1_1DisplayDriver.html">tinygpu::DisplayDriver</a></div><div class="ttdef"><b>Definition:</b> DisplayDriver.h:48</div></div>
 <div class="ttc" id="aclasstinygpu_1_1RGB565_html"><div class="ttname"><a href="classtinygpu_1_1RGB565.html">tinygpu::RGB565</a></div><div class="ttdoc">RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.</div><div class="ttdef"><b>Definition:</b> RGB565.h:24</div></div>
-<div class="ttc" id="anamespacetinygpu_html"><div class="ttname"><a href="namespacetinygpu.html">tinygpu</a></div><div class="ttdef"><b>Definition:</b> AsciiFonts.h:19</div></div>
+<div class="ttc" id="anamespacetinygpu_html"><div class="ttname"><a href="namespacetinygpu.html">tinygpu</a></div><div class="ttdef"><b>Definition:</b> LCDBoards.h:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

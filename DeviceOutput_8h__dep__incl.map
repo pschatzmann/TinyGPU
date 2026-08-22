@@ -1,7 +1,8 @@
-<map id="src/TinyGPU/DeviceOutput.h" name="src/TinyGPU/DeviceOutput.h">
-<area shape="rect" id="node1" title=" " alt="" coords="109,5,315,31"/>
-<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="155,79,269,104"/>
-<area shape="rect" id="node3" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="13,152,201,177"/>
-<area shape="rect" id="node5" href="$LVGLDriver_8h.html" title=" " alt="" coords="225,152,413,177"/>
-<area shape="rect" id="node4" href="$SpriteDisplay_8h.html" title=" " alt="" coords="5,225,208,251"/>
+<map id="src/TinyGPU/Drivers/DeviceOutput.h" name="src/TinyGPU/Drivers/DeviceOutput.h">
+<area shape="rect" id="node1" title=" " alt="" coords="196,5,348,45"/>
+<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="215,93,329,119"/>
+<area shape="rect" id="node3" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,167,253,207"/>
+<area shape="rect" id="node6" href="$LVGLDriver_8h.html" title=" " alt="" coords="277,167,459,207"/>
+<area shape="rect" id="node4" href="$Boards_8h.html" title=" " alt="" coords="5,262,168,287"/>
+<area shape="rect" id="node5" href="$SpriteDisplay_8h.html" title=" " alt="" coords="192,255,347,295"/>
 </map>

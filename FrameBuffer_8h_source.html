@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyGPU: src/TinyGPU/FrameBuffer.h Source File</title>
+<title>TinyGPU: src/TinyGPU/Surface/FrameBuffer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li><li class="navelem"><a class="el" href="dir_b42dd08820fa163bdcad71764f537c22.html">Surface</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -83,12 +83,12 @@ $(function() {
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">cstring</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">memory</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="Surface_8h.html">&quot;Surface.h&quot;</a></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/Vector.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/Surface/Surface.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/ThreeD/Vector.h&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="TinyGPUConfig_8h.html">&quot;TinyGPUConfig.h&quot;</a></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="TinyGPULogger_8h.html">&quot;TinyGPULogger.h&quot;</a></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="TouchDriver_8h.html">&quot;TouchDriver.h&quot;</a></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="SpriteInfo_8h.html">&quot;SpriteInfo.h&quot;</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/Util/TinyGPULogger.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/Input/TouchDriver.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/Surface/SpriteInfo.h&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="namespacetinygpu.html">tinygpu</a> {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
@@ -595,7 +595,7 @@ $(function() {
 <div class="ttc" id="aclasstinygpu_1_1TouchDriver_html"><div class="ttname"><a href="classtinygpu_1_1TouchDriver.html">tinygpu::TouchDriver</a></div><div class="ttdoc">Base class for touch controllers.</div><div class="ttdef"><b>Definition:</b> TouchDriver.h:62</div></div>
 <div class="ttc" id="aclasstinygpu_1_1TouchDriver_html_a29b2ef84d2fa0b850b4a3cbcee215554"><div class="ttname"><a href="classtinygpu_1_1TouchDriver.html#a29b2ef84d2fa0b850b4a3cbcee215554">tinygpu::TouchDriver::isTouched</a></div><div class="ttdeci">virtual bool isTouched()=0</div><div class="ttdoc">Return whether the panel currently appears touched.</div></div>
 <div class="ttc" id="aclasstinygpu_1_1TouchDriver_html_a6959d576e3881edf4a7ba7b09b12a466"><div class="ttname"><a href="classtinygpu_1_1TouchDriver.html#a6959d576e3881edf4a7ba7b09b12a466">tinygpu::TouchDriver::getPoint</a></div><div class="ttdeci">virtual bool getPoint(Point &amp;outPoint)=0</div><div class="ttdoc">Read the current touch point.</div></div>
-<div class="ttc" id="anamespacetinygpu_html"><div class="ttname"><a href="namespacetinygpu.html">tinygpu</a></div><div class="ttdef"><b>Definition:</b> AsciiFonts.h:19</div></div>
+<div class="ttc" id="anamespacetinygpu_html"><div class="ttname"><a href="namespacetinygpu.html">tinygpu</a></div><div class="ttdef"><b>Definition:</b> LCDBoards.h:20</div></div>
 <div class="ttc" id="astructtinygpu_1_1Point_html"><div class="ttname"><a href="structtinygpu_1_1Point.html">tinygpu::Point</a></div><div class="ttdoc">Touch point.</div><div class="ttdef"><b>Definition:</b> TouchDriver.h:22</div></div>
 <div class="ttc" id="astructtinygpu_1_1Point_html_a8f079b1c606a20607e789abe28c98c25"><div class="ttname"><a href="structtinygpu_1_1Point.html#a8f079b1c606a20607e789abe28c98c25">tinygpu::Point::pressure</a></div><div class="ttdeci">uint16_t pressure</div><div class="ttdef"><b>Definition:</b> TouchDriver.h:25</div></div>
 <div class="ttc" id="astructtinygpu_1_1Point_html_ae1c2d516777e6b42af0d281c9ecc7375"><div class="ttname"><a href="structtinygpu_1_1Point.html#ae1c2d516777e6b42af0d281c9ecc7375">tinygpu::Point::x</a></div><div class="ttdeci">int16_t x</div><div class="ttdef"><b>Definition:</b> TouchDriver.h:23</div></div>

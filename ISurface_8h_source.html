@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyGPU: src/TinyGPU/ISurface.h Source File</title>
+<title>TinyGPU: src/TinyGPU/Surface/ISurface.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li><li class="navelem"><a class="el" href="dir_b42dd08820fa163bdcad71764f537c22.html">Surface</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -82,7 +82,7 @@ $(function() {
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">stdint</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="RGB565_8h.html">&quot;RGB565.h&quot;</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/Color/RGB565.h&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="namespacetinygpu.html">tinygpu</a> {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
@@ -190,7 +190,7 @@ $(function() {
 <div class="ttc" id="aclasstinygpu_1_1ISurface_html_afcd77dda8fd127af4e40edccbccf26e8"><div class="ttname"><a href="classtinygpu_1_1ISurface.html#afcd77dda8fd127af4e40edccbccf26e8">tinygpu::ISurface::drawSprite</a></div><div class="ttdeci">virtual void drawSprite(size_t x, size_t y, const ISurface&lt; RGB_T &gt; &amp;sprite, RGB_T invisibleColor=RGB_T(0))=0</div><div class="ttdoc">Draws a sprite using an optional transparent color.</div></div>
 <div class="ttc" id="aclasstinygpu_1_1ISurface_html_afdcfd055387aa1ba42a7143d73cda13d"><div class="ttname"><a href="classtinygpu_1_1ISurface.html#afdcfd055387aa1ba42a7143d73cda13d">tinygpu::ISurface::data</a></div><div class="ttdeci">virtual const uint8_t * data() const =0</div><div class="ttdoc">Provides access to the framebuffer as a byte buffer.</div></div>
 <div class="ttc" id="aclasstinygpu_1_1RGB565_html"><div class="ttname"><a href="classtinygpu_1_1RGB565.html">tinygpu::RGB565</a></div><div class="ttdoc">RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.</div><div class="ttdef"><b>Definition:</b> RGB565.h:24</div></div>
-<div class="ttc" id="anamespacetinygpu_html"><div class="ttname"><a href="namespacetinygpu.html">tinygpu</a></div><div class="ttdef"><b>Definition:</b> AsciiFonts.h:19</div></div>
+<div class="ttc" id="anamespacetinygpu_html"><div class="ttname"><a href="namespacetinygpu.html">tinygpu</a></div><div class="ttdef"><b>Definition:</b> LCDBoards.h:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

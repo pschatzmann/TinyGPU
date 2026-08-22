@@ -1,8 +1,8 @@
-<map id="src/TinyGPU/CartesianView.h" name="src/TinyGPU/CartesianView.h">
-<area shape="rect" id="node1" title=" " alt="" coords="43,5,254,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="14,225,89,251"/>
-<area shape="rect" id="node3" title=" " alt="" coords="145,225,216,251"/>
-<area shape="rect" id="node4" href="$ISurface_8h.html" title=" " alt="" coords="149,79,236,104"/>
-<area shape="rect" id="node6" href="$IFont_8h.html" title=" " alt="" coords="50,79,117,104"/>
-<area shape="rect" id="node5" href="$RGB565_8h.html" title=" " alt="" coords="32,152,119,177"/>
+<map id="src/TinyGPU/Surface/CartesianView.h" name="src/TinyGPU/Surface/CartesianView.h">
+<area shape="rect" id="node1" title=" " alt="" coords="132,5,287,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="49,240,124,265"/>
+<area shape="rect" id="node3" title=" " alt="" coords="295,240,366,265"/>
+<area shape="rect" id="node4" href="$ISurface_8h.html" title=" " alt="" coords="212,93,412,119"/>
+<area shape="rect" id="node6" href="$IFont_8h.html" title=" " alt="" coords="29,93,187,119"/>
+<area shape="rect" id="node5" href="$RGB565_8h.html" title=" " alt="" coords="59,167,243,192"/>
 </map>

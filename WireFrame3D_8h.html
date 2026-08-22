@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyGPU: src/TinyGPU/WireFrame3D.h File Reference</title>
+<title>TinyGPU: src/TinyGPU/ThreeD/WireFrame3D.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li><li class="navelem"><a class="el" href="dir_baba82cbc0544c93dfea1269b2d09dc5.html">ThreeD</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -84,39 +84,40 @@ $(function() {
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
-<code>#include &quot;<a class="el" href="ISurface_8h_source.html">ISurface.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ISurface_8h_source.html">TinyGPU/Surface/ISurface.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TinyGPUConfig_8h_source.html">TinyGPUConfig.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Vector_8h_source.html">TinyGPU/Vector.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Vector_8h_source.html">TinyGPU/ThreeD/Vector.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for WireFrame3D.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="WireFrame3D_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2WireFrame3D_8h" alt=""/></div>
-<map name="asrc_2TinyGPU_2WireFrame3D_8h" id="asrc_2TinyGPU_2WireFrame3D_8h">
-<area shape="rect" title=" " alt="" coords="226,5,433,31"/>
-<area shape="rect" title=" " alt="" coords="9,225,84,251"/>
-<area shape="rect" title=" " alt="" coords="174,225,245,251"/>
-<area shape="rect" title=" " alt="" coords="145,79,231,104"/>
-<area shape="rect" title=" " alt="" coords="255,79,318,104"/>
-<area shape="rect" title=" " alt="" coords="343,79,401,104"/>
-<area shape="rect" href="ISurface_8h.html" title=" " alt="" coords="34,79,121,104"/>
-<area shape="rect" href="TinyGPUConfig_8h.html" title=" " alt="" coords="636,79,767,104"/>
-<area shape="rect" href="Vector_8h.html" title=" " alt="" coords="477,79,611,104"/>
-<area shape="rect" href="RGB565_8h.html" title=" " alt="" coords="85,152,171,177"/>
-<area shape="rect" title=" " alt="" coords="514,152,577,177"/>
-<area shape="rect" href="PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="603,152,800,177"/>
+<div class="center"><img src="WireFrame3D_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2ThreeD_2WireFrame3D_8h" alt=""/></div>
+<map name="asrc_2TinyGPU_2ThreeD_2WireFrame3D_8h" id="asrc_2TinyGPU_2ThreeD_2WireFrame3D_8h">
+<area shape="rect" title=" " alt="" coords="366,5,518,45"/>
+<area shape="rect" title=" " alt="" coords="10,240,84,265"/>
+<area shape="rect" title=" " alt="" coords="270,240,341,265"/>
+<area shape="rect" title=" " alt="" coords="258,93,343,119"/>
+<area shape="rect" title=" " alt="" coords="368,93,430,119"/>
+<area shape="rect" title=" " alt="" coords="455,93,514,119"/>
+<area shape="rect" href="ISurface_8h.html" title=" " alt="" coords="34,93,234,119"/>
+<area shape="rect" href="TinyGPUConfig_8h.html" title=" " alt="" coords="799,93,930,119"/>
+<area shape="rect" href="Vector_8h.html" title=" " alt="" coords="589,93,774,119"/>
+<area shape="rect" href="RGB565_8h.html" title=" " alt="" coords="84,167,268,192"/>
+<area shape="rect" title=" " alt="" coords="658,167,721,192"/>
+<area shape="rect" href="PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="752,167,976,192"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="WireFrame3D_8h__dep__incl.png" border="0" usemap="#asrc_2TinyGPU_2WireFrame3D_8hdep" alt=""/></div>
-<map name="asrc_2TinyGPU_2WireFrame3D_8hdep" id="asrc_2TinyGPU_2WireFrame3D_8hdep">
-<area shape="rect" title=" " alt="" coords="109,5,315,31"/>
-<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="155,152,269,177"/>
-<area shape="rect" href="TinyGPUGlobals_8h.html" title=" " alt="" coords="175,79,398,104"/>
-<area shape="rect" href="LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="13,225,201,251"/>
-<area shape="rect" href="LVGLDriver_8h.html" title=" " alt="" coords="225,225,413,251"/>
-<area shape="rect" href="SpriteDisplay_8h.html" title=" " alt="" coords="5,299,208,324"/>
+<div class="center"><img src="WireFrame3D_8h__dep__incl.png" border="0" usemap="#asrc_2TinyGPU_2ThreeD_2WireFrame3D_8hdep" alt=""/></div>
+<map name="asrc_2TinyGPU_2ThreeD_2WireFrame3D_8hdep" id="asrc_2TinyGPU_2ThreeD_2WireFrame3D_8hdep">
+<area shape="rect" title=" " alt="" coords="196,5,348,45"/>
+<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="215,167,329,192"/>
+<area shape="rect" href="TinyGPUGlobals_8h.html" title=" " alt="" coords="229,93,478,119"/>
+<area shape="rect" href="LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,240,253,280"/>
+<area shape="rect" href="LVGLDriver_8h.html" title=" " alt="" coords="277,240,459,280"/>
+<area shape="rect" href="Boards_8h.html" title=" " alt="" coords="5,335,168,361"/>
+<area shape="rect" href="SpriteDisplay_8h.html" title=" " alt="" coords="192,328,347,368"/>
 </map>
 </div>
 </div>

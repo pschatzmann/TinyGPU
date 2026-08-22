@@ -1,8 +1,9 @@
-<map id="src/TinyGPU/AsciiFonts.h" name="src/TinyGPU/AsciiFonts.h">
-<area shape="rect" id="node1" title=" " alt="" coords="121,5,303,31"/>
-<area shape="rect" id="node2" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="101,79,323,104"/>
-<area shape="rect" id="node3" href="$TinyGPU_8h.html" title=" " alt="" coords="155,152,269,177"/>
-<area shape="rect" id="node4" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="13,225,201,251"/>
-<area shape="rect" id="node6" href="$LVGLDriver_8h.html" title=" " alt="" coords="225,225,413,251"/>
-<area shape="rect" id="node5" href="$SpriteDisplay_8h.html" title=" " alt="" coords="5,299,208,324"/>
+<map id="src/TinyGPU/Font/AsciiFonts.h" name="src/TinyGPU/Font/AsciiFonts.h">
+<area shape="rect" id="node1" title=" " alt="" coords="165,5,379,31"/>
+<area shape="rect" id="node2" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="147,79,397,104"/>
+<area shape="rect" id="node3" href="$TinyGPU_8h.html" title=" " alt="" coords="215,152,329,177"/>
+<area shape="rect" id="node4" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,225,253,265"/>
+<area shape="rect" id="node7" href="$LVGLDriver_8h.html" title=" " alt="" coords="277,225,459,265"/>
+<area shape="rect" id="node5" href="$Boards_8h.html" title=" " alt="" coords="5,321,168,346"/>
+<area shape="rect" id="node6" href="$SpriteDisplay_8h.html" title=" " alt="" coords="192,313,347,353"/>
 </map>

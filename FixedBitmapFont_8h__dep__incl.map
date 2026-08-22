@@ -1,9 +1,10 @@
-<map id="src/TinyGPU/FixedBitmapFont.h" name="src/TinyGPU/FixedBitmapFont.h">
-<area shape="rect" id="node1" title=" " alt="" coords="99,5,325,31"/>
-<area shape="rect" id="node2" href="$AsciiFonts_8h.html" title=" " alt="" coords="57,79,239,104"/>
-<area shape="rect" id="node3" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="101,152,323,177"/>
-<area shape="rect" id="node4" href="$TinyGPU_8h.html" title=" " alt="" coords="155,225,269,251"/>
-<area shape="rect" id="node5" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="13,299,201,324"/>
-<area shape="rect" id="node7" href="$LVGLDriver_8h.html" title=" " alt="" coords="225,299,413,324"/>
-<area shape="rect" id="node6" href="$SpriteDisplay_8h.html" title=" " alt="" coords="5,372,208,397"/>
+<map id="src/TinyGPU/Font/FixedBitmapFont.h" name="src/TinyGPU/Font/FixedBitmapFont.h">
+<area shape="rect" id="node1" title=" " alt="" coords="163,5,381,45"/>
+<area shape="rect" id="node2" href="$AsciiFonts_8h.html" title=" " alt="" coords="93,93,307,119"/>
+<area shape="rect" id="node3" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="147,167,397,192"/>
+<area shape="rect" id="node4" href="$TinyGPU_8h.html" title=" " alt="" coords="215,240,329,265"/>
+<area shape="rect" id="node5" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,313,253,353"/>
+<area shape="rect" id="node8" href="$LVGLDriver_8h.html" title=" " alt="" coords="277,313,459,353"/>
+<area shape="rect" id="node6" href="$Boards_8h.html" title=" " alt="" coords="5,409,168,434"/>
+<area shape="rect" id="node7" href="$SpriteDisplay_8h.html" title=" " alt="" coords="192,401,347,441"/>
 </map>

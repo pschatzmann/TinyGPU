@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyGPU: src/TinyGPU/DisplayDriverSPI.h Source File</title>
+<title>TinyGPU: src/TinyGPU/Drivers/DisplayDriverSPI.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li><li class="navelem"><a class="el" href="dir_a67c8eb9763d395e693e613a8f81a0ac.html">Drivers</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -83,7 +83,7 @@ $(function() {
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">stdint</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="DisplayDriver_8h.html">&quot;DisplayDriver.h&quot;</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/Drivers/DisplayDriver.h&quot;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace</span> <a class="code hl_namespace" href="namespacetinygpu.html">tinygpu</a> {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
@@ -735,7 +735,7 @@ $(function() {
 <div class="ttc" id="aclasstinygpu_1_1ST7796Driver_html"><div class="ttname"><a href="classtinygpu_1_1ST7796Driver.html">tinygpu::ST7796Driver</a></div><div class="ttdoc">Driver for ST7796 SPI display controller.</div><div class="ttdef"><b>Definition:</b> DisplayDriverSPI.h:578</div></div>
 <div class="ttc" id="aclasstinygpu_1_1ST7796Driver_html_a4e3fe92c40cad90301cf91d8d831c4a1"><div class="ttname"><a href="classtinygpu_1_1ST7796Driver.html#a4e3fe92c40cad90301cf91d8d831c4a1">tinygpu::ST7796Driver::ST7796Driver</a></div><div class="ttdeci">ST7796Driver(SPIClass &amp;spi, int8_t cs, int8_t dc, int8_t rst=-1)</div><div class="ttdef"><b>Definition:</b> DisplayDriverSPI.h:584</div></div>
 <div class="ttc" id="aclasstinygpu_1_1ST7796Driver_html_acba365cc28eb702040c382646cfb0a7a"><div class="ttname"><a href="classtinygpu_1_1ST7796Driver.html#acba365cc28eb702040c382646cfb0a7a">tinygpu::ST7796Driver::begin</a></div><div class="ttdeci">bool begin() override</div><div class="ttdef"><b>Definition:</b> DisplayDriverSPI.h:587</div></div>
-<div class="ttc" id="anamespacetinygpu_html"><div class="ttname"><a href="namespacetinygpu.html">tinygpu</a></div><div class="ttdef"><b>Definition:</b> AsciiFonts.h:19</div></div>
+<div class="ttc" id="anamespacetinygpu_html"><div class="ttname"><a href="namespacetinygpu.html">tinygpu</a></div><div class="ttdef"><b>Definition:</b> LCDBoards.h:20</div></div>
 <div class="ttc" id="anamespacetinygpu_html_aaf854447c39c56bbaf8275faddd3476d"><div class="ttname"><a href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">tinygpu::DisplayRotation</a></div><div class="ttdeci">DisplayRotation</div><div class="ttdoc">Abstract base class for display drivers.</div><div class="ttdef"><b>Definition:</b> DisplayDriver.h:27</div></div>
 <div class="ttc" id="anamespacetinygpu_html_aaf854447c39c56bbaf8275faddd3476da35c3ace1970663a16e5c65baa5941b13"><div class="ttname"><a href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476da35c3ace1970663a16e5c65baa5941b13">tinygpu::DisplayRotation::kNone</a></div><div class="ttdeci">@ kNone</div></div>
 <div class="ttc" id="anamespacetinygpu_html_aaf854447c39c56bbaf8275faddd3476da63b34d39d2daeed5d31475190dab43c3"><div class="ttname"><a href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476da63b34d39d2daeed5d31475190dab43c3">tinygpu::DisplayRotation::kLandscapeFlipped</a></div><div class="ttdeci">@ kLandscapeFlipped</div></div>

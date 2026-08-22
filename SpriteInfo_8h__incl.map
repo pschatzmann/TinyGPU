@@ -1,11 +1,11 @@
-<map id="src/TinyGPU/SpriteInfo.h" name="src/TinyGPU/SpriteInfo.h">
-<area shape="rect" id="node1" title=" " alt="" coords="151,5,331,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,79,91,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="115,79,178,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="203,79,280,104"/>
-<area shape="rect" id="node5" href="$RGB565_8h.html" title=" " alt="" coords="305,79,391,104"/>
-<area shape="rect" id="node8" href="$Vector_8h.html" title=" " alt="" coords="415,79,550,104"/>
-<area shape="rect" id="node6" title=" " alt="" coords="236,152,311,177"/>
-<area shape="rect" id="node7" title=" " alt="" coords="335,152,406,177"/>
-<area shape="rect" id="node9" title=" " alt="" coords="451,152,514,177"/>
+<map id="src/TinyGPU/Surface/SpriteInfo.h" name="src/TinyGPU/Surface/SpriteInfo.h">
+<area shape="rect" id="node1" title=" " alt="" coords="164,5,319,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,93,91,119"/>
+<area shape="rect" id="node3" title=" " alt="" coords="115,93,178,119"/>
+<area shape="rect" id="node4" title=" " alt="" coords="203,93,280,119"/>
+<area shape="rect" id="node5" href="$RGB565_8h.html" title=" " alt="" coords="304,93,488,119"/>
+<area shape="rect" id="node8" href="$Vector_8h.html" title=" " alt="" coords="513,93,698,119"/>
+<area shape="rect" id="node6" title=" " alt="" coords="311,167,385,192"/>
+<area shape="rect" id="node7" title=" " alt="" coords="410,167,481,192"/>
+<area shape="rect" id="node9" title=" " alt="" coords="574,167,637,192"/>
 </map>

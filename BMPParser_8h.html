@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyGPU: src/TinyGPU/BMPParser.h File Reference</title>
+<title>TinyGPU: src/TinyGPU/IO/BMPParser.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li><li class="navelem"><a class="el" href="dir_08154729259f1a6bb3b5e031b4dc721b.html">IO</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -83,35 +83,36 @@ $(function() {
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &quot;<a class="el" href="TinyGPUConfig_8h_source.html">TinyGPUConfig.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ISurface_8h_source.html">ISurface.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Vector_8h_source.html">TinyGPU/Vector.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ISurface_8h_source.html">TinyGPU/Surface/ISurface.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Vector_8h_source.html">TinyGPU/ThreeD/Vector.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for BMPParser.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="BMPParser_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2BMPParser_8h" alt=""/></div>
-<map name="asrc_2TinyGPU_2BMPParser_8h" id="asrc_2TinyGPU_2BMPParser_8h">
-<area shape="rect" title=" " alt="" coords="210,5,395,31"/>
-<area shape="rect" title=" " alt="" coords="336,225,410,251"/>
-<area shape="rect" title=" " alt="" coords="500,225,571,251"/>
-<area shape="rect" title=" " alt="" coords="193,79,278,104"/>
-<area shape="rect" href="TinyGPUConfig_8h.html" title=" " alt="" coords="38,79,169,104"/>
-<area shape="rect" href="ISurface_8h.html" title=" " alt="" coords="462,79,548,104"/>
-<area shape="rect" href="Vector_8h.html" title=" " alt="" coords="303,79,438,104"/>
-<area shape="rect" title=" " alt="" coords="267,152,330,177"/>
-<area shape="rect" href="PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="38,152,236,177"/>
-<area shape="rect" href="RGB565_8h.html" title=" " alt="" coords="411,152,498,177"/>
+<div class="center"><img src="BMPParser_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2IO_2BMPParser_8h" alt=""/></div>
+<map name="asrc_2TinyGPU_2IO_2BMPParser_8h" id="asrc_2TinyGPU_2IO_2BMPParser_8h">
+<area shape="rect" title=" " alt="" coords="215,5,417,31"/>
+<area shape="rect" title=" " alt="" coords="404,225,479,251"/>
+<area shape="rect" title=" " alt="" coords="665,225,735,251"/>
+<area shape="rect" title=" " alt="" coords="193,79,279,104"/>
+<area shape="rect" href="TinyGPUConfig_8h.html" title=" " alt="" coords="39,79,169,104"/>
+<area shape="rect" href="ISurface_8h.html" title=" " alt="" coords="513,79,713,104"/>
+<area shape="rect" href="Vector_8h.html" title=" " alt="" coords="303,79,489,104"/>
+<area shape="rect" title=" " alt="" coords="314,152,377,177"/>
+<area shape="rect" href="PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="39,152,263,177"/>
+<area shape="rect" href="RGB565_8h.html" title=" " alt="" coords="479,152,663,177"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="BMPParser_8h__dep__incl.png" border="0" usemap="#asrc_2TinyGPU_2BMPParser_8hdep" alt=""/></div>
-<map name="asrc_2TinyGPU_2BMPParser_8hdep" id="asrc_2TinyGPU_2BMPParser_8hdep">
-<area shape="rect" title=" " alt="" coords="119,5,305,31"/>
-<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="155,79,269,104"/>
-<area shape="rect" href="LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="13,152,201,177"/>
-<area shape="rect" href="LVGLDriver_8h.html" title=" " alt="" coords="225,152,413,177"/>
-<area shape="rect" href="SpriteDisplay_8h.html" title=" " alt="" coords="5,225,208,251"/>
+<div class="center"><img src="BMPParser_8h__dep__incl.png" border="0" usemap="#asrc_2TinyGPU_2IO_2BMPParser_8hdep" alt=""/></div>
+<map name="asrc_2TinyGPU_2IO_2BMPParser_8hdep" id="asrc_2TinyGPU_2IO_2BMPParser_8hdep">
+<area shape="rect" title=" " alt="" coords="171,5,373,31"/>
+<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="215,79,329,104"/>
+<area shape="rect" href="LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,152,253,192"/>
+<area shape="rect" href="LVGLDriver_8h.html" title=" " alt="" coords="277,152,459,192"/>
+<area shape="rect" href="Boards_8h.html" title=" " alt="" coords="5,247,168,273"/>
+<area shape="rect" href="SpriteDisplay_8h.html" title=" " alt="" coords="192,240,347,280"/>
 </map>
 </div>
 </div>

@@ -1,6 +1,6 @@
-<map id="src/TinyGPU/IFont.h" name="src/TinyGPU/IFont.h">
-<area shape="rect" id="node1" title=" " alt="" coords="17,5,167,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,152,80,177"/>
-<area shape="rect" id="node3" title=" " alt="" coords="121,152,191,177"/>
-<area shape="rect" id="node4" href="$RGB565_8h.html" title=" " alt="" coords="49,79,135,104"/>
+<map id="src/TinyGPU/Font/IFont.h" name="src/TinyGPU/Font/IFont.h">
+<area shape="rect" id="node1" title=" " alt="" coords="23,5,204,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="19,152,94,177"/>
+<area shape="rect" id="node3" title=" " alt="" coords="134,152,205,177"/>
+<area shape="rect" id="node4" href="$RGB565_8h.html" title=" " alt="" coords="22,79,206,104"/>
 </map>

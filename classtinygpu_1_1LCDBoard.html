@@ -106,6 +106,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae70a3af0def75e689134ca2e60cb98e4"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="structtinygpu_1_1LEDPins.html">LEDPins</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoard.html#ae70a3af0def75e689134ca2e60cb98e4">led</a> () const =0</td></tr>
 <tr class="memdesc:ae70a3af0def75e689134ca2e60cb98e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The board's LED pin assignment.  <br /></td></tr>
 <tr class="separator:ae70a3af0def75e689134ca2e60cb98e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae4e3f6376968cf480c613c4a2c60cb8"><td class="memItemLeft" align="right" valign="top">virtual int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoard.html#aae4e3f6376968cf480c613c4a2c60cb8">backlightPin</a> () const</td></tr>
+<tr class="separator:aae4e3f6376968cf480c613c4a2c60cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2018443ad6ee6e7cb86b0a0bd86cf5e1"><td class="memTemplParams" colspan="2">template&lt;typename I2SConfig &gt; </td></tr>
 <tr class="memitem:a2018443ad6ee6e7cb86b0a0bd86cf5e1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoard.html#a2018443ad6ee6e7cb86b0a0bd86cf5e1">setI2SPins</a> (I2SConfig &amp;cfg)</td></tr>
 <tr class="separator:a2018443ad6ee6e7cb86b0a0bd86cf5e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,6 +141,32 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aae4e3f6376968cf480c613c4a2c60cb8" name="aae4e3f6376968cf480c613c4a2c60cb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae4e3f6376968cf480c613c4a2c60cb8">&#9670;&#160;</a></span>backlightPin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int8_t backlightPin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The board's backlight GPIO pin, or -1 if unknown/not applicable. <a class="el" href="classtinygpu_1_1LCDBoard.html#ae8a0d9ca63f8bb3de100e347c3f3bca4">begin()</a> already drives it digitally HIGH; this accessor exists so callers can reconfigure the same pin for PWM brightness control (e.g. via ledcAttach/ledcWrite) after <a class="el" href="classtinygpu_1_1LCDBoard.html#ae8a0d9ca63f8bb3de100e347c3f3bca4">begin()</a>. </p>
+
+</div>
+</div>
 <a id="ae8a0d9ca63f8bb3de100e347c3f3bca4" name="ae8a0d9ca63f8bb3de100e347c3f3bca4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae8a0d9ca63f8bb3de100e347c3f3bca4">&#9670;&#160;</a></span>begin()</h2>
 
@@ -355,7 +383,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/TinyGPU/<a class="el" href="LCDBoards_8h_source.html">LCDBoards.h</a></li>
+<li>src/TinyGPU/Boards/<a class="el" href="LCDBoards_8h_source.html">LCDBoards.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

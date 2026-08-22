@@ -1,12 +1,13 @@
-<map id="src/TinyGPU/DisplayDriver.h" name="src/TinyGPU/DisplayDriver.h">
-<area shape="rect" id="node1" title=" " alt="" coords="453,5,658,31"/>
-<area shape="rect" id="node2" href="$DeviceOutput_8h.html" title=" " alt="" coords="67,86,273,111"/>
-<area shape="rect" id="node4" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="217,240,405,265"/>
-<area shape="rect" id="node7" href="$DisplayDriverDSI_8h.html" title=" " alt="" coords="349,79,543,119"/>
-<area shape="rect" id="node8" href="$DisplayDriverQSPI_8h.html" title=" " alt="" coords="567,79,762,119"/>
-<area shape="rect" id="node9" href="$DisplayDriverSDL_8h.html" title=" " alt="" coords="786,79,981,119"/>
-<area shape="rect" id="node10" href="$DisplayDriverSPI_8h.html" title=" " alt="" coords="1005,79,1199,119"/>
-<area shape="rect" id="node3" href="$TinyGPU_8h.html" title=" " alt="" coords="113,167,227,192"/>
-<area shape="rect" id="node6" href="$LVGLDriver_8h.html" title=" " alt="" coords="5,240,193,265"/>
-<area shape="rect" id="node5" href="$SpriteDisplay_8h.html" title=" " alt="" coords="210,313,413,339"/>
+<map id="src/TinyGPU/Drivers/DisplayDriver.h" name="src/TinyGPU/Drivers/DisplayDriver.h">
+<area shape="rect" id="node1" title=" " alt="" coords="480,5,632,45"/>
+<area shape="rect" id="node2" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,255,253,295"/>
+<area shape="rect" id="node5" href="$DeviceOutput_8h.html" title=" " alt="" coords="215,93,367,133"/>
+<area shape="rect" id="node8" href="$DisplayDriverDSI_8h.html" title=" " alt="" coords="391,93,543,133"/>
+<area shape="rect" id="node9" href="$DisplayDriverQSPI_8h.html" title=" " alt="" coords="567,93,724,133"/>
+<area shape="rect" id="node10" href="$DisplayDriverSDL_8h.html" title=" " alt="" coords="748,93,900,133"/>
+<area shape="rect" id="node11" href="$DisplayDriverSPI_8h.html" title=" " alt="" coords="924,93,1076,133"/>
+<area shape="rect" id="node3" href="$Boards_8h.html" title=" " alt="" coords="5,350,168,375"/>
+<area shape="rect" id="node4" href="$SpriteDisplay_8h.html" title=" " alt="" coords="192,343,347,383"/>
+<area shape="rect" id="node6" href="$TinyGPU_8h.html" title=" " alt="" coords="234,181,347,207"/>
+<area shape="rect" id="node7" href="$LVGLDriver_8h.html" title=" " alt="" coords="277,255,459,295"/>
 </map>

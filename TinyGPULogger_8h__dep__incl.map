@@ -1,10 +1,11 @@
-<map id="src/TinyGPU/TinyGPULogger.h" name="src/TinyGPU/TinyGPULogger.h">
-<area shape="rect" id="node1" title=" " alt="" coords="221,5,437,31"/>
-<area shape="rect" id="node2" href="$FrameBuffer_8h.html" title=" " alt="" coords="163,79,359,104"/>
-<area shape="rect" id="node5" href="$SpriteDisplay_8h.html" title=" " alt="" coords="170,445,373,471"/>
-<area shape="rect" id="node3" href="$TinyGPU_8h.html" title=" " alt="" coords="67,299,180,324"/>
-<area shape="rect" id="node7" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="73,152,355,177"/>
-<area shape="rect" id="node8" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="160,225,383,251"/>
-<area shape="rect" id="node4" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="5,372,193,397"/>
-<area shape="rect" id="node6" href="$LVGLDriver_8h.html" title=" " alt="" coords="217,372,405,397"/>
+<map id="src/TinyGPU/Util/TinyGPULogger.h" name="src/TinyGPU/Util/TinyGPULogger.h">
+<area shape="rect" id="node1" title=" " alt="" coords="169,5,412,31"/>
+<area shape="rect" id="node2" href="$FrameBuffer_8h.html" title=" " alt="" coords="156,79,311,119"/>
+<area shape="rect" id="node6" href="$SpriteDisplay_8h.html" title=" " alt="" coords="261,489,416,529"/>
+<area shape="rect" id="node3" href="$TinyGPU_8h.html" title=" " alt="" coords="30,328,143,353"/>
+<area shape="rect" id="node8" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="72,167,275,207"/>
+<area shape="rect" id="node9" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="122,255,371,280"/>
+<area shape="rect" id="node4" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="11,401,162,441"/>
+<area shape="rect" id="node7" href="$LVGLDriver_8h.html" title=" " alt="" coords="186,401,369,441"/>
+<area shape="rect" id="node5" href="$Boards_8h.html" title=" " alt="" coords="5,497,168,522"/>
 </map>

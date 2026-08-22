@@ -1,9 +1,9 @@
-<map id="src/TinyGPU/GestureDetector.h" name="src/TinyGPU/GestureDetector.h">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,228,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="11,79,79,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="77,152,148,177"/>
-<area shape="rect" id="node4" href="$TouchDriver_8h.html" title=" " alt="" coords="159,79,269,104"/>
-<area shape="rect" id="node5" title=" " alt="" coords="172,152,256,177"/>
-<area shape="rect" id="node6" title=" " alt="" coords="280,152,335,177"/>
-<area shape="rect" id="node7" title=" " alt="" coords="359,152,423,177"/>
+<map id="src/TinyGPU/Input/GestureDetector.h" name="src/TinyGPU/Input/GestureDetector.h">
+<area shape="rect" id="node1" title=" " alt="" coords="15,5,208,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,93,73,119"/>
+<area shape="rect" id="node3" title=" " alt="" coords="76,167,147,192"/>
+<area shape="rect" id="node4" href="$TouchDriver_8h.html" title=" " alt="" coords="149,93,356,119"/>
+<area shape="rect" id="node5" title=" " alt="" coords="171,167,255,192"/>
+<area shape="rect" id="node6" title=" " alt="" coords="279,167,333,192"/>
+<area shape="rect" id="node7" title=" " alt="" coords="358,167,422,192"/>
 </map>

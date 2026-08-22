@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyGPU: src/TinyGPU/LCDBoards.h File Reference</title>
+<title>TinyGPU: src/TinyGPU/Boards/LCDBoards.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ee559ef0698e790c953305f5d5dad3a0.html">TinyGPU</a></li><li class="navelem"><a class="el" href="dir_0558b94496c9c67ead3a9b5794fd331d.html">Boards</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -83,72 +83,73 @@ $(function() {
 <p>Platform-independent interface for a board that bundles a display, an optional touch controller, an I2S pin assignment, and an LED pin assignment behind one begin() call.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="TinyGPU_8h_source.html">../TinyGPU.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DisplayDriver_8h_source.html">DisplayDriver.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="TouchDriver_8h_source.html">TouchDriver.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TinyGPU_8h_source.html">../../TinyGPU.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DisplayDriver_8h_source.html">TinyGPU/Drivers/DisplayDriver.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TouchDriver_8h_source.html">TinyGPU/Input/TouchDriver.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LCDBoards.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="LCDBoards_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2LCDBoards_8h" alt=""/></div>
-<map name="asrc_2TinyGPU_2LCDBoards_8h" id="asrc_2TinyGPU_2LCDBoards_8h">
-<area shape="rect" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="3354,5,3542,31"/>
-<area shape="rect" title=" " alt="" coords="3775,460,3859,485"/>
-<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="3015,79,3118,104"/>
-<area shape="rect" href="TouchDriver_8h.html" title=" " alt="" coords="3774,379,3885,405"/>
-<area shape="rect" href="DisplayDriver_8h.html" title=" " alt="" coords="1747,533,1869,559"/>
-<area shape="rect" href="TinyGPUConfig_8h.html" title=" " alt="" coords="2227,460,2357,485"/>
-<area shape="rect" href="PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="2541,533,2739,559"/>
-<area shape="rect" href="AVIWriter_8h.html" title=" " alt="" coords="3467,533,3621,559"/>
-<area shape="rect" href="BMPExporter_8h.html" title=" " alt="" coords="3265,533,3442,559"/>
-<area shape="rect" href="BMPParser_8h.html" title=" " alt="" coords="3205,379,3368,405"/>
-<area shape="rect" href="CartesianView_8h.html" title=" " alt="" coords="43,533,229,559"/>
-<area shape="rect" href="FrameBuffer_8h.html" title=" " alt="" coords="2684,299,2857,324"/>
-<area shape="rect" href="Surface_8h.html" title=" " alt="" coords="1345,379,1428,405"/>
-<area shape="rect" href="FrameBufferMonochrome_8h.html" title=" " alt="" coords="2295,225,2553,251"/>
-<area shape="rect" href="SurfaceMonochrome_8h.html" title=" " alt="" coords="1945,379,2113,405"/>
-<area shape="rect" href="SurfaceWithExternalBuffer_8h.html" title=" " alt="" coords="753,372,967,412"/>
-<area shape="rect" title=" " alt="" coords="1917,460,1992,485"/>
-<area shape="rect" href="WireFrame3D_8h.html" title=" " alt="" coords="2323,379,2506,405"/>
-<area shape="rect" href="TinyGPUGlobals_8h.html" title=" " alt="" coords="1439,152,1638,177"/>
-<area shape="rect" href="DeviceOutput_8h.html" title=" " alt="" coords="3567,379,3750,405"/>
-<area shape="rect" title=" " alt="" coords="2147,533,2210,559"/>
-<area shape="rect" title=" " alt="" coords="1341,753,1416,779"/>
-<area shape="rect" title=" " alt="" coords="1947,753,2018,779"/>
-<area shape="rect" href="ISurface_8h.html" title=" " alt="" coords="1681,607,1767,632"/>
-<area shape="rect" title=" " alt="" coords="3315,607,3379,632"/>
-<area shape="rect" href="RGB565_8h.html" title=" " alt="" coords="1335,680,1422,705"/>
-<area shape="rect" title=" " alt="" coords="2432,533,2517,559"/>
-<area shape="rect" href="Vector_8h.html" title=" " alt="" coords="2067,460,2202,485"/>
-<area shape="rect" href="IFont_8h.html" title=" " alt="" coords="1045,607,1112,632"/>
-<area shape="rect" title=" " alt="" coords="2819,460,2882,485"/>
-<area shape="rect" title=" " alt="" coords="2861,379,2928,405"/>
-<area shape="rect" title=" " alt="" coords="2907,460,2984,485"/>
-<area shape="rect" href="TinyGPULogger_8h.html" title=" " alt="" coords="2704,379,2837,405"/>
-<area shape="rect" href="SpriteInfo_8h.html" title=" " alt="" coords="2582,379,2679,405"/>
-<area shape="rect" title=" " alt="" coords="974,460,1045,485"/>
-<area shape="rect" href="BitmapFont_8h.html" title=" " alt="" coords="725,533,835,559"/>
-<area shape="rect" href="RGB888_8h.html" title=" " alt="" coords="1261,607,1347,632"/>
-<area shape="rect" href="LinePrinter_8h.html" title=" " alt="" coords="1163,533,1266,559"/>
-<area shape="rect" href="RGB666_8h.html" title=" " alt="" coords="507,460,594,485"/>
-<area shape="rect" href="SurfaceBase_8h.html" title=" " alt="" coords="1627,460,1741,485"/>
-<area shape="rect" title=" " alt="" coords="551,607,607,632"/>
-<area shape="rect" title=" " alt="" coords="1177,607,1236,632"/>
-<area shape="rect" title=" " alt="" coords="3009,460,3079,485"/>
-<area shape="rect" title=" " alt="" coords="3104,460,3165,485"/>
-<area shape="rect" title=" " alt="" coords="3697,460,3751,485"/>
-<area shape="rect" title=" " alt="" coords="3935,460,3999,485"/>
-<area shape="rect" title=" " alt="" coords="2432,460,2491,485"/>
-<area shape="rect" href="FixedBitmapFont_8h.html" title=" " alt="" coords="507,533,650,559"/>
-<area shape="rect" href="AsciiFonts_8h.html" title=" " alt="" coords="230,460,330,485"/>
+<div class="center"><img src="LCDBoards_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2Boards_2LCDBoards_8h" alt=""/></div>
+<map name="asrc_2TinyGPU_2Boards_2LCDBoards_8h" id="asrc_2TinyGPU_2Boards_2LCDBoards_8h">
+<area shape="rect" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="3851,5,4002,45"/>
+<area shape="rect" title=" " alt="" coords="4233,489,4317,515"/>
+<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="3440,93,3555,119"/>
+<area shape="rect" href="TouchDriver_8h.html" title=" " alt="" coords="4253,409,4459,434"/>
+<area shape="rect" href="DisplayDriver_8h.html" title=" " alt="" coords="1993,570,2226,595"/>
+<area shape="rect" href="TinyGPUConfig_8h.html" title=" " alt="" coords="2605,489,2736,515"/>
+<area shape="rect" href="PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="2899,570,3123,595"/>
+<area shape="rect" href="AVIWriter_8h.html" title=" " alt="" coords="3901,570,4073,595"/>
+<area shape="rect" href="BMPExporter_8h.html" title=" " alt="" coords="3681,570,3876,595"/>
+<area shape="rect" href="BMPParser_8h.html" title=" " alt="" coords="3637,409,3817,434"/>
+<area shape="rect" href="CartesianView_8h.html" title=" " alt="" coords="43,563,240,603"/>
+<area shape="rect" href="FrameBuffer_8h.html" title=" " alt="" coords="3044,328,3271,353"/>
+<area shape="rect" href="Surface_8h.html" title=" " alt="" coords="1502,409,1698,434"/>
+<area shape="rect" href="FrameBufferMonochrome_8h.html" title=" " alt="" coords="2597,240,2811,280"/>
+<area shape="rect" href="SurfaceMonochrome_8h.html" title=" " alt="" coords="2095,409,2377,434"/>
+<area shape="rect" href="SurfaceWithExternalBuffer_8h.html" title=" " alt="" coords="966,401,1181,441"/>
+<area shape="rect" title=" " alt="" coords="2245,489,2320,515"/>
+<area shape="rect" href="WireFrame3D_8h.html" title=" " alt="" coords="2503,409,2737,434"/>
+<area shape="rect" href="TinyGPUGlobals_8h.html" title=" " alt="" coords="1639,167,1865,192"/>
+<area shape="rect" href="DeviceOutput_8h.html" title=" " alt="" coords="3993,409,4228,434"/>
+<area shape="rect" title=" " alt="" coords="2483,570,2546,595"/>
+<area shape="rect" title=" " alt="" coords="1512,797,1587,823"/>
+<area shape="rect" title=" " alt="" coords="2283,797,2354,823"/>
+<area shape="rect" href="ISurface_8h.html" title=" " alt="" coords="1891,651,2091,676"/>
+<area shape="rect" title=" " alt="" coords="3732,651,3796,676"/>
+<area shape="rect" href="RGB565_8h.html" title=" " alt="" coords="1457,724,1641,749"/>
+<area shape="rect" title=" " alt="" coords="2789,570,2875,595"/>
+<area shape="rect" href="Vector_8h.html" title=" " alt="" coords="2395,489,2581,515"/>
+<area shape="rect" href="IFont_8h.html" title=" " alt="" coords="1135,651,1294,676"/>
+<area shape="rect" title=" " alt="" coords="3198,489,3261,515"/>
+<area shape="rect" title=" " alt="" coords="3292,409,3359,434"/>
+<area shape="rect" title=" " alt="" coords="3285,489,3363,515"/>
+<area shape="rect" href="TinyGPULogger_8h.html" title=" " alt="" coords="3047,409,3267,434"/>
+<area shape="rect" href="SpriteInfo_8h.html" title=" " alt="" coords="2812,409,3023,434"/>
+<area shape="rect" title=" " alt="" coords="1187,489,1258,515"/>
+<area shape="rect" href="BitmapFont_8h.html" title=" " alt="" coords="787,570,989,595"/>
+<area shape="rect" href="RGB888_8h.html" title=" " alt="" coords="1457,651,1641,676"/>
+<area shape="rect" href="LinePrinter_8h.html" title=" " alt="" coords="1317,570,1512,595"/>
+<area shape="rect" href="RGB666_8h.html" title=" " alt="" coords="624,489,808,515"/>
+<area shape="rect" href="SurfaceBase_8h.html" title=" " alt="" coords="1841,489,2069,515"/>
+<area shape="rect" title=" " alt="" coords="587,651,643,676"/>
+<area shape="rect" title=" " alt="" coords="1375,651,1433,676"/>
+<area shape="rect" title=" " alt="" coords="3387,489,3458,515"/>
+<area shape="rect" title=" " alt="" coords="3483,489,3544,515"/>
+<area shape="rect" title=" " alt="" coords="4151,489,4206,515"/>
+<area shape="rect" title=" " alt="" coords="4392,489,4456,515"/>
+<area shape="rect" title=" " alt="" coords="2811,489,2869,515"/>
+<area shape="rect" href="FixedBitmapFont_8h.html" title=" " alt="" coords="517,563,712,603"/>
+<area shape="rect" href="AsciiFonts_8h.html" title=" " alt="" coords="256,489,448,515"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="LCDBoards_8h__dep__incl.png" border="0" usemap="#asrc_2TinyGPU_2LCDBoards_8hdep" alt=""/></div>
-<map name="asrc_2TinyGPU_2LCDBoards_8hdep" id="asrc_2TinyGPU_2LCDBoards_8hdep">
-<area shape="rect" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="13,5,201,31"/>
-<area shape="rect" href="SpriteDisplay_8h.html" title=" " alt="" coords="5,79,208,104"/>
+<div class="center"><img src="LCDBoards_8h__dep__incl.png" border="0" usemap="#asrc_2TinyGPU_2Boards_2LCDBoards_8hdep" alt=""/></div>
+<map name="asrc_2TinyGPU_2Boards_2LCDBoards_8hdep" id="asrc_2TinyGPU_2Boards_2LCDBoards_8hdep">
+<area shape="rect" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,5,253,45"/>
+<area shape="rect" href="Boards_8h.html" title=" " alt="" coords="5,101,168,126"/>
+<area shape="rect" href="SpriteDisplay_8h.html" title=" " alt="" coords="192,93,347,133"/>
 </map>
 </div>
 </div>

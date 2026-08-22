@@ -1,10 +1,10 @@
-<map id="src/TinyGPU/DisplayDriverQSPI.h" name="src/TinyGPU/DisplayDriverQSPI.h">
-<area shape="rect" id="node1" title=" " alt="" coords="66,5,261,45"/>
+<map id="src/TinyGPU/Drivers/DisplayDriverQSPI.h" name="src/TinyGPU/Drivers/DisplayDriverQSPI.h">
+<area shape="rect" id="node1" title=" " alt="" coords="85,5,242,45"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,93,89,119"/>
 <area shape="rect" id="node3" title=" " alt="" coords="143,313,213,339"/>
 <area shape="rect" id="node4" title=" " alt="" coords="165,93,236,119"/>
-<area shape="rect" id="node5" href="$DisplayDriver_8h.html" title=" " alt="" coords="261,93,383,119"/>
-<area shape="rect" id="node6" title=" " alt="" coords="303,313,378,339"/>
-<area shape="rect" id="node7" href="$ISurface_8h.html" title=" " alt="" coords="241,167,328,192"/>
-<area shape="rect" id="node8" href="$RGB565_8h.html" title=" " alt="" coords="216,240,303,265"/>
+<area shape="rect" id="node5" href="$DisplayDriver_8h.html" title=" " alt="" coords="260,93,493,119"/>
+<area shape="rect" id="node6" title=" " alt="" coords="399,313,474,339"/>
+<area shape="rect" id="node7" href="$ISurface_8h.html" title=" " alt="" coords="229,167,429,192"/>
+<area shape="rect" id="node8" href="$RGB565_8h.html" title=" " alt="" coords="215,240,399,265"/>
 </map>
