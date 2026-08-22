@@ -32,6 +32,11 @@
 #include "DisplayDriverQSPI.h"
 #include "DisplayDriverSPI.h"
 #include "LCDBoards.h"
+#include "esp_adc/adc_cali.h"
+#include "esp_adc/adc_cali_scheme.h"
+#include "esp_adc/adc_oneshot.h"
+#include "esp_check.h"
+#include "esp_log.h"
 
 namespace tinygpu {
 
@@ -140,10 +145,11 @@ using FBBA0125_002 = LCDBoardESP32S3_2_8Display;
 using ESP32S3HosyondDisplay = LCDBoardESP32S3_2_8Display;
 
 /**
- * @brief "Guition ESP32-S3 4.3" 480x272 Capacitive Touch Display" (JC4827W543C_I): it has a NV3041A QSPI display, GT911 capacitive touch
+ * @brief "Guition ESP32-S3 4.3" 480x272 Capacitive Touch Display"
+ * (JC4827W543C_I): it has a NV3041A QSPI display, GT911 capacitive touch
  * NV3041A QSPI TFT + GT911 capacitive touch (I2C) + NS4168 speaker amp
  * (speaker output only - no codec/mic on this board).
- * 
+ *
  *
  * Display: NV3041A, 480x272, QSPI - CS=45 SCLK=47 D0=21 D1=48 D2=40 D3=39
  *          BL=1, 32MHz.
@@ -218,8 +224,8 @@ using JC4827W543C_I = LCDBoardGuitionESP32S3_4_3Display;
  * @brief "ESP32 Arduino LVGL WiFi&Bluetooth Development Board, 2.4" LCD
  * TFT Module" - ILI9341 SPI TFT + CST816S capacitive touch, no PSRAM.
  * (ESP32-2432S028R) - also named ESP32 Cheap Yellow Diplay
- * 
- * 
+ *
+ *
  * This is the same board pinout TinyGPU's own examples (e.g.
  * examples/color-test) are tested against.
  *
@@ -321,8 +327,24 @@ using ESP32CheapYellowDisplay = LCDBoardGuitionESP32_LVGL_2_4Display;
  * (i2s().paEnable, active low per paEnableActiveLow) itself.
 
  */
+
 class LCDBoardGuitionESP32H4_4_3Display : public LCDBoard {
  public:
+  LCDBoardGuitionESP32H4_4_3Display() = default;
+
+  ~LCDBoardGuitionESP32H4_4_3Display() {
+    if (cali_handle_) {
+#if ADC_CALI_SCHEME_CURVE_FITTING_SUPPORTED
+      adc_cali_delete_scheme_curve_fitting(cali_handle_);
+#elif ADC_CALI_SCHEME_LINE_FITTING_SUPPORTED
+      adc_cali_delete_scheme_line_fitting(cali_handle_);
+#endif
+    }
+    if (adc_handle_) {
+      adc_oneshot_del_unit(adc_handle_);
+    }
+  }
+
   /// Sets up the backlight, QSPI display controller, and touch controller.
   /// Returns false if the display or touch begin() fails.
   bool begin() override {
@@ -359,6 +381,31 @@ class LCDBoardGuitionESP32H4_4_3Display : public LCDBoard {
   const I2SPins& i2s() const override { return i2s_; }
   /// This board has no RGB LED - every LEDPins field is -1.
   const LEDPins& led() const override { return led_; }
+
+  /// Reads and returns the battery charge percentage (0 - 100).
+  int battery(int battery_readings_ = 100) {
+    if (!adc_initialized_) {
+      initAdc();
+    }
+    if (!adc_handle_) return 0;
+
+    long raw_sum = 0;
+    int raw_val = 0;
+    for (int i = 0; i < battery_readings_; ++i) {
+      if (adc_oneshot_read(adc_handle_, kAdcChannel, &raw_val) == ESP_OK) {
+        raw_sum += raw_val;
+      }
+    }
+
+    int avg_raw = raw_sum / battery_readings_;
+    int mv = 0;
+    if (cali_handle_) {
+      adc_cali_raw_to_voltage(cali_handle_, avg_raw, &mv);
+    }
+
+    int clamped_mv = constrain(mv, kVcMinMv, kVcMaxMv);
+    return (clamped_mv - kVcMinMv) * 100 / (kVcMaxMv - kVcMinMv);
+  }
 
  private:
   static constexpr int kPinI2sMclk = 13;
@@ -405,6 +452,12 @@ class LCDBoardGuitionESP32H4_4_3Display : public LCDBoard {
   static constexpr int kPinWifiSdioD3 = 17;
   static constexpr int kPinWifiC6Reset = 54;
 
+  // --- Battery ADC Config --------------------------------------------------
+  static constexpr adc_channel_t kAdcChannel = ADC_CHANNEL_4;
+  static constexpr adc_atten_t kAdcAtten = ADC_ATTEN_DB_12;
+  static constexpr int kVcMaxMv = 2450;
+  static constexpr int kVcMinMv = 2250;
+
   ST7701Driver<RGB565> display_{kPinLcdRst,     kPinLcdBacklight, kDisplayWidth,
                                 kDisplayHeight, kDsiPhyLdoChan,   kDsiPhyLdoMv};
   TouchDriverGT911 touch_{Wire, kPinTouchRst, kPinTouchInt};
@@ -412,10 +465,52 @@ class LCDBoardGuitionESP32H4_4_3Display : public LCDBoard {
   I2SPins i2s_{kPinI2sMclk, kPinI2sBck, kPinI2sWs, kPinI2sDout, kPinI2sDin};
   LEDPins led_{};
 
+  adc_oneshot_unit_handle_t adc_handle_ = nullptr;
+  adc_cali_handle_t cali_handle_ = nullptr;
+  bool adc_initialized_ = false;
+
   bool setupWifi() {
     return hostedSetPins(kPinWifiSdioClk, kPinWifiSdioCmd, kPinWifiSdioD0,
                          kPinWifiSdioD1, kPinWifiSdioD2, kPinWifiSdioD3,
                          kPinWifiC6Reset);
+  }
+
+  void initAdc() {
+    adc_initialized_ = true;
+
+    adc_oneshot_unit_init_cfg_t init_config = {
+        .unit_id = ADC_UNIT_2,
+        .ulp_mode = ADC_ULP_MODE_DISABLE,
+    };
+    if (adc_oneshot_new_unit(&init_config, &adc_handle_) != ESP_OK) return;
+
+    adc_oneshot_chan_cfg_t config = {
+        .atten = kAdcAtten,
+        .bitwidth = ADC_BITWIDTH_DEFAULT,
+    };
+    adc_oneshot_config_channel(adc_handle_, kAdcChannel, &config);
+
+#if ADC_CALI_SCHEME_CURVE_FITTING_SUPPORTED
+    adc_cali_curve_fitting_config_t cali_config = {
+        .unit_id = ADC_UNIT_2,
+        .chan = kAdcChannel,
+        .atten = kAdcAtten,
+        .bitwidth = ADC_BITWIDTH_DEFAULT,
+    };
+    if (adc_cali_create_scheme_curve_fitting(&cali_config, &cali_handle_) ==
+        ESP_OK) {
+      return;
+    }
+#endif
+
+#if ADC_CALI_SCHEME_LINE_FITTING_SUPPORTED
+    adc_cali_line_fitting_config_t cali_config = {
+        .unit_id = ADC_UNIT_2,
+        .atten = kAdcAtten,
+        .bitwidth = ADC_BITWIDTH_DEFAULT,
+    };
+    adc_cali_create_scheme_line_fitting(&cali_config, &cali_handle_);
+#endif
   }
 };
 
