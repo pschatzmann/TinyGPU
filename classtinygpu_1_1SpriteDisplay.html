@@ -143,10 +143,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac26bf9a98f61470f059cb2b25b9e983b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves a sprite to a new position and redraws it.  <br /></td></tr>
 <tr class="separator:ac26bf9a98f61470f059cb2b25b9e983b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a154e0b8883d3118a8090c72d34c4826e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SpriteDisplay.html#a154e0b8883d3118a8090c72d34c4826e">scaleSprite</a> (<a class="el" href="structtinygpu_1_1SpriteInfo.html">SpriteInfo</a>&lt; RGB_T, <a class="el" href="classtinygpu_1_1Surface.html">Surface</a>&lt; RGB_T &gt; &gt; &amp;sprite, float scale)</td></tr>
-<tr class="memdesc:a154e0b8883d3118a8090c72d34c4826e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scales a sprite image and redraws it at its current position.  <br /></td></tr>
 <tr class="separator:a154e0b8883d3118a8090c72d34c4826e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08e2403d0a48d5ce84152556c28243c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SpriteDisplay.html#a08e2403d0a48d5ce84152556c28243c1">rotateSprite</a> (<a class="el" href="structtinygpu_1_1SpriteInfo.html">SpriteInfo</a>&lt; RGB_T, <a class="el" href="classtinygpu_1_1Surface.html">Surface</a>&lt; RGB_T &gt; &gt; &amp;sprite, float angleDegrees)</td></tr>
-<tr class="memdesc:a08e2403d0a48d5ce84152556c28243c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotates a sprite image and redraws it at its current position.  <br /></td></tr>
 <tr class="separator:a08e2403d0a48d5ce84152556c28243c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8bb3912a3ce86b15842e79d0b421204"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SpriteDisplay.html#ac8bb3912a3ce86b15842e79d0b421204">clear</a> ()</td></tr>
 <tr class="memdesc:ac8bb3912a3ce86b15842e79d0b421204"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the display and resets the background color.  <br /></td></tr>
@@ -1113,8 +1111,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Rotates a sprite image and redraws it at its current position. </p>
+<p>Rotates a sprite image and redraws it at its current position. Always re-renders from the pristine original at (currentScale, angleDegrees)</p><ul>
+<li>see <a class="el" href="namespacetinygpu.html#a71c67e94dd62e8a6638f409bb577e324">renderTransformedSprite()</a> in <a class="el" href="SpriteInfo_8h.html">SpriteInfo.h</a> for why. </li>
+</ul>
 
 </div>
 </div>
@@ -1151,8 +1150,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Scales a sprite image and redraws it at its current position. </p>
+<p>Scales a sprite image and redraws it at its current position. Always re-renders from the pristine original at (scale, currentAngleDegrees)</p><ul>
+<li>see <a class="el" href="namespacetinygpu.html#a71c67e94dd62e8a6638f409bb577e324">renderTransformedSprite()</a> in <a class="el" href="SpriteInfo_8h.html">SpriteInfo.h</a> for why. </li>
+</ul>
 
 </div>
 </div>

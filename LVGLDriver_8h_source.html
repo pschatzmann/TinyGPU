@@ -102,7 +102,7 @@ $(function() {
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>               <span class="stringliteral">&quot;be a 16-bit pixel type.&quot;</span>);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a4b67614b235306686d457cb2a6fb384f">   27</a></span>  <a class="code hl_class" href="classLVGLDriver.html">LVGLDriver</a>(DisplayDriverSPI&lt;RGB_T&gt;&amp; driver, size_t x, size_t y,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a7bdd2cf4c60bfec54a5522d7db7f85ec">   27</a></span>  <a class="code hl_class" href="classLVGLDriver.html">LVGLDriver</a>(DisplayDriver&lt;RGB_T&gt;&amp; driver, size_t x, size_t y,</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>             size_t bufferSize = 0) {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">this</span>-&gt;<a class="code hl_class" href="classLVGLDriver.html">driver</a> = &amp;<a class="code hl_class" href="classLVGLDriver.html">driver</a>;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">this</span>-&gt;<a class="code hl_class" href="classLVGLDriver.html">disp_x</a> = <a class="code hl_class" href="classLVGLDriver.html">x</a>;</div>
@@ -230,165 +230,176 @@ $(function() {
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="comment">/// nullptr if no touch driver is available.</span></div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#acddc765d7e545f10ac0d543690950d90">  153</a></span>  <a class="code hl_function" href="classLVGLDriver.html#acddc765d7e545f10ac0d543690950d90">TouchDriver</a>&amp; <a class="code hl_function" href="classLVGLDriver.html#acddc765d7e545f10ac0d543690950d90">touchDriver</a>() { <span class="keywordflow">return</span> *touch_driver; }</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="comment">/// Provides a reference to the underlying DisplayDriverSPI instance used by</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="comment">/// this LVGLDriver.</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#abb3f66e48746fc15da999f216070169b">  157</a></span>  <a class="code hl_function" href="classLVGLDriver.html#abb3f66e48746fc15da999f216070169b">DisplayDriverSPI</a>&lt;<a class="code hl_function" href="classLVGLDriver.html#abb3f66e48746fc15da999f216070169b">RGB_T</a>&gt;&amp; <a class="code hl_function" href="classLVGLDriver.html#abb3f66e48746fc15da999f216070169b">getDriver</a>() { <span class="keywordflow">return</span> *driver; }</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <span class="comment">/// Applies independent per-channel gamma correction to every color LVGL</span></div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="comment">/// renders, before RGB_T&#39;s own field layout/compensation is applied.</span></div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  <span class="comment">/// gammaR=gammaG=gammaB=1.0 (the default) applies no correction.</span></div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="comment">///</span></div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  <span class="comment">/// This is deliberately per-channel rather than one shared curve: some</span></div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  <span class="comment">/// panels show a visible color tint in near-black/grey tones even with</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="comment">/// correct field compensation, because the panel&#39;s red/green/blue</span></div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  <span class="comment">/// subpixels have different non-linear responses at low brightness. A</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="comment">/// single gamma applied equally to R, G and B can only ever change</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="comment">/// overall brightness - if R=G=B going in, the same curve on all three</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="comment">/// still gives R=G=B going out, so it mathematically cannot fix a hue</span></div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  <span class="comment">/// tint in grey tones. Independent per-channel curves can, by</span></div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="comment">/// deliberately un-balancing a grey input to counteract the panel&#39;s own</span></div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  <span class="comment">/// imbalance. There&#39;s no single correct set of values for an unknown/</span></div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="comment">/// undocumented panel - try values on both sides of 1.0 per channel and</span></div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <span class="comment">/// compare on real hardware. See GammaTable.h.</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a2fa10377079aa3f1c8ee552d457e49c8">  175</a></span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classLVGLDriver.html#a2fa10377079aa3f1c8ee552d457e49c8">setGamma</a>(<span class="keywordtype">float</span> gammaR, <span class="keywordtype">float</span> gammaG, <span class="keywordtype">float</span> gammaB) {</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    gammaR_().setGamma(gammaR);</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    gammaG_().setGamma(gammaG);</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    gammaB_().setGamma(gammaB);</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  }</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a93f24bf6f93b1c0759e31ab91f47ebc6">  182</a></span>  Vector&lt;uint8_t&gt; buf_1;</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#ac054834b1720d033f137960b790a6c78">  183</a></span>  <a class="code hl_variable" href="classLVGLDriver.html#ac054834b1720d033f137960b790a6c78">DisplayDriverSPI</a>&lt;<a class="code hl_variable" href="classLVGLDriver.html#ac054834b1720d033f137960b790a6c78">RGB_T</a>&gt;* <a class="code hl_variable" href="classLVGLDriver.html#ac054834b1720d033f137960b790a6c78">driver</a> = <span class="keywordtype">nullptr</span>;</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a0d61ad4e4f51f862ac50c8c777b2e656">  184</a></span>  <a class="code hl_variable" href="classLVGLDriver.html#a0d61ad4e4f51f862ac50c8c777b2e656">TouchDriver</a>* <a class="code hl_variable" href="classLVGLDriver.html#a0d61ad4e4f51f862ac50c8c777b2e656">touch_driver</a> = <span class="keywordtype">nullptr</span>;</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a647e5f267167a38dcd0e6fe55dfcfc61">  185</a></span>  <a class="code hl_variable" href="classLVGLDriver.html#a647e5f267167a38dcd0e6fe55dfcfc61">lv_display_t</a>* <a class="code hl_variable" href="classLVGLDriver.html#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a> = <span class="keywordtype">nullptr</span>;</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#aa8ce13ad0b734bb6eef28c7c96294853">  186</a></span>  <a class="code hl_variable" href="classLVGLDriver.html#aa8ce13ad0b734bb6eef28c7c96294853">size_t</a> <a class="code hl_variable" href="classLVGLDriver.html#aa8ce13ad0b734bb6eef28c7c96294853">disp_x</a> = 0;</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a128d465268e603b87cf1fa46c5091c75">  187</a></span>  <a class="code hl_variable" href="classLVGLDriver.html#a128d465268e603b87cf1fa46c5091c75">size_t</a> <a class="code hl_variable" href="classLVGLDriver.html#a128d465268e603b87cf1fa46c5091c75">disp_y</a> = 0;</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a79d97d675587635bfab264086d23e79e">  188</a></span>  <a class="code hl_variable" href="classLVGLDriver.html#a79d97d675587635bfab264086d23e79e">size_t</a> <a class="code hl_variable" href="classLVGLDriver.html#a79d97d675587635bfab264086d23e79e">dispBufferSize</a> = 0;</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  <span class="comment">// Use Arduino&#39;s millis() as tick source</span></div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#afcf78f3684505b04e577ff51a3cd9e4c">  191</a></span>  <span class="keyword">static</span> uint32_t <a class="code hl_function" href="classLVGLDriver.html#afcf78f3684505b04e577ff51a3cd9e4c">my_tick</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> millis(); }</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a6f155127f2d86a524243d8ffa9e4c739">  193</a></span>  <span class="keyword">static</span> <a class="code hl_function" href="classLVGLDriver.html#a6f155127f2d86a524243d8ffa9e4c739">GammaTable</a>&amp; <a class="code hl_function" href="classLVGLDriver.html#a6f155127f2d86a524243d8ffa9e4c739">gammaR_</a>() {</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keyword">static</span> GammaTable table;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordflow">return</span> table;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  }</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a0421139233f6eb0d87182a2a13ecc18d">  197</a></span>  <span class="keyword">static</span> <a class="code hl_function" href="classLVGLDriver.html#a0421139233f6eb0d87182a2a13ecc18d">GammaTable</a>&amp; <a class="code hl_function" href="classLVGLDriver.html#a0421139233f6eb0d87182a2a13ecc18d">gammaG_</a>() {</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keyword">static</span> GammaTable table;</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordflow">return</span> table;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  }</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a3b48c43d188c7557f9b3432b53956073">  201</a></span>  <span class="keyword">static</span> <a class="code hl_function" href="classLVGLDriver.html#a3b48c43d188c7557f9b3432b53956073">GammaTable</a>&amp; <a class="code hl_function" href="classLVGLDriver.html#a3b48c43d188c7557f9b3432b53956073">gammaB_</a>() {</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keyword">static</span> GammaTable table;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keywordflow">return</span> table;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  }</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="comment">/// Converts a buffer LVGL packed as (native-order) RGB565 into RGB_T&#39;s</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="comment">/// own byte layout, applying per-channel gamma correction (see</span></div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  <span class="comment">/// setGamma()), in place. Each pixel is decoded with RGB565&#39;s semantics</span></div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <span class="comment">/// (what LVGL actually wrote), gamma corrected, and re-encoded via</span></div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  <span class="comment">/// RGB_T::fromRGB(), so RGB_T&#39;s own compensation (if any) is genuinely</span></div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="comment">/// applied regardless of how RGB_T&#39;s constructor happens to order its</span></div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  <span class="comment">/// arguments.</span></div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a2635e23cb4e102ea99befce3a80bdf1c">  213</a></span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classLVGLDriver.html#a2635e23cb4e102ea99befce3a80bdf1c">convertBuffer</a>(uint8_t* px_map, size_t pixelCount) {</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> sameFormat = std::is_same&lt;RGB_T, RGB565&gt;::value;</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> needsGamma = (<a class="code hl_function" href="classLVGLDriver.html#a6f155127f2d86a524243d8ffa9e4c739">gammaR_</a><a class="code hl_function" href="classLVGLDriver.html#a6f155127f2d86a524243d8ffa9e4c739">(</a><a class="code hl_function" href="classLVGLDriver.html#a6f155127f2d86a524243d8ffa9e4c739">)</a>.gamma() != 1.0f) ||</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                            (<a class="code hl_function" href="classLVGLDriver.html#a0421139233f6eb0d87182a2a13ecc18d">gammaG_</a><a class="code hl_function" href="classLVGLDriver.html#a0421139233f6eb0d87182a2a13ecc18d">(</a><a class="code hl_function" href="classLVGLDriver.html#a0421139233f6eb0d87182a2a13ecc18d">)</a>.gamma() != 1.0f) ||</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                            (<a class="code hl_function" href="classLVGLDriver.html#a3b48c43d188c7557f9b3432b53956073">gammaB_</a><a class="code hl_function" href="classLVGLDriver.html#a3b48c43d188c7557f9b3432b53956073">(</a><a class="code hl_function" href="classLVGLDriver.html#a3b48c43d188c7557f9b3432b53956073">)</a>.gamma() != 1.0f);</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    uint16_t* pixels = <span class="keyword">reinterpret_cast</span>&lt;uint16_t*&gt;(px_map);</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="keywordflow">if</span> (sameFormat &amp;&amp; !needsGamma) {</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>      <span class="comment">// No channel repacking or gamma to apply, but RGB565 stores bytes</span></div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>      <span class="comment">// swapped from LVGL&#39;s native order (see RGB565.h) - a raw swap is</span></div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>      <span class="comment">// still needed.</span></div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>      <span class="keywordflow">for</span> (size_t i = 0; i &lt; pixelCount; ++i) {</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        pixels[i] = RGB565::swapBytes(pixels[i]);</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>      }</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    }</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keyword">const</span> GammaTable&amp; gr = gammaR_();</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keyword">const</span> GammaTable&amp; gg = gammaG_();</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keyword">const</span> GammaTable&amp; gb = gammaB_();</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordflow">for</span> (size_t i = 0; i &lt; pixelCount; ++i) {</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      <span class="comment">// pixels[i] is LVGL&#39;s native-order pixel; byte-swap it into</span></div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>      <span class="comment">// RGB565&#39;s stored (wire) order before decoding.</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>      <span class="keyword">const</span> RGB565 src(RGB565::swapBytes(pixels[i]));</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>      uint8_t r = src.getRed();</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      uint8_t g = src.getGreen();</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>      uint8_t b = src.getBlue();</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>      <span class="keywordflow">if</span> (needsGamma) {</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        r = gr.apply(r);</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        g = gg.apply(g);</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        b = gb.apply(b);</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>      }</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>      <span class="keyword">const</span> RGB_T dst = RGB_T::fromRGB(r, g, b);</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>      pixels[i] = dst.getValue();</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    }</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  }</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  250</span><span class="comment">   * @brief Registers a touch driver with this LVGL display instance.</span></div>
-<div class="line"><span class="lineno">  251</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#acf729f710845cb462a18c52b165c10eb">  252</a></span>  <a class="code hl_function" href="classLVGLDriver.html#acf729f710845cb462a18c52b165c10eb">lv_indev_t</a>* <a class="code hl_function" href="classLVGLDriver.html#acf729f710845cb462a18c52b165c10eb">setupTouch</a>() {</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="keywordflow">if</span> (!disp) <span class="keywordflow">return</span> <span class="keywordtype">nullptr</span>;</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    lv_indev_t* indev = lv_indev_create();</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keywordflow">if</span> (!indev) <span class="keywordflow">return</span> <span class="keywordtype">nullptr</span>;</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    lv_indev_set_type(indev, LV_INDEV_TYPE_POINTER);</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    lv_indev_set_display(indev, disp);  <span class="comment">// Binds touch to this specific display</span></div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    lv_indev_set_user_data(indev, &amp;touchDriver());</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="comment">// Set static touch read callback</span></div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    lv_indev_set_read_cb(indev, [](lv_indev_t* indev, lv_indev_data_t* data) {</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>      <span class="keyword">auto</span>* touch =</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>          <span class="keyword">static_cast</span>&lt;TouchDriver*&gt;(lv_indev_get_user_data(indev));</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>      Point p;</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>      <span class="keywordflow">if</span> (touch &amp;&amp; touch-&gt;getPoint(p)) {</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        data-&gt;point.x = p.x;</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        data-&gt;point.y = p.y;</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        data-&gt;state = LV_INDEV_STATE_PRESSED;</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        data-&gt;state = LV_INDEV_STATE_RELEASED;</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>      }</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    });</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <span class="keywordflow">return</span> indev;</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  }</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a108495b8d02063ec001ddb76dedb91b6">  279</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classLVGLDriver.html#a108495b8d02063ec001ddb76dedb91b6">dumpBuffer</a>(<span class="keyword">const</span> uint8_t* data, size_t len) {</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keywordflow">for</span> (size_t i = 0; i &lt; len; ++i) {</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>      <span class="keywordflow">if</span> ((i % 16) == 0) {</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        Serial.printf(<span class="stringliteral">&quot;\n%06u: &quot;</span>, (<span class="keywordtype">unsigned</span>)i);</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>      }</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>      Serial.printf(<span class="stringliteral">&quot;%02X &quot;</span>, data[i]);</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    }</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    Serial.println();</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  }</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>};</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="comment">/// Provides a reference to the underlying DisplayDriver instance used by</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="comment">/// this LVGLDriver (an SPI panel driver on ESP32, DisplayDriverSDL on</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="comment">/// desktop, or any other DisplayDriver&lt;RGB_T&gt; implementation).</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a10b451195c00da57c70ec7476442ce30">  158</a></span>  <a class="code hl_function" href="classLVGLDriver.html#a10b451195c00da57c70ec7476442ce30">DisplayDriver</a>&lt;<a class="code hl_function" href="classLVGLDriver.html#a10b451195c00da57c70ec7476442ce30">RGB_T</a>&gt;&amp; <a class="code hl_function" href="classLVGLDriver.html#a10b451195c00da57c70ec7476442ce30">getDriver</a>() { <span class="keywordflow">return</span> *driver; }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="comment">/// Applies independent per-channel gamma correction to every color LVGL</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  <span class="comment">/// renders, before RGB_T&#39;s own field layout/compensation is applied.</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="comment">/// gammaR=gammaG=gammaB=1.0 (the default) applies no correction.</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  <span class="comment">///</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  <span class="comment">/// This is deliberately per-channel rather than one shared curve: some</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="comment">/// panels show a visible color tint in near-black/grey tones even with</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  <span class="comment">/// correct field compensation, because the panel&#39;s red/green/blue</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="comment">/// subpixels have different non-linear responses at low brightness. A</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="comment">/// single gamma applied equally to R, G and B can only ever change</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="comment">/// overall brightness - if R=G=B going in, the same curve on all three</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  <span class="comment">/// still gives R=G=B going out, so it mathematically cannot fix a hue</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="comment">/// tint in grey tones. Independent per-channel curves can, by</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  <span class="comment">/// deliberately un-balancing a grey input to counteract the panel&#39;s own</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="comment">/// imbalance. There&#39;s no single correct set of values for an unknown/</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <span class="comment">/// undocumented panel - try values on both sides of 1.0 per channel and</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  <span class="comment">/// compare on real hardware. See GammaTable.h.</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a2fa10377079aa3f1c8ee552d457e49c8">  176</a></span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classLVGLDriver.html#a2fa10377079aa3f1c8ee552d457e49c8">setGamma</a>(<span class="keywordtype">float</span> gammaR, <span class="keywordtype">float</span> gammaG, <span class="keywordtype">float</span> gammaB) {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    gammaR_().setGamma(gammaR);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    gammaG_().setGamma(gammaG);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    gammaB_().setGamma(gammaB);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  }</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a93f24bf6f93b1c0759e31ab91f47ebc6">  183</a></span>  Vector&lt;uint8_t&gt; buf_1;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a156cf6d3f558a3fdb5ce116f39e6c4f1">  184</a></span>  <a class="code hl_variable" href="classLVGLDriver.html#a156cf6d3f558a3fdb5ce116f39e6c4f1">DisplayDriver</a>&lt;<a class="code hl_variable" href="classLVGLDriver.html#a156cf6d3f558a3fdb5ce116f39e6c4f1">RGB_T</a>&gt;* <a class="code hl_variable" href="classLVGLDriver.html#a156cf6d3f558a3fdb5ce116f39e6c4f1">driver</a> = <span class="keywordtype">nullptr</span>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a0d61ad4e4f51f862ac50c8c777b2e656">  185</a></span>  <a class="code hl_variable" href="classLVGLDriver.html#a0d61ad4e4f51f862ac50c8c777b2e656">TouchDriver</a>* <a class="code hl_variable" href="classLVGLDriver.html#a0d61ad4e4f51f862ac50c8c777b2e656">touch_driver</a> = <span class="keywordtype">nullptr</span>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a647e5f267167a38dcd0e6fe55dfcfc61">  186</a></span>  <a class="code hl_variable" href="classLVGLDriver.html#a647e5f267167a38dcd0e6fe55dfcfc61">lv_display_t</a>* <a class="code hl_variable" href="classLVGLDriver.html#a647e5f267167a38dcd0e6fe55dfcfc61">disp</a> = <span class="keywordtype">nullptr</span>;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#aa8ce13ad0b734bb6eef28c7c96294853">  187</a></span>  <a class="code hl_variable" href="classLVGLDriver.html#aa8ce13ad0b734bb6eef28c7c96294853">size_t</a> <a class="code hl_variable" href="classLVGLDriver.html#aa8ce13ad0b734bb6eef28c7c96294853">disp_x</a> = 0;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a128d465268e603b87cf1fa46c5091c75">  188</a></span>  <a class="code hl_variable" href="classLVGLDriver.html#a128d465268e603b87cf1fa46c5091c75">size_t</a> <a class="code hl_variable" href="classLVGLDriver.html#a128d465268e603b87cf1fa46c5091c75">disp_y</a> = 0;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a79d97d675587635bfab264086d23e79e">  189</a></span>  <a class="code hl_variable" href="classLVGLDriver.html#a79d97d675587635bfab264086d23e79e">size_t</a> <a class="code hl_variable" href="classLVGLDriver.html#a79d97d675587635bfab264086d23e79e">dispBufferSize</a> = 0;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="comment">// Use Arduino&#39;s millis() as tick source</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#afcf78f3684505b04e577ff51a3cd9e4c">  192</a></span>  <span class="keyword">static</span> uint32_t <a class="code hl_function" href="classLVGLDriver.html#afcf78f3684505b04e577ff51a3cd9e4c">my_tick</a>(<span class="keywordtype">void</span>) { <span class="keywordflow">return</span> millis(); }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a6f155127f2d86a524243d8ffa9e4c739">  194</a></span>  <span class="keyword">static</span> <a class="code hl_function" href="classLVGLDriver.html#a6f155127f2d86a524243d8ffa9e4c739">GammaTable</a>&amp; <a class="code hl_function" href="classLVGLDriver.html#a6f155127f2d86a524243d8ffa9e4c739">gammaR_</a>() {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keyword">static</span> GammaTable table;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keywordflow">return</span> table;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  }</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a0421139233f6eb0d87182a2a13ecc18d">  198</a></span>  <span class="keyword">static</span> <a class="code hl_function" href="classLVGLDriver.html#a0421139233f6eb0d87182a2a13ecc18d">GammaTable</a>&amp; <a class="code hl_function" href="classLVGLDriver.html#a0421139233f6eb0d87182a2a13ecc18d">gammaG_</a>() {</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keyword">static</span> GammaTable table;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keywordflow">return</span> table;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a3b48c43d188c7557f9b3432b53956073">  202</a></span>  <span class="keyword">static</span> <a class="code hl_function" href="classLVGLDriver.html#a3b48c43d188c7557f9b3432b53956073">GammaTable</a>&amp; <a class="code hl_function" href="classLVGLDriver.html#a3b48c43d188c7557f9b3432b53956073">gammaB_</a>() {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keyword">static</span> GammaTable table;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordflow">return</span> table;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  }</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="comment">/// Converts a buffer LVGL packed as (native-order) RGB565 into RGB_T&#39;s</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  <span class="comment">/// own byte layout, applying per-channel gamma correction (see</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <span class="comment">/// setGamma()), in place. Each pixel is decoded with RGB565&#39;s semantics</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  <span class="comment">/// (what LVGL actually wrote), gamma corrected, and re-encoded via</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="comment">/// RGB_T::fromRGB(), so RGB_T&#39;s own compensation (if any) is genuinely</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  <span class="comment">/// applied regardless of how RGB_T&#39;s constructor happens to order its</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  <span class="comment">/// arguments.</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a2635e23cb4e102ea99befce3a80bdf1c">  214</a></span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classLVGLDriver.html#a2635e23cb4e102ea99befce3a80bdf1c">convertBuffer</a>(uint8_t* px_map, size_t pixelCount) {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> sameFormat = std::is_same&lt;RGB_T, RGB565&gt;::value;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> needsGamma = (<a class="code hl_function" href="classLVGLDriver.html#a6f155127f2d86a524243d8ffa9e4c739">gammaR_</a><a class="code hl_function" href="classLVGLDriver.html#a6f155127f2d86a524243d8ffa9e4c739">(</a><a class="code hl_function" href="classLVGLDriver.html#a6f155127f2d86a524243d8ffa9e4c739">)</a>.gamma() != 1.0f) ||</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                            (<a class="code hl_function" href="classLVGLDriver.html#a0421139233f6eb0d87182a2a13ecc18d">gammaG_</a><a class="code hl_function" href="classLVGLDriver.html#a0421139233f6eb0d87182a2a13ecc18d">(</a><a class="code hl_function" href="classLVGLDriver.html#a0421139233f6eb0d87182a2a13ecc18d">)</a>.gamma() != 1.0f) ||</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                            (<a class="code hl_function" href="classLVGLDriver.html#a3b48c43d188c7557f9b3432b53956073">gammaB_</a><a class="code hl_function" href="classLVGLDriver.html#a3b48c43d188c7557f9b3432b53956073">(</a><a class="code hl_function" href="classLVGLDriver.html#a3b48c43d188c7557f9b3432b53956073">)</a>.gamma() != 1.0f);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    uint16_t* pixels = <span class="keyword">reinterpret_cast</span>&lt;uint16_t*&gt;(px_map);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keywordflow">if</span> (sameFormat &amp;&amp; !needsGamma) {</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>      <span class="comment">// No channel repacking or gamma to apply, but RGB565 stores bytes</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>      <span class="comment">// swapped from LVGL&#39;s native order (see RGB565.h) - a raw swap is</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>      <span class="comment">// still needed.</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>      <span class="keywordflow">for</span> (size_t i = 0; i &lt; pixelCount; ++i) {</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        pixels[i] = RGB565::swapBytes(pixels[i]);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>      }</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    }</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keyword">const</span> GammaTable&amp; gr = gammaR_();</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keyword">const</span> GammaTable&amp; gg = gammaG_();</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keyword">const</span> GammaTable&amp; gb = gammaB_();</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="keywordflow">for</span> (size_t i = 0; i &lt; pixelCount; ++i) {</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>      <span class="comment">// pixels[i] is LVGL&#39;s native-order pixel; byte-swap it into</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>      <span class="comment">// RGB565&#39;s stored (wire) order before decoding.</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>      <span class="keyword">const</span> RGB565 src(RGB565::swapBytes(pixels[i]));</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      uint8_t r = src.getRed();</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>      uint8_t g = src.getGreen();</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>      uint8_t b = src.getBlue();</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>      <span class="keywordflow">if</span> (needsGamma) {</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        r = gr.apply(r);</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        g = gg.apply(g);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        b = gb.apply(b);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>      }</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>      <span class="keyword">const</span> RGB_T dst = RGB_T::fromRGB(r, g, b);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>      pixels[i] = dst.getValue();</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    }</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  }</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  251</span><span class="comment">   * @brief Registers a touch driver with this LVGL display instance.</span></div>
+<div class="line"><span class="lineno">  252</span><span class="comment">   */</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#acf729f710845cb462a18c52b165c10eb">  253</a></span>  <a class="code hl_function" href="classLVGLDriver.html#acf729f710845cb462a18c52b165c10eb">lv_indev_t</a>* <a class="code hl_function" href="classLVGLDriver.html#acf729f710845cb462a18c52b165c10eb">setupTouch</a>() {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keywordflow">if</span> (!disp) <span class="keywordflow">return</span> <span class="keywordtype">nullptr</span>;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    lv_indev_t* indev = lv_indev_create();</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordflow">if</span> (!indev) <span class="keywordflow">return</span> <span class="keywordtype">nullptr</span>;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    lv_indev_set_type(indev, LV_INDEV_TYPE_POINTER);</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    lv_indev_set_display(indev, disp);  <span class="comment">// Binds touch to this specific display</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    lv_indev_set_user_data(indev, &amp;touchDriver());</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="comment">// Set static touch read callback. isTouched() must be called before</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="comment">// getPoint() - per TouchDriver&#39;s documented contract (see</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <span class="comment">// TouchDriver.h), isTouched() is where a controller read/event-pump</span></div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="comment">// happens for drivers that need one (e.g. TouchDriverSDL polls SDL&#39;s</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <span class="comment">// event queue there to update its mouse state; getPoint() alone would</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <span class="comment">// never see a fresh position). Every other TouchDriver consumer in</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    <span class="comment">// TinyGPU (e.g. FrameBuffer::processTouch()) follows this same</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="comment">// isTouched()-then-getPoint() order.</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    lv_indev_set_read_cb(indev, [](lv_indev_t* indev, lv_indev_data_t* data) {</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>      <span class="keyword">auto</span>* touch =</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>          <span class="keyword">static_cast</span>&lt;TouchDriver*&gt;(lv_indev_get_user_data(indev));</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>      Point p;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>      <span class="keywordflow">if</span> (touch &amp;&amp; touch-&gt;isTouched() &amp;&amp; touch-&gt;getPoint(p)) {</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        data-&gt;point.x = p.x;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        data-&gt;point.y = p.y;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        data-&gt;state = LV_INDEV_STATE_PRESSED;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        data-&gt;state = LV_INDEV_STATE_RELEASED;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>      }</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    });</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <span class="keywordflow">return</span> indev;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  }</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno"><a class="line" href="classLVGLDriver.html#a108495b8d02063ec001ddb76dedb91b6">  287</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classLVGLDriver.html#a108495b8d02063ec001ddb76dedb91b6">dumpBuffer</a>(<span class="keyword">const</span> uint8_t* data, size_t len) {</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="keywordtype">char</span> lineHeader[10];</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keywordtype">char</span> byteStr[4];</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <span class="keywordflow">for</span> (size_t i = 0; i &lt; len; ++i) {</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>      <span class="keywordflow">if</span> ((i % 16) == 0) {</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        snprintf(lineHeader, <span class="keyword">sizeof</span>(lineHeader), <span class="stringliteral">&quot;\n%06u: &quot;</span>, (<span class="keywordtype">unsigned</span>)i);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        Serial.print(lineHeader);</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>      }</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>      snprintf(byteStr, <span class="keyword">sizeof</span>(byteStr), <span class="stringliteral">&quot;%02X &quot;</span>, data[i]);</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>      Serial.print(byteStr);</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    }</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    Serial.println();</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>  }</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>};</div>
 <div class="ttc" id="aclassLVGLDriver_html"><div class="ttname"><a href="classLVGLDriver.html">LVGLDriver</a></div><div class="ttdoc">LVGLDriver is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the displ...</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:20</div></div>
-<div class="ttc" id="aclassLVGLDriver_html_a0421139233f6eb0d87182a2a13ecc18d"><div class="ttname"><a href="classLVGLDriver.html#a0421139233f6eb0d87182a2a13ecc18d">LVGLDriver::gammaG_</a></div><div class="ttdeci">static GammaTable &amp; gammaG_()</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:197</div></div>
-<div class="ttc" id="aclassLVGLDriver_html_a0d61ad4e4f51f862ac50c8c777b2e656"><div class="ttname"><a href="classLVGLDriver.html#a0d61ad4e4f51f862ac50c8c777b2e656">LVGLDriver::touch_driver</a></div><div class="ttdeci">TouchDriver * touch_driver</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:184</div></div>
-<div class="ttc" id="aclassLVGLDriver_html_a108495b8d02063ec001ddb76dedb91b6"><div class="ttname"><a href="classLVGLDriver.html#a108495b8d02063ec001ddb76dedb91b6">LVGLDriver::dumpBuffer</a></div><div class="ttdeci">void dumpBuffer(const uint8_t *data, size_t len)</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:279</div></div>
-<div class="ttc" id="aclassLVGLDriver_html_a128d465268e603b87cf1fa46c5091c75"><div class="ttname"><a href="classLVGLDriver.html#a128d465268e603b87cf1fa46c5091c75">LVGLDriver::disp_y</a></div><div class="ttdeci">size_t disp_y</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:187</div></div>
-<div class="ttc" id="aclassLVGLDriver_html_a2635e23cb4e102ea99befce3a80bdf1c"><div class="ttname"><a href="classLVGLDriver.html#a2635e23cb4e102ea99befce3a80bdf1c">LVGLDriver::convertBuffer</a></div><div class="ttdeci">static void convertBuffer(uint8_t *px_map, size_t pixelCount)</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:213</div></div>
-<div class="ttc" id="aclassLVGLDriver_html_a2fa10377079aa3f1c8ee552d457e49c8"><div class="ttname"><a href="classLVGLDriver.html#a2fa10377079aa3f1c8ee552d457e49c8">LVGLDriver::setGamma</a></div><div class="ttdeci">static void setGamma(float gammaR, float gammaG, float gammaB)</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:175</div></div>
-<div class="ttc" id="aclassLVGLDriver_html_a3b48c43d188c7557f9b3432b53956073"><div class="ttname"><a href="classLVGLDriver.html#a3b48c43d188c7557f9b3432b53956073">LVGLDriver::gammaB_</a></div><div class="ttdeci">static GammaTable &amp; gammaB_()</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:201</div></div>
+<div class="ttc" id="aclassLVGLDriver_html_a0421139233f6eb0d87182a2a13ecc18d"><div class="ttname"><a href="classLVGLDriver.html#a0421139233f6eb0d87182a2a13ecc18d">LVGLDriver::gammaG_</a></div><div class="ttdeci">static GammaTable &amp; gammaG_()</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:198</div></div>
+<div class="ttc" id="aclassLVGLDriver_html_a0d61ad4e4f51f862ac50c8c777b2e656"><div class="ttname"><a href="classLVGLDriver.html#a0d61ad4e4f51f862ac50c8c777b2e656">LVGLDriver::touch_driver</a></div><div class="ttdeci">TouchDriver * touch_driver</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:185</div></div>
+<div class="ttc" id="aclassLVGLDriver_html_a108495b8d02063ec001ddb76dedb91b6"><div class="ttname"><a href="classLVGLDriver.html#a108495b8d02063ec001ddb76dedb91b6">LVGLDriver::dumpBuffer</a></div><div class="ttdeci">void dumpBuffer(const uint8_t *data, size_t len)</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:287</div></div>
+<div class="ttc" id="aclassLVGLDriver_html_a10b451195c00da57c70ec7476442ce30"><div class="ttname"><a href="classLVGLDriver.html#a10b451195c00da57c70ec7476442ce30">LVGLDriver::getDriver</a></div><div class="ttdeci">DisplayDriver&lt; RGB_T &gt; &amp; getDriver()</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:158</div></div>
+<div class="ttc" id="aclassLVGLDriver_html_a128d465268e603b87cf1fa46c5091c75"><div class="ttname"><a href="classLVGLDriver.html#a128d465268e603b87cf1fa46c5091c75">LVGLDriver::disp_y</a></div><div class="ttdeci">size_t disp_y</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:188</div></div>
+<div class="ttc" id="aclassLVGLDriver_html_a156cf6d3f558a3fdb5ce116f39e6c4f1"><div class="ttname"><a href="classLVGLDriver.html#a156cf6d3f558a3fdb5ce116f39e6c4f1">LVGLDriver::driver</a></div><div class="ttdeci">DisplayDriver&lt; RGB_T &gt; * driver</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:184</div></div>
+<div class="ttc" id="aclassLVGLDriver_html_a2635e23cb4e102ea99befce3a80bdf1c"><div class="ttname"><a href="classLVGLDriver.html#a2635e23cb4e102ea99befce3a80bdf1c">LVGLDriver::convertBuffer</a></div><div class="ttdeci">static void convertBuffer(uint8_t *px_map, size_t pixelCount)</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:214</div></div>
+<div class="ttc" id="aclassLVGLDriver_html_a2fa10377079aa3f1c8ee552d457e49c8"><div class="ttname"><a href="classLVGLDriver.html#a2fa10377079aa3f1c8ee552d457e49c8">LVGLDriver::setGamma</a></div><div class="ttdeci">static void setGamma(float gammaR, float gammaG, float gammaB)</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:176</div></div>
+<div class="ttc" id="aclassLVGLDriver_html_a3b48c43d188c7557f9b3432b53956073"><div class="ttname"><a href="classLVGLDriver.html#a3b48c43d188c7557f9b3432b53956073">LVGLDriver::gammaB_</a></div><div class="ttdeci">static GammaTable &amp; gammaB_()</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:202</div></div>
 <div class="ttc" id="aclassLVGLDriver_html_a601fb7cf1fc15db50c71a826f084f934"><div class="ttname"><a href="classLVGLDriver.html#a601fb7cf1fc15db50c71a826f084f934">LVGLDriver::begin</a></div><div class="ttdeci">bool begin()</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:38</div></div>
 <div class="ttc" id="aclassLVGLDriver_html_a6103b16badc3358b15461548955123c7"><div class="ttname"><a href="classLVGLDriver.html#a6103b16badc3358b15461548955123c7">LVGLDriver::setTouchDriver</a></div><div class="ttdeci">void setTouchDriver(TouchDriver &amp;touch)</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:146</div></div>
 <div class="ttc" id="aclassLVGLDriver_html_a62ce61b6b38d09e07f4d38d53812c594"><div class="ttname"><a href="classLVGLDriver.html#a62ce61b6b38d09e07f4d38d53812c594">LVGLDriver::hasTouchDriver</a></div><div class="ttdeci">bool hasTouchDriver() const</div><div class="ttdoc">Checks if a touch driver has been set for this LVGLDriver.</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:149</div></div>
-<div class="ttc" id="aclassLVGLDriver_html_a647e5f267167a38dcd0e6fe55dfcfc61"><div class="ttname"><a href="classLVGLDriver.html#a647e5f267167a38dcd0e6fe55dfcfc61">LVGLDriver::disp</a></div><div class="ttdeci">lv_display_t * disp</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:185</div></div>
-<div class="ttc" id="aclassLVGLDriver_html_a6f155127f2d86a524243d8ffa9e4c739"><div class="ttname"><a href="classLVGLDriver.html#a6f155127f2d86a524243d8ffa9e4c739">LVGLDriver::gammaR_</a></div><div class="ttdeci">static GammaTable &amp; gammaR_()</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:193</div></div>
-<div class="ttc" id="aclassLVGLDriver_html_a79d97d675587635bfab264086d23e79e"><div class="ttname"><a href="classLVGLDriver.html#a79d97d675587635bfab264086d23e79e">LVGLDriver::dispBufferSize</a></div><div class="ttdeci">size_t dispBufferSize</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:188</div></div>
+<div class="ttc" id="aclassLVGLDriver_html_a647e5f267167a38dcd0e6fe55dfcfc61"><div class="ttname"><a href="classLVGLDriver.html#a647e5f267167a38dcd0e6fe55dfcfc61">LVGLDriver::disp</a></div><div class="ttdeci">lv_display_t * disp</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:186</div></div>
+<div class="ttc" id="aclassLVGLDriver_html_a6f155127f2d86a524243d8ffa9e4c739"><div class="ttname"><a href="classLVGLDriver.html#a6f155127f2d86a524243d8ffa9e4c739">LVGLDriver::gammaR_</a></div><div class="ttdeci">static GammaTable &amp; gammaR_()</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:194</div></div>
+<div class="ttc" id="aclassLVGLDriver_html_a79d97d675587635bfab264086d23e79e"><div class="ttname"><a href="classLVGLDriver.html#a79d97d675587635bfab264086d23e79e">LVGLDriver::dispBufferSize</a></div><div class="ttdeci">size_t dispBufferSize</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:189</div></div>
 <div class="ttc" id="aclassLVGLDriver_html_a7f2dfce1046bdd2a2b753643726c2346"><div class="ttname"><a href="classLVGLDriver.html#a7f2dfce1046bdd2a2b753643726c2346">LVGLDriver::delay</a></div><div class="ttdeci">void delay(uint32_t ms)</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:135</div></div>
-<div class="ttc" id="aclassLVGLDriver_html_aa8ce13ad0b734bb6eef28c7c96294853"><div class="ttname"><a href="classLVGLDriver.html#aa8ce13ad0b734bb6eef28c7c96294853">LVGLDriver::disp_x</a></div><div class="ttdeci">size_t disp_x</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:186</div></div>
+<div class="ttc" id="aclassLVGLDriver_html_aa8ce13ad0b734bb6eef28c7c96294853"><div class="ttname"><a href="classLVGLDriver.html#aa8ce13ad0b734bb6eef28c7c96294853">LVGLDriver::disp_x</a></div><div class="ttdeci">size_t disp_x</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:187</div></div>
 <div class="ttc" id="aclassLVGLDriver_html_aaf81d3fdaf258088d7692fa70cece087"><div class="ttname"><a href="classLVGLDriver.html#aaf81d3fdaf258088d7692fa70cece087">LVGLDriver::end</a></div><div class="ttdeci">void end()</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:95</div></div>
-<div class="ttc" id="aclassLVGLDriver_html_abb3f66e48746fc15da999f216070169b"><div class="ttname"><a href="classLVGLDriver.html#abb3f66e48746fc15da999f216070169b">LVGLDriver::getDriver</a></div><div class="ttdeci">DisplayDriverSPI&lt; RGB_T &gt; &amp; getDriver()</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:157</div></div>
-<div class="ttc" id="aclassLVGLDriver_html_ac054834b1720d033f137960b790a6c78"><div class="ttname"><a href="classLVGLDriver.html#ac054834b1720d033f137960b790a6c78">LVGLDriver::driver</a></div><div class="ttdeci">DisplayDriverSPI&lt; RGB_T &gt; * driver</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:183</div></div>
 <div class="ttc" id="aclassLVGLDriver_html_acddc765d7e545f10ac0d543690950d90"><div class="ttname"><a href="classLVGLDriver.html#acddc765d7e545f10ac0d543690950d90">LVGLDriver::touchDriver</a></div><div class="ttdeci">TouchDriver &amp; touchDriver()</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:153</div></div>
-<div class="ttc" id="aclassLVGLDriver_html_acf729f710845cb462a18c52b165c10eb"><div class="ttname"><a href="classLVGLDriver.html#acf729f710845cb462a18c52b165c10eb">LVGLDriver::setupTouch</a></div><div class="ttdeci">lv_indev_t * setupTouch()</div><div class="ttdoc">Registers a touch driver with this LVGL display instance.</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:252</div></div>
+<div class="ttc" id="aclassLVGLDriver_html_acf729f710845cb462a18c52b165c10eb"><div class="ttname"><a href="classLVGLDriver.html#acf729f710845cb462a18c52b165c10eb">LVGLDriver::setupTouch</a></div><div class="ttdeci">lv_indev_t * setupTouch()</div><div class="ttdoc">Registers a touch driver with this LVGL display instance.</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:253</div></div>
 <div class="ttc" id="aclassLVGLDriver_html_ae918fb05758409bad3622a9fd6305428"><div class="ttname"><a href="classLVGLDriver.html#ae918fb05758409bad3622a9fd6305428">LVGLDriver::display</a></div><div class="ttdeci">static void display(lv_display_t *disp, const lv_area_t *area, uint8_t *px_map)</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:106</div></div>
-<div class="ttc" id="aclassLVGLDriver_html_afcf78f3684505b04e577ff51a3cd9e4c"><div class="ttname"><a href="classLVGLDriver.html#afcf78f3684505b04e577ff51a3cd9e4c">LVGLDriver::my_tick</a></div><div class="ttdeci">static uint32_t my_tick(void)</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:191</div></div>
+<div class="ttc" id="aclassLVGLDriver_html_afcf78f3684505b04e577ff51a3cd9e4c"><div class="ttname"><a href="classLVGLDriver.html#afcf78f3684505b04e577ff51a3cd9e4c">LVGLDriver::my_tick</a></div><div class="ttdeci">static uint32_t my_tick(void)</div><div class="ttdef"><b>Definition:</b> LVGLDriver.h:192</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

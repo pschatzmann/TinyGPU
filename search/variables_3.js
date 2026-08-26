@@ -16,7 +16,7 @@ var searchData=
   ['dispbuffersize_13',['dispBufferSize',['../classLVGLDriver.html#a79d97d675587635bfab264086d23e79e',1,'LVGLDriver']]],
   ['doubletapmaxgapms_14',['doubleTapMaxGapMs',['../classtinygpu_1_1GestureDetector.html#a10d9978852dc25cac3d8d6400b49b18b',1,'tinygpu::GestureDetector']]],
   ['dragstartthresholdpx_15',['dragStartThresholdPx',['../classtinygpu_1_1GestureDetector.html#a657db1c66f464dd4292a142bcd4be0ea',1,'tinygpu::GestureDetector']]],
-  ['driver_16',['driver',['../classLVGLDriver.html#ac054834b1720d033f137960b790a6c78',1,'LVGLDriver']]],
+  ['driver_16',['driver',['../classLVGLDriver.html#a156cf6d3f558a3fdb5ce116f39e6c4f1',1,'LVGLDriver']]],
   ['driver_5f_17',['driver_',['../classtinygpu_1_1SpriteDisplay.html#a70453ec94f6b621d330e630ec0331abf',1,'tinygpu::SpriteDisplay']]],
   ['durationms_18',['durationMs',['../structtinygpu_1_1GestureEvent.html#a9146962a0d6176038e982d4a18f8ac7a',1,'tinygpu::GestureEvent']]]
 ];

@@ -23,6 +23,6 @@ var searchData=
   ['log_20',['log',['../classtinygpu_1_1TinyGPULoggerClass.html#a62783368bc9a6a5713893e15ef77ce12',1,'tinygpu::TinyGPULoggerClass']]],
   ['longpressmindurationms_21',['longPressMinDurationMs',['../classtinygpu_1_1GestureDetector.html#aab8dfd0379d4afa4bbc4462e2eab1fa0',1,'tinygpu::GestureDetector']]],
   ['lookat_22',['lookAt',['../classtinygpu_1_1WireFrame3D.html#a0a111a0696175e9d3fdfbe66406ace1e',1,'tinygpu::WireFrame3D']]],
-  ['lvgldriver_23',['LVGLDriver',['../classLVGLDriver.html',1,'LVGLDriver&lt; RGB_T &gt;'],['../classLVGLDriver.html#a4b67614b235306686d457cb2a6fb384f',1,'LVGLDriver::LVGLDriver()']]],
+  ['lvgldriver_23',['LVGLDriver',['../classLVGLDriver.html',1,'LVGLDriver&lt; RGB_T &gt;'],['../classLVGLDriver.html#a7bdd2cf4c60bfec54a5522d7db7f85ec',1,'LVGLDriver::LVGLDriver()']]],
   ['lvgldriver_2eh_24',['LVGLDriver.h',['../LVGLDriver_8h.html',1,'']]]
 ];

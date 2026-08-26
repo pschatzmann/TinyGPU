@@ -7,5 +7,5 @@ var searchData=
   ['lineprinter_4',['linePrinter',['../classtinygpu_1_1FrameBuffer.html#a4d0ba140f04406f738054b1fd712abb0',1,'tinygpu::FrameBuffer::linePrinter()'],['../classtinygpu_1_1SurfaceBase.html#a942775295806f1dafab741b0b7f79466',1,'tinygpu::SurfaceBase::linePrinter()']]],
   ['log_5',['log',['../classtinygpu_1_1TinyGPULoggerClass.html#a62783368bc9a6a5713893e15ef77ce12',1,'tinygpu::TinyGPULoggerClass']]],
   ['lookat_6',['lookAt',['../classtinygpu_1_1WireFrame3D.html#a0a111a0696175e9d3fdfbe66406ace1e',1,'tinygpu::WireFrame3D']]],
-  ['lvgldriver_7',['LVGLDriver',['../classLVGLDriver.html#a4b67614b235306686d457cb2a6fb384f',1,'LVGLDriver']]]
+  ['lvgldriver_7',['LVGLDriver',['../classLVGLDriver.html#a7bdd2cf4c60bfec54a5522d7db7f85ec',1,'LVGLDriver']]]
 ];

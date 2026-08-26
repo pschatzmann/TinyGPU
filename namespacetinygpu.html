@@ -432,6 +432,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a49877e1b23d7ce237ee872df3f412be5"><td class="memTemplParams" colspan="2">template&lt;typename RGB_T &gt; </td></tr>
 <tr class="memitem:a49877e1b23d7ce237ee872df3f412be5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1Surface.html">Surface</a>&lt; RGB_T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a49877e1b23d7ce237ee872df3f412be5">rotateSpriteImage</a> (const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;source, float angleDegrees, RGB_T fillColor, <a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt; RGB_T &gt; &amp;font)</td></tr>
 <tr class="separator:a49877e1b23d7ce237ee872df3f412be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71c67e94dd62e8a6638f409bb577e324"><td class="memTemplParams" colspan="2">template&lt;typename RGB_T , typename SurfaceT &gt; </td></tr>
+<tr class="memitem:a71c67e94dd62e8a6638f409bb577e324"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1Surface.html">Surface</a>&lt; RGB_T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a71c67e94dd62e8a6638f409bb577e324">renderTransformedSprite</a> (const <a class="el" href="structtinygpu_1_1SpriteInfo.html">SpriteInfo</a>&lt; RGB_T, SurfaceT &gt; &amp;spriteInfo, <a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt; RGB_T &gt; &amp;font)</td></tr>
+<tr class="separator:a71c67e94dd62e8a6638f409bb577e324"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a448c38c6511579fe4ba4be1ef97b0cde" name="a448c38c6511579fe4ba4be1ef97b0cde"></a>
@@ -1373,6 +1376,44 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71c67e94dd62e8a6638f409bb577e324" name="a71c67e94dd62e8a6638f409bb577e324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71c67e94dd62e8a6638f409bb577e324">&#9670;&#160;</a></span>renderTransformedSprite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtinygpu_1_1Surface.html">Surface</a>&lt; RGB_T &gt; renderTransformedSprite </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtinygpu_1_1SpriteInfo.html">SpriteInfo</a>&lt; RGB_T, SurfaceT &gt; &amp;&#160;</td>
+          <td class="paramname"><em>spriteInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt; RGB_T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>font</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Renders spriteInfo's pristine <code>sprite</code> image at its currently requested scale and rotation (<a class="el" href="structtinygpu_1_1SpriteInfo.html#aede4ef5960e9616d1fc299485c499216">SpriteInfo::currentScale</a>/currentAngleDegrees, set by scaleSprite()/rotateSprite() - see <a class="el" href="FrameBuffer_8h.html">FrameBuffer.h</a>/SpriteDisplay.h) in one combined pass, shared by <a class="el" href="classtinygpu_1_1FrameBuffer.html" title="Framebuffer with sprite placement and background restoration support.">FrameBuffer</a> and <a class="el" href="classtinygpu_1_1SpriteDisplay.html">SpriteDisplay</a>.</p>
+<p>This always starts over from the pristine original, never from spriteInfo.currentSprite() (the previous frame's already-transformed raster) - <a class="el" href="namespacetinygpu.html#a14f31aba0a06cb51e9e0fc92929ca5cf">scaleSpriteImage()</a>/rotateSpriteImage() use nearest-neighbor sampling with no interpolation, so repeatedly transforming an already-transformed raster compounds resampling artifacts frame after frame until the image degenerates into a solid blob within seconds (confirmed empirically: an 18x18 circle sprite scaled/rotated every frame that way fills its entire 40x40 max buffer within ~10 frames). Re-deriving from the pristine source every time is also the only way to support an absolute scale/angle contract at all - scaleSprite(info, 1.0) must be able to undo a previous scaleSprite(info, 1.3), which is impossible if 1.3x has already been baked irreversibly into the stored raster. </p>
 
 </div>
 </div>

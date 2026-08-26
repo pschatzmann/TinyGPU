@@ -116,6 +116,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a664aa01ee5714fe247a989e37cf66a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97bf58597e84a86861d4beaa5207b34d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtinygpu_1_1Rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1SpriteInfo.html#a97bf58597e84a86861d4beaa5207b34d">getRect</a> () const</td></tr>
 <tr class="separator:a97bf58597e84a86861d4beaa5207b34d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d51df09bed18c6671483c6a257c3c26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtinygpu_1_1Rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1SpriteInfo.html#a5d51df09bed18c6671483c6a257c3c26">clampedSize</a> (size_t rawWidth, size_t rawHeight) const</td></tr>
+<tr class="separator:a5d51df09bed18c6671483c6a257c3c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa98eead06b60e1d98bea96676e5b7444"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1SpriteInfo.html#aa98eead06b60e1d98bea96676e5b7444">currentSprite</a> () const</td></tr>
 <tr class="memdesc:aa98eead06b60e1d98bea96676e5b7444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sprite image currently used for drawing.  <br /></td></tr>
 <tr class="separator:aa98eead06b60e1d98bea96676e5b7444"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,6 +150,12 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a1770c9eb0e976f596be344757002239f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a234c549621bff6d06f9c0cb2ec697a2c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; SurfaceT &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1SpriteInfo.html#a234c549621bff6d06f9c0cb2ec697a2c">transformedSprite</a></td></tr>
 <tr class="separator:a234c549621bff6d06f9c0cb2ec697a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9d70827cc1e236dc62e6cbde7994356"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1SpriteInfo.html#ad9d70827cc1e236dc62e6cbde7994356">hasTransformedContent</a> = false</td></tr>
+<tr class="separator:ad9d70827cc1e236dc62e6cbde7994356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aede4ef5960e9616d1fc299485c499216"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1SpriteInfo.html#aede4ef5960e9616d1fc299485c499216">currentScale</a> = 1.0f</td></tr>
+<tr class="separator:aede4ef5960e9616d1fc299485c499216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a274a2931318b3dc641fe74e85f2f63bd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1SpriteInfo.html#a274a2931318b3dc641fe74e85f2f63bd">currentAngleDegrees</a> = 0.0f</td></tr>
+<tr class="separator:a274a2931318b3dc641fe74e85f2f63bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0d54e874effcb1dd1b1d18ef74cb599"><td class="memItemLeft" align="right" valign="top">SurfaceT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1SpriteInfo.html#ad0d54e874effcb1dd1b1d18ef74cb599">originalPixels</a></td></tr>
 <tr class="separator:ad0d54e874effcb1dd1b1d18ef74cb599"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d197c8a6931b111075bd8e20207afc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt; RGB_T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1SpriteInfo.html#a7d197c8a6931b111075bd8e20207afc8">fontRef</a></td></tr>
@@ -240,6 +248,44 @@ struct tinygpu::SpriteInfo&lt; RGB_T, SurfaceT &gt;</div><p>Tracks a sprite inst
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5d51df09bed18c6671483c6a257c3c26" name="a5d51df09bed18c6671483c6a257c3c26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d51df09bed18c6671483c6a257c3c26">&#9670;&#160;</a></span>clampedSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtinygpu_1_1Rect.html">Rect</a> clampedSize </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>rawWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>rawHeight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the size a transformed image of (rawWidth, rawHeight) will actually end up stored/drawn at by <a class="el" href="structtinygpu_1_1SpriteInfo.html#aa39f1a986e042b9e31b0efac2b720d0e">setTransformedSprite()</a> below. Once a fixed buffer exists (from <a class="el" href="structtinygpu_1_1SpriteInfo.html#a32956765337d9033b284ae0967aadf7c" title="Set the maximum buffer size for transformedSprite and allocate buffer.">setMaxSize()</a> or an earlier <a class="el" href="structtinygpu_1_1SpriteInfo.html#aa39f1a986e042b9e31b0efac2b720d0e">setTransformedSprite()</a> call), the drawn size is ALWAYS exactly maxWidth x maxHeight - never the raw image's own size - because <a class="el" href="structtinygpu_1_1SpriteInfo.html#aa39f1a986e042b9e31b0efac2b720d0e">setTransformedSprite()</a> pads a smaller image with invisibleColor rather than shrinking the buffer to fit it (e.g. scaling down) and crops a larger one down to the buffer (e.g. rotating a square grows its bounding box). Only when no fixed buffer exists yet does the drawn size match the raw image exactly (<a class="el" href="structtinygpu_1_1SpriteInfo.html#aa39f1a986e042b9e31b0efac2b720d0e">setTransformedSprite()</a> allocates the very first buffer to fit it precisely).</p>
+<p>Callers computing where to anchor/redraw a transformed sprite (see <a class="el" href="classtinygpu_1_1FrameBuffer.html#a162481c89b9b01e237084b11888fe276">FrameBuffer::applyTransformedSprite()</a>, <a class="el" href="classtinygpu_1_1SpriteDisplay.html">SpriteDisplay</a>:: applyTransformedSprite()) must use this size, not the raw transformed image's own size, or their background restore/capture bounds won't match the region <a class="el" href="structtinygpu_1_1SpriteInfo.html#aa39f1a986e042b9e31b0efac2b720d0e">setTransformedSprite()</a> + drawSprite() actually touch - leaving stale, un-restored pixels on screen (visible as a second, "ghost" copy of the sprite trailing the real one). </p>
+
+</div>
+</div>
 <a id="aa98eead06b60e1d98bea96676e5b7444" name="aa98eead06b60e1d98bea96676e5b7444"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa98eead06b60e1d98bea96676e5b7444">&#9670;&#160;</a></span>currentSprite()</h2>
 
@@ -414,6 +460,34 @@ struct tinygpu::SpriteInfo&lt; RGB_T, SurfaceT &gt;</div><p>Tracks a sprite inst
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a274a2931318b3dc641fe74e85f2f63bd" name="a274a2931318b3dc641fe74e85f2f63bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a274a2931318b3dc641fe74e85f2f63bd">&#9670;&#160;</a></span>currentAngleDegrees</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float currentAngleDegrees = 0.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aede4ef5960e9616d1fc299485c499216" name="aede4ef5960e9616d1fc299485c499216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aede4ef5960e9616d1fc299485c499216">&#9670;&#160;</a></span>currentScale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float currentScale = 1.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7d197c8a6931b111075bd8e20207afc8" name="a7d197c8a6931b111075bd8e20207afc8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7d197c8a6931b111075bd8e20207afc8">&#9670;&#160;</a></span>fontRef</h2>
 
@@ -422,6 +496,20 @@ struct tinygpu::SpriteInfo&lt; RGB_T, SurfaceT &gt;</div><p>Tracks a sprite inst
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt;RGB_T&gt;&amp; fontRef</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad9d70827cc1e236dc62e6cbde7994356" name="ad9d70827cc1e236dc62e6cbde7994356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9d70827cc1e236dc62e6cbde7994356">&#9670;&#160;</a></span>hasTransformedContent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hasTransformedContent = false</td>
         </tr>
       </table>
 </div><div class="memdoc">
