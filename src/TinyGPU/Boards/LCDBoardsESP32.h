@@ -31,7 +31,7 @@
 #include "TinyGPU/Drivers/DisplayDriverDSI.h"
 #include "TinyGPU/Drivers/DisplayDriverQSPI.h"
 #include "TinyGPU/Drivers/DisplayDriverSPI.h"
-#include "TinyGPU/Boards/LCDBoards.h"
+#include "TinyGPU/Boards/LCDBoardsCommon.h"
 #include "esp_adc/adc_cali.h"
 #include "esp_adc/adc_cali_scheme.h"
 #include "esp_adc/adc_oneshot.h"
@@ -144,7 +144,7 @@ class LCDBoardESP32S3_2_8Display : public LCDBoard {
 };
 
 using FBBA0125_002 = LCDBoardESP32S3_2_8Display;
-using ESP32S3HosyondDisplay = LCDBoardESP32S3_2_8Display;
+using ESP32S3HosyondLCD = LCDBoardESP32S3_2_8Display;
 
 /**
  * @brief "Guition ESP32-S3 4.3" 480x272 Capacitive Touch Display"

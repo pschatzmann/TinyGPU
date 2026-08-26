@@ -1,6 +1,8 @@
 # TinyGPU
 
 [![Arduino Library](https://img.shields.io/badge/Arduino-Library-blue.svg)](https://www.arduino.cc/reference/en/libraries/)
+[![Build with CMake](https://img.shields.io/badge/Build-CMake-064F8C.svg?logo=cmake)](https://cmake.org/)
+[![ESP-IDF Component](https://img.shields.io/badge/ESP--IDF-Component-blue.svg?logo=espressif)](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-guides/build-system.html#components)
 [![License: Apache](https://img.shields.io/badge/License-Apache-yellow.svg)](https://opensource.org/licenses/Apache-2.0)
 
 TinyGPU is a lightweight Arduino graphics library for RGB565 bitmap surfaces, sprites, and simple 3D wireframe rendering.
@@ -20,6 +22,8 @@ Apart form RGB565 we also support RGB666, RGB888 and Monochrome.
   - lines
   - rectangles
   - circles
+  - rounded rectangles (outline and fill)
+  - arcs (for circular progress/spinner style widgets)
 - Bitmap font rendering
 - Wrapped line printing
 - Sprite drawing and sprite-aware framebuffer management
@@ -35,6 +39,7 @@ Apart form RGB565 we also support RGB666, RGB888 and Monochrome.
 - BMP file support
   - saving data
   - loading data
+- TouchDriverSDL: maps the desktop mouse to a TouchDriver, so touch-driven UI can be exercised on the SDL desktop backend without touch hardware
 - LVGLDriver: use this library to output data from the lvgl library
 - LCDBoard: one-call setup (display + touch, and I2S pins where present) for ESP32(-S3/-P4) boards from the [arduino-audio-tools Audio Boards wiki](https://github.com/pschatzmann/arduino-audio-tools/wiki/Audio-Boards)
   - ESP32-S3 2.8" Display (FBBA0125-002 / ESP32-S3 Hosyond Display)
@@ -69,4 +74,15 @@ For Arduino, you can download the library as zip and call include Library -> zip
 cd  ~/Documents/Arduino/libraries
 git clone https://github.com/pschatzmann/TinyGPU.git
 ```
+
+For CMake-based projects (desktop, PlatformIO, ...), `CMakeLists.txt` provides
+a `TinyGPU` INTERFACE target, fetched via `FetchContent` - see `examples/*/CMakeLists.txt`.
+
+For ESP-IDF, TinyGPU is also usable as a component: clone it as
+`components/TinyGPU` (or add its parent directory via
+`EXTRA_COMPONENT_DIRS`) and `idf_component_register`/`idf_component.yml`
+take care of the rest. Several headers (`TouchDriver.h`, `DeviceOutput.h`,
+`Boards/LCDBoardsESP32.h`, ...) need Arduino APIs, so this only compiles
+when `arduino-esp32` is also present as a component in the same build -
+uncomment the dependency in `idf_component.yml` if you need it.
 

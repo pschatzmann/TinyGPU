@@ -54,6 +54,14 @@ class LinePrinter {
     currentY_ = topBorder_ + (line * lineAdvance());
   }
 
+  /// X pixel coordinate the next character would be printed at - i.e. right
+  /// after wherever the last print()/println() call left off. Lets a caller
+  /// (e.g. a text-editor-style widget) draw a cursor at the end of the
+  /// printed text without this class needing to know anything about cursors.
+  size_t cursorX() const { return currentX_; }
+  /// Y pixel coordinate the next character would be printed at.
+  size_t cursorY() const { return currentY_; }
+
   /// Sets the text scale factor.
   void setScale(uint8_t scale) { this->scale = scale; }
 

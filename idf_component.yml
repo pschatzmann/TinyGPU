@@ -1,0 +1,10 @@
+version: "0.4.0"
+description: Header-only graphics library for RGB565/RGB666/RGB888/monochrome surfaces, sprites, fonts, touch/gesture input, and simple 3D wireframe rendering.
+url: https://github.com/pschatzmann/TinyGPU
+
+# Several headers (TouchDriver.h, DeviceOutput.h, Boards/LCDBoardsESP32.h,
+# ...) include Arduino.h unconditionally, so uncomment this if you build
+# with arduino-esp32 present as a component (CMakeLists.txt already picks
+# it up automatically once it's part of the build):
+#dependencies:
+#  espressif/arduino-esp32: "^3.3.8"
