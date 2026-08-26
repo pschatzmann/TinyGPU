@@ -139,6 +139,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5091b1bb2e06dc302a09df5ec9df8fa0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a5091b1bb2e06dc302a09df5ec9df8fa0">fillCircle</a> (size_t x, size_t y, size_t r, RGB_T color)=0</td></tr>
 <tr class="memdesc:a5091b1bb2e06dc302a09df5ec9df8fa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills a circle.  <br /></td></tr>
 <tr class="separator:a5091b1bb2e06dc302a09df5ec9df8fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33374ebe687fd19b2e10f259a37a37ca"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a33374ebe687fd19b2e10f259a37a37ca">drawRoundRect</a> (size_t x, size_t y, size_t w, size_t h, size_t radius, RGB_T color)</td></tr>
+<tr class="separator:a33374ebe687fd19b2e10f259a37a37ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eecab74d148b1aa73e869ac18262082"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a2eecab74d148b1aa73e869ac18262082">fillRoundRect</a> (size_t x, size_t y, size_t w, size_t h, size_t radius, RGB_T color)</td></tr>
+<tr class="separator:a2eecab74d148b1aa73e869ac18262082"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f395bd45fed22a7c8d954d7f78fb754"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a3f395bd45fed22a7c8d954d7f78fb754">drawArc</a> (size_t cx, size_t cy, size_t r, float startDeg, float endDeg, RGB_T color, uint8_t thickness=1)</td></tr>
+<tr class="separator:a3f395bd45fed22a7c8d954d7f78fb754"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcd77dda8fd127af4e40edccbccf26e8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#afcd77dda8fd127af4e40edccbccf26e8">drawSprite</a> (size_t x, size_t y, const <a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;sprite, RGB_T invisibleColor=RGB_T(0))=0</td></tr>
 <tr class="memdesc:afcd77dda8fd127af4e40edccbccf26e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a sprite using an optional transparent color.  <br /></td></tr>
 <tr class="separator:afcd77dda8fd127af4e40edccbccf26e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -430,6 +436,73 @@ class tinygpu::ISurface&lt; RGB_T &gt;</div><p>Abstract framebuffer and drawing 
 
 </div>
 </div>
+<a id="a3f395bd45fed22a7c8d954d7f78fb754" name="a3f395bd45fed22a7c8d954d7f78fb754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f395bd45fed22a7c8d954d7f78fb754">&#9670;&#160;</a></span>drawArc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void drawArc </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>cx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>cy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>startDeg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>endDeg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RGB_T&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>thickness</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Draws a stroked arc around center (cx, cy) with radius r, sweeping from startDeg to endDeg (degrees, clockwise on screen since y increases downward; 0 deg = +X/3 o'clock direction; pass endDeg &lt; startDeg to wrap through 0, e.g. 350 -&gt; 370). thickness draws that many concentric 1px radii ending at r. Used for circular progress/spinner widgets. </p>
+
+</div>
+</div>
 <a id="afc565488868856c670916ab9d2e96b96" name="afc565488868856c670916ab9d2e96b96"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc565488868856c670916ab9d2e96b96">&#9670;&#160;</a></span>drawCircle()</h2>
 
@@ -595,6 +668,74 @@ class tinygpu::ISurface&lt; RGB_T &gt;</div><p>Abstract framebuffer and drawing 
 <p>Draws a rectangle outline. </p>
 
 <p>Implemented in <a class="el" href="classtinygpu_1_1SurfaceBase.html#a6c15c90576649c31393f309355f840ba">SurfaceBase&lt; PixelT &gt;</a>, <a class="el" href="classtinygpu_1_1FrameBuffer.html#ae4891f3455324d8eb1cae8b4cf742837">FrameBuffer&lt; RGB_T, SurfaceT &gt;</a>, and <a class="el" href="classtinygpu_1_1CartesianView.html#aa915f575a6c285ce94ebd85fdc04d804">CartesianView&lt; RGB_T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a33374ebe687fd19b2e10f259a37a37ca" name="a33374ebe687fd19b2e10f259a37a37ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33374ebe687fd19b2e10f259a37a37ca">&#9670;&#160;</a></span>drawRoundRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void drawRoundRect </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RGB_T&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Draws a rectangle outline with rounded corners.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radius</td><td>Corner radius in pixels; clamped to min(w,h)/2.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Implemented here (not left pure virtual) purely in terms of <a class="el" href="classtinygpu_1_1ISurface.html#a3fafdbed57223d70b758f257902655f4" title="Draws a line between two points.">drawLine()</a>, <a class="el" href="classtinygpu_1_1ISurface.html#a8c1d0c2acf401c1dc9280f8b2713f540" title="Sets a pixel at the given position.">setPixel()</a> and <a class="el" href="classtinygpu_1_1ISurface.html#a6c4b758f1438899cad34cea53b2e94c3" title="Checks if the given coordinates are within the surface bounds.">contains()</a>, so every existing <a class="el" href="classtinygpu_1_1ISurface.html" title="Abstract framebuffer and drawing interface for TinyGPU surfaces.">ISurface</a> implementation gets a correct default for free. Override only to provide a faster, hardware-specific version. </p>
 
 </div>
 </div>
@@ -868,6 +1009,74 @@ class tinygpu::ISurface&lt; RGB_T &gt;</div><p>Abstract framebuffer and drawing 
 <p>Fills a rectangle. </p>
 
 <p>Implemented in <a class="el" href="classtinygpu_1_1SurfaceBase.html#a1c964a702e42c1a7757295428704778f">SurfaceBase&lt; PixelT &gt;</a>, <a class="el" href="classtinygpu_1_1FrameBuffer.html#a2a73becdd0ef02371e25869f34d68e95">FrameBuffer&lt; RGB_T, SurfaceT &gt;</a>, and <a class="el" href="classtinygpu_1_1CartesianView.html#aa5ca4b8b9c9f12b8e5f223b3441a600d">CartesianView&lt; RGB_T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a2eecab74d148b1aa73e869ac18262082" name="a2eecab74d148b1aa73e869ac18262082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eecab74d148b1aa73e869ac18262082">&#9670;&#160;</a></span>fillRoundRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void fillRoundRect </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RGB_T&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Fills a rectangle with rounded corners.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radius</td><td>Corner radius in pixels; clamped to min(w,h)/2.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Row-scan fill: each row's horizontal inset comes from the corner circle's equation (0 for the straight middle rows), then the existing <a class="el" href="classtinygpu_1_1ISurface.html#a20c3ea459abe6e78b27d11c3d273228f" title="Fills a rectangle.">fillRect()</a> draws that single row. Produces the same shape as the classic "middle band + two rounded end caps" decomposition, just expressed as one loop. Implemented here (not pure virtual) so every existing <a class="el" href="classtinygpu_1_1ISurface.html" title="Abstract framebuffer and drawing interface for TinyGPU surfaces.">ISurface</a> implementation gets it for free. </p>
 
 </div>
 </div>

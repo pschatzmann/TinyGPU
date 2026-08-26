@@ -161,6 +161,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoard.html">LCDBoard</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html">LCDBoardDesktopSDL</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desktop SDL2 window standing in for a physical LCD board. Window size is set at construction time (default 320x240) since - unlike the hardware boards in <a class="el" href="LCDBoardsESP32_8h.html" title="One-call setup for ESP32(-S3) boards from the arduino-audio-tools &quot;Audio Boards&quot; wiki that combine an...">LCDBoardsESP32.h</a> - there is no fixed panel to match.  <a href="classtinygpu_1_1LCDBoardDesktopSDL.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1LEDPins.html">LEDPins</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LinePrinter.html">LinePrinter</a></td></tr>
@@ -223,6 +226,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverGT911.html">TouchDriverGT911</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">GT911 capacitive touch controller.  <a href="classtinygpu_1_1TouchDriverGT911.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverSDL.html">TouchDriverSDL</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps the desktop mouse to a <a class="el" href="classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers.">TouchDriver</a>, for exercising touch-driven UI (buttons, sliders, ...) on the SDL desktop backend without any physical touch hardware.  <a href="classtinygpu_1_1TouchDriverSDL.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html">TouchDriverXPT2046</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">XPT2046 resistive touch controller.  <a href="classtinygpu_1_1TouchDriverXPT2046.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,6 +238,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a8ea3b65fd36ffe6dc7273fe17455543d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a8ea3b65fd36ffe6dc7273fe17455543d">DesktopSDL</a> = <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html">LCDBoardDesktopSDL</a></td></tr>
+<tr class="separator:a8ea3b65fd36ffe6dc7273fe17455543d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34c07b590b97132497328cfce9988661"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a34c07b590b97132497328cfce9988661">TouchDriverFT6206</a> = <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html">TouchDriverFT6236</a></td></tr>
 <tr class="memdesc:a34c07b590b97132497328cfce9988661"><td class="mdescLeft">&#160;</td><td class="mdescRight">The FT6206 is a drop-in replacement for the FT6236, so we can alias it here.  <br /></td></tr>
 <tr class="separator:a34c07b590b97132497328cfce9988661"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -519,6 +527,20 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="classtinygpu_1_1CartesianView.html" title="Bottom-left Cartesian coordinate view over an existing Surface.">CartesianView</a> with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format. </p>
+
+</div>
+</div>
+<a id="a8ea3b65fd36ffe6dc7273fe17455543d" name="a8ea3b65fd36ffe6dc7273fe17455543d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ea3b65fd36ffe6dc7273fe17455543d">&#9670;&#160;</a></span>DesktopSDL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacetinygpu.html#a8ea3b65fd36ffe6dc7273fe17455543d">DesktopSDL</a> =  <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html">LCDBoardDesktopSDL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

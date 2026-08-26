@@ -1,10 +1,12 @@
 <map id="src/TinyGPU/Surface/SurfaceMonochrome.h" name="src/TinyGPU/Surface/SurfaceMonochrome.h">
-<area shape="rect" id="node1" title=" " alt="" coords="242,5,414,45"/>
-<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="215,255,329,280"/>
-<area shape="rect" id="node7" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="227,93,429,133"/>
-<area shape="rect" id="node8" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="309,181,558,207"/>
-<area shape="rect" id="node3" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,328,253,368"/>
-<area shape="rect" id="node6" href="$LVGLDriver_8h.html" title=" " alt="" coords="277,328,459,368"/>
-<area shape="rect" id="node4" href="$Boards_8h.html" title=" " alt="" coords="5,423,168,449"/>
-<area shape="rect" id="node5" href="$SpriteDisplay_8h.html" title=" " alt="" coords="192,416,347,456"/>
+<area shape="rect" id="node1" title=" " alt="" coords="334,5,506,45"/>
+<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="307,255,421,280"/>
+<area shape="rect" id="node9" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="319,93,521,133"/>
+<area shape="rect" id="node10" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="401,181,650,207"/>
+<area shape="rect" id="node3" href="$LCDBoardsCommon_8h.html" title=" " alt="" coords="180,328,348,368"/>
+<area shape="rect" id="node8" href="$LVGLDriver_8h.html" title=" " alt="" coords="373,328,555,368"/>
+<area shape="rect" id="node4" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,416,253,456"/>
+<area shape="rect" id="node7" href="$LCDBoardsSDL_8h.html" title="LCDBoard for the SDL2 desktop backend &#45; renders to a window via DisplayDriverSDL and maps the mouse t..." alt="" coords="277,416,427,456"/>
+<area shape="rect" id="node5" href="$Boards_8h.html" title=" " alt="" coords="5,511,168,537"/>
+<area shape="rect" id="node6" href="$SpriteDisplay_8h.html" title=" " alt="" coords="192,504,347,544"/>
 </map>

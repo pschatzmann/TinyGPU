@@ -26,9 +26,9 @@ var searchData=
   ['colorsused_23',['colorsUsed',['../structtinygpu_1_1BMPParser_1_1HeaderInfo.html#a9a2360dc70756b1a65535cf761121129',1,'tinygpu::BMPParser::HeaderInfo']]],
   ['complete_24',['Complete',['../classtinygpu_1_1BMPParser.html#a67a0db04d321a74b7e7fcfd3f1a3f70baae94f80b3ce82062a5dd7815daa04f9d',1,'tinygpu::BMPParser']]],
   ['compression_25',['compression',['../structtinygpu_1_1BMPParser_1_1HeaderInfo.html#aa379ffab5097352ba49ec9358c38cf4e',1,'tinygpu::BMPParser::HeaderInfo']]],
-  ['contains_26',['contains',['../classtinygpu_1_1ISurface.html#a6c4b758f1438899cad34cea53b2e94c3',1,'tinygpu::ISurface::contains()'],['../classtinygpu_1_1CartesianView.html#a4ab689700d49d3a4e427a72cb704790f',1,'tinygpu::CartesianView::contains()'],['../classtinygpu_1_1SurfaceBase.html#a4ab689700d49d3a4e427a72cb704790f',1,'tinygpu::SurfaceBase::contains()'],['../classtinygpu_1_1FrameBuffer.html#a4ab689700d49d3a4e427a72cb704790f',1,'tinygpu::FrameBuffer::contains()']]],
+  ['contains_26',['contains',['../classtinygpu_1_1ISurface.html#a6c4b758f1438899cad34cea53b2e94c3',1,'tinygpu::ISurface::contains()'],['../classtinygpu_1_1CartesianView.html#a4ab689700d49d3a4e427a72cb704790f',1,'tinygpu::CartesianView::contains()'],['../classtinygpu_1_1FrameBuffer.html#a4ab689700d49d3a4e427a72cb704790f',1,'tinygpu::FrameBuffer::contains()'],['../classtinygpu_1_1SurfaceBase.html#a4ab689700d49d3a4e427a72cb704790f',1,'tinygpu::SurfaceBase::contains()']]],
   ['convertbuffer_27',['convertBuffer',['../classLVGLDriver.html#a2635e23cb4e102ea99befce3a80bdf1c',1,'LVGLDriver']]],
-  ['copysprite_28',['copySprite',['../classtinygpu_1_1CartesianView.html#a35cd02d2dd882d35a73a6f4cec15cd00',1,'tinygpu::CartesianView::copySprite()'],['../classtinygpu_1_1FrameBuffer.html#a5b98d56caf09b7f0a12920c77145c24a',1,'tinygpu::FrameBuffer::copySprite()'],['../classtinygpu_1_1ISurface.html#a4f2f1bd24f505e24824b5ee85c63ebc4',1,'tinygpu::ISurface::copySprite()'],['../classtinygpu_1_1SurfaceBase.html#aee9ff3962d56a0e0a9974defd3c2f038',1,'tinygpu::SurfaceBase::copySprite()']]],
+  ['copysprite_28',['copySprite',['../classtinygpu_1_1FrameBuffer.html#a5b98d56caf09b7f0a12920c77145c24a',1,'tinygpu::FrameBuffer::copySprite()'],['../classtinygpu_1_1SurfaceBase.html#aee9ff3962d56a0e0a9974defd3c2f038',1,'tinygpu::SurfaceBase::copySprite()'],['../classtinygpu_1_1ISurface.html#a4f2f1bd24f505e24824b5ee85c63ebc4',1,'tinygpu::ISurface::copySprite()'],['../classtinygpu_1_1CartesianView.html#a35cd02d2dd882d35a73a6f4cec15cd00',1,'tinygpu::CartesianView::copySprite()']]],
   ['copyspriteregion_29',['copySpriteRegion',['../classtinygpu_1_1FrameBuffer.html#af15c2b0af9a4fa699233e4d48b906b98',1,'tinygpu::FrameBuffer']]],
   ['createorthographicmatrix_30',['createOrthographicMatrix',['../classtinygpu_1_1WireFrame3D.html#aaa68e24e83bd9ac24ca2be25605d789d',1,'tinygpu::WireFrame3D']]],
   ['createperspectivematrix_31',['createPerspectiveMatrix',['../classtinygpu_1_1WireFrame3D.html#a3176f8366b5b5538f76683e599802987',1,'tinygpu::WireFrame3D']]],
@@ -36,5 +36,7 @@ var searchData=
   ['cs_5f_33',['cs_',['../classtinygpu_1_1DisplayDriverSPI.html#a8c3e8634c21f804d261700d60995f77f',1,'tinygpu::DisplayDriverSPI']]],
   ['cube_34',['cube',['../classtinygpu_1_1WireFrame3D.html#a74cb8292da50279c7164a4d19fc2cab2',1,'tinygpu::WireFrame3D']]],
   ['currentaspectratio_35',['currentAspectRatio',['../classtinygpu_1_1WireFrame3D.html#ac69966a75600137f3ebfaf4170927426',1,'tinygpu::WireFrame3D']]],
-  ['currentsprite_36',['currentSprite',['../structtinygpu_1_1SpriteInfo.html#aa98eead06b60e1d98bea96676e5b7444',1,'tinygpu::SpriteInfo']]]
+  ['currentsprite_36',['currentSprite',['../structtinygpu_1_1SpriteInfo.html#aa98eead06b60e1d98bea96676e5b7444',1,'tinygpu::SpriteInfo']]],
+  ['cursorx_37',['cursorX',['../classtinygpu_1_1LinePrinter.html#a97e8c3951128c32656f47dcc8bf9470c',1,'tinygpu::LinePrinter']]],
+  ['cursory_38',['cursorY',['../classtinygpu_1_1LinePrinter.html#a8f28baa2ba78175357884c24ab175513',1,'tinygpu::LinePrinter']]]
 ];

@@ -1,0 +1,4 @@
+<map id="LCDBoardDesktopSDL" name="LCDBoardDesktopSDL">
+<area shape="rect" id="node1" title="Desktop SDL2 window standing in for a physical LCD board. Window size is set at construction time (de..." alt="" coords="5,79,171,104"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1LCDBoard.html" title=" " alt="" coords="45,5,131,31"/>
+</map>

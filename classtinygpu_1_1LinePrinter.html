@@ -120,6 +120,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa9f3f7194f7d89ed27d97e43018a8d39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LinePrinter.html#aa9f3f7194f7d89ed27d97e43018a8d39">setActualLine</a> (size_t line)</td></tr>
 <tr class="memdesc:aa9f3f7194f7d89ed27d97e43018a8d39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current line index.  <br /></td></tr>
 <tr class="separator:aa9f3f7194f7d89ed27d97e43018a8d39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97e8c3951128c32656f47dcc8bf9470c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LinePrinter.html#a97e8c3951128c32656f47dcc8bf9470c">cursorX</a> () const</td></tr>
+<tr class="separator:a97e8c3951128c32656f47dcc8bf9470c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f28baa2ba78175357884c24ab175513"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LinePrinter.html#a8f28baa2ba78175357884c24ab175513">cursorY</a> () const</td></tr>
+<tr class="memdesc:a8f28baa2ba78175357884c24ab175513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Y pixel coordinate the next character would be printed at.  <br /></td></tr>
+<tr class="separator:a8f28baa2ba78175357884c24ab175513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3aa36bdce508c9464dc1c61ee24e427e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LinePrinter.html#a3aa36bdce508c9464dc1c61ee24e427e">setScale</a> (uint8_t scale)</td></tr>
 <tr class="memdesc:a3aa36bdce508c9464dc1c61ee24e427e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the text scale factor.  <br /></td></tr>
 <tr class="separator:a3aa36bdce508c9464dc1c61ee24e427e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,6 +210,59 @@ class tinygpu::LinePrinter&lt; RGB_T &gt;</div><p>Helper for printing wrapped li
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a97e8c3951128c32656f47dcc8bf9470c" name="a97e8c3951128c32656f47dcc8bf9470c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97e8c3951128c32656f47dcc8bf9470c">&#9670;&#160;</a></span>cursorX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t cursorX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>X pixel coordinate the next character would be printed at - i.e. right after wherever the last <a class="el" href="classtinygpu_1_1LinePrinter.html#a5de1d92da33aae3b3423fe61e97537fe" title="Prints text with word wrapping.">print()</a>/println() call left off. Lets a caller (e.g. a text-editor-style widget) draw a cursor at the end of the printed text without this class needing to know anything about cursors. </p>
+
+</div>
+</div>
+<a id="a8f28baa2ba78175357884c24ab175513" name="a8f28baa2ba78175357884c24ab175513"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f28baa2ba78175357884c24ab175513">&#9670;&#160;</a></span>cursorY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t cursorY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Y pixel coordinate the next character would be printed at. </p>
+
+</div>
+</div>
 <a id="a5de1d92da33aae3b3423fe61e97537fe" name="a5de1d92da33aae3b3423fe61e97537fe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5de1d92da33aae3b3423fe61e97537fe">&#9670;&#160;</a></span>print()</h2>
 

@@ -1,11 +1,13 @@
 <map id="src/TinyGPU/Surface/Surface.h" name="src/TinyGPU/Surface/Surface.h">
-<area shape="rect" id="node1" title=" " alt="" coords="257,5,412,45"/>
-<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="105,343,218,368"/>
-<area shape="rect" id="node5" href="$SpriteDisplay_8h.html" title=" " alt="" coords="5,504,160,544"/>
-<area shape="rect" id="node7" href="$FrameBuffer_8h.html" title=" " alt="" coords="163,93,317,133"/>
-<area shape="rect" id="node9" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="178,269,427,295"/>
-<area shape="rect" id="node3" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="258,416,409,456"/>
-<area shape="rect" id="node6" href="$LVGLDriver_8h.html" title=" " alt="" coords="51,416,234,456"/>
-<area shape="rect" id="node4" href="$Boards_8h.html" title=" " alt="" coords="252,511,415,537"/>
-<area shape="rect" id="node8" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="101,181,304,221"/>
+<area shape="rect" id="node1" title=" " alt="" coords="253,5,408,45"/>
+<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="101,343,214,368"/>
+<area shape="rect" id="node6" href="$SpriteDisplay_8h.html" title=" " alt="" coords="5,592,160,632"/>
+<area shape="rect" id="node9" href="$FrameBuffer_8h.html" title=" " alt="" coords="159,93,313,133"/>
+<area shape="rect" id="node11" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="174,269,423,295"/>
+<area shape="rect" id="node3" href="$LCDBoardsCommon_8h.html" title=" " alt="" coords="255,416,423,456"/>
+<area shape="rect" id="node8" href="$LVGLDriver_8h.html" title=" " alt="" coords="47,416,230,456"/>
+<area shape="rect" id="node4" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="263,504,414,544"/>
+<area shape="rect" id="node7" href="$LCDBoardsSDL_8h.html" title="LCDBoard for the SDL2 desktop backend &#45; renders to a window via DisplayDriverSDL and maps the mouse t..." alt="" coords="89,504,239,544"/>
+<area shape="rect" id="node5" href="$Boards_8h.html" title=" " alt="" coords="257,599,420,625"/>
+<area shape="rect" id="node10" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="97,181,300,221"/>
 </map>

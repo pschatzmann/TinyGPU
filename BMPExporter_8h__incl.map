@@ -1,8 +1,9 @@
 <map id="src/TinyGPU/IO/BMPExporter.h" name="src/TinyGPU/IO/BMPExporter.h">
-<area shape="rect" id="node1" title=" " alt="" coords="171,5,390,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="262,225,337,251"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,225,76,251"/>
-<area shape="rect" id="node4" href="$ISurface_8h.html" title=" " alt="" coords="91,79,291,104"/>
-<area shape="rect" id="node6" title=" " alt="" coords="387,79,451,104"/>
-<area shape="rect" id="node5" href="$RGB565_8h.html" title=" " alt="" coords="78,152,262,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="245,5,464,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,225,80,251"/>
+<area shape="rect" id="node3" title=" " alt="" coords="359,225,430,251"/>
+<area shape="rect" id="node4" href="$ISurface_8h.html" title=" " alt="" coords="165,79,365,104"/>
+<area shape="rect" id="node7" title=" " alt="" coords="483,79,547,104"/>
+<area shape="rect" id="node5" title=" " alt="" coords="81,152,149,177"/>
+<area shape="rect" id="node6" href="$RGB565_8h.html" title=" " alt="" coords="173,152,357,177"/>
 </map>

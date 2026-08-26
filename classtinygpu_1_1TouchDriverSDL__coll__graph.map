@@ -1,0 +1,5 @@
+<map id="TouchDriverSDL" name="TouchDriverSDL">
+<area shape="rect" id="node1" title="Maps the desktop mouse to a TouchDriver, for exercising touch&#45;driven UI (buttons, sliders,..." alt="" coords="5,168,129,193"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="18,93,117,119"/>
+<area shape="rect" id="node3" href="$structtinygpu_1_1CalibrationData.html" title="Touch calibration configuration." alt="" coords="5,5,129,31"/>
+</map>

@@ -1,14 +1,15 @@
 <map id="src/TinyGPU/ThreeD/WireFrame3D.h" name="src/TinyGPU/ThreeD/WireFrame3D.h">
-<area shape="rect" id="node1" title=" " alt="" coords="366,5,518,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="10,240,84,265"/>
-<area shape="rect" id="node3" title=" " alt="" coords="270,240,341,265"/>
-<area shape="rect" id="node4" title=" " alt="" coords="258,93,343,119"/>
-<area shape="rect" id="node5" title=" " alt="" coords="368,93,430,119"/>
-<area shape="rect" id="node6" title=" " alt="" coords="455,93,514,119"/>
-<area shape="rect" id="node7" href="$ISurface_8h.html" title=" " alt="" coords="34,93,234,119"/>
-<area shape="rect" id="node9" href="$TinyGPUConfig_8h.html" title=" " alt="" coords="799,93,930,119"/>
-<area shape="rect" id="node12" href="$Vector_8h.html" title=" " alt="" coords="589,93,774,119"/>
-<area shape="rect" id="node8" href="$RGB565_8h.html" title=" " alt="" coords="84,167,268,192"/>
-<area shape="rect" id="node10" title=" " alt="" coords="658,167,721,192"/>
-<area shape="rect" id="node11" href="$PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="752,167,976,192"/>
+<area shape="rect" id="node1" title=" " alt="" coords="499,5,651,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,240,80,265"/>
+<area shape="rect" id="node3" title=" " alt="" coords="266,240,337,265"/>
+<area shape="rect" id="node4" title=" " alt="" coords="483,93,568,119"/>
+<area shape="rect" id="node5" title=" " alt="" coords="593,93,655,119"/>
+<area shape="rect" id="node6" title=" " alt="" coords="680,93,739,119"/>
+<area shape="rect" id="node7" href="$ISurface_8h.html" title=" " alt="" coords="201,93,401,119"/>
+<area shape="rect" id="node10" href="$TinyGPUConfig_8h.html" title=" " alt="" coords="973,93,1104,119"/>
+<area shape="rect" id="node13" href="$Vector_8h.html" title=" " alt="" coords="763,93,949,119"/>
+<area shape="rect" id="node8" title=" " alt="" coords="339,167,407,192"/>
+<area shape="rect" id="node9" href="$RGB565_8h.html" title=" " alt="" coords="80,167,264,192"/>
+<area shape="rect" id="node11" title=" " alt="" coords="833,167,895,192"/>
+<area shape="rect" id="node12" href="$PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="927,167,1151,192"/>
 </map>

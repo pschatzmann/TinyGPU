@@ -1,9 +1,10 @@
 <map id="src/TinyGPU/Font/LinePrinter.h" name="src/TinyGPU/Font/LinePrinter.h">
-<area shape="rect" id="node1" title=" " alt="" coords="79,5,297,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="59,5,277,31"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,79,64,104"/>
-<area shape="rect" id="node3" href="$IFont_8h.html" title=" " alt="" coords="313,79,471,104"/>
-<area shape="rect" id="node7" href="$ISurface_8h.html" title=" " alt="" coords="88,79,288,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="163,225,237,251"/>
-<area shape="rect" id="node5" title=" " alt="" coords="294,225,365,251"/>
-<area shape="rect" id="node6" href="$RGB565_8h.html" title=" " alt="" coords="108,152,292,177"/>
+<area shape="rect" id="node3" href="$IFont_8h.html" title=" " alt="" coords="89,79,247,104"/>
+<area shape="rect" id="node7" href="$ISurface_8h.html" title=" " alt="" coords="272,79,472,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="131,225,205,251"/>
+<area shape="rect" id="node5" title=" " alt="" coords="262,225,333,251"/>
+<area shape="rect" id="node6" href="$RGB565_8h.html" title=" " alt="" coords="76,152,260,177"/>
+<area shape="rect" id="node8" title=" " alt="" coords="437,152,505,177"/>
 </map>

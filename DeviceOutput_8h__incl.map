@@ -3,8 +3,9 @@
 <area shape="rect" id="node2" title=" " alt="" coords="5,93,89,119"/>
 <area shape="rect" id="node3" title=" " alt="" coords="113,93,168,119"/>
 <area shape="rect" id="node4" title=" " alt="" coords="221,313,292,339"/>
-<area shape="rect" id="node5" href="$ISurface_8h.html" title=" " alt="" coords="286,167,486,192"/>
-<area shape="rect" id="node8" href="$DisplayDriver_8h.html" title=" " alt="" coords="295,93,528,119"/>
-<area shape="rect" id="node6" title=" " alt="" coords="478,313,553,339"/>
-<area shape="rect" id="node7" href="$RGB565_8h.html" title=" " alt="" coords="294,240,478,265"/>
+<area shape="rect" id="node5" href="$ISurface_8h.html" title=" " alt="" coords="277,167,477,192"/>
+<area shape="rect" id="node9" href="$Drivers_2DisplayDriver_8h.html" title=" " alt="" coords="295,93,528,119"/>
+<area shape="rect" id="node6" title=" " alt="" coords="295,240,363,265"/>
+<area shape="rect" id="node7" title=" " alt="" coords="571,313,646,339"/>
+<area shape="rect" id="node8" href="$RGB565_8h.html" title=" " alt="" coords="387,240,571,265"/>
 </map>
