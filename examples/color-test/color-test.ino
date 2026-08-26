@@ -18,14 +18,22 @@
  * description of each band, in case a tint or swap makes a band
  * ambiguous by eye alone.
  *
- * Tested on the ESP32 Cheap Yellow Display (ESP32-2432S028R), a 240x320
- * ILI9341 SPI TFT board with a CST816S capacitive touch controller -
- * built up here via the LCDBoardGuitionESP32_LVGL_2_4Display board class
- * (LCDBoardsESP32.h), so its pin wiring doesn't need to be repeated here.
- * Swap the board type below for a different LCDBoard if yours differs.
+ * Cross-platform: unchanged source runs on both an ESP32 board and the
+ * SDL2 desktop backend (mouse click stands in for a tap - see
+ * TouchDriverSDL), since both are reached through the same LCDBoard
+ * interface (see LCDBoards.h, which picks the right board class per
+ * platform automatically).
+ *
+ * On ESP32 this targets the ESP32 Cheap Yellow Display (ESP32-2432S028R),
+ * a 240x320 ILI9341 SPI TFT board with a CST816S capacitive touch
+ * controller - built up via the LCDBoardGuitionESP32_LVGL_2_4Display board
+ * class (LCDBoardsESP32.h), so its pin wiring doesn't need to be repeated
+ * here. Swap the board type below for a different LCDBoard if yours
+ * differs. On desktop it opens an SDL2 window of the same size via
+ * LCDBoardDesktopSDL.
  */
 #include <TinyGPU.h>
-#include <TinyGPU/Boards/LCDBoardsESP32.h>
+#include <TinyGPU/Boards/LCDBoards.h>
 #include <TinyGPU/Surface/SpriteDisplay.h>
 
 // Plain RGB565 - no field-swap compensation needed. The earlier color
@@ -38,7 +46,11 @@ using PixelT = RGB565;
 constexpr int kDisplayWidth = 240;
 constexpr int kDisplayHeight = 320;
 
-ESP32CheapYellowDisplay board;
+#ifdef ESP32
+LCDBoardGuitionESP32_LVGL_2_4Display board;
+#else
+LCDBoardDesktopSDL board(kDisplayWidth, kDisplayHeight);
+#endif
 SpriteDisplay<PixelT> display(board);
 BitmapFont<PixelT> font;
 
@@ -93,8 +105,10 @@ void showGreyscaleTest() {
     snprintf(label, sizeof(label), "%2d: %3d", i, value);
     addLabeledBand(0, i * bandHeight, kDisplayWidth, bandHeight, color,
                   textColor, label);
-    Serial.printf("  band %2d: grey %3d  packed 0x%04X\n", i, value,
-                  color.getValueSwapped());
+    char logLine[48];
+    snprintf(logLine, sizeof(logLine), "  band %2d: grey %3d  packed 0x%04X",
+             i, value, color.getValueSwapped());
+    Serial.println(logLine);
   }
 }
 

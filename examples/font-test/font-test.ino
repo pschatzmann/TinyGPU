@@ -14,14 +14,22 @@
  * Tap the screen to cycle to the next font. Serial also prints which
  * font is showing.
  *
- * Tested on the ESP32 Cheap Yellow Display (ESP32-2432S028R), a 240x320
- * ILI9341 SPI TFT board with a CST816S capacitive touch controller -
- * built up here via the LCDBoardGuitionESP32_LVGL_2_4Display board class
- * (LCDBoardsESP32.h), so its pin wiring doesn't need to be repeated here.
- * Swap the board type below for a different LCDBoard if yours differs.
+ * Cross-platform: unchanged source runs on both an ESP32 board and the
+ * SDL2 desktop backend (mouse click stands in for a tap - see
+ * TouchDriverSDL), since both are reached through the same LCDBoard
+ * interface (see LCDBoards.h, which picks the right board class per
+ * platform automatically).
+ *
+ * On ESP32 this targets the ESP32 Cheap Yellow Display (ESP32-2432S028R),
+ * a 240x320 ILI9341 SPI TFT board with a CST816S capacitive touch
+ * controller - built up via the LCDBoardGuitionESP32_LVGL_2_4Display board
+ * class (LCDBoardsESP32.h), so its pin wiring doesn't need to be repeated
+ * here. Swap the board type below for a different LCDBoard if yours
+ * differs. On desktop it opens an SDL2 window of the same size via
+ * LCDBoardDesktopSDL.
  */
 #include <TinyGPU.h>
-#include <TinyGPU/Boards/LCDBoardsESP32.h>
+#include <TinyGPU/Boards/LCDBoards.h>
 #include <TinyGPU/Surface/SpriteDisplay.h>
 
 using PixelT = RGB565;
@@ -30,7 +38,11 @@ using PixelT = RGB565;
 constexpr int kDisplayWidth = 240;
 constexpr int kDisplayHeight = 320;
 
-ESP32CheapYellowDisplay board;
+#ifdef ESP32
+LCDBoardGuitionESP32_LVGL_2_4Display board;
+#else
+LCDBoardDesktopSDL board(kDisplayWidth, kDisplayHeight);
+#endif
 SpriteDisplay<PixelT> display(board);
 
 // Fixed 5x7 font used for page headers, independent of whichever font is
@@ -109,8 +121,11 @@ void showFontPage(size_t index) {
   y += testFont.getHeight(2) + 10;
   drawLine(y, testFont.getHeight(3), testFont, "AaBb", white, black, 3);
 
-  Serial.printf("Font %u/%u: %s\n", static_cast<unsigned>(index + 1),
-               static_cast<unsigned>(kFontCount), fonts[index].name);
+  char logLine[64];
+  snprintf(logLine, sizeof(logLine), "Font %u/%u: %s",
+          static_cast<unsigned>(index + 1),
+          static_cast<unsigned>(kFontCount), fonts[index].name);
+  Serial.println(logLine);
 }
 
 void setup() {

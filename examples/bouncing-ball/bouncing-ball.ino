@@ -1,10 +1,16 @@
 /**
  * @file bouncing-ball.ino
- * @brief TinyGPU bouncing ball demo for the ESP32 Cheap Yellow Display
- * (ESP32-2432S028R), a 240x320 ILI9341 SPI TFT board - built up here via
- * the LCDBoardGuitionESP32_LVGL_2_4Display board class (LCDBoardsESP32.h),
- * so its pin wiring doesn't need to be repeated here. Swap the board type
- * below for a different LCDBoard if yours differs.
+ * @brief Cross-platform TinyGPU bouncing ball demo - unchanged source runs
+ * on both an ESP32 board and the SDL2 desktop backend, since both are
+ * reached through the same LCDBoard interface (see LCDBoards.h, which
+ * picks the right board class per platform automatically).
+ *
+ * On ESP32 this targets the ESP32 Cheap Yellow Display (ESP32-2432S028R),
+ * a 240x320 ILI9341 SPI TFT board - built up via the
+ * LCDBoardGuitionESP32_LVGL_2_4Display board class (LCDBoardsESP32.h), so
+ * its pin wiring doesn't need to be repeated here. Swap the board type
+ * below for a different LCDBoard if yours differs. On desktop it opens an
+ * SDL2 window of the same size via LCDBoardDesktopSDL.
  *
  * A full 240x320 RGB565 framebuffer needs ~150 KB in one contiguous
  * allocation, which a classic ESP32 without PSRAM often can't satisfy even
@@ -30,11 +36,17 @@
  */
 
 #include <TinyGPU.h>
-#include <TinyGPU/Boards/LCDBoardsESP32.h>
+#include <TinyGPU/Boards/LCDBoards.h>
 
 // --- display geometry ---------------------------------------------------
 constexpr int kDisplayWidth = 240;
 constexpr int kDisplayHeight = 320;
+
+#ifdef ESP32
+LCDBoardGuitionESP32_LVGL_2_4Display board;
+#else
+LCDBoardDesktopSDL board(kDisplayWidth, kDisplayHeight);
+#endif
 
 // --- initial full-screen draw geometry ------------------------------------
 // 240 x 40 x 2 bytes = 19,200 bytes per band, well under any single-alloc
@@ -50,7 +62,6 @@ constexpr int kSpriteSize = 40;
 
 SurfaceRGB565 band(kDisplayWidth, kBandHeight, FontRGB565);
 SurfaceRGB565 spriteWindow(kSpriteSize, kSpriteSize, FontRGB565);
-ESP32CheapYellowDisplay board;
 
 // --- ball state -----------------------------------------------------------
 constexpr float kBallRadius = 14.0f;

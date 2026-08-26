@@ -177,24 +177,29 @@ class SpriteDisplay {
     displaySprite(sprite.x, sprite.y, sprite.currentSprite());
   }
 
-  /// Scales a sprite image and redraws it at its current position.
+  /// Scales a sprite image and redraws it at its current position. Always
+  /// re-renders from the pristine original at (scale, currentAngleDegrees)
+  /// - see renderTransformedSprite() in SpriteInfo.h for why.
   void scaleSprite(SpriteInfo<RGB_T, Surface<RGB_T>>& sprite, float scale) {
     TinyGPULogger.log(TinyGPULoggerClass::INFO,
                       "Scaling sprite at (%zu, %zu) by %.2f", sprite.x,
                       sprite.y, scale);
-    applyTransformedSprite(
-        sprite, scaleSpriteImage(sprite.currentSprite(), scale, defaultFont_));
+    sprite.currentScale = scale;
+    applyTransformedSprite(sprite,
+                           renderTransformedSprite(sprite, defaultFont_));
   }
 
-  /// Rotates a sprite image and redraws it at its current position.
+  /// Rotates a sprite image and redraws it at its current position. Always
+  /// re-renders from the pristine original at (currentScale, angleDegrees)
+  /// - see renderTransformedSprite() in SpriteInfo.h for why.
   void rotateSprite(SpriteInfo<RGB_T, Surface<RGB_T>>& sprite,
                     float angleDegrees) {
     TinyGPULogger.log(TinyGPULoggerClass::INFO,
                       "Rotating sprite at (%zu, %zu) by %.2f degrees", sprite.x,
                       sprite.y, angleDegrees);
-    applyTransformedSprite(
-        sprite, rotateSpriteImage(sprite.currentSprite(), angleDegrees,
-                                  sprite.invisibleColor, defaultFont_));
+    sprite.currentAngleDegrees = angleDegrees;
+    applyTransformedSprite(sprite,
+                           renderTransformedSprite(sprite, defaultFont_));
   }
 
   /// Clears the display and resets the background color.
@@ -272,10 +277,15 @@ class SpriteDisplay {
     const Rect oldBounds{spriteInfo.x, spriteInfo.y,
                          spriteInfo.currentSprite().width(),
                          spriteInfo.currentSprite().height()};
-    const size_t anchoredX = centeredCoordinate(spriteInfo.x, oldBounds.width,
-                                                transformedSprite.width());
-    const size_t anchoredY = centeredCoordinate(spriteInfo.y, oldBounds.height,
+    // See FrameBuffer::applyTransformedSprite() for why this must be the
+    // clamped (post-setTransformedSprite) size, not transformedSprite's
+    // own raw size.
+    const Rect clamped = spriteInfo.clampedSize(transformedSprite.width(),
                                                 transformedSprite.height());
+    const size_t anchoredX =
+        centeredCoordinate(spriteInfo.x, oldBounds.width, clamped.width);
+    const size_t anchoredY =
+        centeredCoordinate(spriteInfo.y, oldBounds.height, clamped.height);
 
     clearSprite(spriteInfo.x, spriteInfo.y, oldBounds.width, oldBounds.height);
 

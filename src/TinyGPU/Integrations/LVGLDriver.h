@@ -24,7 +24,7 @@ class LVGLDriver {
                "be a 16-bit pixel type.");
 
  public:
-  LVGLDriver(DisplayDriverSPI<RGB_T>& driver, size_t x, size_t y,
+  LVGLDriver(DisplayDriver<RGB_T>& driver, size_t x, size_t y,
              size_t bufferSize = 0) {
     this->driver = &driver;
     this->disp_x = x;
@@ -152,9 +152,10 @@ class LVGLDriver {
   /// nullptr if no touch driver is available.
   TouchDriver& touchDriver() { return *touch_driver; }
 
-  /// Provides a reference to the underlying DisplayDriverSPI instance used by
-  /// this LVGLDriver.
-  DisplayDriverSPI<RGB_T>& getDriver() { return *driver; }
+  /// Provides a reference to the underlying DisplayDriver instance used by
+  /// this LVGLDriver (an SPI panel driver on ESP32, DisplayDriverSDL on
+  /// desktop, or any other DisplayDriver<RGB_T> implementation).
+  DisplayDriver<RGB_T>& getDriver() { return *driver; }
 
   /// Applies independent per-channel gamma correction to every color LVGL
   /// renders, before RGB_T's own field layout/compensation is applied.
@@ -180,7 +181,7 @@ class LVGLDriver {
 
  protected:
   Vector<uint8_t> buf_1;
-  DisplayDriverSPI<RGB_T>* driver = nullptr;
+  DisplayDriver<RGB_T>* driver = nullptr;
   TouchDriver* touch_driver = nullptr;
   lv_display_t* disp = nullptr;
   size_t disp_x = 0;
@@ -259,12 +260,19 @@ class LVGLDriver {
     lv_indev_set_display(indev, disp);  // Binds touch to this specific display
     lv_indev_set_user_data(indev, &touchDriver());
 
-    // Set static touch read callback
+    // Set static touch read callback. isTouched() must be called before
+    // getPoint() - per TouchDriver's documented contract (see
+    // TouchDriver.h), isTouched() is where a controller read/event-pump
+    // happens for drivers that need one (e.g. TouchDriverSDL polls SDL's
+    // event queue there to update its mouse state; getPoint() alone would
+    // never see a fresh position). Every other TouchDriver consumer in
+    // TinyGPU (e.g. FrameBuffer::processTouch()) follows this same
+    // isTouched()-then-getPoint() order.
     lv_indev_set_read_cb(indev, [](lv_indev_t* indev, lv_indev_data_t* data) {
       auto* touch =
           static_cast<TouchDriver*>(lv_indev_get_user_data(indev));
       Point p;
-      if (touch && touch->getPoint(p)) {
+      if (touch && touch->isTouched() && touch->getPoint(p)) {
         data->point.x = p.x;
         data->point.y = p.y;
         data->state = LV_INDEV_STATE_PRESSED;
@@ -277,12 +285,15 @@ class LVGLDriver {
   }
 
   void dumpBuffer(const uint8_t* data, size_t len) {
+    char lineHeader[10];
+    char byteStr[4];
     for (size_t i = 0; i < len; ++i) {
       if ((i % 16) == 0) {
-        Serial.printf("\n%06u: ", (unsigned)i);
+        snprintf(lineHeader, sizeof(lineHeader), "\n%06u: ", (unsigned)i);
+        Serial.print(lineHeader);
       }
-
-      Serial.printf("%02X ", data[i]);
+      snprintf(byteStr, sizeof(byteStr), "%02X ", data[i]);
+      Serial.print(byteStr);
     }
 
     Serial.println();

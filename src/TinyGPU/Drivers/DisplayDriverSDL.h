@@ -2,6 +2,7 @@
 #include <SDL.h>
 
 #include <cstdint>
+#include <cstdlib>
 #include <vector>
 
 #include "TinyGPU/Drivers/DisplayDriver.h"
@@ -13,6 +14,13 @@ namespace tinygpu {
  * @brief Display class for rendering a Surface<RGB565> using the SDL2 library.
  * This class can be used to display the contents of a TinyGPU Surface<RGB565>
  * on a desktop environment for testing and debugging purposes.
+ *
+ * writeData() drains the SDL event queue on every call and exits the process
+ * on SDL_QUIT (i.e. the window's close button), since sketches that never
+ * touch a TouchDriverSDL - the only other place that pumps events - would
+ * otherwise leave the window unresponsive to being closed: with no one
+ * calling SDL_PollEvent, the window manager's close request just piles up in
+ * SDL's queue and the OS reports the window as hung.
  */
 template <typename RGB_T = RGB565>
 class DisplayDriverSDL : public DisplayDriver<RGB_T> {
@@ -48,6 +56,12 @@ class DisplayDriverSDL : public DisplayDriver<RGB_T> {
   bool writeData(ISurface<RGB_T>& surface, size_t x, size_t y) override {
     static_assert(sizeof(RGB_T) == 2,
                   "DisplayDriverSDL assumes a 16bpp RGB_T (RGB565)");
+    SDL_Event event;
+    while (SDL_PollEvent(&event)) {
+      if (event.type == SDL_QUIT) {
+        exit(0);
+      }
+    }
     setAddressWindow(x, y, surface.width(), surface.height());
     SDL_Rect updateRect = {static_cast<int>(x), static_cast<int>(y),
                            static_cast<int>(surface.width()),

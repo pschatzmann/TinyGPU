@@ -19,7 +19,10 @@ if (DEFINED ESP_PLATFORM)
 
 else()
 
-    project(TinyGPU LANGUAGES CXX)
+    # C is needed alongside CXX because lvgl (pulled in by the desktop build
+    # of lvgl-example, if that sibling Arduino library is present) is a C
+    # library - see examples/lvgl-example/CMakeLists.txt.
+    project(TinyGPU LANGUAGES C CXX)
 
     # Set C++ standard
     set(CMAKE_CXX_STANDARD 17)

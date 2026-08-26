@@ -1,34 +1,19 @@
 /**
- * Memory optimized example using the SpriteDisplay class to draw a single
- * sprite on the screen. The sprite is drawn directly on the screen without
- * using a framebuffer to minimize the required memory. The Sprites are also
- * supporting touch events and can be moved, scaled and rotated.
+ * @file sprite-display-demo.ino
+ * @brief Draws two colored squares on a red background directly on the
+ * display via SpriteDisplay (no framebuffer), and lets you drag them
+ * around with touch/mouse input through GestureDetector.
  *
- * Tested on the ESP32 Cheap Yellow Display (ESP32-2432S028R), a 240x320
- * ILI9341 SPI TFT board with a CST816S capacitive touch controller -
- * built up here via the LCDBoardGuitionESP32_LVGL_2_4Display board class
- * (LCDBoardsESP32.h), so its pin wiring doesn't need to be repeated here.
- * Swap the board type below for a different LCDBoard if yours differs -
- * e.g. a resistive-touch (XPT2046) variant of this board family needs a
- * different LCDBoard/TouchDriver pairing than this capacitive one.
- *
- * This panel's ILI9341-compatible controller also doesn't honor the MADCTL
- * BGR/RGB bit per the datasheet - colors sent as standard RGB565 come out
- * with green and blue swapped (confirmed on real hardware: a green fill
- * shows up blue and vice versa). This example no longer compensates for
- * that quirk (the RBG565 field-swap workaround was removed); if you hit
- * it on your own panel, swap the green/blue arguments at each color
- * constructor call below as a manual workaround.
- *
- * pinch_in/pinch_out/rotate need a second simultaneous touch point, which
- * this board's single-touch CST816S can never supply, so they won't fire
- * here even though GestureDetector supports them for multi-touch hardware.
+ * Runs unchanged on an ESP32 board or the SDL2 desktop backend, both
+ * reached through the same LCDBoard interface (see LCDBoards.h).
  */
 #include <TinyGPU.h>
-#include <TinyGPU/Boards/LCDBoardsESP32.h>
+#include <TinyGPU/Boards/LCDBoards.h>
 #include <TinyGPU/Surface/SpriteDisplay.h>
 #include <TinyGPU/Input/GestureDetector.h>
-#include <lvgl.h>
+
+constexpr int kDisplayWidth = 240;
+constexpr int kDisplayHeight = 320;
 
 RGB565 red(255, 0, 0);
 RGB565 green(0, 255, 0);
@@ -36,7 +21,11 @@ RGB565 blue(0, 0, 255);
 RGB565 white(255, 255, 255);
 RGB565 black(0, 0, 0);
 
-ESP32CheapYellowDisplay board;
+#ifdef ESP32
+LCDBoardGuitionESP32_LVGL_2_4Display board;
+#else
+LCDBoardDesktopSDL board(kDisplayWidth, kDisplayHeight);
+#endif
 SpriteDisplay<RGB565> display(board, red);
 GestureDetector gestures;
 
@@ -51,9 +40,12 @@ bool isOverSprite(int16_t x, int16_t y) {
 }
 
 void onGesture(GestureEvent& e) {
-  Serial.printf("[Gesture] %s at (%d, %d) delta=(%d, %d) duration=%lums\n",
-                toString(e.type), e.point.x, e.point.y, e.deltaX, e.deltaY,
-                static_cast<unsigned long>(e.durationMs));
+  char logLine[96];
+  snprintf(logLine, sizeof(logLine),
+          "[Gesture] %s at (%d, %d) delta=(%d, %d) duration=%lums",
+          toString(e.type), e.point.x, e.point.y, e.deltaX, e.deltaY,
+          static_cast<unsigned long>(e.durationMs));
+  Serial.println(logLine);
 
   if (e.type != GestureType::kDrag) return;
 

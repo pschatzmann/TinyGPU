@@ -1,25 +1,32 @@
 /**
  * @file lvgl-example.ino
- * @brief TinyGPU LVGL v9 dashboard example for the ESP32 Cheap Yellow
- * Display (ESP32-2432S028R), a 240x320 ILI9341 SPI TFT board - built up
- * here via the LCDBoardGuitionESP32_LVGL_2_4Display board class
- * (LCDBoardsESP32.h), so its pin wiring doesn't need to be repeated here.
- * Swap the board type below for a different LCDBoard if yours differs.
+ * @brief Cross-platform TinyGPU LVGL v9 dashboard example - unchanged
+ * source runs on both an ESP32 board and the SDL2 desktop backend, since
+ * both are reached through the same LCDBoard interface (see LCDBoards.h,
+ * which picks the right board class per platform automatically) and
+ * LVGLDriver accepts any DisplayDriver<RGB_T>, not just an SPI one.
+ *
+ * On ESP32 this targets the ESP32 Cheap Yellow Display (ESP32-2432S028R),
+ * a 240x320 ILI9341 SPI TFT board - built up via the
+ * LCDBoardGuitionESP32_LVGL_2_4Display board class (LCDBoardsESP32.h), so
+ * its pin wiring doesn't need to be repeated here. Swap the board type
+ * below for a different LCDBoard if yours differs. On desktop it opens an
+ * SDL2 window of the same size via LCDBoardDesktopSDL.
  *
  * Demonstrates a small interactive dashboard built entirely with LVGL
  * widgets running on top of TinyGPU's LVGLDriver:
  *  - an animated arc gauge driven by a periodic LVGL timer (simulated
  *    sensor reading)
  *  - a slider that drives the display's actual backlight brightness via
- *    PWM, live, as you drag it
+ *    PWM on ESP32 (desktop has no backlight, so it just updates the label)
  *  - a switch that toggles an LED indicator
  *  - a button with a tap counter
- * All of it is touch-interactive through the CST816S capacitive touch
- * controller wired into LVGL's input device system by LVGLDriver.
- *
+ * All of it is touch-interactive: on ESP32 through the CST816S capacitive
+ * touch controller, on desktop through the mouse (see TouchDriverSDL) -
+ * both wired into LVGL's input device system by LVGLDriver.
  */
 #include <TinyGPU.h>
-#include <TinyGPU/Boards/LCDBoardsESP32.h>
+#include <TinyGPU/Boards/LCDBoards.h>
 #include <TinyGPU/Integrations/LVGLDriver.h>
 #include <lvgl.h>
 #include <math.h>
@@ -30,7 +37,12 @@ constexpr int kDisplayHeight = 320;  // 240;
 
 // Explicit buffer allocation size (320 * 20 lines * 2 bytes)
 constexpr size_t kLvglBufferSize = kDisplayWidth * 2;
-ESP32CheapYellowDisplay board;
+
+#ifdef ESP32
+LCDBoardGuitionESP32_LVGL_2_4Display board;
+#else
+LCDBoardDesktopSDL board(kDisplayWidth, kDisplayHeight);
+#endif
 LVGLDriver<RGB565> lvglDriver(board.display(), kDisplayWidth, kDisplayHeight,
                               kLvglBufferSize);
 
@@ -51,12 +63,15 @@ void updateSensor(lv_timer_t* timer) {
   lv_label_set_text_fmt(gaugeLabel, "%d°C", value);
 }
 
-// Slider drag: drives the panel's real backlight brightness via PWM.
+// Slider drag: drives the panel's real backlight brightness via PWM on
+// ESP32. Desktop has no backlight to drive, so it just updates the label.
 void onSliderChanged(lv_event_t* e) {
   lv_obj_t* slider = static_cast<lv_obj_t*>(lv_event_get_target(e));
   int32_t value = lv_slider_get_value(slider);
   lv_label_set_text_fmt(sliderLabel, "Backlight: %ld%%", static_cast<long>(value));
+#ifdef ESP32
   ledcWrite(board.backlightPin(), map(value, 0, 100, 0, 255));
+#endif
 }
 
 void onSwitchToggled(lv_event_t* e) {
@@ -161,10 +176,12 @@ void setup() {
     while (1);
   }
 
+#ifdef ESP32
   // Reconfigure the board's backlight pin for PWM dimming - board.begin()
   // already drove it digitally HIGH (full brightness).
   ledcAttach(board.backlightPin(), 5000, 8);
   ledcWrite(board.backlightPin(), 255);
+#endif
 
   lvglDriver.setTouchDriver(*board.touch());
 

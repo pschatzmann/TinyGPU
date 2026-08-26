@@ -119,13 +119,17 @@ class FrameBuffer : public ISurface<RGB_T> {
     const Rect oldBounds{spriteInfo.x, spriteInfo.y,
                          spriteInfo.currentSprite().width(),
                          spriteInfo.currentSprite().height()};
-    const Rect newBounds{newX, newY, spriteInfo.currentSprite().width(),
-                         spriteInfo.currentSprite().height()};
-    const Rect overlap = Rect::intersect(oldBounds, newBounds);
 
-    restoreExposedPixels(spriteInfo, oldBounds, overlap);
-    Surface<RGB_T> movedBackground =
-        captureUpdatedBackground(spriteInfo, oldBounds, newBounds, overlap);
+    // Always fully restore the old footprint before capturing/drawing the
+    // new one - see restoreFullBounds() for why a "just restore the
+    // exposed ring" optimization is unsafe here.
+    restoreFullBounds(spriteInfo, oldBounds);
+
+    Surface<RGB_T> movedBackground(oldBounds.width, oldBounds.height,
+                                   activeFont());
+    movedBackground.begin();
+    captureFramebufferRegion(movedBackground, 0, 0, newX, newY,
+                             oldBounds.width, oldBounds.height);
 
     spriteInfo.x = newX;
     spriteInfo.y = newY;
@@ -134,24 +138,28 @@ class FrameBuffer : public ISurface<RGB_T> {
                         spriteInfo.invisibleColor);
   }
 
-  /// Scales a sprite image and redraws it at its current position.
+  /// Scales a sprite image and redraws it at its current position. Always
+  /// re-renders from the pristine original at (scale, currentAngleDegrees)
+  /// - see renderTransformedSprite() in SpriteInfo.h for why.
   void scaleSprite(SpriteInfo<RGB_T, SurfaceT>& spriteInfo, float scale) {
     TinyGPULogger.log(TinyGPULoggerClass::INFO,
                       "Scaling sprite at (%zu, %zu) by %.2f", spriteInfo.x,
                       spriteInfo.y, scale);
-    applyTransformedSprite(
-        spriteInfo,
-        scaleSpriteImage(spriteInfo.currentSprite(), scale, activeFont()));
+    spriteInfo.currentScale = scale;
+    applyTransformedSprite(spriteInfo,
+                           renderTransformedSprite(spriteInfo, activeFont()));
   }
 
-  /// Rotates a sprite image and redraws it at its current position.
+  /// Rotates a sprite image and redraws it at its current position. Always
+  /// re-renders from the pristine original at (currentScale, angleDegrees)
+  /// - see renderTransformedSprite() in SpriteInfo.h for why.
   void rotateSprite(SpriteInfo<RGB_T, SurfaceT>& spriteInfo, float angleDegrees) {
     TinyGPULogger.log(TinyGPULoggerClass::INFO,
                       "Rotating sprite at (%zu, %zu) by %.2f degrees",
                       spriteInfo.x, spriteInfo.y, angleDegrees);
-    applyTransformedSprite(
-        spriteInfo, rotateSpriteImage(spriteInfo.currentSprite(), angleDegrees,
-                                      spriteInfo.invisibleColor, activeFont()));
+    spriteInfo.currentAngleDegrees = angleDegrees;
+    applyTransformedSprite(spriteInfo,
+                           renderTransformedSprite(spriteInfo, activeFont()));
   }
 
   /// ISurface<RGB_T> interface delegation
@@ -279,11 +287,6 @@ class FrameBuffer : public ISurface<RGB_T> {
   IFont<RGB_T>& activeFont() { return surface_.font(); }
   Vector<std::unique_ptr<SpriteInfo<RGB_T, SurfaceT>>> sprites_;
 
-  /// Returns true if the rectangle is empty (zero width or height).
-  static bool isEmpty(const Rect& rect) {
-    return rect.width == 0 || rect.height == 0;
-  }
-
   /// Applies a transformed sprite image to the framebuffer and updates
   /// bookkeeping.
   void applyTransformedSprite(SpriteInfo<RGB_T, SurfaceT>& spriteInfo,
@@ -291,17 +294,37 @@ class FrameBuffer : public ISurface<RGB_T> {
     const Rect oldBounds{spriteInfo.x, spriteInfo.y,
                          spriteInfo.currentSprite().width(),
                          spriteInfo.currentSprite().height()};
-    const size_t anchoredX = centeredCoordinate(spriteInfo.x, oldBounds.width,
-                                                transformedSprite.width());
-    const size_t anchoredY = centeredCoordinate(spriteInfo.y, oldBounds.height,
+    // Bounds/anchoring must reflect the size the sprite will actually end
+    // up stored/drawn at (see SpriteInfo::clampedSize()), not
+    // transformedSprite's own raw size - once a fixed max buffer exists,
+    // setTransformedSprite() below clamps to it (e.g. a rotated image's
+    // larger bounding box gets cropped down), and using the raw size here
+    // instead would restore/capture the wrong screen region, leaving
+    // stale sprite pixels un-restored or corrupting the saved background.
+    const Rect clamped = spriteInfo.clampedSize(transformedSprite.width(),
                                                 transformedSprite.height());
-    const Rect newBounds{anchoredX, anchoredY, transformedSprite.width(),
-                         transformedSprite.height()};
-    const Rect overlap = Rect::intersect(oldBounds, newBounds);
+    const size_t anchoredX =
+        centeredCoordinate(spriteInfo.x, oldBounds.width, clamped.width);
+    const size_t anchoredY =
+        centeredCoordinate(spriteInfo.y, oldBounds.height, clamped.height);
+    const Rect newBounds{anchoredX, anchoredY, clamped.width, clamped.height};
 
-    restoreExposedPixels(spriteInfo, oldBounds, overlap);
-    Surface<RGB_T> updatedBackground =
-        captureUpdatedBackground(spriteInfo, oldBounds, newBounds, overlap);
+    // Always fully restore the old footprint before capturing/drawing the
+    // new one - see restoreFullBounds() for why a "just restore the
+    // exposed ring" optimization is unsafe here: unlike a pure move,
+    // scaling/rotating can turn a pixel that was opaque at some position
+    // *within* the old and new bounds' geometric overlap into a
+    // background/invisible one (e.g. scaling down shrinks the opaque
+    // area), and drawSprite() below skips writing wherever the new image
+    // is background-colored - so any pixel not explicitly restored here
+    // stays stuck showing the old, larger sprite's color forever.
+    restoreFullBounds(spriteInfo, oldBounds);
+
+    Surface<RGB_T> updatedBackground(newBounds.width, newBounds.height,
+                                     activeFont());
+    updatedBackground.begin();
+    captureFramebufferRegion(updatedBackground, 0, 0, newBounds.x,
+                             newBounds.y, newBounds.width, newBounds.height);
 
     spriteInfo.x = anchoredX;
     spriteInfo.y = anchoredY;
@@ -324,73 +347,27 @@ class FrameBuffer : public ISurface<RGB_T> {
                : static_cast<size_t>(std::lround(centeredPosition));
   }
 
-  /// Restores only the pixels exposed by moving a sprite, using the overlap
-  /// region.
-  void restoreExposedPixels(const SpriteInfo<RGB_T, SurfaceT>& spriteInfo, const Rect& oldBounds,
-                            const Rect& overlap) {
-    if (isEmpty(overlap)) {
-      restoreOriginalPixels(spriteInfo);
-      return;
-    }
-
-    drawSpriteRegion(spriteInfo.originalPixels, 0, 0, oldBounds.x, oldBounds.y,
-                     oldBounds.width, overlap.y - oldBounds.y);
-
-    const size_t overlapBottom = overlap.y + overlap.height;
-    drawSpriteRegion(spriteInfo.originalPixels, 0, overlapBottom - oldBounds.y,
-                     oldBounds.x, overlapBottom, oldBounds.width,
-                     (oldBounds.y + oldBounds.height) - overlapBottom);
-
-    drawSpriteRegion(spriteInfo.originalPixels, 0, overlap.y - oldBounds.y,
-                     oldBounds.x, overlap.y, overlap.x - oldBounds.x,
-                     overlap.height);
-
-    const size_t overlapRight = overlap.x + overlap.width;
-    drawSpriteRegion(spriteInfo.originalPixels, overlapRight - oldBounds.x,
-                     overlap.y - oldBounds.y, overlapRight, overlap.y,
-                     (oldBounds.x + oldBounds.width) - overlapRight,
-                     overlap.height);
-  }
-
-  /// Captures the updated background pixels after a sprite move/transform.
-  Surface<RGB_T> captureUpdatedBackground(const SpriteInfo<RGB_T, SurfaceT>& spriteInfo,
-                                          const Rect& oldBounds,
-                                          const Rect& newBounds,
-                                          const Rect& overlap) {
-    Surface<RGB_T> updatedBackground(newBounds.width, newBounds.height,
-                                     activeFont());
-    updatedBackground.begin();
-
-    if (isEmpty(overlap)) {
-      captureFramebufferRegion(updatedBackground, 0, 0, newBounds.x,
-                               newBounds.y, newBounds.width, newBounds.height);
-      return updatedBackground;
-    }
-
-    copySpriteRegion(spriteInfo.originalPixels, overlap.x - oldBounds.x,
-                     overlap.y - oldBounds.y, updatedBackground,
-                     overlap.x - newBounds.x, overlap.y - newBounds.y,
-                     overlap.width, overlap.height);
-
-    captureFramebufferRegion(updatedBackground, 0, 0, newBounds.x, newBounds.y,
-                             newBounds.width, overlap.y - newBounds.y);
-
-    const size_t overlapBottom = overlap.y + overlap.height;
-    captureFramebufferRegion(updatedBackground, 0, overlapBottom - newBounds.y,
-                             newBounds.x, overlapBottom, newBounds.width,
-                             (newBounds.y + newBounds.height) - overlapBottom);
-
-    captureFramebufferRegion(updatedBackground, 0, overlap.y - newBounds.y,
-                             newBounds.x, overlap.y, overlap.x - newBounds.x,
-                             overlap.height);
-
-    const size_t overlapRight = overlap.x + overlap.width;
-    captureFramebufferRegion(updatedBackground, overlapRight - newBounds.x,
-                             overlap.y - newBounds.y, overlapRight, overlap.y,
-                             (newBounds.x + newBounds.width) - overlapRight,
-                             overlap.height);
-
-    return updatedBackground;
+  /// Unconditionally restores the entire old sprite footprint to its saved
+  /// background pixels.
+  ///
+  /// This used to be an optimization that only restored the "ring" of
+  /// oldBounds exposed by moving/transforming a sprite, reasoning that the
+  /// geometric overlap between oldBounds and newBounds didn't need
+  /// restoring since the upcoming drawSprite() call would cover it anyway.
+  /// That's only true if the sprite's content is unchanged there - but
+  /// scaling/rotating can turn a pixel that was opaque at some position
+  /// *within* the overlap into a background/invisible one (e.g. scaling
+  /// down shrinks the opaque area), and drawSprite() skips writing
+  /// wherever the new image is background-colored. Any such pixel was
+  /// never restored, so it stayed stuck showing the old, larger sprite's
+  /// color - visible as the old and new sprite sizes overlaid on top of
+  /// each other. Always restoring the full footprint costs a few dozen
+  /// extra pixel writes (bounded by the sprite's small max size) in
+  /// exchange for being correct regardless of what changed.
+  void restoreFullBounds(const SpriteInfo<RGB_T, SurfaceT>& spriteInfo,
+                         const Rect& oldBounds) {
+    drawSpriteRegion(spriteInfo.originalPixels, 0, 0, oldBounds.x,
+                     oldBounds.y, oldBounds.width, oldBounds.height);
   }
 
   /// Draws a rectangular region from a source surface onto the framebuffer.
@@ -407,21 +384,6 @@ class FrameBuffer : public ISurface<RGB_T> {
               framebufferX, framebufferY,
               source.getPixel(sourceX + currentX, sourceY + currentY));
         }
-      }
-    }
-  }
-
-  /// Copies a rectangular region from a source surface to a destination
-  /// surface.
-  static void copySpriteRegion(const ISurface<RGB_T>& source, size_t sourceX,
-                               size_t sourceY, Surface<RGB_T>& destination,
-                               size_t destX, size_t destY, size_t width,
-                               size_t height) {
-    for (size_t currentY = 0; currentY < height; ++currentY) {
-      for (size_t currentX = 0; currentX < width; ++currentX) {
-        destination.setPixel(
-            destX + currentX, destY + currentY,
-            source.getPixel(sourceX + currentX, sourceY + currentY));
       }
     }
   }

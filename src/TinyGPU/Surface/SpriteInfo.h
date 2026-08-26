@@ -57,6 +57,21 @@ struct SpriteInfo {
   const ISurface<RGB_T>* sprite = nullptr;
   bool isSurfaceAutoDelete = false;
   std::unique_ptr<SurfaceT> transformedSprite;
+  // True once transformedSprite actually holds a scaled/rotated image (set by
+  // setTransformedSprite()) rather than just the blank buffer setMaxSize()
+  // preallocates - currentSprite() must not treat that blank buffer as "the"
+  // sprite image, or the original sprite never gets drawn until the first
+  // scaleSprite()/rotateSprite() call.
+  bool hasTransformedContent = false;
+  // Last scale/rotation requested via scaleSprite()/rotateSprite(). Both
+  // are always re-rendered from the pristine `sprite` image using these
+  // two values together (see renderTransformedSprite() below) - never by
+  // re-scaling/re-rotating the already-transformed `transformedSprite`
+  // raster, which would compound nearest-neighbor resampling artifacts
+  // (no interpolation) frame after frame until the image degenerates into
+  // a solid blob within seconds.
+  float currentScale = 1.0f;
+  float currentAngleDegrees = 0.0f;
   SurfaceT originalPixels;
   IFont<RGB_T>& fontRef;
   void (*onTouchCallback)(SpriteInfo&, Point) = nullptr;
@@ -80,9 +95,35 @@ struct SpriteInfo {
     return {x, y, currentSprite().width(), currentSprite().height()};
   }
 
+  /// Returns the size a transformed image of (rawWidth, rawHeight) will
+  /// actually end up stored/drawn at by setTransformedSprite() below. Once
+  /// a fixed buffer exists (from setMaxSize() or an earlier
+  /// setTransformedSprite() call), the drawn size is ALWAYS exactly
+  /// maxWidth x maxHeight - never the raw image's own size - because
+  /// setTransformedSprite() pads a smaller image with invisibleColor
+  /// rather than shrinking the buffer to fit it (e.g. scaling down) and
+  /// crops a larger one down to the buffer (e.g. rotating a square grows
+  /// its bounding box). Only when no fixed buffer exists yet does the
+  /// drawn size match the raw image exactly (setTransformedSprite()
+  /// allocates the very first buffer to fit it precisely).
+  ///
+  /// Callers computing where to anchor/redraw a transformed sprite (see
+  /// FrameBuffer::applyTransformedSprite(), SpriteDisplay::
+  /// applyTransformedSprite()) must use this size, not the raw transformed
+  /// image's own size, or their background restore/capture bounds won't
+  /// match the region setTransformedSprite() + drawSprite() actually
+  /// touch - leaving stale, un-restored pixels on screen (visible as a
+  /// second, "ghost" copy of the sprite trailing the real one).
+  Rect clampedSize(size_t rawWidth, size_t rawHeight) const {
+    if (transformedSprite) {
+      return {0, 0, maxWidth, maxHeight};
+    }
+    return {0, 0, rawWidth, rawHeight};
+  }
+
   /// Returns the sprite image currently used for drawing.
   const ISurface<RGB_T>& currentSprite() const {
-    return transformedSprite
+    return hasTransformedContent
                ? static_cast<const ISurface<RGB_T>&>(*transformedSprite)
                : *sprite;
   }
@@ -121,25 +162,29 @@ struct SpriteInfo {
           std::make_unique<SurfaceT>(maxWidth, maxHeight, newSprite.font());
       transformedSprite->begin();
     }
-    // Only copy the region that fits
-    size_t copyWidth = std::min(maxWidth, newSprite.width());
-    size_t copyHeight = std::min(maxHeight, newSprite.height());
+    // Only copy the region that fits, centered in both the source and the
+    // destination buffer - a top-left crop/pad would visually shift the
+    // sprite toward the top-left corner whenever newSprite is larger or
+    // smaller than the fixed buffer (e.g. a rotated image's larger
+    // bounding box), which would then disagree with the centered anchor
+    // position applyTransformedSprite() computed for it via
+    // SpriteInfo::clampedSize() above.
+    const size_t copyWidth = std::min(maxWidth, newSprite.width());
+    const size_t copyHeight = std::min(maxHeight, newSprite.height());
+    const size_t srcOffsetX = (newSprite.width() - copyWidth) / 2;
+    const size_t srcOffsetY = (newSprite.height() - copyHeight) / 2;
+    const size_t dstOffsetX = (maxWidth - copyWidth) / 2;
+    const size_t dstOffsetY = (maxHeight - copyHeight) / 2;
+
+    transformedSprite->clear(RGB_T(0));
     for (size_t y = 0; y < copyHeight; ++y) {
       for (size_t x = 0; x < copyWidth; ++x) {
-        transformedSprite->setPixel(x, y, newSprite.getPixel(x, y));
+        transformedSprite->setPixel(
+            dstOffsetX + x, dstOffsetY + y,
+            newSprite.getPixel(srcOffsetX + x, srcOffsetY + y));
       }
     }
-    // Optionally clear the rest if newSprite is smaller than max
-    for (size_t y = copyHeight; y < maxHeight; ++y) {
-      for (size_t x = 0; x < maxWidth; ++x) {
-        transformedSprite->setPixel(x, y, RGB_T(0));
-      }
-    }
-    for (size_t y = 0; y < copyHeight; ++y) {
-      for (size_t x = copyWidth; x < maxWidth; ++x) {
-        transformedSprite->setPixel(x, y, RGB_T(0));
-      }
-    }
+    hasTransformedContent = true;
   }
 };
 
@@ -267,6 +312,33 @@ inline Surface<RGB_T> rotateSpriteImage(const ISurface<RGB_T>& source,
   }
 
   return rotatedSprite;
+}
+
+/// Renders spriteInfo's pristine `sprite` image at its currently requested
+/// scale and rotation (SpriteInfo::currentScale/currentAngleDegrees, set by
+/// scaleSprite()/rotateSprite() - see FrameBuffer.h/SpriteDisplay.h) in one
+/// combined pass, shared by FrameBuffer and SpriteDisplay.
+///
+/// This always starts over from the pristine original, never from
+/// spriteInfo.currentSprite() (the previous frame's already-transformed
+/// raster) - scaleSpriteImage()/rotateSpriteImage() use nearest-neighbor
+/// sampling with no interpolation, so repeatedly transforming an
+/// already-transformed raster compounds resampling artifacts frame after
+/// frame until the image degenerates into a solid blob within seconds
+/// (confirmed empirically: an 18x18 circle sprite scaled/rotated every
+/// frame that way fills its entire 40x40 max buffer within ~10 frames).
+/// Re-deriving from the pristine source every time is also the only way to
+/// support an absolute scale/angle contract at all - scaleSprite(info, 1.0)
+/// must be able to undo a previous scaleSprite(info, 1.3), which is
+/// impossible if 1.3x has already been baked irreversibly into the stored
+/// raster.
+template <typename RGB_T, typename SurfaceT>
+inline Surface<RGB_T> renderTransformedSprite(
+    const SpriteInfo<RGB_T, SurfaceT>& spriteInfo, IFont<RGB_T>& font) {
+  Surface<RGB_T> scaled =
+      scaleSpriteImage(*spriteInfo.sprite, spriteInfo.currentScale, font);
+  return rotateSpriteImage(scaled, spriteInfo.currentAngleDegrees,
+                           spriteInfo.invisibleColor, font);
 }
 
 }  // namespace tinygpu
