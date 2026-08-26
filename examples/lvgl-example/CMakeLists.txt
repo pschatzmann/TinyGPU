@@ -19,7 +19,14 @@ if(NOT TARGET lvgl)
   set(LV_BUILD_CONF_DIR "${CMAKE_CURRENT_SOURCE_DIR}" CACHE PATH "" FORCE)
   set(CONFIG_LV_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
   set(CONFIG_LV_BUILD_DEMOS OFF CACHE BOOL "" FORCE)
-  FetchContent_MakeAvailable(lvgl)
+  # add_subdirectory(... EXCLUDE_FROM_ALL) keeps lvgl's own install() rules
+  # from running as part of this project's install - only our own targets
+  # should be installed.
+  FetchContent_GetProperties(lvgl)
+  if(NOT lvgl_POPULATED)
+    FetchContent_Populate(lvgl)
+    add_subdirectory(${lvgl_SOURCE_DIR} ${lvgl_BINARY_DIR} EXCLUDE_FROM_ALL)
+  endif()
 endif()
 
 # Desktop build
