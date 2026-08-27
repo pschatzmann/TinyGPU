@@ -30,8 +30,7 @@ else()
     # C is needed alongside CXX because lvgl (pulled in by the desktop build
     # of lvgl-example, if that sibling Arduino library is present) is a C
     # library - see examples/lvgl-example/CMakeLists.txt.
-    # project(TinyGPU LANGUAGES C CXX)
-    project(TinyGPU LANGUAGES CXX)
+    project(TinyGPU LANGUAGES C CXX)
 
     # Set C++ standard
     set(CMAKE_CXX_STANDARD 17)
@@ -62,7 +61,6 @@ else()
           GIT_REPOSITORY https://github.com/pschatzmann/Arduino-Emulator.git
           GIT_TAG        main
           CMAKE_ARGS -DUSE_RPI=OFF
-          GIT_CLONE_TIMEOUT 600  # Timeout in seconds (e.g., 5 minutes)
         )
         FetchContent_MakeAvailable(arduino_emulator)
 
