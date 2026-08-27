@@ -73,28 +73,21 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">TouchDriver.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
-<code>#include &lt;SPI.h&gt;</code><br />
-<code>#include &lt;Wire.h&gt;</code><br />
-<code>#include &lt;stdint.h&gt;</code><br />
+
+<p>Platform-independent touch driver interface: the Point/ CalibrationData/Rotation types, the TouchDriver base class (calibration storage, raw-to-logical coordinate mapping) and nothing else - this file has no dependency on Arduino.h or any bus library, so including it (e.g. transitively via <a class="el" href="TinyGPU_8h.html">TinyGPU.h</a>) never requires linking against an Arduino core.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="TouchDriverCommon_8h_source.html">TinyGPU/Input/TouchDriverCommon.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TouchDriver.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="TouchDriver_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2Input_2TouchDriver_8h" alt=""/></div>
 <map name="asrc_2TinyGPU_2Input_2TouchDriver_8h" id="asrc_2TinyGPU_2Input_2TouchDriver_8h">
-<area shape="rect" title=" " alt="" coords="67,5,297,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,89,104"/>
-<area shape="rect" title=" " alt="" coords="113,79,168,104"/>
-<area shape="rect" title=" " alt="" coords="193,79,257,104"/>
-<area shape="rect" title=" " alt="" coords="281,79,352,104"/>
+<area shape="rect" title="Platform&#45;independent touch driver interface: the Point/ CalibrationData/Rotation types,..." alt="" coords="5,5,236,31"/>
+<area shape="rect" href="TouchDriverCommon_8h.html" title=" " alt="" coords="23,79,219,119"/>
+<area shape="rect" title=" " alt="" coords="85,167,156,192"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -102,70 +95,26 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="TouchDriver_8h__dep__incl.png" border="0" usemap="#asrc_2TinyGPU_2Input_2TouchDriver_8hdep" alt=""/></div>
 <map name="asrc_2TinyGPU_2Input_2TouchDriver_8hdep" id="asrc_2TinyGPU_2Input_2TouchDriver_8hdep">
-<area shape="rect" title=" " alt="" coords="410,5,641,31"/>
-<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="270,328,383,353"/>
-<area shape="rect" href="LCDBoardsCommon_8h.html" title=" " alt="" coords="205,401,373,441"/>
+<area shape="rect" title="Platform&#45;independent touch driver interface: the Point/ CalibrationData/Rotation types,..." alt="" coords="275,5,506,31"/>
+<area shape="rect" href="TinyGPU_8h.html" title=" " alt="" coords="371,328,485,353"/>
+<area shape="rect" href="LCDBoardsCommon_8h.html" title=" " alt="" coords="151,401,319,441"/>
 <area shape="rect" href="SpriteDisplay_8h.html" title=" " alt="" coords="5,577,160,617"/>
-<area shape="rect" href="LVGLDriver_8h.html" title=" " alt="" coords="433,401,615,441"/>
-<area shape="rect" href="TouchDriverSDL_8h.html" title=" " alt="" coords="691,167,843,207"/>
-<area shape="rect" href="GestureDetector_8h.html" title=" " alt="" coords="614,79,807,119"/>
-<area shape="rect" href="FrameBuffer_8h.html" title=" " alt="" coords="273,79,428,119"/>
-<area shape="rect" href="LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="206,489,357,529"/>
-<area shape="rect" href="LCDBoardsSDL_8h.html" title="LCDBoard for the SDL2 desktop backend &#45; renders to a window via DisplayDriverSDL and maps the mouse t..." alt="" coords="466,489,617,529"/>
-<area shape="rect" href="Boards_8h.html" title=" " alt="" coords="200,585,363,610"/>
-<area shape="rect" href="FrameBufferMonochrome_8h.html" title=" " alt="" coords="189,167,392,207"/>
-<area shape="rect" href="TinyGPUGlobals_8h.html" title=" " alt="" coords="239,255,489,280"/>
+<area shape="rect" href="LVGLDriver_8h.html" title=" " alt="" coords="513,401,695,441"/>
+<area shape="rect" href="GestureDetector_8h.html" title=" " alt="" coords="523,79,717,119"/>
+<area shape="rect" href="FrameBuffer_8h.html" title=" " alt="" coords="256,79,411,119"/>
+<area shape="rect" href="LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="242,489,393,529"/>
+<area shape="rect" href="LCDBoardsSDL_8h.html" title="LCDBoard for the SDL2 desktop backend &#45; renders to a window via DisplayDriverSDL and maps the mouse t..." alt="" coords="67,489,218,529"/>
+<area shape="rect" href="Boards_8h.html" title=" " alt="" coords="236,585,399,610"/>
+<area shape="rect" href="FrameBufferMonochrome_8h.html" title=" " alt="" coords="213,167,416,207"/>
+<area shape="rect" href="TinyGPUGlobals_8h.html" title=" " alt="" coords="117,255,366,280"/>
 </map>
 </div>
 </div>
 <p><a href="TouchDriver_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1Point.html">Point</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch point.  <a href="structtinygpu_1_1Point.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1CalibrationData.html">CalibrationData</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch calibration configuration.  <a href="structtinygpu_1_1CalibrationData.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html">TouchDriver</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for touch controllers.  <a href="classtinygpu_1_1TouchDriver.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html">TouchDriverXPT2046</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">XPT2046 resistive touch controller.  <a href="classtinygpu_1_1TouchDriverXPT2046.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverFT6236.html">TouchDriverFT6236</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">FT6236 / FT6336 capacitive touch controller.  <a href="classtinygpu_1_1TouchDriverFT6236.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverCST816S.html">TouchDriverCST816S</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CST816S capacitive touch controller.  <a href="classtinygpu_1_1TouchDriverCST816S.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverGT911.html">TouchDriverGT911</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">GT911 capacitive touch controller.  <a href="classtinygpu_1_1TouchDriverGT911.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespacetinygpu"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html">tinygpu</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a34c07b590b97132497328cfce9988661"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a34c07b590b97132497328cfce9988661">TouchDriverFT6206</a> = TouchDriverFT6236</td></tr>
-<tr class="memdesc:a34c07b590b97132497328cfce9988661"><td class="mdescLeft">&#160;</td><td class="mdescRight">The FT6206 is a drop-in replacement for the FT6236, so we can alias it here.  <br /></td></tr>
-<tr class="separator:a34c07b590b97132497328cfce9988661"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a67a250c97139a5466814a54c4aa4a681"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681">Rotation</a> : uint8_t { <a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681afcc3d26082cf729c96122174cb5a0672">Deg0</a> = 0
-, <a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681a35875c49f266e2a78589539c7d5094c0">Deg90</a> = 1
-, <a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681af8994786c89a13bd09d070c7aba32606">Deg180</a> = 2
-, <a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681aa6de14da7cab630bfc56472524674d72">Deg270</a> = 3
- }</td></tr>
-<tr class="memdesc:a67a250c97139a5466814a54c4aa4a681"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical display rotation.  <a href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681">More...</a><br /></td></tr>
-<tr class="separator:a67a250c97139a5466814a54c4aa4a681"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Platform-independent touch driver interface: the Point/ CalibrationData/Rotation types, the TouchDriver base class (calibration storage, raw-to-logical coordinate mapping) and nothing else - this file has no dependency on Arduino.h or any bus library, so including it (e.g. transitively via <a class="el" href="TinyGPU_8h.html">TinyGPU.h</a>) never requires linking against an Arduino core. </p>
+<p>Concrete controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911), which do need Arduino.h/SPI.h/Wire.h, live in the separate <a class="el" href="TouchDriverArduino_8h.html" title="Concrete touch-controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911) built on the Arduino SPICl...">TouchDriverArduino.h</a> - include that explicitly to use one of them. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6

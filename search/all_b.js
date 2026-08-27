@@ -6,7 +6,7 @@ var searchData=
   ['lcdboardscommon_2eh_3',['LCDBoardsCommon.h',['../LCDBoardsCommon_8h.html',1,'']]],
   ['lcdboardsesp32_2eh_4',['LCDBoardsESP32.h',['../LCDBoardsESP32_8h.html',1,'']]],
   ['lcdboardssdl_2eh_5',['LCDBoardsSDL.h',['../LCDBoardsSDL_8h.html',1,'']]],
-  ['led_6',['led',['../classtinygpu_1_1LCDBoard.html#ae70a3af0def75e689134ca2e60cb98e4',1,'tinygpu::LCDBoard::led()'],['../classtinygpu_1_1LCDBoardDesktopSDL.html#af10a07544f51ff43f4867c9f37ac1a40',1,'tinygpu::LCDBoardDesktopSDL::led()']]],
+  ['led_6',['led',['../classtinygpu_1_1LCDBoardDesktopSDL.html#af10a07544f51ff43f4867c9f37ac1a40',1,'tinygpu::LCDBoardDesktopSDL::led()'],['../classtinygpu_1_1LCDBoard.html#ae70a3af0def75e689134ca2e60cb98e4',1,'tinygpu::LCDBoard::led()']]],
   ['ledpins_7',['LEDPins',['../structtinygpu_1_1LEDPins.html',1,'tinygpu']]],
   ['length_8',['length',['../classtinygpu_1_1WireFrame3D.html#a06fb9f95d3784b2f30b64dff2e12d38f',1,'tinygpu::WireFrame3D']]],
   ['level_9',['Level',['../classtinygpu_1_1TinyGPULoggerClass.html#a221b779e6bb7b8d40677d7642bfefac5',1,'tinygpu::TinyGPULoggerClass']]],
@@ -23,6 +23,8 @@ var searchData=
   ['log_20',['log',['../classtinygpu_1_1TinyGPULoggerClass.html#a62783368bc9a6a5713893e15ef77ce12',1,'tinygpu::TinyGPULoggerClass']]],
   ['longpressmindurationms_21',['longPressMinDurationMs',['../classtinygpu_1_1GestureDetector.html#aab8dfd0379d4afa4bbc4462e2eab1fa0',1,'tinygpu::GestureDetector']]],
   ['lookat_22',['lookAt',['../classtinygpu_1_1WireFrame3D.html#a0a111a0696175e9d3fdfbe66406ace1e',1,'tinygpu::WireFrame3D']]],
-  ['lvgldriver_23',['LVGLDriver',['../classLVGLDriver.html',1,'LVGLDriver&lt; RGB_T &gt;'],['../classLVGLDriver.html#a7bdd2cf4c60bfec54a5522d7db7f85ec',1,'LVGLDriver::LVGLDriver()']]],
-  ['lvgldriver_2eh_24',['LVGLDriver.h',['../LVGLDriver_8h.html',1,'']]]
+  ['low_23',['LOW',['../namespacetinygpu.html#a5cdbee21499338ad63bf50e3d2c63358',1,'tinygpu']]],
+  ['lsbfirst_24',['LSBFIRST',['../namespacetinygpu.html#a1f77f5a40918e90c4f14e51d8e091b7f',1,'tinygpu']]],
+  ['lvgldriver_25',['LVGLDriver',['../classLVGLDriver.html',1,'LVGLDriver&lt; RGB_T &gt;'],['../classLVGLDriver.html#a7bdd2cf4c60bfec54a5522d7db7f85ec',1,'LVGLDriver::LVGLDriver()']]],
+  ['lvgldriver_2eh_26',['LVGLDriver.h',['../LVGLDriver_8h.html',1,'']]]
 ];

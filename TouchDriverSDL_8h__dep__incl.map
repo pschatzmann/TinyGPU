@@ -1,4 +1,4 @@
-<map id="src/TinyGPU/Drivers/TouchDriverSDL.h" name="src/TinyGPU/Drivers/TouchDriverSDL.h">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,157,45"/>
-<area shape="rect" id="node2" href="$LCDBoardsSDL_8h.html" title="LCDBoard for the SDL2 desktop backend &#45; renders to a window via DisplayDriverSDL and maps the mouse t..." alt="" coords="6,93,157,133"/>
+<map id="src/TinyGPU/Input/TouchDriverSDL.h" name="src/TinyGPU/Input/TouchDriverSDL.h">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,224,45"/>
+<area shape="rect" id="node2" href="$LCDBoardsSDL_8h.html" title="LCDBoard for the SDL2 desktop backend &#45; renders to a window via DisplayDriverSDL and maps the mouse t..." alt="" coords="39,93,190,133"/>
 </map>

@@ -1,7 +1,5 @@
 <map id="src/TinyGPU/Input/TouchDriver.h" name="src/TinyGPU/Input/TouchDriver.h">
-<area shape="rect" id="node1" title=" " alt="" coords="67,5,297,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,79,89,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="113,79,168,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="193,79,257,104"/>
-<area shape="rect" id="node5" title=" " alt="" coords="281,79,352,104"/>
+<area shape="rect" id="node1" title="Platform&#45;independent touch driver interface: the Point/ CalibrationData/Rotation types,..." alt="" coords="5,5,236,31"/>
+<area shape="rect" id="node2" href="$TouchDriverCommon_8h.html" title=" " alt="" coords="23,79,219,119"/>
+<area shape="rect" id="node3" title=" " alt="" coords="85,167,156,192"/>
 </map>

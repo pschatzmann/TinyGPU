@@ -1,13 +1,15 @@
 <map id="src/TinyGPU/Drivers/DisplayDriverSPI.h" name="src/TinyGPU/Drivers/DisplayDriverSPI.h">
-<area shape="rect" id="node1" title=" " alt="" coords="218,5,370,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,93,89,119"/>
-<area shape="rect" id="node3" title=" " alt="" coords="113,93,168,119"/>
-<area shape="rect" id="node4" title=" " alt="" coords="192,93,303,119"/>
-<area shape="rect" id="node5" title=" " alt="" coords="356,313,427,339"/>
-<area shape="rect" id="node6" title=" " alt="" coords="379,93,449,119"/>
-<area shape="rect" id="node7" href="$Drivers_2DisplayDriver_8h.html" title=" " alt="" coords="485,93,719,119"/>
-<area shape="rect" id="node8" title=" " alt="" coords="706,313,781,339"/>
-<area shape="rect" id="node9" href="$ISurface_8h.html" title=" " alt="" coords="502,167,702,192"/>
-<area shape="rect" id="node10" title=" " alt="" coords="429,240,497,265"/>
-<area shape="rect" id="node11" href="$RGB565_8h.html" title=" " alt="" coords="522,240,706,265"/>
+<area shape="rect" id="node1" title=" " alt="" coords="185,5,337,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,93,116,119"/>
+<area shape="rect" id="node3" title=" " alt="" coords="169,328,240,353"/>
+<area shape="rect" id="node4" title=" " alt="" coords="225,93,296,119"/>
+<area shape="rect" id="node5" href="$Drivers_2DisplayDriver_8h.html" title=" " alt="" coords="336,93,569,119"/>
+<area shape="rect" id="node10" href="$Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="634,93,794,119"/>
+<area shape="rect" id="node6" title=" " alt="" coords="519,328,594,353"/>
+<area shape="rect" id="node7" href="$ISurface_8h.html" title=" " alt="" coords="353,174,553,199"/>
+<area shape="rect" id="node8" title=" " alt="" coords="451,255,519,280"/>
+<area shape="rect" id="node9" href="$RGB565_8h.html" title=" " alt="" coords="242,255,426,280"/>
+<area shape="rect" id="node11" href="$EmulationDesktop_8h.html" title="Minimal delay()/millis() for a plain desktop C++ build &#45; no Arduino core, no ESP&#45;IDF." alt="" coords="645,167,863,207"/>
+<area shape="rect" id="node12" title=" " alt="" coords="683,255,750,280"/>
+<area shape="rect" id="node13" title=" " alt="" coords="774,255,838,280"/>
 </map>

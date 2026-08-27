@@ -1,0 +1,6 @@
+<map id="src/TinyGPU/Emulation.h" name="src/TinyGPU/Emulation.h">
+<area shape="rect" id="node1" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="23,5,206,31"/>
+<area shape="rect" id="node2" href="$EmulationDesktop_8h.html" title="Minimal delay()/millis() for a plain desktop C++ build &#45; no Arduino core, no ESP&#45;IDF." alt="" coords="5,79,224,119"/>
+<area shape="rect" id="node3" title=" " alt="" coords="37,167,104,192"/>
+<area shape="rect" id="node4" title=" " alt="" coords="128,167,192,192"/>
+</map>

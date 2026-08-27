@@ -74,7 +74,8 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">tinygpu Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -187,6 +188,10 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1RGB888.html">RGB888</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RGB color stored in 24-bit <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> format.  <a href="classtinygpu_1_1RGB888.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1SPISettings.html">SPISettings</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1SpriteDisplay.html">SpriteDisplay</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1SpriteInfo.html">SpriteInfo</a></td></tr>
@@ -234,6 +239,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html">TouchDriverXPT2046</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">XPT2046 resistive touch controller.  <a href="classtinygpu_1_1TouchDriverXPT2046.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TwoWire.html">TwoWire</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html">WireFrame3D</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lightweight 3D wireframe renderer for TinyGPU drawing targets.  <a href="classtinygpu_1_1WireFrame3D.html#details">More...</a><br /></td></tr>
@@ -423,6 +430,20 @@ Functions</h2></td></tr>
 <tr class="separator:a600fc844cb15403c4587f274fd5f69b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49d2bcea04c3ee104bded423d489d5da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a49d2bcea04c3ee104bded423d489d5da">isLandscapeFamily</a> (<a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">DisplayRotation</a> r)</td></tr>
 <tr class="separator:a49d2bcea04c3ee104bded423d489d5da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ff7f2532a22366f0013bc41397129fd"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a6ff7f2532a22366f0013bc41397129fd">millis</a> ()</td></tr>
+<tr class="separator:a6ff7f2532a22366f0013bc41397129fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc5f943544a887f8b23cadfb26a5e30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">delay</a> (unsigned long ms)</td></tr>
+<tr class="separator:a6bc5f943544a887f8b23cadfb26a5e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f2dfce1046bdd2a2b753643726c2346"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a7f2dfce1046bdd2a2b753643726c2346">delay</a> (uint32_t ms)</td></tr>
+<tr class="separator:a7f2dfce1046bdd2a2b753643726c2346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7bdb53335528ad073ca13eb2b1bdc00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#ac7bdb53335528ad073ca13eb2b1bdc00">pinMode</a> (int pin, int mode)</td></tr>
+<tr class="separator:ac7bdb53335528ad073ca13eb2b1bdc00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9647a9a056bb33fd1206da70c83bde3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#ae9647a9a056bb33fd1206da70c83bde3">digitalWrite</a> (int pin, int value)</td></tr>
+<tr class="memdesc:ae9647a9a056bb33fd1206da70c83bde3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a GPIO output level, matching Arduino's <a class="el" href="namespacetinygpu.html#ae9647a9a056bb33fd1206da70c83bde3" title="Sets a GPIO output level, matching Arduino&#39;s digitalWrite().">digitalWrite()</a>.  <br /></td></tr>
+<tr class="separator:ae9647a9a056bb33fd1206da70c83bde3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1e3d979645a535a8ce49f935392d8bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#ae1e3d979645a535a8ce49f935392d8bc">digitalRead</a> (int pin)</td></tr>
+<tr class="memdesc:ae1e3d979645a535a8ce49f935392d8bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a GPIO input level, matching Arduino's <a class="el" href="namespacetinygpu.html#ae1e3d979645a535a8ce49f935392d8bc" title="Reads a GPIO input level, matching Arduino&#39;s digitalRead().">digitalRead()</a>.  <br /></td></tr>
+<tr class="separator:ae1e3d979645a535a8ce49f935392d8bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ad437ede63c0331c6b268da0ffbe716"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a0ad437ede63c0331c6b268da0ffbe716">toString</a> (<a class="el" href="namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effe">GestureType</a> type)</td></tr>
 <tr class="memdesc:a0ad437ede63c0331c6b268da0ffbe716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Human-readable name for a GestureType, useful for logging.  <br /></td></tr>
 <tr class="separator:a0ad437ede63c0331c6b268da0ffbe716"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -438,6 +459,35 @@ Functions</h2></td></tr>
 <tr class="memitem:a71c67e94dd62e8a6638f409bb577e324"><td class="memTemplParams" colspan="2">template&lt;typename RGB_T , typename SurfaceT &gt; </td></tr>
 <tr class="memitem:a71c67e94dd62e8a6638f409bb577e324"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1Surface.html">Surface</a>&lt; RGB_T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a71c67e94dd62e8a6638f409bb577e324">renderTransformedSprite</a> (const <a class="el" href="structtinygpu_1_1SpriteInfo.html">SpriteInfo</a>&lt; RGB_T, SurfaceT &gt; &amp;spriteInfo, <a class="el" href="classtinygpu_1_1IFont.html">IFont</a>&lt; RGB_T &gt; &amp;font)</td></tr>
 <tr class="separator:a71c67e94dd62e8a6638f409bb577e324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a7824a5088aed587cc3135ddac3198050"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a7824a5088aed587cc3135ddac3198050">HIGH</a> = 1</td></tr>
+<tr class="separator:a7824a5088aed587cc3135ddac3198050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cdbee21499338ad63bf50e3d2c63358"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a5cdbee21499338ad63bf50e3d2c63358">LOW</a> = 0</td></tr>
+<tr class="separator:a5cdbee21499338ad63bf50e3d2c63358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca67bb05db85a7a1685eea49762d1787"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#aca67bb05db85a7a1685eea49762d1787">INPUT</a> = 0x00</td></tr>
+<tr class="separator:aca67bb05db85a7a1685eea49762d1787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb7d23dd22c6da9b11acd8f0acd61850"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#aeb7d23dd22c6da9b11acd8f0acd61850">OUTPUT</a> = 0x01</td></tr>
+<tr class="separator:aeb7d23dd22c6da9b11acd8f0acd61850"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c9277e481477dfd3767c7ca94980163"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a9c9277e481477dfd3767c7ca94980163">INPUT_PULLUP</a> = 0x02</td></tr>
+<tr class="separator:a9c9277e481477dfd3767c7ca94980163"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa889a78d4927c66dfe0e4cfc5e8d31a4"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#aa889a78d4927c66dfe0e4cfc5e8d31a4">MSBFIRST</a> = 0</td></tr>
+<tr class="separator:aa889a78d4927c66dfe0e4cfc5e8d31a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f77f5a40918e90c4f14e51d8e091b7f"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a1f77f5a40918e90c4f14e51d8e091b7f">LSBFIRST</a> = 1</td></tr>
+<tr class="separator:a1f77f5a40918e90c4f14e51d8e091b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa892a3b10f494d58d173aa0c5b8fce6e"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#aa892a3b10f494d58d173aa0c5b8fce6e">SPI_MODE0</a> = 0</td></tr>
+<tr class="separator:aa892a3b10f494d58d173aa0c5b8fce6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17732d0a5e07a1ad51e4c2339f8ebfaf"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a17732d0a5e07a1ad51e4c2339f8ebfaf">SPI_MODE1</a> = 1</td></tr>
+<tr class="separator:a17732d0a5e07a1ad51e4c2339f8ebfaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a270c2707971c4c38bb0c0a2c5b085c1c"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a270c2707971c4c38bb0c0a2c5b085c1c">SPI_MODE2</a> = 2</td></tr>
+<tr class="separator:a270c2707971c4c38bb0c0a2c5b085c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83b6aedcb23d32d6d9c39462c3ad4ba6"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a83b6aedcb23d32d6d9c39462c3ad4ba6">SPI_MODE3</a> = 3</td></tr>
+<tr class="separator:a83b6aedcb23d32d6d9c39462c3ad4ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56953eb3affc2a9f56e1680bbc537bf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a56953eb3affc2a9f56e1680bbc537bf7">SPI</a></td></tr>
+<tr class="separator:a56953eb3affc2a9f56e1680bbc537bf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35bd3de386d23ba02c35f820303db472"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1TwoWire.html">TwoWire</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a35bd3de386d23ba02c35f820303db472">Wire</a></td></tr>
+<tr class="separator:a35bd3de386d23ba02c35f820303db472"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a448c38c6511579fe4ba4be1ef97b0cde" name="a448c38c6511579fe4ba4be1ef97b0cde"></a>
@@ -1131,7 +1181,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Abstract base class for display drivers. </p>
-<p>Defines the interface for initializing the display, setting the address window, and writing pixel data from a <a class="el" href="classtinygpu_1_1Surface.html" title="In-memory bitmap surface with basic 2D drawing and text rendering.">Surface</a>. Specific display drivers (e.g. SPI, SDL) should inherit from this and implement the virtual methods. Common rotation values for rectangular display drivers (row/column exchange plus optional axis mirroring) - shared here, rather than duplicated as a nested enum per concrete driver (as ILI9341Driver/ <a class="el" href="classtinygpu_1_1ILI9342Driver.html" title="Driver for ILI9342 SPI display controller.">ILI9342Driver</a> used to each define their own, identical, copy), so generic code holding only a DisplayDriver&lt;RGB_T&gt;&amp; (e.g. an <a class="el" href="classtinygpu_1_1LCDBoard.html">LCDBoard</a>'s display()) can call setRotation() without knowing the concrete driver type. Concrete drivers keep a <code>using Rotation = <a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d" title="Abstract base class for display drivers.">tinygpu::DisplayRotation</a>;</code> alias so existing code written against e.g. ILI9341Driver&lt;RGB565&gt;:: Rotation still compiles unchanged. Named DisplayRotation (not just Rotation) to avoid colliding with the differently-shaped touch <a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681" title="Logical display rotation.">tinygpu::Rotation</a> (Deg0/Deg90/Deg180/Deg270) in <a class="el" href="TouchDriver_8h.html">TouchDriver.h</a>. </p>
+<p>Defines the interface for initializing the display, setting the address window, and writing pixel data from a <a class="el" href="classtinygpu_1_1Surface.html" title="In-memory bitmap surface with basic 2D drawing and text rendering.">Surface</a>. Specific display drivers (e.g. SPI, SDL) should inherit from this and implement the virtual methods. Common rotation values for rectangular display drivers (row/column exchange plus optional axis mirroring) - shared here, rather than duplicated as a nested enum per concrete driver (as ILI9341Driver/ <a class="el" href="classtinygpu_1_1ILI9342Driver.html" title="Driver for ILI9342 SPI display controller.">ILI9342Driver</a> used to each define their own, identical, copy), so generic code holding only a DisplayDriver&lt;RGB_T&gt;&amp; (e.g. an <a class="el" href="classtinygpu_1_1LCDBoard.html">LCDBoard</a>'s display()) can call setRotation() without knowing the concrete driver type. Concrete drivers keep a <code>using Rotation = <a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d" title="Abstract base class for display drivers.">tinygpu::DisplayRotation</a>;</code> alias so existing code written against e.g. ILI9341Driver&lt;RGB565&gt;:: Rotation still compiles unchanged. Named DisplayRotation (not just Rotation) to avoid colliding with the differently-shaped touch <a class="el" href="namespacetinygpu.html#a67a250c97139a5466814a54c4aa4a681" title="Logical display rotation.">tinygpu::Rotation</a> (Deg0/Deg90/Deg180/Deg270) in <a class="el" href="TouchDriver_8h.html" title="Platform-independent touch driver interface: the Point/ CalibrationData/Rotation types,...">TouchDriver.h</a>. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aaf854447c39c56bbaf8275faddd3476da35c3ace1970663a16e5c65baa5941b13" name="aaf854447c39c56bbaf8275faddd3476da35c3ace1970663a16e5c65baa5941b13"></a>kNone&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aaf854447c39c56bbaf8275faddd3476daf2373e96d4abf53ae1971b0ebdd474e9" name="aaf854447c39c56bbaf8275faddd3476daf2373e96d4abf53ae1971b0ebdd474e9"></a>kPortrait&#160;</td><td class="fielddoc"></td></tr>
@@ -1246,6 +1296,126 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a7f2dfce1046bdd2a2b753643726c2346" name="a7f2dfce1046bdd2a2b753643726c2346"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f2dfce1046bdd2a2b753643726c2346">&#9670;&#160;</a></span>delay() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void delay </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Blocks the calling task for <code>ms</code> milliseconds via FreeRTOS - the ESP-IDF-native equivalent of Arduino's <a class="el" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">delay()</a>. </p>
+
+</div>
+</div>
+<a id="a6bc5f943544a887f8b23cadfb26a5e30" name="a6bc5f943544a887f8b23cadfb26a5e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bc5f943544a887f8b23cadfb26a5e30">&#9670;&#160;</a></span>delay() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void delay </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Blocks the calling thread for <code>ms</code> milliseconds, matching Arduino's <a class="el" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">delay()</a>. </p>
+
+</div>
+</div>
+<a id="ae1e3d979645a535a8ce49f935392d8bc" name="ae1e3d979645a535a8ce49f935392d8bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1e3d979645a535a8ce49f935392d8bc">&#9670;&#160;</a></span>digitalRead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int digitalRead </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reads a GPIO input level, matching Arduino's <a class="el" href="namespacetinygpu.html#ae1e3d979645a535a8ce49f935392d8bc" title="Reads a GPIO input level, matching Arduino&#39;s digitalRead().">digitalRead()</a>. </p>
+
+</div>
+</div>
+<a id="ae9647a9a056bb33fd1206da70c83bde3" name="ae9647a9a056bb33fd1206da70c83bde3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9647a9a056bb33fd1206da70c83bde3">&#9670;&#160;</a></span>digitalWrite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void digitalWrite </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a GPIO output level, matching Arduino's <a class="el" href="namespacetinygpu.html#ae9647a9a056bb33fd1206da70c83bde3" title="Sets a GPIO output level, matching Arduino&#39;s digitalWrite().">digitalWrite()</a>. </p>
+
+</div>
+</div>
 <a id="ac0174679701a061d67891637b700edd6" name="ac0174679701a061d67891637b700edd6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac0174679701a061d67891637b700edd6">&#9670;&#160;</a></span>findSprite()</h2>
 
@@ -1307,6 +1477,33 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>True for the landscape family (kLandscape/kLandscapeFlipped) - false for portrait (kPortrait/kPortraitFlipped) or kNone. The landscape family has its row/column addressing exchanged relative to portrait (MV bit, on MIPI-DCS-style controllers), which is what makes width()/height() swap between the two families - a same-family rotation (e.g. kLandscape to kLandscapeFlipped, a 180 degree flip) only changes scan direction, not addressable width/height. </p>
+
+</div>
+</div>
+<a id="a6ff7f2532a22366f0013bc41397129fd" name="a6ff7f2532a22366f0013bc41397129fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ff7f2532a22366f0013bc41397129fd">&#9670;&#160;</a></span>millis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long millis </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Milliseconds since the epoch, from a monotonic (steady) clock - not "time since boot" the way Arduino's <a class="el" href="namespacetinygpu.html#a6ff7f2532a22366f0013bc41397129fd">millis()</a> is, but that distinction never matters here: <a class="el" href="GestureDetector_8h.html">GestureDetector.h</a> only ever subtracts two <a class="el" href="namespacetinygpu.html#a6ff7f2532a22366f0013bc41397129fd">millis()</a> calls to get an elapsed duration, never reads the absolute value.</p>
+<p>Milliseconds since boot, matching Arduino's <a class="el" href="namespacetinygpu.html#a6ff7f2532a22366f0013bc41397129fd">millis()</a> (wraps the same way a 32-bit millisecond counter would, since esp_timer's underlying 64-bit microsecond count is truncated to unsigned long here). </p>
 
 </div>
 </div>
@@ -1379,6 +1576,43 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac7bdb53335528ad073ca13eb2b1bdc00" name="ac7bdb53335528ad073ca13eb2b1bdc00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7bdb53335528ad073ca13eb2b1bdc00">&#9670;&#160;</a></span>pinMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pinMode </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Configures a GPIO's direction/pull, matching Arduino's <a class="el" href="namespacetinygpu.html#ac7bdb53335528ad073ca13eb2b1bdc00">pinMode()</a>. A negative pin (this library's "not wired up" sentinel throughout Drivers/Input) is silently ignored, exactly like the callers already assume when they guard on <code>pin &gt;= 0</code> before calling at all - and harmlessly for the few call sites that don't bother guarding. </p>
 
 </div>
 </div>
@@ -1537,6 +1771,295 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Human-readable name for a GestureType, useful for logging. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a7824a5088aed587cc3135ddac3198050" name="a7824a5088aed587cc3135ddac3198050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7824a5088aed587cc3135ddac3198050">&#9670;&#160;</a></span>HIGH</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int HIGH = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aca67bb05db85a7a1685eea49762d1787" name="aca67bb05db85a7a1685eea49762d1787"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca67bb05db85a7a1685eea49762d1787">&#9670;&#160;</a></span>INPUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int INPUT = 0x00</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c9277e481477dfd3767c7ca94980163" name="a9c9277e481477dfd3767c7ca94980163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c9277e481477dfd3767c7ca94980163">&#9670;&#160;</a></span>INPUT_PULLUP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int INPUT_PULLUP = 0x02</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5cdbee21499338ad63bf50e3d2c63358" name="a5cdbee21499338ad63bf50e3d2c63358"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cdbee21499338ad63bf50e3d2c63358">&#9670;&#160;</a></span>LOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int LOW = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1f77f5a40918e90c4f14e51d8e091b7f" name="a1f77f5a40918e90c4f14e51d8e091b7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f77f5a40918e90c4f14e51d8e091b7f">&#9670;&#160;</a></span>LSBFIRST</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int LSBFIRST = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa889a78d4927c66dfe0e4cfc5e8d31a4" name="aa889a78d4927c66dfe0e4cfc5e8d31a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa889a78d4927c66dfe0e4cfc5e8d31a4">&#9670;&#160;</a></span>MSBFIRST</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int MSBFIRST = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeb7d23dd22c6da9b11acd8f0acd61850" name="aeb7d23dd22c6da9b11acd8f0acd61850"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb7d23dd22c6da9b11acd8f0acd61850">&#9670;&#160;</a></span>OUTPUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int OUTPUT = 0x01</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a56953eb3affc2a9f56e1680bbc537bf7" name="a56953eb3affc2a9f56e1680bbc537bf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56953eb3affc2a9f56e1680bbc537bf7">&#9670;&#160;</a></span>SPI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a> SPI</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Global default instance, matching Arduino's bare <code>SPI</code> object (used as e.g. <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html" title="XPT2046 resistive touch controller.">TouchDriverXPT2046</a>'s default constructor argument). </p>
+
+</div>
+</div>
+<a id="aa892a3b10f494d58d173aa0c5b8fce6e" name="aa892a3b10f494d58d173aa0c5b8fce6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa892a3b10f494d58d173aa0c5b8fce6e">&#9670;&#160;</a></span>SPI_MODE0</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int SPI_MODE0 = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a17732d0a5e07a1ad51e4c2339f8ebfaf" name="a17732d0a5e07a1ad51e4c2339f8ebfaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17732d0a5e07a1ad51e4c2339f8ebfaf">&#9670;&#160;</a></span>SPI_MODE1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int SPI_MODE1 = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a270c2707971c4c38bb0c0a2c5b085c1c" name="a270c2707971c4c38bb0c0a2c5b085c1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a270c2707971c4c38bb0c0a2c5b085c1c">&#9670;&#160;</a></span>SPI_MODE2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int SPI_MODE2 = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83b6aedcb23d32d6d9c39462c3ad4ba6" name="a83b6aedcb23d32d6d9c39462c3ad4ba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83b6aedcb23d32d6d9c39462c3ad4ba6">&#9670;&#160;</a></span>SPI_MODE3</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int SPI_MODE3 = 3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a35bd3de386d23ba02c35f820303db472" name="a35bd3de386d23ba02c35f820303db472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35bd3de386d23ba02c35f820303db472">&#9670;&#160;</a></span>Wire</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtinygpu_1_1TwoWire.html">TwoWire</a> Wire</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Global default instance, matching Arduino's bare <code>Wire</code> object (used as e.g. <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html" title="FT6236 / FT6336 capacitive touch controller.">TouchDriverFT6236</a>'s default constructor argument). </p>
 
 </div>
 </div>

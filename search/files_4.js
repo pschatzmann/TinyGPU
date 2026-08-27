@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['fixedbitmapfont_2eh_0',['FixedBitmapFont.h',['../FixedBitmapFont_8h.html',1,'']]],
-  ['framebuffer_2eh_1',['FrameBuffer.h',['../FrameBuffer_8h.html',1,'']]],
-  ['framebuffermonochrome_2eh_2',['FrameBufferMonochrome.h',['../FrameBufferMonochrome_8h.html',1,'']]]
+  ['emulation_2eh_0',['Emulation.h',['../Emulation_8h.html',1,'']]],
+  ['emulationdesktop_2eh_1',['EmulationDesktop.h',['../EmulationDesktop_8h.html',1,'']]],
+  ['emulationidf_2eh_2',['EmulationIDF.h',['../EmulationIDF_8h.html',1,'']]]
 ];

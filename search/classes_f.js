@@ -6,5 +6,6 @@ var searchData=
   ['touchdriverft6236_3',['TouchDriverFT6236',['../classtinygpu_1_1TouchDriverFT6236.html',1,'tinygpu']]],
   ['touchdrivergt911_4',['TouchDriverGT911',['../classtinygpu_1_1TouchDriverGT911.html',1,'tinygpu']]],
   ['touchdriversdl_5',['TouchDriverSDL',['../classtinygpu_1_1TouchDriverSDL.html',1,'tinygpu']]],
-  ['touchdriverxpt2046_6',['TouchDriverXPT2046',['../classtinygpu_1_1TouchDriverXPT2046.html',1,'tinygpu']]]
+  ['touchdriverxpt2046_6',['TouchDriverXPT2046',['../classtinygpu_1_1TouchDriverXPT2046.html',1,'tinygpu']]],
+  ['twowire_7',['TwoWire',['../classtinygpu_1_1TwoWire.html',1,'tinygpu']]]
 ];

@@ -1,11 +1,14 @@
 <map id="src/TinyGPU/Drivers/DisplayDriverQSPI.h" name="src/TinyGPU/Drivers/DisplayDriverQSPI.h">
-<area shape="rect" id="node1" title=" " alt="" coords="85,5,242,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,93,89,119"/>
-<area shape="rect" id="node3" title=" " alt="" coords="143,313,213,339"/>
-<area shape="rect" id="node4" title=" " alt="" coords="165,93,236,119"/>
-<area shape="rect" id="node5" href="$Drivers_2DisplayDriver_8h.html" title=" " alt="" coords="272,93,505,119"/>
-<area shape="rect" id="node6" title=" " alt="" coords="493,313,567,339"/>
-<area shape="rect" id="node7" href="$ISurface_8h.html" title=" " alt="" coords="289,167,489,192"/>
-<area shape="rect" id="node8" title=" " alt="" coords="216,240,284,265"/>
-<area shape="rect" id="node9" href="$RGB565_8h.html" title=" " alt="" coords="309,240,493,265"/>
+<area shape="rect" id="node1" title=" " alt="" coords="170,5,327,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,328,76,353"/>
+<area shape="rect" id="node3" title=" " alt="" coords="125,93,196,119"/>
+<area shape="rect" id="node4" href="$Drivers_2DisplayDriver_8h.html" title=" " alt="" coords="220,93,453,119"/>
+<area shape="rect" id="node9" href="$Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="494,93,654,119"/>
+<area shape="rect" id="node5" title=" " alt="" coords="355,328,430,353"/>
+<area shape="rect" id="node6" href="$ISurface_8h.html" title=" " alt="" coords="206,174,406,199"/>
+<area shape="rect" id="node7" title=" " alt="" coords="287,255,355,280"/>
+<area shape="rect" id="node8" href="$RGB565_8h.html" title=" " alt="" coords="78,255,262,280"/>
+<area shape="rect" id="node10" href="$EmulationDesktop_8h.html" title="Minimal delay()/millis() for a plain desktop C++ build &#45; no Arduino core, no ESP&#45;IDF." alt="" coords="481,167,699,207"/>
+<area shape="rect" id="node11" title=" " alt="" coords="519,255,586,280"/>
+<area shape="rect" id="node12" title=" " alt="" coords="610,255,674,280"/>
 </map>

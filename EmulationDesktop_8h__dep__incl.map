@@ -1,0 +1,11 @@
+<map id="src/TinyGPU/Emulation/EmulationDesktop.h" name="src/TinyGPU/Emulation/EmulationDesktop.h">
+<area shape="rect" id="node1" title="Minimal delay()/millis() for a plain desktop C++ build &#45; no Arduino core, no ESP&#45;IDF." alt="" coords="439,5,610,45"/>
+<area shape="rect" id="node2" href="$Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="433,93,616,119"/>
+<area shape="rect" id="node3" href="$LCDBoardsESP32_8h.html" title="One&#45;call setup for ESP32(&#45;S3) boards from the arduino&#45;audio&#45;tools &quot;Audio Boards&quot; wiki that combine an..." alt="" coords="5,167,156,207"/>
+<area shape="rect" id="node4" href="$DisplayDriverDSI_8h.html" title=" " alt="" coords="181,167,333,207"/>
+<area shape="rect" id="node5" href="$DisplayDriverQSPI_8h.html" title=" " alt="" coords="357,167,514,207"/>
+<area shape="rect" id="node6" href="$DisplayDriverSPI_8h.html" title=" " alt="" coords="538,167,690,207"/>
+<area shape="rect" id="node8" href="$GestureDetector_8h.html" title=" " alt="" coords="715,167,908,207"/>
+<area shape="rect" id="node9" href="$TouchDriverArduino_8h.html" title="Concrete touch&#45;controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911) built on the Arduino SPICl..." alt="" coords="933,167,1151,207"/>
+<area shape="rect" id="node7" href="$DisplayDriver_8h.html" title=" " alt="" coords="511,255,717,280"/>
+</map>

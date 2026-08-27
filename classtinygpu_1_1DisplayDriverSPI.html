@@ -106,16 +106,17 @@ Collaboration diagram for DisplayDriverSPI&lt; RGB_T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1DisplayDriverSPI__coll__graph.png" border="0" usemap="#aDisplayDriverSPI_3_01RGB__T_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="aDisplayDriverSPI_3_01RGB__T_01_4_coll__map" id="aDisplayDriverSPI_3_01RGB__T_01_4_coll__map">
-<area shape="rect" title="Common base class for SPI&#45;based display drivers." alt="" coords="5,243,209,268"/>
-<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="15,168,199,193"/>
-<area shape="rect" href="classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="18,80,197,105"/>
-<area shape="rect" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="44,5,171,31"/>
+<area shape="rect" title="Common base class for SPI&#45;based display drivers." alt="" coords="111,256,315,281"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,168,189,193"/>
+<area shape="rect" href="classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="8,80,187,105"/>
+<area shape="rect" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="34,5,161,31"/>
+<area shape="rect" href="classtinygpu_1_1SPIClass.html" title=" " alt="" coords="213,168,291,193"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abfdc8122986250cac64a5da68cd986e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#abfdc8122986250cac64a5da68cd986e9">DisplayDriverSPI</a> (SPIClass &amp;spi, int8_t cs, int8_t dc, int8_t rst=-1, size_t xOffset=0, size_t yOffset=0, uint32_t frequencyHz=40000000, uint32_t readFrequencyHz=15000000)</td></tr>
+<tr class="memitem:abfdc8122986250cac64a5da68cd986e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#abfdc8122986250cac64a5da68cd986e9">DisplayDriverSPI</a> (<a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a> &amp;spi, int8_t cs, int8_t dc, int8_t rst=-1, size_t xOffset=0, size_t yOffset=0, uint32_t frequencyHz=40000000, uint32_t readFrequencyHz=15000000)</td></tr>
 <tr class="separator:abfdc8122986250cac64a5da68cd986e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbde66ad2f1573278339e5341d311953"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#afbde66ad2f1573278339e5341d311953">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface) override</td></tr>
 <tr class="separator:afbde66ad2f1573278339e5341d311953"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,7 +165,7 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a09d0927246091ecfae18fabf897900eb"><td class="memItemLeft" align="right" valign="top">SPIClass &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a09d0927246091ecfae18fabf897900eb">spi_</a></td></tr>
+<tr class="memitem:a09d0927246091ecfae18fabf897900eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a09d0927246091ecfae18fabf897900eb">spi_</a></td></tr>
 <tr class="separator:a09d0927246091ecfae18fabf897900eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c3e8634c21f804d261700d60995f77f"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a8c3e8634c21f804d261700d60995f77f">cs_</a></td></tr>
 <tr class="separator:a8c3e8634c21f804d261700d60995f77f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,7 +201,7 @@ class tinygpu::DisplayDriverSPI&lt; RGB_T &gt;</div><p>Common base class for SPI
         <tr>
           <td class="memname"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html">DisplayDriverSPI</a> </td>
           <td>(</td>
-          <td class="paramtype">SPIClass &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a> &amp;&#160;</td>
           <td class="paramname"><em>spi</em>, </td>
         </tr>
         <tr>
@@ -734,7 +735,7 @@ class tinygpu::DisplayDriverSPI&lt; RGB_T &gt;</div><p>Common base class for SPI
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">SPIClass&amp; spi_</td>
+          <td class="memname"><a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a>&amp; spi_</td>
         </tr>
       </table>
   </td>

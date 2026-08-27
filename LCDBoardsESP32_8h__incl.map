@@ -1,4 +1,7 @@
 <map id="src/TinyGPU/Boards/LCDBoardsESP32.h" name="src/TinyGPU/Boards/LCDBoardsESP32.h">
-<area shape="rect" id="node1" title="One&#45;call setup for ESP32(&#45;S3) boards from the arduino&#45;audio&#45;tools &quot;Audio Boards&quot; wiki that combine an..." alt="" coords="5,5,156,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="39,93,123,119"/>
+<area shape="rect" id="node1" title="One&#45;call setup for ESP32(&#45;S3) boards from the arduino&#45;audio&#45;tools &quot;Audio Boards&quot; wiki that combine an..." alt="" coords="39,5,190,45"/>
+<area shape="rect" id="node2" href="$Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="35,93,195,119"/>
+<area shape="rect" id="node3" href="$EmulationDesktop_8h.html" title="Minimal delay()/millis() for a plain desktop C++ build &#45; no Arduino core, no ESP&#45;IDF." alt="" coords="5,167,224,207"/>
+<area shape="rect" id="node4" title=" " alt="" coords="37,255,104,280"/>
+<area shape="rect" id="node5" title=" " alt="" coords="128,255,192,280"/>
 </map>

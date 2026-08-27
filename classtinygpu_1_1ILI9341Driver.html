@@ -102,11 +102,12 @@ Collaboration diagram for ILI9341Driver&lt; RGB_T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1ILI9341Driver__coll__graph.png" border="0" usemap="#aILI9341Driver_3_01RGB__T_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="aILI9341Driver_3_01RGB__T_01_4_coll__map" id="aILI9341Driver_3_01RGB__T_01_4_coll__map">
-<area shape="rect" title="Driver for ILI9341 SPI display controller." alt="" coords="16,317,199,343"/>
-<area shape="rect" href="classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="5,243,209,268"/>
-<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="15,168,199,193"/>
-<area shape="rect" href="classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="18,80,197,105"/>
-<area shape="rect" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="44,5,171,31"/>
+<area shape="rect" title="Driver for ILI9341 SPI display controller." alt="" coords="122,331,305,356"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="111,256,315,281"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,168,189,193"/>
+<area shape="rect" href="classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="8,80,187,105"/>
+<area shape="rect" href="classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="34,5,161,31"/>
+<area shape="rect" href="classtinygpu_1_1SPIClass.html" title=" " alt="" coords="213,168,291,193"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -117,7 +118,7 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4cdc06c16fa705d85a6d761b72b76c7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4cdc06c16fa705d85a6d761b72b76c7c">ILI9341Driver</a> (SPIClass &amp;spi, int8_t cs, int8_t dc, int8_t rst=-1, <a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">Rotation</a> <a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac4154d62016ae303eb96f5050034fa69">rotation</a>=Rotation::kNone, uint32_t frequencyHz=40000000, size_t nativeWidth=240, size_t nativeHeight=320)</td></tr>
+<tr class="memitem:a4cdc06c16fa705d85a6d761b72b76c7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#a4cdc06c16fa705d85a6d761b72b76c7c">ILI9341Driver</a> (<a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a> &amp;spi, int8_t cs, int8_t dc, int8_t rst=-1, <a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">Rotation</a> <a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac4154d62016ae303eb96f5050034fa69">rotation</a>=Rotation::kNone, uint32_t frequencyHz=40000000, size_t nativeWidth=240, size_t nativeHeight=320)</td></tr>
 <tr class="separator:a4cdc06c16fa705d85a6d761b72b76c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac39656d862f5a4a39182559bbf7c740b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac39656d862f5a4a39182559bbf7c740b">width</a> () const override</td></tr>
 <tr class="separator:ac39656d862f5a4a39182559bbf7c740b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,7 +134,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a22046f3478c928d2538401d9e134bea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles the ILI9341's display inversion (DINVON/DINVOFF, 0x21/ 0x20). Some cheap ILI9341-compatible clone panels' color filter needs this set, or every color renders as its photographic negative (RED shows as cyan, GREEN as magenta, BLUE as yellow) - confirmed on real hardware. Safe to call any time after <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a>.  <br /></td></tr>
 <tr class="separator:a22046f3478c928d2538401d9e134bea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtinygpu_1_1DisplayDriverSPI"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinygpu_1_1DisplayDriverSPI')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html">DisplayDriverSPI&lt; RGB_T &gt;</a></td></tr>
-<tr class="memitem:abfdc8122986250cac64a5da68cd986e9 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#abfdc8122986250cac64a5da68cd986e9">DisplayDriverSPI</a> (SPIClass &amp;spi, int8_t cs, int8_t dc, int8_t rst=-1, size_t xOffset=0, size_t yOffset=0, uint32_t frequencyHz=40000000, uint32_t readFrequencyHz=15000000)</td></tr>
+<tr class="memitem:abfdc8122986250cac64a5da68cd986e9 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#abfdc8122986250cac64a5da68cd986e9">DisplayDriverSPI</a> (<a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a> &amp;spi, int8_t cs, int8_t dc, int8_t rst=-1, size_t xOffset=0, size_t yOffset=0, uint32_t frequencyHz=40000000, uint32_t readFrequencyHz=15000000)</td></tr>
 <tr class="separator:abfdc8122986250cac64a5da68cd986e9 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbde66ad2f1573278339e5341d311953 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#afbde66ad2f1573278339e5341d311953">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface) override</td></tr>
 <tr class="separator:afbde66ad2f1573278339e5341d311953 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,7 +176,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a0bd8688816c7726fc6ac4778cd54ce08"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#a0bd8688816c7726fc6ac4778cd54ce08">nativeHeight_</a></td></tr>
 <tr class="separator:a0bd8688816c7726fc6ac4778cd54ce08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtinygpu_1_1DisplayDriverSPI')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html">DisplayDriverSPI&lt; RGB_T &gt;</a></td></tr>
-<tr class="memitem:a09d0927246091ecfae18fabf897900eb inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">SPIClass &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a09d0927246091ecfae18fabf897900eb">spi_</a></td></tr>
+<tr class="memitem:a09d0927246091ecfae18fabf897900eb inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a09d0927246091ecfae18fabf897900eb">spi_</a></td></tr>
 <tr class="separator:a09d0927246091ecfae18fabf897900eb inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c3e8634c21f804d261700d60995f77f inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a8c3e8634c21f804d261700d60995f77f">cs_</a></td></tr>
 <tr class="separator:a8c3e8634c21f804d261700d60995f77f inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,7 +249,7 @@ class tinygpu::ILI9341Driver&lt; RGB_T &gt;</div><p>Driver for ILI9341 SPI displ
         <tr>
           <td class="memname"><a class="el" href="classtinygpu_1_1ILI9341Driver.html">ILI9341Driver</a> </td>
           <td>(</td>
-          <td class="paramtype">SPIClass &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a> &amp;&#160;</td>
           <td class="paramname"><em>spi</em>, </td>
         </tr>
         <tr>

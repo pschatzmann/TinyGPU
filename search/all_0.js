@@ -9,7 +9,8 @@ var searchData=
   ['apply_6',['apply',['../classtinygpu_1_1GammaTable.html#abdcda918b7e73a29daa6f6ef6e78eba0',1,'tinygpu::GammaTable']]],
   ['applytransformedsprite_7',['applyTransformedSprite',['../classtinygpu_1_1SpriteDisplay.html#aa26d9cfd54575b26b8bd78c77f15cb25',1,'tinygpu::SpriteDisplay::applyTransformedSprite()'],['../classtinygpu_1_1FrameBuffer.html#a162481c89b9b01e237084b11888fe276',1,'tinygpu::FrameBuffer::applyTransformedSprite()']]],
   ['asciifonts_2eh_8',['AsciiFonts.h',['../AsciiFonts_8h.html',1,'']]],
-  ['aviwriter_9',['AVIWriter',['../classtinygpu_1_1AVIWriter.html#ad32757a5b484e38c6264c03d5a11b0b3',1,'tinygpu::AVIWriter::AVIWriter()'],['../classtinygpu_1_1AVIWriter.html',1,'AVIWriter&lt; RGB_T &gt;']]],
-  ['aviwriter_2eh_10',['AVIWriter.h',['../AVIWriter_8h.html',1,'']]],
-  ['axis_11',['axis',['../classtinygpu_1_1WireFrame3D.html#ac998efb50fb78c530691ea98176b032c',1,'tinygpu::WireFrame3D']]]
+  ['available_9',['available',['../classtinygpu_1_1TwoWire.html#ac1b6e282f3f6ea6521c1e09706d146af',1,'tinygpu::TwoWire']]],
+  ['aviwriter_10',['AVIWriter',['../classtinygpu_1_1AVIWriter.html#ad32757a5b484e38c6264c03d5a11b0b3',1,'tinygpu::AVIWriter::AVIWriter()'],['../classtinygpu_1_1AVIWriter.html',1,'AVIWriter&lt; RGB_T &gt;']]],
+  ['aviwriter_2eh_11',['AVIWriter.h',['../AVIWriter_8h.html',1,'']]],
+  ['axis_12',['axis',['../classtinygpu_1_1WireFrame3D.html#ac998efb50fb78c530691ea98176b032c',1,'tinygpu::WireFrame3D']]]
 ];

@@ -91,6 +91,14 @@ Files</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GestureDetector_8h.html">GestureDetector.h</a> <a href="GestureDetector_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TouchDriver_8h.html">TouchDriver.h</a> <a href="TouchDriver_8h_source.html">[code]</a></td></tr>
+<tr class="memdesc:TouchDriver_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Platform-independent touch driver interface: the Point/ CalibrationData/Rotation types, the TouchDriver base class (calibration storage, raw-to-logical coordinate mapping) and nothing else - this file has no dependency on Arduino.h or any bus library, so including it (e.g. transitively via <a class="el" href="TinyGPU_8h.html">TinyGPU.h</a>) never requires linking against an Arduino core. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TouchDriverArduino_8h.html">TouchDriverArduino.h</a> <a href="TouchDriverArduino_8h_source.html">[code]</a></td></tr>
+<tr class="memdesc:TouchDriverArduino_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concrete touch-controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911) built on the Arduino SPIClass/TwoWire API - split out of <a class="el" href="TouchDriver_8h.html" title="Platform-independent touch driver interface: the Point/ CalibrationData/Rotation types,...">TouchDriver.h</a> so that including the platform-independent TouchDriver base class/calibration/coordinate-mapping code doesn't also pull in Arduino.h. Include this file explicitly to use any of these drivers. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TouchDriverCommon_8h.html">TouchDriverCommon.h</a> <a href="TouchDriverCommon_8h_source.html">[code]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TouchDriverSDL_8h.html">TouchDriverSDL.h</a> <a href="TouchDriverSDL_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
