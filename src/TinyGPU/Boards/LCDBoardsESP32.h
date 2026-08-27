@@ -45,25 +45,26 @@ namespace tinygpu {
  * (FBBA0125-002) - also named ESP32-S3 Hosyond Display
  *
  * Display: ILI9341, 240x320, SPI - CS=10 DC=46 SCK=12 MOSI=11 MISO=13
- *          BL=45; RST is tied to the board's EN line, so there is no
- *          dedicated reset pin to drive. Needs display inversion turned
- *          on (done in begin()) or colors render as their photographic
- *          negative - confirmed on real hardware.
+ *          BL=45; RST is tied to the board's EN line (no dedicated reset
+ *          pin). Needs inversion on (set in begin()) or colors render
+ *          wrong on real hardware; byte order stays at the driver
+ *          default. ILI9341Driver::setInvertColor() re-applies the last
+ *          value at the end of every begin(), so it survives a later,
+ *          redundant begin() (e.g. from DeviceOutput::begin()) even
+ *          though each begin() resets the panel's inversion register via
+ *          SWRESET.
  * Touch:   FT6336G (register-compatible with TouchDriverFT6236), I2C -
- *          SDA=16 SCL=15 RST=18, physical IRQ=17. The IRQ pin is not
- *          wired into the driver (left at -1, forcing register polling)
- *          because this line's idle polarity was never confirmed on real
- *          hardware; TouchDriverFT6236::isTouched() would otherwise skip
- *          the I2C read whenever it reads the "wrong" level.
+ *          SDA=16 SCL=15 RST=18, physical IRQ=17. IRQ is left unwired
+ *          (-1, forcing register polling) since its idle polarity was
+ *          never confirmed on real hardware.
  * I2S (ES8311 codec): MCLK=4 BCK=5 WS=7 DOUT=8 DIN=6. Speaker amp
  *          (FM8002E) enable: IO1, active low.
  * LED: single WS2812-compatible RGB LED on IO42.
  *
- * @note Audio setup: this board's ES8311 codec needs its own I2C init (volume,
- * mic gain, ...), not just I2S pins, so plain I2SStream
- * leaves the codec unconfigured. If the sketch also depends on
- * arduino-audio-driver, use its ready-made board definition instead,
- * which owns the codec init and I2S pins together:
+ * @note Audio setup: the ES8311 codec needs its own I2C init (volume, mic
+ * gain, ...), so plain I2SStream leaves it unconfigured. Prefer
+ * arduino-audio-driver's ready-made board definition, which owns codec
+ * init and I2S pins together:
  *
  *   #include "AudioTools.h"
  *   #include "AudioTools/AudioLibs/AudioBoardStream.h"
@@ -74,16 +75,16 @@ namespace tinygpu {
  *   out.begin(cfg);
  *   out.setVolume(0.5f);
  *
- * Without arduino-audio-driver, i2s()/setI2SPins() still give the raw
- * MCLK/BCK/WS/DOUT/DIN pins for a plain I2SStream, but the caller is then
- * responsible for the ES8311's I2C init and driving the PA-enable pin
+ * Without arduino-audio-driver, i2s()/setI2SPins() give the raw
+ * MCLK/BCK/WS/DOUT/DIN pins for a plain I2SStream, but the caller must
+ * then handle the ES8311's I2C init and drive the PA-enable pin
  * (i2s().paEnable, active low per paEnableActiveLow) itself.
  */
 class LCDBoardESP32S3_2_8Display : public LCDBoard {
  public:
-  /// Sets up the backlight, SPI bus, display controller (incl. inversion),
-  /// and touch controller. Returns false if the display or touch begin()
-  /// fails.
+  /// Sets up the backlight, SPI bus, display controller (incl. inversion
+  /// and byte order - see the class doc comment), and touch controller.
+  /// Returns false if the display or touch begin() fails.
   bool begin() override {
     pinMode(kPinBacklight, OUTPUT);
     digitalWrite(kPinBacklight, HIGH);
@@ -91,6 +92,7 @@ class LCDBoardESP32S3_2_8Display : public LCDBoard {
     SPI.begin(kPinSck, kPinMiso, kPinMosi, kPinCs);
     if (!display_.begin()) return false;
     display_.setInvertColor(true);
+    display_.setSwapOutputBytes(false);
 
     Wire.begin(kPinTouchSda, kPinTouchScl);
     return touch_.begin();

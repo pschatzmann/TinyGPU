@@ -33,10 +33,18 @@ class JPEGParser {
     // bit order; RGB565::RGB565(uint16_t) expects the byte-swapped wire
     // order this library stores instead (see RGB565.h) - setSwapBytes(true)
     // makes the decoder do that swap for us so onBlock() can construct
-    // RGB_T directly from each output pixel.
+    // RGB_T directly from each output pixel. Correct for every panel this
+    // has been verified against so far (including TinyGPU's own desktop
+    // SDL backend) - see setSwapBytes() below if a specific panel needs
+    // the opposite.
     decoder_.setSwapBytes(true);
     decoder_.setCallback(&JPEGParser::onBlock);
   }
+
+  /// Overrides the byte-swap behavior set in the constructor (see its
+  /// comment) - some panels/wiring need the opposite of the true default
+  /// that's otherwise correct.
+  void setSwapBytes(bool swap) { decoder_.setSwapBytes(swap); }
 
   /// Sets the output reduction factor: 1 (full size), 2, 4, or 8.
   void setScale(uint8_t scale) { decoder_.setJpgScale(scale); }

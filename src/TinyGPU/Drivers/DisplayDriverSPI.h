@@ -31,6 +31,19 @@ class DisplayDriverSPI : public DisplayDriver<RGB_T> {
     return writeData(surface, 0, 0);
   }
 
+  /// Swaps each pixel's two bytes right before they go out over SPI (see
+  /// writeData()) - off by default, since RGB_T (RGB565) already stores
+  /// values pre-swapped to the wire order most panels expect (see
+  /// RGB565.h). Some panels/wiring combinations expect the opposite of
+  /// that default (symptom: colors come out scrambled/inverted-looking -
+  /// e.g. a purple app bar rendering green, a light background rendering
+  /// black - across *everything* drawn, not just images); this is the one
+  /// place all pixel data funnels through before hitting the wire, so
+  /// flipping it here fixes fills/text/images uniformly instead of needing
+  /// a per-source fix (contrast JPEGParser::setSwapBytes(), which only
+  /// affects decoded images).
+  void setSwapOutputBytes(bool swap) { swapOutputBytes_ = swap; }
+
   bool writeData(ISurface<RGB_T>& surface, size_t x, size_t y) override {
     static_assert(sizeof(RGB_T) == 2,
                   "writeData assumes a 16bpp RGB_T (RGB565) stored in "
@@ -41,7 +54,9 @@ class DisplayDriverSPI : public DisplayDriver<RGB_T> {
     digitalWrite(cs_, LOW);
     // RGB_T (RGB565) values are stored in the buffer already byte-swapped
     // to the panel's wire order (see RGB565.h), so the buffer's raw memory
-    // order can be sent as-is - no per-pixel swap needed here anymore.
+    // order can normally be sent as-is - no per-pixel swap needed here.
+    // swapOutputBytes_ (see setSwapOutputBytes()) undoes that for panels
+    // that need the opposite order.
     // Still copied through a small scratch buffer and sent with the
     // portable bulk SPIClass::transfer(void*, size_t) - available on every
     // core, not just ESP32 - rather than one SPIClass::transfer16() call
@@ -57,6 +72,17 @@ class DisplayDriverSPI : public DisplayDriver<RGB_T> {
     while (remaining > 0) {
       const size_t n = remaining < kChunkBytes ? remaining : kChunkBytes;
       memcpy(chunk, src, n);
+      if (swapOutputBytes_) {
+        // n is always even here: surface.size() is width*height*sizeof(RGB_T)
+        // with sizeof(RGB_T) == 2 (see the static_assert above), and
+        // kChunkBytes is even, so every chunk - including the last,
+        // possibly-partial one - covers whole pixels.
+        for (size_t i = 0; i + 1 < n; i += 2) {
+          const uint8_t tmp = chunk[i];
+          chunk[i] = chunk[i + 1];
+          chunk[i + 1] = tmp;
+        }
+      }
       spi_.transfer(chunk, n);
       src += n;
       remaining -= n;
@@ -115,6 +141,7 @@ class DisplayDriverSPI : public DisplayDriver<RGB_T> {
   size_t xOffset_, yOffset_;
   uint32_t frequencyHz_;
   uint32_t readFrequencyHz_;
+  bool swapOutputBytes_ = false;
 
   void setColumnRowAddress(size_t x, size_t y, size_t w, size_t h) {
     writeCommand(0x2A);
@@ -351,6 +378,13 @@ class ILI9341Driver : public DisplayDriverSPI<RGB_T> {
     delay(120);
     writeCommand(0x29);  // Display on
 
+    // Re-assert whatever setInvertColor() last requested - SWRESET above
+    // reset the panel's own inversion register to its power-on default
+    // (off) regardless, so a call to setInvertColor() made before this
+    // begin() would otherwise be silently lost. See that method's doc
+    // comment.
+    writeCommand(invertColor_ ? 0x21 : 0x20);
+
     return true;
   }
 
@@ -368,13 +402,26 @@ class ILI9341Driver : public DisplayDriverSPI<RGB_T> {
    * 0x20). Some cheap ILI9341-compatible clone panels' color filter needs
    * this set, or every color renders as its photographic negative (RED
    * shows as cyan, GREEN as magenta, BLUE as yellow) - confirmed on real
-   * hardware. Safe to call any time after begin().
+   * hardware. Safe to call any time after begin() - and safe to call
+   * *before* a later begin() too: begin() sends SWRESET (0x01), a real
+   * hardware reset that puts the panel's own inversion register back to
+   * its power-on default regardless of what this method last told it (no
+   * explicit invert command appears anywhere in begin() itself, so this
+   * is easy to miss), so begin() re-sends whatever this last requested
+   * (via invertColor_) as its final step - a call to this method always
+   * sticks no matter how many further begin() calls follow (e.g. a
+   * caller's own redundant DeviceOutput::begin()).
    */
-  void setInvertColor(bool invert) { writeCommand(invert ? 0x21 : 0x20); }
+  void setInvertColor(bool invert) {
+    invertColor_ = invert;
+    writeCommand(invert ? 0x21 : 0x20);
+  }
 
  protected:
   Rotation rotation_;
   size_t nativeWidth_, nativeHeight_;
+  // Re-sent at the end of begin() - see setInvertColor()'s doc comment.
+  bool invertColor_ = false;
 
   // MADCTL values with the BGR bit set (0x08), matching the MX/MY/MV
   // (row/column/exchange) + BGR combinations Bodmer/TFT_eSPI's ILI9341
