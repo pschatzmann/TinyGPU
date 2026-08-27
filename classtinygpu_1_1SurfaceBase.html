@@ -90,11 +90,12 @@ Inheritance diagram for SurfaceBase&lt; PixelT &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1SurfaceBase__inherit__graph.png" border="0" usemap="#aSurfaceBase_3_01PixelT_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aSurfaceBase_3_01PixelT_01_4_inherit__map" id="aSurfaceBase_3_01PixelT_01_4_inherit__map">
-<area shape="rect" title="Base class for 2D surfaces with drawing and text rendering support." alt="" coords="169,79,341,104"/>
-<area shape="rect" href="classtinygpu_1_1Surface.html" title=" " alt="" coords="5,159,159,185"/>
-<area shape="rect" href="classtinygpu_1_1Surface.html" title="In&#45;memory bitmap surface with basic 2D drawing and text rendering." alt="" coords="183,159,327,185"/>
-<area shape="rect" href="classtinygpu_1_1SurfaceWithExternalBuffer.html" title="In&#45;memory bitmap surface with basic 2D drawing and text rendering." alt="" coords="351,152,546,192"/>
-<area shape="rect" href="classtinygpu_1_1ISurface.html" title=" " alt="" coords="183,5,327,31"/>
+<area shape="rect" title="Base class for 2D surfaces with drawing and text rendering support." alt="" coords="197,84,369,109"/>
+<area shape="rect" href="classtinygpu_1_1Surface.html" title=" " alt="" coords="447,5,600,31"/>
+<area shape="rect" href="classtinygpu_1_1Surface.html" title="In&#45;memory bitmap surface with basic 2D drawing and text rendering." alt="" coords="451,55,595,80"/>
+<area shape="rect" href="classtinygpu_1_1SurfaceWithExternalBuffer.html" title="In&#45;memory bitmap surface with basic 2D drawing and text rendering." alt="" coords="426,105,621,145"/>
+<area shape="rect" href="classtinygpu_1_1WindowedSurface.html" title="An ISurface that reports a full width x height extent but physically redirects every pixel write into..." alt="" coords="417,169,629,195"/>
+<area shape="rect" href="classtinygpu_1_1ISurface.html" title=" " alt="" coords="5,84,149,109"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -545,6 +546,8 @@ class tinygpu::SurfaceBase&lt; PixelT &gt;</div><p>Base class for 2D surfaces wi
 <p>Checks if the given coordinates are within the surface bounds. </p>
 
 <p>Implements <a class="el" href="classtinygpu_1_1ISurface.html#a6c4b758f1438899cad34cea53b2e94c3">ISurface&lt; PixelT &gt;</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classtinygpu_1_1WindowedSurface.html#a4ab689700d49d3a4e427a72cb704790f">WindowedSurface&lt; RGB_T &gt;</a>.</p>
 
 </div>
 </div>
@@ -1178,7 +1181,7 @@ class tinygpu::SurfaceBase&lt; PixelT &gt;</div><p>Base class for 2D surfaces wi
 
 <p>Implements <a class="el" href="classtinygpu_1_1ISurface.html#ad56feac2ef74eb55f361ce3dc81604cc">ISurface&lt; PixelT &gt;</a>.</p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1Surface.html#aef9c0f2f92556d6dc6a06535fdb12a64">Surface&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1Surface.html#aef9c0f2f92556d6dc6a06535fdb12a64">Surface&lt; RGB565 &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceMonochrome.html#a053e6ab47a2f56071d32ac670b4ef434">SurfaceMonochrome</a>, and <a class="el" href="classtinygpu_1_1SurfaceWithExternalBuffer.html#aef9c0f2f92556d6dc6a06535fdb12a64">SurfaceWithExternalBuffer&lt; RGB_T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1Surface.html#aef9c0f2f92556d6dc6a06535fdb12a64">Surface&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1Surface.html#aef9c0f2f92556d6dc6a06535fdb12a64">Surface&lt; RGB565 &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceMonochrome.html#a053e6ab47a2f56071d32ac670b4ef434">SurfaceMonochrome</a>, <a class="el" href="classtinygpu_1_1SurfaceWithExternalBuffer.html#aef9c0f2f92556d6dc6a06535fdb12a64">SurfaceWithExternalBuffer&lt; RGB_T &gt;</a>, and <a class="el" href="classtinygpu_1_1WindowedSurface.html#aef9c0f2f92556d6dc6a06535fdb12a64">WindowedSurface&lt; RGB_T &gt;</a>.</p>
 
 </div>
 </div>
@@ -1208,6 +1211,8 @@ class tinygpu::SurfaceBase&lt; PixelT &gt;</div><p>Base class for 2D surfaces wi
 <p>Get the height of the surface. </p>
 
 <p>Implements <a class="el" href="classtinygpu_1_1ISurface.html#a2b329a3d2f3c79e7f52714fecfadec8c">ISurface&lt; PixelT &gt;</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classtinygpu_1_1WindowedSurface.html#a715f3df3dc638de8b40076ada0b54a89">WindowedSurface&lt; RGB_T &gt;</a>.</p>
 
 </div>
 </div>
@@ -1350,7 +1355,7 @@ class tinygpu::SurfaceBase&lt; PixelT &gt;</div><p>Base class for 2D surfaces wi
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1Surface.html#add37b2038551a1a82c2ea27e526cfb27">Surface&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1Surface.html#add37b2038551a1a82c2ea27e526cfb27">Surface&lt; RGB565 &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceMonochrome.html#add37b2038551a1a82c2ea27e526cfb27">SurfaceMonochrome</a>, and <a class="el" href="classtinygpu_1_1SurfaceWithExternalBuffer.html#add37b2038551a1a82c2ea27e526cfb27">SurfaceWithExternalBuffer&lt; RGB_T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1Surface.html#add37b2038551a1a82c2ea27e526cfb27">Surface&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1Surface.html#add37b2038551a1a82c2ea27e526cfb27">Surface&lt; RGB565 &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceMonochrome.html#add37b2038551a1a82c2ea27e526cfb27">SurfaceMonochrome</a>, <a class="el" href="classtinygpu_1_1SurfaceWithExternalBuffer.html#add37b2038551a1a82c2ea27e526cfb27">SurfaceWithExternalBuffer&lt; RGB_T &gt;</a>, and <a class="el" href="classtinygpu_1_1WindowedSurface.html#abcf7242fd54ee5f3c2ac3e11568cf10d">WindowedSurface&lt; RGB_T &gt;</a>.</p>
 
 </div>
 </div>
@@ -1540,6 +1545,8 @@ class tinygpu::SurfaceBase&lt; PixelT &gt;</div><p>Base class for 2D surfaces wi
 <p>Get the width of the surface. </p>
 
 <p>Implements <a class="el" href="classtinygpu_1_1ISurface.html#ab0b1032913cf74902ae68d05a8d982d1">ISurface&lt; PixelT &gt;</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classtinygpu_1_1WindowedSurface.html#ac39656d862f5a4a39182559bbf7c740b">WindowedSurface&lt; RGB_T &gt;</a>.</p>
 
 </div>
 </div>

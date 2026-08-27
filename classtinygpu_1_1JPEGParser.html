@@ -101,6 +101,8 @@ Collaboration diagram for JPEGParser&lt; RGB_T &gt;:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9f0cd699c4c6163fde5603d206216c85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1JPEGParser.html#a9f0cd699c4c6163fde5603d206216c85">JPEGParser</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;target)</td></tr>
 <tr class="separator:a9f0cd699c4c6163fde5603d206216c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3cb26ebf6255fe9a8f1dbcb11a0dd7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1JPEGParser.html#af3cb26ebf6255fe9a8f1dbcb11a0dd7d">setSwapBytes</a> (bool swap)</td></tr>
+<tr class="separator:af3cb26ebf6255fe9a8f1dbcb11a0dd7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3aa36bdce508c9464dc1c61ee24e427e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1JPEGParser.html#a3aa36bdce508c9464dc1c61ee24e427e">setScale</a> (uint8_t scale)</td></tr>
 <tr class="memdesc:a3aa36bdce508c9464dc1c61ee24e427e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the output reduction factor: 1 (full size), 2, 4, or 8.  <br /></td></tr>
 <tr class="separator:a3aa36bdce508c9464dc1c61ee24e427e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -395,6 +397,33 @@ class tinygpu::JPEGParser&lt; RGB_T &gt;</div><p>Decodes baseline JPEG images in
 </div><div class="memdoc">
 
 <p>Sets the output reduction factor: 1 (full size), 2, 4, or 8. </p>
+
+</div>
+</div>
+<a id="af3cb26ebf6255fe9a8f1dbcb11a0dd7d" name="af3cb26ebf6255fe9a8f1dbcb11a0dd7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3cb26ebf6255fe9a8f1dbcb11a0dd7d">&#9670;&#160;</a></span>setSwapBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setSwapBytes </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>swap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Overrides the byte-swap behavior set in the constructor (see its comment) - some panels/wiring need the opposite of the true default that's otherwise correct. </p>
 
 </div>
 </div>

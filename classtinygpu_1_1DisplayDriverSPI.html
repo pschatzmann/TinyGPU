@@ -120,6 +120,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abfdc8122986250cac64a5da68cd986e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbde66ad2f1573278339e5341d311953"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#afbde66ad2f1573278339e5341d311953">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface) override</td></tr>
 <tr class="separator:afbde66ad2f1573278339e5341d311953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0469d0ac4f77675974699c5fb875717f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a0469d0ac4f77675974699c5fb875717f">setSwapOutputBytes</a> (bool swap)</td></tr>
+<tr class="separator:a0469d0ac4f77675974699c5fb875717f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6100cd127a1ce62fd89ace0ca3f3d7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ab6100cd127a1ce62fd89ace0ca3f3d7b">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface, size_t x, size_t y) override</td></tr>
 <tr class="separator:ab6100cd127a1ce62fd89ace0ca3f3d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02fc96775e4bbcdf1fd42f6710c5ae73"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a02fc96775e4bbcdf1fd42f6710c5ae73">readData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface, size_t x, size_t y)</td></tr>
@@ -181,6 +183,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a25af0fdd54be07425d40a8f252851854"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3d3fb7b72ef58dc0b318cf94dca04ca"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#af3d3fb7b72ef58dc0b318cf94dca04ca">readFrequencyHz_</a></td></tr>
 <tr class="separator:af3d3fb7b72ef58dc0b318cf94dca04ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16d7408771dc42da05c700fbdb252968"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a16d7408771dc42da05c700fbdb252968">swapOutputBytes_</a> = false</td></tr>
+<tr class="separator:a16d7408771dc42da05c700fbdb252968"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classtinygpu_1_1DisplayDriver"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtinygpu_1_1DisplayDriver')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtinygpu_1_1DisplayDriver.html">DisplayDriver&lt; RGB_T &gt;</a></td></tr>
 <tr class="memitem:a4f980f9afeabd069a60f1edb3da7dcbe inherit pro_attribs_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt; RGB_T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a4f980f9afeabd069a60f1edb3da7dcbe">defaultFont</a></td></tr>
 <tr class="separator:a4f980f9afeabd069a60f1edb3da7dcbe inherit pro_attribs_classtinygpu_1_1DisplayDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -399,6 +403,33 @@ class tinygpu::DisplayDriverSPI&lt; RGB_T &gt;</div><p>Common base class for SPI
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0469d0ac4f77675974699c5fb875717f" name="a0469d0ac4f77675974699c5fb875717f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0469d0ac4f77675974699c5fb875717f">&#9670;&#160;</a></span>setSwapOutputBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setSwapOutputBytes </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>swap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Swaps each pixel's two bytes right before they go out over SPI (see <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#afbde66ad2f1573278339e5341d311953">writeData()</a>) - off by default, since RGB_T (<a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a>) already stores values pre-swapped to the wire order most panels expect (see <a class="el" href="RGB565_8h.html">RGB565.h</a>). Some panels/wiring combinations expect the opposite of that default (symptom: colors come out scrambled/inverted-looking - e.g. a purple app bar rendering green, a light background rendering black - across <em>everything</em> drawn, not just images); this is the one place all pixel data funnels through before hitting the wire, so flipping it here fixes fills/text/images uniformly instead of needing a per-source fix (contrast <a class="el" href="classtinygpu_1_1JPEGParser.html#af3cb26ebf6255fe9a8f1dbcb11a0dd7d">JPEGParser::setSwapBytes()</a>, which only affects decoded images). </p>
 
 </div>
 </div>
@@ -736,6 +767,28 @@ class tinygpu::DisplayDriverSPI&lt; RGB_T &gt;</div><p>Common base class for SPI
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a>&amp; spi_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a16d7408771dc42da05c700fbdb252968" name="a16d7408771dc42da05c700fbdb252968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16d7408771dc42da05c700fbdb252968">&#9670;&#160;</a></span>swapOutputBytes_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool swapOutputBytes_ = false</td>
         </tr>
       </table>
   </td>

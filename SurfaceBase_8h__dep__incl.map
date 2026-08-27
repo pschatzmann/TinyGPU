@@ -1,8 +1,9 @@
 <map id="src/TinyGPU/Surface/SurfaceBase.h" name="src/TinyGPU/Surface/SurfaceBase.h">
-<area shape="rect" id="node1" title=" " alt="" coords="286,5,441,45"/>
+<area shape="rect" id="node1" title=" " alt="" coords="417,5,571,45"/>
 <area shape="rect" id="node2" href="$Surface_8h.html" title=" " alt="" coords="45,93,199,133"/>
 <area shape="rect" id="node13" href="$SurfaceMonochrome_8h.html" title=" " alt="" coords="277,181,449,221"/>
 <area shape="rect" id="node14" href="$SurfaceWithExternalBuffer_8h.html" title=" " alt="" coords="525,269,735,309"/>
+<area shape="rect" id="node15" href="$WindowedSurface_8h.html" title=" " alt="" coords="575,93,730,133"/>
 <area shape="rect" id="node3" href="$TinyGPU_8h.html" title=" " alt="" coords="232,431,345,456"/>
 <area shape="rect" id="node7" href="$SpriteDisplay_8h.html" title=" " alt="" coords="337,680,491,720"/>
 <area shape="rect" id="node10" href="$FrameBuffer_8h.html" title=" " alt="" coords="45,181,199,221"/>

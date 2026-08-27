@@ -131,13 +131,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac4154d62016ae303eb96f5050034fa69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">Rotation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac4154d62016ae303eb96f5050034fa69">rotation</a> () const</td></tr>
 <tr class="separator:ac4154d62016ae303eb96f5050034fa69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22046f3478c928d2538401d9e134bea5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#a22046f3478c928d2538401d9e134bea5">setInvertColor</a> (bool invert)</td></tr>
-<tr class="memdesc:a22046f3478c928d2538401d9e134bea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles the ILI9341's display inversion (DINVON/DINVOFF, 0x21/ 0x20). Some cheap ILI9341-compatible clone panels' color filter needs this set, or every color renders as its photographic negative (RED shows as cyan, GREEN as magenta, BLUE as yellow) - confirmed on real hardware. Safe to call any time after <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a>.  <br /></td></tr>
+<tr class="memdesc:a22046f3478c928d2538401d9e134bea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles the ILI9341's display inversion (DINVON/DINVOFF, 0x21/ 0x20). Some cheap ILI9341-compatible clone panels' color filter needs this set, or every color renders as its photographic negative (RED shows as cyan, GREEN as magenta, BLUE as yellow) - confirmed on real hardware. Safe to call any time after <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a> - and safe to call <em>before</em> a later <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a> too: <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a> sends SWRESET (0x01), a real hardware reset that puts the panel's own inversion register back to its power-on default regardless of what this method last told it (no explicit invert command appears anywhere in <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a> itself, so this is easy to miss), so <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a> re-sends whatever this last requested (via invertColor_) as its final step - a call to this method always sticks no matter how many further <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a> calls follow (e.g. a caller's own redundant <a class="el" href="classtinygpu_1_1DeviceOutput.html#a601fb7cf1fc15db50c71a826f084f934" title="Initializes the display and prepares it for receiving data.">DeviceOutput::begin()</a>).  <br /></td></tr>
 <tr class="separator:a22046f3478c928d2538401d9e134bea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtinygpu_1_1DisplayDriverSPI"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtinygpu_1_1DisplayDriverSPI')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html">DisplayDriverSPI&lt; RGB_T &gt;</a></td></tr>
 <tr class="memitem:abfdc8122986250cac64a5da68cd986e9 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#abfdc8122986250cac64a5da68cd986e9">DisplayDriverSPI</a> (<a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a> &amp;spi, int8_t cs, int8_t dc, int8_t rst=-1, size_t xOffset=0, size_t yOffset=0, uint32_t frequencyHz=40000000, uint32_t readFrequencyHz=15000000)</td></tr>
 <tr class="separator:abfdc8122986250cac64a5da68cd986e9 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbde66ad2f1573278339e5341d311953 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#afbde66ad2f1573278339e5341d311953">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface) override</td></tr>
 <tr class="separator:afbde66ad2f1573278339e5341d311953 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0469d0ac4f77675974699c5fb875717f inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a0469d0ac4f77675974699c5fb875717f">setSwapOutputBytes</a> (bool swap)</td></tr>
+<tr class="separator:a0469d0ac4f77675974699c5fb875717f inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6100cd127a1ce62fd89ace0ca3f3d7b inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ab6100cd127a1ce62fd89ace0ca3f3d7b">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface, size_t x, size_t y) override</td></tr>
 <tr class="separator:ab6100cd127a1ce62fd89ace0ca3f3d7b inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02fc96775e4bbcdf1fd42f6710c5ae73 inherit pub_methods_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a02fc96775e4bbcdf1fd42f6710c5ae73">readData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface, size_t x, size_t y)</td></tr>
@@ -175,6 +177,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a165d88f592e3ab97bf3906fc409e158b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bd8688816c7726fc6ac4778cd54ce08"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#a0bd8688816c7726fc6ac4778cd54ce08">nativeHeight_</a></td></tr>
 <tr class="separator:a0bd8688816c7726fc6ac4778cd54ce08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca1bbc98281d60de64e19666555e836a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver.html#aca1bbc98281d60de64e19666555e836a">invertColor_</a> = false</td></tr>
+<tr class="separator:aca1bbc98281d60de64e19666555e836a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtinygpu_1_1DisplayDriverSPI')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html">DisplayDriverSPI&lt; RGB_T &gt;</a></td></tr>
 <tr class="memitem:a09d0927246091ecfae18fabf897900eb inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a09d0927246091ecfae18fabf897900eb">spi_</a></td></tr>
 <tr class="separator:a09d0927246091ecfae18fabf897900eb inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,6 +196,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a25af0fdd54be07425d40a8f252851854 inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3d3fb7b72ef58dc0b318cf94dca04ca inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#af3d3fb7b72ef58dc0b318cf94dca04ca">readFrequencyHz_</a></td></tr>
 <tr class="separator:af3d3fb7b72ef58dc0b318cf94dca04ca inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16d7408771dc42da05c700fbdb252968 inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a16d7408771dc42da05c700fbdb252968">swapOutputBytes_</a> = false</td></tr>
+<tr class="separator:a16d7408771dc42da05c700fbdb252968 inherit pro_attribs_classtinygpu_1_1DisplayDriverSPI"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classtinygpu_1_1DisplayDriver"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtinygpu_1_1DisplayDriver')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtinygpu_1_1DisplayDriver.html">DisplayDriver&lt; RGB_T &gt;</a></td></tr>
 <tr class="memitem:a4f980f9afeabd069a60f1edb3da7dcbe inherit pro_attribs_classtinygpu_1_1DisplayDriver"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtinygpu_1_1BitmapFont.html">BitmapFont</a>&lt; RGB_T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html#a4f980f9afeabd069a60f1edb3da7dcbe">defaultFont</a></td></tr>
 <tr class="separator:a4f980f9afeabd069a60f1edb3da7dcbe inherit pro_attribs_classtinygpu_1_1DisplayDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -445,7 +451,7 @@ class tinygpu::ILI9341Driver&lt; RGB_T &gt;</div><p>Driver for ILI9341 SPI displ
 </table>
 </div><div class="memdoc">
 
-<p>Toggles the ILI9341's display inversion (DINVON/DINVOFF, 0x21/ 0x20). Some cheap ILI9341-compatible clone panels' color filter needs this set, or every color renders as its photographic negative (RED shows as cyan, GREEN as magenta, BLUE as yellow) - confirmed on real hardware. Safe to call any time after <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a>. </p>
+<p>Toggles the ILI9341's display inversion (DINVON/DINVOFF, 0x21/ 0x20). Some cheap ILI9341-compatible clone panels' color filter needs this set, or every color renders as its photographic negative (RED shows as cyan, GREEN as magenta, BLUE as yellow) - confirmed on real hardware. Safe to call any time after <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a> - and safe to call <em>before</em> a later <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a> too: <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a> sends SWRESET (0x01), a real hardware reset that puts the panel's own inversion register back to its power-on default regardless of what this method last told it (no explicit invert command appears anywhere in <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a> itself, so this is easy to miss), so <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a> re-sends whatever this last requested (via invertColor_) as its final step - a call to this method always sticks no matter how many further <a class="el" href="classtinygpu_1_1ILI9341Driver.html#acba365cc28eb702040c382646cfb0a7a">begin()</a> calls follow (e.g. a caller's own redundant <a class="el" href="classtinygpu_1_1DeviceOutput.html#a601fb7cf1fc15db50c71a826f084f934" title="Initializes the display and prepares it for receiving data.">DeviceOutput::begin()</a>). </p>
 
 </div>
 </div>
@@ -507,6 +513,28 @@ class tinygpu::ILI9341Driver&lt; RGB_T &gt;</div><p>Driver for ILI9341 SPI displ
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="aca1bbc98281d60de64e19666555e836a" name="aca1bbc98281d60de64e19666555e836a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca1bbc98281d60de64e19666555e836a">&#9670;&#160;</a></span>invertColor_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool invertColor_ = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a0bd8688816c7726fc6ac4778cd54ce08" name="a0bd8688816c7726fc6ac4778cd54ce08"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0bd8688816c7726fc6ac4778cd54ce08">&#9670;&#160;</a></span>nativeHeight_</h2>
 

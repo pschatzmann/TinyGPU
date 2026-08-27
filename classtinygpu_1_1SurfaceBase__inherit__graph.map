@@ -1,7 +1,8 @@
 <map id="SurfaceBase&lt; PixelT &gt;" name="SurfaceBase&lt; PixelT &gt;">
-<area shape="rect" id="node1" title="Base class for 2D surfaces with drawing and text rendering support." alt="" coords="169,79,341,104"/>
-<area shape="rect" id="node3" href="$classtinygpu_1_1Surface.html" title=" " alt="" coords="5,159,159,185"/>
-<area shape="rect" id="node4" href="$classtinygpu_1_1Surface.html" title="In&#45;memory bitmap surface with basic 2D drawing and text rendering." alt="" coords="183,159,327,185"/>
-<area shape="rect" id="node5" href="$classtinygpu_1_1SurfaceWithExternalBuffer.html" title="In&#45;memory bitmap surface with basic 2D drawing and text rendering." alt="" coords="351,152,546,192"/>
-<area shape="rect" id="node2" href="$classtinygpu_1_1ISurface.html" title=" " alt="" coords="183,5,327,31"/>
+<area shape="rect" id="node1" title="Base class for 2D surfaces with drawing and text rendering support." alt="" coords="197,84,369,109"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1Surface.html" title=" " alt="" coords="447,5,600,31"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1Surface.html" title="In&#45;memory bitmap surface with basic 2D drawing and text rendering." alt="" coords="451,55,595,80"/>
+<area shape="rect" id="node5" href="$classtinygpu_1_1SurfaceWithExternalBuffer.html" title="In&#45;memory bitmap surface with basic 2D drawing and text rendering." alt="" coords="426,105,621,145"/>
+<area shape="rect" id="node6" href="$classtinygpu_1_1WindowedSurface.html" title="An ISurface that reports a full width x height extent but physically redirects every pixel write into..." alt="" coords="417,169,629,195"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1ISurface.html" title=" " alt="" coords="5,84,149,109"/>
 </map>
