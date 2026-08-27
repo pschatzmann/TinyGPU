@@ -1,19 +1,8 @@
 var searchData=
 [
-  ['ongesture_0',['onGesture',['../classtinygpu_1_1GestureDetector.html#a1c9d62e177b5a765cb0a1f6ecec5c44e',1,'tinygpu::GestureDetector']]],
-  ['ontouch_1',['onTouch',['../structtinygpu_1_1SpriteInfo.html#a3a7f37e73caf78fdceb5eb42405d0bb9',1,'tinygpu::SpriteInfo']]],
-  ['ontouchcallback_2',['onTouchCallback',['../structtinygpu_1_1SpriteInfo.html#a71357535f2887650f8a58a4e7f7c3a7b',1,'tinygpu::SpriteInfo']]],
-  ['operator_21_3d_3',['operator!=',['../namespacetinygpu.html#a600fc844cb15403c4587f274fd5f69b9',1,'tinygpu::operator!=(const tinygpu::RGB888 &amp;lhs, const tinygpu::RGB888 &amp;rhs)'],['../namespacetinygpu.html#a53a5f160b235d8b32a465872771bfc50',1,'tinygpu::operator!=(const tinygpu::RGB565 &amp;lhs, const tinygpu::RGB565 &amp;rhs)'],['../structtinygpu_1_1Point.html#a270aafb0f9c0793d51ea43bf3e3c1a07',1,'tinygpu::Point::operator!=()']]],
-  ['operator_2a_4',['operator*',['../structtinygpu_1_1WireFrame3D_1_1Mat4.html#abce1bf4cfd212b6903f55c656412fb78',1,'tinygpu::WireFrame3D::Mat4::operator*(const Mat4 &amp;other) const'],['../structtinygpu_1_1WireFrame3D_1_1Mat4.html#ad9f920e4f53acf8f01d3b1da5d7f31b8',1,'tinygpu::WireFrame3D::Mat4::operator*(const Vec4 &amp;vector) const'],['../structtinygpu_1_1WireFrame3D_1_1Vec3.html#a0ec141699087832d1622cb5ccb221078',1,'tinygpu::WireFrame3D::Vec3::operator*(float scalar) const']]],
-  ['operator_2b_5',['operator+',['../structtinygpu_1_1WireFrame3D_1_1Vec3.html#a6a81753384e2977940fe443c035b2049',1,'tinygpu::WireFrame3D::Vec3']]],
-  ['operator_2d_6',['operator-',['../structtinygpu_1_1WireFrame3D_1_1Vec3.html#aabdbfc9c1a290d028ccbb926b7f3d6c6',1,'tinygpu::WireFrame3D::Vec3']]],
-  ['operator_2f_7',['operator/',['../structtinygpu_1_1WireFrame3D_1_1Vec3.html#a5b1f2bbf183952cb56eb20752a5e555f',1,'tinygpu::WireFrame3D::Vec3']]],
-  ['operator_3d_3d_8',['operator==',['../structtinygpu_1_1Point.html#ae30c03fc3e617a039c36242ccd3b8f12',1,'tinygpu::Point']]],
-  ['originalpixels_9',['originalPixels',['../structtinygpu_1_1SpriteInfo.html#ad0d54e874effcb1dd1b1d18ef74cb599',1,'tinygpu::SpriteInfo']]],
-  ['orthographic_10',['Orthographic',['../classtinygpu_1_1WireFrame3D.html#a635428fef8d6e4afba288610c9c65bd5a03424250432f2aa71de95579d2c0eaeb',1,'tinygpu::WireFrame3D']]],
-  ['orthographicbottom_5f_11',['orthographicBottom_',['../classtinygpu_1_1WireFrame3D.html#ae5544035f59506ab35b0b1eaea7a9882',1,'tinygpu::WireFrame3D']]],
-  ['orthographicleft_5f_12',['orthographicLeft_',['../classtinygpu_1_1WireFrame3D.html#a31ae7e14da9ac9f5f288d4483811e0ab',1,'tinygpu::WireFrame3D']]],
-  ['orthographicright_5f_13',['orthographicRight_',['../classtinygpu_1_1WireFrame3D.html#a8eb565c6b4d2054deeeffc7e11100d38',1,'tinygpu::WireFrame3D']]],
-  ['orthographictop_5f_14',['orthographicTop_',['../classtinygpu_1_1WireFrame3D.html#aa46f13e31dbeb04a027f8878106f870a',1,'tinygpu::WireFrame3D']]],
-  ['out_5f_15',['out_',['../classtinygpu_1_1AVIWriter.html#af55dde040119f41c94ead51c8eabbe44',1,'tinygpu::AVIWriter']]]
+  ['nativeheight_5f_0',['nativeHeight_',['../classtinygpu_1_1ILI9341Driver.html#a0bd8688816c7726fc6ac4778cd54ce08',1,'tinygpu::ILI9341Driver::nativeHeight_()'],['../classtinygpu_1_1ILI9342Driver.html#a0bd8688816c7726fc6ac4778cd54ce08',1,'tinygpu::ILI9342Driver::nativeHeight_()']]],
+  ['nativewidth_5f_1',['nativeWidth_',['../classtinygpu_1_1ILI9341Driver.html#a165d88f592e3ab97bf3906fc409e158b',1,'tinygpu::ILI9341Driver::nativeWidth_()'],['../classtinygpu_1_1ILI9342Driver.html#a165d88f592e3ab97bf3906fc409e158b',1,'tinygpu::ILI9342Driver::nativeWidth_()']]],
+  ['nearplane_2',['nearPlane',['../structtinygpu_1_1WireFrame3D_1_1Camera.html#a74ffd9ec0ade4849fb098f50a8d57666',1,'tinygpu::WireFrame3D::Camera']]],
+  ['none_3',['NONE',['../classtinygpu_1_1TinyGPULoggerClass.html#a221b779e6bb7b8d40677d7642bfefac5ac157bdf0b85a40d2619cbc8bc1ae5fe2',1,'tinygpu::TinyGPULoggerClass']]],
+  ['normalize_4',['normalize',['../classtinygpu_1_1WireFrame3D.html#acc8e7fbb57eea0ac3627c6b983b0ed87',1,'tinygpu::WireFrame3D']]]
 ];

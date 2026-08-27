@@ -1,0 +1,12 @@
+<map id="src/TinyGPU/IO/JPEGParser.h" name="src/TinyGPU/IO/JPEGParser.h">
+<area shape="rect" id="node1" title=" " alt="" coords="252,5,456,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="345,225,419,251"/>
+<area shape="rect" id="node3" title=" " alt="" coords="699,225,769,251"/>
+<area shape="rect" id="node4" title=" " alt="" coords="281,79,427,104"/>
+<area shape="rect" id="node5" href="$TinyGPUConfig_8h.html" title=" " alt="" coords="126,79,257,104"/>
+<area shape="rect" id="node8" href="$ISurface_8h.html" title=" " alt="" coords="451,79,651,104"/>
+<area shape="rect" id="node6" title=" " alt="" coords="35,152,97,177"/>
+<area shape="rect" id="node7" href="$PSRAMAllocator_8h.html" title="Header&#45;only C++ allocator that prefers PSRAM allocation on ESP32." alt="" coords="121,152,345,177"/>
+<area shape="rect" id="node9" title=" " alt="" coords="628,152,696,177"/>
+<area shape="rect" id="node10" href="$RGB565_8h.html" title=" " alt="" coords="419,152,603,177"/>
+</map>

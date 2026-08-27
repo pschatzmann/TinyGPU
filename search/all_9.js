@@ -1,30 +1,5 @@
 var searchData=
 [
-  ['kbegan_0',['kBegan',['../namespacetinygpu.html#a69abf21857f667743be06ad9b224138dac083b272840eb2cf7f134f1c2932dcc9',1,'tinygpu']]],
-  ['kchanged_1',['kChanged',['../namespacetinygpu.html#a69abf21857f667743be06ad9b224138da3ece808a5eec77326a9610ac33013018',1,'tinygpu']]],
-  ['kcompressionbitfields_2',['kCompressionBitfields',['../classtinygpu_1_1BMPParser.html#abbe3f339166aca4626d144a8377289ed',1,'tinygpu::BMPParser']]],
-  ['kcompressionrgb_3',['kCompressionRgb',['../classtinygpu_1_1BMPParser.html#aebcedd12549f90783e1ecda4ed561010',1,'tinygpu::BMPParser']]],
-  ['kdoubletap_4',['kDoubleTap',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea4cbddef81c2dcc9206d5457a652f2258',1,'tinygpu']]],
-  ['kdrag_5',['kDrag',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea25b55ce9f974a87402f2bb5b14e7c36d',1,'tinygpu']]],
-  ['kended_6',['kEnded',['../namespacetinygpu.html#a69abf21857f667743be06ad9b224138dad0b7d9aeda3971989d58d5340938f046',1,'tinygpu']]],
-  ['kfirstchar_7',['kFirstChar',['../classtinygpu_1_1BitmapFont.html#a67a103abf9a38be8ef108990508c5675',1,'tinygpu::BitmapFont']]],
-  ['kglyphheight_8',['kGlyphHeight',['../classtinygpu_1_1BitmapFont.html#a7b410082c1822f8f0cf2513889076ef1',1,'tinygpu::BitmapFont::kGlyphHeight()'],['../classtinygpu_1_1FixedBitmapFont.html#a7b410082c1822f8f0cf2513889076ef1',1,'tinygpu::FixedBitmapFont::kGlyphHeight()']]],
-  ['kglyphwidth_9',['kGlyphWidth',['../classtinygpu_1_1BitmapFont.html#a4c5d959ed7685696b87d4718accc83cc',1,'tinygpu::BitmapFont::kGlyphWidth()'],['../classtinygpu_1_1FixedBitmapFont.html#a4c5d959ed7685696b87d4718accc83cc',1,'tinygpu::FixedBitmapFont::kGlyphWidth()']]],
-  ['klandscape_10',['kLandscape',['../namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476da8744b82551732080dcb3098123f4434b',1,'tinygpu']]],
-  ['klandscapeflipped_11',['kLandscapeFlipped',['../namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476da63b34d39d2daeed5d31475190dab43c3',1,'tinygpu']]],
-  ['klastchar_12',['kLastChar',['../classtinygpu_1_1BitmapFont.html#a13a87277de32d9b77588b34f2dd4b63e',1,'tinygpu::BitmapFont']]],
-  ['klongpress_13',['kLongPress',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea41d44c43e89b3d61573ad650d06b5a9c',1,'tinygpu']]],
-  ['knone_14',['kNone',['../namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476da35c3ace1970663a16e5c65baa5941b13',1,'tinygpu::kNone()'],['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea35c3ace1970663a16e5c65baa5941b13',1,'tinygpu::kNone()']]],
-  ['kpan_15',['kPan',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea6adc2aad4825fd41c5ad1efe87907448',1,'tinygpu']]],
-  ['kpinchin_16',['kPinchIn',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effeaeb0d3df457312e26aea48cdfe4867d1a',1,'tinygpu']]],
-  ['kpinchout_17',['kPinchOut',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea7f252a3bb0d59d2401e875cd2b5afea8',1,'tinygpu']]],
-  ['kportrait_18',['kPortrait',['../namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476daf2373e96d4abf53ae1971b0ebdd474e9',1,'tinygpu']]],
-  ['kportraitflipped_19',['kPortraitFlipped',['../namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476daf801c7588fd737ba120a5c8071faffbc',1,'tinygpu']]],
-  ['krotate_20',['kRotate',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effeadd8fbbeef4ac758be454ff43078e8f08',1,'tinygpu']]],
-  ['kscroll_21',['kScroll',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effeafd2096c42ca5e0e4f535c2d82f39eb71',1,'tinygpu']]],
-  ['kswipedown_22',['kSwipeDown',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea0266741ebf63b64c15636b9c8af9dfbd',1,'tinygpu']]],
-  ['kswipeleft_23',['kSwipeLeft',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea63f9f506d7d1f58ed03033a059df8212',1,'tinygpu']]],
-  ['kswiperight_24',['kSwipeRight',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effeaf22a167b76ee31fdd9865e02695377e1',1,'tinygpu']]],
-  ['kswipeup_25',['kSwipeUp',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effeac7bee4dda4174ad5876ac3b05bf131bf',1,'tinygpu']]],
-  ['ktap_26',['kTap',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effeab09f8ac9b17cef04a5b6cd7a6b190fd6',1,'tinygpu']]]
+  ['jpegparser_0',['JPEGParser',['../classtinygpu_1_1JPEGParser.html#a9f0cd699c4c6163fde5603d206216c85',1,'tinygpu::JPEGParser::JPEGParser()'],['../classtinygpu_1_1JPEGParser.html',1,'JPEGParser&lt; RGB_T &gt;']]],
+  ['jpegparser_2eh_1',['JPEGParser.h',['../JPEGParser_8h.html',1,'']]]
 ];

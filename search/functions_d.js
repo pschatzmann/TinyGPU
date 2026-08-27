@@ -1,17 +1,11 @@
 var searchData=
 [
-  ['paddedchunksize_0',['paddedChunkSize',['../classtinygpu_1_1AVIWriter.html#a20065ff36b1b57187d719a34af07117c',1,'tinygpu::AVIWriter']]],
-  ['parsebitmasks_1',['parseBitMasks',['../classtinygpu_1_1BMPParser.html#a2ca94913ba710f5eeefa20ab2ae1f7d5',1,'tinygpu::BMPParser']]],
-  ['parseheader_2',['parseHeader',['../classtinygpu_1_1BMPParser.html#a79f274200be8341a62d1717aa7f7827e',1,'tinygpu::BMPParser']]],
-  ['parsepalette_3',['parsePalette',['../classtinygpu_1_1BMPParser.html#ac6053d1bb0d7c47f8ff990145e23956d',1,'tinygpu::BMPParser']]],
-  ['pixel_4',['pixel',['../classtinygpu_1_1BitmapFont.html#ac964664a2b8eaaae0321f50161b674a5',1,'tinygpu::BitmapFont::pixel(char character, uint8_t x, uint8_t y) const'],['../classtinygpu_1_1BitmapFont.html#a85526faa2ded9444ffdc6c435d937623',1,'tinygpu::BitmapFont::pixel(CodePoint codePoint, uint8_t x, uint8_t y) const'],['../classtinygpu_1_1FixedBitmapFont.html#a85526faa2ded9444ffdc6c435d937623',1,'tinygpu::FixedBitmapFont::pixel()']]],
-  ['pixelcount_5',['pixelCount',['../classtinygpu_1_1Surface.html#a3b25c7edd18faf4d58d1f8dedadf19f4',1,'tinygpu::Surface::pixelCount()'],['../classtinygpu_1_1SurfaceWithExternalBuffer.html#a3b25c7edd18faf4d58d1f8dedadf19f4',1,'tinygpu::SurfaceWithExternalBuffer::pixelCount() const']]],
-  ['pixels_6',['pixels',['../classtinygpu_1_1SurfaceWithExternalBuffer.html#a38f959f3976340e380ea391d5cf6efd3',1,'tinygpu::SurfaceWithExternalBuffer::pixels()'],['../classtinygpu_1_1Surface.html#a38f959f3976340e380ea391d5cf6efd3',1,'tinygpu::Surface::pixels()']]],
-  ['plotdepthpixel_7',['plotDepthPixel',['../classtinygpu_1_1WireFrame3D.html#aff686e786b3888ea9c1dc47af4e5fd70',1,'tinygpu::WireFrame3D']]],
-  ['print_8',['print',['../classtinygpu_1_1LinePrinter.html#a5de1d92da33aae3b3423fe61e97537fe',1,'tinygpu::LinePrinter']]],
-  ['println_9',['println',['../classtinygpu_1_1LinePrinter.html#aede680223cdfbf2dd15efb4d3a4688e4',1,'tinygpu::LinePrinter::println(const char *text)'],['../classtinygpu_1_1LinePrinter.html#a23748bf8d1d488448069061c574897d6',1,'tinygpu::LinePrinter::println()']]],
-  ['processtouch_10',['processTouch',['../classtinygpu_1_1FrameBuffer.html#ab2742a681a2e469d920945fdf48e842f',1,'tinygpu::FrameBuffer::processTouch()'],['../classtinygpu_1_1SpriteDisplay.html#ab2742a681a2e469d920945fdf48e842f',1,'tinygpu::SpriteDisplay::processTouch()']]],
-  ['projectionmatrix_11',['projectionMatrix',['../classtinygpu_1_1WireFrame3D.html#ae158e3e99dbdaba3f330acd8985a950f',1,'tinygpu::WireFrame3D']]],
-  ['projectpoint_12',['projectPoint',['../classtinygpu_1_1WireFrame3D.html#a30fbccd51c1ac27264fa7d3042bc352c',1,'tinygpu::WireFrame3D']]],
-  ['projectviewpoint_13',['projectViewPoint',['../classtinygpu_1_1WireFrame3D.html#a0c755c14323e8a2bb5e8eec5e0118042',1,'tinygpu::WireFrame3D']]]
+  ['onblock_0',['onBlock',['../classtinygpu_1_1JPEGParser.html#a130b87b342d83d143fae3373e9594f20',1,'tinygpu::JPEGParser']]],
+  ['ontouch_1',['onTouch',['../structtinygpu_1_1SpriteInfo.html#a3a7f37e73caf78fdceb5eb42405d0bb9',1,'tinygpu::SpriteInfo']]],
+  ['operator_21_3d_2',['operator!=',['../structtinygpu_1_1Point.html#a270aafb0f9c0793d51ea43bf3e3c1a07',1,'tinygpu::Point::operator!=()'],['../namespacetinygpu.html#a53a5f160b235d8b32a465872771bfc50',1,'tinygpu::operator!=(const tinygpu::RGB565 &amp;lhs, const tinygpu::RGB565 &amp;rhs)'],['../namespacetinygpu.html#a600fc844cb15403c4587f274fd5f69b9',1,'tinygpu::operator!=(const tinygpu::RGB888 &amp;lhs, const tinygpu::RGB888 &amp;rhs)']]],
+  ['operator_2a_3',['operator*',['../structtinygpu_1_1WireFrame3D_1_1Vec3.html#a0ec141699087832d1622cb5ccb221078',1,'tinygpu::WireFrame3D::Vec3::operator*()'],['../structtinygpu_1_1WireFrame3D_1_1Mat4.html#abce1bf4cfd212b6903f55c656412fb78',1,'tinygpu::WireFrame3D::Mat4::operator*(const Mat4 &amp;other) const'],['../structtinygpu_1_1WireFrame3D_1_1Mat4.html#ad9f920e4f53acf8f01d3b1da5d7f31b8',1,'tinygpu::WireFrame3D::Mat4::operator*(const Vec4 &amp;vector) const']]],
+  ['operator_2b_4',['operator+',['../structtinygpu_1_1WireFrame3D_1_1Vec3.html#a6a81753384e2977940fe443c035b2049',1,'tinygpu::WireFrame3D::Vec3']]],
+  ['operator_2d_5',['operator-',['../structtinygpu_1_1WireFrame3D_1_1Vec3.html#aabdbfc9c1a290d028ccbb926b7f3d6c6',1,'tinygpu::WireFrame3D::Vec3']]],
+  ['operator_2f_6',['operator/',['../structtinygpu_1_1WireFrame3D_1_1Vec3.html#a5b1f2bbf183952cb56eb20752a5e555f',1,'tinygpu::WireFrame3D::Vec3']]],
+  ['operator_3d_3d_7',['operator==',['../structtinygpu_1_1Point.html#ae30c03fc3e617a039c36242ccd3b8f12',1,'tinygpu::Point']]]
 ];

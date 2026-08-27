@@ -1,0 +1,4 @@
+<map id="JPEGParser&lt; RGB_T &gt;" name="JPEGParser&lt; RGB_T &gt;">
+<area shape="rect" id="node1" title="Decodes baseline JPEG images into a TinyGPU ISurface, using pschatzmann/TinyJPEG (https://github...." alt="" coords="5,93,171,119"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1ISurface.html" title=" " alt="" coords="9,5,167,31"/>
+</map>

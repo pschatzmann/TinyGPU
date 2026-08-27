@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['z_0',['z',['../structtinygpu_1_1WireFrame3D_1_1Vec3.html#af73583b1e980b0aa03f9884812e9fd4d',1,'tinygpu::WireFrame3D::Vec3::z()'],['../structtinygpu_1_1WireFrame3D_1_1Vec4.html#af73583b1e980b0aa03f9884812e9fd4d',1,'tinygpu::WireFrame3D::Vec4::z()']]]
+  ['y_0',['y',['../structtinygpu_1_1Point.html#af77b1a54442f2443cf64a4766f916bcd',1,'tinygpu::Point::y()'],['../structtinygpu_1_1Rect.html#a17ba7a9a912e4c6297861217711fd87e',1,'tinygpu::Rect::y()'],['../structtinygpu_1_1SpriteInfo.html#a17ba7a9a912e4c6297861217711fd87e',1,'tinygpu::SpriteInfo::y()'],['../structtinygpu_1_1WireFrame3D_1_1Vec3.html#aa4f0d3eebc3c443f9be81bf48561a217',1,'tinygpu::WireFrame3D::Vec3::y()'],['../structtinygpu_1_1WireFrame3D_1_1Vec4.html#aa4f0d3eebc3c443f9be81bf48561a217',1,'tinygpu::WireFrame3D::Vec4::y()'],['../structtinygpu_1_1WireFrame3D_1_1ProjectedPoint.html#af77b1a54442f2443cf64a4766f916bcd',1,'tinygpu::WireFrame3D::ProjectedPoint::y()']]],
+  ['yoffset_5f_1',['yOffset_',['../classtinygpu_1_1DisplayDriverSPI.html#a51f2ade9c5756fa52150c4be7223d7f8',1,'tinygpu::DisplayDriverSPI']]]
 ];
