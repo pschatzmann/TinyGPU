@@ -39,6 +39,7 @@ Apart form RGB565 we also support RGB666, RGB888 and Monochrome.
 - BMP file support
   - saving data
   - loading data
+- JPEG file support via JPEGParser, decoding baseline JPEGs with the optional [TinyJPEG](https://github.com/pschatzmann/TinyJPEG) library
 - TouchDriverSDL: maps the desktop mouse to a TouchDriver, so touch-driven UI can be exercised on the SDL desktop backend without touch hardware
 - LVGLDriver: use this library to output data from the lvgl library
 - LCDBoard: one-call setup (display + touch, and I2S pins where present) for ESP32(-S3/-P4) boards from the [arduino-audio-tools Audio Boards wiki](https://github.com/pschatzmann/arduino-audio-tools/wiki/Audio-Boards)
