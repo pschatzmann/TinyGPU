@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <cstdlib>
 
-#include "TinyGPU/Input/TouchDriver.h"
+#include "TinyGPU/Input/TouchDriverCommon.h"
 
 namespace tinygpu {
 

@@ -20,17 +20,16 @@
  * LCDBoards.h for the platform-independent LCDBoard interface these
  * classes implement.
  */
-#include <Arduino.h>
+#include "TinyGPU/Emulation.h"
 
 #if defined(ESP32)
 
 #include <SD_MMC.h>
-#include <SPI.h>
-#include <Wire.h>
 
 #include "TinyGPU/Drivers/DisplayDriverDSI.h"
 #include "TinyGPU/Drivers/DisplayDriverQSPI.h"
 #include "TinyGPU/Drivers/DisplayDriverSPI.h"
+#include "TinyGPU/Input/TouchDriverArduino.h"
 #include "TinyGPU/Boards/LCDBoardsCommon.h"
 #include "esp_adc/adc_cali.h"
 #include "esp_adc/adc_cali_scheme.h"

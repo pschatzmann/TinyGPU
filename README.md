@@ -82,8 +82,13 @@ a `TinyGPU` INTERFACE target, fetched via `FetchContent` - see `examples/*/CMake
 For ESP-IDF, TinyGPU is also usable as a component: clone it as
 `components/TinyGPU` (or add its parent directory via
 `EXTRA_COMPONENT_DIRS`) and `idf_component_register`/`idf_component.yml`
-take care of the rest. Several headers (`TouchDriver.h`, `DeviceOutput.h`,
-`Boards/LCDBoardsESP32.h`, ...) need Arduino APIs, so this only compiles
-when `arduino-esp32` is also present as a component in the same build -
-uncomment the dependency in `idf_component.yml` if you need it.
+take care of the rest. Some headers (`Input/TouchDriverArduino.h`,
+`Boards/LCDBoardsESP32.h`, ...) call into the Arduino API
+(delay/pinMode/digitalWrite/SPIClass/TwoWire) via
+`TinyGPU/Emulation/EmulationIDF.h` - that header uses `arduino-esp32`
+automatically when it's present as a component in the same build
+(uncomment the dependency in `idf_component.yml` if you want that), and
+otherwise falls back to a small ESP-IDF-native emulation of that surface
+(`driver/gpio.h`, `driver/spi_master.h`, `driver/i2c.h`, `esp_timer`) - see
+that header for exactly what is and isn't covered.
 

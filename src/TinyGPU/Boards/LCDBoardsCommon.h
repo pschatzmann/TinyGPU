@@ -11,8 +11,6 @@
  * from the arduino-audio-tools "Audio Boards" wiki:
  * https://github.com/pschatzmann/arduino-audio-tools/wiki/Audio-Boards
  */
-#include <Arduino.h>
-
 #include "../../TinyGPU.h"
 #include "TinyGPU/Drivers/DisplayDriver.h"
 #include "TinyGPU/Input/TouchDriver.h"

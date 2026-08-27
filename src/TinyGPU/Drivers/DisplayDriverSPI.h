@@ -1,11 +1,10 @@
 #pragma once
-#include <Arduino.h>
-#include <SPI.h>
 #include <initializer_list>
 #include <stdint.h>
 #include <string.h>
 
 #include "TinyGPU/Drivers/DisplayDriver.h"
+#include "TinyGPU/Emulation.h"
 
 namespace tinygpu {
 

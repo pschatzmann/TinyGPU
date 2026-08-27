@@ -1,9 +1,9 @@
 #pragma once
-#include <Arduino.h>
 #include <stdint.h>
 #include <string.h>
 
 #include "TinyGPU/Drivers/DisplayDriver.h"
+#include "TinyGPU/Emulation.h"
 
 #if defined(ESP32)
 #include "driver/spi_master.h"

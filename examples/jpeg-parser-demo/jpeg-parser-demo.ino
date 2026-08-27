@@ -10,6 +10,7 @@
  * Library Manager, or `git clone` into your Arduino libraries folder) to
  * build this sketch.
  */
+#include <Arduino.h>
 #include <TinyGPU.h>
 #include <TinyGPU/Boards/LCDBoards.h>
 #include <TinyGPU/IO/JPEGParser.h>

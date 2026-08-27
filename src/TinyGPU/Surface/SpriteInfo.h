@@ -5,6 +5,7 @@
 
 #include "TinyGPU/Color/RGB565.h"
 #include "TinyGPU/ThreeD/Vector.h"
+#include "TinyGPU/Input/TouchDriverCommon.h"
 
 namespace tinygpu {
 

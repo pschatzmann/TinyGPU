@@ -35,6 +35,7 @@
  * the troubleshooting notes below setup().
  */
 
+#include <Arduino.h>
 #include <TinyGPU.h>
 #include <TinyGPU/Boards/LCDBoards.h>
 

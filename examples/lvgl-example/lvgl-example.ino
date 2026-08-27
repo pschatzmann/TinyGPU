@@ -25,6 +25,7 @@
  * touch controller, on desktop through the mouse (see TouchDriverSDL) -
  * both wired into LVGL's input device system by LVGLDriver.
  */
+#include <Arduino.h>
 #include <TinyGPU.h>
 #include <TinyGPU/Boards/LCDBoards.h>
 #include <TinyGPU/Integrations/LVGLDriver.h>

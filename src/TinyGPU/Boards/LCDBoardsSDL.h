@@ -11,7 +11,7 @@
  */
 #include "TinyGPU/Boards/LCDBoardsCommon.h"
 #include "TinyGPU/Drivers/DisplayDriverSDL.h"
-#include "TinyGPU/Drivers/TouchDriverSDL.h"
+#include "TinyGPU/Input/TouchDriverSDL.h"
 
 namespace tinygpu {
 

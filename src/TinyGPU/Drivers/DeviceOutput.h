@@ -1,8 +1,6 @@
 
 #pragma once
 
-#include <Arduino.h>
-#include <SPI.h>
 #include <stdint.h>
 
 #include "TinyGPU/Surface/ISurface.h"

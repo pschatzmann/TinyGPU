@@ -12,6 +12,7 @@
  * a different LCDBoard if yours differs. On desktop it opens an SDL2
  * window the same size as that panel (240x320) via LCDBoardDesktopSDL.
  */
+#include <Arduino.h>
 #include <TinyGPU.h>
 #include <TinyGPU/Boards/LCDBoards.h>
 

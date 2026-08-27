@@ -13,6 +13,7 @@
  * For an ESP32S3-specific variant that streams the cube as H264 video over
  * UDP instead of driving a local panel, see wireframe-cube-h264.ino.
  */
+#include <Arduino.h>
 #include "TinyGPU.h"
 #include <TinyGPU/Boards/LCDBoards.h>
 

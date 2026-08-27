@@ -7,6 +7,7 @@
  * Runs unchanged on an ESP32 board or the SDL2 desktop backend, both
  * reached through the same LCDBoard interface (see LCDBoards.h).
  */
+#include <Arduino.h>
 #include <TinyGPU.h>
 #include <TinyGPU/Boards/LCDBoards.h>
 #include <TinyGPU/Surface/SpriteDisplay.h>

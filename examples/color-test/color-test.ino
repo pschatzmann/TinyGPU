@@ -32,6 +32,7 @@
  * differs. On desktop it opens an SDL2 window of the same size via
  * LCDBoardDesktopSDL.
  */
+#include <Arduino.h>
 #include <TinyGPU.h>
 #include <TinyGPU/Boards/LCDBoards.h>
 #include <TinyGPU/Surface/SpriteDisplay.h>
