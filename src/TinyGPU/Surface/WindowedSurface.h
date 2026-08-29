@@ -111,7 +111,8 @@ class WindowedSurface : public SurfaceBase<RGB_T> {
   /// (Dialog's/Drawer's own drawArc()-free code never calls contains()
   /// directly, but this keeps the two consistent regardless).
   bool contains(size_t x, size_t y) override {
-    return x < SurfaceBase<RGB_T>::width_ && y < SurfaceBase<RGB_T>::height_;
+    return x < SurfaceBase<RGB_T>::width_ && y < SurfaceBase<RGB_T>::height_ &&
+           this->isClipVisible(x, y);
   }
 
  private:

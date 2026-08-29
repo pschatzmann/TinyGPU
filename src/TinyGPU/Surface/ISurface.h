@@ -196,6 +196,41 @@ class ISurface {
   ///Checks if the given coordinates are within the surface bounds.
   virtual bool contains(size_t x, size_t y) = 0;
 
+  /// Restricts all subsequent drawing to the intersection of
+  /// (x, y, w, h) and whatever clip rect is already active - a nested
+  /// pushClipRect() call narrows further, never widens. Every drawing
+  /// primitive on this surface (fillRect(), drawLine(), drawCircle(),
+  /// drawSprite(), drawText(), ...) respects the currently active clip;
+  /// reads (getPixel(), copySprite()) do not. Pair with a matching
+  /// popClipRect() - typically wrapping one widget/container's own
+  /// children so nothing they draw can spill past that widget's bounds.
+  ///
+  /// Default: a no-op, so an ISurface implementation that doesn't
+  /// override this (anything not deriving from SurfaceBase, which
+  /// implements the actual clip stack) simply never clips - existing
+  /// implementations keep drawing exactly as before.
+  virtual void pushClipRect(size_t x, size_t y, size_t w, size_t h) {
+    (void)x;
+    (void)y;
+    (void)w;
+    (void)h;
+  }
+
+  /// Restores whatever clip rect was active before the matching
+  /// pushClipRect() call. Popping with no active push is a no-op.
+  virtual void popClipRect() {}
+
+  /// True if (x, y) lies within the currently active clip rect - always
+  /// true if pushClipRect() was never called (see the default there).
+  /// Exposed so code doing its own pixel math (drawArc(), the
+  /// plotRoundRectCorner() helper below) can respect the same clip
+  /// primitive drawing calls do.
+  virtual bool isClipVisible(size_t x, size_t y) const {
+    (void)x;
+    (void)y;
+    return true;
+  }
+
  private:
   /// Which corner a plotRoundRectCorner() arc belongs to; selects which
   /// quadrant of the midpoint-circle loop's symmetric points to plot.

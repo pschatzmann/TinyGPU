@@ -142,11 +142,23 @@ class SurfaceBase : public ISurface<PixelT> {
     drawLine(x1, y, x1, y1, color);
   }
 
-  /// Fill a rectangle at (x, y) with width w, height h, and color.
+  /// Fill a rectangle at (x, y) with width w, height h, and color -
+  /// clipped both to the surface's own bounds and to the active clip
+  /// rect (see pushClipRect()), since every text glyph cell (BitmapFont/
+  /// FixedBitmapFont) and word-wrapped line (LinePrinter) is drawn as a
+  /// fillRect() call - clipping it here is what makes drawText() respect
+  /// the clip too, with no separate handling needed.
   void fillRect(size_t x, size_t y, size_t w, size_t h, PixelT color) override {
     if (w == 0 || h == 0) return;
     size_t endX = std::min(x + w, width_);
     size_t endY = std::min(y + h, height_);
+    if (!clipStack_.empty()) {
+      const ClipRect& clip = clipStack_.back();
+      x = std::max(x, clip.x);
+      y = std::max(y, clip.y);
+      endX = std::min(endX, clip.x + clip.w);
+      endY = std::min(endY, clip.y + clip.h);
+    }
     for (size_t yy = y; yy < endY; ++yy) {
       for (size_t xx = x; xx < endX; ++xx) {
         setPixel(xx, yy, color);
@@ -252,21 +264,50 @@ class SurfaceBase : public ISurface<PixelT> {
   bool isInBounds(size_t x, size_t y) const {
     return x < width_ && y < height_;
   }
-  /// Set a pixel only if (x, y) is in bounds.
+  /// Set a pixel only if (x, y) is in bounds and not clipped away (see
+  /// pushClipRect()).
   void setPixelClipped(size_t x, size_t y, PixelT color) {
-    if (isInBounds(x, y)) setPixel(x, y, color);
+    if (isInBounds(x, y) && isClipVisible(x, y)) setPixel(x, y, color);
   }
-  /// Draw a horizontal line from x0 to x1 at y, clipped to bounds.
+  /// Draw a horizontal line from x0 to x1 at y, clipped to bounds and to
+  /// the active clip rect (see pushClipRect()).
   void drawHorizontalLineClipped(int x0, int x1, int y, PixelT color) {
     if (y < 0 || (size_t)y >= height_) return;
     int startX = std::max(0, std::min(x0, x1));
     int endX = std::min((int)width_ - 1, std::max(x0, x1));
+    if (!clipStack_.empty()) {
+      const ClipRect& clip = clipStack_.back();
+      if ((size_t)y < clip.y || (size_t)y >= clip.y + clip.h) return;
+      startX = std::max(startX, static_cast<int>(clip.x));
+      endX = std::min(endX, static_cast<int>(clip.x + clip.w) - 1);
+    }
     if (startX > endX) return;
     for (int x = startX; x <= endX; ++x) setPixel(x, y, color);
   }
 
   bool contains(size_t x, size_t y) override {
-    return isInBounds(x, y);
+    return isInBounds(x, y) && isClipVisible(x, y);
+  }
+
+  /// See ISurface::pushClipRect() - intersects (x, y, w, h) with whatever
+  /// clip is already active, so nested containers each narrow further
+  /// rather than one replacing another's restriction.
+  void pushClipRect(size_t x, size_t y, size_t w, size_t h) override {
+    ClipRect rect{x, y, w, h};
+    if (!clipStack_.empty()) rect = intersect(rect, clipStack_.back());
+    clipStack_.push_back(rect);
+  }
+
+  /// See ISurface::popClipRect().
+  void popClipRect() override {
+    if (!clipStack_.empty()) clipStack_.pop_back();
+  }
+
+  /// See ISurface::isClipVisible().
+  bool isClipVisible(size_t x, size_t y) const override {
+    if (clipStack_.empty()) return true;
+    const ClipRect& clip = clipStack_.back();
+    return x >= clip.x && y >= clip.y && x < clip.x + clip.w && y < clip.y + clip.h;
   }
 
  protected:
@@ -274,6 +315,26 @@ class SurfaceBase : public ISurface<PixelT> {
   size_t height_ = 0;
   IFont<PixelT>* font_ = nullptr;
   LinePrinter<PixelT> linePrinter_;
+
+ private:
+  /// One entry of the clip stack - see pushClipRect().
+  struct ClipRect {
+    size_t x = 0;
+    size_t y = 0;
+    size_t w = 0;
+    size_t h = 0;
+  };
+
+  static ClipRect intersect(const ClipRect& a, const ClipRect& b) {
+    const size_t x0 = std::max(a.x, b.x);
+    const size_t y0 = std::max(a.y, b.y);
+    const size_t x1 = std::min(a.x + a.w, b.x + b.w);
+    const size_t y1 = std::min(a.y + a.h, b.y + b.h);
+    if (x1 <= x0 || y1 <= y0) return ClipRect{x0, y0, 0, 0};
+    return ClipRect{x0, y0, x1 - x0, y1 - y0};
+  }
+
+  std::vector<ClipRect> clipStack_;
 };
 
 }  // namespace tinygpu
