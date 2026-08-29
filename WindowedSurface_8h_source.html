@@ -189,18 +189,19 @@ $(function() {
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="comment">/// (Dialog&#39;s/Drawer&#39;s own drawArc()-free code never calls contains()</span></div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="comment">/// directly, but this keeps the two consistent regardless).</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classtinygpu_1_1WindowedSurface.html#a4ab689700d49d3a4e427a72cb704790f">  113</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classtinygpu_1_1WindowedSurface.html#a4ab689700d49d3a4e427a72cb704790f">contains</a>(size_t x, size_t y) <span class="keyword">override</span> {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">return</span> x &lt; SurfaceBase&lt;RGB_T&gt;::width_ &amp;&amp; y &lt; SurfaceBase&lt;RGB_T&gt;::height_;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  ISurface&lt;RGB_T&gt;&amp; backing_;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  int32_t offsetX_;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  int32_t offsetY_;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  size_t fullWidth_;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  size_t fullHeight_;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>};</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>}  <span class="comment">// namespace tinygpu</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">return</span> x &lt; SurfaceBase&lt;RGB_T&gt;::width_ &amp;&amp; y &lt; SurfaceBase&lt;RGB_T&gt;::height_ &amp;&amp;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>           <span class="keyword">this</span>-&gt;isClipVisible(x, y);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  ISurface&lt;RGB_T&gt;&amp; backing_;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  int32_t offsetX_;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  int32_t offsetY_;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  size_t fullWidth_;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  size_t fullHeight_;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>};</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}  <span class="comment">// namespace tinygpu</span></div>
 <div class="ttc" id="aclasstinygpu_1_1IFont_html"><div class="ttname"><a href="classtinygpu_1_1IFont.html">tinygpu::IFont</a></div><div class="ttdoc">Font rendering interface for TinyGPU-compatible framebuffers.</div><div class="ttdef"><b>Definition:</b> IFont.h:19</div></div>
 <div class="ttc" id="aclasstinygpu_1_1RGB565_html"><div class="ttname"><a href="classtinygpu_1_1RGB565.html">tinygpu::RGB565</a></div><div class="ttdoc">RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.</div><div class="ttdef"><b>Definition:</b> RGB565.h:24</div></div>
 <div class="ttc" id="aclasstinygpu_1_1SurfaceBase_html"><div class="ttname"><a href="classtinygpu_1_1SurfaceBase.html">tinygpu::SurfaceBase</a></div><div class="ttdoc">Base class for 2D surfaces with drawing and text rendering support.</div><div class="ttdef"><b>Definition:</b> SurfaceBase.h:25</div></div>

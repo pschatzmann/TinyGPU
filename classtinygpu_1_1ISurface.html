@@ -175,6 +175,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6c4b758f1438899cad34cea53b2e94c3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a6c4b758f1438899cad34cea53b2e94c3">contains</a> (size_t x, size_t y)=0</td></tr>
 <tr class="memdesc:a6c4b758f1438899cad34cea53b2e94c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given coordinates are within the surface bounds.  <br /></td></tr>
 <tr class="separator:a6c4b758f1438899cad34cea53b2e94c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadab106c337cbf581a02e79861416da8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#aadab106c337cbf581a02e79861416da8">pushClipRect</a> (size_t x, size_t y, size_t w, size_t h)</td></tr>
+<tr class="separator:aadab106c337cbf581a02e79861416da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754df3838156af45f54ba353398b43e0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a754df3838156af45f54ba353398b43e0">popClipRect</a> ()</td></tr>
+<tr class="separator:a754df3838156af45f54ba353398b43e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d36e175eacb9f3d2498546365352e16"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ISurface.html#a6d36e175eacb9f3d2498546365352e16">isClipVisible</a> (size_t x, size_t y) const</td></tr>
+<tr class="separator:a6d36e175eacb9f3d2498546365352e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename RGB_T = RGB565&gt;<br />
@@ -1175,6 +1181,125 @@ class tinygpu::ISurface&lt; RGB_T &gt;</div><p>Abstract framebuffer and drawing 
 <p>Returns the framebuffer height in pixels. </p>
 
 <p>Implemented in <a class="el" href="classtinygpu_1_1CartesianView.html#a715f3df3dc638de8b40076ada0b54a89">CartesianView&lt; RGB_T &gt;</a>, <a class="el" href="classtinygpu_1_1FrameBuffer.html#a715f3df3dc638de8b40076ada0b54a89">FrameBuffer&lt; RGB_T, SurfaceT &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#a715f3df3dc638de8b40076ada0b54a89">SurfaceBase&lt; PixelT &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#a715f3df3dc638de8b40076ada0b54a89">SurfaceBase&lt; RGB565 &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#a715f3df3dc638de8b40076ada0b54a89">SurfaceBase&lt; bool &gt;</a>, and <a class="el" href="classtinygpu_1_1WindowedSurface.html#a715f3df3dc638de8b40076ada0b54a89">WindowedSurface&lt; RGB_T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a6d36e175eacb9f3d2498546365352e16" name="a6d36e175eacb9f3d2498546365352e16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d36e175eacb9f3d2498546365352e16">&#9670;&#160;</a></span>isClipVisible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool isClipVisible </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>True if (x, y) lies within the currently active clip rect - always true if <a class="el" href="classtinygpu_1_1ISurface.html#aadab106c337cbf581a02e79861416da8">pushClipRect()</a> was never called (see the default there). Exposed so code doing its own pixel math (<a class="el" href="classtinygpu_1_1ISurface.html#a3f395bd45fed22a7c8d954d7f78fb754">drawArc()</a>, the plotRoundRectCorner() helper below) can respect the same clip primitive drawing calls do. </p>
+
+<p>Reimplemented in <a class="el" href="classtinygpu_1_1SurfaceBase.html#a913e9496a3211a9247a7828e06b0184d">SurfaceBase&lt; PixelT &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#a913e9496a3211a9247a7828e06b0184d">SurfaceBase&lt; RGB565 &gt;</a>, and <a class="el" href="classtinygpu_1_1SurfaceBase.html#a913e9496a3211a9247a7828e06b0184d">SurfaceBase&lt; bool &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a754df3838156af45f54ba353398b43e0" name="a754df3838156af45f54ba353398b43e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a754df3838156af45f54ba353398b43e0">&#9670;&#160;</a></span>popClipRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void popClipRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Restores whatever clip rect was active before the matching <a class="el" href="classtinygpu_1_1ISurface.html#aadab106c337cbf581a02e79861416da8">pushClipRect()</a> call. Popping with no active push is a no-op. </p>
+
+<p>Reimplemented in <a class="el" href="classtinygpu_1_1SurfaceBase.html#a6a6e2ed8fab0b4cda001f221c1653588">SurfaceBase&lt; PixelT &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#a6a6e2ed8fab0b4cda001f221c1653588">SurfaceBase&lt; RGB565 &gt;</a>, and <a class="el" href="classtinygpu_1_1SurfaceBase.html#a6a6e2ed8fab0b4cda001f221c1653588">SurfaceBase&lt; bool &gt;</a>.</p>
+
+</div>
+</div>
+<a id="aadab106c337cbf581a02e79861416da8" name="aadab106c337cbf581a02e79861416da8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadab106c337cbf581a02e79861416da8">&#9670;&#160;</a></span>pushClipRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void pushClipRect </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Restricts all subsequent drawing to the intersection of (x, y, w, h) and whatever clip rect is already active - a nested <a class="el" href="classtinygpu_1_1ISurface.html#aadab106c337cbf581a02e79861416da8">pushClipRect()</a> call narrows further, never widens. Every drawing primitive on this surface (<a class="el" href="classtinygpu_1_1ISurface.html#a20c3ea459abe6e78b27d11c3d273228f" title="Fills a rectangle.">fillRect()</a>, <a class="el" href="classtinygpu_1_1ISurface.html#a3fafdbed57223d70b758f257902655f4" title="Draws a line between two points.">drawLine()</a>, <a class="el" href="classtinygpu_1_1ISurface.html#afc565488868856c670916ab9d2e96b96" title="Draws a circle outline.">drawCircle()</a>, <a class="el" href="classtinygpu_1_1ISurface.html#afcd77dda8fd127af4e40edccbccf26e8" title="Draws a sprite using an optional transparent color.">drawSprite()</a>, <a class="el" href="classtinygpu_1_1ISurface.html#aac66a5e85ea19900d1dd5d59d16ac8bb" title="Draws UTF-8 text using the configured font.">drawText()</a>, ...) respects the currently active clip; reads (<a class="el" href="classtinygpu_1_1ISurface.html#ad56feac2ef74eb55f361ce3dc81604cc" title="Returns the pixel at the given position.">getPixel()</a>, <a class="el" href="classtinygpu_1_1ISurface.html#a4f2f1bd24f505e24824b5ee85c63ebc4" title="Copies pixels from the framebuffer into a sprite.">copySprite()</a>) do not. Pair with a matching <a class="el" href="classtinygpu_1_1ISurface.html#a754df3838156af45f54ba353398b43e0">popClipRect()</a> - typically wrapping one widget/container's own children so nothing they draw can spill past that widget's bounds.</p>
+<p>Default: a no-op, so an <a class="el" href="classtinygpu_1_1ISurface.html" title="Abstract framebuffer and drawing interface for TinyGPU surfaces.">ISurface</a> implementation that doesn't override this (anything not deriving from <a class="el" href="classtinygpu_1_1SurfaceBase.html" title="Base class for 2D surfaces with drawing and text rendering support.">SurfaceBase</a>, which implements the actual clip stack) simply never clips - existing implementations keep drawing exactly as before. </p>
+
+<p>Reimplemented in <a class="el" href="classtinygpu_1_1SurfaceBase.html#a01d1b966529cfc942892d2f850fce74a">SurfaceBase&lt; PixelT &gt;</a>, <a class="el" href="classtinygpu_1_1SurfaceBase.html#a01d1b966529cfc942892d2f850fce74a">SurfaceBase&lt; RGB565 &gt;</a>, and <a class="el" href="classtinygpu_1_1SurfaceBase.html#a01d1b966529cfc942892d2f850fce74a">SurfaceBase&lt; bool &gt;</a>.</p>
 
 </div>
 </div>
