@@ -1,0 +1,14 @@
+<map id="src/TinyGPU/Fonts.h" name="src/TinyGPU/Fonts.h">
+<area shape="rect" id="node1" title=" " alt="" coords="468,5,620,31"/>
+<area shape="rect" id="node2" href="$IFont_8h.html" title=" " alt="" coords="513,225,671,251"/>
+<area shape="rect" id="node6" href="$BitmapFont_8h.html" title=" " alt="" coords="302,152,503,177"/>
+<area shape="rect" id="node10" href="$Font5x7_8h.html" title=" " alt="" coords="629,79,808,104"/>
+<area shape="rect" id="node12" href="$AsciiFonts_8h.html" title=" " alt="" coords="217,79,409,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="496,372,571,397"/>
+<area shape="rect" id="node4" title=" " alt="" coords="699,372,770,397"/>
+<area shape="rect" id="node5" href="$RGB565_8h.html" title=" " alt="" coords="376,299,560,324"/>
+<area shape="rect" id="node7" title=" " alt="" coords="5,225,61,251"/>
+<area shape="rect" id="node8" href="$ISurface_8h.html" title=" " alt="" coords="136,225,336,251"/>
+<area shape="rect" id="node9" title=" " alt="" coords="233,299,301,324"/>
+<area shape="rect" id="node11" href="$RGB888_8h.html" title=" " alt="" coords="797,299,981,324"/>
+</map>
