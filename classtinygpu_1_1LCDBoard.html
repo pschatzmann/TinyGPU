@@ -86,8 +86,9 @@ Inheritance diagram for LCDBoard:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1LCDBoard__inherit__graph.png" border="0" usemap="#aLCDBoard_inherit__map" alt="Inheritance graph"/></div>
 <map name="aLCDBoard_inherit__map" id="aLCDBoard_inherit__map">
-<area shape="rect" title=" " alt="" coords="45,5,131,31"/>
+<area shape="rect" title=" " alt="" coords="131,5,218,31"/>
 <area shape="rect" href="classtinygpu_1_1LCDBoardDesktopSDL.html" title="Desktop SDL2 window standing in for a physical LCD board. Window size is set at construction time (de..." alt="" coords="5,79,171,104"/>
+<area shape="rect" href="classtinygpu_1_1LCDBoardTFTeSPI.html" title="LCDBoard wrapping a single TFT_eSPI instance, shared between its DisplayDriverTFTeSPI and (optional) ..." alt="" coords="195,79,330,104"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -200,7 +201,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Brings up the board's backlight/bus/display/touch. Returns false if the display or touch <a class="el" href="classtinygpu_1_1LCDBoard.html#ae8a0d9ca63f8bb3de100e347c3f3bca4">begin()</a> fails. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#acba365cc28eb702040c382646cfb0a7a">LCDBoardDesktopSDL</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#acba365cc28eb702040c382646cfb0a7a">LCDBoardDesktopSDL</a>, and <a class="el" href="classtinygpu_1_1LCDBoardTFTeSPI.html#acba365cc28eb702040c382646cfb0a7a">LCDBoardTFTeSPI</a>.</p>
 
 </div>
 </div>
@@ -229,7 +230,7 @@ Public Member Functions</h2></td></tr>
 
 <p>The board's display driver. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#a29d94d146b631d6d83d714abbfa8ee63">LCDBoardDesktopSDL</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#a29d94d146b631d6d83d714abbfa8ee63">LCDBoardDesktopSDL</a>, and <a class="el" href="classtinygpu_1_1LCDBoardTFTeSPI.html#a88b06672c515c172c2b4b344ae4454fb">LCDBoardTFTeSPI</a>.</p>
 
 </div>
 </div>
@@ -258,7 +259,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Panel height in pixels. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#a715f3df3dc638de8b40076ada0b54a89">LCDBoardDesktopSDL</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#a715f3df3dc638de8b40076ada0b54a89">LCDBoardDesktopSDL</a>, and <a class="el" href="classtinygpu_1_1LCDBoardTFTeSPI.html#a715f3df3dc638de8b40076ada0b54a89">LCDBoardTFTeSPI</a>.</p>
 
 </div>
 </div>
@@ -287,7 +288,7 @@ Public Member Functions</h2></td></tr>
 
 <p>The board's I2S/PA pin assignment. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#a84a961b1948a67ea8928a78d95f6d463">LCDBoardDesktopSDL</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#a84a961b1948a67ea8928a78d95f6d463">LCDBoardDesktopSDL</a>, and <a class="el" href="classtinygpu_1_1LCDBoardTFTeSPI.html#a84a961b1948a67ea8928a78d95f6d463">LCDBoardTFTeSPI</a>.</p>
 
 </div>
 </div>
@@ -316,7 +317,7 @@ Public Member Functions</h2></td></tr>
 
 <p>The board's LED pin assignment. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#af10a07544f51ff43f4867c9f37ac1a40">LCDBoardDesktopSDL</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#af10a07544f51ff43f4867c9f37ac1a40">LCDBoardDesktopSDL</a>, and <a class="el" href="classtinygpu_1_1LCDBoardTFTeSPI.html#af10a07544f51ff43f4867c9f37ac1a40">LCDBoardTFTeSPI</a>.</p>
 
 </div>
 </div>
@@ -372,7 +373,7 @@ Public Member Functions</h2></td></tr>
 
 <p>The board's touch controller, or nullptr if none is wired up. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#aaa77440d7eecb72ec6db1682a5538b9d">LCDBoardDesktopSDL</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#aaa77440d7eecb72ec6db1682a5538b9d">LCDBoardDesktopSDL</a>, and <a class="el" href="classtinygpu_1_1LCDBoardTFTeSPI.html#aaa77440d7eecb72ec6db1682a5538b9d">LCDBoardTFTeSPI</a>.</p>
 
 </div>
 </div>
@@ -401,7 +402,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Panel width in pixels. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#ac39656d862f5a4a39182559bbf7c740b">LCDBoardDesktopSDL</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#ac39656d862f5a4a39182559bbf7c740b">LCDBoardDesktopSDL</a>, and <a class="el" href="classtinygpu_1_1LCDBoardTFTeSPI.html#ac39656d862f5a4a39182559bbf7c740b">LCDBoardTFTeSPI</a>.</p>
 
 </div>
 </div>

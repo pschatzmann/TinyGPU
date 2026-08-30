@@ -1,0 +1,5 @@
+<map id="TouchDriverTFTeSPI" name="TouchDriverTFTeSPI">
+<area shape="rect" id="node1" title="Touch driver that reads through Bodmer&#39;s TFT_eSPI (https://github.com/Bodmer/TFT_eSPI) resistive touc..." alt="" coords="5,168,153,193"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="30,93,129,119"/>
+<area shape="rect" id="node3" href="$structtinygpu_1_1CalibrationData.html" title="Touch calibration configuration." alt="" coords="17,5,141,31"/>
+</map>

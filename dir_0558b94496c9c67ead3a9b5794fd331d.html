@@ -84,8 +84,8 @@ Directory dependency graph for Boards:</div>
 <area shape="rect" href="dir_a67c8eb9763d395e693e613a8f81a0ac.html" title="Drivers" alt="" coords="27,125,96,151"/>
 <area shape="rect" href="dir_ff75d0d022721be81fa85f9dffa96129.html" title="Input" alt="" coords="121,125,175,151"/>
 <area shape="rect" href="dir_0558b94496c9c67ead3a9b5794fd331d.html" title="Boards" alt="" coords="68,52,135,77"/>
-<area shape="rect" href="dir_000000_000002.html" title="2" alt="" coords="79,106,89,121"/>
-<area shape="rect" href="dir_000000_000005.html" title="2" alt="" coords="133,98,142,113"/>
+<area shape="rect" href="dir_000000_000002.html" title="3" alt="" coords="79,106,89,121"/>
+<area shape="rect" href="dir_000000_000005.html" title="3" alt="" coords="133,98,142,113"/>
 <area shape="rect" href="dir_ee559ef0698e790c953305f5d5dad3a0.html" title="TinyGPU" alt="" coords="16,16,187,161"/>
 </map>
 </div>
@@ -102,6 +102,9 @@ Files</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCDBoardsSDL_8h.html">LCDBoardsSDL.h</a> <a href="LCDBoardsSDL_8h_source.html">[code]</a></td></tr>
 <tr class="memdesc:LCDBoardsSDL_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCDBoard for the SDL2 desktop backend - renders to a window via DisplayDriverSDL and maps the mouse to touch via TouchDriverSDL, so sketches written against the LCDBoard interface can run unmodified on a desktop for testing/debugging without any physical hardware. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCDBoardsTFTeSPI_8h.html">LCDBoardsTFTeSPI.h</a> <a href="LCDBoardsTFTeSPI_8h_source.html">[code]</a></td></tr>
+<tr class="memdesc:LCDBoardsTFTeSPI_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCDBoard backed by Bodmer's TFT_eSPI (<a href="https://github.com/Bodmer/TFT_eSPI">https://github.com/Bodmer/TFT_eSPI</a>) instead of one of this library's own SPI panel/touch drivers - useful if you already have a working TFT_eSPI <code>User_Setup.h</code> for your panel (and optionally its touch calibration) and would rather reuse it than re-wire the same panel through <a class="el" href="LCDBoardsESP32_8h.html" title="One-call setup for ESP32(-S3) boards from the arduino-audio-tools &quot;Audio Boards&quot; wiki that combine an...">LCDBoardsESP32.h</a>'s board-specific pin tables. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

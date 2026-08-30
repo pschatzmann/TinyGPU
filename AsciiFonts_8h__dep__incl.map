@@ -1,12 +1,13 @@
 <map id="src/TinyGPU/Font/AsciiFonts.h" name="src/TinyGPU/Font/AsciiFonts.h">
-<area shape="rect" id="node1" title=" " alt="" coords="143,5,358,31"/>
-<area shape="rect" id="node2" href="$Fonts_8h.html" title=" " alt="" coords="63,79,215,104"/>
-<area shape="rect" id="node3" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="239,79,489,104"/>
-<area shape="rect" id="node4" href="$TinyGPU_8h.html" title=" " alt="" coords="307,152,421,177"/>
-<area shape="rect" id="node5" href="$LCDBoardsCommon_8h.html" title=" " alt="" coords="180,225,348,265"/>
-<area shape="rect" id="node10" href="$LVGLDriver_8h.html" title=" " alt="" coords="373,225,555,265"/>
+<area shape="rect" id="node1" title=" " alt="" coords="231,5,446,31"/>
+<area shape="rect" id="node2" href="$Fonts_8h.html" title=" " alt="" coords="151,79,303,104"/>
+<area shape="rect" id="node3" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="327,79,577,104"/>
+<area shape="rect" id="node4" href="$TinyGPU_8h.html" title=" " alt="" coords="395,152,509,177"/>
+<area shape="rect" id="node5" href="$LCDBoardsCommon_8h.html" title=" " alt="" coords="268,225,436,265"/>
+<area shape="rect" id="node11" href="$LVGLDriver_8h.html" title=" " alt="" coords="461,225,643,265"/>
 <area shape="rect" id="node6" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,313,253,353"/>
 <area shape="rect" id="node9" href="$LCDBoardsSDL_8h.html" title="LCDBoard for the SDL2 desktop backend &#45; renders to a window via DisplayDriverSDL and maps the mouse t..." alt="" coords="277,313,427,353"/>
+<area shape="rect" id="node10" href="$LCDBoardsTFTeSPI_8h.html" title="LCDBoard backed by Bodmer&#39;s TFT_eSPI (https://github.com/Bodmer/TFT_eSPI) instead of one of this libr..." alt="" coords="451,313,610,353"/>
 <area shape="rect" id="node7" href="$Boards_8h.html" title=" " alt="" coords="5,409,168,434"/>
 <area shape="rect" id="node8" href="$SpriteDisplay_8h.html" title=" " alt="" coords="192,401,347,441"/>
 </map>
