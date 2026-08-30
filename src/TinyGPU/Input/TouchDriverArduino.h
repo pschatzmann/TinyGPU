@@ -2,8 +2,9 @@
 /**
  * @file TouchDriverArduino.h
  * @brief Concrete touch-controller drivers (XPT2046, FT6236/FT6206,
- * CST816S, GT911) built on the Arduino SPIClass/TwoWire API - split out
- * of TouchDriver.h so that including the platform-independent TouchDriver
+ * CST816S, GT911, and the controller-less TouchDriverBitBang) built on
+ * the Arduino SPIClass/TwoWire/pinMode/analogRead API - split out of
+ * TouchDriver.h so that including the platform-independent TouchDriver
  * base class/calibration/coordinate-mapping code doesn't also pull in
  * Arduino.h. Include this file explicitly to use any of these drivers.
  *
@@ -145,6 +146,138 @@ class TouchDriverXPT2046 : public TouchDriver {
   void endTransaction() {
     digitalWrite(csPin_, HIGH);
     spi_.endTransaction();
+  }
+};
+
+/**
+ * @brief Bit-banged 4-wire resistive touch panel driver.
+ *
+ * Drives the resistive layer's four pins (X-, Y-, X+, Y+) directly via
+ * GPIO - pinMode()/digitalWrite()/digitalRead()/analogRead() - rather than
+ * through a dedicated touch controller chip such as XPT2046. This matches
+ * small resistive touch panels that expose their four resistive-layer
+ * pins straight to microcontroller GPIOs instead of routing them through
+ * a controller IC.
+ *
+ * Requires analogRead() to be available for all four pins, i.e. a real
+ * Arduino core (arduino-esp32, AVR, ...) - the ESP-IDF-native
+ * TinyGPU/Emulation fallback (see EmulationIDF.h) does not emulate
+ * analogRead()/ADC, so this driver will not compile against that
+ * fallback.
+ *
+ * Position measurement, per axis:
+ *   - drive one axis's plates (e.g. X+ HIGH / X- LOW) to set up a voltage
+ *     gradient across that resistive layer
+ *   - float the OTHER axis's plates (INPUT)
+ *   - analogRead() one of the other axis's pins: the voltage it picks up
+ *     is proportional to position along the driven axis
+ *
+ * Touch presence is a cheap digital check (Y+ as INPUT_PULLUP, X- driven
+ * LOW; a touch shorts the two layers together and pulls Y+ LOW) rather
+ * than a calibrated Z1/Z2 pressure measurement - this only needs to know
+ * whether the panel is touched at all. Pressure is therefore always
+ * reported as 255 while touched, like the capacitive controllers below.
+ */
+class TouchDriverBitBang : public TouchDriver {
+ public:
+  /**
+   * @param xPlusPin X+ resistive layer analog pin.
+   * @param xMinusPin X- resistive layer digital pin.
+   * @param yPlusPin Y+ resistive layer analog pin.
+   * @param yMinusPin Y- resistive layer digital pin.
+   */
+  TouchDriverBitBang(int8_t xPlusPin, int8_t xMinusPin, int8_t yPlusPin,
+                     int8_t yMinusPin)
+      : xp_(xPlusPin), xm_(xMinusPin), yp_(yPlusPin), ym_(yMinusPin) {}
+
+  bool begin() override {
+    if (xp_ < 0 || xm_ < 0 || yp_ < 0 || ym_ < 0) {
+      return false;
+    }
+
+    releasePins();
+    return true;
+  }
+
+  bool isTouched() override {
+    /*
+     * Cheap digital touch-presence check: pull Y+ up internally and drive
+     * X- low. Untouched, Y+'s internal pull-up holds it HIGH. A touch
+     * connects the two resistive layers together, so current flows from
+     * the pulled-up Y+ pin down through X-, pulling Y+ LOW.
+     */
+    pinMode(xp_, INPUT);
+    pinMode(ym_, INPUT);
+
+    pinMode(xm_, OUTPUT);
+    digitalWrite(xm_, LOW);
+
+    pinMode(yp_, INPUT_PULLUP);
+
+    const bool touched = digitalRead(yp_) == LOW;
+
+    releasePins();
+    return touched;
+  }
+
+  bool getPoint(Point& outPoint) override {
+    if (!isTouched()) {
+      return false;
+    }
+
+    const int16_t rawX = readAxis(/*driveXAxis=*/true);
+    const int16_t rawY = readAxis(/*driveXAxis=*/false);
+
+    releasePins();
+
+    outPoint = mapCoordinates(rawX, rawY, 255);
+    return true;
+  }
+
+ private:
+  int8_t xp_;
+  int8_t xm_;
+  int8_t yp_;
+  int8_t ym_;
+
+  void releasePins() {
+    pinMode(xp_, INPUT);
+    pinMode(xm_, INPUT);
+    pinMode(yp_, INPUT);
+    pinMode(ym_, INPUT);
+  }
+
+  /**
+   * @brief Read one axis's raw position.
+   *
+   * driveXAxis == true: drive X+/X- (X+ HIGH, X- LOW), read the resulting
+   * voltage gradient off Y+ - this measures the X position.
+   *
+   * driveXAxis == false: drive Y+/Y- (Y+ HIGH, Y- LOW), read off X+ - this
+   * measures the Y position.
+   */
+  int16_t readAxis(bool driveXAxis) {
+    const int8_t drivePlus = driveXAxis ? xp_ : yp_;
+    const int8_t driveMinus = driveXAxis ? xm_ : ym_;
+    const int8_t sensePin = driveXAxis ? yp_ : xp_;
+    const int8_t senseOtherPin = driveXAxis ? ym_ : xm_;
+
+    pinMode(senseOtherPin, INPUT);
+
+    pinMode(drivePlus, OUTPUT);
+    pinMode(driveMinus, OUTPUT);
+    digitalWrite(drivePlus, HIGH);
+    digitalWrite(driveMinus, LOW);
+
+    pinMode(sensePin, INPUT);
+
+    /*
+     * Discard the first conversion. This lets the driven plates settle
+     * and improves stability, the same way TouchDriverXPT2046 discards
+     * its first conversion per axis.
+     */
+    (void)analogRead(sensePin);
+    return static_cast<int16_t>(analogRead(sensePin));
   }
 };
 
