@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['madctlforrotation_0',['madctlForRotation',['../classtinygpu_1_1ILI9341Driver.html#a068b9c95ed674b312cad7b7ea8eba404',1,'tinygpu::ILI9341Driver::madctlForRotation()'],['../classtinygpu_1_1ILI9342Driver.html#a068b9c95ed674b312cad7b7ea8eba404',1,'tinygpu::ILI9342Driver::madctlForRotation()']]],
+  ['madctlforrotation_0',['madctlForRotation',['../classtinygpu_1_1ILI9341Driver8080.html#a068b9c95ed674b312cad7b7ea8eba404',1,'tinygpu::ILI9341Driver8080::madctlForRotation()'],['../classtinygpu_1_1ILI9341Driver.html#a068b9c95ed674b312cad7b7ea8eba404',1,'tinygpu::ILI9341Driver::madctlForRotation()'],['../classtinygpu_1_1ILI9342Driver.html#a068b9c95ed674b312cad7b7ea8eba404',1,'tinygpu::ILI9342Driver::madctlForRotation()']]],
   ['mapcoordinates_1',['mapCoordinates',['../classtinygpu_1_1TouchDriver.html#a4cdc2e41fca94a0591029d6e0d7a095d',1,'tinygpu::TouchDriver']]],
   ['mappedtopofbox_2',['mappedTopOfBox',['../classtinygpu_1_1CartesianView.html#a98ddf22c054582a493f43ecf79fb7ed5',1,'tinygpu::CartesianView']]],
   ['mappedy_3',['mappedY',['../classtinygpu_1_1CartesianView.html#a9b8ffbede712d9744cff0f568b9167da',1,'tinygpu::CartesianView']]],

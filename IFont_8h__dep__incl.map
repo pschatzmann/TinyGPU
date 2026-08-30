@@ -1,33 +1,36 @@
 <map id="src/TinyGPU/Font/IFont.h" name="src/TinyGPU/Font/IFont.h">
-<area shape="rect" id="node1" title=" " alt="" coords="1055,5,1236,31"/>
-<area shape="rect" id="node2" href="$BitmapFont_8h.html" title=" " alt="" coords="714,79,938,104"/>
-<area shape="rect" id="node4" href="$Fonts_8h.html" title=" " alt="" coords="412,247,564,273"/>
-<area shape="rect" id="node5" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="977,511,1226,537"/>
-<area shape="rect" id="node23" href="$Surface_8h.html" title=" " alt="" coords="1615,240,1770,280"/>
-<area shape="rect" id="node26" href="$SurfaceWithExternalBuffer_8h.html" title=" " alt="" coords="1050,240,1260,280"/>
-<area shape="rect" id="node27" href="$LinePrinter_8h.html" title=" " alt="" coords="1280,79,1499,104"/>
-<area shape="rect" id="node28" href="$SurfaceBase_8h.html" title=" " alt="" coords="1339,152,1494,192"/>
-<area shape="rect" id="node29" href="$SurfaceMonochrome_8h.html" title=" " alt="" coords="1170,328,1342,368"/>
-<area shape="rect" id="node31" href="$CartesianView_8h.html" title=" " alt="" coords="660,328,815,368"/>
-<area shape="rect" id="node3" href="$AsciiFonts_8h.html" title=" " alt="" coords="486,159,701,185"/>
-<area shape="rect" id="node14" href="$Font5x7_8h.html" title=" " alt="" coords="725,159,926,185"/>
-<area shape="rect" id="node6" href="$TinyGPU_8h.html" title=" " alt="" coords="1045,599,1158,625"/>
-<area shape="rect" id="node7" href="$LCDBoardsCommon_8h.html" title=" " alt="" coords="495,680,663,720"/>
-<area shape="rect" id="node13" href="$LVGLDriver_8h.html" title=" " alt="" coords="1010,680,1193,720"/>
-<area shape="rect" id="node8" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="500,768,650,808"/>
-<area shape="rect" id="node11" href="$LCDBoardsSDL_8h.html" title="LCDBoard for the SDL2 desktop backend &#45; renders to a window via DisplayDriverSDL and maps the mouse t..." alt="" coords="674,768,825,808"/>
-<area shape="rect" id="node12" href="$LCDBoardsTFTeSPI_8h.html" title="LCDBoard backed by Bodmer&#39;s TFT_eSPI (https://github.com/Bodmer/TFT_eSPI) instead of one of this libr..." alt="" coords="118,768,277,808"/>
-<area shape="rect" id="node9" href="$Boards_8h.html" title=" " alt="" coords="494,863,656,889"/>
-<area shape="rect" id="node10" href="$SpriteDisplay_8h.html" title=" " alt="" coords="1147,856,1302,896"/>
-<area shape="rect" id="node15" href="$Drivers_2DisplayDriver_8h.html" title=" " alt="" coords="444,416,596,456"/>
-<area shape="rect" id="node16" href="$DeviceOutput_8h.html" title=" " alt="" coords="667,504,819,544"/>
-<area shape="rect" id="node17" href="$DisplayDriverDSI_8h.html" title=" " alt="" coords="208,504,360,544"/>
-<area shape="rect" id="node19" href="$DisplayDriverQSPI_8h.html" title=" " alt="" coords="384,504,542,544"/>
-<area shape="rect" id="node20" href="$DisplayDriverSDL_8h.html" title=" " alt="" coords="634,592,786,632"/>
-<area shape="rect" id="node21" href="$DisplayDriverSPI_8h.html" title=" " alt="" coords="32,504,184,544"/>
-<area shape="rect" id="node22" href="$DisplayDriverTFTeSPI_8h.html" title=" " alt="" coords="102,680,278,720"/>
-<area shape="rect" id="node18" href="$DisplayDriver_8h.html" title=" " alt="" coords="182,599,387,625"/>
-<area shape="rect" id="node24" href="$FrameBuffer_8h.html" title=" " alt="" coords="1438,328,1592,368"/>
-<area shape="rect" id="node25" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="1351,416,1554,456"/>
-<area shape="rect" id="node30" href="$WindowedSurface_8h.html" title=" " alt="" coords="1436,240,1591,280"/>
+<area shape="rect" id="node1" title=" " alt="" coords="1679,5,1860,31"/>
+<area shape="rect" id="node2" href="$BitmapFont_8h.html" title=" " alt="" coords="1119,79,1343,104"/>
+<area shape="rect" id="node4" href="$Fonts_8h.html" title=" " alt="" coords="1113,247,1265,273"/>
+<area shape="rect" id="node5" href="$TinyGPUGlobals_8h.html" title=" " alt="" coords="1578,511,1827,537"/>
+<area shape="rect" id="node26" href="$Surface_8h.html" title=" " alt="" coords="1969,240,2124,280"/>
+<area shape="rect" id="node29" href="$SurfaceWithExternalBuffer_8h.html" title=" " alt="" coords="2149,240,2358,280"/>
+<area shape="rect" id="node30" href="$LinePrinter_8h.html" title=" " alt="" coords="1807,79,2025,104"/>
+<area shape="rect" id="node31" href="$SurfaceBase_8h.html" title=" " alt="" coords="1829,152,1984,192"/>
+<area shape="rect" id="node32" href="$SurfaceMonochrome_8h.html" title=" " alt="" coords="1690,328,1862,368"/>
+<area shape="rect" id="node34" href="$CartesianView_8h.html" title=" " alt="" coords="2321,328,2476,368"/>
+<area shape="rect" id="node3" href="$AsciiFonts_8h.html" title=" " alt="" coords="1123,159,1338,185"/>
+<area shape="rect" id="node14" href="$Font5x7_8h.html" title=" " alt="" coords="1362,159,1563,185"/>
+<area shape="rect" id="node6" href="$TinyGPU_8h.html" title=" " alt="" coords="1937,599,2050,625"/>
+<area shape="rect" id="node7" href="$LCDBoardsCommon_8h.html" title=" " alt="" coords="449,680,617,720"/>
+<area shape="rect" id="node13" href="$LVGLDriver_8h.html" title=" " alt="" coords="1902,680,2085,720"/>
+<area shape="rect" id="node8" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="945,768,1095,808"/>
+<area shape="rect" id="node11" href="$LCDBoardsSDL_8h.html" title="LCDBoard for the SDL2 desktop backend &#45; renders to a window via DisplayDriverSDL and maps the mouse t..." alt="" coords="207,768,358,808"/>
+<area shape="rect" id="node12" href="$LCDBoardsTFTeSPI_8h.html" title="LCDBoard backed by Bodmer&#39;s TFT_eSPI (https://github.com/Bodmer/TFT_eSPI) instead of one of this libr..." alt="" coords="418,768,577,808"/>
+<area shape="rect" id="node9" href="$Boards_8h.html" title=" " alt="" coords="939,863,1101,889"/>
+<area shape="rect" id="node10" href="$SpriteDisplay_8h.html" title=" " alt="" coords="1812,856,1967,896"/>
+<area shape="rect" id="node15" href="$Drivers_2DisplayDriver_8h.html" title=" " alt="" coords="595,416,747,456"/>
+<area shape="rect" id="node16" href="$DeviceOutput_8h.html" title=" " alt="" coords="1401,504,1553,544"/>
+<area shape="rect" id="node17" href="$DisplayDriverDSI_8h.html" title=" " alt="" coords="771,504,923,544"/>
+<area shape="rect" id="node19" href="$DisplayDriverParallel8_8h.html" title=" " alt="" coords="947,504,1130,544"/>
+<area shape="rect" id="node20" href="$DisplayDriverParallel8ESP32_8h.html" title=" " alt="" coords="1154,504,1377,544"/>
+<area shape="rect" id="node21" href="$DisplayDriverParallel8RP2040_8h.html" title=" " alt="" coords="5,504,237,544"/>
+<area shape="rect" id="node22" href="$DisplayDriverQSPI_8h.html" title=" " alt="" coords="413,504,571,544"/>
+<area shape="rect" id="node23" href="$DisplayDriverSDL_8h.html" title=" " alt="" coords="136,592,288,632"/>
+<area shape="rect" id="node24" href="$DisplayDriverSPI_8h.html" title=" " alt="" coords="595,504,747,544"/>
+<area shape="rect" id="node25" href="$DisplayDriverTFTeSPI_8h.html" title=" " alt="" coords="249,680,425,720"/>
+<area shape="rect" id="node18" href="$DisplayDriver_8h.html" title=" " alt="" coords="568,599,773,625"/>
+<area shape="rect" id="node27" href="$FrameBuffer_8h.html" title=" " alt="" coords="1953,328,2108,368"/>
+<area shape="rect" id="node28" href="$FrameBufferMonochrome_8h.html" title=" " alt="" coords="1892,416,2095,456"/>
+<area shape="rect" id="node33" href="$WindowedSurface_8h.html" title=" " alt="" coords="1740,240,1895,280"/>
 </map>

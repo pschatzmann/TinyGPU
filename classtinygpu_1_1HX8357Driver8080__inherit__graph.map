@@ -1,0 +1,5 @@
+<map id="HX8357Driver8080&lt; RGB_T &gt;" name="HX8357Driver8080&lt; RGB_T &gt;">
+<area shape="rect" id="node1" title="Driver for HX8357 8&#45;bit parallel display controller." alt="" coords="5,167,224,192"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriverParallel8.html" title="Common base class for 8&#45;bit parallel (&quot;Intel 8080&quot;&#45;style) TFT display drivers: 8 data lines (D0&#45;D7),..." alt="" coords="31,79,198,119"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="23,5,207,31"/>
+</map>

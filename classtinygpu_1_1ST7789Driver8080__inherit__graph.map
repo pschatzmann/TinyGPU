@@ -1,0 +1,5 @@
+<map id="ST7789Driver8080&lt; RGB_T &gt;" name="ST7789Driver8080&lt; RGB_T &gt;">
+<area shape="rect" id="node1" title="Driver for ST7789 8&#45;bit parallel display controller." alt="" coords="5,167,220,192"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriverParallel8.html" title="Common base class for 8&#45;bit parallel (&quot;Intel 8080&quot;&#45;style) TFT display drivers: 8 data lines (D0&#45;D7),..." alt="" coords="29,79,196,119"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="21,5,205,31"/>
+</map>

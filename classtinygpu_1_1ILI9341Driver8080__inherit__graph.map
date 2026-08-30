@@ -1,0 +1,5 @@
+<map id="ILI9341Driver8080&lt; RGB_T &gt;" name="ILI9341Driver8080&lt; RGB_T &gt;">
+<area shape="rect" id="node1" title="Driver for ILI9341 8&#45;bit parallel display controller." alt="" coords="21,167,173,207"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriverParallel8.html" title="Common base class for 8&#45;bit parallel (&quot;Intel 8080&quot;&#45;style) TFT display drivers: 8 data lines (D0&#45;D7),..." alt="" coords="14,79,181,119"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,5,189,31"/>
+</map>

@@ -1,12 +1,15 @@
 <map id="src/TinyGPU/Drivers/DisplayDriver.h" name="src/TinyGPU/Drivers/DisplayDriver.h">
-<area shape="rect" id="node1" title=" " alt="" coords="544,5,696,45"/>
+<area shape="rect" id="node1" title=" " alt="" coords="747,5,899,45"/>
 <area shape="rect" id="node2" href="$LCDBoardsCommon_8h.html" title=" " alt="" coords="93,269,261,309"/>
 <area shape="rect" id="node8" href="$DeviceOutput_8h.html" title=" " alt="" coords="336,93,488,133"/>
 <area shape="rect" id="node11" href="$DisplayDriverDSI_8h.html" title=" " alt="" coords="657,93,809,133"/>
-<area shape="rect" id="node13" href="$DisplayDriverQSPI_8h.html" title=" " alt="" coords="833,93,991,133"/>
-<area shape="rect" id="node14" href="$DisplayDriverSDL_8h.html" title=" " alt="" coords="431,181,583,221"/>
-<area shape="rect" id="node15" href="$DisplayDriverSPI_8h.html" title=" " alt="" coords="1015,93,1167,133"/>
-<area shape="rect" id="node16" href="$DisplayDriverTFTeSPI_8h.html" title=" " alt="" coords="544,269,720,309"/>
+<area shape="rect" id="node13" href="$DisplayDriverParallel8_8h.html" title=" " alt="" coords="1191,93,1374,133"/>
+<area shape="rect" id="node14" href="$DisplayDriverParallel8ESP32_8h.html" title=" " alt="" coords="1398,93,1621,133"/>
+<area shape="rect" id="node15" href="$DisplayDriverParallel8RP2040_8h.html" title=" " alt="" coords="1645,93,1877,133"/>
+<area shape="rect" id="node16" href="$DisplayDriverQSPI_8h.html" title=" " alt="" coords="833,93,991,133"/>
+<area shape="rect" id="node17" href="$DisplayDriverSDL_8h.html" title=" " alt="" coords="431,181,583,221"/>
+<area shape="rect" id="node18" href="$DisplayDriverSPI_8h.html" title=" " alt="" coords="1015,93,1167,133"/>
+<area shape="rect" id="node19" href="$DisplayDriverTFTeSPI_8h.html" title=" " alt="" coords="544,269,720,309"/>
 <area shape="rect" id="node3" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,357,253,397"/>
 <area shape="rect" id="node6" href="$LCDBoardsSDL_8h.html" title="LCDBoard for the SDL2 desktop backend &#45; renders to a window via DisplayDriverSDL and maps the mouse t..." alt="" coords="327,357,478,397"/>
 <area shape="rect" id="node7" href="$LCDBoardsTFTeSPI_8h.html" title="LCDBoard backed by Bodmer&#39;s TFT_eSPI (https://github.com/Bodmer/TFT_eSPI) instead of one of this libr..." alt="" coords="527,357,686,397"/>

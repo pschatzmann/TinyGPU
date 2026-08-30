@@ -114,7 +114,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <p><a href="TouchDriver_8h_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Platform-independent touch driver interface: the Point/ CalibrationData/Rotation types, the TouchDriver base class (calibration storage, raw-to-logical coordinate mapping) and nothing else - this file has no dependency on Arduino.h or any bus library, so including it (e.g. transitively via <a class="el" href="TinyGPU_8h.html">TinyGPU.h</a>) never requires linking against an Arduino core. </p>
-<p>Concrete controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911), which do need Arduino.h/SPI.h/Wire.h, live in the separate <a class="el" href="TouchDriverArduino_8h.html" title="Concrete touch-controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911) built on the Arduino SPICl...">TouchDriverArduino.h</a> - include that explicitly to use one of them. </p>
+<p>Concrete controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911), which do need Arduino.h/SPI.h/Wire.h, live in the separate <a class="el" href="TouchDriverArduino_8h.html" title="Concrete touch-controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911, and the controller-less To...">TouchDriverArduino.h</a> - include that explicitly to use one of them. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

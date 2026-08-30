@@ -34,7 +34,7 @@ var searchData=
   ['createorthographicmatrix_31',['createOrthographicMatrix',['../classtinygpu_1_1WireFrame3D.html#aaa68e24e83bd9ac24ca2be25605d789d',1,'tinygpu::WireFrame3D']]],
   ['createperspectivematrix_32',['createPerspectiveMatrix',['../classtinygpu_1_1WireFrame3D.html#a3176f8366b5b5538f76683e599802987',1,'tinygpu::WireFrame3D']]],
   ['cross_33',['cross',['../classtinygpu_1_1WireFrame3D.html#a66d871b4d54dccb3415e030e9ec504e5',1,'tinygpu::WireFrame3D']]],
-  ['cs_5f_34',['cs_',['../classtinygpu_1_1DisplayDriverSPI.html#a8c3e8634c21f804d261700d60995f77f',1,'tinygpu::DisplayDriverSPI']]],
+  ['cs_5f_34',['cs_',['../classtinygpu_1_1DisplayDriverParallel8.html#a8c3e8634c21f804d261700d60995f77f',1,'tinygpu::DisplayDriverParallel8::cs_()'],['../classtinygpu_1_1DisplayDriverSPI.html#a8c3e8634c21f804d261700d60995f77f',1,'tinygpu::DisplayDriverSPI::cs_()']]],
   ['cube_35',['cube',['../classtinygpu_1_1WireFrame3D.html#a74cb8292da50279c7164a4d19fc2cab2',1,'tinygpu::WireFrame3D']]],
   ['currentangledegrees_36',['currentAngleDegrees',['../structtinygpu_1_1SpriteInfo.html#a274a2931318b3dc641fe74e85f2f63bd',1,'tinygpu::SpriteInfo']]],
   ['currentaspectratio_37',['currentAspectRatio',['../classtinygpu_1_1WireFrame3D.html#ac69966a75600137f3ebfaf4170927426',1,'tinygpu::WireFrame3D']]],

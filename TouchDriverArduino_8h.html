@@ -81,7 +81,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Concrete touch-controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911) built on the Arduino SPIClass/TwoWire API - split out of <a class="el" href="TouchDriver_8h.html" title="Platform-independent touch driver interface: the Point/ CalibrationData/Rotation types,...">TouchDriver.h</a> so that including the platform-independent TouchDriver base class/calibration/coordinate-mapping code doesn't also pull in Arduino.h. Include this file explicitly to use any of these drivers.  
+<p>Concrete touch-controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911, and the controller-less TouchDriverBitBang) built on the Arduino SPIClass/TwoWire/pinMode/analogRead API - split out of <a class="el" href="TouchDriver_8h.html" title="Platform-independent touch driver interface: the Point/ CalibrationData/Rotation types,...">TouchDriver.h</a> so that including the platform-independent TouchDriver base class/calibration/coordinate-mapping code doesn't also pull in Arduino.h. Include this file explicitly to use any of these drivers.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Emulation_8h_source.html">TinyGPU/Emulation.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TouchDriverCommon_8h_source.html">TinyGPU/Input/TouchDriverCommon.h</a>&quot;</code><br />
@@ -90,7 +90,7 @@ Include dependency graph for TouchDriverArduino.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="TouchDriverArduino_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2Input_2TouchDriverArduino_8h" alt=""/></div>
 <map name="asrc_2TinyGPU_2Input_2TouchDriverArduino_8h" id="asrc_2TinyGPU_2Input_2TouchDriverArduino_8h">
-<area shape="rect" title="Concrete touch&#45;controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911) built on the Arduino SPICl..." alt="" coords="107,5,325,45"/>
+<area shape="rect" title="Concrete touch&#45;controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911, and the controller&#45;less To..." alt="" coords="107,5,325,45"/>
 <area shape="rect" href="Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="35,101,195,126"/>
 <area shape="rect" href="TouchDriverCommon_8h.html" title=" " alt="" coords="219,93,415,133"/>
 <area shape="rect" title=" " alt="" coords="5,181,224,221"/>
@@ -104,6 +104,9 @@ Include dependency graph for TouchDriverArduino.h:</div>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html">TouchDriverXPT2046</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">XPT2046 resistive touch controller.  <a href="classtinygpu_1_1TouchDriverXPT2046.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverBitBang.html">TouchDriverBitBang</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit-banged 4-wire resistive touch panel driver.  <a href="classtinygpu_1_1TouchDriverBitBang.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverFT6236.html">TouchDriverFT6236</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">FT6236 / FT6336 capacitive touch controller.  <a href="classtinygpu_1_1TouchDriverFT6236.html#details">More...</a><br /></td></tr>
@@ -127,7 +130,7 @@ Typedefs</h2></td></tr>
 <tr class="separator:a34c07b590b97132497328cfce9988661"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Concrete touch-controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911) built on the Arduino SPIClass/TwoWire API - split out of <a class="el" href="TouchDriver_8h.html" title="Platform-independent touch driver interface: the Point/ CalibrationData/Rotation types,...">TouchDriver.h</a> so that including the platform-independent TouchDriver base class/calibration/coordinate-mapping code doesn't also pull in Arduino.h. Include this file explicitly to use any of these drivers. </p>
+<div class="textblock"><p>Concrete touch-controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911, and the controller-less TouchDriverBitBang) built on the Arduino SPIClass/TwoWire/pinMode/analogRead API - split out of <a class="el" href="TouchDriver_8h.html" title="Platform-independent touch driver interface: the Point/ CalibrationData/Rotation types,...">TouchDriver.h</a> so that including the platform-independent TouchDriver base class/calibration/coordinate-mapping code doesn't also pull in Arduino.h. Include this file explicitly to use any of these drivers. </p>
 <p>Pulls in Arduino.h/SPI.h/Wire.h via <a class="el" href="Emulation_8h.html" title="Drop-in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und...">TinyGPU/Emulation.h</a>, which falls back to a small platform-native emulation of that surface when no real Arduino core (e.g. arduino-esp32) is present - see that header for what is and isn't covered. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->

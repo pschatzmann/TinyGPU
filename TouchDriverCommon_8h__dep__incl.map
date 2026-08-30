@@ -1,7 +1,7 @@
 <map id="src/TinyGPU/Input/TouchDriverCommon.h" name="src/TinyGPU/Input/TouchDriverCommon.h">
 <area shape="rect" id="node1" title=" " alt="" coords="547,5,765,45"/>
 <area shape="rect" id="node2" href="$TouchDriver_8h.html" title="Platform&#45;independent touch driver interface: the Point/ CalibrationData/Rotation types,..." alt="" coords="541,101,771,126"/>
-<area shape="rect" id="node15" href="$TouchDriverArduino_8h.html" title="Concrete touch&#45;controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911) built on the Arduino SPICl..." alt="" coords="1131,93,1349,133"/>
+<area shape="rect" id="node15" href="$TouchDriverArduino_8h.html" title="Concrete touch&#45;controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911, and the controller&#45;less To..." alt="" coords="1131,93,1349,133"/>
 <area shape="rect" id="node16" href="$TouchDriverSDL_8h.html" title=" " alt="" coords="43,269,261,309"/>
 <area shape="rect" id="node17" href="$TouchDriverTFTeSPI_8h.html" title=" " alt="" coords="923,357,1141,397"/>
 <area shape="rect" id="node18" href="$SpriteInfo_8h.html" title=" " alt="" coords="56,93,211,133"/>
