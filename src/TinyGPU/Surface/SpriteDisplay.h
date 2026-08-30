@@ -258,7 +258,7 @@ class SpriteDisplay {
   size_t height_;
   RGB_T backgroundColor_;
   Vector<std::unique_ptr<SpriteInfo<RGB_T, Surface<RGB_T>>>> sprites_;
-  BitmapFont<RGB_T> defaultFont_;
+  Font5x7<RGB_T> defaultFont_;
   bool is_clear_on_sprite_move = true;
 
   /// Helper to calculate centered coordinate when scaling/rotating

@@ -13,6 +13,15 @@ RGB565 is a compact 16-bit color format that stores red in 5 bits, green in 6 bi
 
 Apart form RGB565 we also support RGB666, RGB888 and Monochrome.
 
+TinyGPU is designed as a small in-memory rendering layer that stays independent from any specific display driver. You render into a framebuffer memory first and then forward the resulting pixel data to your own hardware-specific output code.
+
+The library covers three main areas:
+
+- 2D drawing and text rendering for compact embedded displays
+- sprite-oriented composition and transforms for UI and simple animation
+- lightweight 3D wireframe rendering for visualizations and demos
+
+
 ## Features
 
 - RGB565, RGB666, RGB888 and Monochrome color 
@@ -24,8 +33,7 @@ Apart form RGB565 we also support RGB666, RGB888 and Monochrome.
   - circles
   - rounded rectangles (outline and fill)
   - arcs (for circular progress/spinner style widgets)
-- Bitmap font rendering
-- Wrapped line printing
+- Bitmap font rendering and wrapped line printing
 - Sprite drawing and sprite-aware framebuffer management
   - add
   - move
@@ -36,29 +44,24 @@ Apart form RGB565 we also support RGB666, RGB888 and Monochrome.
   - camera / view matrix
   - perspective and orthographic projection
   - minimal depth-buffered line rendering
-- BMP file support
-  - saving data
-  - loading data
-- JPEG file support via JPEGParser, decoding baseline JPEGs with the optional [TinyJPEG](https://github.com/pschatzmann/TinyJPEG) library
-- TouchDriverSDL: maps the desktop mouse to a TouchDriver, so touch-driven UI can be exercised on the SDL desktop backend without touch hardware
-- LVGLDriver: use this library to output data from the lvgl library
+- Graphics Files
+  - BMP: saving and loading
+  - JPEG: decoding baseline JPEGs via JPEGParser, using the optional [TinyJPEG](https://github.com/pschatzmann/TinyJPEG) library
+- DisplayDriver / TouchDriver: write a rendered Surface out to a display and read touch input from a touch controller
+  - DisplayDriverSPI / DisplayDriverQSPI / DisplayDriverDSI: SPI, QSPI and MIPI-DSI panel drivers
+  - TouchDriverArduino: XPT2046, FT6236/FT6206, CST816S and GT911 touch controllers
+  - DisplayDriverSDL / TouchDriverSDL: render to an SDL2 window and map the desktop mouse to a TouchDriver, so displays and touch-driven UI can be exercised on the desktop without hardware
 - LCDBoard: one-call setup (display + touch, and I2S pins where present) for ESP32(-S3/-P4) boards from the [arduino-audio-tools Audio Boards wiki](https://github.com/pschatzmann/arduino-audio-tools/wiki/Audio-Boards)
   - ESP32-S3 2.8" Display (FBBA0125-002 / ESP32-S3 Hosyond Display)
   - Guition ESP32-S3 4.3" Capacitive Touch Display (JC4827W543C_I)
   - ESP32 Arduino LVGL WiFi&Bluetooth 2.4" LCD (ESP32-2432S028R / ESP32 Cheap Yellow Display)
   - Guition ESP32-P4 4.3" 480x800 Capacitive Touch Display (JC4880P443C_I_W)
+- Integration
+  - LVGLDriver: use this library to output data from the lvgl library 
+  - TouchDriverSDL: use the SDL library for touch support
+  - DisplayDriverTFTeSPI / TouchDriverTFTeSPI / LCDBoardTFTeSPI: render and read touch through the optional [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI) library instead of TinyGPU's own SPI panel/touch drivers, for panels already configured (and touch-calibrated) via TFT_eSPI's `User_Setup.h`
+
 - Arduino example sketches
-
-## Overview
-
-TinyGPU is designed as a small in-memory rendering layer that stays independent from any specific display driver. You render into RGB565 memory first and then forward the resulting pixel data to your own hardware-specific output code.
-
-The library covers three main areas:
-
-- 2D drawing and text rendering for compact embedded displays
-- sprite-oriented composition and transforms for UI and simple animation
-- lightweight 3D wireframe rendering for visualizations and demos
-
 
 ## Documentaion
 

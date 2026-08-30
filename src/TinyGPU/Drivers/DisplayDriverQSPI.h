@@ -3,66 +3,74 @@
 #include <string.h>
 
 #include "TinyGPU/Drivers/DisplayDriver.h"
+#include "TinyGPU/Emulation/IQSPIBus.h"
+#include "TinyGPU/Emulation/QSPIBusBitBang.h"
 #include "TinyGPU/Emulation.h"
 
 #if defined(ESP32)
-#include "driver/spi_master.h"
-#include "esp_lcd_io_spi.h"
-#include "esp_lcd_panel_io.h"
-#define TINYGPU_HAS_ESP_LCD_QSPI 1
-#else
-#error
+#include "TinyGPU/Emulation/QSPIBusESP32.h"
 #endif
 
 namespace tinygpu {
-
-#ifdef TINYGPU_HAS_ESP_LCD_QSPI
 
 /**
  * @brief Base driver for QSPI ("4-wire quad SPI") TFT panels: 1 clock, 1
  * chip-select, 4 data lines, no separate D/C pin. Used by a family of
  * compact panel controllers (NV3041A, ST77916, CO5300, SH8601,
  * AXS15231B, ...) that all speak a de-facto-standardized QSPI wire
- * protocol, wrapping each command in a fixed 32-bit frame: the top byte
- * is an opcode (0x02 = "write, parameter bytes follow over 1 line", 0x32
- * = "write, color/pixel data follows over 4 lines"), the next byte is
- * the actual MIPI-DCS-style command (0x11 sleep-out, 0x2A/0x2B/0x2C
- * column/row/RAM-write, 0x36 MADCTL, ...), and the low 16 bits go
- * unused. ESP-IDF's esp_lcd_new_panel_io_spi() builds that frame for
- * you when configured with quad_mode=1, dc_gpio_num=-1, and
- * lcd_cmd_bits=32 - this class only has to pass it the right `lcd_cmd`
- * values via qspiCmd(), not build the 32-bit frame by hand. Subclasses
- * implement begin() themselves (calling the inherited beginBus() for the
- * shared SPI-bus/panel-IO setup, then their own chip-specific init
- * register sequence), the same division of labor DisplayDriverSPI's
- * setupPinsAndReset() uses for its SPI-panel subclasses.
+ * protocol - see IQSPIBus.h for the exact 32-bit command-frame/data
+ * layout.
+ *
+ * The wire protocol is handled by an IQSPIBus (dependency-injected, see
+ * the two constructors below), not by this class - this class only turns
+ * ISurface writes into writeColor() calls and exposes writeCommand() to
+ * subclasses for their chip-specific init sequence, the same division of
+ * labor DisplayDriverSPI's setupPinsAndReset() uses for its SPI-panel
+ * subclasses. That split is what makes this family portable: adding a
+ * platform means implementing IQSPIBus once (see QSPIBusESP32.h,
+ * hardware/DMA-backed; QSPIBusBitBang.h, portable software fallback for
+ * RP2040/STM32/anything else), while every panel subclass (NV3041ADriver,
+ * ...) keeps working unchanged on every platform that has a bus.
  */
 template <typename RGB_T = RGB565>
 class DisplayDriverQSPI : public DisplayDriver<RGB_T> {
  public:
+  /// Pin-based constructor: builds and owns the platform's default
+  /// IQSPIBus (QSPIBusESP32 on ESP32, QSPIBusBitBang everywhere else).
+  /// pclkHz only affects the ESP32 backend - QSPIBusBitBang runs as fast
+  /// as digitalWrite() allows, uncapped.
   DisplayDriverQSPI(int8_t cs, int8_t sclk, int8_t d0, int8_t d1, int8_t d2,
                     int8_t d3, size_t width, size_t height,
-                    uint32_t pclkHz = 40000000,
-                    spi_host_device_t host = SPI3_HOST)
-      : cs_(cs),
-        sclk_(sclk),
-        d0_(d0),
-        d1_(d1),
-        d2_(d2),
-        d3_(d3),
-        width_(width),
-        height_(height),
-        pclkHz_(pclkHz),
-        host_(host) {}
-
-  void end() override {
-    if (io_ != nullptr) {
-      esp_lcd_panel_io_del(io_);
-      io_ = nullptr;
-    }
+                    uint32_t pclkHz = 40000000
+#if defined(ESP32)
+                    ,
+                    spi_host_device_t host = SPI3_HOST
+#endif
+                    )
+      : width_(width), height_(height) {
+#if defined(ESP32)
+    ownedBus_ = new QSPIBusESP32(cs, sclk, d0, d1, d2, d3,
+                                 width * height * sizeof(RGB_T), pclkHz, host);
+#else
+    (void)pclkHz;
+    ownedBus_ = new QSPIBusBitBang(cs, sclk, d0, d1, d2, d3);
+#endif
+    bus_ = ownedBus_;
   }
 
-  ~DisplayDriverQSPI() override { delete[] scratch_; }
+  /// Bus-injection constructor: use any IQSPIBus implementation (e.g. a
+  /// future PIO-accelerated RP2040 bus) without changing this class or
+  /// its panel subclasses. The caller keeps ownership of `bus`.
+  DisplayDriverQSPI(IQSPIBus& bus, size_t width, size_t height)
+      : bus_(&bus), width_(width), height_(height) {}
+
+  void end() override {
+    if (bus_ != nullptr) bus_->end();
+  }
+
+  ~DisplayDriverQSPI() override {
+    delete ownedBus_;
+  }
 
   size_t width() const override { return width_; }
   size_t height() const override { return height_; }
@@ -75,102 +83,29 @@ class DisplayDriverQSPI : public DisplayDriver<RGB_T> {
     static_assert(sizeof(RGB_T) == 2,
                   "writeData assumes a 16bpp RGB_T (RGB565) stored in "
                   "wire byte order");
-    if (io_ == nullptr) return false;
+    if (bus_ == nullptr) return false;
     if (!setAddressWindow(x, y, surface.width(), surface.height())) {
       return false;
     }
 
     // RGB_T (RGB565) values are stored in the surface already
-    // byte-swapped to this panel's wire order (see RGB565.h), so no
-    // per-pixel swap is needed here anymore. Still copied into a scratch
-    // buffer because esp_lcd_panel_io_tx_color() is asynchronous
-    // (trans_queue_depth > 1 above), so unlike DisplayDriverSPI's
-    // writeData() this can't reuse/free a scratch buffer based on
-    // assumptions about when a previous transfer happens to finish -
-    // that raced with the DMA still reading the old buffer and crashed
-    // on real hardware. Using one persistent, surface-sized scratch
-    // buffer, and blocking (via the on_color_trans_done callback set up
-    // in beginBus()) until the whole transfer completes before
-    // returning.
-    //
-    // IMPORTANT: send this as ONE tx_color() call, not chunked at this
-    // level. esp_lcd's own SPI backend (esp_lcd_panel_io_spi.c) already
-    // splits large transfers into multiple queued DMA transactions
-    // internally, sending the 0x2C RAM-write command only once up
-    // front and keeping CS active across the internal chunks - that's
-    // why the completion callback only fires after the true last
-    // chunk. Chunking manually at this level by calling tx_color()
-    // repeatedly re-sends the 0x2C command every time, which resets
-    // this panel's write cursor back to the top-left of the address
-    // window on each call - confirmed on real hardware to scramble the
-    // image far worse than not chunking at all.
-    const size_t n = surface.size();
-    if (scratchCapacity_ < n) {
-      delete[] scratch_;
-      scratch_ = new uint8_t[n];
-      scratchCapacity_ = n;
-    }
-    memcpy(scratch_, surface.data(), n);
-
-    colorTransPending_ = true;
-    if (esp_lcd_panel_io_tx_color(io_, qspiCmd(kOpcodeColor, kCmdRamWrite),
-                                  scratch_, n) != ESP_OK) {
-      colorTransPending_ = false;
-      return false;
-    }
-    while (colorTransPending_) {
-      // busy-wait for the DMA transfer to finish
-    }
-    return true;
+    // byte-swapped to this panel's wire byte order (see RGB565.h), so no
+    // per-pixel swap is needed here - the surface's raw memory can go
+    // straight to the bus.
+    return bus_->writeColor(kCmdRamWrite, surface.data(), surface.size());
   }
 
  protected:
-  static constexpr uint8_t kOpcodeParam = 0x02;
-  static constexpr uint8_t kOpcodeColor = 0x32;
   static constexpr uint8_t kCmdRamWrite = 0x2C;
 
-  static int qspiCmd(uint8_t opcode, uint8_t cmd) {
-    return (static_cast<int>(opcode) << 24) | (static_cast<int>(cmd) << 8);
-  }
-
-  /// Sets up the SPI bus (quad data lines) and the panel-IO layer that
-  /// does the 32-bit command wrapping. Subclasses call this first thing
-  /// in their begin(), then send their chip's init register sequence via
-  /// writeCommand() before returning.
-  bool beginBus() {
-    spi_bus_config_t busCfg = {};
-    busCfg.data0_io_num = d0_;
-    busCfg.data1_io_num = d1_;
-    busCfg.sclk_io_num = sclk_;
-    busCfg.data2_io_num = d2_;
-    busCfg.data3_io_num = d3_;
-    busCfg.max_transfer_sz =
-        static_cast<int>(width_ * height_ * sizeof(RGB_T));
-
-    if (spi_bus_initialize(host_, &busCfg, SPI_DMA_CH_AUTO) != ESP_OK) {
-      return false;
-    }
-
-    esp_lcd_panel_io_spi_config_t ioCfg = {};
-    ioCfg.cs_gpio_num = cs_;
-    ioCfg.dc_gpio_num = -1;
-    ioCfg.spi_mode = 0;
-    ioCfg.pclk_hz = pclkHz_;
-    ioCfg.trans_queue_depth = 10;
-    ioCfg.lcd_cmd_bits = 32;
-    ioCfg.lcd_param_bits = 8;
-    ioCfg.flags.quad_mode = 1;
-    ioCfg.on_color_trans_done = &DisplayDriverQSPI<RGB_T>::onColorTransDone;
-    ioCfg.user_ctx = this;
-
-    return esp_lcd_new_panel_io_spi(static_cast<esp_lcd_spi_bus_handle_t>(host_),
-                                    &ioCfg, &io_) == ESP_OK;
-  }
+  /// Sets up the bus. Subclasses call this first thing in their begin(),
+  /// then send their chip's init register sequence via writeCommand()
+  /// before returning.
+  bool beginBus() { return bus_ != nullptr && bus_->begin(); }
 
   bool writeCommand(uint8_t cmd, const uint8_t* param = nullptr,
                     size_t len = 0) {
-    return esp_lcd_panel_io_tx_param(io_, qspiCmd(kOpcodeParam, cmd), param,
-                                     len) == ESP_OK;
+    return bus_ != nullptr && bus_->writeCommand(cmd, param, len);
   }
 
   bool setAddressWindow(size_t x, size_t y, size_t w, size_t h) override {
@@ -185,25 +120,11 @@ class DisplayDriverQSPI : public DisplayDriver<RGB_T> {
     return writeCommand(0x2A, caset, 4) && writeCommand(0x2B, raset, 4);
   }
 
-  int8_t cs_, sclk_, d0_, d1_, d2_, d3_;
+  IQSPIBus* bus_ = nullptr;
   size_t width_, height_;
-  uint32_t pclkHz_;
-  spi_host_device_t host_;
-  esp_lcd_panel_io_handle_t io_ = nullptr;
-  uint8_t* scratch_ = nullptr;
-  size_t scratchCapacity_ = 0;
-  volatile bool colorTransPending_ = false;
 
  private:
-  // Runs in ISR context (per esp_lcd_panel_io_color_trans_done_cb_t's
-  // contract) - keep this fast. Set as the panel-IO's on_color_trans_done
-  // callback in beginBus(); see writeData() for why this exists.
-  static bool onColorTransDone(esp_lcd_panel_io_handle_t /*panel_io*/,
-                               esp_lcd_panel_io_event_data_t* /*edata*/,
-                               void* userCtx) {
-    static_cast<DisplayDriverQSPI<RGB_T>*>(userCtx)->colorTransPending_ = false;
-    return false;  // no higher-priority task woken
-  }
+  IQSPIBus* ownedBus_ = nullptr;
 };
 
 /**
@@ -218,6 +139,13 @@ class DisplayDriverQSPI : public DisplayDriver<RGB_T> {
  * blue as green). Register 0x3A (pixel format) uses a chip-specific
  * encoding on this part, not the standard MIPI-DCS one: 0x01 selects
  * 16bpp RGB565 here, not the commonly-documented 0x55.
+ *
+ * Platform-independent: works over any IQSPIBus, so the same class
+ * covers ESP32 (QSPIBusESP32, hardware/DMA), RP2040 and STM32
+ * (QSPIBusBitBang, software) - see DisplayDriverQSPI's class comment.
+ * Only bring-up on ESP32 has been confirmed against real hardware; the
+ * RP2040/STM32 bit-bang path follows the same documented wire protocol
+ * but has not been run on real hardware.
  */
 template <typename RGB_T = RGB565>
 class NV3041ADriver : public DisplayDriverQSPI<RGB_T> {
@@ -229,12 +157,17 @@ class NV3041ADriver : public DisplayDriverQSPI<RGB_T> {
   // it as this chip's maximum supported speed and runs clean at it on
   // real hardware; this driver's original 40MHz default showed scattered
   // pixel corruption on large transfers, consistent with the panel/
-  // wiring not reliably sustaining a faster clock.
+  // wiring not reliably sustaining a faster clock. Only applies to the
+  // ESP32 hardware backend - QSPIBusBitBang ignores pclkHz.
   NV3041ADriver(int8_t cs, int8_t sclk, int8_t d0, int8_t d1, int8_t d2,
                int8_t d3, size_t width = 480, size_t height = 272,
                uint32_t pclkHz = 32000000)
       : DisplayDriverQSPI<RGB_T>(cs, sclk, d0, d1, d2, d3, width, height,
                                  pclkHz) {}
+
+  /// Bus-injection constructor - see DisplayDriverQSPI's equivalent.
+  NV3041ADriver(IQSPIBus& bus, size_t width = 480, size_t height = 272)
+      : DisplayDriverQSPI<RGB_T>(bus, width, height) {}
 
   bool begin() override {
     static_assert(sizeof(RGB_T) == 2,
@@ -301,7 +234,5 @@ class NV3041ADriver : public DisplayDriverQSPI<RGB_T> {
       {0x29, 0x00},  // display on
   };
 };
-
-#endif  // TINYGPU_HAS_ESP_LCD_QSPI
 
 }  // namespace tinygpu

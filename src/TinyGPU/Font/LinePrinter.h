@@ -68,6 +68,20 @@ class LinePrinter {
   /// Sets the spacing between glyphs.
   void setSpacing(uint8_t spacing) { this->spacing = spacing; }
 
+  /// Enables/disables proportional (effective-width) glyph spacing on the
+  /// current font. Word-wrapping and cursor advance automatically account
+  /// for the narrower spacing since they're driven by the font's own
+  /// measureTextWidth()/drawText().
+  void setProportional(bool proportional) {
+    if (font_ != nullptr) {
+      font_->setProportional(proportional);
+    }
+  }
+  /// Returns whether proportional spacing is enabled on the current font.
+  bool isProportional() const {
+    return font_ != nullptr && font_->isProportional();
+  }
+
   /// Prints text with word wrapping.
   size_t print(const char* text) {
     if (text == nullptr || *text == '\0') {

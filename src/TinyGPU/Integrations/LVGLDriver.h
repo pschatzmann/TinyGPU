@@ -120,9 +120,9 @@ class LVGLDriver {
     convertBuffer(px_map, w * h);
 
     // SurfaceWithExternalBuffer's default font argument is hardcoded to
-    // BitmapFont<RGB565>, which doesn't match IFont<RGB_T>& for any other
+    // Font5x7<RGB565>, which doesn't match IFont<RGB_T>& for any other
     // RGB_T, so an explicit RGB_T-typed font has to be passed here.
-    static BitmapFont<RGB_T> font;
+    static Font5x7<RGB_T> font;
     SurfaceWithExternalBuffer<RGB_T> surface(w, h, font);
     surface.setExternalBuffer(px_map, w * h * sizeof(RGB_T));
     surface.resizeBuffer(w, h);

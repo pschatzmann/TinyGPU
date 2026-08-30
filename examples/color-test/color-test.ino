@@ -53,7 +53,7 @@ LCDBoardGuitionESP32_LVGL_2_4Display board;
 LCDBoardDesktopSDL board(kDisplayWidth, kDisplayHeight);
 #endif
 SpriteDisplay<PixelT> display(board);
-BitmapFont<PixelT> font;
+Font5x7<PixelT> font;
 
 // Draws a solid band with a text label burned into it. Safe against the
 // dangling-pointer trap of SpriteDisplay::addSprite(x, y, surface&) - the

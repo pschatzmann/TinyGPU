@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <cstddef>
 
-#include "TinyGPU/Font/BitmapFont.h"
+#include "TinyGPU/Font/Font5x7.h"
 #include "TinyGPU/Font/IFont.h"
 #include "TinyGPU/Surface/ISurface.h"
 #include "TinyGPU/Font/LinePrinter.h"
