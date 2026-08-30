@@ -1,10 +1,11 @@
 <map id="src/TinyGPU/Emulation.h" name="src/TinyGPU/Emulation.h">
-<area shape="rect" id="node1" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="433,5,616,31"/>
-<area shape="rect" id="node2" href="$LCDBoardsESP32_8h.html" title="One&#45;call setup for ESP32(&#45;S3) boards from the arduino&#45;audio&#45;tools &quot;Audio Boards&quot; wiki that combine an..." alt="" coords="5,79,156,119"/>
-<area shape="rect" id="node3" href="$DisplayDriverDSI_8h.html" title=" " alt="" coords="181,79,333,119"/>
-<area shape="rect" id="node4" href="$DisplayDriverQSPI_8h.html" title=" " alt="" coords="357,79,514,119"/>
-<area shape="rect" id="node5" href="$DisplayDriverSPI_8h.html" title=" " alt="" coords="538,79,690,119"/>
-<area shape="rect" id="node7" href="$GestureDetector_8h.html" title=" " alt="" coords="715,79,908,119"/>
-<area shape="rect" id="node8" href="$TouchDriverArduino_8h.html" title="Concrete touch&#45;controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911) built on the Arduino SPICl..." alt="" coords="933,79,1151,119"/>
-<area shape="rect" id="node6" href="$DisplayDriver_8h.html" title=" " alt="" coords="511,167,717,192"/>
+<area shape="rect" id="node1" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="555,5,738,31"/>
+<area shape="rect" id="node2" href="$QSPIBusBitBang_8h.html" title=" " alt="" coords="5,79,192,119"/>
+<area shape="rect" id="node3" href="$LCDBoardsESP32_8h.html" title="One&#45;call setup for ESP32(&#45;S3) boards from the arduino&#45;audio&#45;tools &quot;Audio Boards&quot; wiki that combine an..." alt="" coords="217,79,367,119"/>
+<area shape="rect" id="node4" href="$DisplayDriverDSI_8h.html" title=" " alt="" coords="392,79,544,119"/>
+<area shape="rect" id="node6" href="$DisplayDriverQSPI_8h.html" title=" " alt="" coords="568,79,725,119"/>
+<area shape="rect" id="node7" href="$DisplayDriverSPI_8h.html" title=" " alt="" coords="749,79,901,119"/>
+<area shape="rect" id="node8" href="$GestureDetector_8h.html" title=" " alt="" coords="926,79,1119,119"/>
+<area shape="rect" id="node9" href="$TouchDriverArduino_8h.html" title="Concrete touch&#45;controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911) built on the Arduino SPICl..." alt="" coords="1144,79,1363,119"/>
+<area shape="rect" id="node5" href="$DisplayDriver_8h.html" title=" " alt="" coords="544,167,749,192"/>
 </map>

@@ -1,0 +1,7 @@
+<map id="src/TinyGPU/Abstractions/QSPIBusBitBang.h" name="src/TinyGPU/Abstractions/QSPIBusBitBang.h">
+<area shape="rect" id="node1" title=" " alt="" coords="118,5,305,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,93,76,119"/>
+<area shape="rect" id="node3" title=" " alt="" coords="100,93,323,119"/>
+<area shape="rect" id="node4" href="$Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="346,93,506,119"/>
+<area shape="rect" id="node5" title=" " alt="" coords="317,167,535,207"/>
+</map>

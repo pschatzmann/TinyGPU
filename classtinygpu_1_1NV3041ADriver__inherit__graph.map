@@ -1,0 +1,5 @@
+<map id="NV3041ADriver&lt; RGB_T &gt;" name="NV3041ADriver&lt; RGB_T &gt;">
+<area shape="rect" id="node1" title="Driver for the New Vision NV3041A QSPI TFT controller (480x272 panels on Guition/Sunton JC4827W543&#45;cl..." alt="" coords="5,167,200,192"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriverQSPI.html" title="Base driver for QSPI (&quot;4&#45;wire quad SPI&quot;) TFT panels: 1 clock, 1 chip&#45;select, 4 data lines,..." alt="" coords="27,79,179,119"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="11,5,195,31"/>
+</map>

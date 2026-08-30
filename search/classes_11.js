@@ -1,5 +1,12 @@
 var searchData=
 [
-  ['windowedsurface_0',['WindowedSurface',['../classtinygpu_1_1WindowedSurface.html',1,'tinygpu']]],
-  ['wireframe3d_1',['WireFrame3D',['../classtinygpu_1_1WireFrame3D.html',1,'tinygpu']]]
+  ['tinygpuloggerclass_0',['TinyGPULoggerClass',['../classtinygpu_1_1TinyGPULoggerClass.html',1,'tinygpu']]],
+  ['touchdriver_1',['TouchDriver',['../classtinygpu_1_1TouchDriver.html',1,'tinygpu']]],
+  ['touchdrivercst816s_2',['TouchDriverCST816S',['../classtinygpu_1_1TouchDriverCST816S.html',1,'tinygpu']]],
+  ['touchdriverft6236_3',['TouchDriverFT6236',['../classtinygpu_1_1TouchDriverFT6236.html',1,'tinygpu']]],
+  ['touchdrivergt911_4',['TouchDriverGT911',['../classtinygpu_1_1TouchDriverGT911.html',1,'tinygpu']]],
+  ['touchdriversdl_5',['TouchDriverSDL',['../classtinygpu_1_1TouchDriverSDL.html',1,'tinygpu']]],
+  ['touchdrivertftespi_6',['TouchDriverTFTeSPI',['../classtinygpu_1_1TouchDriverTFTeSPI.html',1,'tinygpu']]],
+  ['touchdriverxpt2046_7',['TouchDriverXPT2046',['../classtinygpu_1_1TouchDriverXPT2046.html',1,'tinygpu']]],
+  ['twowire_8',['TwoWire',['../classtinygpu_1_1TwoWire.html',1,'tinygpu']]]
 ];

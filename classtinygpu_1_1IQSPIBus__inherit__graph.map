@@ -1,0 +1,4 @@
+<map id="IQSPIBus" name="IQSPIBus">
+<area shape="rect" id="node1" title="Abstraction over the transport used by DisplayDriverQSPI (see TinyGPU/Drivers/DisplayDriverQSPI...." alt="" coords="29,5,109,31"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1QSPIBusBitBang.html" title="Portable, software&#45;driven IQSPIBus backend built only on pinMode()/digitalWrite() &#45; works on any Ardu..." alt="" coords="5,79,132,104"/>
+</map>

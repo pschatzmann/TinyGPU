@@ -1,5 +1,5 @@
-<map id="src/TinyGPU/Emulation/EmulationDesktop.h" name="src/TinyGPU/Emulation/EmulationDesktop.h">
-<area shape="rect" id="node1" title="Minimal delay()/millis() for a plain desktop C++ build &#45; no Arduino core, no ESP&#45;IDF." alt="" coords="5,5,176,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="13,93,80,119"/>
-<area shape="rect" id="node3" title=" " alt="" coords="104,93,168,119"/>
+<map id="src/TinyGPU/Abstractions/EmulationDesktop.h" name="src/TinyGPU/Abstractions/EmulationDesktop.h">
+<area shape="rect" id="node1" title="Minimal delay()/millis() for a plain desktop C++ build &#45; no Arduino core, no ESP&#45;IDF." alt="" coords="5,5,192,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="21,93,88,119"/>
+<area shape="rect" id="node3" title=" " alt="" coords="112,93,176,119"/>
 </map>

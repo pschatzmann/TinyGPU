@@ -1,5 +1,5 @@
-<map id="src/TinyGPU/Emulation/EmulationIDF.h" name="src/TinyGPU/Emulation/EmulationIDF.h">
-<area shape="rect" id="node1" title="ESP&#45;IDF&#45;native emulation of exactly the Arduino surface TinyGPU/Drivers and TinyGPU/Input actually ca..." alt="" coords="363,5,533,45"/>
+<map id="src/TinyGPU/Abstractions/EmulationIDF.h" name="src/TinyGPU/Abstractions/EmulationIDF.h">
+<area shape="rect" id="node1" title="ESP&#45;IDF&#45;native emulation of exactly the Arduino surface TinyGPU/Drivers and TinyGPU/Input actually ca..." alt="" coords="355,5,541,45"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,93,80,119"/>
 <area shape="rect" id="node3" title=" " alt="" coords="105,93,175,119"/>
 <area shape="rect" id="node4" title=" " alt="" coords="200,93,304,119"/>

@@ -4,5 +4,6 @@ var searchData=
   ['nativewidth_5f_1',['nativeWidth_',['../classtinygpu_1_1ILI9341Driver.html#a165d88f592e3ab97bf3906fc409e158b',1,'tinygpu::ILI9341Driver::nativeWidth_()'],['../classtinygpu_1_1ILI9342Driver.html#a165d88f592e3ab97bf3906fc409e158b',1,'tinygpu::ILI9342Driver::nativeWidth_()']]],
   ['nearplane_2',['nearPlane',['../structtinygpu_1_1WireFrame3D_1_1Camera.html#a74ffd9ec0ade4849fb098f50a8d57666',1,'tinygpu::WireFrame3D::Camera']]],
   ['none_3',['NONE',['../classtinygpu_1_1TinyGPULoggerClass.html#a221b779e6bb7b8d40677d7642bfefac5ac157bdf0b85a40d2619cbc8bc1ae5fe2',1,'tinygpu::TinyGPULoggerClass']]],
-  ['normalize_4',['normalize',['../classtinygpu_1_1WireFrame3D.html#acc8e7fbb57eea0ac3627c6b983b0ed87',1,'tinygpu::WireFrame3D']]]
+  ['normalize_4',['normalize',['../classtinygpu_1_1WireFrame3D.html#acc8e7fbb57eea0ac3627c6b983b0ed87',1,'tinygpu::WireFrame3D']]],
+  ['nv3041adriver_5',['NV3041ADriver',['../classtinygpu_1_1NV3041ADriver.html#a4cb334dfa5c9092ac3b25f417676a5b7',1,'tinygpu::NV3041ADriver::NV3041ADriver(int8_t cs, int8_t sclk, int8_t d0, int8_t d1, int8_t d2, int8_t d3, size_t width=480, size_t height=272, uint32_t pclkHz=32000000)'],['../classtinygpu_1_1NV3041ADriver.html#a0345af9a98ae49f7389be99bfcd1f381',1,'tinygpu::NV3041ADriver::NV3041ADriver(IQSPIBus &amp;bus, size_t width=480, size_t height=272)'],['../classtinygpu_1_1NV3041ADriver.html',1,'NV3041ADriver&lt; RGB_T &gt;']]]
 ];

@@ -6,5 +6,7 @@ var searchData=
   ['displaydriverqspi_2eh_3',['DisplayDriverQSPI.h',['../DisplayDriverQSPI_8h.html',1,'']]],
   ['displaydriversdl_2eh_4',['DisplayDriverSDL.h',['../DisplayDriverSDL_8h.html',1,'']]],
   ['displaydriverspi_2eh_5',['DisplayDriverSPI.h',['../DisplayDriverSPI_8h.html',1,'']]],
-  ['displaydrivertftespi_2eh_6',['DisplayDriverTFTeSPI.h',['../DisplayDriverTFTeSPI_8h.html',1,'']]]
+  ['displaydrivertftespi_2eh_6',['DisplayDriverTFTeSPI.h',['../DisplayDriverTFTeSPI_8h.html',1,'']]],
+  ['dsibusesp32_2eh_7',['DSIBusESP32.h',['../DSIBusESP32_8h.html',1,'']]],
+  ['dsibusstm32_2eh_8',['DSIBusSTM32.h',['../DSIBusSTM32_8h.html',1,'']]]
 ];
