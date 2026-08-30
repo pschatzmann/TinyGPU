@@ -144,8 +144,8 @@ class SurfaceBase : public ISurface<PixelT> {
 
   /// Fill a rectangle at (x, y) with width w, height h, and color -
   /// clipped both to the surface's own bounds and to the active clip
-  /// rect (see pushClipRect()), since every text glyph cell (BitmapFont/
-  /// FixedBitmapFont) and word-wrapped line (LinePrinter) is drawn as a
+  /// rect (see pushClipRect()), since every text glyph cell (Font5x7/
+  /// BitmapFont) and word-wrapped line (LinePrinter) is drawn as a
   /// fillRect() call - clipping it here is what makes drawText() respect
   /// the clip too, with no separate handling needed.
   void fillRect(size_t x, size_t y, size_t w, size_t h, PixelT color) override {

@@ -1,6 +1,6 @@
 #pragma once
+#include "TinyGPU/Font/Font5x7.h"
 #include "TinyGPU/Font/BitmapFont.h"
-#include "TinyGPU/Font/FixedBitmapFont.h"
 #include "TinyGPU/Surface/FrameBuffer.h"
 #include "TinyGPU/Surface/FrameBufferMonochrome.h"
 #include "TinyGPU/Font/IFont.h"
@@ -77,20 +77,33 @@ using LinePrinterRGB666 = LinePrinter<RGB666>;
  */
 using LinePrinterRGB888 = LinePrinter<RGB888>;
 /**
- *  @typedef BitmapFontRGB565
- *  @brief BitmapFont with RGB565 pixel format.
+ *  @typedef Font5x7RGB565
+ *  @brief Font5x7 with RGB565 pixel format.
  */
-using BitmapFontRGB565 = BitmapFont<RGB565>;
+using Font5x7RGB565 = Font5x7<RGB565>;
 /**
- *  @typedef BitmapFontRGB666
- *  @brief BitmapFont with RGB666 pixel format.
+ *  @typedef Font5x7RGB666
+ *  @brief Font5x7 with RGB666 pixel format.
  */
-using BitmapFontRGB666 = BitmapFont<RGB666>;
+using Font5x7RGB666 = Font5x7<RGB666>;
 /**
- *  @typedef BitmapFontRGB888
- *  @brief BitmapFont with RGB888 pixel format.
+ *  @typedef Font5x7RGB888
+ *  @brief Font5x7 with RGB888 pixel format.
  */
-using BitmapFontRGB888 = BitmapFont<RGB888>;
+using Font5x7RGB888 = Font5x7<RGB888>;
+
+/// @brief Default 5x7 bitmap font instance (RGB565) - the implicit
+/// default font for APIs that need one (e.g. SurfaceWithExternalBuffer's
+/// font constructor parameter).
+inline Font5x7RGB565 FontRGB565;
+/// @brief Default 5x7 bitmap font instance (RGB666).
+inline Font5x7RGB666 FontRGB666;
+/// @brief Default 5x7 bitmap font instance (RGB888).
+inline Font5x7RGB888 FontRGB888;
+/// @brief Default 5x7 bitmap font instance for monochrome (1-bit)
+/// surfaces (SurfaceMonochrome/FrameBufferMonochrome/SpriteMonochrome use
+/// IFont<bool>, not one of the RGB_T typedefs above).
+inline Font5x7<bool> FontMonochrome;
 /**
  *  @typedef IFontRGB565
  *  @brief IFont with RGB565 pixel format.

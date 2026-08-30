@@ -1,6 +1,7 @@
 #pragma once
 #include <stddef.h>
 
+#include "TinyGPU/Font/Font5x7.h"
 #include "TinyGPU/Surface/ISurface.h"
 
 namespace tinygpu {
@@ -82,7 +83,7 @@ class DisplayDriver {
 
  protected:
   virtual bool setAddressWindow(size_t x, size_t y, size_t w, size_t h) = 0;
-  BitmapFont<RGB_T> defaultFont;
+  Font5x7<RGB_T> defaultFont;
 };
 
 }  // namespace tinygpu

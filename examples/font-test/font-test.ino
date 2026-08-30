@@ -5,7 +5,7 @@
  * panel.
  *
  * TinyGPU doesn't ship separate font files per point size - each font is
- * a single fixed glyph bitmap (BitmapFont's built-in 5x7, or one of the
+ * a single fixed glyph bitmap (Font5x7's built-in 5x7, or one of the
  * AsciiFonts.h fixed sizes: Font8x8, Font8x12, Font12x12, Font16x24) that
  * IFont::drawText()'s `scale` parameter enlarges by an integer factor.
  * This sketch shows both axes: which fonts are available, and what each
@@ -48,10 +48,10 @@ SpriteDisplay<PixelT> display(board);
 
 // Fixed 5x7 font used for page headers, independent of whichever font is
 // being demonstrated below it on that page.
-BitmapFont<PixelT> headerFont;
+Font5x7<PixelT> headerFont;
 
 // One instance of every font TinyGPU ships.
-BitmapFont<PixelT> font5x7;
+Font5x7<PixelT> font5x7;
 Font8x8<PixelT> font8x8;
 Font8x12<PixelT> font8x12;
 Font12x12<PixelT> font12x12;
@@ -63,7 +63,7 @@ struct FontEntry {
 };
 
 FontEntry fonts[] = {
-    {&font5x7, "BitmapFont (5x7)"},
+    {&font5x7, "Font5x7"},
     {&font8x8, "Font8x8"},
     {&font8x12, "Font8x12"},
     {&font12x12, "Font12x12"},

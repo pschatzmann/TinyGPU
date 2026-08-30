@@ -37,6 +37,13 @@ class IFont {
 
   /// Returns the scaled glyph height in pixels.
   virtual size_t getHeight(uint8_t scale) const = 0;
+
+  /// Enables/disables proportional spacing based on each glyph's effective
+  /// (used) width instead of a fixed glyph width. Implementations that only
+  /// support fixed-width rendering may ignore this.
+  virtual void setProportional(bool proportional) { (void)proportional; }
+  /// Returns whether proportional spacing is enabled.
+  virtual bool isProportional() const { return false; }
 };
 
 }  // namespace tinygpu

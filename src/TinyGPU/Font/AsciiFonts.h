@@ -2,7 +2,7 @@
 
 #include <array>
 
-#include "TinyGPU/Font/FixedBitmapFont.h"
+#include "TinyGPU/Font/BitmapFont.h"
 #include "TinyGPU/Color/RGB565.h"
 
 // Fonts converted from the STM32 STM32-EVAL LCD font tables (fonts.c), see
@@ -10,7 +10,7 @@
 //
 // The original tables store every glyph row as a 16-bit word with the row
 // left-aligned to the most significant bit. The tables below have been
-// re-packed to match the FixedBitmapFont/BitmapFont convention of using only
+// re-packed to match the BitmapFont/Font5x7 convention of using only
 // the `Width` most significant bits of the row's storage type (bit
 // `Width-1` = leftmost pixel), so the 12x12 font's rows have been shifted
 // right by 4 bits compared to the original ST source. Row data is otherwise
@@ -437,10 +437,10 @@ inline const std::array<uint16_t, 24>* table16x24() {
  * fonts.c ASCII8x8_Table.
  */
 template <typename RGB_T = RGB565>
-class Font8x8 : public FixedBitmapFont<8, 8, uint8_t, RGB_T> {
+class Font8x8 : public BitmapFont<8, 8, uint8_t, RGB_T> {
  public:
   Font8x8()
-      : FixedBitmapFont<8, 8, uint8_t, RGB_T>(
+      : BitmapFont<8, 8, uint8_t, RGB_T>(
             asciifont_detail::table8x8(), 96) {}
 };
 
@@ -449,10 +449,10 @@ class Font8x8 : public FixedBitmapFont<8, 8, uint8_t, RGB_T> {
  * fonts.c ASCII8x12_Table.
  */
 template <typename RGB_T = RGB565>
-class Font8x12 : public FixedBitmapFont<8, 12, uint8_t, RGB_T> {
+class Font8x12 : public BitmapFont<8, 12, uint8_t, RGB_T> {
  public:
   Font8x12()
-      : FixedBitmapFont<8, 12, uint8_t, RGB_T>(
+      : BitmapFont<8, 12, uint8_t, RGB_T>(
             asciifont_detail::table8x12(), 96) {}
 };
 
@@ -461,10 +461,10 @@ class Font8x12 : public FixedBitmapFont<8, 12, uint8_t, RGB_T> {
  * fonts.c ASCII12x12_Table.
  */
 template <typename RGB_T = RGB565>
-class Font12x12 : public FixedBitmapFont<12, 12, uint16_t, RGB_T> {
+class Font12x12 : public BitmapFont<12, 12, uint16_t, RGB_T> {
  public:
   Font12x12()
-      : FixedBitmapFont<12, 12, uint16_t, RGB_T>(
+      : BitmapFont<12, 12, uint16_t, RGB_T>(
             asciifont_detail::table12x12(), 96) {}
 };
 
@@ -473,10 +473,10 @@ class Font12x12 : public FixedBitmapFont<12, 12, uint16_t, RGB_T> {
  * fonts.c ASCII16x24_Table.
  */
 template <typename RGB_T = RGB565>
-class Font16x24 : public FixedBitmapFont<16, 24, uint16_t, RGB_T> {
+class Font16x24 : public BitmapFont<16, 24, uint16_t, RGB_T> {
  public:
   Font16x24()
-      : FixedBitmapFont<16, 24, uint16_t, RGB_T>(
+      : BitmapFont<16, 24, uint16_t, RGB_T>(
             asciifont_detail::table16x24(), 95) {}
 };
 
