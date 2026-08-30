@@ -36,12 +36,13 @@ var searchData=
   ['isinbounds_33',['isInBounds',['../classtinygpu_1_1FrameBuffer.html#af76bf5df49a2cc0c36978ac6a061d817',1,'tinygpu::FrameBuffer::isInBounds()'],['../classtinygpu_1_1SurfaceBase.html#af76bf5df49a2cc0c36978ac6a061d817',1,'tinygpu::SurfaceBase::isInBounds()']]],
   ['islandscapefamily_34',['isLandscapeFamily',['../namespacetinygpu.html#a49d2bcea04c3ee104bded423d489d5da',1,'tinygpu']]],
   ['isopen_5f_35',['isOpen_',['../classtinygpu_1_1AVIWriter.html#a9d7c8d95df25ae3955000ed5f0415dfd',1,'tinygpu::AVIWriter']]],
-  ['issurfaceautodelete_36',['isSurfaceAutoDelete',['../structtinygpu_1_1SpriteInfo.html#a1770c9eb0e976f596be344757002239f',1,'tinygpu::SpriteInfo']]],
-  ['istouched_37',['isTouched',['../classtinygpu_1_1TouchDriverXPT2046.html#a03619dc33b1f9a8b9ef4b44e7b301507',1,'tinygpu::TouchDriverXPT2046::isTouched()'],['../classtinygpu_1_1TouchDriverFT6236.html#a03619dc33b1f9a8b9ef4b44e7b301507',1,'tinygpu::TouchDriverFT6236::isTouched()'],['../classtinygpu_1_1TouchDriverCST816S.html#a03619dc33b1f9a8b9ef4b44e7b301507',1,'tinygpu::TouchDriverCST816S::isTouched()'],['../classtinygpu_1_1TouchDriverGT911.html#a03619dc33b1f9a8b9ef4b44e7b301507',1,'tinygpu::TouchDriverGT911::isTouched()'],['../classtinygpu_1_1TouchDriver.html#a29b2ef84d2fa0b850b4a3cbcee215554',1,'tinygpu::TouchDriver::isTouched()'],['../classtinygpu_1_1TouchDriverSDL.html#a03619dc33b1f9a8b9ef4b44e7b301507',1,'tinygpu::TouchDriverSDL::isTouched()']]],
-  ['isurface_38',['ISurface',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]],
-  ['isurface_2eh_39',['ISurface.h',['../ISurface_8h.html',1,'']]],
-  ['isurface_3c_20bool_20_3e_40',['ISurface&lt; bool &gt;',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]],
-  ['isurface_3c_20pixelt_20_3e_41',['ISurface&lt; PixelT &gt;',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]],
-  ['isurface_3c_20rgb565_20_3e_42',['ISurface&lt; RGB565 &gt;',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]],
-  ['isvalid_43',['isValid',['../structtinygpu_1_1I2SPins.html#a5bc2a781be2586924afce4e4a4ea6697',1,'tinygpu::I2SPins']]]
+  ['isproportional_36',['isProportional',['../classtinygpu_1_1IFont.html#a615703d57f3787f2d1a9ca4d75bcb138',1,'tinygpu::IFont::isProportional()'],['../classtinygpu_1_1LinePrinter.html#af5b71f06f5a561524ee75f028c4fd1e3',1,'tinygpu::LinePrinter::isProportional()'],['../classtinygpu_1_1BitmapFont.html#aa1f3c754c4b268fab56c69af64922744',1,'tinygpu::BitmapFont::isProportional()']]],
+  ['issurfaceautodelete_37',['isSurfaceAutoDelete',['../structtinygpu_1_1SpriteInfo.html#a1770c9eb0e976f596be344757002239f',1,'tinygpu::SpriteInfo']]],
+  ['istouched_38',['isTouched',['../classtinygpu_1_1TouchDriverXPT2046.html#a03619dc33b1f9a8b9ef4b44e7b301507',1,'tinygpu::TouchDriverXPT2046::isTouched()'],['../classtinygpu_1_1TouchDriverFT6236.html#a03619dc33b1f9a8b9ef4b44e7b301507',1,'tinygpu::TouchDriverFT6236::isTouched()'],['../classtinygpu_1_1TouchDriverCST816S.html#a03619dc33b1f9a8b9ef4b44e7b301507',1,'tinygpu::TouchDriverCST816S::isTouched()'],['../classtinygpu_1_1TouchDriverGT911.html#a03619dc33b1f9a8b9ef4b44e7b301507',1,'tinygpu::TouchDriverGT911::isTouched()'],['../classtinygpu_1_1TouchDriver.html#a29b2ef84d2fa0b850b4a3cbcee215554',1,'tinygpu::TouchDriver::isTouched()'],['../classtinygpu_1_1TouchDriverSDL.html#a03619dc33b1f9a8b9ef4b44e7b301507',1,'tinygpu::TouchDriverSDL::isTouched()']]],
+  ['isurface_39',['ISurface',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]],
+  ['isurface_2eh_40',['ISurface.h',['../ISurface_8h.html',1,'']]],
+  ['isurface_3c_20bool_20_3e_41',['ISurface&lt; bool &gt;',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]],
+  ['isurface_3c_20pixelt_20_3e_42',['ISurface&lt; PixelT &gt;',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]],
+  ['isurface_3c_20rgb565_20_3e_43',['ISurface&lt; RGB565 &gt;',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]],
+  ['isvalid_44',['isValid',['../structtinygpu_1_1I2SPins.html#a5bc2a781be2586924afce4e4a4ea6697',1,'tinygpu::I2SPins']]]
 ];

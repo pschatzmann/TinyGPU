@@ -222,8 +222,8 @@ $(function() {
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <span class="comment">/// Fill a rectangle at (x, y) with width w, height h, and color -</span></div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="comment">/// clipped both to the surface&#39;s own bounds and to the active clip</span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="comment">/// rect (see pushClipRect()), since every text glyph cell (BitmapFont/</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="comment">/// FixedBitmapFont) and word-wrapped line (LinePrinter) is drawn as a</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="comment">/// rect (see pushClipRect()), since every text glyph cell (Font5x7/</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="comment">/// BitmapFont) and word-wrapped line (LinePrinter) is drawn as a</span></div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="comment">/// fillRect() call - clipping it here is what makes drawText() respect</span></div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <span class="comment">/// the clip too, with no separate handling needed.</span></div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classtinygpu_1_1SurfaceBase.html#a1c964a702e42c1a7757295428704778f">  151</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtinygpu_1_1SurfaceBase.html#a1c964a702e42c1a7757295428704778f">fillRect</a>(size_t x, size_t y, size_t w, size_t h, PixelT color) <span class="keyword">override</span> {</div>

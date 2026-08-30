@@ -1,11 +1,10 @@
 <map id="src/TinyGPU/Font/BitmapFont.h" name="src/TinyGPU/Font/BitmapFont.h">
-<area shape="rect" id="node1" title=" " alt="" coords="152,5,376,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="86,225,160,251"/>
-<area shape="rect" id="node3" title=" " alt="" coords="346,225,417,251"/>
-<area shape="rect" id="node4" title=" " alt="" coords="104,79,160,104"/>
-<area shape="rect" id="node5" href="$RGB565_8h.html" title=" " alt="" coords="290,152,474,177"/>
-<area shape="rect" id="node6" href="$RGB888_8h.html" title=" " alt="" coords="31,152,215,177"/>
-<area shape="rect" id="node7" href="$IFont_8h.html" title=" " alt="" coords="185,79,344,104"/>
-<area shape="rect" id="node8" href="$ISurface_8h.html" title=" " alt="" coords="419,79,619,104"/>
-<area shape="rect" id="node9" title=" " alt="" coords="600,152,668,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="182,5,406,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="115,225,190,251"/>
+<area shape="rect" id="node3" title=" " alt="" coords="256,225,327,251"/>
+<area shape="rect" id="node4" title=" " alt="" coords="583,79,639,104"/>
+<area shape="rect" id="node5" href="$IFont_8h.html" title=" " alt="" coords="29,79,188,104"/>
+<area shape="rect" id="node6" href="$RGB565_8h.html" title=" " alt="" coords="130,152,314,177"/>
+<area shape="rect" id="node7" href="$ISurface_8h.html" title=" " alt="" coords="263,79,463,104"/>
+<area shape="rect" id="node8" title=" " alt="" coords="389,152,457,177"/>
 </map>

@@ -1,6 +1,7 @@
 <map id="LVGLDriver&lt; RGB_T &gt;" name="LVGLDriver&lt; RGB_T &gt;">
-<area shape="rect" id="node1" title="LVGLDriver is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the displ..." alt="" coords="19,256,185,281"/>
-<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,168,199,193"/>
-<area shape="rect" id="node3" href="$classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="13,80,191,105"/>
-<area shape="rect" id="node4" href="$classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="39,5,165,31"/>
+<area shape="rect" id="node1" title="LVGLDriver is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the displ..." alt="" coords="19,345,185,371"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,257,199,283"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1Font5x7.html" title=" " alt="" coords="24,169,180,195"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1BitmapFont.html" title="Fixed&#45;size bitmap font backed by a caller&#45;supplied glyph table." alt="" coords="13,80,191,120"/>
+<area shape="rect" id="node5" href="$classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="39,5,165,31"/>
 </map>

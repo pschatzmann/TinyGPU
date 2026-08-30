@@ -1,8 +1,9 @@
 <map id="HX8357Driver&lt; RGB_T &gt;" name="HX8357Driver&lt; RGB_T &gt;">
-<area shape="rect" id="node1" title="Driver for HX8357 SPI display controller." alt="" coords="120,331,307,356"/>
-<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="111,256,315,281"/>
-<area shape="rect" id="node3" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,168,189,193"/>
-<area shape="rect" id="node4" href="$classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="8,80,187,105"/>
-<area shape="rect" id="node5" href="$classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="34,5,161,31"/>
-<area shape="rect" id="node6" href="$classtinygpu_1_1SPIClass.html" title=" " alt="" coords="213,168,291,193"/>
+<area shape="rect" id="node1" title="Driver for HX8357 SPI display controller." alt="" coords="120,420,307,445"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI&#45;based display drivers." alt="" coords="111,345,315,371"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,257,189,283"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1Font5x7.html" title=" " alt="" coords="19,169,175,195"/>
+<area shape="rect" id="node5" href="$classtinygpu_1_1BitmapFont.html" title="Fixed&#45;size bitmap font backed by a caller&#45;supplied glyph table." alt="" coords="8,80,187,120"/>
+<area shape="rect" id="node6" href="$classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="34,5,161,31"/>
+<area shape="rect" id="node7" href="$classtinygpu_1_1SPIClass.html" title=" " alt="" coords="213,257,291,283"/>
 </map>

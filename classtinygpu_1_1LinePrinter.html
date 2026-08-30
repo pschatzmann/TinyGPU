@@ -131,6 +131,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6e6539be0229cc10869deee684c62325"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LinePrinter.html#a6e6539be0229cc10869deee684c62325">setSpacing</a> (uint8_t spacing)</td></tr>
 <tr class="memdesc:a6e6539be0229cc10869deee684c62325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the spacing between glyphs.  <br /></td></tr>
 <tr class="separator:a6e6539be0229cc10869deee684c62325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5abd3b1a649742c18970a281f0409634"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LinePrinter.html#a5abd3b1a649742c18970a281f0409634">setProportional</a> (bool proportional)</td></tr>
+<tr class="separator:a5abd3b1a649742c18970a281f0409634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5b71f06f5a561524ee75f028c4fd1e3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LinePrinter.html#af5b71f06f5a561524ee75f028c4fd1e3">isProportional</a> () const</td></tr>
+<tr class="memdesc:af5b71f06f5a561524ee75f028c4fd1e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether proportional spacing is enabled on the current font.  <br /></td></tr>
+<tr class="separator:af5b71f06f5a561524ee75f028c4fd1e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5de1d92da33aae3b3423fe61e97537fe"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LinePrinter.html#a5de1d92da33aae3b3423fe61e97537fe">print</a> (const char *text)</td></tr>
 <tr class="memdesc:a5de1d92da33aae3b3423fe61e97537fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints text with word wrapping.  <br /></td></tr>
 <tr class="separator:a5de1d92da33aae3b3423fe61e97537fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -260,6 +265,33 @@ class tinygpu::LinePrinter&lt; RGB_T &gt;</div><p>Helper for printing wrapped li
 </div><div class="memdoc">
 
 <p>Y pixel coordinate the next character would be printed at. </p>
+
+</div>
+</div>
+<a id="af5b71f06f5a561524ee75f028c4fd1e3" name="af5b71f06f5a561524ee75f028c4fd1e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5b71f06f5a561524ee75f028c4fd1e3">&#9670;&#160;</a></span>isProportional()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isProportional </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns whether proportional spacing is enabled on the current font. </p>
 
 </div>
 </div>
@@ -535,6 +567,33 @@ class tinygpu::LinePrinter&lt; RGB_T &gt;</div><p>Helper for printing wrapped li
 </div><div class="memdoc">
 
 <p>Sets the left border in pixels. </p>
+
+</div>
+</div>
+<a id="a5abd3b1a649742c18970a281f0409634" name="a5abd3b1a649742c18970a281f0409634"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5abd3b1a649742c18970a281f0409634">&#9670;&#160;</a></span>setProportional()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setProportional </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>proportional</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Enables/disables proportional (effective-width) glyph spacing on the current font. Word-wrapping and cursor advance automatically account for the narrower spacing since they're driven by the font's own measureTextWidth()/drawText(). </p>
 
 </div>
 </div>

@@ -1,4 +1,22 @@
 var searchData=
 [
-  ['desktopsdl_0',['DesktopSDL',['../namespacetinygpu.html#a8ea3b65fd36ffe6dc7273fe17455543d',1,'tinygpu']]]
+  ['font12x12rgb565_0',['Font12x12RGB565',['../namespacetinygpu.html#a0f2a78808e970fa7a6ed3946c06e6e82',1,'tinygpu']]],
+  ['font12x12rgb666_1',['Font12x12RGB666',['../namespacetinygpu.html#ae1c62480c75dcf1866307890449ebfb0',1,'tinygpu']]],
+  ['font12x12rgb888_2',['Font12x12RGB888',['../namespacetinygpu.html#ad6917298cbdd781475bc5ae2e876f79a',1,'tinygpu']]],
+  ['font16x24rgb565_3',['Font16x24RGB565',['../namespacetinygpu.html#a9a139dff55a9b5b6ac4ac744a6795398',1,'tinygpu']]],
+  ['font16x24rgb666_4',['Font16x24RGB666',['../namespacetinygpu.html#a047b1e939f9c7daf5514f84e00ee0805',1,'tinygpu']]],
+  ['font16x24rgb888_5',['Font16x24RGB888',['../namespacetinygpu.html#a15e74f8a8608f9120c10a89128a6d280',1,'tinygpu']]],
+  ['font5x7rgb565_6',['Font5x7RGB565',['../namespacetinygpu.html#a68c5e461c7862685c938ade46d92aa1e',1,'tinygpu']]],
+  ['font5x7rgb666_7',['Font5x7RGB666',['../namespacetinygpu.html#aa621885d1095acaf3799489080fe0402',1,'tinygpu']]],
+  ['font5x7rgb888_8',['Font5x7RGB888',['../namespacetinygpu.html#ad818caa8e7a2794139d9119c4014b1b4',1,'tinygpu']]],
+  ['font8x12rgb565_9',['Font8x12RGB565',['../namespacetinygpu.html#aefc70db56c115625492b8a4f01fb5093',1,'tinygpu']]],
+  ['font8x12rgb666_10',['Font8x12RGB666',['../namespacetinygpu.html#aecf1a96e92bc8ec48ffbf7494ac089ac',1,'tinygpu']]],
+  ['font8x12rgb888_11',['Font8x12RGB888',['../namespacetinygpu.html#a3ebad33cf07123f974b646e5aeadc537',1,'tinygpu']]],
+  ['font8x8rgb565_12',['Font8x8RGB565',['../namespacetinygpu.html#a6f3d425bf5e579be03a9c7f4734a0f16',1,'tinygpu']]],
+  ['font8x8rgb666_13',['Font8x8RGB666',['../namespacetinygpu.html#a76def6699045c45368cc9e8f809f920b',1,'tinygpu']]],
+  ['font8x8rgb888_14',['Font8x8RGB888',['../namespacetinygpu.html#a09da82a310371cd45d768ca565a25baa',1,'tinygpu']]],
+  ['framebuffermonochrome_15',['FrameBufferMonochrome',['../namespacetinygpu.html#a7a537bb2bb57dae7d04aa2961d02662a',1,'tinygpu']]],
+  ['framebufferrgb565_16',['FrameBufferRGB565',['../namespacetinygpu.html#a0f572638e7d61fb9186cdd03bf110163',1,'tinygpu']]],
+  ['framebufferrgb666_17',['FrameBufferRGB666',['../namespacetinygpu.html#ad0b85571fb5193c6fad3b768c3b7be7f',1,'tinygpu']]],
+  ['framebufferrgb888_18',['FrameBufferRGB888',['../namespacetinygpu.html#aa9c63b58163207d3995179ae9026a01e',1,'tinygpu']]]
 ];

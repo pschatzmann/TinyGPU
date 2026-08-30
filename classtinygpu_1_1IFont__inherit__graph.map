@@ -1,15 +1,17 @@
 <map id="IFont&lt; RGB_T &gt;" name="IFont&lt; RGB_T &gt;">
-<area shape="rect" id="node1" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="5,223,132,248"/>
-<area shape="rect" id="node2" href="$classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="185,5,363,31"/>
-<area shape="rect" id="node3" href="$classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="193,55,355,95"/>
-<area shape="rect" id="node4" href="$classtinygpu_1_1FixedBitmapFont.html" title=" " alt="" coords="185,119,363,159"/>
-<area shape="rect" id="node5" href="$classtinygpu_1_1FixedBitmapFont.html" title=" " alt="" coords="185,183,363,223"/>
-<area shape="rect" id="node6" href="$classtinygpu_1_1FixedBitmapFont.html" title=" " alt="" coords="189,247,359,287"/>
-<area shape="rect" id="node7" href="$classtinygpu_1_1FixedBitmapFont.html" title=" " alt="" coords="193,311,355,351"/>
-<area shape="rect" id="node8" href="$classtinygpu_1_1BitmapFont.html" title="Fixed&#45;size 5x7 bitmap font with ASCII and extended character support." alt="" coords="189,376,359,401"/>
-<area shape="rect" id="node9" href="$classtinygpu_1_1FixedBitmapFont.html" title="Fixed&#45;size bitmap font backed by a caller&#45;supplied glyph table." alt="" coords="180,426,368,466"/>
-<area shape="rect" id="node10" href="$classtinygpu_1_1Font12x12.html" title="12x12 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII12x12_Table." alt="" coords="416,359,579,384"/>
-<area shape="rect" id="node11" href="$classtinygpu_1_1Font16x24.html" title="16x24 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII16x24_Table." alt="" coords="416,408,579,433"/>
-<area shape="rect" id="node12" href="$classtinygpu_1_1Font8x12.html" title="8x12 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII8x12_Table." alt="" coords="420,457,575,483"/>
-<area shape="rect" id="node13" href="$classtinygpu_1_1Font8x8.html" title="8x8 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII8x8_Table." alt="" coords="424,507,571,532"/>
+<area shape="rect" id="node1" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="5,205,132,230"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="181,5,358,45"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="191,69,347,109"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="191,133,347,173"/>
+<area shape="rect" id="node5" href="$classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="195,197,343,237"/>
+<area shape="rect" id="node6" href="$classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="181,261,358,301"/>
+<area shape="rect" id="node7" href="$classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="181,325,358,365"/>
+<area shape="rect" id="node8" href="$classtinygpu_1_1BitmapFont.html" title="Fixed&#45;size bitmap font backed by a caller&#45;supplied glyph table." alt="" coords="180,389,359,429"/>
+<area shape="rect" id="node9" href="$classtinygpu_1_1Font5x7.html" title=" " alt="" coords="435,249,591,274"/>
+<area shape="rect" id="node10" href="$classtinygpu_1_1Font5x7.html" title=" " alt="" coords="407,298,620,323"/>
+<area shape="rect" id="node11" href="$classtinygpu_1_1Font12x12.html" title="12x12 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII12x12_Table." alt="" coords="432,347,595,373"/>
+<area shape="rect" id="node12" href="$classtinygpu_1_1Font16x24.html" title="16x24 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII16x24_Table." alt="" coords="432,397,595,422"/>
+<area shape="rect" id="node13" href="$classtinygpu_1_1Font5x7.html" title="Fixed&#45;size 5x7 bitmap font with ASCII and extended character support." alt="" coords="440,446,587,471"/>
+<area shape="rect" id="node14" href="$classtinygpu_1_1Font8x12.html" title="8x12 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII8x12_Table." alt="" coords="436,495,591,521"/>
+<area shape="rect" id="node15" href="$classtinygpu_1_1Font8x8.html" title="8x8 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII8x8_Table." alt="" coords="440,545,587,570"/>
 </map>

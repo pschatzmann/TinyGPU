@@ -23,7 +23,7 @@ var searchData=
   ['cliplinetoplane_20',['clipLineToPlane',['../classtinygpu_1_1WireFrame3D.html#a97d7c7435139f8b46c217644107b2dc2',1,'tinygpu::WireFrame3D']]],
   ['clippointtocamerarange_21',['clipPointToCameraRange',['../classtinygpu_1_1WireFrame3D.html#af9b138c641006564d81cb9df9b6ea0ca',1,'tinygpu::WireFrame3D']]],
   ['clock_22',['clock',['../structtinygpu_1_1SPISettings.html#ac79a207bffa2705f9fefe67b178d17e0',1,'tinygpu::SPISettings']]],
-  ['codepoint_23',['CodePoint',['../classtinygpu_1_1FixedBitmapFont.html#a81b9b94fabfc6f8be9c365e66d09429d',1,'tinygpu::FixedBitmapFont::CodePoint()'],['../classtinygpu_1_1BitmapFont.html#a81b9b94fabfc6f8be9c365e66d09429d',1,'tinygpu::BitmapFont::CodePoint()']]],
+  ['codepoint_23',['CodePoint',['../classtinygpu_1_1Font5x7.html#a462f1ec82855d9afbbcbddfdd439b97c',1,'tinygpu::Font5x7::CodePoint()'],['../classtinygpu_1_1BitmapFont.html#a81b9b94fabfc6f8be9c365e66d09429d',1,'tinygpu::BitmapFont::CodePoint()']]],
   ['collecting_24',['Collecting',['../classtinygpu_1_1BMPParser.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba7063194175c59222cd3ae177ad3bfafd',1,'tinygpu::BMPParser']]],
   ['colorsused_25',['colorsUsed',['../structtinygpu_1_1BMPParser_1_1HeaderInfo.html#a9a2360dc70756b1a65535cf761121129',1,'tinygpu::BMPParser::HeaderInfo']]],
   ['complete_26',['Complete',['../classtinygpu_1_1BMPParser.html#a67a0db04d321a74b7e7fcfd3f1a3f70baae94f80b3ce82062a5dd7815daa04f9d',1,'tinygpu::BMPParser']]],

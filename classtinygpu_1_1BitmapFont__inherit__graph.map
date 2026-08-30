@@ -1,4 +1,11 @@
-<map id="BitmapFont&lt; RGB_T &gt;" name="BitmapFont&lt; RGB_T &gt;">
-<area shape="rect" id="node1" title="Fixed&#45;size 5x7 bitmap font with ASCII and extended character support." alt="" coords="5,79,176,104"/>
-<area shape="rect" id="node2" href="$classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="27,5,154,31"/>
+<map id="BitmapFont&lt; Width, Height, RowT, RGB_T &gt;" name="BitmapFont&lt; Width, Height, RowT, RGB_T &gt;">
+<area shape="rect" id="node1" title="Fixed&#45;size bitmap font backed by a caller&#45;supplied glyph table." alt="" coords="180,146,359,186"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1Font5x7.html" title=" " alt="" coords="435,5,591,31"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1Font5x7.html" title=" " alt="" coords="407,55,620,80"/>
+<area shape="rect" id="node5" href="$classtinygpu_1_1Font12x12.html" title="12x12 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII12x12_Table." alt="" coords="432,104,595,129"/>
+<area shape="rect" id="node6" href="$classtinygpu_1_1Font16x24.html" title="16x24 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII16x24_Table." alt="" coords="432,153,595,179"/>
+<area shape="rect" id="node7" href="$classtinygpu_1_1Font5x7.html" title="Fixed&#45;size 5x7 bitmap font with ASCII and extended character support." alt="" coords="440,203,587,228"/>
+<area shape="rect" id="node8" href="$classtinygpu_1_1Font8x12.html" title="8x12 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII8x12_Table." alt="" coords="436,252,591,277"/>
+<area shape="rect" id="node9" href="$classtinygpu_1_1Font8x8.html" title="8x8 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII8x8_Table." alt="" coords="440,301,587,327"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="5,153,132,179"/>
 </map>

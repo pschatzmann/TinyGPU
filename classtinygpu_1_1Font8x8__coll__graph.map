@@ -1,5 +1,5 @@
 <map id="Font8x8&lt; RGB_T &gt;" name="Font8x8&lt; RGB_T &gt;">
-<area shape="rect" id="node1" title="8x8 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII8x8_Table." alt="" coords="26,167,173,192"/>
-<area shape="rect" id="node2" href="$classtinygpu_1_1FixedBitmapFont.html" title="Fixed&#45;size bitmap font backed by a caller&#45;supplied glyph table." alt="" coords="5,79,193,119"/>
-<area shape="rect" id="node3" href="$classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="36,5,163,31"/>
+<area shape="rect" id="node1" title="8x8 fixed&#45;width bitmap font converted from the STM32&#45;EVAL fonts.c ASCII8x8_Table." alt="" coords="21,167,168,192"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1BitmapFont.html" title="Fixed&#45;size bitmap font backed by a caller&#45;supplied glyph table." alt="" coords="5,79,184,119"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="31,5,158,31"/>
 </map>

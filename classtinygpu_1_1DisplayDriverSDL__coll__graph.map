@@ -1,6 +1,7 @@
 <map id="DisplayDriverSDL&lt; RGB_T &gt;" name="DisplayDriverSDL&lt; RGB_T &gt;">
-<area shape="rect" id="node1" title="Display class for rendering a Surface&lt;RGB565&gt; using the SDL2 library. This class can be used to displ..." alt="" coords="5,243,215,268"/>
-<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="18,168,202,193"/>
-<area shape="rect" id="node3" href="$classtinygpu_1_1BitmapFont.html" title=" " alt="" coords="21,80,199,105"/>
-<area shape="rect" id="node4" href="$classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="47,5,173,31"/>
+<area shape="rect" id="node1" title="Display class for rendering a Surface&lt;RGB565&gt; using the SDL2 library. This class can be used to displ..." alt="" coords="5,332,215,357"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="18,257,202,283"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1Font5x7.html" title=" " alt="" coords="32,169,188,195"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1BitmapFont.html" title="Fixed&#45;size bitmap font backed by a caller&#45;supplied glyph table." alt="" coords="21,80,199,120"/>
+<area shape="rect" id="node5" href="$classtinygpu_1_1IFont.html" title="Font rendering interface for TinyGPU&#45;compatible framebuffers." alt="" coords="47,5,173,31"/>
 </map>

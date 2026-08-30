@@ -1,9 +1,14 @@
 <map id="src/TinyGPU/Drivers/DeviceOutput.h" name="src/TinyGPU/Drivers/DeviceOutput.h">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,157,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="13,313,83,339"/>
-<area shape="rect" id="node3" href="$ISurface_8h.html" title=" " alt="" coords="85,167,285,192"/>
-<area shape="rect" id="node7" href="$Drivers_2DisplayDriver_8h.html" title=" " alt="" coords="119,93,353,119"/>
-<area shape="rect" id="node4" title=" " alt="" coords="86,240,154,265"/>
-<area shape="rect" id="node5" title=" " alt="" coords="363,313,437,339"/>
-<area shape="rect" id="node6" href="$RGB565_8h.html" title=" " alt="" coords="179,240,363,265"/>
+<area shape="rect" id="node1" title=" " alt="" coords="67,5,219,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="346,460,417,485"/>
+<area shape="rect" id="node3" href="$ISurface_8h.html" title=" " alt="" coords="43,313,243,339"/>
+<area shape="rect" id="node7" href="$Drivers_2DisplayDriver_8h.html" title=" " alt="" coords="241,93,474,119"/>
+<area shape="rect" id="node4" title=" " alt="" coords="174,387,242,412"/>
+<area shape="rect" id="node5" title=" " alt="" coords="704,460,779,485"/>
+<area shape="rect" id="node6" href="$RGB565_8h.html" title=" " alt="" coords="419,387,603,412"/>
+<area shape="rect" id="node8" href="$Font5x7_8h.html" title=" " alt="" coords="399,167,577,192"/>
+<area shape="rect" id="node9" href="$RGB888_8h.html" title=" " alt="" coords="779,387,963,412"/>
+<area shape="rect" id="node10" href="$BitmapFont_8h.html" title=" " alt="" coords="318,240,519,265"/>
+<area shape="rect" id="node11" title=" " alt="" coords="317,313,373,339"/>
+<area shape="rect" id="node12" href="$IFont_8h.html" title=" " alt="" coords="550,313,709,339"/>
 </map>
