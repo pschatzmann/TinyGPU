@@ -77,6 +77,13 @@ $(function() {
 <p><img src="docs/rotating-cube.gif" alt="Watch Wireframe" class="inline"/></p>
 <p>RGB565 is a compact 16-bit color format that stores red in 5 bits, green in 6 bits, and blue in 5 bits. It is widely used by small TFT, LCD, OLED, and other embedded display controllers because it needs much less memory and bandwidth than 24-bit RGB while still providing good visual quality for many graphics applications.</p>
 <p>Apart form RGB565 we also support RGB666, RGB888 and Monochrome.</p>
+<p>TinyGPU is designed as a small in-memory rendering layer that stays independent from any specific display driver. You render into a framebuffer memory first and then forward the resulting pixel data to your own hardware-specific output code.</p>
+<p>The library covers three main areas:</p>
+<ul>
+<li>2D drawing and text rendering for compact embedded displays</li>
+<li>sprite-oriented composition and transforms for UI and simple animation</li>
+<li>lightweight 3D wireframe rendering for visualizations and demos</li>
+</ul>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Features</h1>
 <ul>
@@ -91,8 +98,7 @@ Features</h1>
 <li>arcs (for circular progress/spinner style widgets)</li>
 </ul>
 </li>
-<li>Bitmap font rendering</li>
-<li>Wrapped line printing</li>
+<li>Bitmap font rendering and wrapped line printing</li>
 <li>Sprite drawing and sprite-aware framebuffer management<ul>
 <li>add</li>
 <li>move</li>
@@ -107,15 +113,17 @@ Features</h1>
 <li>minimal depth-buffered line rendering</li>
 </ul>
 </li>
-<li>BMP file support<ul>
-<li>saving data</li>
-<li>loading data</li>
+<li>Graphics Files<ul>
+<li>BMP: saving and loading</li>
+<li>JPEG: decoding baseline JPEGs via JPEGParser, using the optional <a href="https://github.com/pschatzmann/TinyJPEG">TinyJPEG</a> library</li>
 </ul>
 </li>
-<li>JPEG file support via JPEGParser, decoding baseline JPEGs with the optional <a href="https://github.com/pschatzmann/TinyJPEG">TinyJPEG</a> library</li>
-<li>TouchDriverSDL: maps the desktop mouse to a TouchDriver, so touch-driven UI can be exercised on the SDL desktop backend without touch hardware</li>
-<li><a class="el" href="classLVGLDriver.html" title="LVGLDriver is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the displ...">LVGLDriver</a>: use this library to output data from the lvgl library</li>
-<li>DisplayDriverTFTeSPI / TouchDriverTFTeSPI / LCDBoardTFTeSPI: render and read touch through the optional <a href="https://github.com/Bodmer/TFT_eSPI">TFT_eSPI</a> library instead of TinyGPU's own SPI panel/touch drivers, for panels already configured (and touch-calibrated) via TFT_eSPI's <code>User_Setup.h</code></li>
+<li>DisplayDriver / TouchDriver: write a rendered Surface out to a display and read touch input from a touch controller<ul>
+<li>DisplayDriverSPI / DisplayDriverQSPI / DisplayDriverDSI: SPI, QSPI and MIPI-DSI panel drivers</li>
+<li>TouchDriverArduino: XPT2046, FT6236/FT6206, CST816S and GT911 touch controllers</li>
+<li>DisplayDriverSDL / TouchDriverSDL: render to an SDL2 window and map the desktop mouse to a TouchDriver, so displays and touch-driven UI can be exercised on the desktop without hardware</li>
+</ul>
+</li>
 <li>LCDBoard: one-call setup (display + touch, and I2S pins where present) for ESP32(-S3/-P4) boards from the <a href="https://github.com/pschatzmann/arduino-audio-tools/wiki/Audio-Boards">arduino-audio-tools Audio Boards wiki</a><ul>
 <li>ESP32-S3 2.8" Display (FBBA0125-002 / ESP32-S3 Hosyond Display)
   - Guition ESP32-S3 4.3" Capacitive Touch Display (JC4827W543C_I)</li>
@@ -123,25 +131,22 @@ Features</h1>
   - Guition ESP32-P4 4.3" 480x800 Capacitive Touch Display (JC4880P443C_I_W)</li>
 </ul>
 </li>
+<li>Integration<ul>
+<li><a class="el" href="classLVGLDriver.html" title="LVGLDriver is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the displ...">LVGLDriver</a>: use this library to output data from the lvgl library</li>
+<li>TouchDriverSDL: use the SDL library for touch support</li>
+<li>DisplayDriverTFTeSPI / TouchDriverTFTeSPI / LCDBoardTFTeSPI: render and read touch through the optional <a href="https://github.com/Bodmer/TFT_eSPI">TFT_eSPI</a> library instead of TinyGPU's own SPI panel/touch drivers, for panels already configured (and touch-calibrated) via TFT_eSPI's <code>User_Setup.h</code></li>
+</ul>
+</li>
 <li>Arduino example sketches</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
-Overview</h1>
-<p>TinyGPU is designed as a small in-memory rendering layer that stays independent from any specific display driver. You render into RGB565 memory first and then forward the resulting pixel data to your own hardware-specific output code.</p>
-<p>The library covers three main areas:</p>
-<ul>
-<li>2D drawing and text rendering for compact embedded displays</li>
-<li>sprite-oriented composition and transforms for UI and simple animation</li>
-<li>lightweight 3D wireframe rendering for visualizations and demos</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
 Documentaion</h1>
 <ul>
 <li><a href="https://pschatzmann.github.io/TinyGPU/namespacetinygpu.html">Class Documentation</a></li>
 <li><a href="https://github.com/pschatzmann/TinyGPU/wiki">Wiki</a></li>
 <li>[Examples](examples)</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Installation</h1>
 <p>For Arduino, you can download the library as zip and call include Library -&gt; zip library. Or you can git clone this project into the Arduino libraries folder e.g. with</p>
 <div class="fragment"><div class="line">cd  ~/Documents/Arduino/libraries</div>
