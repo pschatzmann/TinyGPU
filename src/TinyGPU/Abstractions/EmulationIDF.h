@@ -27,7 +27,7 @@
  */
 
 #if !defined(ESP_PLATFORM)
-#error "TinyGPU/Emulation/EmulationIDF.h is ESP-IDF-only - include TinyGPU/Emulation.h instead, which routes here only when ESP_PLATFORM is defined."
+#error "TinyGPU/Abstractions/EmulationIDF.h is ESP-IDF-only - include TinyGPU/Emulation.h instead, which routes here only when ESP_PLATFORM is defined."
 #endif
 
 #include <stddef.h>

@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <string.h>
 
-#include "TinyGPU/Emulation/IQSPIBus.h"
+#include "TinyGPU/Abstractions/IQSPIBus.h"
 
 #if defined(ESP32)
 #include "driver/spi_master.h"

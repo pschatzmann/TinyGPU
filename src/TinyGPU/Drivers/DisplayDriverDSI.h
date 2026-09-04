@@ -5,9 +5,9 @@
 #include "TinyGPU/Drivers/DisplayDriver.h"
 #include "TinyGPU/Color/RGB565.h"
 #include "TinyGPU/Emulation.h"
-#include "TinyGPU/Emulation/IDSIBus.h"
-#include "TinyGPU/Emulation/DSIBusESP32.h"
-#include "TinyGPU/Emulation/DSIBusSTM32.h"
+#include "TinyGPU/Abstractions/IDSIBus.h"
+#include "TinyGPU/Abstractions/DSIBusESP32.h"
+#include "TinyGPU/Abstractions/DSIBusSTM32.h"
 
 namespace tinygpu {
 

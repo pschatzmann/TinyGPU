@@ -3,12 +3,12 @@
 #include <string.h>
 
 #include "TinyGPU/Drivers/DisplayDriver.h"
-#include "TinyGPU/Emulation/IQSPIBus.h"
-#include "TinyGPU/Emulation/QSPIBusBitBang.h"
+#include "TinyGPU/Abstractions/IQSPIBus.h"
+#include "TinyGPU/Abstractions/QSPIBusBitBang.h"
 #include "TinyGPU/Emulation.h"
 
 #if defined(ESP32)
-#include "TinyGPU/Emulation/QSPIBusESP32.h"
+#include "TinyGPU/Abstractions/QSPIBusESP32.h"
 #endif
 
 namespace tinygpu {

@@ -15,13 +15,13 @@
  *     is defined.
  *   - No real Arduino core, but ESP_PLATFORM is defined (a plain
  *     ESP-IDF component build via `idf_component_register`, without
- *     arduino-esp32): TinyGPU/Emulation/EmulationIDF.h - an ESP-IDF-
+ *     arduino-esp32): TinyGPU/Abstractions/EmulationIDF.h - an ESP-IDF-
  *     native emulation of delay()/millis(), pinMode()/digitalWrite()/
  *     digitalRead(), and SPIClass/TwoWire (+ the global SPI/Wire
  *     instances).
  *   - Neither (a plain desktop C++/CMake build that links TinyGPU
  *     directly, without the Arduino-Emulator this project's own examples
- *     fetch): TinyGPU/Emulation/EmulationDesktop.h - just delay()/
+ *     fetch): TinyGPU/Abstractions/EmulationDesktop.h - just delay()/
  *     millis(), enough to compile and drive
  *     TinyGPU/Input/GestureDetector.h. See that header for why GPIO/SPI/
  *     I2C aren't stubbed out there.
@@ -56,10 +56,10 @@
 
 #elif defined(ESP_PLATFORM)
 
-#include "TinyGPU/Emulation/EmulationIDF.h"
+#include "TinyGPU/Abstractions/EmulationIDF.h"
 
 #else
 
-#include "TinyGPU/Emulation/EmulationDesktop.h"
+#include "TinyGPU/Abstractions/EmulationDesktop.h"
 
 #endif

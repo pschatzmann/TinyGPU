@@ -1,7 +1,7 @@
 #pragma once
 #include <stdint.h>
 
-#include "TinyGPU/Emulation/IQSPIBus.h"
+#include "TinyGPU/Abstractions/IQSPIBus.h"
 #include "TinyGPU/Emulation.h"
 
 namespace tinygpu {

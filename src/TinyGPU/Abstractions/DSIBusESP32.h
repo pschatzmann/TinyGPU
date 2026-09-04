@@ -1,7 +1,7 @@
 #pragma once
 #include <stdint.h>
 
-#include "TinyGPU/Emulation/IDSIBus.h"
+#include "TinyGPU/Abstractions/IDSIBus.h"
 
 // esp_lcd_mipi_dsi.h only exists in the ESP32-P4 variant of arduino-esp32's
 // bundled ESP-IDF (MIPI-DSI is a P4-only peripheral) - __has_include lets

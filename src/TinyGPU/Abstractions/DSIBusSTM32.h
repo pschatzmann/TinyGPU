@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <string.h>
 
-#include "TinyGPU/Emulation/IDSIBus.h"
+#include "TinyGPU/Abstractions/IDSIBus.h"
 
 // Only STM32 parts with a DSI host (STM32F469/F479, STM32F769/F779,
 // STM32H747/H757, STM32U5x9, ...) ship stm32yyxx_hal_dsi.h in STM32duino's
