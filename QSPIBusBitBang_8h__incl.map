@@ -1,7 +1,10 @@
 <map id="src/TinyGPU/Abstractions/QSPIBusBitBang.h" name="src/TinyGPU/Abstractions/QSPIBusBitBang.h">
-<area shape="rect" id="node1" title=" " alt="" coords="118,5,305,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,93,76,119"/>
-<area shape="rect" id="node3" title=" " alt="" coords="100,93,323,119"/>
-<area shape="rect" id="node4" href="$Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="346,93,506,119"/>
-<area shape="rect" id="node5" title=" " alt="" coords="317,167,535,207"/>
+<area shape="rect" id="node1" title=" " alt="" coords="55,5,242,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,189,76,214"/>
+<area shape="rect" id="node3" href="$IQSPIBus_8h.html" title=" " alt="" coords="67,93,230,133"/>
+<area shape="rect" id="node5" href="$Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="254,101,414,126"/>
+<area shape="rect" id="node4" title=" " alt="" coords="111,189,186,214"/>
+<area shape="rect" id="node6" href="$EmulationDesktop_8h.html" title="Minimal delay()/millis() for a plain desktop C++ build &#45; no Arduino core, no ESP&#45;IDF." alt="" coords="253,181,415,221"/>
+<area shape="rect" id="node7" title=" " alt="" coords="255,269,322,295"/>
+<area shape="rect" id="node8" title=" " alt="" coords="346,269,410,295"/>
 </map>

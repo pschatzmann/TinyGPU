@@ -1,20 +1,22 @@
 <map id="src/TinyGPU/Drivers/DisplayDriverDSI.h" name="src/TinyGPU/Drivers/DisplayDriverDSI.h">
-<area shape="rect" id="node1" title=" " alt="" coords="812,5,964,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="279,489,350,515"/>
-<area shape="rect" id="node3" title=" " alt="" coords="783,101,854,126"/>
-<area shape="rect" id="node4" href="$Drivers_2DisplayDriver_8h.html" title=" " alt="" coords="526,101,759,126"/>
-<area shape="rect" id="node7" href="$RGB565_8h.html" title=" " alt="" coords="352,416,536,441"/>
-<area shape="rect" id="node14" href="$Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="879,101,1039,126"/>
-<area shape="rect" id="node16" title=" " alt="" coords="1063,101,1278,126"/>
-<area shape="rect" id="node17" title=" " alt="" coords="1302,93,1501,133"/>
-<area shape="rect" id="node18" title=" " alt="" coords="1525,93,1723,133"/>
-<area shape="rect" id="node5" title=" " alt="" coords="688,489,763,515"/>
-<area shape="rect" id="node6" href="$Font5x7_8h.html" title=" " alt="" coords="305,189,484,214"/>
-<area shape="rect" id="node12" href="$ISurface_8h.html" title=" " alt="" coords="759,343,959,368"/>
-<area shape="rect" id="node8" href="$RGB888_8h.html" title=" " alt="" coords="93,416,277,441"/>
-<area shape="rect" id="node9" href="$BitmapFont_8h.html" title=" " alt="" coords="394,269,595,295"/>
-<area shape="rect" id="node10" title=" " alt="" coords="393,343,449,368"/>
-<area shape="rect" id="node11" href="$IFont_8h.html" title=" " alt="" coords="525,343,683,368"/>
-<area shape="rect" id="node13" title=" " alt="" coords="825,416,893,441"/>
-<area shape="rect" id="node15" title=" " alt="" coords="1084,181,1303,221"/>
+<area shape="rect" id="node1" title=" " alt="" coords="344,5,496,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="357,489,427,515"/>
+<area shape="rect" id="node3" title=" " alt="" coords="70,189,141,214"/>
+<area shape="rect" id="node4" href="$Drivers_2DisplayDriver_8h.html" title=" " alt="" coords="794,101,1027,126"/>
+<area shape="rect" id="node7" href="$RGB565_8h.html" title=" " alt="" coords="460,416,644,441"/>
+<area shape="rect" id="node14" href="$Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="1215,101,1375,126"/>
+<area shape="rect" id="node18" href="$IDSIBus_8h.html" title=" " alt="" coords="292,181,455,221"/>
+<area shape="rect" id="node19" href="$DSIBusESP32_8h.html" title=" " alt="" coords="280,93,443,133"/>
+<area shape="rect" id="node20" href="$DSIBusSTM32_8h.html" title=" " alt="" coords="93,93,256,133"/>
+<area shape="rect" id="node5" title=" " alt="" coords="1083,489,1157,515"/>
+<area shape="rect" id="node6" href="$Font5x7_8h.html" title=" " alt="" coords="739,189,917,214"/>
+<area shape="rect" id="node12" href="$ISurface_8h.html" title=" " alt="" coords="911,343,1111,368"/>
+<area shape="rect" id="node8" href="$RGB888_8h.html" title=" " alt="" coords="964,416,1148,441"/>
+<area shape="rect" id="node9" href="$BitmapFont_8h.html" title=" " alt="" coords="707,269,909,295"/>
+<area shape="rect" id="node10" title=" " alt="" coords="780,343,836,368"/>
+<area shape="rect" id="node11" href="$IFont_8h.html" title=" " alt="" coords="597,343,755,368"/>
+<area shape="rect" id="node13" title=" " alt="" coords="871,416,939,441"/>
+<area shape="rect" id="node15" href="$EmulationDesktop_8h.html" title="Minimal delay()/millis() for a plain desktop C++ build &#45; no Arduino core, no ESP&#45;IDF." alt="" coords="1375,181,1537,221"/>
+<area shape="rect" id="node16" title=" " alt="" coords="1399,269,1465,295"/>
+<area shape="rect" id="node17" title=" " alt="" coords="1489,269,1553,295"/>
 </map>

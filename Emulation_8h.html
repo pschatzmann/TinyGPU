@@ -79,14 +79,16 @@ $(function() {
 
 <p>Drop-in replacement for <code>#include &lt;Arduino.h&gt;</code> (plus <code>&lt;SPI.h&gt;</code>/ <code>&lt;Wire.h&gt;</code> where needed) for every file under TinyGPU/Drivers and TinyGPU/Input - include this instead of those directly.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;TinyGPU/Emulation/EmulationDesktop.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="EmulationDesktop_8h_source.html">TinyGPU/Abstractions/EmulationDesktop.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Emulation.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Emulation_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2Emulation_8h" alt=""/></div>
 <map name="asrc_2TinyGPU_2Emulation_8h" id="asrc_2TinyGPU_2Emulation_8h">
-<area shape="rect" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="23,5,206,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,224,119"/>
+<area shape="rect" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="5,5,188,31"/>
+<area shape="rect" href="EmulationDesktop_8h.html" title="Minimal delay()/millis() for a plain desktop C++ build &#45; no Arduino core, no ESP&#45;IDF." alt="" coords="15,79,178,119"/>
+<area shape="rect" title=" " alt="" coords="19,167,86,192"/>
+<area shape="rect" title=" " alt="" coords="110,167,174,192"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -94,18 +96,18 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Emulation_8h__dep__incl.png" border="0" usemap="#asrc_2TinyGPU_2Emulation_8hdep" alt=""/></div>
 <map name="asrc_2TinyGPU_2Emulation_8hdep" id="asrc_2TinyGPU_2Emulation_8hdep">
-<area shape="rect" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="921,5,1103,31"/>
+<area shape="rect" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="607,5,790,31"/>
 <area shape="rect" href="QSPIBusBitBang_8h.html" title=" " alt="" coords="5,79,192,119"/>
-<area shape="rect" href="LCDBoardsESP32_8h.html" title="One&#45;call setup for ESP32(&#45;S3) boards from the arduino&#45;audio&#45;tools &quot;Audio Boards&quot; wiki that combine an..." alt="" coords="217,79,367,119"/>
-<area shape="rect" href="DisplayDriverDSI_8h.html" title=" " alt="" coords="392,79,544,119"/>
-<area shape="rect" href="DisplayDriverParallel8_8h.html" title=" " alt="" coords="569,79,751,119"/>
-<area shape="rect" href="DisplayDriverParallel8ESP32_8h.html" title=" " alt="" coords="775,79,998,119"/>
-<area shape="rect" href="DisplayDriverParallel8RP2040_8h.html" title=" " alt="" coords="1023,79,1255,119"/>
-<area shape="rect" href="DisplayDriverQSPI_8h.html" title=" " alt="" coords="1279,79,1436,119"/>
-<area shape="rect" href="DisplayDriverSPI_8h.html" title=" " alt="" coords="1460,79,1612,119"/>
-<area shape="rect" href="GestureDetector_8h.html" title=" " alt="" coords="1637,79,1830,119"/>
-<area shape="rect" href="TouchDriverArduino_8h.html" title="Concrete touch&#45;controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911, and the controller&#45;less To..." alt="" coords="1855,79,2073,119"/>
-<area shape="rect" href="DisplayDriver_8h.html" title=" " alt="" coords="1255,167,1460,192"/>
+<area shape="rect" href="DisplayDriverQSPI_8h.html" title=" " alt="" coords="151,167,308,207"/>
+<area shape="rect" href="LCDBoardsESP32_8h.html" title="One&#45;call setup for ESP32(&#45;S3) boards from the arduino&#45;audio&#45;tools &quot;Audio Boards&quot; wiki that combine an..." alt="" coords="267,79,418,119"/>
+<area shape="rect" href="DisplayDriverDSI_8h.html" title=" " alt="" coords="380,167,532,207"/>
+<area shape="rect" href="DisplayDriverParallel8_8h.html" title=" " alt="" coords="494,79,677,119"/>
+<area shape="rect" href="DisplayDriverParallel8ESP32_8h.html" title=" " alt="" coords="701,79,923,119"/>
+<area shape="rect" href="DisplayDriverParallel8RP2040_8h.html" title=" " alt="" coords="948,79,1180,119"/>
+<area shape="rect" href="DisplayDriverSPI_8h.html" title=" " alt="" coords="848,167,1000,207"/>
+<area shape="rect" href="GestureDetector_8h.html" title=" " alt="" coords="1255,79,1449,119"/>
+<area shape="rect" href="TouchDriverArduino_8h.html" title="Concrete touch&#45;controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911, and the controller&#45;less To..." alt="" coords="1473,79,1692,119"/>
+<area shape="rect" href="DisplayDriver_8h.html" title=" " alt="" coords="353,255,559,280"/>
 </map>
 </div>
 </div>
@@ -115,8 +117,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <p>Resolves to one of three things, depending on what's available:</p>
 <ul>
 <li>A real Arduino core is on the include path (Arduino IDE/ arduino-cli, an ESP-IDF build with the arduino-esp32 component present, or the desktop Arduino-Emulator used by this project's own examples): transparent passthrough to the real <code>&lt;Arduino.h&gt;</code>/<code>&lt;SPI.h&gt;</code>/<code>&lt;Wire.h&gt;</code> - nothing of this project's own is defined.</li>
-<li>No real Arduino core, but ESP_PLATFORM is defined (a plain ESP-IDF component build via <code>idf_component_register</code>, without arduino-esp32): TinyGPU/Emulation/EmulationIDF.h - an ESP-IDF- native emulation of delay()/millis(), pinMode()/digitalWrite()/ digitalRead(), and SPIClass/TwoWire (+ the global SPI/Wire instances).</li>
-<li>Neither (a plain desktop C++/CMake build that links TinyGPU directly, without the Arduino-Emulator this project's own examples fetch): TinyGPU/Emulation/EmulationDesktop.h - just delay()/ millis(), enough to compile and drive <a class="el" href="GestureDetector_8h.html">TinyGPU/Input/GestureDetector.h</a>. See that header for why GPIO/SPI/ I2C aren't stubbed out there.</li>
+<li>No real Arduino core, but ESP_PLATFORM is defined (a plain ESP-IDF component build via <code>idf_component_register</code>, without arduino-esp32): <a class="el" href="EmulationIDF_8h.html" title="ESP-IDF-native emulation of exactly the Arduino surface TinyGPU/Drivers and TinyGPU/Input actually ca...">TinyGPU/Abstractions/EmulationIDF.h</a> - an ESP-IDF- native emulation of delay()/millis(), pinMode()/digitalWrite()/ digitalRead(), and SPIClass/TwoWire (+ the global SPI/Wire instances).</li>
+<li>Neither (a plain desktop C++/CMake build that links TinyGPU directly, without the Arduino-Emulator this project's own examples fetch): <a class="el" href="EmulationDesktop_8h.html" title="Minimal delay()/millis() for a plain desktop C++ build - no Arduino core, no ESP-IDF.">TinyGPU/Abstractions/EmulationDesktop.h</a> - just delay()/ millis(), enough to compile and drive <a class="el" href="GestureDetector_8h.html">TinyGPU/Input/GestureDetector.h</a>. See that header for why GPIO/SPI/ I2C aren't stubbed out there.</li>
 </ul>
 <p>Neither fallback is a general Arduino-core replacement - each only covers the calls this library's own Drivers/Input headers make (verified by grepping them), not the full Arduino API. A sketch built against either fallback that calls other Arduino functions will still need its own additions, or the real Arduino core after all.</p>
 <p>Both fallbacks define their symbols inside <code>namespace tinygpu</code> (not globally) - safe to do since every call site (all of TinyGPU/Drivers and TinyGPU/Input) lives inside that same namespace, so unqualified lookup finds them there. Only the real-Arduino-core branch leaves things where that core put them (global/<code>arduino::</code>), since that's not this project's code to move. </p>

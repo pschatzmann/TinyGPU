@@ -1,9 +1,11 @@
 <map id="src/TinyGPU/Input/GestureDetector.h" name="src/TinyGPU/Input/GestureDetector.h">
-<area shape="rect" id="node1" title=" " alt="" coords="88,5,281,45"/>
+<area shape="rect" id="node1" title=" " alt="" coords="85,5,279,45"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,93,73,119"/>
-<area shape="rect" id="node3" title=" " alt="" coords="265,255,336,280"/>
-<area shape="rect" id="node4" href="$Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="163,93,323,119"/>
-<area shape="rect" id="node6" href="$TouchDriver_8h.html" title="Platform&#45;independent touch driver interface: the Point/ CalibrationData/Rotation types,..." alt="" coords="360,93,567,119"/>
-<area shape="rect" id="node5" title=" " alt="" coords="149,167,367,207"/>
-<area shape="rect" id="node7" href="$TouchDriverCommon_8h.html" title=" " alt="" coords="392,167,588,207"/>
+<area shape="rect" id="node3" title=" " alt="" coords="144,255,215,280"/>
+<area shape="rect" id="node4" href="$Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="381,93,541,119"/>
+<area shape="rect" id="node8" href="$TouchDriver_8h.html" title="Platform&#45;independent touch driver interface: the Point/ CalibrationData/Rotation types,..." alt="" coords="149,93,356,119"/>
+<area shape="rect" id="node5" href="$EmulationDesktop_8h.html" title="Minimal delay()/millis() for a plain desktop C++ build &#45; no Arduino core, no ESP&#45;IDF." alt="" coords="379,167,542,207"/>
+<area shape="rect" id="node6" title=" " alt="" coords="382,255,449,280"/>
+<area shape="rect" id="node7" title=" " alt="" coords="473,255,537,280"/>
+<area shape="rect" id="node9" href="$TouchDriverCommon_8h.html" title=" " alt="" coords="152,167,348,207"/>
 </map>

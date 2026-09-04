@@ -93,13 +93,13 @@ $(function() {
 <div class="line"><span class="lineno">   15</span><span class="comment"> *     is defined.</span></div>
 <div class="line"><span class="lineno">   16</span><span class="comment"> *   - No real Arduino core, but ESP_PLATFORM is defined (a plain</span></div>
 <div class="line"><span class="lineno">   17</span><span class="comment"> *     ESP-IDF component build via `idf_component_register`, without</span></div>
-<div class="line"><span class="lineno">   18</span><span class="comment"> *     arduino-esp32): TinyGPU/Emulation/EmulationIDF.h - an ESP-IDF-</span></div>
+<div class="line"><span class="lineno">   18</span><span class="comment"> *     arduino-esp32): TinyGPU/Abstractions/EmulationIDF.h - an ESP-IDF-</span></div>
 <div class="line"><span class="lineno">   19</span><span class="comment"> *     native emulation of delay()/millis(), pinMode()/digitalWrite()/</span></div>
 <div class="line"><span class="lineno">   20</span><span class="comment"> *     digitalRead(), and SPIClass/TwoWire (+ the global SPI/Wire</span></div>
 <div class="line"><span class="lineno">   21</span><span class="comment"> *     instances).</span></div>
 <div class="line"><span class="lineno">   22</span><span class="comment"> *   - Neither (a plain desktop C++/CMake build that links TinyGPU</span></div>
 <div class="line"><span class="lineno">   23</span><span class="comment"> *     directly, without the Arduino-Emulator this project&#39;s own examples</span></div>
-<div class="line"><span class="lineno">   24</span><span class="comment"> *     fetch): TinyGPU/Emulation/EmulationDesktop.h - just delay()/</span></div>
+<div class="line"><span class="lineno">   24</span><span class="comment"> *     fetch): TinyGPU/Abstractions/EmulationDesktop.h - just delay()/</span></div>
 <div class="line"><span class="lineno">   25</span><span class="comment"> *     millis(), enough to compile and drive</span></div>
 <div class="line"><span class="lineno">   26</span><span class="comment"> *     TinyGPU/Input/GestureDetector.h. See that header for why GPIO/SPI/</span></div>
 <div class="line"><span class="lineno">   27</span><span class="comment"> *     I2C aren&#39;t stubbed out there.</span></div>
@@ -134,11 +134,11 @@ $(function() {
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#</span><span class="preprocessor">elif</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">ESP_PLATFORM</span><span class="preprocessor">)</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="stringliteral">&quot;TinyGPU/Emulation/EmulationIDF.h&quot;</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="stringliteral">&quot;TinyGPU/Abstractions/EmulationIDF.h&quot;</span></div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#</span><span class="preprocessor">else</span></div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/Emulation/EmulationDesktop.h&quot;</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/Abstractions/EmulationDesktop.h&quot;</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 </div><!-- fragment --></div><!-- contents -->

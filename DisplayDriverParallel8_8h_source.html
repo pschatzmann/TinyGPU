@@ -206,9 +206,9 @@ $(function() {
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classtinygpu_1_1DisplayDriverParallel8.html#a96b0d01a6e254cb76b0ae7a3a88d9bdd">rst_</a> &gt;= 0) {</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      pinMode(rst_, OUTPUT);</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>      digitalWrite(rst_, LOW);</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      delay(20);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      <a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">delay</a><a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">(</a>20<a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">)</a>;</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      digitalWrite(rst_, HIGH);</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      delay(150);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      <a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">delay</a><a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">(</a>150<a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">)</a>;</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  }</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
@@ -285,9 +285,9 @@ $(function() {
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="classtinygpu_1_1ST7735Driver8080.html#acba365cc28eb702040c382646cfb0a7a">  207</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classtinygpu_1_1ST7735Driver8080.html#acba365cc28eb702040c382646cfb0a7a">begin</a>() <span class="keyword">override</span> {</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    setupPinsAndReset();</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    writeCommand(0x01);</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    delay(150);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">delay</a><a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">(</a>150<a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">)</a>;</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    writeCommand(0x11);</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    delay(120);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">delay</a><a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">(</a>120<a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">)</a>;</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    writeCommand(0x3A);</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    writeData8(0x05);</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    writeCommand(0x29);</div>
@@ -315,9 +315,9 @@ $(function() {
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="classtinygpu_1_1ST7789Driver8080.html#acba365cc28eb702040c382646cfb0a7a">  237</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classtinygpu_1_1ST7789Driver8080.html#acba365cc28eb702040c382646cfb0a7a">begin</a>() <span class="keyword">override</span> {</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    setupPinsAndReset();</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    writeCommand(0x01);</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    delay(150);</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">delay</a><a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">(</a>150<a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">)</a>;</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    writeCommand(0x11);</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    delay(120);</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">delay</a><a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">(</a>120<a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">)</a>;</div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    writeCommand(0x3A);</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    writeData8(0x55);</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    writeCommand(0x29);</div>
@@ -368,7 +368,7 @@ $(function() {
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    setupPinsAndReset();</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    writeCommand(0x01);  <span class="comment">// SWRESET</span></div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    delay(150);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">delay</a><a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">(</a>150<a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">)</a>;</div>
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    writeCommand(0xEF);</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    writeDataN({0x03, 0x80, 0x02});</div>
@@ -430,7 +430,7 @@ $(function() {
 <div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>               0x0F, 0x0C, 0x31, 0x36, 0x0F});</div>
 <div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span> </div>
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>    writeCommand(0x11);  <span class="comment">// Sleep out</span></div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    delay(120);</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    <a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">delay</a><a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">(</a>120<a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">)</a>;</div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    writeCommand(0x29);  <span class="comment">// Display on</span></div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    writeCommand(<a class="code hl_variable" href="classtinygpu_1_1ILI9341Driver8080.html#aca1bbc98281d60de64e19666555e836a">invertColor_</a> ? 0x21 : 0x20);</div>
@@ -495,9 +495,9 @@ $(function() {
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno"><a class="line" href="classtinygpu_1_1HX8357Driver8080.html#acba365cc28eb702040c382646cfb0a7a">  417</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classtinygpu_1_1HX8357Driver8080.html#acba365cc28eb702040c382646cfb0a7a">begin</a>() <span class="keyword">override</span> {</div>
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>    setupPinsAndReset();</div>
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>    writeCommand(0x01);</div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    delay(150);</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    <a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">delay</a><a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">(</a>150<a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">)</a>;</div>
 <div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>    writeCommand(0x11);</div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>    delay(120);</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>    <a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">delay</a><a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">(</a>120<a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">)</a>;</div>
 <div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>    writeCommand(0x3A);</div>
 <div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>    writeData8(0x55);</div>
 <div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    writeCommand(0x29);</div>
@@ -525,9 +525,9 @@ $(function() {
 <div class="line"><a id="l00447" name="l00447"></a><span class="lineno"><a class="line" href="classtinygpu_1_1ST7796Driver8080.html#acba365cc28eb702040c382646cfb0a7a">  447</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classtinygpu_1_1ST7796Driver8080.html#acba365cc28eb702040c382646cfb0a7a">begin</a>() <span class="keyword">override</span> {</div>
 <div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>    setupPinsAndReset();</div>
 <div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>    writeCommand(0x01);</div>
-<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>    delay(150);</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>    <a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">delay</a><a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">(</a>150<a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">)</a>;</div>
 <div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>    writeCommand(0x11);</div>
-<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>    delay(120);</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>    <a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">delay</a><a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">(</a>120<a class="code hl_function" href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">)</a>;</div>
 <div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>    writeCommand(0x3A);</div>
 <div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>    writeData8(0x55);</div>
 <div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>    writeCommand(0x36);</div>
@@ -589,6 +589,7 @@ $(function() {
 <div class="ttc" id="aclasstinygpu_1_1ST7796Driver8080_html_a5c2f0f383eff35562e5ea79f3a95dbc5"><div class="ttname"><a href="classtinygpu_1_1ST7796Driver8080.html#a5c2f0f383eff35562e5ea79f3a95dbc5">tinygpu::ST7796Driver8080::ST7796Driver8080</a></div><div class="ttdeci">ST7796Driver8080(int8_t d0, int8_t d1, int8_t d2, int8_t d3, int8_t d4, int8_t d5, int8_t d6, int8_t d7, int8_t wr, int8_t dc, int8_t cs=-1, int8_t rd=-1, int8_t rst=-1, size_t width=320, size_t height=480)</div><div class="ttdef"><b>Definition:</b> DisplayDriverParallel8.h:440</div></div>
 <div class="ttc" id="aclasstinygpu_1_1ST7796Driver8080_html_acba365cc28eb702040c382646cfb0a7a"><div class="ttname"><a href="classtinygpu_1_1ST7796Driver8080.html#acba365cc28eb702040c382646cfb0a7a">tinygpu::ST7796Driver8080::begin</a></div><div class="ttdeci">bool begin() override</div><div class="ttdef"><b>Definition:</b> DisplayDriverParallel8.h:447</div></div>
 <div class="ttc" id="anamespacetinygpu_html"><div class="ttname"><a href="namespacetinygpu.html">tinygpu</a></div><div class="ttdef"><b>Definition:</b> DSIBusESP32.h:19</div></div>
+<div class="ttc" id="anamespacetinygpu_html_a6bc5f943544a887f8b23cadfb26a5e30"><div class="ttname"><a href="namespacetinygpu.html#a6bc5f943544a887f8b23cadfb26a5e30">tinygpu::delay</a></div><div class="ttdeci">void delay(unsigned long ms)</div><div class="ttdef"><b>Definition:</b> EmulationDesktop.h:52</div></div>
 <div class="ttc" id="anamespacetinygpu_html_aaf854447c39c56bbaf8275faddd3476d"><div class="ttname"><a href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476d">tinygpu::DisplayRotation</a></div><div class="ttdeci">DisplayRotation</div><div class="ttdoc">Abstract base class for display drivers.</div><div class="ttdef"><b>Definition:</b> DisplayDriver.h:28</div></div>
 <div class="ttc" id="anamespacetinygpu_html_aaf854447c39c56bbaf8275faddd3476da35c3ace1970663a16e5c65baa5941b13"><div class="ttname"><a href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476da35c3ace1970663a16e5c65baa5941b13">tinygpu::DisplayRotation::kNone</a></div><div class="ttdeci">@ kNone</div></div>
 <div class="ttc" id="anamespacetinygpu_html_aaf854447c39c56bbaf8275faddd3476da63b34d39d2daeed5d31475190dab43c3"><div class="ttname"><a href="namespacetinygpu.html#aaf854447c39c56bbaf8275faddd3476da63b34d39d2daeed5d31475190dab43c3">tinygpu::DisplayRotation::kLandscapeFlipped</a></div><div class="ttdeci">@ kLandscapeFlipped</div></div>
