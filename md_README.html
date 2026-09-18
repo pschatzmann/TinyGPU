@@ -129,21 +129,20 @@ Features</h1>
   - Guition ESP32-S3 4.3" Capacitive Touch Display (JC4827W543C_I)</li>
 <li>ESP32 Arduino LVGL WiFi&amp;Bluetooth 2.4" LCD (ESP32-2432S028R / ESP32 Cheap Yellow Display)
   - Guition ESP32-P4 4.3" 480x800 Capacitive Touch Display (JC4880P443C_I_W)</li>
+<li>WeAct MiniSTM32H7xx (STM32H750VBT6/STM32H743VIT6) with its bundled 0.96" 160x80 ST7735 TFT
+- Integration
+  - LVGLDriver: use this library to output data from the lvgl library 
+  - TouchDriverSDL: use the SDL library for touch support
+  - DisplayDriverTFTeSPI / TouchDriverTFTeSPI / LCDBoardTFTeSPI: render and read touch through the optional &lt;a href="<a href="https://github.com/Bodmer/TFT_eSPI">https://github.com/Bodmer/TFT_eSPI</a>" &gt;TFT_eSPI&lt;/a&gt; library instead of TinyGPU's own SPI panel/touch drivers, for panels already configured (and touch-calibrated) via TFT_eSPI's &lt;tt&gt;User_Setup.h&lt;/tt&gt;
+
+- Arduino example sketches
+
+@section autotoc_md2 Documentaion
+
+- &lt;a href="<a href="https://pschatzmann.github.io/TinyGPU/namespacetinygpu.html">https://pschatzmann.github.io/TinyGPU/namespacetinygpu.html</a>" &gt;Class Documentation&lt;/a&gt;
+- &lt;a href="<a href="https://github.com/pschatzmann/TinyGPU/wiki">https://github.com/pschatzmann/TinyGPU/wiki</a>" &gt;Wiki</li>
 </ul>
 </li>
-<li>Integration<ul>
-<li><a class="el" href="classLVGLDriver.html" title="LVGLDriver is a helper class to initialize LVGL v9 with a TinyGPU Output driver. It sets up the displ...">LVGLDriver</a>: use this library to output data from the lvgl library</li>
-<li>TouchDriverSDL: use the SDL library for touch support</li>
-<li>DisplayDriverTFTeSPI / TouchDriverTFTeSPI / LCDBoardTFTeSPI: render and read touch through the optional <a href="https://github.com/Bodmer/TFT_eSPI">TFT_eSPI</a> library instead of TinyGPU's own SPI panel/touch drivers, for panels already configured (and touch-calibrated) via TFT_eSPI's <code>User_Setup.h</code></li>
-</ul>
-</li>
-<li>Arduino example sketches</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Documentaion</h1>
-<ul>
-<li><a href="https://pschatzmann.github.io/TinyGPU/namespacetinygpu.html">Class Documentation</a></li>
-<li><a href="https://github.com/pschatzmann/TinyGPU/wiki">Wiki</a></li>
 <li>[Examples](examples)</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md3"></a>
