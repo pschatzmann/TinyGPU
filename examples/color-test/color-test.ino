@@ -18,19 +18,23 @@
  * description of each band, in case a tint or swap makes a band
  * ambiguous by eye alone.
  *
- * Cross-platform: unchanged source runs on both an ESP32 board and the
- * SDL2 desktop backend (mouse click stands in for a tap - see
- * TouchDriverSDL), since both are reached through the same LCDBoard
+ * Cross-platform: unchanged source runs on an ESP32 board, an STM32 board,
+ * and the SDL2 desktop backend (mouse click stands in for a tap - see
+ * TouchDriverSDL), since all three are reached through the same LCDBoard
  * interface (see LCDBoards.h, which picks the right board class per
  * platform automatically).
  *
  * On ESP32 this targets the ESP32 Cheap Yellow Display (ESP32-2432S028R),
  * a 240x320 ILI9341 SPI TFT board with a CST816S capacitive touch
  * controller - built up via the LCDBoardGuitionESP32_LVGL_2_4Display board
- * class (LCDBoardsESP32.h), so its pin wiring doesn't need to be repeated
- * here. Swap the board type below for a different LCDBoard if yours
- * differs. On desktop it opens an SDL2 window of the same size via
- * LCDBoardDesktopSDL.
+ * class (LCDBoardsESP32.h). On STM32 (build for FQBN
+ * STMicroelectronics:stm32:GenH7:pnum=WeActMiniH750VBTX) it targets the
+ * WeAct MiniSTM32H7xx core board's bundled 0.96" 160x80 ST7735 TFT, via
+ * LCDBoardWeActMiniSTM32H750 (LCDBoardsSTM32.h) - that board has no touch
+ * controller, so the RGB/greyscale tests auto-cycle on a timer instead of
+ * waiting for a tap (see the touch-vs-timer branch in loop()). Swap the
+ * board type below for a different LCDBoard if yours differs. On desktop
+ * it opens an SDL2 window of the same size via LCDBoardDesktopSDL.
  */
 #include <Arduino.h>
 #include <TinyGPU.h>
@@ -44,18 +48,27 @@
 using PixelT = RGB565;
 
 // --- display geometry ---------------------------------------------------
+#if defined(ESP32)
 constexpr int kDisplayWidth = 240;
 constexpr int kDisplayHeight = 320;
-
-#ifdef ESP32
 LCDBoardGuitionESP32_LVGL_2_4Display board;
+#elif defined(ARDUINO_ARCH_STM32)
+constexpr int kDisplayWidth = 160;
+constexpr int kDisplayHeight = 80;
+LCDBoardWeActMiniSTM32H750 board;
 #else
+constexpr int kDisplayWidth = 240;
+constexpr int kDisplayHeight = 320;
 LCDBoardDesktopSDL board(kDisplayWidth, kDisplayHeight);
 #endif
 SpriteDisplay<PixelT> display(board);
 Font5x7<PixelT> font;
 
-// Draws a solid band with a text label burned into it. Safe against the
+// Draws a solid band, with a text label burned in only if the band is
+// tall enough for the font to actually fit - on small displays (e.g. this
+// board's 80px-tall panel, sliced into 20 greyscale bands of just 4px
+// each), the label would otherwise render as illegible, overlapping
+// noise rather than being silently skipped. Safe against the
 // dangling-pointer trap of SpriteDisplay::addSprite(x, y, surface&) - the
 // surface is heap-allocated and ownership is handed to SpriteDisplay via
 // isSurfaceAutoDelete, the same pattern SpriteDisplay's own
@@ -65,8 +78,10 @@ void addLabeledBand(size_t x, size_t y, size_t w, size_t h, PixelT bgColor,
   auto sprite = std::make_unique<Sprite<PixelT>>(w, h, font);
   sprite->begin();
   sprite->clear(bgColor);
-  sprite->drawText(4, static_cast<int16_t>(h / 2 - 4), label, textColor, bgColor,
-                   true);
+  if (h >= Font5x7<PixelT>::kGlyphHeight) {
+    sprite->drawText(4, static_cast<int16_t>(h / 2 - 4), label, textColor,
+                     bgColor, true);
+  }
   auto& info = display.addSprite(x, y, *sprite);
   info.isSurfaceAutoDelete = true;
   sprite.release();
@@ -133,11 +148,24 @@ void setup() {
 }
 
 void loop() {
-  static bool wasTouched = false;
-  const bool touched = board.touch()->isTouched();
-  if (touched && !wasTouched) {
-    toggleTest();
+  // board.touch() is nullptr on boards with no touch controller (e.g.
+  // LCDBoardWeActMiniSTM32H750) - fall back to auto-cycling the tests on a
+  // timer instead of waiting for a tap that can never come.
+  TouchDriver* touch = board.touch();
+  if (touch != nullptr) {
+    static bool wasTouched = false;
+    const bool touched = touch->isTouched();
+    if (touched && !wasTouched) {
+      toggleTest();
+    }
+    wasTouched = touched;
+  } else {
+    static uint32_t lastSwitchMs = 0;
+    const uint32_t now = millis();
+    if (now - lastSwitchMs >= 3000) {
+      toggleTest();
+      lastSwitchMs = now;
+    }
   }
-  wasTouched = touched;
   delay(30);
 }

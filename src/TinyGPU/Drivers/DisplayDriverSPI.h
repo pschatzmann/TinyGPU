@@ -14,10 +14,15 @@ namespace tinygpu {
 template <typename RGB_T = RGB565>
 class DisplayDriverSPI : public DisplayDriver<RGB_T> {
  public:
+  /// @param width/height the panel's addressable resolution, as reported
+  /// by width()/height() - subclasses with a rotation concept (e.g.
+  /// ILI9341Driver) override width()/height() themselves instead and can
+  /// ignore these.
   DisplayDriverSPI(SPIClass& spi, int8_t cs, int8_t dc, int8_t rst = -1,
                    size_t xOffset = 0, size_t yOffset = 0,
                    uint32_t frequencyHz = 40000000,
-                   uint32_t readFrequencyHz = 15000000)
+                   uint32_t readFrequencyHz = 15000000, size_t width = 240,
+                   size_t height = 320)
       : spi_(spi),
         cs_(cs),
         dc_(dc),
@@ -25,7 +30,12 @@ class DisplayDriverSPI : public DisplayDriver<RGB_T> {
         xOffset_(xOffset),
         yOffset_(yOffset),
         frequencyHz_(frequencyHz),
-        readFrequencyHz_(readFrequencyHz) {}
+        readFrequencyHz_(readFrequencyHz),
+        width_(width),
+        height_(height) {}
+
+  size_t width() const override { return width_; }
+  size_t height() const override { return height_; }
 
   bool writeData(ISurface<RGB_T>& surface) override {
     return writeData(surface, 0, 0);
@@ -141,6 +151,7 @@ class DisplayDriverSPI : public DisplayDriver<RGB_T> {
   size_t xOffset_, yOffset_;
   uint32_t frequencyHz_;
   uint32_t readFrequencyHz_;
+  size_t width_, height_;
   bool swapOutputBytes_ = false;
 
   void setColumnRowAddress(size_t x, size_t y, size_t w, size_t h) {
@@ -218,8 +229,24 @@ class ST7735Driver : public DisplayDriverSPI<RGB_T> {
   using DisplayDriverSPI<RGB_T>::writeCommand;
   using DisplayDriverSPI<RGB_T>::writeData8;
 
-  ST7735Driver(SPIClass& spi, int8_t cs, int8_t dc, int8_t rst = -1)
-      : DisplayDriverSPI<RGB_T>(spi, cs, dc, rst, 2, 1) {}
+  /// @param xOffset/yOffset column/row start offset baked into this
+  /// panel's glass vs. its 132x162 driver RAM - 2,1 (the default) is the
+  /// common 128x160 portrait module's offset; pass your panel's real
+  /// values for other sizes/orientations (e.g. 1,26 for the common
+  /// 160x80 "0.96 inch" module mounted landscape).
+  /// @param width/height the panel's addressable resolution, as reported
+  /// by width()/height().
+  /// @param madctl MADCTL (0x36) byte to program during begin(), or -1
+  /// (default) to leave the panel at its post-reset MADCTL (this
+  /// driver's original behavior) - pass an explicit value (see your
+  /// panel's datasheet) for panels/orientations that need BGR/MX/MY/MV
+  /// bits set, e.g. a landscape-mounted module.
+  ST7735Driver(SPIClass& spi, int8_t cs, int8_t dc, int8_t rst = -1,
+               size_t xOffset = 2, size_t yOffset = 1, size_t width = 128,
+               size_t height = 160, int madctl = -1)
+      : DisplayDriverSPI<RGB_T>(spi, cs, dc, rst, xOffset, yOffset, 40000000,
+                                15000000, width, height),
+        madctl_(madctl) {}
 
   bool begin() override {
     setupPinsAndReset();
@@ -229,9 +256,16 @@ class ST7735Driver : public DisplayDriverSPI<RGB_T> {
     delay(120);
     writeCommand(0x3A);
     writeData8(0x05);
+    if (madctl_ >= 0) {
+      writeCommand(0x36);
+      writeData8(static_cast<uint8_t>(madctl_));
+    }
     writeCommand(0x29);
     return true;
   }
+
+ private:
+  int madctl_;
 };
 
 /**
