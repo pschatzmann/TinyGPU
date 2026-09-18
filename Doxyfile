@@ -2432,7 +2432,19 @@ INCLUDE_FILE_PATTERNS  =
 # recursively expanded use the := operator instead of the = operator.
 # This tag requires that the tag ENABLE_PREPROCESSING is set to YES.
 
-PREDEFINED             =
+PREDEFINED             = ARDUINO \
+                         TINYGPU_AUTO_NAMESPACE \
+                         ESP32 \
+                         ARDUINO_ARCH_STM32 \
+                         ARDUINO_ARCH_RP2040 \
+                         TINYGPU_HAS_ESP_LCD_DSI \
+                         TINYGPU_HAS_ESP_LCD_QSPI \
+                         TINYGPU_HAS_ESP_LCD_PARALLEL8 \
+                         TINYGPU_HAS_RP2040_PIO_PARALLEL8 \
+                         TINYGPU_HAS_STM32_DSI \
+                         TINYGPU_PARALLEL8_BACKEND_I80 \
+                         SOC_LCD_I80_SUPPORTED \
+                         ADC_CALI_SCHEME_CURVE_FITTING_SUPPORTED
 
 # If the MACRO_EXPANSION and EXPAND_ONLY_PREDEF tags are set to YES then this
 # tag can be used to specify a list of macro names that should be expanded. The
