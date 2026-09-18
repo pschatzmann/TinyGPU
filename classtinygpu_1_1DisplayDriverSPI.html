@@ -117,8 +117,12 @@ Collaboration diagram for DisplayDriverSPI&lt; RGB_T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abfdc8122986250cac64a5da68cd986e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#abfdc8122986250cac64a5da68cd986e9">DisplayDriverSPI</a> (<a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a> &amp;spi, int8_t cs, int8_t dc, int8_t rst=-1, size_t xOffset=0, size_t yOffset=0, uint32_t frequencyHz=40000000, uint32_t readFrequencyHz=15000000)</td></tr>
-<tr class="separator:abfdc8122986250cac64a5da68cd986e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a2dfb14ac4c29e264e5427240780a6e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a0a2dfb14ac4c29e264e5427240780a6e">DisplayDriverSPI</a> (<a class="el" href="classtinygpu_1_1SPIClass.html">SPIClass</a> &amp;spi, int8_t cs, int8_t dc, int8_t rst=-1, size_t xOffset=0, size_t yOffset=0, uint32_t frequencyHz=40000000, uint32_t readFrequencyHz=15000000, size_t <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ac39656d862f5a4a39182559bbf7c740b">width</a>=240, size_t <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a715f3df3dc638de8b40076ada0b54a89">height</a>=320)</td></tr>
+<tr class="separator:a0a2dfb14ac4c29e264e5427240780a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac39656d862f5a4a39182559bbf7c740b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ac39656d862f5a4a39182559bbf7c740b">width</a> () const override</td></tr>
+<tr class="separator:ac39656d862f5a4a39182559bbf7c740b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a715f3df3dc638de8b40076ada0b54a89"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a715f3df3dc638de8b40076ada0b54a89">height</a> () const override</td></tr>
+<tr class="separator:a715f3df3dc638de8b40076ada0b54a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbde66ad2f1573278339e5341d311953"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#afbde66ad2f1573278339e5341d311953">writeData</a> (<a class="el" href="classtinygpu_1_1ISurface.html">ISurface</a>&lt; RGB_T &gt; &amp;surface) override</td></tr>
 <tr class="separator:afbde66ad2f1573278339e5341d311953"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0469d0ac4f77675974699c5fb875717f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a0469d0ac4f77675974699c5fb875717f">setSwapOutputBytes</a> (bool swap)</td></tr>
@@ -184,6 +188,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a25af0fdd54be07425d40a8f252851854"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3d3fb7b72ef58dc0b318cf94dca04ca"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#af3d3fb7b72ef58dc0b318cf94dca04ca">readFrequencyHz_</a></td></tr>
 <tr class="separator:af3d3fb7b72ef58dc0b318cf94dca04ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cb2c4867ddfc8196e3cebdad02f2691"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a5cb2c4867ddfc8196e3cebdad02f2691">width_</a></td></tr>
+<tr class="separator:a5cb2c4867ddfc8196e3cebdad02f2691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a673e5692420ee7f949564cab4ac67d29"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a673e5692420ee7f949564cab4ac67d29">height_</a></td></tr>
+<tr class="separator:a673e5692420ee7f949564cab4ac67d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16d7408771dc42da05c700fbdb252968"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#a16d7408771dc42da05c700fbdb252968">swapOutputBytes_</a> = false</td></tr>
 <tr class="separator:a16d7408771dc42da05c700fbdb252968"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classtinygpu_1_1DisplayDriver"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtinygpu_1_1DisplayDriver')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtinygpu_1_1DisplayDriver.html">DisplayDriver&lt; RGB_T &gt;</a></td></tr>
@@ -194,8 +202,8 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename RGB_T = RGB565&gt;<br />
 class tinygpu::DisplayDriverSPI&lt; RGB_T &gt;</div><p>Common base class for SPI-based display drivers. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abfdc8122986250cac64a5da68cd986e9" name="abfdc8122986250cac64a5da68cd986e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfdc8122986250cac64a5da68cd986e9">&#9670;&#160;</a></span>DisplayDriverSPI()</h2>
+<a id="a0a2dfb14ac4c29e264e5427240780a6e" name="a0a2dfb14ac4c29e264e5427240780a6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a2dfb14ac4c29e264e5427240780a6e">&#9670;&#160;</a></span>DisplayDriverSPI()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,7 +257,19 @@ class tinygpu::DisplayDriverSPI&lt; RGB_T &gt;</div><p>Common base class for SPI
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>readFrequencyHz</em> = <code>15000000</code>&#160;</td>
+          <td class="paramname"><em>readFrequencyHz</em> = <code>15000000</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>width</em> = <code>240</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>height</em> = <code>320</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -263,10 +283,45 @@ class tinygpu::DisplayDriverSPI&lt; RGB_T &gt;</div><p>Common base class for SPI
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width/height</td><td>the panel's addressable resolution, as reported by <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ac39656d862f5a4a39182559bbf7c740b">width()</a>/height() - subclasses with a rotation concept (e.g. <a class="el" href="classtinygpu_1_1ILI9341Driver.html" title="Driver for ILI9341 SPI display controller.">ILI9341Driver</a>) override <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html#ac39656d862f5a4a39182559bbf7c740b">width()</a>/height() themselves instead and can ignore these. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a715f3df3dc638de8b40076ada0b54a89" name="a715f3df3dc638de8b40076ada0b54a89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a715f3df3dc638de8b40076ada0b54a89">&#9670;&#160;</a></span>height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t height </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classtinygpu_1_1DisplayDriver.html#a2b329a3d2f3c79e7f52714fecfadec8c">DisplayDriver&lt; RGB_T &gt;</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classtinygpu_1_1ILI9341Driver.html#a715f3df3dc638de8b40076ada0b54a89">ILI9341Driver&lt; RGB_T &gt;</a>, and <a class="el" href="classtinygpu_1_1ILI9342Driver.html#a715f3df3dc638de8b40076ada0b54a89">ILI9342Driver&lt; RGB_T &gt;</a>.</p>
+
+</div>
+</div>
 <a id="a02fc96775e4bbcdf1fd42f6710c5ae73" name="a02fc96775e4bbcdf1fd42f6710c5ae73"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a02fc96775e4bbcdf1fd42f6710c5ae73">&#9670;&#160;</a></span>readData()</h2>
 
@@ -456,6 +511,36 @@ class tinygpu::DisplayDriverSPI&lt; RGB_T &gt;</div><p>Common base class for SPI
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac39656d862f5a4a39182559bbf7c740b" name="ac39656d862f5a4a39182559bbf7c740b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac39656d862f5a4a39182559bbf7c740b">&#9670;&#160;</a></span>width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t width </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Current addressable panel width/height in pixels - for a driver that supports <a class="el" href="classtinygpu_1_1DisplayDriver.html#a76f274dae1869afa29ebe052085790b0">setRotation()</a>, these reflect the <em>current</em> rotation (landscape vs portrait swaps them; see <a class="el" href="namespacetinygpu.html#a49d2bcea04c3ee104bded423d489d5da">isLandscapeFamily()</a>), not necessarily the panel's native/physical orientation. Callers that need to lay out content (e.g. OutputTinyGPU's scale_to_fit target, or clearScreen()'s band loop) should read these fresh rather than caching their own copy, so a <a class="el" href="classtinygpu_1_1DisplayDriver.html#a76f274dae1869afa29ebe052085790b0">setRotation()</a> call is picked up automatically without needing separate bookkeeping. </p>
+
+<p>Implements <a class="el" href="classtinygpu_1_1DisplayDriver.html#ab0b1032913cf74902ae68d05a8d982d1">DisplayDriver&lt; RGB_T &gt;</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classtinygpu_1_1ILI9341Driver.html#ac39656d862f5a4a39182559bbf7c740b">ILI9341Driver&lt; RGB_T &gt;</a>, and <a class="el" href="classtinygpu_1_1ILI9342Driver.html#ac39656d862f5a4a39182559bbf7c740b">ILI9342Driver&lt; RGB_T &gt;</a>.</p>
 
 </div>
 </div>
@@ -713,6 +798,28 @@ class tinygpu::DisplayDriverSPI&lt; RGB_T &gt;</div><p>Common base class for SPI
 
 </div>
 </div>
+<a id="a673e5692420ee7f949564cab4ac67d29" name="a673e5692420ee7f949564cab4ac67d29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a673e5692420ee7f949564cab4ac67d29">&#9670;&#160;</a></span>height_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t height_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="af3d3fb7b72ef58dc0b318cf94dca04ca" name="af3d3fb7b72ef58dc0b318cf94dca04ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af3d3fb7b72ef58dc0b318cf94dca04ca">&#9670;&#160;</a></span>readFrequencyHz_</h2>
 
@@ -790,6 +897,28 @@ class tinygpu::DisplayDriverSPI&lt; RGB_T &gt;</div><p>Common base class for SPI
       <table class="memname">
         <tr>
           <td class="memname">bool swapOutputBytes_ = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5cb2c4867ddfc8196e3cebdad02f2691" name="a5cb2c4867ddfc8196e3cebdad02f2691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cb2c4867ddfc8196e3cebdad02f2691">&#9670;&#160;</a></span>width_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t width_</td>
         </tr>
       </table>
   </td>

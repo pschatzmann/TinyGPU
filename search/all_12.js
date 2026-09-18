@@ -76,7 +76,7 @@ var searchData=
   ['spritergb666_73',['SpriteRGB666',['../namespacetinygpu.html#a09f7fe02e0be0cb008b07e6bded36c23',1,'tinygpu']]],
   ['spritergb888_74',['SpriteRGB888',['../namespacetinygpu.html#a0955c9dc755069342e3771a97a0db703',1,'tinygpu']]],
   ['sprites_5f_75',['sprites_',['../classtinygpu_1_1SpriteDisplay.html#a9bbb16c841a5ec83440df5cc4f2367d8',1,'tinygpu::SpriteDisplay::sprites_()'],['../classtinygpu_1_1FrameBuffer.html#a62fb1200a6e0dbaa897aa629dfae6ca3',1,'tinygpu::FrameBuffer::sprites_()']]],
-  ['st7735driver_76',['ST7735Driver',['../classtinygpu_1_1ST7735Driver.html#a4d0746977f58e8b1f7ea877c1c361bc7',1,'tinygpu::ST7735Driver::ST7735Driver()'],['../classtinygpu_1_1ST7735Driver.html',1,'ST7735Driver&lt; RGB_T &gt;']]],
+  ['st7735driver_76',['ST7735Driver',['../classtinygpu_1_1ST7735Driver.html#a22307fd7d50a4bc41c5fa354837371fc',1,'tinygpu::ST7735Driver::ST7735Driver()'],['../classtinygpu_1_1ST7735Driver.html',1,'ST7735Driver&lt; RGB_T &gt;']]],
   ['st7735driver8080_77',['ST7735Driver8080',['../classtinygpu_1_1ST7735Driver8080.html#abd08a76b2efd6291a348d2743aeb9dc1',1,'tinygpu::ST7735Driver8080::ST7735Driver8080()'],['../classtinygpu_1_1ST7735Driver8080.html',1,'ST7735Driver8080&lt; RGB_T &gt;']]],
   ['st7789driver_78',['ST7789Driver',['../classtinygpu_1_1ST7789Driver.html#a3144c7a4150314141752a6395b917ecc',1,'tinygpu::ST7789Driver::ST7789Driver()'],['../classtinygpu_1_1ST7789Driver.html',1,'ST7789Driver&lt; RGB_T &gt;']]],
   ['st7789driver8080_79',['ST7789Driver8080',['../classtinygpu_1_1ST7789Driver8080.html#a862efb7c5c67f2044938cdc7bf0215a7',1,'tinygpu::ST7789Driver8080::ST7789Driver8080()'],['../classtinygpu_1_1ST7789Driver8080.html',1,'ST7789Driver8080&lt; RGB_T &gt;']]],

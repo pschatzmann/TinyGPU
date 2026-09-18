@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyGPU: src/TinyGPU/Boards/LCDBoards.h Source File</title>
+<title>TinyGPU: src/TinyGPU/Boards/LCDBoardsSTM32.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -73,20 +73,31 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="headertitle"><div class="title">LCDBoards.h</div></div>
+  <div class="headertitle"><div class="title">LCDBoardsSTM32.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="LCDBoards_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">ifdef</span> <span class="preprocessor">ESP32</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="stringliteral">&quot;TinyGPU/Boards/LCDBoardsESP32.h&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#</span><span class="preprocessor">elif</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">ARDUINO_ARCH_STM32</span><span class="preprocessor">)</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="stringliteral">&quot;TinyGPU/Boards/LCDBoardsSTM32.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">elif</span> __has_include<span class="preprocessor">(</span><span class="preprocessor">&lt;</span><span class="preprocessor">SDL</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span><span class="preprocessor">)</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="stringliteral">&quot;TinyGPU/Boards/LCDBoardsSDL.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">else</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;TinyGPU/Boards/LCDBoardsCommon.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
-</div><!-- fragment --></div><!-- contents -->
+
+<p>One-call setup for STM32duino boards that bundle an LCD, following the same LCDBoard interface as <a class="el" href="LCDBoardsESP32_8h.html" title="One-call setup for ESP32(-S3) boards from the arduino-audio-tools &quot;Audio Boards&quot; wiki that combine an...">LCDBoardsESP32.h</a>'s ESP32 boards.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="Emulation_8h_source.html">TinyGPU/Emulation.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for LCDBoardsSTM32.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="LCDBoardsSTM32_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2Boards_2LCDBoardsSTM32_8h" alt=""/></div>
+<map name="asrc_2TinyGPU_2Boards_2LCDBoardsSTM32_8h" id="asrc_2TinyGPU_2Boards_2LCDBoardsSTM32_8h">
+<area shape="rect" title="One&#45;call setup for STM32duino boards that bundle an LCD, following the same LCDBoard interface as LCD..." alt="" coords="10,5,163,45"/>
+<area shape="rect" href="Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="7,93,167,119"/>
+<area shape="rect" href="EmulationDesktop_8h.html" title="Minimal delay()/millis() for a plain desktop C++ build &#45; no Arduino core, no ESP&#45;IDF." alt="" coords="5,167,168,207"/>
+<area shape="rect" title=" " alt="" coords="9,255,76,280"/>
+<area shape="rect" title=" " alt="" coords="100,255,164,280"/>
+</map>
+</div>
+</div>
+<p><a href="LCDBoardsSTM32_8h_source.html">Go to the source code of this file.</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>One-call setup for STM32duino boards that bundle an LCD, following the same LCDBoard interface as <a class="el" href="LCDBoardsESP32_8h.html" title="One-call setup for ESP32(-S3) boards from the arduino-audio-tools &quot;Audio Boards&quot; wiki that combine an...">LCDBoardsESP32.h</a>'s ESP32 boards. </p>
+<p>See <a class="el" href="LCDBoards_8h.html" title="Platform-independent interface for a board that bundles a display, an optional touch controller,...">LCDBoards.h</a> for the platform-independent LCDBoard interface these classes implement. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
