@@ -1,0 +1,5 @@
+<map id="IDSIBus" name="IDSIBus">
+<area shape="rect" id="node1" title="Abstraction over the transport used by DisplayDriverDSI (see TinyGPU/Drivers/DisplayDriverDSI...." alt="" coords="90,5,162,31"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DSIBusESP32.html" title="IDSIBus backend for ESP32&#45;P4, built on ESP&#45;IDF&#39;s DBI (command channel) + DPI (video&#45;timing channel) s..." alt="" coords="5,79,113,104"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1DSIBusSTM32.html" title="IDSIBus backend for STM32 parts with a DSI host + LTDC (F469/ F479, F769/F779, H747/H757,..." alt="" coords="138,79,250,104"/>
+</map>

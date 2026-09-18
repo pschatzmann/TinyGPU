@@ -1,0 +1,4 @@
+<map id="ST7735DriverHardwareSPI" name="ST7735DriverHardwareSPI">
+<area shape="rect" id="node1" title="Hardware&#45;SPI4 ST7735 driver for the WeAct MiniSTM32H7xx&#39;s bundled 0.96&quot; 160x80 TFT." alt="" coords="5,79,199,104"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,5,199,31"/>
+</map>

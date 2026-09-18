@@ -1,5 +1,10 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classtinygpu_1_1LCDBoard.html" title=" " alt="" coords="5,31,92,56"/>
-<area shape="rect" id="node2" href="$classtinygpu_1_1LCDBoardDesktopSDL.html" title="Desktop SDL2 window standing in for a physical LCD board. Window size is set at construction time (de..." alt="" coords="140,5,305,31"/>
-<area shape="rect" id="node3" href="$classtinygpu_1_1LCDBoardTFTeSPI.html" title="LCDBoard wrapping a single TFT_eSPI instance, shared between its DisplayDriverTFTeSPI and (optional) ..." alt="" coords="155,55,290,80"/>
+<area shape="rect" id="node1" href="$classtinygpu_1_1LCDBoard.html" title=" " alt="" coords="5,176,92,201"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1LCDBoardDesktopSDL.html" title="Desktop SDL2 window standing in for a physical LCD board. Window size is set at construction time (de..." alt="" coords="174,5,339,31"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1LCDBoardESP32S3__2__8Display.html" title="&quot;2.8&quot; ESP32&#45;S3 Display&quot; &#45; ILI9341 SPI TFT + FT6336G capacitive touch (I2C, shares its bus with the bo..." alt="" coords="146,55,367,80"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html" title="&quot;Guition ESP32&#45;P4 4.3&quot; 480x800 Capacitive Touch Display&quot; (JC4880P443C_I_W): it has an ST7701 MIPI&#45;DSI..." alt="" coords="161,105,352,145"/>
+<area shape="rect" id="node5" href="$classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html" title="&quot;Guition ESP32&#45;S3 4.3&quot; 480x272 Capacitive Touch Display&quot; (JC4827W543C_I): it has a NV3041A QSPI displ..." alt="" coords="162,169,351,209"/>
+<area shape="rect" id="node6" href="$classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html" title="&quot;ESP32 Arduino LVGL WiFi&amp;Bluetooth Development Board, 2.4&quot; LCD TFT Module&quot; &#45; ILI9341 SPI TFT + CST816..." alt="" coords="170,233,343,273"/>
+<area shape="rect" id="node7" href="$classtinygpu_1_1LCDBoardTFTeSPI.html" title="LCDBoard wrapping a single TFT_eSPI instance, shared between its DisplayDriverTFTeSPI and (optional) ..." alt="" coords="189,297,324,323"/>
+<area shape="rect" id="node8" href="$classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html" title="WeAct &quot;MiniSTM32H7xx&quot; core board (STM32H750VBT6/STM32H743VIT6) with its bundled, ribbon/FPC&#45;mounted 0..." alt="" coords="140,347,373,372"/>
 </map>

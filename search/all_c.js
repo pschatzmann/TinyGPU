@@ -1,7 +1,7 @@
 var searchData=
 [
   ['m_0',['m',['../structtinygpu_1_1WireFrame3D_1_1Mat4.html#a7cdab8754cd800b1ba4008e559aa314c',1,'tinygpu::WireFrame3D::Mat4']]],
-  ['madctlforrotation_1',['madctlForRotation',['../classtinygpu_1_1ILI9341Driver8080.html#a068b9c95ed674b312cad7b7ea8eba404',1,'tinygpu::ILI9341Driver8080::madctlForRotation()'],['../classtinygpu_1_1ILI9341Driver.html#a068b9c95ed674b312cad7b7ea8eba404',1,'tinygpu::ILI9341Driver::madctlForRotation()'],['../classtinygpu_1_1ILI9342Driver.html#a068b9c95ed674b312cad7b7ea8eba404',1,'tinygpu::ILI9342Driver::madctlForRotation()']]],
+  ['madctlforrotation_1',['madctlForRotation',['../classtinygpu_1_1ILI9341Driver8080.html#a068b9c95ed674b312cad7b7ea8eba404',1,'tinygpu::ILI9341Driver8080::madctlForRotation()'],['../classtinygpu_1_1ILI9341Driver8080ESP32.html#a068b9c95ed674b312cad7b7ea8eba404',1,'tinygpu::ILI9341Driver8080ESP32::madctlForRotation()'],['../classtinygpu_1_1ILI9341Driver8080RP2040.html#a068b9c95ed674b312cad7b7ea8eba404',1,'tinygpu::ILI9341Driver8080RP2040::madctlForRotation()'],['../classtinygpu_1_1ILI9341Driver.html#a068b9c95ed674b312cad7b7ea8eba404',1,'tinygpu::ILI9341Driver::madctlForRotation()'],['../classtinygpu_1_1ILI9342Driver.html#a068b9c95ed674b312cad7b7ea8eba404',1,'tinygpu::ILI9342Driver::madctlForRotation()']]],
   ['mapcoordinates_2',['mapCoordinates',['../classtinygpu_1_1TouchDriver.html#a4cdc2e41fca94a0591029d6e0d7a095d',1,'tinygpu::TouchDriver']]],
   ['mappedtopofbox_3',['mappedTopOfBox',['../classtinygpu_1_1CartesianView.html#a98ddf22c054582a493f43ecf79fb7ed5',1,'tinygpu::CartesianView']]],
   ['mappedy_4',['mappedY',['../classtinygpu_1_1CartesianView.html#a9b8ffbede712d9744cff0f568b9167da',1,'tinygpu::CartesianView']]],
@@ -14,7 +14,9 @@ var searchData=
   ['measuretextwidth_11',['measureTextWidth',['../classtinygpu_1_1BitmapFont.html#a96885a7015bb890c8074046f3057f69f',1,'tinygpu::BitmapFont::measureTextWidth()'],['../classtinygpu_1_1IFont.html#aa2a81e1dc5c0c336c69bd07411e1bf31',1,'tinygpu::IFont::measureTextWidth()']]],
   ['mesh_12',['Mesh',['../structtinygpu_1_1WireFrame3D_1_1Mesh.html',1,'tinygpu::WireFrame3D']]],
   ['millis_13',['millis',['../namespacetinygpu.html#a6ff7f2532a22366f0013bc41397129fd',1,'tinygpu']]],
-  ['movesprite_14',['moveSprite',['../classtinygpu_1_1FrameBuffer.html#a035362997e38691749c07fe05fd34ed1',1,'tinygpu::FrameBuffer::moveSprite()'],['../classtinygpu_1_1SpriteDisplay.html#ac26bf9a98f61470f059cb2b25b9e983b',1,'tinygpu::SpriteDisplay::moveSprite()']]],
-  ['msbfirst_15',['MSBFIRST',['../namespacetinygpu.html#aa889a78d4927c66dfe0e4cfc5e8d31a4',1,'tinygpu']]],
-  ['my_5ftick_16',['my_tick',['../classLVGLDriver.html#afcf78f3684505b04e577ff51a3cd9e4c',1,'LVGLDriver']]]
+  ['ministm32h750_14',['MiniSTM32H750',['../namespacetinygpu.html#a062e5037d252be7100a87f5b35d3d721',1,'tinygpu']]],
+  ['ministm32h7xx_15',['MiniSTM32H7xx',['../namespacetinygpu.html#a1c5517a9e17e99893327e483a5708171',1,'tinygpu']]],
+  ['movesprite_16',['moveSprite',['../classtinygpu_1_1FrameBuffer.html#a035362997e38691749c07fe05fd34ed1',1,'tinygpu::FrameBuffer::moveSprite()'],['../classtinygpu_1_1SpriteDisplay.html#ac26bf9a98f61470f059cb2b25b9e983b',1,'tinygpu::SpriteDisplay::moveSprite()']]],
+  ['msbfirst_17',['MSBFIRST',['../namespacetinygpu.html#aa889a78d4927c66dfe0e4cfc5e8d31a4',1,'tinygpu']]],
+  ['my_5ftick_18',['my_tick',['../classLVGLDriver.html#afcf78f3684505b04e577ff51a3cd9e4c',1,'LVGLDriver']]]
 ];

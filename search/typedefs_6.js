@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rotation_0',['Rotation',['../classtinygpu_1_1ILI9341Driver8080.html#a5bf1ff9f7d73b0dbd63137e3b52bef38',1,'tinygpu::ILI9341Driver8080::Rotation()'],['../classtinygpu_1_1ILI9341Driver.html#a5bf1ff9f7d73b0dbd63137e3b52bef38',1,'tinygpu::ILI9341Driver::Rotation()'],['../classtinygpu_1_1ILI9342Driver.html#a5bf1ff9f7d73b0dbd63137e3b52bef38',1,'tinygpu::ILI9342Driver::Rotation()']]]
+  ['jc4827w543c_5fi_0',['JC4827W543C_I',['../namespacetinygpu.html#a86bb214b9594822bcb28efb5e3e666f9',1,'tinygpu']]],
+  ['jc4880p443c_5fi_5fw_1',['JC4880P443C_I_W',['../namespacetinygpu.html#ad5641c732e0f5473e06a3cccbbde023b',1,'tinygpu']]]
 ];

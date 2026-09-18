@@ -1,10 +1,14 @@
 <map id="src/TinyGPU/Drivers/DisplayDriverParallel8RP2040.h" name="src/TinyGPU/Drivers/DisplayDriverParallel8RP2040.h">
-<area shape="rect" id="node1" title=" " alt="" coords="629,5,861,45"/>
+<area shape="rect" id="node1" title=" " alt="" coords="945,5,1177,45"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,93,116,119"/>
 <area shape="rect" id="node3" title=" " alt="" coords="349,475,420,500"/>
 <area shape="rect" id="node4" title=" " alt="" coords="885,93,956,119"/>
 <area shape="rect" id="node5" href="$Drivers_2DisplayDriver_8h.html" title=" " alt="" coords="628,93,861,119"/>
-<area shape="rect" id="node15" href="$Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="1070,93,1230,119"/>
+<area shape="rect" id="node15" href="$Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="981,93,1141,119"/>
+<area shape="rect" id="node19" title=" " alt="" coords="1165,93,1305,119"/>
+<area shape="rect" id="node20" title=" " alt="" coords="1330,93,1458,119"/>
+<area shape="rect" id="node21" title=" " alt="" coords="1483,93,1609,119"/>
+<area shape="rect" id="node22" title=" " alt="" coords="1633,93,1752,119"/>
 <area shape="rect" id="node6" title=" " alt="" coords="837,475,911,500"/>
 <area shape="rect" id="node7" href="$Font5x7_8h.html" title=" " alt="" coords="409,174,587,199"/>
 <area shape="rect" id="node13" href="$ISurface_8h.html" title=" " alt="" coords="831,328,1031,353"/>

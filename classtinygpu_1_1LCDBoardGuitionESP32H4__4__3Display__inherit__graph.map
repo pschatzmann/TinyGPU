@@ -1,0 +1,4 @@
+<map id="LCDBoardGuitionESP32H4_4_3Display" name="LCDBoardGuitionESP32H4_4_3Display">
+<area shape="rect" id="node1" title="&quot;Guition ESP32&#45;P4 4.3&quot; 480x800 Capacitive Touch Display&quot; (JC4880P443C_I_W): it has an ST7701 MIPI&#45;DSI..." alt="" coords="5,79,196,119"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1LCDBoard.html" title=" " alt="" coords="57,5,144,31"/>
+</map>

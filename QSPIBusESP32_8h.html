@@ -74,33 +74,81 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">QSPIBusESP32.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="IQSPIBus_8h_source.html">TinyGPU/Abstractions/IQSPIBus.h</a>&quot;</code><br />
+<code>#include &quot;driver/spi_master.h&quot;</code><br />
+<code>#include &quot;esp_lcd_io_spi.h&quot;</code><br />
+<code>#include &quot;esp_lcd_panel_io.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for QSPIBusESP32.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="QSPIBusESP32_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2Abstractions_2QSPIBusESP32_8h" alt=""/></div>
 <map name="asrc_2TinyGPU_2Abstractions_2QSPIBusESP32_8h" id="asrc_2TinyGPU_2Abstractions_2QSPIBusESP32_8h">
-<area shape="rect" title=" " alt="" coords="5,5,192,45"/>
-<area shape="rect" title=" " alt="" coords="49,181,119,207"/>
-<area shape="rect" title=" " alt="" coords="63,101,134,126"/>
-<area shape="rect" href="IQSPIBus_8h.html" title=" " alt="" coords="159,93,321,133"/>
-<area shape="rect" title=" " alt="" coords="203,181,277,207"/>
+<area shape="rect" title=" " alt="" coords="199,5,385,45"/>
+<area shape="rect" title=" " alt="" coords="11,181,82,207"/>
+<area shape="rect" title=" " alt="" coords="26,101,97,126"/>
+<area shape="rect" href="IQSPIBus_8h.html" title=" " alt="" coords="121,93,284,133"/>
+<area shape="rect" title=" " alt="" coords="308,101,455,126"/>
+<area shape="rect" title=" " alt="" coords="479,101,607,126"/>
+<area shape="rect" title=" " alt="" coords="631,101,777,126"/>
+<area shape="rect" title=" " alt="" coords="165,181,240,207"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="QSPIBusESP32_8h__dep__incl.png" border="0" usemap="#asrc_2TinyGPU_2Abstractions_2QSPIBusESP32_8hdep" alt=""/></div>
+<map name="asrc_2TinyGPU_2Abstractions_2QSPIBusESP32_8hdep" id="asrc_2TinyGPU_2Abstractions_2QSPIBusESP32_8hdep">
+<area shape="rect" title=" " alt="" coords="185,5,372,45"/>
+<area shape="rect" href="DisplayDriverQSPI_8h.html" title=" " alt="" coords="200,93,357,133"/>
+<area shape="rect" href="LCDBoardsESP32_8h.html" title="One&#45;call setup for ESP32(&#45;S3) boards from the arduino&#45;audio&#45;tools &quot;Audio Boards&quot; wiki that combine an..." alt="" coords="102,181,253,221"/>
+<area shape="rect" href="DisplayDriver_8h.html" title=" " alt="" coords="277,189,483,214"/>
+<area shape="rect" href="LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,269,253,309"/>
+<area shape="rect" href="Boards_8h.html" title=" " alt="" coords="5,365,168,390"/>
+<area shape="rect" href="SpriteDisplay_8h.html" title=" " alt="" coords="192,357,347,397"/>
 </map>
 </div>
 </div>
 <p><a href="QSPIBusESP32_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1QSPIBusESP32.html">QSPIBusESP32</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware-accelerated <a class="el" href="classtinygpu_1_1IQSPIBus.html" title="Abstraction over the transport used by DisplayDriverQSPI (see TinyGPU/Drivers/DisplayDriverQSPI....">IQSPIBus</a> backend for ESP32, built on top of ESP-IDF's esp_lcd_new_panel_io_spi(quad_mode=1) - DMA-driven, with a persistent scratch buffer and completion callback for <a class="el" href="classtinygpu_1_1QSPIBusESP32.html#ad6a95dc758f3ad0f10d494ed4b0b83c1">writeColor()</a> (see that method's doc comment for why: esp_lcd_panel_io_tx_color() is asynchronous). This is a straight extraction of what used to live directly in <a class="el" href="classtinygpu_1_1DisplayDriverQSPI.html" title="Base driver for QSPI (&quot;4-wire quad SPI&quot;) TFT panels: 1 clock, 1 chip-select, 4 data lines,...">DisplayDriverQSPI</a> before the <a class="el" href="classtinygpu_1_1IQSPIBus.html" title="Abstraction over the transport used by DisplayDriverQSPI (see TinyGPU/Drivers/DisplayDriverQSPI....">IQSPIBus</a> split - behavior is unchanged from before.  <a href="classtinygpu_1_1QSPIBusESP32.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacetinygpu"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html">tinygpu</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a0a5ed55e4ccd619e653c125c7da31296"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QSPIBusESP32_8h.html#a0a5ed55e4ccd619e653c125c7da31296">TINYGPU_HAS_ESP_LCD_QSPI</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a0a5ed55e4ccd619e653c125c7da31296"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a0a5ed55e4ccd619e653c125c7da31296" name="a0a5ed55e4ccd619e653c125c7da31296"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a5ed55e4ccd619e653c125c7da31296">&#9670;&#160;</a></span>TINYGPU_HAS_ESP_LCD_QSPI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TINYGPU_HAS_ESP_LCD_QSPI&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

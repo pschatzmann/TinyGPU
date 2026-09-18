@@ -1,4 +1,8 @@
 <map id="src/TinyGPU/Drivers/DisplayDriverSPI.h" name="src/TinyGPU/Drivers/DisplayDriverSPI.h">
-<area shape="rect" id="node1" title=" " alt="" coords="32,5,184,45"/>
-<area shape="rect" id="node2" href="$DisplayDriver_8h.html" title=" " alt="" coords="5,93,211,119"/>
+<area shape="rect" id="node1" title=" " alt="" coords="203,5,355,45"/>
+<area shape="rect" id="node2" href="$LCDBoardsESP32_8h.html" title="One&#45;call setup for ESP32(&#45;S3) boards from the arduino&#45;audio&#45;tools &quot;Audio Boards&quot; wiki that combine an..." alt="" coords="102,93,253,133"/>
+<area shape="rect" id="node6" href="$DisplayDriver_8h.html" title=" " alt="" coords="277,101,483,126"/>
+<area shape="rect" id="node3" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,181,253,221"/>
+<area shape="rect" id="node4" href="$Boards_8h.html" title=" " alt="" coords="5,277,168,302"/>
+<area shape="rect" id="node5" href="$SpriteDisplay_8h.html" title=" " alt="" coords="192,269,347,309"/>
 </map>

@@ -1,0 +1,6 @@
+<map id="src/TinyGPU/Boards/LCDBoardsESP32.h" name="src/TinyGPU/Boards/LCDBoardsESP32.h">
+<area shape="rect" id="node1" title="One&#45;call setup for ESP32(&#45;S3) boards from the arduino&#45;audio&#45;tools &quot;Audio Boards&quot; wiki that combine an..." alt="" coords="102,5,253,45"/>
+<area shape="rect" id="node2" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,93,253,133"/>
+<area shape="rect" id="node3" href="$Boards_8h.html" title=" " alt="" coords="5,189,168,214"/>
+<area shape="rect" id="node4" href="$SpriteDisplay_8h.html" title=" " alt="" coords="192,181,347,221"/>
+</map>

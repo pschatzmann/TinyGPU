@@ -1,0 +1,6 @@
+<map id="DisplayDriverParallel8RP2040&lt; RGB_T &gt;" name="DisplayDriverParallel8RP2040&lt; RGB_T &gt;">
+<area shape="rect" id="node1" title="RP2040 PIO/DMA&#45;accelerated 8&#45;bit parallel (&quot;Intel 8080&quot;&#45;style) TFT display driver...." alt="" coords="99,79,315,119"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1ILI9341Driver8080RP2040.html" title="Driver for ILI9341 8&#45;bit parallel display controller, driven via RP2040&#39;s PIO/DMA (see DisplayDriverP..." alt="" coords="5,167,196,207"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1ST7789Driver8080RP2040.html" title="Driver for ST7789 8&#45;bit parallel display controller, driven via RP2040&#39;s PIO/DMA (see DisplayDriverPa..." alt="" coords="220,167,411,207"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="115,5,299,31"/>
+</map>

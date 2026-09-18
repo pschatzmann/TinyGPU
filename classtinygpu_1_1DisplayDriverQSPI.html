@@ -92,9 +92,10 @@ Inheritance diagram for DisplayDriverQSPI&lt; RGB_T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1DisplayDriverQSPI__inherit__graph.png" border="0" usemap="#aDisplayDriverQSPI_3_01RGB__T_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aDisplayDriverQSPI_3_01RGB__T_01_4_inherit__map" id="aDisplayDriverQSPI_3_01RGB__T_01_4_inherit__map">
-<area shape="rect" title="Base driver for QSPI (&quot;4&#45;wire quad SPI&quot;) TFT panels: 1 clock, 1 chip&#45;select, 4 data lines,..." alt="" coords="27,79,179,119"/>
-<area shape="rect" href="classtinygpu_1_1NV3041ADriver.html" title="Driver for the New Vision NV3041A QSPI TFT controller (480x272 panels on Guition/Sunton JC4827W543&#45;cl..." alt="" coords="5,167,200,192"/>
-<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="11,5,195,31"/>
+<area shape="rect" title="Base driver for QSPI (&quot;4&#45;wire quad SPI&quot;) TFT panels: 1 clock, 1 chip&#45;select, 4 data lines,..." alt="" coords="129,79,281,119"/>
+<area shape="rect" href="classtinygpu_1_1NV3041ADriver.html" title=" " alt="" coords="5,167,192,207"/>
+<area shape="rect" href="classtinygpu_1_1NV3041ADriver.html" title="Driver for the New Vision NV3041A QSPI TFT controller (480x272 panels on Guition/Sunton JC4827W543&#45;cl..." alt="" coords="216,174,411,199"/>
+<area shape="rect" href="classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="113,5,297,31"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -113,8 +114,8 @@ Collaboration diagram for DisplayDriverQSPI&lt; RGB_T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac3f2864af88da4b1e34dbe836c6a4a7e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverQSPI.html#ac3f2864af88da4b1e34dbe836c6a4a7e">DisplayDriverQSPI</a> (int8_t cs, int8_t sclk, int8_t d0, int8_t d1, int8_t d2, int8_t d3, size_t <a class="el" href="classtinygpu_1_1DisplayDriverQSPI.html#ac39656d862f5a4a39182559bbf7c740b">width</a>, size_t <a class="el" href="classtinygpu_1_1DisplayDriverQSPI.html#a715f3df3dc638de8b40076ada0b54a89">height</a>, uint32_t pclkHz=40000000)</td></tr>
-<tr class="separator:ac3f2864af88da4b1e34dbe836c6a4a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77048efffad0d414bc2b931b74185226"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverQSPI.html#a77048efffad0d414bc2b931b74185226">DisplayDriverQSPI</a> (int8_t cs, int8_t sclk, int8_t d0, int8_t d1, int8_t d2, int8_t d3, size_t <a class="el" href="classtinygpu_1_1DisplayDriverQSPI.html#ac39656d862f5a4a39182559bbf7c740b">width</a>, size_t <a class="el" href="classtinygpu_1_1DisplayDriverQSPI.html#a715f3df3dc638de8b40076ada0b54a89">height</a>, uint32_t pclkHz=40000000, spi_host_device_t host=SPI3_HOST)</td></tr>
+<tr class="separator:a77048efffad0d414bc2b931b74185226"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79f6931123cb1db3cc25d2d642b91946"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverQSPI.html#a79f6931123cb1db3cc25d2d642b91946">DisplayDriverQSPI</a> (<a class="el" href="classtinygpu_1_1IQSPIBus.html">IQSPIBus</a> &amp;bus, size_t <a class="el" href="classtinygpu_1_1DisplayDriverQSPI.html#ac39656d862f5a4a39182559bbf7c740b">width</a>, size_t <a class="el" href="classtinygpu_1_1DisplayDriverQSPI.html#a715f3df3dc638de8b40076ada0b54a89">height</a>)</td></tr>
 <tr class="separator:a79f6931123cb1db3cc25d2d642b91946"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64e9fa75beda50a9e8400ee0d4e61984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverQSPI.html#a64e9fa75beda50a9e8400ee0d4e61984">end</a> () override</td></tr>
@@ -182,8 +183,8 @@ Static Protected Attributes</h2></td></tr>
 class tinygpu::DisplayDriverQSPI&lt; RGB_T &gt;</div><p>Base driver for QSPI ("4-wire quad SPI") TFT panels: 1 clock, 1 chip-select, 4 data lines, no separate D/C pin. Used by a family of compact panel controllers (NV3041A, ST77916, CO5300, SH8601, AXS15231B, ...) that all speak a de-facto-standardized QSPI wire protocol - see <a class="el" href="IQSPIBus_8h.html">IQSPIBus.h</a> for the exact 32-bit command-frame/data layout. </p>
 <p>The wire protocol is handled by an <a class="el" href="classtinygpu_1_1IQSPIBus.html" title="Abstraction over the transport used by DisplayDriverQSPI (see TinyGPU/Drivers/DisplayDriverQSPI....">IQSPIBus</a> (dependency-injected, see the two constructors below), not by this class - this class only turns <a class="el" href="classtinygpu_1_1ISurface.html" title="Abstract framebuffer and drawing interface for TinyGPU surfaces.">ISurface</a> writes into <a class="el" href="classtinygpu_1_1DisplayDriver.html#a43ecedff0e0f8b703205d407ee2550b5">writeColor()</a> calls and exposes <a class="el" href="classtinygpu_1_1DisplayDriverQSPI.html#a089a327ffed9a2f7a0c60f7f6f3e975e">writeCommand()</a> to subclasses for their chip-specific init sequence, the same division of labor <a class="el" href="classtinygpu_1_1DisplayDriverSPI.html" title="Common base class for SPI-based display drivers.">DisplayDriverSPI</a>'s setupPinsAndReset() uses for its SPI-panel subclasses. That split is what makes this family portable: adding a platform means implementing <a class="el" href="classtinygpu_1_1IQSPIBus.html" title="Abstraction over the transport used by DisplayDriverQSPI (see TinyGPU/Drivers/DisplayDriverQSPI....">IQSPIBus</a> once (see <a class="el" href="QSPIBusESP32_8h.html">QSPIBusESP32.h</a>, hardware/DMA-backed; <a class="el" href="QSPIBusBitBang_8h.html">QSPIBusBitBang.h</a>, portable software fallback for RP2040/STM32/anything else), while every panel subclass (<a class="el" href="classtinygpu_1_1NV3041ADriver.html" title="Driver for the New Vision NV3041A QSPI TFT controller (480x272 panels on Guition/Sunton JC4827W543-cl...">NV3041ADriver</a>, ...) keeps working unchanged on every platform that has a bus. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac3f2864af88da4b1e34dbe836c6a4a7e" name="ac3f2864af88da4b1e34dbe836c6a4a7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3f2864af88da4b1e34dbe836c6a4a7e">&#9670;&#160;</a></span>DisplayDriverQSPI() <span class="overload">[1/2]</span></h2>
+<a id="a77048efffad0d414bc2b931b74185226" name="a77048efffad0d414bc2b931b74185226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77048efffad0d414bc2b931b74185226">&#9670;&#160;</a></span>DisplayDriverQSPI() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,7 +244,13 @@ class tinygpu::DisplayDriverQSPI&lt; RGB_T &gt;</div><p>Base driver for QSPI ("4
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>pclkHz</em> = <code>40000000</code>&#160;</td>
+          <td class="paramname"><em>pclkHz</em> = <code>40000000</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">spi_host_device_t&#160;</td>
+          <td class="paramname"><em>host</em> = <code>SPI3_HOST</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -257,7 +264,7 @@ class tinygpu::DisplayDriverQSPI&lt; RGB_T &gt;</div><p>Base driver for QSPI ("4
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Pin-based constructor: builds and owns the platform's default <a class="el" href="classtinygpu_1_1IQSPIBus.html" title="Abstraction over the transport used by DisplayDriverQSPI (see TinyGPU/Drivers/DisplayDriverQSPI....">IQSPIBus</a> (QSPIBusESP32 on ESP32, <a class="el" href="classtinygpu_1_1QSPIBusBitBang.html" title="Portable, software-driven IQSPIBus backend built only on pinMode()/digitalWrite() - works on any Ardu...">QSPIBusBitBang</a> everywhere else). pclkHz only affects the ESP32 backend - <a class="el" href="classtinygpu_1_1QSPIBusBitBang.html" title="Portable, software-driven IQSPIBus backend built only on pinMode()/digitalWrite() - works on any Ardu...">QSPIBusBitBang</a> runs as fast as <a class="el" href="namespacetinygpu.html#ae9647a9a056bb33fd1206da70c83bde3" title="Sets a GPIO output level, matching Arduino&#39;s digitalWrite().">digitalWrite()</a> allows, uncapped. </p>
+<p>Pin-based constructor: builds and owns the platform's default <a class="el" href="classtinygpu_1_1IQSPIBus.html" title="Abstraction over the transport used by DisplayDriverQSPI (see TinyGPU/Drivers/DisplayDriverQSPI....">IQSPIBus</a> (<a class="el" href="classtinygpu_1_1QSPIBusESP32.html" title="Hardware-accelerated IQSPIBus backend for ESP32, built on top of ESP-IDF&#39;s esp_lcd_new_panel_io_spi(q...">QSPIBusESP32</a> on ESP32, <a class="el" href="classtinygpu_1_1QSPIBusBitBang.html" title="Portable, software-driven IQSPIBus backend built only on pinMode()/digitalWrite() - works on any Ardu...">QSPIBusBitBang</a> everywhere else). pclkHz only affects the ESP32 backend - <a class="el" href="classtinygpu_1_1QSPIBusBitBang.html" title="Portable, software-driven IQSPIBus backend built only on pinMode()/digitalWrite() - works on any Ardu...">QSPIBusBitBang</a> runs as fast as <a class="el" href="namespacetinygpu.html#ae9647a9a056bb33fd1206da70c83bde3" title="Sets a GPIO output level, matching Arduino&#39;s digitalWrite().">digitalWrite()</a> allows, uncapped. </p>
 
 </div>
 </div>

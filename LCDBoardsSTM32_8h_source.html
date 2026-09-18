@@ -127,12 +127,12 @@ $(function() {
 <div class="line"><span class="lineno">   49</span><span class="comment"> * With all of those fixed, hardware SPI4 works reliably and is much</span></div>
 <div class="line"><span class="lineno">   50</span><span class="comment"> * faster than a bit-banged fallback would be.</span></div>
 <div class="line"><span class="lineno">   51</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">class</span> ST7735DriverHardwareSPI : <span class="keyword">public</span> DisplayDriver&lt;RGB565&gt; {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classtinygpu_1_1ST7735DriverHardwareSPI.html">   52</a></span><span class="keyword">class</span> ST7735DriverHardwareSPI : <span class="keyword">public</span> DisplayDriver&lt;RGB565&gt; {</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="comment">/// @param frequencyHz SPI clock - 15MHz default matches WeAct&#39;s own</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="comment">/// factory firmware for this exact panel (SPI4 at APB1/8, ~120MHz/8),</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="comment">/// itself in line with the ST7735&#39;s typical 15-20MHz datasheet ceiling.</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  ST7735DriverHardwareSPI(SPIClass&amp; spi, int8_t cs, int8_t dc, int8_t rst,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classtinygpu_1_1ST7735DriverHardwareSPI.html#a90ba29aa743173e063cf4fd15992cb9c">   57</a></span>  ST7735DriverHardwareSPI(SPIClass&amp; spi, int8_t cs, int8_t dc, int8_t rst,</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                          size_t xOffset, size_t yOffset, size_t width,</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                          size_t height, uint8_t madctl,</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                          uint32_t frequencyHz = 15000000)</div>
@@ -147,10 +147,10 @@ $(function() {
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        madctl_(madctl),</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        frequencyHz_(frequencyHz) {}</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  size_t width() <span class="keyword">const</span> override { <span class="keywordflow">return</span> width_; }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  size_t height() <span class="keyword">const</span> override { <span class="keywordflow">return</span> height_; }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classtinygpu_1_1ST7735DriverHardwareSPI.html#ac39656d862f5a4a39182559bbf7c740b">   72</a></span>  size_t width() <span class="keyword">const</span> override { <span class="keywordflow">return</span> width_; }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classtinygpu_1_1ST7735DriverHardwareSPI.html#a715f3df3dc638de8b40076ada0b54a89">   73</a></span>  size_t height() <span class="keyword">const</span> override { <span class="keywordflow">return</span> height_; }</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordtype">bool</span> begin() override {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classtinygpu_1_1ST7735DriverHardwareSPI.html#acba365cc28eb702040c382646cfb0a7a">   75</a></span>  <span class="keywordtype">bool</span> begin() override {</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    pinMode(cs_, OUTPUT);</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    pinMode(dc_, OUTPUT);</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    digitalWrite(cs_, HIGH);</div>
@@ -190,11 +190,11 @@ $(function() {
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  }</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keywordtype">bool</span> writeData(ISurface&lt;RGB565&gt;&amp; surface) override {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classtinygpu_1_1ST7735DriverHardwareSPI.html#a0a13abd70a75284a85642f0e89c033bd">  115</a></span>  <span class="keywordtype">bool</span> writeData(ISurface&lt;RGB565&gt;&amp; surface) override {</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">return</span> writeData(surface, 0, 0);</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  }</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordtype">bool</span> writeData(ISurface&lt;RGB565&gt;&amp; surface, size_t x, size_t y) override {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classtinygpu_1_1ST7735DriverHardwareSPI.html#a8f27c86bea2e3f09d0fea39e82506e93">  119</a></span>  <span class="keywordtype">bool</span> writeData(ISurface&lt;RGB565&gt;&amp; surface, size_t x, size_t y) override {</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    beginTransaction();</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    setAddressWindow(x, y, surface.width(), surface.height());</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="comment">// setAddressWindow() has already sent RAMWR (0x2C) and left CS low/DC</span></div>
@@ -224,7 +224,7 @@ $(function() {
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  }</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keywordtype">bool</span> setAddressWindow(size_t x, size_t y, size_t w, size_t h) override {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classtinygpu_1_1ST7735DriverHardwareSPI.html#ad1c1dcc698fc551d226d0a6f176668aa">  149</a></span>  <span class="keywordtype">bool</span> setAddressWindow(size_t x, size_t y, size_t w, size_t h) override {</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    uint8_t caset[4] = {</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keyword">static_cast</span>&lt;uint8_t&gt;((x + xOffset_) &gt;&gt; 8),</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keyword">static_cast</span>&lt;uint8_t&gt;((x + xOffset_) &amp; 0xFF),</div>
@@ -307,11 +307,11 @@ $(function() {
 <div class="line"><span class="lineno">  229</span><span class="comment"> * ST7735DriverHardwareSPI::begin()) where the plain (non-plugin)</span></div>
 <div class="line"><span class="lineno">  230</span><span class="comment"> * INITR_MINI160x80 tab uses INVOFF.</span></div>
 <div class="line"><span class="lineno">  231</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="keyword">class</span> LCDBoardWeActMiniSTM32H750 : <span class="keyword">public</span> LCDBoard {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html">  232</a></span><span class="keyword">class</span> LCDBoardWeActMiniSTM32H750 : <span class="keyword">public</span> LCDBoard {</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  <span class="comment">/// Sets up the backlight and display controller. Returns false if the</span></div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="comment">/// display begin() fails.</span></div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  <span class="keywordtype">bool</span> begin() override {</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html#acba365cc28eb702040c382646cfb0a7a">  236</a></span>  <span class="keywordtype">bool</span> begin() override {</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    pinMode(kPinBacklight, OUTPUT);</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    analogWrite(kPinBacklight, 180);</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
@@ -319,20 +319,20 @@ $(function() {
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  }</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  <span class="comment">/// Panel width in pixels (landscape).</span></div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  size_t width() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 160; }</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html#ac39656d862f5a4a39182559bbf7c740b">  244</a></span>  size_t width() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 160; }</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  <span class="comment">/// Panel height in pixels (landscape).</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  size_t height() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 80; }</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html#a715f3df3dc638de8b40076ada0b54a89">  246</a></span>  size_t height() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 80; }</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  <span class="comment">/// The board&#39;s display driver.</span></div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  ST7735DriverHardwareSPI&amp; display() override { <span class="keywordflow">return</span> display_; }</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html#ab34ee260ac60b59fb17a57826d9c5a91">  249</a></span>  ST7735DriverHardwareSPI&amp; display() override { <span class="keywordflow">return</span> display_; }</div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  <span class="comment">/// This board has no touch controller.</span></div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  TouchDriver* touch() override { <span class="keywordflow">return</span> <span class="keywordtype">nullptr</span>; }</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html#aaa77440d7eecb72ec6db1682a5538b9d">  251</a></span>  TouchDriver* touch() override { <span class="keywordflow">return</span> <span class="keywordtype">nullptr</span>; }</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  <span class="comment">/// This board has no I2S bus - every I2SPins field is -1.</span></div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  <span class="keyword">const</span> I2SPins&amp; i2s() <span class="keyword">const</span> override { <span class="keywordflow">return</span> i2s_; }</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html#a84a961b1948a67ea8928a78d95f6d463">  253</a></span>  <span class="keyword">const</span> I2SPins&amp; i2s() <span class="keyword">const</span> override { <span class="keywordflow">return</span> i2s_; }</div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  <span class="comment">/// This board has no RGB LED - every LEDPins field is -1.</span></div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>  <span class="keyword">const</span> LEDPins&amp; led() <span class="keyword">const</span> override { <span class="keywordflow">return</span> led_; }</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html#af10a07544f51ff43f4867c9f37ac1a40">  255</a></span>  <span class="keyword">const</span> LEDPins&amp; led() <span class="keyword">const</span> override { <span class="keywordflow">return</span> led_; }</div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  <span class="comment">/// The board&#39;s backlight GPIO pin.</span></div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  int8_t backlightPin() <span class="keyword">const</span> override { <span class="keywordflow">return</span> kPinBacklight; }</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html#ac06a2b6f69f36fcb561a166e2306a51b">  257</a></span>  int8_t backlightPin() <span class="keyword">const</span> override { <span class="keywordflow">return</span> kPinBacklight; }</div>
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> int8_t kPinCs = PE11;</div>
@@ -373,8 +373,8 @@ $(function() {
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>  LEDPins led_{};</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>};</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="keyword">using</span> MiniSTM32H750 = LCDBoardWeActMiniSTM32H750;</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="keyword">using</span> MiniSTM32H7xx = LCDBoardWeActMiniSTM32H750;</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a062e5037d252be7100a87f5b35d3d721">  298</a></span><span class="keyword">using</span> MiniSTM32H750 = LCDBoardWeActMiniSTM32H750;</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a1c5517a9e17e99893327e483a5708171">  299</a></span><span class="keyword">using</span> MiniSTM32H7xx = LCDBoardWeActMiniSTM32H750;</div>
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>}  <span class="comment">// namespace tinygpu</span></div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>

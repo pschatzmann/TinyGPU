@@ -1,4 +1,6 @@
 <map id="DisplayDriverDSI&lt; RGB_T &gt;" name="DisplayDriverDSI&lt; RGB_T &gt;">
-<area shape="rect" id="node1" title="Base driver for MIPI&#45;DSI panels. All of the DSI PHY/lane bring&#45;up, command&#45;channel writes and video&#45;t..." alt="" coords="5,79,212,104"/>
-<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="17,5,201,31"/>
+<area shape="rect" id="node1" title="Base driver for MIPI&#45;DSI panels. All of the DSI PHY/lane bring&#45;up, command&#45;channel writes and video&#45;t..." alt="" coords="91,79,297,104"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1ST7701Driver.html" title=" " alt="" coords="5,152,180,192"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1ST7701Driver.html" title="Driver for the Sitronix ST7701S MIPI&#45;DSI TFT controller, as wired on the Guition JC4880P443C_I_W (ESP..." alt="" coords="204,159,387,185"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="102,5,286,31"/>
 </map>

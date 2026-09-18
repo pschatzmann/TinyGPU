@@ -74,7 +74,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">DisplayDriverParallel8RP2040.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -83,17 +85,25 @@ $(function() {
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="Drivers_2DisplayDriver_8h_source.html">TinyGPU/Drivers/DisplayDriver.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Emulation_8h_source.html">TinyGPU/Emulation.h</a>&quot;</code><br />
+<code>#include &quot;hardware/clocks.h&quot;</code><br />
+<code>#include &quot;hardware/dma.h&quot;</code><br />
+<code>#include &quot;hardware/gpio.h&quot;</code><br />
+<code>#include &quot;hardware/pio.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for DisplayDriverParallel8RP2040.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="DisplayDriverParallel8RP2040_8h__incl.png" border="0" usemap="#asrc_2TinyGPU_2Drivers_2DisplayDriverParallel8RP2040_8h" alt=""/></div>
 <map name="asrc_2TinyGPU_2Drivers_2DisplayDriverParallel8RP2040_8h" id="asrc_2TinyGPU_2Drivers_2DisplayDriverParallel8RP2040_8h">
-<area shape="rect" title=" " alt="" coords="629,5,861,45"/>
+<area shape="rect" title=" " alt="" coords="945,5,1177,45"/>
 <area shape="rect" title=" " alt="" coords="5,93,116,119"/>
 <area shape="rect" title=" " alt="" coords="349,475,420,500"/>
 <area shape="rect" title=" " alt="" coords="885,93,956,119"/>
 <area shape="rect" href="Drivers_2DisplayDriver_8h.html" title=" " alt="" coords="628,93,861,119"/>
-<area shape="rect" href="Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="1070,93,1230,119"/>
+<area shape="rect" href="Emulation_8h.html" title="Drop&#45;in replacement for #include &lt;Arduino.h&gt; (plus &lt;SPI.h&gt;/ &lt;Wire.h&gt; where needed) for every file und..." alt="" coords="981,93,1141,119"/>
+<area shape="rect" title=" " alt="" coords="1165,93,1305,119"/>
+<area shape="rect" title=" " alt="" coords="1330,93,1458,119"/>
+<area shape="rect" title=" " alt="" coords="1483,93,1609,119"/>
+<area shape="rect" title=" " alt="" coords="1633,93,1752,119"/>
 <area shape="rect" title=" " alt="" coords="837,475,911,500"/>
 <area shape="rect" href="Font5x7_8h.html" title=" " alt="" coords="409,174,587,199"/>
 <area shape="rect" href="ISurface_8h.html" title=" " alt="" coords="831,328,1031,353"/>
@@ -111,11 +121,43 @@ Include dependency graph for DisplayDriverParallel8RP2040.h:</div>
 </div>
 <p><a href="DisplayDriverParallel8RP2040_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverParallel8RP2040.html">DisplayDriverParallel8RP2040&lt; RGB_T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RP2040 PIO/DMA-accelerated 8-bit parallel ("Intel 8080"-style) TFT display driver. D0-D7 and WR are driven by one PIO state machine (see kLcd8080WriteProgram above) instead of bit-banged via <a class="el" href="namespacetinygpu.html#ae9647a9a056bb33fd1206da70c83bde3" title="Sets a GPIO output level, matching Arduino&#39;s digitalWrite().">digitalWrite()</a> - see <a class="el" href="DisplayDriverParallel8_8h.html">DisplayDriverParallel8.h</a> for the portable bit-banged version this mirrors, and <a class="el" href="DisplayDriverParallel8ESP32_8h.html">DisplayDriverParallel8ESP32.h</a> for the equivalent ESP32 LCD_CAM/PARLIO-peripheral version. DC/CS/RST stay on plain GPIO (Arduino <a class="el" href="namespacetinygpu.html#ac7bdb53335528ad073ca13eb2b1bdc00">pinMode()</a>/digitalWrite()), same as those two.  <a href="classtinygpu_1_1DisplayDriverParallel8RP2040.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver8080RP2040.html">ILI9341Driver8080RP2040&lt; RGB_T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for ILI9341 8-bit parallel display controller, driven via RP2040's PIO/DMA (see <a class="el" href="classtinygpu_1_1DisplayDriverParallel8RP2040.html" title="RP2040 PIO/DMA-accelerated 8-bit parallel (&quot;Intel 8080&quot;-style) TFT display driver....">DisplayDriverParallel8RP2040</a>).  <a href="classtinygpu_1_1ILI9341Driver8080RP2040.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ST7789Driver8080RP2040.html">ST7789Driver8080RP2040&lt; RGB_T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for ST7789 8-bit parallel display controller, driven via RP2040's PIO/DMA (see <a class="el" href="classtinygpu_1_1DisplayDriverParallel8RP2040.html" title="RP2040 PIO/DMA-accelerated 8-bit parallel (&quot;Intel 8080&quot;-style) TFT display driver....">DisplayDriverParallel8RP2040</a>).  <a href="classtinygpu_1_1ST7789Driver8080RP2040.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacetinygpu"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html">tinygpu</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:af9aa327e1532f6734076b16713887f8e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DisplayDriverParallel8RP2040_8h.html#af9aa327e1532f6734076b16713887f8e">TINYGPU_HAS_RP2040_PIO_PARALLEL8</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:af9aa327e1532f6734076b16713887f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="af9aa327e1532f6734076b16713887f8e" name="af9aa327e1532f6734076b16713887f8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9aa327e1532f6734076b16713887f8e">&#9670;&#160;</a></span>TINYGPU_HAS_RP2040_PIO_PARALLEL8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TINYGPU_HAS_RP2040_PIO_PARALLEL8&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

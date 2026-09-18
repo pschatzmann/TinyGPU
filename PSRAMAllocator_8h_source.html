@@ -129,17 +129,17 @@ $(function() {
 <div class="line"><span class="lineno">   51</span><span class="comment"> * @endcode</span></div>
 <div class="line"><span class="lineno">   52</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = uint8_t&gt;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">class</span> PSRAMAllocator {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classtinygpu_1_1PSRAMAllocator.html">   54</a></span><span class="keyword">class</span> PSRAMAllocator {</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="comment">/** @brief The type of objects this allocator can allocate */</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">using</span> value_type = T;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classtinygpu_1_1PSRAMAllocator.html#afb9ded5f49336ae503bb9f2035ea902b">   57</a></span>  <span class="keyword">using</span> value_type = T;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="comment">/**</span></div>
 <div class="line"><span class="lineno">   60</span><span class="comment">   * @brief Default constructor</span></div>
 <div class="line"><span class="lineno">   61</span><span class="comment">   *</span></div>
 <div class="line"><span class="lineno">   62</span><span class="comment">   * Constructs a PSRAMAllocator. No initialization needed.</span></div>
 <div class="line"><span class="lineno">   63</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  PSRAMAllocator() <span class="keyword">noexcept</span> {}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classtinygpu_1_1PSRAMAllocator.html#aecd47b9731a0b3fcc485fc395f62dd27">   64</a></span>  PSRAMAllocator() <span class="keyword">noexcept</span> {}</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="comment">/**</span></div>
 <div class="line"><span class="lineno">   67</span><span class="comment">   * @brief Copy constructor from different allocator type</span></div>
@@ -151,7 +151,7 @@ $(function() {
 <div class="line"><span class="lineno">   73</span><span class="comment">   * @param other Source allocator (unused)</span></div>
 <div class="line"><span class="lineno">   74</span><span class="comment">   */</span></div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> U&gt;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  PSRAMAllocator(<span class="keyword">const</span> PSRAMAllocator&lt;U&gt;&amp;) <span class="keyword">noexcept</span> {}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classtinygpu_1_1PSRAMAllocator.html#a67d0bd7dd70aaaff6642483c188364f1">   76</a></span>  PSRAMAllocator(<span class="keyword">const</span> PSRAMAllocator&lt;U&gt;&amp;) <span class="keyword">noexcept</span> {}</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="comment">/**</span></div>
 <div class="line"><span class="lineno">   79</span><span class="comment">   * @brief Allocate memory for n objects of type T</span></div>
@@ -170,7 +170,7 @@ $(function() {
 <div class="line"><span class="lineno">   92</span><span class="comment">   * @note Memory is aligned to alignof(T)</span></div>
 <div class="line"><span class="lineno">   93</span><span class="comment">   * @note On ESP32 with PSRAM, prefers external PSRAM allocation</span></div>
 <div class="line"><span class="lineno">   94</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  T* allocate(std::size_t n) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classtinygpu_1_1PSRAMAllocator.html#a4cc7f0a97979de2d09de195784b44474">   95</a></span>  T* allocate(std::size_t n) {</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">if</span> (n == 0) <span class="keywordflow">return</span> <span class="keywordtype">nullptr</span>;</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// total bytes</span></div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    std::size_t bytes = n * <span class="keyword">sizeof</span>(T);</div>
@@ -220,7 +220,7 @@ $(function() {
 <div class="line"><span class="lineno">  142</span><span class="comment">   * @note Safe to call with nullptr</span></div>
 <div class="line"><span class="lineno">  143</span><span class="comment">   * @note The size parameter n is ignored as heap_caps_free doesn&#39;t need it</span></div>
 <div class="line"><span class="lineno">  144</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <span class="keywordtype">void</span> deallocate(T* p, std::size_t <span class="comment">/*n*/</span>) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classtinygpu_1_1PSRAMAllocator.html#add772824b463abc65c190e2b503b74a9">  145</a></span>  <span class="keywordtype">void</span> deallocate(T* p, std::size_t <span class="comment">/*n*/</span>) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordflow">if</span> (!p) <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    heap_caps_free(p);</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  }</div>
@@ -234,9 +234,9 @@ $(function() {
 <div class="line"><span class="lineno">  156</span><span class="comment">   * @tparam U The type to rebind to</span></div>
 <div class="line"><span class="lineno">  157</span><span class="comment">   */</span></div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> U&gt;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <span class="keyword">struct</span> rebind {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="structtinygpu_1_1PSRAMAllocator_1_1rebind.html">  159</a></span>  <span class="keyword">struct</span> rebind {</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="comment">/** @brief The rebound allocator type */</span></div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keyword">typedef</span> PSRAMAllocator&lt;U&gt; other;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="structtinygpu_1_1PSRAMAllocator_1_1rebind.html#aca94c91187cf20b4312c5642ef640501">  161</a></span>    <span class="keyword">typedef</span> PSRAMAllocator&lt;U&gt; other;</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  };</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>};</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>

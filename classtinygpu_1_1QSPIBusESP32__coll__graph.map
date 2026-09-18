@@ -1,0 +1,4 @@
+<map id="QSPIBusESP32" name="QSPIBusESP32">
+<area shape="rect" id="node1" title="Hardware&#45;accelerated IQSPIBus backend for ESP32, built on top of ESP&#45;IDF&#39;s esp_lcd_new_panel_io_spi(q..." alt="" coords="5,79,121,104"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1IQSPIBus.html" title="Abstraction over the transport used by DisplayDriverQSPI (see TinyGPU/Drivers/DisplayDriverQSPI...." alt="" coords="23,5,103,31"/>
+</map>

@@ -112,10 +112,16 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriver.html">DisplayDriver</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverDSI.html">DisplayDriverDSI</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base driver for MIPI-DSI panels. All of the DSI PHY/lane bring-up, command-channel writes and video-timing/framebuffer scan-out are handled by an <a class="el" href="classtinygpu_1_1IDSIBus.html" title="Abstraction over the transport used by DisplayDriverDSI (see TinyGPU/Drivers/DisplayDriverDSI....">IDSIBus</a> (dependency-injected, see the constructor below), not by this class - this class only turns <a class="el" href="classtinygpu_1_1ISurface.html" title="Abstract framebuffer and drawing interface for TinyGPU surfaces.">ISurface</a> writes into drawBitmap() calls and byte-swaps into the bus's expected native <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> order (see <a class="el" href="classtinygpu_1_1DisplayDriverDSI.html#afbde66ad2f1573278339e5341d311953">writeData()</a>). That split is what makes this family portable: adding a platform means implementing <a class="el" href="classtinygpu_1_1IDSIBus.html" title="Abstraction over the transport used by DisplayDriverDSI (see TinyGPU/Drivers/DisplayDriverDSI....">IDSIBus</a> once (see <a class="el" href="DSIBusESP32_8h.html">DSIBusESP32.h</a>, the ESP32-P4 DBI+DPI path; <a class="el" href="DSIBusSTM32_8h.html">DSIBusSTM32.h</a>, STM32's HAL_DSI+LTDC path), while every panel subclass (ST7701Driver, ...) keeps working unchanged on every platform that has a bus.  <a href="classtinygpu_1_1DisplayDriverDSI.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base driver for MIPI-DSI panels. All of the DSI PHY/lane bring-up, command-channel writes and video-timing/framebuffer scan-out are handled by an <a class="el" href="classtinygpu_1_1IDSIBus.html" title="Abstraction over the transport used by DisplayDriverDSI (see TinyGPU/Drivers/DisplayDriverDSI....">IDSIBus</a> (dependency-injected, see the constructor below), not by this class - this class only turns <a class="el" href="classtinygpu_1_1ISurface.html" title="Abstract framebuffer and drawing interface for TinyGPU surfaces.">ISurface</a> writes into drawBitmap() calls and byte-swaps into the bus's expected native <a class="el" href="classtinygpu_1_1RGB565.html" title="RGB color stored in 16-bit RGB565 format, byte-swapped from the conventional bit layout.">RGB565</a> order (see <a class="el" href="classtinygpu_1_1DisplayDriverDSI.html#afbde66ad2f1573278339e5341d311953">writeData()</a>). That split is what makes this family portable: adding a platform means implementing <a class="el" href="classtinygpu_1_1IDSIBus.html" title="Abstraction over the transport used by DisplayDriverDSI (see TinyGPU/Drivers/DisplayDriverDSI....">IDSIBus</a> once (see <a class="el" href="DSIBusESP32_8h.html">DSIBusESP32.h</a>, the ESP32-P4 DBI+DPI path; <a class="el" href="DSIBusSTM32_8h.html">DSIBusSTM32.h</a>, STM32's HAL_DSI+LTDC path), while every panel subclass (<a class="el" href="classtinygpu_1_1ST7701Driver.html" title="Driver for the Sitronix ST7701S MIPI-DSI TFT controller, as wired on the Guition JC4880P443C_I_W (ESP...">ST7701Driver</a>, ...) keeps working unchanged on every platform that has a bus.  <a href="classtinygpu_1_1DisplayDriverDSI.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverParallel8.html">DisplayDriverParallel8</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common base class for 8-bit parallel ("Intel 8080"-style) TFT display drivers: 8 data lines (D0-D7), WR (write strobe), RD (read strobe, unused - this class only writes), RS/DC (command vs. data) and CS. This is the bus MCUFRIEND-style shields and many 40-pin parallel TFT breakout boards use, wired straight to 8 GPIOs rather than through SPI/QSPI - no dedicated bus peripheral is assumed, every data line and the WR strobe is bit-banged via <a class="el" href="namespacetinygpu.html#ae9647a9a056bb33fd1206da70c83bde3" title="Sets a GPIO output level, matching Arduino&#39;s digitalWrite().">digitalWrite()</a>, the same portable approach <a class="el" href="TouchDriverArduino_8h.html" title="Concrete touch-controller drivers (XPT2046, FT6236/FT6206, CST816S, GT911, and the controller-less To...">TinyGPU/Input/TouchDriverArduino.h</a>'s <a class="el" href="classtinygpu_1_1TouchDriverBitBang.html" title="Bit-banged 4-wire resistive touch panel driver.">TouchDriverBitBang</a> uses for a resistive touch panel's four GPIO pins. This trades throughput (one <a class="el" href="namespacetinygpu.html#ae9647a9a056bb33fd1206da70c83bde3" title="Sets a GPIO output level, matching Arduino&#39;s digitalWrite().">digitalWrite()</a> per bit, per byte) for working unmodified on any Arduino core - a hardware-accelerated 8080 driver (e.g. ESP32's LCD_CAM/ esp_lcd_panel_io_i80) would be faster but ties the implementation to one platform's peripheral, the same tradeoff <a class="el" href="DisplayDriverQSPI_8h.html">DisplayDriverQSPI.h</a> already makes explicitly for ESP32-only QSPI.  <a href="classtinygpu_1_1DisplayDriverParallel8.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverParallel8ESP32.html">DisplayDriverParallel8ESP32</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware-accelerated 8-bit parallel ("Intel 8080"-style) TFT display driver for ESP32-family targets, built on ESP-IDF's esp_lcd panel-IO layer - the same layer <a class="el" href="DisplayDriverQSPI_8h.html">DisplayDriverQSPI.h</a> uses for QSPI, just pointed at a different underlying peripheral. Where <a class="el" href="DisplayDriverSPI_8h.html">DisplayDriverSPI.h</a>'s hardware-parallel counterpart (<a class="el" href="DisplayDriverParallel8_8h.html">DisplayDriverParallel8.h</a>) bit-bangs D0-D7 one <a class="el" href="namespacetinygpu.html#ae9647a9a056bb33fd1206da70c83bde3" title="Sets a GPIO output level, matching Arduino&#39;s digitalWrite().">digitalWrite()</a> per bit, this class drives the bus via DMA through whichever peripheral the target actually has:  <a href="classtinygpu_1_1DisplayDriverParallel8ESP32.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverParallel8RP2040.html">DisplayDriverParallel8RP2040</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RP2040 PIO/DMA-accelerated 8-bit parallel ("Intel 8080"-style) TFT display driver. D0-D7 and WR are driven by one PIO state machine (see kLcd8080WriteProgram above) instead of bit-banged via <a class="el" href="namespacetinygpu.html#ae9647a9a056bb33fd1206da70c83bde3" title="Sets a GPIO output level, matching Arduino&#39;s digitalWrite().">digitalWrite()</a> - see <a class="el" href="DisplayDriverParallel8_8h.html">DisplayDriverParallel8.h</a> for the portable bit-banged version this mirrors, and <a class="el" href="DisplayDriverParallel8ESP32_8h.html">DisplayDriverParallel8ESP32.h</a> for the equivalent ESP32 LCD_CAM/PARLIO-peripheral version. DC/CS/RST stay on plain GPIO (Arduino <a class="el" href="namespacetinygpu.html#ac7bdb53335528ad073ca13eb2b1bdc00">pinMode()</a>/digitalWrite()), same as those two.  <a href="classtinygpu_1_1DisplayDriverParallel8RP2040.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverQSPI.html">DisplayDriverQSPI</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base driver for QSPI ("4-wire quad SPI") TFT panels: 1 clock, 1 chip-select, 4 data lines, no separate D/C pin. Used by a family of compact panel controllers (NV3041A, ST77916, CO5300, SH8601, AXS15231B, ...) that all speak a de-facto-standardized QSPI wire protocol - see <a class="el" href="IQSPIBus_8h.html">IQSPIBus.h</a> for the exact 32-bit command-frame/data layout.  <a href="classtinygpu_1_1DisplayDriverQSPI.html#details">More...</a><br /></td></tr>
@@ -128,6 +134,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverTFTeSPI.html">DisplayDriverTFTeSPI</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display driver that renders a TinyGPU surface through Bodmer's TFT_eSPI (<a href="https://github.com/Bodmer/TFT_eSPI">https://github.com/Bodmer/TFT_eSPI</a>) instead of one of this library's own SPI panel drivers (DisplayDriverSPI/QSPI/DSI) - useful if you already have a working TFT_eSPI <code>User_Setup.h</code> for your panel and would rather reuse it than duplicate the same init sequence/pin wiring here.  <a href="classtinygpu_1_1DisplayDriverTFTeSPI.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DSIBusESP32.html">DSIBusESP32</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1IDSIBus.html" title="Abstraction over the transport used by DisplayDriverDSI (see TinyGPU/Drivers/DisplayDriverDSI....">IDSIBus</a> backend for ESP32-P4, built on ESP-IDF's DBI (command channel) + DPI (video-timing channel) split - the interface ESP32-P4 exposes for DSI LCDs. A DPI panel has no address-window/RAMWR concept: <code>esp_lcd_new_panel_dpi()</code> allocates a screen-sized, DMA-scanned framebuffer up front, and <code>esp_lcd_panel_draw_bitmap()</code> writes straight into a rect of it - the continuously-running DPI bridge just scans whatever's currently there.  <a href="classtinygpu_1_1DSIBusESP32.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DSIBusSTM32.html">DSIBusSTM32</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1IDSIBus.html" title="Abstraction over the transport used by DisplayDriverDSI (see TinyGPU/Drivers/DisplayDriverDSI....">IDSIBus</a> backend for STM32 parts with a DSI host + LTDC (F469/ F479, F769/F779, H747/H757, U5x9, ...), built on STM32Cube HAL's HAL_DSI_* (command channel, adapted/video-mode DSI wrapper) and HAL_LTDC_* (the pixel-timing generator/framebuffer scanner DSI sits in front of on these parts - conceptually the same role ESP32-P4's DPI peripheral plays for <a class="el" href="classtinygpu_1_1DSIBusESP32.html" title="IDSIBus backend for ESP32-P4, built on ESP-IDF&#39;s DBI (command channel) + DPI (video-timing channel) s...">DSIBusESP32</a>).  <a href="classtinygpu_1_1DSIBusSTM32.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1Font12x12.html">Font12x12</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">12x12 fixed-width bitmap font converted from the STM32-EVAL fonts.c ASCII12x12_Table.  <a href="classtinygpu_1_1Font12x12.html#details">More...</a><br /></td></tr>
@@ -175,6 +187,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver8080.html">ILI9341Driver8080</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for ILI9341 8-bit parallel display controller.  <a href="classtinygpu_1_1ILI9341Driver8080.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver8080ESP32.html">ILI9341Driver8080ESP32</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for ILI9341 8-bit parallel display controller, driven via ESP32's LCD_CAM/I80 or PARLIO peripheral (see <a class="el" href="classtinygpu_1_1DisplayDriverParallel8ESP32.html" title="Hardware-accelerated 8-bit parallel (&quot;Intel 8080&quot;-style) TFT display driver for ESP32-family targets,...">DisplayDriverParallel8ESP32</a>).  <a href="classtinygpu_1_1ILI9341Driver8080ESP32.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9341Driver8080RP2040.html">ILI9341Driver8080RP2040</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for ILI9341 8-bit parallel display controller, driven via RP2040's PIO/DMA (see <a class="el" href="classtinygpu_1_1DisplayDriverParallel8RP2040.html" title="RP2040 PIO/DMA-accelerated 8-bit parallel (&quot;Intel 8080&quot;-style) TFT display driver....">DisplayDriverParallel8RP2040</a>).  <a href="classtinygpu_1_1ILI9341Driver8080RP2040.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ILI9342Driver.html">ILI9342Driver</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for ILI9342 SPI display controller.  <a href="classtinygpu_1_1ILI9342Driver.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,8 +212,23 @@ follows over 4 lines"), the MIPI-DCS-style command byte, then 16 unused bits.  <
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html">LCDBoardDesktopSDL</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desktop SDL2 window standing in for a physical LCD board. Window size is set at construction time (default 320x240) since - unlike the hardware boards in <a class="el" href="LCDBoardsESP32_8h.html" title="One-call setup for ESP32(-S3) boards from the arduino-audio-tools &quot;Audio Boards&quot; wiki that combine an...">LCDBoardsESP32.h</a> - there is no fixed panel to match.  <a href="classtinygpu_1_1LCDBoardDesktopSDL.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoardESP32S3__2__8Display.html">LCDBoardESP32S3_2_8Display</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">"2.8" ESP32-S3 Display" - ILI9341 SPI TFT + FT6336G capacitive touch (I2C, shares its bus with the board's ES8311 audio codec). (FBBA0125-002) - also named ESP32-S3 Hosyond Display  <a href="classtinygpu_1_1LCDBoardESP32S3__2__8Display.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html">LCDBoardGuitionESP32_LVGL_2_4Display</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">"ESP32 Arduino LVGL WiFi&amp;Bluetooth Development Board, 2.4" LCD TFT Module" - ILI9341 SPI TFT + CST816S capacitive touch, no PSRAM. (ESP32-2432S028R) - also named ESP32 Cheap Yellow Diplay  <a href="classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html">LCDBoardGuitionESP32H4_4_3Display</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Guition ESP32-P4 4.3" 480x800 Capacitive Touch Display" (JC4880P443C_I_W): it has an ST7701 MIPI-DSI display, GT911 capacitive touch (I2C), and an ES8311 audio codec with NS4150 speaker amp (speaker output only - this board has no mic). The board also has a WiFi SDIO interface and an SD_MMC interface, both of which need their own pin setup.  <a href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html">LCDBoardGuitionESP32S3_4_3Display</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Guition ESP32-S3 4.3" 480x272 Capacitive Touch Display" (JC4827W543C_I): it has a NV3041A QSPI display, GT911 capacitive touch NV3041A QSPI TFT + GT911 capacitive touch (I2C) + NS4168 speaker amp (speaker output only - no codec/mic on this board).  <a href="classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoardTFTeSPI.html">LCDBoardTFTeSPI</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1LCDBoard.html">LCDBoard</a> wrapping a single TFT_eSPI instance, shared between its <a class="el" href="classtinygpu_1_1DisplayDriverTFTeSPI.html" title="Display driver that renders a TinyGPU surface through Bodmer&#39;s TFT_eSPI (https://github....">DisplayDriverTFTeSPI</a> and (optional) <a class="el" href="classtinygpu_1_1TouchDriverTFTeSPI.html" title="Touch driver that reads through Bodmer&#39;s TFT_eSPI (https://github.com/Bodmer/TFT_eSPI) resistive touc...">TouchDriverTFTeSPI</a>.  <a href="classtinygpu_1_1LCDBoardTFTeSPI.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html">LCDBoardWeActMiniSTM32H750</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">WeAct "MiniSTM32H7xx" core board (STM32H750VBT6/STM32H743VIT6) with its bundled, ribbon/FPC-mounted 0.96" 160x80 ST7735 TFT, mounted landscape: <a href="https://github.com/WeActStudio/MiniSTM32H7xx">https://github.com/WeActStudio/MiniSTM32H7xx</a>.  <a href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1LEDPins.html">LEDPins</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,8 +241,14 @@ follows over 4 lines"), the MIPI-DCS-style command byte, then 16 unused bits.  <
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1Point.html">Point</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch point.  <a href="structtinygpu_1_1Point.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1PSRAMAllocator.html">PSRAMAllocator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">STL-compatible allocator that prefers PSRAM allocation with fallback.  <a href="classtinygpu_1_1PSRAMAllocator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1QSPIBusBitBang.html">QSPIBusBitBang</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Portable, software-driven <a class="el" href="classtinygpu_1_1IQSPIBus.html" title="Abstraction over the transport used by DisplayDriverQSPI (see TinyGPU/Drivers/DisplayDriverQSPI....">IQSPIBus</a> backend built only on <a class="el" href="namespacetinygpu.html#ac7bdb53335528ad073ca13eb2b1bdc00">pinMode()</a>/digitalWrite() - works on any Arduino core, notably RP2040 and STM32, neither of which exposes a hardware peripheral for this panel family's quad-SPI protocol the way ESP-IDF's esp_lcd does for ESP32 (see <a class="el" href="QSPIBusESP32_8h.html">QSPIBusESP32.h</a>):  <a href="classtinygpu_1_1QSPIBusBitBang.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1QSPIBusESP32.html">QSPIBusESP32</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware-accelerated <a class="el" href="classtinygpu_1_1IQSPIBus.html" title="Abstraction over the transport used by DisplayDriverQSPI (see TinyGPU/Drivers/DisplayDriverQSPI....">IQSPIBus</a> backend for ESP32, built on top of ESP-IDF's esp_lcd_new_panel_io_spi(quad_mode=1) - DMA-driven, with a persistent scratch buffer and completion callback for <a class="el" href="classtinygpu_1_1QSPIBusESP32.html#ad6a95dc758f3ad0f10d494ed4b0b83c1">writeColor()</a> (see that method's doc comment for why: esp_lcd_panel_io_tx_color() is asynchronous). This is a straight extraction of what used to live directly in <a class="el" href="classtinygpu_1_1DisplayDriverQSPI.html" title="Base driver for QSPI (&quot;4-wire quad SPI&quot;) TFT panels: 1 clock, 1 chip-select, 4 data lines,...">DisplayDriverQSPI</a> before the <a class="el" href="classtinygpu_1_1IQSPIBus.html" title="Abstraction over the transport used by DisplayDriverQSPI (see TinyGPU/Drivers/DisplayDriverQSPI....">IQSPIBus</a> split - behavior is unchanged from before.  <a href="classtinygpu_1_1QSPIBusESP32.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1Rect.html">Rect</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a rectangular area on the screen or surface.  <a href="structtinygpu_1_1Rect.html#details">More...</a><br /></td></tr>
@@ -233,17 +272,29 @@ follows over 4 lines"), the MIPI-DCS-style command byte, then 16 unused bits.  <
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtinygpu_1_1SpriteInfoWithoutBackground.html">SpriteInfoWithoutBackground</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ST7701Driver.html">ST7701Driver</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Sitronix ST7701S MIPI-DSI TFT controller, as wired on the Guition JC4880P443C_I_W (ESP32-P4, 480x800 portrait, 4.3").  <a href="classtinygpu_1_1ST7701Driver.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ST7735Driver.html">ST7735Driver</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for ST7735 SPI display controller.  <a href="classtinygpu_1_1ST7735Driver.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ST7735Driver8080.html">ST7735Driver8080</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for ST7735 8-bit parallel display controller.  <a href="classtinygpu_1_1ST7735Driver8080.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ST7735DriverHardwareSPI.html">ST7735DriverHardwareSPI</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware-SPI4 ST7735 driver for the WeAct MiniSTM32H7xx's bundled 0.96" 160x80 TFT.  <a href="classtinygpu_1_1ST7735DriverHardwareSPI.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ST7789Driver.html">ST7789Driver</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for ST7789 SPI display controller.  <a href="classtinygpu_1_1ST7789Driver.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ST7789Driver8080.html">ST7789Driver8080</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for ST7789 8-bit parallel display controller.  <a href="classtinygpu_1_1ST7789Driver8080.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ST7789Driver8080ESP32.html">ST7789Driver8080ESP32</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for ST7789 8-bit parallel display controller, driven via ESP32's LCD_CAM/I80 or PARLIO peripheral (see <a class="el" href="classtinygpu_1_1DisplayDriverParallel8ESP32.html" title="Hardware-accelerated 8-bit parallel (&quot;Intel 8080&quot;-style) TFT display driver for ESP32-family targets,...">DisplayDriverParallel8ESP32</a>).  <a href="classtinygpu_1_1ST7789Driver8080ESP32.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ST7789Driver8080RP2040.html">ST7789Driver8080RP2040</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for ST7789 8-bit parallel display controller, driven via RP2040's PIO/DMA (see <a class="el" href="classtinygpu_1_1DisplayDriverParallel8RP2040.html" title="RP2040 PIO/DMA-accelerated 8-bit parallel (&quot;Intel 8080&quot;-style) TFT display driver....">DisplayDriverParallel8RP2040</a>).  <a href="classtinygpu_1_1ST7789Driver8080RP2040.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1ST7796Driver.html">ST7796Driver</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for ST7796 SPI display controller.  <a href="classtinygpu_1_1ST7796Driver.html#details">More...</a><br /></td></tr>
@@ -301,8 +352,24 @@ follows over 4 lines"), the MIPI-DCS-style command byte, then 16 unused bits.  <
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a7ddbe0507ac05132b63ea6dadefc02ae"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a7ddbe0507ac05132b63ea6dadefc02ae">FBBA0125_002</a> = <a class="el" href="classtinygpu_1_1LCDBoardESP32S3__2__8Display.html">LCDBoardESP32S3_2_8Display</a></td></tr>
+<tr class="separator:a7ddbe0507ac05132b63ea6dadefc02ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cd71f27a7c16c9645510a4525a75d2e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a4cd71f27a7c16c9645510a4525a75d2e">ESP32S3HosyondLCD</a> = <a class="el" href="classtinygpu_1_1LCDBoardESP32S3__2__8Display.html">LCDBoardESP32S3_2_8Display</a></td></tr>
+<tr class="separator:a4cd71f27a7c16c9645510a4525a75d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86bb214b9594822bcb28efb5e3e666f9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a86bb214b9594822bcb28efb5e3e666f9">JC4827W543C_I</a> = <a class="el" href="classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html">LCDBoardGuitionESP32S3_4_3Display</a></td></tr>
+<tr class="separator:a86bb214b9594822bcb28efb5e3e666f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa437e44fc6e9edf44a731e0f0308eb18"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#aa437e44fc6e9edf44a731e0f0308eb18">ESP32_2432S028R</a> = <a class="el" href="classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html">LCDBoardGuitionESP32_LVGL_2_4Display</a></td></tr>
+<tr class="separator:aa437e44fc6e9edf44a731e0f0308eb18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a92f783c48c22fb94df83cb38ef075e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a4a92f783c48c22fb94df83cb38ef075e">ESP32CheapYellowDisplay</a> = <a class="el" href="classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html">LCDBoardGuitionESP32_LVGL_2_4Display</a></td></tr>
+<tr class="separator:a4a92f783c48c22fb94df83cb38ef075e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5641c732e0f5473e06a3cccbbde023b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#ad5641c732e0f5473e06a3cccbbde023b">JC4880P443C_I_W</a> = <a class="el" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html">LCDBoardGuitionESP32H4_4_3Display</a></td></tr>
+<tr class="separator:ad5641c732e0f5473e06a3cccbbde023b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ea3b65fd36ffe6dc7273fe17455543d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a8ea3b65fd36ffe6dc7273fe17455543d">DesktopSDL</a> = <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html">LCDBoardDesktopSDL</a></td></tr>
 <tr class="separator:a8ea3b65fd36ffe6dc7273fe17455543d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a062e5037d252be7100a87f5b35d3d721"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a062e5037d252be7100a87f5b35d3d721">MiniSTM32H750</a> = <a class="el" href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html">LCDBoardWeActMiniSTM32H750</a></td></tr>
+<tr class="separator:a062e5037d252be7100a87f5b35d3d721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c5517a9e17e99893327e483a5708171"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a1c5517a9e17e99893327e483a5708171">MiniSTM32H7xx</a> = <a class="el" href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html">LCDBoardWeActMiniSTM32H750</a></td></tr>
+<tr class="separator:a1c5517a9e17e99893327e483a5708171"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34c07b590b97132497328cfce9988661"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a34c07b590b97132497328cfce9988661">TouchDriverFT6206</a> = <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html">TouchDriverFT6236</a></td></tr>
 <tr class="memdesc:a34c07b590b97132497328cfce9988661"><td class="mdescLeft">&#160;</td><td class="mdescRight">The FT6206 is a drop-in replacement for the FT6236, so we can alias it here.  <br /></td></tr>
 <tr class="separator:a34c07b590b97132497328cfce9988661"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -611,6 +678,62 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="namespacetinygpu.html#a8ea3b65fd36ffe6dc7273fe17455543d">DesktopSDL</a> =  <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html">LCDBoardDesktopSDL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa437e44fc6e9edf44a731e0f0308eb18" name="aa437e44fc6e9edf44a731e0f0308eb18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa437e44fc6e9edf44a731e0f0308eb18">&#9670;&#160;</a></span>ESP32_2432S028R</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacetinygpu.html#aa437e44fc6e9edf44a731e0f0308eb18">ESP32_2432S028R</a> =  <a class="el" href="classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html">LCDBoardGuitionESP32_LVGL_2_4Display</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a92f783c48c22fb94df83cb38ef075e" name="a4a92f783c48c22fb94df83cb38ef075e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a92f783c48c22fb94df83cb38ef075e">&#9670;&#160;</a></span>ESP32CheapYellowDisplay</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacetinygpu.html#a4a92f783c48c22fb94df83cb38ef075e">ESP32CheapYellowDisplay</a> =  <a class="el" href="classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html">LCDBoardGuitionESP32_LVGL_2_4Display</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4cd71f27a7c16c9645510a4525a75d2e" name="a4cd71f27a7c16c9645510a4525a75d2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cd71f27a7c16c9645510a4525a75d2e">&#9670;&#160;</a></span>ESP32S3HosyondLCD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacetinygpu.html#a4cd71f27a7c16c9645510a4525a75d2e">ESP32S3HosyondLCD</a> =  <a class="el" href="classtinygpu_1_1LCDBoardESP32S3__2__8Display.html">LCDBoardESP32S3_2_8Display</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ddbe0507ac05132b63ea6dadefc02ae" name="a7ddbe0507ac05132b63ea6dadefc02ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ddbe0507ac05132b63ea6dadefc02ae">&#9670;&#160;</a></span>FBBA0125_002</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacetinygpu.html#a7ddbe0507ac05132b63ea6dadefc02ae">FBBA0125_002</a> =  <a class="el" href="classtinygpu_1_1LCDBoardESP32S3__2__8Display.html">LCDBoardESP32S3_2_8Display</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -970,6 +1093,34 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a86bb214b9594822bcb28efb5e3e666f9" name="a86bb214b9594822bcb28efb5e3e666f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86bb214b9594822bcb28efb5e3e666f9">&#9670;&#160;</a></span>JC4827W543C_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacetinygpu.html#a86bb214b9594822bcb28efb5e3e666f9">JC4827W543C_I</a> =  <a class="el" href="classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html">LCDBoardGuitionESP32S3_4_3Display</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5641c732e0f5473e06a3cccbbde023b" name="ad5641c732e0f5473e06a3cccbbde023b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5641c732e0f5473e06a3cccbbde023b">&#9670;&#160;</a></span>JC4880P443C_I_W</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacetinygpu.html#ad5641c732e0f5473e06a3cccbbde023b">JC4880P443C_I_W</a> =  <a class="el" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html">LCDBoardGuitionESP32H4_4_3Display</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac59c162090ce4205d40f44c99951513a" name="ac59c162090ce4205d40f44c99951513a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac59c162090ce4205d40f44c99951513a">&#9670;&#160;</a></span>LinePrinterRGB565</h2>
 
@@ -1015,6 +1166,34 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="classtinygpu_1_1LinePrinter.html" title="Helper for printing wrapped lines of text onto a TinyGPU target.">LinePrinter</a> with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format. </p>
+
+</div>
+</div>
+<a id="a062e5037d252be7100a87f5b35d3d721" name="a062e5037d252be7100a87f5b35d3d721"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a062e5037d252be7100a87f5b35d3d721">&#9670;&#160;</a></span>MiniSTM32H750</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacetinygpu.html#a062e5037d252be7100a87f5b35d3d721">MiniSTM32H750</a> =  <a class="el" href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html">LCDBoardWeActMiniSTM32H750</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1c5517a9e17e99893327e483a5708171" name="a1c5517a9e17e99893327e483a5708171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c5517a9e17e99893327e483a5708171">&#9670;&#160;</a></span>MiniSTM32H7xx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacetinygpu.html#a1c5517a9e17e99893327e483a5708171">MiniSTM32H7xx</a> =  <a class="el" href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html">LCDBoardWeActMiniSTM32H750</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

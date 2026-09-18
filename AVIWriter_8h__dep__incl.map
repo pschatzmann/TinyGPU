@@ -1,11 +1,13 @@
 <map id="src/TinyGPU/IO/AVIWriter.h" name="src/TinyGPU/IO/AVIWriter.h">
-<area shape="rect" id="node1" title=" " alt="" coords="355,5,549,31"/>
-<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="395,79,509,104"/>
-<area shape="rect" id="node3" href="$LCDBoardsCommon_8h.html" title=" " alt="" coords="268,152,436,192"/>
-<area shape="rect" id="node9" href="$LVGLDriver_8h.html" title=" " alt="" coords="461,152,643,192"/>
-<area shape="rect" id="node4" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,240,253,280"/>
-<area shape="rect" id="node7" href="$LCDBoardsSDL_8h.html" title="LCDBoard for the SDL2 desktop backend &#45; renders to a window via DisplayDriverSDL and maps the mouse t..." alt="" coords="277,240,427,280"/>
-<area shape="rect" id="node8" href="$LCDBoardsTFTeSPI_8h.html" title="LCDBoard backed by Bodmer&#39;s TFT_eSPI (https://github.com/Bodmer/TFT_eSPI) instead of one of this libr..." alt="" coords="451,240,610,280"/>
-<area shape="rect" id="node5" href="$Boards_8h.html" title=" " alt="" coords="5,335,168,361"/>
-<area shape="rect" id="node6" href="$SpriteDisplay_8h.html" title=" " alt="" coords="192,328,347,368"/>
+<area shape="rect" id="node1" title=" " alt="" coords="443,5,637,31"/>
+<area shape="rect" id="node2" href="$TinyGPU_8h.html" title=" " alt="" coords="483,79,597,104"/>
+<area shape="rect" id="node3" href="$LCDBoardsCommon_8h.html" title=" " alt="" coords="356,152,524,192"/>
+<area shape="rect" id="node11" href="$LVGLDriver_8h.html" title=" " alt="" coords="549,152,731,192"/>
+<area shape="rect" id="node4" href="$LCDBoardsESP32_8h.html" title="One&#45;call setup for ESP32(&#45;S3) boards from the arduino&#45;audio&#45;tools &quot;Audio Boards&quot; wiki that combine an..." alt="" coords="102,240,253,280"/>
+<area shape="rect" id="node8" href="$LCDBoardsSDL_8h.html" title="LCDBoard for the SDL2 desktop backend &#45; renders to a window via DisplayDriverSDL and maps the mouse t..." alt="" coords="277,240,427,280"/>
+<area shape="rect" id="node9" href="$LCDBoardsSTM32_8h.html" title="One&#45;call setup for STM32duino boards that bundle an LCD, following the same LCDBoard interface as LCD..." alt="" coords="451,240,605,280"/>
+<area shape="rect" id="node10" href="$LCDBoardsTFTeSPI_8h.html" title="LCDBoard backed by Bodmer&#39;s TFT_eSPI (https://github.com/Bodmer/TFT_eSPI) instead of one of this libr..." alt="" coords="629,240,787,280"/>
+<area shape="rect" id="node5" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,328,253,368"/>
+<area shape="rect" id="node6" href="$Boards_8h.html" title=" " alt="" coords="5,423,168,449"/>
+<area shape="rect" id="node7" href="$SpriteDisplay_8h.html" title=" " alt="" coords="192,416,347,456"/>
 </map>

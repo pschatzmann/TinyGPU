@@ -1,0 +1,6 @@
+<map id="DisplayDriverParallel8ESP32&lt; RGB_T &gt;" name="DisplayDriverParallel8ESP32&lt; RGB_T &gt;">
+<area shape="rect" id="node1" title="Hardware&#45;accelerated 8&#45;bit parallel (&quot;Intel 8080&quot;&#45;style) TFT display driver for ESP32&#45;family targets,..." alt="" coords="95,79,302,119"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1ILI9341Driver8080ESP32.html" title="Driver for ILI9341 8&#45;bit parallel display controller, driven via ESP32&#39;s LCD_CAM/I80 or PARLIO periph..." alt="" coords="5,167,187,207"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1ST7789Driver8080ESP32.html" title="Driver for ST7789 8&#45;bit parallel display controller, driven via ESP32&#39;s LCD_CAM/I80 or PARLIO periphe..." alt="" coords="211,167,394,207"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="107,5,291,31"/>
+</map>

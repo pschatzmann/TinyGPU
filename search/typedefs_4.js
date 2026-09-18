@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['ifontrgb565_0',['IFontRGB565',['../namespacetinygpu.html#ae955cbb52b3194484a7c438602a2104d',1,'tinygpu']]],
-  ['ifontrgb666_1',['IFontRGB666',['../namespacetinygpu.html#a94fc54025b2137574adc5c7d5eb8cdb0',1,'tinygpu']]],
-  ['ifontrgb888_2',['IFontRGB888',['../namespacetinygpu.html#a0e9a6af74007cb9c991badb76f7aa829',1,'tinygpu']]]
+  ['glyph_0',['Glyph',['../classtinygpu_1_1BitmapFont.html#a6a44dc5039e3148b53a9d459908ed8b5',1,'tinygpu::BitmapFont::Glyph()'],['../classtinygpu_1_1Font5x7.html#ab75964d6c057f30ef398834e7a33b843',1,'tinygpu::Font5x7::Glyph()']]]
 ];

@@ -1,0 +1,4 @@
+<map id="LCDBoardESP32S3_2_8Display" name="LCDBoardESP32S3_2_8Display">
+<area shape="rect" id="node1" title="&quot;2.8&quot; ESP32&#45;S3 Display&quot; &#45; ILI9341 SPI TFT + FT6336G capacitive touch (I2C, shares its bus with the bo..." alt="" coords="5,79,227,104"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1LCDBoard.html" title=" " alt="" coords="73,5,159,31"/>
+</map>

@@ -3,7 +3,7 @@ var searchData=
   ['kbegan_0',['kBegan',['../namespacetinygpu.html#a69abf21857f667743be06ad9b224138dac083b272840eb2cf7f134f1c2932dcc9',1,'tinygpu']]],
   ['kblankglyphwidth_1',['kBlankGlyphWidth',['../classtinygpu_1_1BitmapFont.html#a4f9a8895e7c4d26d97d299d1a7e33bd8',1,'tinygpu::BitmapFont']]],
   ['kchanged_2',['kChanged',['../namespacetinygpu.html#a69abf21857f667743be06ad9b224138da3ece808a5eec77326a9610ac33013018',1,'tinygpu']]],
-  ['kcmdramwrite_3',['kCmdRamWrite',['../classtinygpu_1_1DisplayDriverQSPI.html#a51fa4beda2bce42e1b334376db6c1f6b',1,'tinygpu::DisplayDriverQSPI']]],
+  ['kcmdramwrite_3',['kCmdRamWrite',['../classtinygpu_1_1DisplayDriverParallel8ESP32.html#a51fa4beda2bce42e1b334376db6c1f6b',1,'tinygpu::DisplayDriverParallel8ESP32::kCmdRamWrite()'],['../classtinygpu_1_1DisplayDriverQSPI.html#a51fa4beda2bce42e1b334376db6c1f6b',1,'tinygpu::DisplayDriverQSPI::kCmdRamWrite()']]],
   ['kcompressionbitfields_4',['kCompressionBitfields',['../classtinygpu_1_1BMPParser.html#abbe3f339166aca4626d144a8377289ed',1,'tinygpu::BMPParser']]],
   ['kcompressionrgb_5',['kCompressionRgb',['../classtinygpu_1_1BMPParser.html#aebcedd12549f90783e1ecda4ed561010',1,'tinygpu::BMPParser']]],
   ['kdoubletap_6',['kDoubleTap',['../namespacetinygpu.html#a21b9dab37e2393fad9b78a5c3529effea4cbddef81c2dcc9206d5457a652f2258',1,'tinygpu']]],

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['kblankglyphwidth_0',['kBlankGlyphWidth',['../classtinygpu_1_1BitmapFont.html#a4f9a8895e7c4d26d97d299d1a7e33bd8',1,'tinygpu::BitmapFont']]],
-  ['kcmdramwrite_1',['kCmdRamWrite',['../classtinygpu_1_1DisplayDriverQSPI.html#a51fa4beda2bce42e1b334376db6c1f6b',1,'tinygpu::DisplayDriverQSPI']]],
+  ['kcmdramwrite_1',['kCmdRamWrite',['../classtinygpu_1_1DisplayDriverParallel8ESP32.html#a51fa4beda2bce42e1b334376db6c1f6b',1,'tinygpu::DisplayDriverParallel8ESP32::kCmdRamWrite()'],['../classtinygpu_1_1DisplayDriverQSPI.html#a51fa4beda2bce42e1b334376db6c1f6b',1,'tinygpu::DisplayDriverQSPI::kCmdRamWrite()']]],
   ['kcompressionbitfields_2',['kCompressionBitfields',['../classtinygpu_1_1BMPParser.html#abbe3f339166aca4626d144a8377289ed',1,'tinygpu::BMPParser']]],
   ['kcompressionrgb_3',['kCompressionRgb',['../classtinygpu_1_1BMPParser.html#aebcedd12549f90783e1ecda4ed561010',1,'tinygpu::BMPParser']]],
   ['kfirstchar_4',['kFirstChar',['../classtinygpu_1_1Font5x7.html#a67a103abf9a38be8ef108990508c5675',1,'tinygpu::Font5x7']]],

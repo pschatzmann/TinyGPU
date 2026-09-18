@@ -158,12 +158,12 @@ $(function() {
 <div class="line"><span class="lineno">   80</span><span class="comment"> * then handle the ES8311&#39;s I2C init and drive the PA-enable pin</span></div>
 <div class="line"><span class="lineno">   81</span><span class="comment"> * (i2s().paEnable, active low per paEnableActiveLow) itself.</span></div>
 <div class="line"><span class="lineno">   82</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">class</span> LCDBoardESP32S3_2_8Display : <span class="keyword">public</span> LCDBoard {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardESP32S3__2__8Display.html">   83</a></span><span class="keyword">class</span> LCDBoardESP32S3_2_8Display : <span class="keyword">public</span> LCDBoard {</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="comment">/// Sets up the backlight, SPI bus, display controller (incl. inversion</span></div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="comment">/// and byte order - see the class doc comment), and touch controller.</span></div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="comment">/// Returns false if the display or touch begin() fails.</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordtype">bool</span> begin() override {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardESP32S3__2__8Display.html#acba365cc28eb702040c382646cfb0a7a">   88</a></span>  <span class="keywordtype">bool</span> begin() override {</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    pinMode(kPinBacklight, OUTPUT);</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    digitalWrite(kPinBacklight, HIGH);</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
@@ -177,20 +177,20 @@ $(function() {
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  }</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="comment">/// Panel width in pixels.</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  size_t width() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 240; }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardESP32S3__2__8Display.html#ac39656d862f5a4a39182559bbf7c740b">  102</a></span>  size_t width() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 240; }</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="comment">/// Panel height in pixels.</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  size_t height() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 320; }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardESP32S3__2__8Display.html#a715f3df3dc638de8b40076ada0b54a89">  104</a></span>  size_t height() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 320; }</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="comment">/// The board&#39;s display driver.</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  ILI9341Driver&lt;RGB565&gt;&amp; display() override { <span class="keywordflow">return</span> display_; }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardESP32S3__2__8Display.html#a6d07b69f8a5795d9b90a1448ed9eeff5">  107</a></span>  ILI9341Driver&lt;RGB565&gt;&amp; display() override { <span class="keywordflow">return</span> display_; }</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="comment">/// The board&#39;s touch controller.</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  TouchDriver* touch() override { <span class="keywordflow">return</span> &amp;touch_; }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardESP32S3__2__8Display.html#aaa77440d7eecb72ec6db1682a5538b9d">  109</a></span>  TouchDriver* touch() override { <span class="keywordflow">return</span> &amp;touch_; }</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="comment">/// The board&#39;s I2S/PA pin assignment.</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keyword">const</span> I2SPins&amp; i2s() <span class="keyword">const</span> override { <span class="keywordflow">return</span> i2s_; }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardESP32S3__2__8Display.html#a84a961b1948a67ea8928a78d95f6d463">  111</a></span>  <span class="keyword">const</span> I2SPins&amp; i2s() <span class="keyword">const</span> override { <span class="keywordflow">return</span> i2s_; }</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="comment">/// The board&#39;s LED pin assignment.</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <span class="keyword">const</span> LEDPins&amp; led() <span class="keyword">const</span> override { <span class="keywordflow">return</span> led_; }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardESP32S3__2__8Display.html#af10a07544f51ff43f4867c9f37ac1a40">  113</a></span>  <span class="keyword">const</span> LEDPins&amp; led() <span class="keyword">const</span> override { <span class="keywordflow">return</span> led_; }</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="comment">/// The board&#39;s backlight GPIO pin.</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  int8_t backlightPin() <span class="keyword">const</span> override { <span class="keywordflow">return</span> kPinBacklight; }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardESP32S3__2__8Display.html#ac06a2b6f69f36fcb561a166e2306a51b">  115</a></span>  int8_t backlightPin() <span class="keyword">const</span> override { <span class="keywordflow">return</span> kPinBacklight; }</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> int8_t kPinCs = 10;</div>
@@ -222,8 +222,8 @@ $(function() {
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  LEDPins led_{<span class="comment">/*single=*/</span>42};</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>};</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keyword">using</span> FBBA0125_002 = LCDBoardESP32S3_2_8Display;</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="keyword">using</span> ESP32S3HosyondLCD = LCDBoardESP32S3_2_8Display;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a7ddbe0507ac05132b63ea6dadefc02ae">  147</a></span><span class="keyword">using</span> FBBA0125_002 = LCDBoardESP32S3_2_8Display;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a4cd71f27a7c16c9645510a4525a75d2e">  148</a></span><span class="keyword">using</span> ESP32S3HosyondLCD = LCDBoardESP32S3_2_8Display;</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="comment">/**</span></div>
 <div class="line"><span class="lineno">  151</span><span class="comment"> * @brief &quot;Guition ESP32-S3 4.3&quot; 480x272 Capacitive Touch Display&quot;</span></div>
@@ -250,11 +250,11 @@ $(function() {
 <div class="line"><span class="lineno">  172</span><span class="comment"> *   board.setI2SPins&lt;I2SConfig&gt;(cfg);</span></div>
 <div class="line"><span class="lineno">  173</span><span class="comment"> *   out.begin(cfg);</span></div>
 <div class="line"><span class="lineno">  174</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="keyword">class</span> LCDBoardGuitionESP32S3_4_3Display : <span class="keyword">public</span> LCDBoard {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html">  175</a></span><span class="keyword">class</span> LCDBoardGuitionESP32S3_4_3Display : <span class="keyword">public</span> LCDBoard {</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  <span class="comment">/// Sets up the backlight, QSPI display controller, and touch controller.</span></div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  <span class="comment">/// Returns false if the display or touch begin() fails.</span></div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  <span class="keywordtype">bool</span> begin() override {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html#acba365cc28eb702040c382646cfb0a7a">  179</a></span>  <span class="keywordtype">bool</span> begin() override {</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    pinMode(kPinBacklight, OUTPUT);</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    digitalWrite(kPinBacklight, HIGH);</div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
@@ -265,20 +265,20 @@ $(function() {
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  }</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  <span class="comment">/// Panel width in pixels.</span></div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  size_t width() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 480; }</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html#ac39656d862f5a4a39182559bbf7c740b">  190</a></span>  size_t width() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 480; }</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="comment">/// Panel height in pixels.</span></div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  size_t height() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 272; }</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html#a715f3df3dc638de8b40076ada0b54a89">  192</a></span>  size_t height() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 272; }</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <span class="comment">/// The board&#39;s display driver.</span></div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  NV3041ADriver&lt;RGB565&gt;&amp; display() override { <span class="keywordflow">return</span> display_; }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html#a5a128db1c6ca2abf8e3e6bc4fbdd9199">  195</a></span>  NV3041ADriver&lt;RGB565&gt;&amp; display() override { <span class="keywordflow">return</span> display_; }</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <span class="comment">/// The board&#39;s touch controller.</span></div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  TouchDriver* touch() override { <span class="keywordflow">return</span> &amp;touch_; }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html#aaa77440d7eecb72ec6db1682a5538b9d">  197</a></span>  TouchDriver* touch() override { <span class="keywordflow">return</span> &amp;touch_; }</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <span class="comment">/// The board&#39;s I2S pin assignment.</span></div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  <span class="keyword">const</span> I2SPins&amp; i2s() <span class="keyword">const</span> override { <span class="keywordflow">return</span> i2s_; }</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html#a84a961b1948a67ea8928a78d95f6d463">  199</a></span>  <span class="keyword">const</span> I2SPins&amp; i2s() <span class="keyword">const</span> override { <span class="keywordflow">return</span> i2s_; }</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  <span class="comment">/// This board has no RGB LED - every LEDPins field is -1.</span></div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="keyword">const</span> LEDPins&amp; led() <span class="keyword">const</span> override { <span class="keywordflow">return</span> led_; }</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html#af10a07544f51ff43f4867c9f37ac1a40">  201</a></span>  <span class="keyword">const</span> LEDPins&amp; led() <span class="keyword">const</span> override { <span class="keywordflow">return</span> led_; }</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <span class="comment">/// The board&#39;s backlight GPIO pin.</span></div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  int8_t backlightPin() <span class="keyword">const</span> override { <span class="keywordflow">return</span> kPinBacklight; }</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html#ac06a2b6f69f36fcb561a166e2306a51b">  203</a></span>  int8_t backlightPin() <span class="keyword">const</span> override { <span class="keywordflow">return</span> kPinBacklight; }</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> int8_t kPinCs = 45;</div>
@@ -301,7 +301,7 @@ $(function() {
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  LEDPins led_{};</div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>};</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="keyword">using</span> JC4827W543C_I = LCDBoardGuitionESP32S3_4_3Display;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a86bb214b9594822bcb28efb5e3e666f9">  226</a></span><span class="keyword">using</span> JC4827W543C_I = LCDBoardGuitionESP32S3_4_3Display;</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment">/**</span></div>
 <div class="line"><span class="lineno">  229</span><span class="comment"> * @brief &quot;ESP32 Arduino LVGL WiFi&amp;Bluetooth Development Board, 2.4&quot; LCD</span></div>
@@ -331,11 +331,11 @@ $(function() {
 <div class="line"><span class="lineno">  253</span><span class="comment"> *   cfg.sample_rate = 44100; cfg.channels = 1; cfg.bits_per_sample = 16;</span></div>
 <div class="line"><span class="lineno">  254</span><span class="comment"> *   out.begin(cfg);</span></div>
 <div class="line"><span class="lineno">  255</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="keyword">class</span> LCDBoardGuitionESP32_LVGL_2_4Display : <span class="keyword">public</span> LCDBoard {</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html">  256</a></span><span class="keyword">class</span> LCDBoardGuitionESP32_LVGL_2_4Display : <span class="keyword">public</span> LCDBoard {</div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <span class="comment">/// Sets up the backlight, SPI bus, display controller, and touch</span></div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  <span class="comment">/// controller. Returns false if the display or touch begin() fails.</span></div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  <span class="keywordtype">bool</span> begin() override {</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html#acba365cc28eb702040c382646cfb0a7a">  260</a></span>  <span class="keywordtype">bool</span> begin() override {</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    pinMode(kPinBacklight, OUTPUT);</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    digitalWrite(kPinBacklight, HIGH);</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
@@ -347,20 +347,20 @@ $(function() {
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  }</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  <span class="comment">/// Panel width in pixels.</span></div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  size_t width() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 240; }</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html#ac39656d862f5a4a39182559bbf7c740b">  272</a></span>  size_t width() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 240; }</div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  <span class="comment">/// Panel height in pixels.</span></div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  size_t height() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 320; }</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html#a715f3df3dc638de8b40076ada0b54a89">  274</a></span>  size_t height() <span class="keyword">const</span> override { <span class="keywordflow">return</span> 320; }</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  <span class="comment">/// The board&#39;s display driver.</span></div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  ILI9341Driver&lt;RGB565&gt;&amp; display() override { <span class="keywordflow">return</span> display_; }</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html#a6d07b69f8a5795d9b90a1448ed9eeff5">  277</a></span>  ILI9341Driver&lt;RGB565&gt;&amp; display() override { <span class="keywordflow">return</span> display_; }</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  <span class="comment">/// The board&#39;s touch controller.</span></div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  TouchDriver* touch() override { <span class="keywordflow">return</span> &amp;touch_; }</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html#aaa77440d7eecb72ec6db1682a5538b9d">  279</a></span>  TouchDriver* touch() override { <span class="keywordflow">return</span> &amp;touch_; }</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  <span class="comment">/// Analog-DAC audio on this board - every I2SPins field is -1.</span></div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  <span class="keyword">const</span> I2SPins&amp; i2s() <span class="keyword">const</span> override { <span class="keywordflow">return</span> i2s_; }</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html#a84a961b1948a67ea8928a78d95f6d463">  281</a></span>  <span class="keyword">const</span> I2SPins&amp; i2s() <span class="keyword">const</span> override { <span class="keywordflow">return</span> i2s_; }</div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>  <span class="comment">/// The board&#39;s LED pin assignment.</span></div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  <span class="keyword">const</span> LEDPins&amp; led() <span class="keyword">const</span> override { <span class="keywordflow">return</span> led_; }</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html#af10a07544f51ff43f4867c9f37ac1a40">  283</a></span>  <span class="keyword">const</span> LEDPins&amp; led() <span class="keyword">const</span> override { <span class="keywordflow">return</span> led_; }</div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  <span class="comment">/// The board&#39;s backlight GPIO pin.</span></div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  int8_t backlightPin() <span class="keyword">const</span> override { <span class="keywordflow">return</span> kPinBacklight; }</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html#ac06a2b6f69f36fcb561a166e2306a51b">  285</a></span>  int8_t backlightPin() <span class="keyword">const</span> override { <span class="keywordflow">return</span> kPinBacklight; }</div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> int8_t kPinCs = 15;</div>
@@ -380,8 +380,8 @@ $(function() {
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>               <span class="comment">/*activeLow=*/</span><span class="keyword">true</span>};</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>};</div>
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="keyword">using</span> ESP32_2432S028R = LCDBoardGuitionESP32_LVGL_2_4Display;</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="keyword">using</span> ESP32CheapYellowDisplay = LCDBoardGuitionESP32_LVGL_2_4Display;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#aa437e44fc6e9edf44a731e0f0308eb18">  305</a></span><span class="keyword">using</span> ESP32_2432S028R = LCDBoardGuitionESP32_LVGL_2_4Display;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#a4a92f783c48c22fb94df83cb38ef075e">  306</a></span><span class="keyword">using</span> ESP32CheapYellowDisplay = LCDBoardGuitionESP32_LVGL_2_4Display;</div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="comment">// The rest of this file is ESP32-P4-only: ST7701Driver (DisplayDriverDSI.h)</span></div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="comment">// only exists when TINYGPU_HAS_ESP_LCD_DSI is defined (i.e. esp_lcd_mipi_dsi.h</span></div>
@@ -431,11 +431,11 @@ $(function() {
 <div class="line"><span class="lineno">  353</span><span class="comment"> * (i2s().paEnable, active low per paEnableActiveLow) itself.</span></div>
 <div class="line"><span class="lineno">  354</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span><span class="keyword">class</span> LCDBoardGuitionESP32H4_4_3Display : <span class="keyword">public</span> LCDBoard {</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html">  356</a></span><span class="keyword">class</span> LCDBoardGuitionESP32H4_4_3Display : <span class="keyword">public</span> LCDBoard {</div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>  LCDBoardGuitionESP32H4_4_3Display() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html#aac71729bba8b079cdbfd80ceb40c4983">  358</a></span>  LCDBoardGuitionESP32H4_4_3Display() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span> </div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  ~LCDBoardGuitionESP32H4_4_3Display() {</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html#ac148a8c00cc74b63af94e5a0c672a702">  360</a></span>  ~LCDBoardGuitionESP32H4_4_3Display() {</div>
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    <span class="keywordflow">if</span> (cali_handle_) {</div>
 <div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span><span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">ADC_CALI_SCHEME_CURVE_FITTING_SUPPORTED</span></div>
 <div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>      adc_cali_delete_scheme_curve_fitting(cali_handle_);</div>
@@ -452,7 +452,7 @@ $(function() {
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>  <span class="comment">/// WiFi SDIO pins, and SD_MMC pins. Returns false if the display or touch</span></div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>  <span class="comment">/// begin() fails. The speaker amp is not activated - call</span></div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  <span class="comment">/// setAmplifierActive(true) explicitly.</span></div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>  <span class="keywordtype">bool</span> begin() override {</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html#acba365cc28eb702040c382646cfb0a7a">  377</a></span>  <span class="keywordtype">bool</span> begin() override {</div>
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>    pinMode(kPinLcdBacklight, OUTPUT);</div>
 <div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>    digitalWrite(kPinLcdBacklight, HIGH);</div>
 <div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span> </div>
@@ -478,29 +478,29 @@ $(function() {
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>  <span class="comment">/// Activates or deactivates the NS4150 speaker amp. The amp is active when</span></div>
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>  <span class="comment">/// the pin is driven low, so this function inverts the active state to</span></div>
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>  <span class="comment">/// make it more intuitive to the caller.</span></div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>  <span class="keywordtype">void</span> setAmplifierActive(<span class="keywordtype">bool</span> active) {</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html#a0995093e188d44dba2a4e62348aa97af">  403</a></span>  <span class="keywordtype">void</span> setAmplifierActive(<span class="keywordtype">bool</span> active) {</div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>    pinMode(kPinAmpEnable, OUTPUT);</div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>    digitalWrite(kPinAmpEnable, active ? HIGH : LOW);</div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>  }</div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span> </div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>  <span class="comment">/// Panel width in pixels.</span></div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>  size_t width() <span class="keyword">const</span> override { <span class="keywordflow">return</span> kDisplayWidth; }</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html#ac39656d862f5a4a39182559bbf7c740b">  409</a></span>  size_t width() <span class="keyword">const</span> override { <span class="keywordflow">return</span> kDisplayWidth; }</div>
 <div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>  <span class="comment">/// Panel height in pixels.</span></div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>  size_t height() <span class="keyword">const</span> override { <span class="keywordflow">return</span> kDisplayHeight; }</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html#a715f3df3dc638de8b40076ada0b54a89">  411</a></span>  size_t height() <span class="keyword">const</span> override { <span class="keywordflow">return</span> kDisplayHeight; }</div>
 <div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span> </div>
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>  <span class="comment">/// The board&#39;s display driver.</span></div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>  ST7701Driver&lt;RGB565&gt;&amp; display() override { <span class="keywordflow">return</span> display_; }</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html#af0ed0a9bbb67d599653d83632a5136f0">  414</a></span>  ST7701Driver&lt;RGB565&gt;&amp; display() override { <span class="keywordflow">return</span> display_; }</div>
 <div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>  <span class="comment">/// The board&#39;s touch controller.</span></div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>  TouchDriver* touch() override { <span class="keywordflow">return</span> &amp;touch_; }</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html#aaa77440d7eecb72ec6db1682a5538b9d">  416</a></span>  TouchDriver* touch() override { <span class="keywordflow">return</span> &amp;touch_; }</div>
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>  <span class="comment">/// The board&#39;s I2S pin assignment.</span></div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  <span class="keyword">const</span> I2SPins&amp; i2s() <span class="keyword">const</span> override { <span class="keywordflow">return</span> i2s_; }</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html#a84a961b1948a67ea8928a78d95f6d463">  418</a></span>  <span class="keyword">const</span> I2SPins&amp; i2s() <span class="keyword">const</span> override { <span class="keywordflow">return</span> i2s_; }</div>
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>  <span class="comment">/// This board has no RGB LED - every LEDPins field is -1.</span></div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>  <span class="keyword">const</span> LEDPins&amp; led() <span class="keyword">const</span> override { <span class="keywordflow">return</span> led_; }</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html#af10a07544f51ff43f4867c9f37ac1a40">  420</a></span>  <span class="keyword">const</span> LEDPins&amp; led() <span class="keyword">const</span> override { <span class="keywordflow">return</span> led_; }</div>
 <div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>  <span class="comment">/// The board&#39;s backlight GPIO pin.</span></div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>  int8_t backlightPin() <span class="keyword">const</span> override { <span class="keywordflow">return</span> kPinLcdBacklight; }</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html#ac06a2b6f69f36fcb561a166e2306a51b">  422</a></span>  int8_t backlightPin() <span class="keyword">const</span> override { <span class="keywordflow">return</span> kPinLcdBacklight; }</div>
 <div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
 <div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>  <span class="comment">/// Reads and returns the battery charge percentage (0 - 100).</span></div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>  <span class="keywordtype">int</span> battery(<span class="keywordtype">int</span> battery_readings_ = 100) {</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno"><a class="line" href="classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html#aa7be71c5693b15aa4eacc7354b84583c">  425</a></span>  <span class="keywordtype">int</span> battery(<span class="keywordtype">int</span> battery_readings_ = 100) {</div>
 <div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>    <span class="keywordflow">if</span> (!adc_initialized_) {</div>
 <div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>      initAdc();</div>
 <div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>    }</div>
@@ -631,7 +631,7 @@ $(function() {
 <div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>  }</div>
 <div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>};</div>
 <div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span> </div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span><span class="keyword">using</span> JC4880P443C_I_W = LCDBoardGuitionESP32H4_4_3Display;</div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno"><a class="line" href="namespacetinygpu.html#ad5641c732e0f5473e06a3cccbbde023b">  556</a></span><span class="keyword">using</span> JC4880P443C_I_W = LCDBoardGuitionESP32H4_4_3Display;</div>
 <div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span> </div>
 <div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span><span class="preprocessor">#</span><span class="preprocessor">endif</span>  <span class="comment">// TINYGPU_HAS_ESP_LCD_DSI</span></div>
 <div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span> </div>

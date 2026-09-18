@@ -1,0 +1,4 @@
+<map id="LCDBoardGuitionESP32S3_4_3Display" name="LCDBoardGuitionESP32S3_4_3Display">
+<area shape="rect" id="node1" title="&quot;Guition ESP32&#45;S3 4.3&quot; 480x272 Capacitive Touch Display&quot; (JC4827W543C_I): it has a NV3041A QSPI displ..." alt="" coords="5,79,195,119"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1LCDBoard.html" title=" " alt="" coords="57,5,143,31"/>
+</map>

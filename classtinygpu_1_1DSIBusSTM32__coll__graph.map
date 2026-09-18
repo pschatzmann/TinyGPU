@@ -1,0 +1,4 @@
+<map id="DSIBusSTM32" name="DSIBusSTM32">
+<area shape="rect" id="node1" title="IDSIBus backend for STM32 parts with a DSI host + LTDC (F469/ F479, F769/F779, H747/H757,..." alt="" coords="5,79,117,104"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1IDSIBus.html" title="Abstraction over the transport used by DisplayDriverDSI (see TinyGPU/Drivers/DisplayDriverDSI...." alt="" coords="25,5,97,31"/>
+</map>

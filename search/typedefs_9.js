@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vector_0',['Vector',['../namespacetinygpu.html#a81fe4d2f62958ae48f36d6a3beb16bb1',1,'tinygpu']]]
+  ['other_0',['other',['../structtinygpu_1_1PSRAMAllocator_1_1rebind.html#aca94c91187cf20b4312c5642ef640501',1,'tinygpu::PSRAMAllocator::rebind']]]
 ];
