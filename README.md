@@ -57,6 +57,7 @@ The library covers three main areas:
   - ESP32 Arduino LVGL WiFi&Bluetooth 2.4" LCD (ESP32-2432S028R / ESP32 Cheap Yellow Display)
   - Guition ESP32-P4 4.3" 480x800 Capacitive Touch Display (JC4880P443C_I_W)
   - WeAct MiniSTM32H7xx (STM32H750VBT6/STM32H743VIT6) with its bundled 0.96" 160x80 ST7735 TFT
+  - STM32F723E-Discovery with its on-board 240x240 ST7789H2 LCD and FT6x06/FT3x67 capacitive touch, via the separate, optional [stm32f723-disco](https://github.com/pschatzmann/stm32f723-disco) library
 - Integration
   - LVGLDriver: use this library to output data from the lvgl library 
   - TouchDriverSDL: use the SDL library for touch support
