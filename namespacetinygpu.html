@@ -132,6 +132,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSPI.html">DisplayDriverSPI</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common base class for SPI-based display drivers.  <a href="classtinygpu_1_1DisplayDriverSPI.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverSTM32F723Discovery.html">DisplayDriverSTM32F723Discovery</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1DisplayDriver.html">DisplayDriver&lt;RGB565&gt;</a> wrapping the stm32f723-disco library's <code>LCD</code> class - the library owns the panel's init sequence and pixel output entirely (STM32Cube BSP driving the STM32F723's FMC peripheral), so this class is a thin adapter rather than a bus-level driver like DisplayDriverSPI/QSPI/DSI. Fixed 240x240 resolution - the panel is square, so <a class="el" href="classtinygpu_1_1DisplayDriverSTM32F723Discovery.html#ac39656d862f5a4a39182559bbf7c740b">width()</a>/height() don't change with orientation.  <a href="classtinygpu_1_1DisplayDriverSTM32F723Discovery.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1DisplayDriverTFTeSPI.html">DisplayDriverTFTeSPI</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display driver that renders a TinyGPU surface through Bodmer's TFT_eSPI (<a href="https://github.com/Bodmer/TFT_eSPI">https://github.com/Bodmer/TFT_eSPI</a>) instead of one of this library's own SPI panel drivers (DisplayDriverSPI/QSPI/DSI) - useful if you already have a working TFT_eSPI <code>User_Setup.h</code> for your panel and would rather reuse it than duplicate the same init sequence/pin wiring here.  <a href="classtinygpu_1_1DisplayDriverTFTeSPI.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,6 +226,9 @@ follows over 4 lines"), the MIPI-DCS-style command byte, then 16 unused bits.  <
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html">LCDBoardGuitionESP32S3_4_3Display</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Guition ESP32-S3 4.3" 480x272 Capacitive Touch Display" (JC4827W543C_I): it has a NV3041A QSPI display, GT911 capacitive touch NV3041A QSPI TFT + GT911 capacitive touch (I2C) + NS4168 speaker amp (speaker output only - no codec/mic on this board).  <a href="classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoardSTM32F723Discovery.html">LCDBoardSTM32F723Discovery</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">"STM32F723E-Discovery" - on-board 240x240 ST7789H2 LCD (FMC) + FT6x06/FT3x67 capacitive touch, via the stm32f723-disco library.  <a href="classtinygpu_1_1LCDBoardSTM32F723Discovery.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoardTFTeSPI.html">LCDBoardTFTeSPI</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1LCDBoard.html">LCDBoard</a> wrapping a single TFT_eSPI instance, shared between its <a class="el" href="classtinygpu_1_1DisplayDriverTFTeSPI.html" title="Display driver that renders a TinyGPU surface through Bodmer&#39;s TFT_eSPI (https://github....">DisplayDriverTFTeSPI</a> and (optional) <a class="el" href="classtinygpu_1_1TouchDriverTFTeSPI.html" title="Touch driver that reads through Bodmer&#39;s TFT_eSPI (https://github.com/Bodmer/TFT_eSPI) resistive touc...">TouchDriverTFTeSPI</a>.  <a href="classtinygpu_1_1LCDBoardTFTeSPI.html#details">More...</a><br /></td></tr>
@@ -335,6 +341,9 @@ follows over 4 lines"), the MIPI-DCS-style command byte, then 16 unused bits.  <
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverSDL.html">TouchDriverSDL</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps the desktop mouse to a <a class="el" href="classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers.">TouchDriver</a>, for exercising touch-driven UI (buttons, sliders, ...) on the SDL desktop backend without any physical touch hardware.  <a href="classtinygpu_1_1TouchDriverSDL.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverSTM32F723Discovery.html">TouchDriverSTM32F723Discovery</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers.">TouchDriver</a> wrapping the stm32f723-disco library's <code>TouchScreen</code> class (on-board FT6x06/FT3x67 capacitive touch controller - bus/pin setup is entirely owned by the library, same as the LCD side).  <a href="classtinygpu_1_1TouchDriverSTM32F723Discovery.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverTFTeSPI.html">TouchDriverTFTeSPI</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch driver that reads through Bodmer's TFT_eSPI (<a href="https://github.com/Bodmer/TFT_eSPI">https://github.com/Bodmer/TFT_eSPI</a>) resistive touch support (TFT_eSPI::getTouch()) instead of one of this library's own touch controller drivers (<a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html" title="XPT2046 resistive touch controller.">TouchDriverXPT2046</a>, ...) - the companion to <a class="el" href="classtinygpu_1_1DisplayDriverTFTeSPI.html" title="Display driver that renders a TinyGPU surface through Bodmer&#39;s TFT_eSPI (https://github....">DisplayDriverTFTeSPI</a>, for a panel already wired up and calibrated through TFT_eSPI.  <a href="classtinygpu_1_1TouchDriverTFTeSPI.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -370,6 +379,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:a062e5037d252be7100a87f5b35d3d721"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c5517a9e17e99893327e483a5708171"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a1c5517a9e17e99893327e483a5708171">MiniSTM32H7xx</a> = <a class="el" href="classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html">LCDBoardWeActMiniSTM32H750</a></td></tr>
 <tr class="separator:a1c5517a9e17e99893327e483a5708171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12e9c5d1723997340b9c7619505368ac"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a12e9c5d1723997340b9c7619505368ac">STM32F723Discovery</a> = <a class="el" href="classtinygpu_1_1LCDBoardSTM32F723Discovery.html">LCDBoardSTM32F723Discovery</a></td></tr>
+<tr class="separator:a12e9c5d1723997340b9c7619505368ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34c07b590b97132497328cfce9988661"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetinygpu.html#a34c07b590b97132497328cfce9988661">TouchDriverFT6206</a> = <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html">TouchDriverFT6236</a></td></tr>
 <tr class="memdesc:a34c07b590b97132497328cfce9988661"><td class="mdescLeft">&#160;</td><td class="mdescRight">The FT6206 is a drop-in replacement for the FT6236, so we can alias it here.  <br /></td></tr>
 <tr class="separator:a34c07b590b97132497328cfce9988661"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1274,6 +1285,20 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sprite with <a class="el" href="classtinygpu_1_1RGB888.html" title="RGB color stored in 24-bit RGB888 format.">RGB888</a> pixel format. </p>
+
+</div>
+</div>
+<a id="a12e9c5d1723997340b9c7619505368ac" name="a12e9c5d1723997340b9c7619505368ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12e9c5d1723997340b9c7619505368ac">&#9670;&#160;</a></span>STM32F723Discovery</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacetinygpu.html#a12e9c5d1723997340b9c7619505368ac">STM32F723Discovery</a> =  <a class="el" href="classtinygpu_1_1LCDBoardSTM32F723Discovery.html">LCDBoardSTM32F723Discovery</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

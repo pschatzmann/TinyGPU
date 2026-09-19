@@ -6,12 +6,13 @@ var searchData=
   ['lcdboardguitionesp32_5flvgl_5f2_5f4display_3',['LCDBoardGuitionESP32_LVGL_2_4Display',['../classtinygpu_1_1LCDBoardGuitionESP32__LVGL__2__4Display.html',1,'tinygpu']]],
   ['lcdboardguitionesp32h4_5f4_5f3display_4',['LCDBoardGuitionESP32H4_4_3Display',['../classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html',1,'tinygpu']]],
   ['lcdboardguitionesp32s3_5f4_5f3display_5',['LCDBoardGuitionESP32S3_4_3Display',['../classtinygpu_1_1LCDBoardGuitionESP32S3__4__3Display.html',1,'tinygpu']]],
-  ['lcdboardtftespi_6',['LCDBoardTFTeSPI',['../classtinygpu_1_1LCDBoardTFTeSPI.html',1,'tinygpu']]],
-  ['lcdboardweactministm32h750_7',['LCDBoardWeActMiniSTM32H750',['../classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html',1,'tinygpu']]],
-  ['ledpins_8',['LEDPins',['../structtinygpu_1_1LEDPins.html',1,'tinygpu']]],
-  ['lineprinter_9',['LinePrinter',['../classtinygpu_1_1LinePrinter.html',1,'tinygpu']]],
-  ['lineprinter_3c_20bool_20_3e_10',['LinePrinter&lt; bool &gt;',['../classtinygpu_1_1LinePrinter.html',1,'tinygpu']]],
-  ['lineprinter_3c_20pixelt_20_3e_11',['LinePrinter&lt; PixelT &gt;',['../classtinygpu_1_1LinePrinter.html',1,'tinygpu']]],
-  ['lineprinter_3c_20rgb565_20_3e_12',['LinePrinter&lt; RGB565 &gt;',['../classtinygpu_1_1LinePrinter.html',1,'tinygpu']]],
-  ['lvgldriver_13',['LVGLDriver',['../classLVGLDriver.html',1,'']]]
+  ['lcdboardstm32f723discovery_6',['LCDBoardSTM32F723Discovery',['../classtinygpu_1_1LCDBoardSTM32F723Discovery.html',1,'tinygpu']]],
+  ['lcdboardtftespi_7',['LCDBoardTFTeSPI',['../classtinygpu_1_1LCDBoardTFTeSPI.html',1,'tinygpu']]],
+  ['lcdboardweactministm32h750_8',['LCDBoardWeActMiniSTM32H750',['../classtinygpu_1_1LCDBoardWeActMiniSTM32H750.html',1,'tinygpu']]],
+  ['ledpins_9',['LEDPins',['../structtinygpu_1_1LEDPins.html',1,'tinygpu']]],
+  ['lineprinter_10',['LinePrinter',['../classtinygpu_1_1LinePrinter.html',1,'tinygpu']]],
+  ['lineprinter_3c_20bool_20_3e_11',['LinePrinter&lt; bool &gt;',['../classtinygpu_1_1LinePrinter.html',1,'tinygpu']]],
+  ['lineprinter_3c_20pixelt_20_3e_12',['LinePrinter&lt; PixelT &gt;',['../classtinygpu_1_1LinePrinter.html',1,'tinygpu']]],
+  ['lineprinter_3c_20rgb565_20_3e_13',['LinePrinter&lt; RGB565 &gt;',['../classtinygpu_1_1LinePrinter.html',1,'tinygpu']]],
+  ['lvgldriver_14',['LVGLDriver',['../classLVGLDriver.html',1,'']]]
 ];

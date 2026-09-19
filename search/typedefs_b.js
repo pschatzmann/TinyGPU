@@ -5,7 +5,8 @@ var searchData=
   ['spritergb565_2',['SpriteRGB565',['../namespacetinygpu.html#af784c9ee239f661a45e26962e9f378bf',1,'tinygpu']]],
   ['spritergb666_3',['SpriteRGB666',['../namespacetinygpu.html#a09f7fe02e0be0cb008b07e6bded36c23',1,'tinygpu']]],
   ['spritergb888_4',['SpriteRGB888',['../namespacetinygpu.html#a0955c9dc755069342e3771a97a0db703',1,'tinygpu']]],
-  ['surfacergb565_5',['SurfaceRGB565',['../namespacetinygpu.html#a8ea39cc37eb3046afe513efdc085374c',1,'tinygpu']]],
-  ['surfacergb666_6',['SurfaceRGB666',['../namespacetinygpu.html#a28a1495c10eeb420d0fc8e4475d1dc3f',1,'tinygpu']]],
-  ['surfacergb888_7',['SurfaceRGB888',['../namespacetinygpu.html#a1a96835a106885da878c2c59b2c8719b',1,'tinygpu']]]
+  ['stm32f723discovery_5',['STM32F723Discovery',['../namespacetinygpu.html#a12e9c5d1723997340b9c7619505368ac',1,'tinygpu']]],
+  ['surfacergb565_6',['SurfaceRGB565',['../namespacetinygpu.html#a8ea39cc37eb3046afe513efdc085374c',1,'tinygpu']]],
+  ['surfacergb666_7',['SurfaceRGB666',['../namespacetinygpu.html#a28a1495c10eeb420d0fc8e4475d1dc3f',1,'tinygpu']]],
+  ['surfacergb888_8',['SurfaceRGB888',['../namespacetinygpu.html#a1a96835a106885da878c2c59b2c8719b',1,'tinygpu']]]
 ];

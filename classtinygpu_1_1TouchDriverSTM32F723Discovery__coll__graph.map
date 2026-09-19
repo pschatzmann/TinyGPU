@@ -1,0 +1,5 @@
+<map id="TouchDriverSTM32F723Discovery" name="TouchDriverSTM32F723Discovery">
+<area shape="rect" id="node1" title="TouchDriver wrapping the stm32f723&#45;disco library&#39;s TouchScreen class (on&#45;board FT6x06/FT3x67 capaciti..." alt="" coords="5,168,245,193"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="76,93,175,119"/>
+<area shape="rect" id="node3" href="$structtinygpu_1_1CalibrationData.html" title="Touch calibration configuration." alt="" coords="63,5,187,31"/>
+</map>

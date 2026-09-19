@@ -81,12 +81,14 @@ Directory dependency graph for Boards:</div>
 <div class="dyncontent">
 <div class="center"><img src="dir_0558b94496c9c67ead3a9b5794fd331d_dep.png" border="0" usemap="#adir__0558b94496c9c67ead3a9b5794fd331d__dep" alt="src/TinyGPU/Boards"/></div>
 <map name="adir__0558b94496c9c67ead3a9b5794fd331d__dep" id="adir__0558b94496c9c67ead3a9b5794fd331d__dep">
-<area shape="rect" href="dir_a67c8eb9763d395e693e613a8f81a0ac.html" title="Drivers" alt="" coords="27,125,96,151"/>
-<area shape="rect" href="dir_ff75d0d022721be81fa85f9dffa96129.html" title="Input" alt="" coords="121,125,175,151"/>
-<area shape="rect" href="dir_0558b94496c9c67ead3a9b5794fd331d.html" title="Boards" alt="" coords="68,52,135,77"/>
-<area shape="rect" href="dir_000001_000003.html" title="7" alt="" coords="79,106,89,121"/>
-<area shape="rect" href="dir_000001_000005.html" title="4" alt="" coords="133,98,142,113"/>
-<area shape="rect" href="dir_ee559ef0698e790c953305f5d5dad3a0.html" title="TinyGPU" alt="" coords="16,16,187,161"/>
+<area shape="rect" href="dir_6f501e3e0dca64de8dae348fb89553a5.html" title="Color" alt="" coords="27,125,83,151"/>
+<area shape="rect" href="dir_a67c8eb9763d395e693e613a8f81a0ac.html" title="Drivers" alt="" coords="107,125,176,151"/>
+<area shape="rect" href="dir_ff75d0d022721be81fa85f9dffa96129.html" title="Input" alt="" coords="201,125,255,151"/>
+<area shape="rect" href="dir_0558b94496c9c67ead3a9b5794fd331d.html" title="Boards" alt="" coords="108,52,175,77"/>
+<area shape="rect" href="dir_000001_000002.html" title="1" alt="" coords="84,113,93,128"/>
+<area shape="rect" href="dir_000001_000003.html" title="8" alt="" coords="145,100,154,114"/>
+<area shape="rect" href="dir_000001_000005.html" title="5" alt="" coords="200,100,210,114"/>
+<area shape="rect" href="dir_ee559ef0698e790c953305f5d5dad3a0.html" title="TinyGPU" alt="" coords="16,16,267,161"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -105,6 +107,9 @@ Files</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCDBoardsSTM32_8h.html">LCDBoardsSTM32.h</a> <a href="LCDBoardsSTM32_8h_source.html">[code]</a></td></tr>
 <tr class="memdesc:LCDBoardsSTM32_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">One-call setup for STM32duino boards that bundle an LCD, following the same LCDBoard interface as <a class="el" href="LCDBoardsESP32_8h.html" title="One-call setup for ESP32(-S3) boards from the arduino-audio-tools &quot;Audio Boards&quot; wiki that combine an...">LCDBoardsESP32.h</a>'s ESP32 boards. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCDBoardsSTM32F723Discovery_8h.html">LCDBoardsSTM32F723Discovery.h</a> <a href="LCDBoardsSTM32F723Discovery_8h_source.html">[code]</a></td></tr>
+<tr class="memdesc:LCDBoardsSTM32F723Discovery_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCDBoard backed by the stm32f723-disco Arduino library (<a href="https://github.com/pschatzmann/stm32f723-disco">https://github.com/pschatzmann/stm32f723-disco</a>) for the STM32F723E- Discovery board's on-board 240x240 ST7789H2 LCD (wired to the STM32F723 via its FMC peripheral in 8080-parallel mode - not SPI/QSPI/DSI) and FT6x06/FT3x67 capacitive touch controller. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LCDBoardsTFTeSPI_8h.html">LCDBoardsTFTeSPI.h</a> <a href="LCDBoardsTFTeSPI_8h_source.html">[code]</a></td></tr>
 <tr class="memdesc:LCDBoardsTFTeSPI_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCDBoard backed by Bodmer's TFT_eSPI (<a href="https://github.com/Bodmer/TFT_eSPI">https://github.com/Bodmer/TFT_eSPI</a>) instead of one of this library's own SPI panel/touch drivers - useful if you already have a working TFT_eSPI <code>User_Setup.h</code> for your panel (and optionally its touch calibration) and would rather reuse it than re-wire the same panel through <a class="el" href="LCDBoardsESP32_8h.html" title="One-call setup for ESP32(-S3) boards from the arduino-audio-tools &quot;Audio Boards&quot; wiki that combine an...">LCDBoardsESP32.h</a>'s board-specific pin tables. <br /></td></tr>

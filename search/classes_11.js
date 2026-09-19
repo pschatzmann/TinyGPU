@@ -7,7 +7,8 @@ var searchData=
   ['touchdriverft6236_4',['TouchDriverFT6236',['../classtinygpu_1_1TouchDriverFT6236.html',1,'tinygpu']]],
   ['touchdrivergt911_5',['TouchDriverGT911',['../classtinygpu_1_1TouchDriverGT911.html',1,'tinygpu']]],
   ['touchdriversdl_6',['TouchDriverSDL',['../classtinygpu_1_1TouchDriverSDL.html',1,'tinygpu']]],
-  ['touchdrivertftespi_7',['TouchDriverTFTeSPI',['../classtinygpu_1_1TouchDriverTFTeSPI.html',1,'tinygpu']]],
-  ['touchdriverxpt2046_8',['TouchDriverXPT2046',['../classtinygpu_1_1TouchDriverXPT2046.html',1,'tinygpu']]],
-  ['twowire_9',['TwoWire',['../classtinygpu_1_1TwoWire.html',1,'tinygpu']]]
+  ['touchdriverstm32f723discovery_7',['TouchDriverSTM32F723Discovery',['../classtinygpu_1_1TouchDriverSTM32F723Discovery.html',1,'tinygpu']]],
+  ['touchdrivertftespi_8',['TouchDriverTFTeSPI',['../classtinygpu_1_1TouchDriverTFTeSPI.html',1,'tinygpu']]],
+  ['touchdriverxpt2046_9',['TouchDriverXPT2046',['../classtinygpu_1_1TouchDriverXPT2046.html',1,'tinygpu']]],
+  ['twowire_10',['TwoWire',['../classtinygpu_1_1TwoWire.html',1,'tinygpu']]]
 ];

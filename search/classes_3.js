@@ -21,8 +21,9 @@ var searchData=
   ['displaydriverspi_18',['DisplayDriverSPI',['../classtinygpu_1_1DisplayDriverSPI.html',1,'tinygpu']]],
   ['displaydriverspi_3c_20rgb565_20_3e_19',['DisplayDriverSPI&lt; RGB565 &gt;',['../classtinygpu_1_1DisplayDriverSPI.html',1,'tinygpu']]],
   ['displaydriverspi_3c_20tinygpu_3a_3argb565_20_3e_20',['DisplayDriverSPI&lt; tinygpu::RGB565 &gt;',['../classtinygpu_1_1DisplayDriverSPI.html',1,'tinygpu']]],
-  ['displaydrivertftespi_21',['DisplayDriverTFTeSPI',['../classtinygpu_1_1DisplayDriverTFTeSPI.html',1,'tinygpu']]],
-  ['displaydrivertftespi_3c_20tinygpu_3a_3argb565_20_3e_22',['DisplayDriverTFTeSPI&lt; tinygpu::RGB565 &gt;',['../classtinygpu_1_1DisplayDriverTFTeSPI.html',1,'tinygpu']]],
-  ['dsibusesp32_23',['DSIBusESP32',['../classtinygpu_1_1DSIBusESP32.html',1,'tinygpu']]],
-  ['dsibusstm32_24',['DSIBusSTM32',['../classtinygpu_1_1DSIBusSTM32.html',1,'tinygpu']]]
+  ['displaydriverstm32f723discovery_21',['DisplayDriverSTM32F723Discovery',['../classtinygpu_1_1DisplayDriverSTM32F723Discovery.html',1,'tinygpu']]],
+  ['displaydrivertftespi_22',['DisplayDriverTFTeSPI',['../classtinygpu_1_1DisplayDriverTFTeSPI.html',1,'tinygpu']]],
+  ['displaydrivertftespi_3c_20tinygpu_3a_3argb565_20_3e_23',['DisplayDriverTFTeSPI&lt; tinygpu::RGB565 &gt;',['../classtinygpu_1_1DisplayDriverTFTeSPI.html',1,'tinygpu']]],
+  ['dsibusesp32_24',['DSIBusESP32',['../classtinygpu_1_1DSIBusESP32.html',1,'tinygpu']]],
+  ['dsibusstm32_25',['DSIBusSTM32',['../classtinygpu_1_1DSIBusSTM32.html',1,'tinygpu']]]
 ];
