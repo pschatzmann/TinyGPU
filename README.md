@@ -62,8 +62,13 @@ The library covers three main areas:
   - LVGLDriver: use this library to output data from the lvgl library 
   - TouchDriverSDL: use the SDL library for touch support
   - DisplayDriverTFTeSPI / TouchDriverTFTeSPI / LCDBoardTFTeSPI: render and read touch through the optional [TFT_eSPI](https://github.com/Bodmer/TFT_eSPI) library instead of TinyGPU's own SPI panel/touch drivers, for panels already configured (and touch-calibrated) via TFT_eSPI's `User_Setup.h`
+  - [TinyMaterialDesign](https://github.com/pschatzmann/TinyMaterialDesign): a header-only Material Design 3 GUI widget library built on top of TinyGPU's surfaces and touch/gesture stack
 
 - Arduino example sketches
+
+## Used By
+
+- [TinyMaterialDesign](https://github.com/pschatzmann/TinyMaterialDesign): Material Design 3 GUI widgets rendered with TinyGPU
 
 ## Documentaion
 
