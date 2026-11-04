@@ -17,6 +17,9 @@ namespace tinygpu {
  * cursor position = touch point. SDL_QUIT (closing the window) exits the
  * process, since there is no hardware equivalent to hand back to the sketch.
  *
+ * When the window is larger than the display (DisplayDriverSDL::setScale(),
+ * a resized window), the mouse position is mapped back to display pixels.
+ *
  * Like every TouchDriver, isTouched() and getPoint() do not implicitly loop
  * or block. isTouched() is where the SDL event queue is drained (via
  * SDL_PollEvent), so - as with the other drivers in this file - call it
@@ -42,6 +45,7 @@ class TouchDriverSDL : public TouchDriver {
     int x = 0;
     int y = 0;
     const uint32_t buttons = SDL_GetMouseState(&x, &y);
+    windowToDisplay(x, y);
     lastX_ = static_cast<int16_t>(x);
     lastY_ = static_cast<int16_t>(y);
     down_ = (buttons & SDL_BUTTON(SDL_BUTTON_LEFT)) != 0;
@@ -52,6 +56,27 @@ class TouchDriverSDL : public TouchDriver {
     if (!down_) return false;
     outPoint = mapCoordinates(lastX_, lastY_, 255);
     return true;
+  }
+
+  /// Window coordinates -> display coordinates (the renderer of the window
+  /// under the mouse has the display size as logical size, see
+  /// DisplayDriverSDL); positions outside the display are clamped.
+  static void windowToDisplay(int& x, int& y) {
+#if SDL_VERSION_ATLEAST(2, 0, 18)
+    SDL_Window* window = SDL_GetMouseFocus();
+    SDL_Renderer* renderer = window != nullptr ? SDL_GetRenderer(window) : nullptr;
+    if (renderer == nullptr) return;
+    int w = 0, h = 0;
+    SDL_RenderGetLogicalSize(renderer, &w, &h);
+    if (w <= 0 || h <= 0) return;
+    float lx = 0, ly = 0;
+    SDL_RenderWindowToLogical(renderer, x, y, &lx, &ly);
+    x = lx < 0 ? 0 : lx >= w ? w - 1 : static_cast<int>(lx);
+    y = ly < 0 ? 0 : ly >= h ? h - 1 : static_cast<int>(ly);
+#else
+    (void)x;
+    (void)y;
+#endif
   }
 
  private:

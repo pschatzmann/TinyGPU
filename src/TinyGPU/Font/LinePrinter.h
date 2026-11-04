@@ -194,10 +194,11 @@ private:
       return;
     }
 
-    target_->drawText(static_cast<int16_t>(currentX_),
-                      static_cast<int16_t>(currentY_), chunk.c_str(),
-                      foregroundColor_, backgroundColor_, false, scale,
-                      spacing);
+    // draw with the same font that measures the chunk: the target's own font
+    // (target_->drawText()) may differ, which misplaces the words
+    font_->drawText(*target_, static_cast<int16_t>(currentX_),
+                    static_cast<int16_t>(currentY_), chunk.c_str(),
+                    foregroundColor_, backgroundColor_, false, scale, spacing);
     currentX_ += font_->measureTextWidth(chunk.c_str(), scale, spacing);
   }
 

@@ -29,6 +29,13 @@ class LCDBoardDesktopSDL : public LCDBoard {
   LCDBoardDesktopSDL(size_t width = 320, size_t height = 240)
       : width_(width), height_(height), display_(width, height) {}
 
+  /// Size of the window as a multiple of the display, e.g. 1.5 or 2 (before
+  /// begin()); the environment variable TINYGPU_SDL_SCALE takes precedence.
+  void setScale(float scale) { display_.setScale(scale); }
+
+  /// Title of the window (before begin()).
+  void setTitle(const char* title) { display_.setTitle(title); }
+
   /// Opens the SDL window and starts mouse-as-touch tracking.
   bool begin() override {
     if (!display_.begin()) return false;

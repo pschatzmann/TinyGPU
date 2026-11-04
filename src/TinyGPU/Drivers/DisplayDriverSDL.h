@@ -21,6 +21,13 @@ namespace tinygpu {
  * otherwise leave the window unresponsive to being closed: with no one
  * calling SDL_PollEvent, the window manager's close request just piles up in
  * SDL's queue and the OS reports the window as hung.
+ *
+ * The window can be larger than the display: setScale() (or the environment
+ * variable TINYGPU_SDL_SCALE, which takes precedence) opens it with that
+ * factor, e.g. 1.5 or 2, and it can be resized - the display is scaled to the
+ * window (letterboxed if the aspect ratio differs): with sharp pixels for a
+ * whole factor, smoothed otherwise. TouchDriverSDL maps the mouse back to
+ * display coordinates.
  */
 template <typename RGB_T = RGB565>
 class DisplayDriverSDL : public DisplayDriver<RGB_T> {
@@ -32,15 +39,30 @@ class DisplayDriverSDL : public DisplayDriver<RGB_T> {
   size_t width() const override { return w_; }
   size_t height() const override { return h_; }
 
+  /// Size of the window as a multiple of the display, e.g. 1.5 or 2 (call
+  /// before begin()).
+  void setScale(float scale) { scale_ = scale < 1.0f ? 1.0f : scale; }
+  float scale() const { return scale_; }
+
+  /// Title of the window (call before begin()).
+  void setTitle(const char* title) { title_ = title != nullptr ? title : ""; }
+
   bool begin() override {
     SDL_Init(SDL_INIT_VIDEO);
     if (window_ == nullptr) {
-      window_ =
-          SDL_CreateWindow("RGB565 Display", SDL_WINDOWPOS_UNDEFINED,
-                           SDL_WINDOWPOS_UNDEFINED, w_, h_, SDL_WINDOW_SHOWN);
+      const char* env = getenv("TINYGPU_SDL_SCALE");
+      if (env != nullptr && atof(env) >= 1.0) scale_ = static_cast<float>(atof(env));
+      // sharp pixels for a whole factor; smoothed otherwise (uneven pixels)
+      const bool whole = scale_ == static_cast<float>(static_cast<int>(scale_));
+      SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, whole ? "0" : "1");
+      window_ = SDL_CreateWindow(title_, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+                                 static_cast<int>(w_ * scale_ + 0.5f), static_cast<int>(h_ * scale_ + 0.5f),
+                                 SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
       if (window_ == nullptr) return false;
       renderer_ = SDL_CreateRenderer(window_, -1, SDL_RENDERER_ACCELERATED);
       if (renderer_ == nullptr) return false;
+      // draw in display pixels, scaled to the window
+      SDL_RenderSetLogicalSize(renderer_, static_cast<int>(w_), static_cast<int>(h_));
       texture_ = SDL_CreateTexture(renderer_, SDL_PIXELFORMAT_RGB565,
                                    SDL_TEXTUREACCESS_STREAMING, w_, h_);
       if (texture_ == nullptr) return false;
@@ -100,6 +122,8 @@ class DisplayDriverSDL : public DisplayDriver<RGB_T> {
  protected:
   size_t w_ = 0;
   size_t h_ = 0;
+  float scale_ = 1.0f;
+  const char* title_ = "RGB565 Display";
   SDL_Window* window_ = nullptr;
   SDL_Renderer* renderer_ = nullptr;
   SDL_Texture* texture_ = nullptr;
