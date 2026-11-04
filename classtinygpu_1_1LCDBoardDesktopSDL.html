@@ -89,8 +89,8 @@ Inheritance diagram for LCDBoardDesktopSDL:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1LCDBoardDesktopSDL__inherit__graph.png" border="0" usemap="#aLCDBoardDesktopSDL_inherit__map" alt="Inheritance graph"/></div>
 <map name="aLCDBoardDesktopSDL_inherit__map" id="aLCDBoardDesktopSDL_inherit__map">
-<area shape="rect" title="Desktop SDL2 window standing in for a physical LCD board. Window size is set at construction time (de..." alt="" coords="5,79,171,104"/>
-<area shape="rect" href="classtinygpu_1_1LCDBoard.html" title=" " alt="" coords="45,5,131,31"/>
+<area shape="rect" title="Desktop SDL2 window standing in for a physical LCD board. Window size is set at construction time (de..." alt="" coords="5,81,170,109"/>
+<area shape="rect" href="classtinygpu_1_1LCDBoard.html" title=" " alt="" coords="45,5,130,33"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -98,8 +98,8 @@ Collaboration diagram for LCDBoardDesktopSDL:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1LCDBoardDesktopSDL__coll__graph.png" border="0" usemap="#aLCDBoardDesktopSDL_coll__map" alt="Collaboration graph"/></div>
 <map name="aLCDBoardDesktopSDL_coll__map" id="aLCDBoardDesktopSDL_coll__map">
-<area shape="rect" title="Desktop SDL2 window standing in for a physical LCD board. Window size is set at construction time (de..." alt="" coords="5,79,171,104"/>
-<area shape="rect" href="classtinygpu_1_1LCDBoard.html" title=" " alt="" coords="45,5,131,31"/>
+<area shape="rect" title="Desktop SDL2 window standing in for a physical LCD board. Window size is set at construction time (de..." alt="" coords="5,81,170,109"/>
+<area shape="rect" href="classtinygpu_1_1LCDBoard.html" title=" " alt="" coords="45,5,130,33"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -107,6 +107,11 @@ Collaboration diagram for LCDBoardDesktopSDL:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af34c0f85d8409f227acd9fefa64f92a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#af34c0f85d8409f227acd9fefa64f92a4">LCDBoardDesktopSDL</a> (size_t <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#ac39656d862f5a4a39182559bbf7c740b">width</a>=320, size_t <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#a715f3df3dc638de8b40076ada0b54a89">height</a>=240)</td></tr>
 <tr class="separator:af34c0f85d8409f227acd9fefa64f92a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7f941af079f26c306ef54824d140936"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#ae7f941af079f26c306ef54824d140936">setScale</a> (float scale)</td></tr>
+<tr class="separator:ae7f941af079f26c306ef54824d140936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acce946de612c75a27238ad2442c688a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#acce946de612c75a27238ad2442c688a0">setTitle</a> (const char *title)</td></tr>
+<tr class="memdesc:acce946de612c75a27238ad2442c688a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Title of the window (before <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#acba365cc28eb702040c382646cfb0a7a" title="Opens the SDL window and starts mouse-as-touch tracking.">begin()</a>).  <br /></td></tr>
+<tr class="separator:acce946de612c75a27238ad2442c688a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acba365cc28eb702040c382646cfb0a7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#acba365cc28eb702040c382646cfb0a7a">begin</a> () override</td></tr>
 <tr class="memdesc:acba365cc28eb702040c382646cfb0a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the SDL window and starts mouse-as-touch tracking.  <br /></td></tr>
 <tr class="separator:acba365cc28eb702040c382646cfb0a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -340,6 +345,61 @@ Public Member Functions</h2></td></tr>
 <p>No LED on this backend - every field is -1. </p>
 
 <p>Implements <a class="el" href="classtinygpu_1_1LCDBoard.html#ae70a3af0def75e689134ca2e60cb98e4">LCDBoard</a>.</p>
+
+</div>
+</div>
+<a id="ae7f941af079f26c306ef54824d140936" name="ae7f941af079f26c306ef54824d140936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7f941af079f26c306ef54824d140936">&#9670;&#160;</a></span>setScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setScale </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Size of the window as a multiple of the display, e.g. 1.5 or 2 (before <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#acba365cc28eb702040c382646cfb0a7a" title="Opens the SDL window and starts mouse-as-touch tracking.">begin()</a>); the environment variable TINYGPU_SDL_SCALE takes precedence. </p>
+
+</div>
+</div>
+<a id="acce946de612c75a27238ad2442c688a0" name="acce946de612c75a27238ad2442c688a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acce946de612c75a27238ad2442c688a0">&#9670;&#160;</a></span>setTitle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setTitle </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>title</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Title of the window (before <a class="el" href="classtinygpu_1_1LCDBoardDesktopSDL.html#acba365cc28eb702040c382646cfb0a7a" title="Opens the SDL window and starts mouse-as-touch tracking.">begin()</a>). </p>
 
 </div>
 </div>

@@ -75,6 +75,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classtinygpu_1_1TouchDriverSDL-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">TouchDriverSDL Class Reference</div></div>
 </div><!--header-->
@@ -89,8 +90,8 @@ Inheritance diagram for TouchDriverSDL:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1TouchDriverSDL__inherit__graph.png" border="0" usemap="#aTouchDriverSDL_inherit__map" alt="Inheritance graph"/></div>
 <map name="aTouchDriverSDL_inherit__map" id="aTouchDriverSDL_inherit__map">
-<area shape="rect" title="Maps the desktop mouse to a TouchDriver, for exercising touch&#45;driven UI (buttons, sliders,..." alt="" coords="5,79,129,104"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="18,5,117,31"/>
+<area shape="rect" title="Maps the desktop mouse to a TouchDriver, for exercising touch&#45;driven UI (buttons, sliders,..." alt="" coords="5,81,129,109"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="18,5,116,33"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -98,9 +99,9 @@ Collaboration diagram for TouchDriverSDL:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1TouchDriverSDL__coll__graph.png" border="0" usemap="#aTouchDriverSDL_coll__map" alt="Collaboration graph"/></div>
 <map name="aTouchDriverSDL_coll__map" id="aTouchDriverSDL_coll__map">
-<area shape="rect" title="Maps the desktop mouse to a TouchDriver, for exercising touch&#45;driven UI (buttons, sliders,..." alt="" coords="5,168,129,193"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="18,93,117,119"/>
-<area shape="rect" href="structtinygpu_1_1CalibrationData.html" title="Touch calibration configuration." alt="" coords="5,5,129,31"/>
+<area shape="rect" title="Maps the desktop mouse to a TouchDriver, for exercising touch&#45;driven UI (buttons, sliders,..." alt="" coords="5,175,129,203"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="18,98,116,126"/>
+<area shape="rect" href="structtinygpu_1_1CalibrationData.html" title="Touch calibration configuration." alt="" coords="5,5,129,33"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -144,6 +145,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ade3ebde0f4a9fbe9bedd38618146b1a9 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriver.html#ade3ebde0f4a9fbe9bedd38618146b1a9">hasCalibration</a> () const</td></tr>
 <tr class="separator:ade3ebde0f4a9fbe9bedd38618146b1a9 inherit pub_methods_classtinygpu_1_1TouchDriver"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a769a821971e98910b7d6d2a4385e9d19"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1TouchDriverSDL.html#a769a821971e98910b7d6d2a4385e9d19">windowToDisplay</a> (int &amp;x, int &amp;y)</td></tr>
+<tr class="separator:a769a821971e98910b7d6d2a4385e9d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classtinygpu_1_1TouchDriver"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtinygpu_1_1TouchDriver')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtinygpu_1_1TouchDriver.html">TouchDriver</a></td></tr>
@@ -170,6 +176,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Maps the desktop mouse to a <a class="el" href="classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers.">TouchDriver</a>, for exercising touch-driven UI (buttons, sliders, ...) on the SDL desktop backend without any physical touch hardware. </p>
 <p>The left mouse button stands in for a finger: button down = touched, cursor position = touch point. SDL_QUIT (closing the window) exits the process, since there is no hardware equivalent to hand back to the sketch.</p>
+<p>When the window is larger than the display (<a class="el" href="classtinygpu_1_1DisplayDriverSDL.html#ae7f941af079f26c306ef54824d140936">DisplayDriverSDL::setScale()</a>, a resized window), the mouse position is mapped back to display pixels.</p>
 <p>Like every <a class="el" href="classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers.">TouchDriver</a>, <a class="el" href="classtinygpu_1_1TouchDriverSDL.html#a03619dc33b1f9a8b9ef4b44e7b301507" title="Return whether the panel currently appears touched.">isTouched()</a> and <a class="el" href="classtinygpu_1_1TouchDriverSDL.html#a338a8285ece3265617760ce276c71109" title="Read the current touch point.">getPoint()</a> do not implicitly loop or block. <a class="el" href="classtinygpu_1_1TouchDriverSDL.html#a03619dc33b1f9a8b9ef4b44e7b301507" title="Return whether the panel currently appears touched.">isTouched()</a> is where the SDL event queue is drained (via SDL_PollEvent), so - as with the other drivers in this file - call it exactly once per loop() iteration. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa02f521d8052fa0e74b37a4995b1d2d8" name="aa02f521d8052fa0e74b37a4995b1d2d8"></a>
@@ -286,6 +293,43 @@ Additional Inherited Members</h2></td></tr>
 <p>For controllers without an IRQ pin this may perform a controller read. </p>
 
 <p>Implements <a class="el" href="classtinygpu_1_1TouchDriver.html#a29b2ef84d2fa0b850b4a3cbcee215554">TouchDriver</a>.</p>
+
+</div>
+</div>
+<a id="a769a821971e98910b7d6d2a4385e9d19" name="a769a821971e98910b7d6d2a4385e9d19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a769a821971e98910b7d6d2a4385e9d19">&#9670;&#160;</a></span>windowToDisplay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void windowToDisplay </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Window coordinates -&gt; display coordinates (the renderer of the window under the mouse has the display size as logical size, see <a class="el" href="classtinygpu_1_1DisplayDriverSDL.html" title="Display class for rendering a Surface&lt;RGB565&gt; using the SDL2 library. This class can be used to displ...">DisplayDriverSDL</a>); positions outside the display are clamped. </p>
 
 </div>
 </div>

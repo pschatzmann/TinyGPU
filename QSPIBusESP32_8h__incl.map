@@ -1,10 +1,10 @@
 <map id="src/TinyGPU/Abstractions/QSPIBusESP32.h" name="src/TinyGPU/Abstractions/QSPIBusESP32.h">
-<area shape="rect" id="node1" title=" " alt="" coords="199,5,385,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="11,181,82,207"/>
-<area shape="rect" id="node3" title=" " alt="" coords="26,101,97,126"/>
-<area shape="rect" id="node4" href="$IQSPIBus_8h.html" title=" " alt="" coords="121,93,284,133"/>
-<area shape="rect" id="node6" title=" " alt="" coords="308,101,455,126"/>
-<area shape="rect" id="node7" title=" " alt="" coords="479,101,607,126"/>
-<area shape="rect" id="node8" title=" " alt="" coords="631,101,777,126"/>
-<area shape="rect" id="node5" title=" " alt="" coords="165,181,240,207"/>
+<area shape="rect" id="node1" title=" " alt="" coords="197,5,383,50"/>
+<area shape="rect" id="node2" title=" " alt="" coords="12,191,82,218"/>
+<area shape="rect" id="node3" title=" " alt="" coords="25,106,96,134"/>
+<area shape="rect" id="node4" href="$IQSPIBus_8h.html" title=" " alt="" coords="119,98,282,143"/>
+<area shape="rect" id="node6" title=" " alt="" coords="306,106,452,134"/>
+<area shape="rect" id="node7" title=" " alt="" coords="477,106,604,134"/>
+<area shape="rect" id="node8" title=" " alt="" coords="628,106,773,134"/>
+<area shape="rect" id="node5" title=" " alt="" coords="164,191,237,218"/>
 </map>

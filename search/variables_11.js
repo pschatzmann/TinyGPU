@@ -7,8 +7,9 @@ var searchData=
   ['target_5f_4',['target_',['../classtinygpu_1_1BMPParser.html#ac65fa784ca9f787c998c1f01a9c98510',1,'tinygpu::BMPParser::target_()'],['../classtinygpu_1_1JPEGParser.html#ac65fa784ca9f787c998c1f01a9c98510',1,'tinygpu::JPEGParser::target_()']]],
   ['texture_5f_5',['texture_',['../classtinygpu_1_1DisplayDriverSDL.html#a0c0ec71f6b73fa37dbfef169f1fb3ae1',1,'tinygpu::DisplayDriverSDL']]],
   ['tft_5f_6',['tft_',['../classtinygpu_1_1DisplayDriverTFTeSPI.html#ac277032a78edb7c0c2d5924791bf3353',1,'tinygpu::DisplayDriverTFTeSPI']]],
-  ['topdown_5f_7',['topDown_',['../classtinygpu_1_1BMPParser.html#a1b85d888f989e2b489df21ca00bde552',1,'tinygpu::BMPParser']]],
-  ['touch_5fdriver_8',['touch_driver',['../classLVGLDriver.html#a0d61ad4e4f51f862ac50c8c777b2e656',1,'LVGLDriver']]],
-  ['transformedsprite_9',['transformedSprite',['../structtinygpu_1_1SpriteInfo.html#a234c549621bff6d06f9c0cb2ec697a2c',1,'tinygpu::SpriteInfo']]],
-  ['type_10',['type',['../structtinygpu_1_1GestureEvent.html#a9c6d77b3474d62744d429613c66ab063',1,'tinygpu::GestureEvent']]]
+  ['title_5f_7',['title_',['../classtinygpu_1_1DisplayDriverSDL.html#ae1b34636e6eab38b8ca9e958f7590a73',1,'tinygpu::DisplayDriverSDL']]],
+  ['topdown_5f_8',['topDown_',['../classtinygpu_1_1BMPParser.html#a1b85d888f989e2b489df21ca00bde552',1,'tinygpu::BMPParser']]],
+  ['touch_5fdriver_9',['touch_driver',['../classLVGLDriver.html#a0d61ad4e4f51f862ac50c8c777b2e656',1,'LVGLDriver']]],
+  ['transformedsprite_10',['transformedSprite',['../structtinygpu_1_1SpriteInfo.html#a234c549621bff6d06f9c0cb2ec697a2c',1,'tinygpu::SpriteInfo']]],
+  ['type_11',['type',['../structtinygpu_1_1GestureEvent.html#a9c6d77b3474d62744d429613c66ab063',1,'tinygpu::GestureEvent']]]
 ];

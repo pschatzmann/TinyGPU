@@ -272,65 +272,66 @@ $(function() {
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>      <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    }</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    target_-&gt;drawText(<span class="keyword">static_cast</span>&lt;int16_t&gt;(currentX_),</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                      <span class="keyword">static_cast</span>&lt;int16_t&gt;(currentY_), chunk.c_str(),</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                      foregroundColor_, backgroundColor_, <span class="keyword">false</span>, scale,</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                      spacing);</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    currentX_ += font_-&gt;measureTextWidth(chunk.c_str(), scale, spacing);</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  }</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  size_t pendingSpaceWidth(size_t pendingSpaces) <span class="keyword">const</span> {</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordflow">if</span> (pendingSpaces == 0) {</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    }</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keyword">const</span> std::string spaces(pendingSpaces, <span class="stringliteral">&#39; &#39;</span>);</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keywordflow">return</span> font_-&gt;measureTextWidth(spaces.c_str(), scale, spacing);</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  }</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  <span class="keywordtype">void</span> flushPendingSpaces(size_t&amp; pendingSpaces) {</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="keywordflow">if</span> (pendingSpaces == 0 || isAtLineStart()) {</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>      pendingSpaces = 0;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    }</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="keyword">const</span> size_t spacesWidth = pendingSpaceWidth(pendingSpaces);</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keywordflow">if</span> ((currentX_ + spacesWidth) &gt; drawableRightEdge()) {</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>      nextLine();</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>      pendingSpaces = 0;</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    }</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    printChunk(std::string(pendingSpaces, <span class="stringliteral">&#39; &#39;</span>));</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    pendingSpaces = 0;</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  }</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="keywordtype">void</span> printWord(std::string&amp; word, size_t&amp; pendingSpaces) {</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordflow">if</span> (word.empty()) {</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    }</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keyword">const</span> std::string leadingSpaces =</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        isAtLineStart() ? std::string() : std::string(pendingSpaces, <span class="stringliteral">&#39; &#39;</span>);</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keyword">const</span> std::string chunk = leadingSpaces + word;</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keyword">const</span> size_t chunkWidth =</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        font_-&gt;measureTextWidth(chunk.c_str(), scale, spacing);</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordflow">if</span> (!isAtLineStart() &amp;&amp; (currentX_ + chunkWidth) &gt; drawableRightEdge()) {</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>      nextLine();</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    }</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keywordflow">if</span> (!isAtLineStart() &amp;&amp; pendingSpaces &gt; 0) {</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>      printChunk(leadingSpaces);</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    }</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    printChunk(word);</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    pendingSpaces = 0;</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    word.clear();</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  }</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>};</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>}  <span class="comment">// namespace tinygpu</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="comment">// draw with the same font that measures the chunk: the target&#39;s own font</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="comment">// (target_-&gt;drawText()) may differ, which misplaces the words</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    font_-&gt;drawText(*target_, <span class="keyword">static_cast</span>&lt;int16_t&gt;(currentX_),</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                    <span class="keyword">static_cast</span>&lt;int16_t&gt;(currentY_), chunk.c_str(),</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                    foregroundColor_, backgroundColor_, <span class="keyword">false</span>, scale, spacing);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    currentX_ += font_-&gt;measureTextWidth(chunk.c_str(), scale, spacing);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  size_t pendingSpaceWidth(size_t pendingSpaces) <span class="keyword">const</span> {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordflow">if</span> (pendingSpaces == 0) {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    }</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keyword">const</span> std::string spaces(pendingSpaces, <span class="stringliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keywordflow">return</span> font_-&gt;measureTextWidth(spaces.c_str(), scale, spacing);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  }</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  <span class="keywordtype">void</span> flushPendingSpaces(size_t&amp; pendingSpaces) {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keywordflow">if</span> (pendingSpaces == 0 || isAtLineStart()) {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>      pendingSpaces = 0;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    }</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keyword">const</span> size_t spacesWidth = pendingSpaceWidth(pendingSpaces);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="keywordflow">if</span> ((currentX_ + spacesWidth) &gt; drawableRightEdge()) {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>      nextLine();</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>      pendingSpaces = 0;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    }</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    printChunk(std::string(pendingSpaces, <span class="stringliteral">&#39; &#39;</span>));</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    pendingSpaces = 0;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  }</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  <span class="keywordtype">void</span> printWord(std::string&amp; word, size_t&amp; pendingSpaces) {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordflow">if</span> (word.empty()) {</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    }</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keyword">const</span> std::string leadingSpaces =</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        isAtLineStart() ? std::string() : std::string(pendingSpaces, <span class="stringliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keyword">const</span> std::string chunk = leadingSpaces + word;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keyword">const</span> size_t chunkWidth =</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        font_-&gt;measureTextWidth(chunk.c_str(), scale, spacing);</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="keywordflow">if</span> (!isAtLineStart() &amp;&amp; (currentX_ + chunkWidth) &gt; drawableRightEdge()) {</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>      nextLine();</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    }</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keywordflow">if</span> (!isAtLineStart() &amp;&amp; pendingSpaces &gt; 0) {</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>      printChunk(leadingSpaces);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    }</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    printChunk(word);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    pendingSpaces = 0;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    word.clear();</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>};</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>}  <span class="comment">// namespace tinygpu</span></div>
 <div class="ttc" id="aclasstinygpu_1_1IFont_html"><div class="ttname"><a href="classtinygpu_1_1IFont.html">tinygpu::IFont</a></div><div class="ttdoc">Font rendering interface for TinyGPU-compatible framebuffers.</div><div class="ttdef"><b>Definition:</b> IFont.h:19</div></div>
 <div class="ttc" id="aclasstinygpu_1_1LinePrinter_html"><div class="ttname"><a href="classtinygpu_1_1LinePrinter.html">tinygpu::LinePrinter</a></div><div class="ttdoc">Helper for printing wrapped lines of text onto a TinyGPU target.</div><div class="ttdef"><b>Definition:</b> LinePrinter.h:17</div></div>
 <div class="ttc" id="aclasstinygpu_1_1LinePrinter_html_a0246f76c92171538686626e0d45e9cfd"><div class="ttname"><a href="classtinygpu_1_1LinePrinter.html#a0246f76c92171538686626e0d45e9cfd">tinygpu::LinePrinter::LinePrinter</a></div><div class="ttdeci">LinePrinter()=default</div></div>

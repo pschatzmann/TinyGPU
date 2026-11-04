@@ -1,5 +1,5 @@
 <map id="TouchDriverFT6236" name="TouchDriverFT6236">
-<area shape="rect" id="node1" title="FT6236 / FT6336 capacitive touch controller." alt="" coords="5,168,152,193"/>
-<area shape="rect" id="node2" href="$classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="29,93,128,119"/>
-<area shape="rect" id="node3" href="$structtinygpu_1_1CalibrationData.html" title="Touch calibration configuration." alt="" coords="17,5,141,31"/>
+<area shape="rect" id="node1" title="FT6236 / FT6336 capacitive touch controller." alt="" coords="5,175,151,203"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="29,98,127,126"/>
+<area shape="rect" id="node3" href="$structtinygpu_1_1CalibrationData.html" title="Touch calibration configuration." alt="" coords="16,5,140,33"/>
 </map>

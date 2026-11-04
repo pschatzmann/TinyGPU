@@ -1,9 +1,9 @@
 <map id="src/TinyGPU/IO/AVIWriter.h" name="src/TinyGPU/IO/AVIWriter.h">
-<area shape="rect" id="node1" title=" " alt="" coords="257,5,452,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,225,80,251"/>
-<area shape="rect" id="node3" title=" " alt="" coords="359,225,430,251"/>
-<area shape="rect" id="node4" href="$ISurface_8h.html" title=" " alt="" coords="165,79,365,104"/>
-<area shape="rect" id="node7" title=" " alt="" coords="483,79,547,104"/>
-<area shape="rect" id="node5" title=" " alt="" coords="81,152,149,177"/>
-<area shape="rect" id="node6" href="$RGB565_8h.html" title=" " alt="" coords="173,152,357,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="254,5,448,33"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,232,79,260"/>
+<area shape="rect" id="node3" title=" " alt="" coords="356,232,426,260"/>
+<area shape="rect" id="node4" href="$ISurface_8h.html" title=" " alt="" coords="162,81,362,109"/>
+<area shape="rect" id="node7" title=" " alt="" coords="480,81,543,109"/>
+<area shape="rect" id="node5" title=" " alt="" coords="79,157,146,184"/>
+<area shape="rect" id="node6" href="$RGB565_8h.html" title=" " alt="" coords="170,157,354,184"/>
 </map>
