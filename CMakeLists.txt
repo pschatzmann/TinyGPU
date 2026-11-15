@@ -36,7 +36,14 @@ else()
     set(CMAKE_CXX_STANDARD 17)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-    option(TGPU_BUILD_EXAMPLES "Build Examples" ON)
+    # Examples and the Arduino-Emulator are needed only when TinyGPU is the top-level
+    # project, not when another project adds it with add_subdirectory().
+    if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+        set(TGPU_IS_TOP_LEVEL TRUE)
+    else()
+        set(TGPU_IS_TOP_LEVEL FALSE)
+    endif()
+    option(TGPU_BUILD_EXAMPLES "Build Examples" ${TGPU_IS_TOP_LEVEL})
 
     # Create TinyGPU as a header-only interface library. No Arduino-Emulator
     # dependency here: TinyGPU's own headers no longer require Arduino.h to
@@ -46,7 +53,18 @@ else()
     # sketches (setup()/loop(), Serial, ...) that need the emulator's
     # runtime, so it's fetched below only when they're built.
     add_library(TinyGPU INTERFACE)
+    add_library(TinyGPU::TinyGPU ALIAS TinyGPU)
     target_include_directories(TinyGPU INTERFACE  ${CMAKE_CURRENT_SOURCE_DIR}/src)
+    target_compile_features(TinyGPU INTERFACE cxx_std_17)
+
+    # The desktop window (Boards/LCDBoardsSDL.h) uses SDL2. Linked when it is installed.
+    find_package(PkgConfig QUIET)
+    if(PkgConfig_FOUND)
+        pkg_check_modules(TGPU_SDL2 IMPORTED_TARGET sdl2)
+        if(TGPU_SDL2_FOUND)
+            target_link_libraries(TinyGPU INTERFACE PkgConfig::TGPU_SDL2)
+        endif()
+    endif()
 
     # Optionally, if you want to build examples:
     if(TGPU_BUILD_EXAMPLES)

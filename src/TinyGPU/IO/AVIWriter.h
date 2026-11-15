@@ -4,7 +4,25 @@
 #include <stdint.h>
 
 #include "TinyGPU/Surface/ISurface.h"
-#include "Print.h"
+
+#if defined(ARDUINO) || __has_include(<Print.h>)
+#include <Print.h>
+#else
+namespace tinygpu {
+/// Byte output used by AVIWriter when no Arduino API is available (plain desktop builds).
+class Print {
+ public:
+  virtual ~Print() {}
+  virtual size_t write(uint8_t c) = 0;
+  size_t write(const uint8_t* buf, size_t n) {
+    size_t written = 0;
+    for (size_t i = 0; i < n; ++i) written += write(buf[i]);
+    return written;
+  }
+  virtual void flush() {}
+};
+}  // namespace tinygpu
+#endif
 
 namespace tinygpu {
 
