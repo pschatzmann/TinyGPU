@@ -1,20 +1,4 @@
 var searchData=
 [
-  ['_7eaviwriter_0',['~AVIWriter',['../classtinygpu_1_1AVIWriter.html#ae96aea46e0b482f3f91ee141a4fd64f2',1,'tinygpu::AVIWriter']]],
-  ['_7edisplaydriver_1',['~DisplayDriver',['../classtinygpu_1_1DisplayDriver.html#ac023e3f44bf39c02975c0430b73a51cd',1,'tinygpu::DisplayDriver']]],
-  ['_7edisplaydriverdsi_2',['~DisplayDriverDSI',['../classtinygpu_1_1DisplayDriverDSI.html#aa1242927351cb167b2510a2febed2509',1,'tinygpu::DisplayDriverDSI']]],
-  ['_7edisplaydriverparallel8esp32_3',['~DisplayDriverParallel8ESP32',['../classtinygpu_1_1DisplayDriverParallel8ESP32.html#a4bb5b9337fa8209849b205d4d4029366',1,'tinygpu::DisplayDriverParallel8ESP32']]],
-  ['_7edisplaydriverparallel8rp2040_4',['~DisplayDriverParallel8RP2040',['../classtinygpu_1_1DisplayDriverParallel8RP2040.html#aff27303dcdcb6e3e3aa63270ade3f8df',1,'tinygpu::DisplayDriverParallel8RP2040']]],
-  ['_7edisplaydriverqspi_5',['~DisplayDriverQSPI',['../classtinygpu_1_1DisplayDriverQSPI.html#a249fddbd55d5d17a3cf1078f5e379c73',1,'tinygpu::DisplayDriverQSPI']]],
-  ['_7edsibusesp32_6',['~DSIBusESP32',['../classtinygpu_1_1DSIBusESP32.html#ad7ed6fae43af099de255e3c1a1f7112c',1,'tinygpu::DSIBusESP32']]],
-  ['_7eidsibus_7',['~IDSIBus',['../classtinygpu_1_1IDSIBus.html#a7a8028c21f90b6378f750539963507e1',1,'tinygpu::IDSIBus']]],
-  ['_7eifont_8',['~IFont',['../classtinygpu_1_1IFont.html#a93d88c31a0bcf3dff2df63920e4910f1',1,'tinygpu::IFont']]],
-  ['_7eiqspibus_9',['~IQSPIBus',['../classtinygpu_1_1IQSPIBus.html#a1bbf5aed8eb7fe35b63ec1011aaf4fb6',1,'tinygpu::IQSPIBus']]],
-  ['_7eisurface_10',['~ISurface',['../classtinygpu_1_1ISurface.html#a09eda0603dcc9eb48e0fd1451fa00530',1,'tinygpu::ISurface']]],
-  ['_7elcdboard_11',['~LCDBoard',['../classtinygpu_1_1LCDBoard.html#a88708a0cf824663e6c85d9433040941f',1,'tinygpu::LCDBoard']]],
-  ['_7elcdboardguitionesp32h4_5f4_5f3display_12',['~LCDBoardGuitionESP32H4_4_3Display',['../classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html#ac148a8c00cc74b63af94e5a0c672a702',1,'tinygpu::LCDBoardGuitionESP32H4_4_3Display']]],
-  ['_7eqspibusesp32_13',['~QSPIBusESP32',['../classtinygpu_1_1QSPIBusESP32.html#ad2f62f91685d549f502c8b870b3f2f59',1,'tinygpu::QSPIBusESP32']]],
-  ['_7espriteinfo_14',['~SpriteInfo',['../structtinygpu_1_1SpriteInfo.html#a664aa01ee5714fe247a989e37cf66a44',1,'tinygpu::SpriteInfo']]],
-  ['_7esurfacebase_15',['~SurfaceBase',['../classtinygpu_1_1SurfaceBase.html#ac5699d68640e4be85a501e2994b8d67e',1,'tinygpu::SurfaceBase']]],
-  ['_7etouchdriver_16',['~TouchDriver',['../classtinygpu_1_1TouchDriver.html#ad1a235893f2df04c3413465c6a12e5ae',1,'tinygpu::TouchDriver']]]
+  ['zlib_0',['zlib',['../classtinygpu_1_1codec_1_1Inflate.html#a9a05322f3442b78ab73b976efe2745c7',1,'tinygpu::codec::Inflate']]]
 ];

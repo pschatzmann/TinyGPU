@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['r_0',['r',['../structtinygpu_1_1LEDPins.html#a330583c10f4679f1e456632fb3c486b9',1,'tinygpu::LEDPins']]],
+  ['r_0',['r',['../structtinygpu_1_1codec_1_1Rgb8.html#a4c5c6ceb8ed33456261fa907136e0c3a',1,'tinygpu::codec::Rgb8::r()'],['../structtinygpu_1_1LEDPins.html#a330583c10f4679f1e456632fb3c486b9',1,'tinygpu::LEDPins::r()']]],
   ['rawxmax_1',['rawXMax',['../structtinygpu_1_1CalibrationData.html#a08c458c34802d841bebc853cf839c4dd',1,'tinygpu::CalibrationData']]],
   ['rawxmin_2',['rawXMin',['../structtinygpu_1_1CalibrationData.html#ab0993c57bf9200e7b89dc7a1091da388',1,'tinygpu::CalibrationData']]],
   ['rawymax_3',['rawYMax',['../structtinygpu_1_1CalibrationData.html#aabf3f46206cf0ab9f67a20b766e663b6',1,'tinygpu::CalibrationData']]],

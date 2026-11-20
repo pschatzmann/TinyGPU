@@ -13,9 +13,10 @@ var searchData=
   ['ili9341driver8080rp2040_10',['ILI9341Driver8080RP2040',['../classtinygpu_1_1ILI9341Driver8080RP2040.html',1,'tinygpu']]],
   ['ili9341driver_3c_20tinygpu_3a_3argb565_20_3e_11',['ILI9341Driver&lt; tinygpu::RGB565 &gt;',['../classtinygpu_1_1ILI9341Driver.html',1,'tinygpu']]],
   ['ili9342driver_12',['ILI9342Driver',['../classtinygpu_1_1ILI9342Driver.html',1,'tinygpu']]],
-  ['iqspibus_13',['IQSPIBus',['../classtinygpu_1_1IQSPIBus.html',1,'tinygpu']]],
-  ['isurface_14',['ISurface',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]],
-  ['isurface_3c_20bool_20_3e_15',['ISurface&lt; bool &gt;',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]],
-  ['isurface_3c_20pixelt_20_3e_16',['ISurface&lt; PixelT &gt;',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]],
-  ['isurface_3c_20rgb565_20_3e_17',['ISurface&lt; RGB565 &gt;',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]]
+  ['inflate_13',['Inflate',['../classtinygpu_1_1codec_1_1Inflate.html',1,'tinygpu::codec']]],
+  ['iqspibus_14',['IQSPIBus',['../classtinygpu_1_1IQSPIBus.html',1,'tinygpu']]],
+  ['isurface_15',['ISurface',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]],
+  ['isurface_3c_20bool_20_3e_16',['ISurface&lt; bool &gt;',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]],
+  ['isurface_3c_20pixelt_20_3e_17',['ISurface&lt; PixelT &gt;',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]],
+  ['isurface_3c_20rgb565_20_3e_18',['ISurface&lt; RGB565 &gt;',['../classtinygpu_1_1ISurface.html',1,'tinygpu']]]
 ];
