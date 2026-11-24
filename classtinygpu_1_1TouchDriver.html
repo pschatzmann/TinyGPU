@@ -92,15 +92,16 @@ Inheritance diagram for TouchDriver:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtinygpu_1_1TouchDriver__inherit__graph.png" border="0" usemap="#aTouchDriver_inherit__map" alt="Inheritance graph"/></div>
 <map name="aTouchDriver_inherit__map" id="aTouchDriver_inherit__map">
-<area shape="rect" title="Base class for touch controllers." alt="" coords="5,188,104,216"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriverBitBang.html" title="Bit&#45;banged 4&#45;wire resistive touch panel driver." alt="" coords="197,5,346,33"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriverCST816S.html" title="CST816S capacitive touch controller." alt="" coords="194,57,349,85"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriverFT6236.html" title="FT6236 / FT6336 capacitive touch controller." alt="" coords="199,109,344,137"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriverGT911.html" title="GT911 capacitive touch controller." alt="" coords="201,161,342,189"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriverSDL.html" title="Maps the desktop mouse to a TouchDriver, for exercising touch&#45;driven UI (buttons, sliders,..." alt="" coords="210,213,333,241"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriverSTM32F723Discovery.html" title="TouchDriver wrapping the stm32f723&#45;disco library&#39;s TouchScreen class (on&#45;board FT6x06/FT3x67 capaciti..." alt="" coords="152,265,391,293"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriverTFTeSPI.html" title="Touch driver that reads through Bodmer&#39;s TFT_eSPI (https://github.com/Bodmer/TFT_eSPI) resistive touc..." alt="" coords="198,317,345,345"/>
-<area shape="rect" href="classtinygpu_1_1TouchDriverXPT2046.html" title="XPT2046 resistive touch controller." alt="" coords="194,369,349,397"/>
+<area shape="rect" title="Base class for touch controllers." alt="" coords="5,213,104,241"/>
+<area shape="rect" href="classtinygpu_1_1RotatedTouch.html" title="A touch controller whose points are in the rotated (UI) coordinates." alt="" coords="217,5,326,33"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriverBitBang.html" title="Bit&#45;banged 4&#45;wire resistive touch panel driver." alt="" coords="197,57,346,85"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriverCST816S.html" title="CST816S capacitive touch controller." alt="" coords="194,109,349,137"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriverFT6236.html" title="FT6236 / FT6336 capacitive touch controller." alt="" coords="199,161,344,189"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriverGT911.html" title="GT911 capacitive touch controller." alt="" coords="201,213,342,241"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriverSDL.html" title="Maps the desktop mouse to a TouchDriver, for exercising touch&#45;driven UI (buttons, sliders,..." alt="" coords="210,265,333,293"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriverSTM32F723Discovery.html" title="TouchDriver wrapping the stm32f723&#45;disco library&#39;s TouchScreen class (on&#45;board FT6x06/FT3x67 capaciti..." alt="" coords="152,317,391,345"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriverTFTeSPI.html" title="Touch driver that reads through Bodmer&#39;s TFT_eSPI (https://github.com/Bodmer/TFT_eSPI) resistive touc..." alt="" coords="198,369,345,397"/>
+<area shape="rect" href="classtinygpu_1_1TouchDriverXPT2046.html" title="XPT2046 resistive touch controller." alt="" coords="194,421,349,449"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -222,7 +223,7 @@ Protected Attributes</h2></td></tr>
 <p>Initialize the controller. </p>
 <p>The driver does NOT initialize the SPI/I2C bus itself. The application is responsible for calling Wire.begin(), SPI.begin(), and configuring any board-specific bus pins. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1TouchDriverSTM32F723Discovery.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverSTM32F723Discovery</a>, <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverXPT2046</a>, <a class="el" href="classtinygpu_1_1TouchDriverBitBang.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverBitBang</a>, <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverFT6236</a>, <a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverCST816S</a>, <a class="el" href="classtinygpu_1_1TouchDriverGT911.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverGT911</a>, <a class="el" href="classtinygpu_1_1TouchDriverSDL.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverSDL</a>, and <a class="el" href="classtinygpu_1_1TouchDriverTFTeSPI.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverTFTeSPI</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1RotatedTouch.html#acba365cc28eb702040c382646cfb0a7a">RotatedTouch</a>, <a class="el" href="classtinygpu_1_1TouchDriverSTM32F723Discovery.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverSTM32F723Discovery</a>, <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverXPT2046</a>, <a class="el" href="classtinygpu_1_1TouchDriverBitBang.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverBitBang</a>, <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverFT6236</a>, <a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverCST816S</a>, <a class="el" href="classtinygpu_1_1TouchDriverGT911.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverGT911</a>, <a class="el" href="classtinygpu_1_1TouchDriverSDL.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverSDL</a>, and <a class="el" href="classtinygpu_1_1TouchDriverTFTeSPI.html#acba365cc28eb702040c382646cfb0a7a">TouchDriverTFTeSPI</a>.</p>
 
 </div>
 </div>
@@ -322,7 +323,7 @@ Protected Attributes</h2></td></tr>
 <p>Read the current touch point. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if a valid touch point was obtained. </dd></dl>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1TouchDriverSTM32F723Discovery.html#a338a8285ece3265617760ce276c71109">TouchDriverSTM32F723Discovery</a>, <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html#a338a8285ece3265617760ce276c71109">TouchDriverXPT2046</a>, <a class="el" href="classtinygpu_1_1TouchDriverBitBang.html#a338a8285ece3265617760ce276c71109">TouchDriverBitBang</a>, <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html#a338a8285ece3265617760ce276c71109">TouchDriverFT6236</a>, <a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#a338a8285ece3265617760ce276c71109">TouchDriverCST816S</a>, <a class="el" href="classtinygpu_1_1TouchDriverGT911.html#a338a8285ece3265617760ce276c71109">TouchDriverGT911</a>, <a class="el" href="classtinygpu_1_1TouchDriverSDL.html#a338a8285ece3265617760ce276c71109">TouchDriverSDL</a>, and <a class="el" href="classtinygpu_1_1TouchDriverTFTeSPI.html#a338a8285ece3265617760ce276c71109">TouchDriverTFTeSPI</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1RotatedTouch.html#a338a8285ece3265617760ce276c71109">RotatedTouch</a>, <a class="el" href="classtinygpu_1_1TouchDriverSTM32F723Discovery.html#a338a8285ece3265617760ce276c71109">TouchDriverSTM32F723Discovery</a>, <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html#a338a8285ece3265617760ce276c71109">TouchDriverXPT2046</a>, <a class="el" href="classtinygpu_1_1TouchDriverBitBang.html#a338a8285ece3265617760ce276c71109">TouchDriverBitBang</a>, <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html#a338a8285ece3265617760ce276c71109">TouchDriverFT6236</a>, <a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#a338a8285ece3265617760ce276c71109">TouchDriverCST816S</a>, <a class="el" href="classtinygpu_1_1TouchDriverGT911.html#a338a8285ece3265617760ce276c71109">TouchDriverGT911</a>, <a class="el" href="classtinygpu_1_1TouchDriverSDL.html#a338a8285ece3265617760ce276c71109">TouchDriverSDL</a>, and <a class="el" href="classtinygpu_1_1TouchDriverTFTeSPI.html#a338a8285ece3265617760ce276c71109">TouchDriverTFTeSPI</a>.</p>
 
 </div>
 </div>
@@ -433,7 +434,7 @@ Protected Attributes</h2></td></tr>
 <p>Return whether the panel currently appears touched. </p>
 <p>For controllers without an IRQ pin this may perform a controller read. </p>
 
-<p>Implemented in <a class="el" href="classtinygpu_1_1TouchDriverSTM32F723Discovery.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverSTM32F723Discovery</a>, <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverXPT2046</a>, <a class="el" href="classtinygpu_1_1TouchDriverBitBang.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverBitBang</a>, <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverFT6236</a>, <a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverCST816S</a>, <a class="el" href="classtinygpu_1_1TouchDriverGT911.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverGT911</a>, <a class="el" href="classtinygpu_1_1TouchDriverSDL.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverSDL</a>, and <a class="el" href="classtinygpu_1_1TouchDriverTFTeSPI.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverTFTeSPI</a>.</p>
+<p>Implemented in <a class="el" href="classtinygpu_1_1RotatedTouch.html#a03619dc33b1f9a8b9ef4b44e7b301507">RotatedTouch</a>, <a class="el" href="classtinygpu_1_1TouchDriverSTM32F723Discovery.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverSTM32F723Discovery</a>, <a class="el" href="classtinygpu_1_1TouchDriverXPT2046.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverXPT2046</a>, <a class="el" href="classtinygpu_1_1TouchDriverBitBang.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverBitBang</a>, <a class="el" href="classtinygpu_1_1TouchDriverFT6236.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverFT6236</a>, <a class="el" href="classtinygpu_1_1TouchDriverCST816S.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverCST816S</a>, <a class="el" href="classtinygpu_1_1TouchDriverGT911.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverGT911</a>, <a class="el" href="classtinygpu_1_1TouchDriverSDL.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverSDL</a>, and <a class="el" href="classtinygpu_1_1TouchDriverTFTeSPI.html#a03619dc33b1f9a8b9ef4b44e7b301507">TouchDriverTFTeSPI</a>.</p>
 
 </div>
 </div>

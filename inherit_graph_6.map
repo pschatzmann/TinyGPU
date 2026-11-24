@@ -1,5 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,32,198,60"/>
+<area shape="rect" id="node1" href="$classtinygpu_1_1DisplayDriver.html" title=" " alt="" coords="5,57,198,85"/>
 <area shape="rect" id="node2" href="$classtinygpu_1_1DisplayDriverSTM32F723Discovery.html" title="DisplayDriver&lt;RGB565&gt; wrapping the stm32f723&#45;disco library&#39;s LCD class &#45; the library owns the panel&#39;s..." alt="" coords="246,5,497,33"/>
-<area shape="rect" id="node3" href="$classtinygpu_1_1ST7735DriverHardwareSPI.html" title="Hardware&#45;SPI4 ST7735 driver for the WeAct MiniSTM32H7xx&#39;s bundled 0.96&quot; 160x80 TFT." alt="" coords="275,57,468,85"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1RotatedDisplay.html" title=" " alt="" coords="311,57,432,85"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1ST7735DriverHardwareSPI.html" title="Hardware&#45;SPI4 ST7735 driver for the WeAct MiniSTM32H7xx&#39;s bundled 0.96&quot; 160x80 TFT." alt="" coords="275,109,468,137"/>
 </map>

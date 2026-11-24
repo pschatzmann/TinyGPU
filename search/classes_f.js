@@ -5,5 +5,7 @@ var searchData=
   ['rgb565_2',['RGB565',['../classtinygpu_1_1RGB565.html',1,'tinygpu']]],
   ['rgb666_3',['RGB666',['../classtinygpu_1_1RGB666.html',1,'tinygpu']]],
   ['rgb8_4',['Rgb8',['../structtinygpu_1_1codec_1_1Rgb8.html',1,'tinygpu::codec']]],
-  ['rgb888_5',['RGB888',['../classtinygpu_1_1RGB888.html',1,'tinygpu']]]
+  ['rgb888_5',['RGB888',['../classtinygpu_1_1RGB888.html',1,'tinygpu']]],
+  ['rotateddisplay_6',['RotatedDisplay',['../classtinygpu_1_1RotatedDisplay.html',1,'tinygpu']]],
+  ['rotatedtouch_7',['RotatedTouch',['../classtinygpu_1_1RotatedTouch.html',1,'tinygpu']]]
 ];

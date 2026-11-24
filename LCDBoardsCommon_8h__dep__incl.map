@@ -1,11 +1,12 @@
 <map id="src/TinyGPU/Boards/LCDBoardsCommon.h" name="src/TinyGPU/Boards/LCDBoardsCommon.h">
-<area shape="rect" id="node1" title=" " alt="" coords="441,5,608,50"/>
-<area shape="rect" id="node2" href="$LCDBoardsESP32_8h.html" title="One&#45;call setup for ESP32(&#45;S3) boards from the arduino&#45;audio&#45;tools &quot;Audio Boards&quot; wiki that combine an..." alt="" coords="102,98,251,143"/>
-<area shape="rect" id="node6" href="$LCDBoardsSDL_8h.html" title="LCDBoard for the SDL2 desktop backend &#45; renders to a window via DisplayDriverSDL and maps the mouse t..." alt="" coords="275,98,425,143"/>
-<area shape="rect" id="node7" href="$LCDBoardsSTM32_8h.html" title="One&#45;call setup for STM32duino boards that bundle an LCD, following the same LCDBoard interface as LCD..." alt="" coords="448,98,601,143"/>
-<area shape="rect" id="node8" href="$LCDBoardsSTM32F723Discovery_8h.html" title="LCDBoard backed by the stm32f723&#45;disco Arduino library (https://github.com/pschatzmann/stm32f723&#45;disc..." alt="" coords="625,98,872,143"/>
-<area shape="rect" id="node9" href="$LCDBoardsTFTeSPI_8h.html" title="LCDBoard backed by Bodmer&#39;s TFT_eSPI (https://github.com/Bodmer/TFT_eSPI) instead of one of this libr..." alt="" coords="897,98,1054,143"/>
-<area shape="rect" id="node3" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="102,191,251,235"/>
-<area shape="rect" id="node4" href="$Boards_8h.html" title=" " alt="" coords="5,292,167,320"/>
-<area shape="rect" id="node5" href="$SpriteDisplay_8h.html" title=" " alt="" coords="191,283,344,328"/>
+<area shape="rect" id="node1" title=" " alt="" coords="432,5,600,50"/>
+<area shape="rect" id="node2" href="$LCDBoardRotated_8h.html" title=" " alt="" coords="5,98,158,143"/>
+<area shape="rect" id="node3" href="$LCDBoardsESP32_8h.html" title="One&#45;call setup for ESP32(&#45;S3) boards from the arduino&#45;audio&#45;tools &quot;Audio Boards&quot; wiki that combine an..." alt="" coords="182,98,331,143"/>
+<area shape="rect" id="node7" href="$LCDBoardsSDL_8h.html" title="LCDBoard for the SDL2 desktop backend &#45; renders to a window via DisplayDriverSDL and maps the mouse t..." alt="" coords="355,98,504,143"/>
+<area shape="rect" id="node8" href="$LCDBoardsSTM32_8h.html" title="One&#45;call setup for STM32duino boards that bundle an LCD, following the same LCDBoard interface as LCD..." alt="" coords="528,98,680,143"/>
+<area shape="rect" id="node9" href="$LCDBoardsSTM32F723Discovery_8h.html" title="LCDBoard backed by the stm32f723&#45;disco Arduino library (https://github.com/pschatzmann/stm32f723&#45;disc..." alt="" coords="704,98,952,143"/>
+<area shape="rect" id="node10" href="$LCDBoardsTFTeSPI_8h.html" title="LCDBoard backed by Bodmer&#39;s TFT_eSPI (https://github.com/Bodmer/TFT_eSPI) instead of one of this libr..." alt="" coords="976,98,1134,143"/>
+<area shape="rect" id="node4" href="$LCDBoards_8h.html" title="Platform&#45;independent interface for a board that bundles a display, an optional touch controller,..." alt="" coords="182,191,331,235"/>
+<area shape="rect" id="node5" href="$Boards_8h.html" title=" " alt="" coords="85,292,246,320"/>
+<area shape="rect" id="node6" href="$SpriteDisplay_8h.html" title=" " alt="" coords="270,283,424,328"/>
 </map>

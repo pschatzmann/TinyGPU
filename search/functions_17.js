@@ -13,8 +13,9 @@ var searchData=
   ['_7eisurface_10',['~ISurface',['../classtinygpu_1_1ISurface.html#a09eda0603dcc9eb48e0fd1451fa00530',1,'tinygpu::ISurface']]],
   ['_7elcdboard_11',['~LCDBoard',['../classtinygpu_1_1LCDBoard.html#a88708a0cf824663e6c85d9433040941f',1,'tinygpu::LCDBoard']]],
   ['_7elcdboardguitionesp32h4_5f4_5f3display_12',['~LCDBoardGuitionESP32H4_4_3Display',['../classtinygpu_1_1LCDBoardGuitionESP32H4__4__3Display.html#ac148a8c00cc74b63af94e5a0c672a702',1,'tinygpu::LCDBoardGuitionESP32H4_4_3Display']]],
-  ['_7eqspibusesp32_13',['~QSPIBusESP32',['../classtinygpu_1_1QSPIBusESP32.html#ad2f62f91685d549f502c8b870b3f2f59',1,'tinygpu::QSPIBusESP32']]],
-  ['_7espriteinfo_14',['~SpriteInfo',['../structtinygpu_1_1SpriteInfo.html#a664aa01ee5714fe247a989e37cf66a44',1,'tinygpu::SpriteInfo']]],
-  ['_7esurfacebase_15',['~SurfaceBase',['../classtinygpu_1_1SurfaceBase.html#ac5699d68640e4be85a501e2994b8d67e',1,'tinygpu::SurfaceBase']]],
-  ['_7etouchdriver_16',['~TouchDriver',['../classtinygpu_1_1TouchDriver.html#ad1a235893f2df04c3413465c6a12e5ae',1,'tinygpu::TouchDriver']]]
+  ['_7elcdboardrotated_13',['~LCDBoardRotated',['../classtinygpu_1_1LCDBoardRotated.html#a74b2b0756053422ca147415fbfdcc83c',1,'tinygpu::LCDBoardRotated']]],
+  ['_7eqspibusesp32_14',['~QSPIBusESP32',['../classtinygpu_1_1QSPIBusESP32.html#ad2f62f91685d549f502c8b870b3f2f59',1,'tinygpu::QSPIBusESP32']]],
+  ['_7espriteinfo_15',['~SpriteInfo',['../structtinygpu_1_1SpriteInfo.html#a664aa01ee5714fe247a989e37cf66a44',1,'tinygpu::SpriteInfo']]],
+  ['_7esurfacebase_16',['~SurfaceBase',['../classtinygpu_1_1SurfaceBase.html#ac5699d68640e4be85a501e2994b8d67e',1,'tinygpu::SurfaceBase']]],
+  ['_7etouchdriver_17',['~TouchDriver',['../classtinygpu_1_1TouchDriver.html#ad1a235893f2df04c3413465c6a12e5ae',1,'tinygpu::TouchDriver']]]
 ];

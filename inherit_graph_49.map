@@ -1,11 +1,12 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="5,188,104,216"/>
-<area shape="rect" id="node2" href="$classtinygpu_1_1TouchDriverBitBang.html" title="Bit&#45;banged 4&#45;wire resistive touch panel driver." alt="" coords="197,5,346,33"/>
-<area shape="rect" id="node3" href="$classtinygpu_1_1TouchDriverCST816S.html" title="CST816S capacitive touch controller." alt="" coords="194,57,349,85"/>
-<area shape="rect" id="node4" href="$classtinygpu_1_1TouchDriverFT6236.html" title="FT6236 / FT6336 capacitive touch controller." alt="" coords="199,109,344,137"/>
-<area shape="rect" id="node5" href="$classtinygpu_1_1TouchDriverGT911.html" title="GT911 capacitive touch controller." alt="" coords="201,161,342,189"/>
-<area shape="rect" id="node6" href="$classtinygpu_1_1TouchDriverSDL.html" title="Maps the desktop mouse to a TouchDriver, for exercising touch&#45;driven UI (buttons, sliders,..." alt="" coords="210,213,333,241"/>
-<area shape="rect" id="node7" href="$classtinygpu_1_1TouchDriverSTM32F723Discovery.html" title="TouchDriver wrapping the stm32f723&#45;disco library&#39;s TouchScreen class (on&#45;board FT6x06/FT3x67 capaciti..." alt="" coords="152,265,391,293"/>
-<area shape="rect" id="node8" href="$classtinygpu_1_1TouchDriverTFTeSPI.html" title="Touch driver that reads through Bodmer&#39;s TFT_eSPI (https://github.com/Bodmer/TFT_eSPI) resistive touc..." alt="" coords="198,317,345,345"/>
-<area shape="rect" id="node9" href="$classtinygpu_1_1TouchDriverXPT2046.html" title="XPT2046 resistive touch controller." alt="" coords="194,369,349,397"/>
+<area shape="rect" id="node1" href="$classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="5,213,104,241"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1RotatedTouch.html" title="A touch controller whose points are in the rotated (UI) coordinates." alt="" coords="217,5,326,33"/>
+<area shape="rect" id="node3" href="$classtinygpu_1_1TouchDriverBitBang.html" title="Bit&#45;banged 4&#45;wire resistive touch panel driver." alt="" coords="197,57,346,85"/>
+<area shape="rect" id="node4" href="$classtinygpu_1_1TouchDriverCST816S.html" title="CST816S capacitive touch controller." alt="" coords="194,109,349,137"/>
+<area shape="rect" id="node5" href="$classtinygpu_1_1TouchDriverFT6236.html" title="FT6236 / FT6336 capacitive touch controller." alt="" coords="199,161,344,189"/>
+<area shape="rect" id="node6" href="$classtinygpu_1_1TouchDriverGT911.html" title="GT911 capacitive touch controller." alt="" coords="201,213,342,241"/>
+<area shape="rect" id="node7" href="$classtinygpu_1_1TouchDriverSDL.html" title="Maps the desktop mouse to a TouchDriver, for exercising touch&#45;driven UI (buttons, sliders,..." alt="" coords="210,265,333,293"/>
+<area shape="rect" id="node8" href="$classtinygpu_1_1TouchDriverSTM32F723Discovery.html" title="TouchDriver wrapping the stm32f723&#45;disco library&#39;s TouchScreen class (on&#45;board FT6x06/FT3x67 capaciti..." alt="" coords="152,317,391,345"/>
+<area shape="rect" id="node9" href="$classtinygpu_1_1TouchDriverTFTeSPI.html" title="Touch driver that reads through Bodmer&#39;s TFT_eSPI (https://github.com/Bodmer/TFT_eSPI) resistive touc..." alt="" coords="198,369,345,397"/>
+<area shape="rect" id="node10" href="$classtinygpu_1_1TouchDriverXPT2046.html" title="XPT2046 resistive touch controller." alt="" coords="194,421,349,449"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="RotatedTouch" name="RotatedTouch">
+<area shape="rect" id="node1" title="A touch controller whose points are in the rotated (UI) coordinates." alt="" coords="12,175,122,203"/>
+<area shape="rect" id="node2" href="$classtinygpu_1_1TouchDriver.html" title="Base class for touch controllers." alt="" coords="18,98,116,126"/>
+<area shape="rect" id="node3" href="$structtinygpu_1_1CalibrationData.html" title="Touch calibration configuration." alt="" coords="5,5,129,33"/>
+</map>
