@@ -138,7 +138,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a598f97417335bb36deb653d92f0d75a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a wireframe renderer with the dimensions of the given surface.  <br /></td></tr>
 <tr class="separator:a598f97417335bb36deb653d92f0d75a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15afce9d177ce4cf641a7ec584b70f58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#a15afce9d177ce4cf641a7ec584b70f58">setViewport</a> (size_t <a class="el" href="classtinygpu_1_1WireFrame3D.html#a080012ae5fbe9a5428ca4fe146236974">viewportWidth</a>, size_t <a class="el" href="classtinygpu_1_1WireFrame3D.html#aa12efabdbd8d93f5c544ca31110a5d26">viewportHeight</a>)</td></tr>
-<tr class="memdesc:a15afce9d177ce4cf641a7ec584b70f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the viewport size used for projection and depth buffering.  <br /></td></tr>
 <tr class="separator:a15afce9d177ce4cf641a7ec584b70f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a601fb7cf1fc15db50c71a826f084f934"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtinygpu_1_1WireFrame3D.html#a601fb7cf1fc15db50c71a826f084f934">begin</a> ()</td></tr>
 <tr class="separator:a601fb7cf1fc15db50c71a826f084f934"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1601,8 +1600,7 @@ class tinygpu::WireFrame3D&lt; RGB_T &gt;</div><p>Lightweight 3D wireframe rende
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Sets the viewport size used for projection and depth buffering. </p>
+<p>Sets the viewport size used for projection and depth buffering. After <a class="el" href="classtinygpu_1_1WireFrame3D.html#a601fb7cf1fc15db50c71a826f084f934">begin()</a> the depth buffer follows the new size (<a class="el" href="classtinygpu_1_1WireFrame3D.html#a0c8812b0e43e2289610d0ba713f53148" title="Renders a wireframe mesh with minimal depth buffering.">renderWireframe()</a> calls this when the target surface was resized). </p>
 
 </div>
 </div>
