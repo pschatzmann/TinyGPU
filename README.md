@@ -34,6 +34,8 @@ The library covers three main areas:
   - rounded rectangles (outline and fill)
   - arcs (for circular progress/spinner style widgets)
 - Bitmap font rendering and wrapped line printing
+- 90 degree rotation of any board (`LCDBoardRotated`): hardware rotation when the
+  display driver supports it, otherwise software rotation without a frame buffer
 - Sprite drawing and sprite-aware framebuffer management
   - add
   - move
