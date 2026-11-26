@@ -211,11 +211,16 @@ class WireFrame3D {
     updateProjectionMatrix();
   }
 
-  /// Sets the viewport size used for projection and depth buffering.
+  /// Sets the viewport size used for projection and depth buffering. After
+  /// begin() the depth buffer follows the new size (renderWireframe() calls
+  /// this when the target surface was resized).
   void setViewport(size_t viewportWidth, size_t viewportHeight) {
+    const bool changed = viewportWidth != viewportWidth_ ||
+                         viewportHeight != viewportHeight_;
     viewportWidth_ = viewportWidth;
     viewportHeight_ = viewportHeight;
     updateProjectionMatrix();
+    if (changed && !depthBuffer_.empty()) resizeDepthBuffer();
   }
 
   bool begin() {
